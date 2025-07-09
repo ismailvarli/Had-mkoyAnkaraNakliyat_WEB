@@ -1,0 +1,299 @@
+﻿
+@{
+    ViewData["Title"] = "İletisim";
+}
+
+
+<style>
+    /* Genel Yazı Renkleri */
+    .contact-page h2,
+    .contact-page p,
+    .contact-page a,
+    .contact-page .sec-title__tagline .text h4,
+    .contact-page .sec-title__title,
+    .contact-page__top-content-text1 p,
+    .contact-page__bottom-single h2,
+    .contact-page__bottom-single p,
+    .contact-page__bottom-single a {
+        color: #000 !important;
+    }
+
+    /* Form Kutucukları */
+    .contact-page__top-form .input-box input,
+    .contact-page__top-form .input-box textarea,
+    .contact-page__top-form .select-box select {
+        background-color: #f8f8f8;
+        border: 2px solid #ddd;
+        border-radius: 4px;
+        padding: 12px 15px;
+        width: 100%;
+        color: #000;
+        font-size: 16px;
+        transition: all 0.3s ease;
+    }
+
+        .contact-page__top-form .input-box input:focus,
+        .contact-page__top-form .input-box textarea:focus,
+        .contact-page__top-form .select-box select:focus {
+            border-color: #333;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+
+    /* Select Kutusu */
+    .contact-page__top-form .select-box {
+        position: relative;
+    }
+
+        .contact-page__top-form .select-box select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 15px;
+        }
+
+    /* Form İkonları */
+    .contact-page__top-form .input-box .icon {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #666;
+    }
+
+    /* Buton Stili */
+    .contact-page__top-form .thm-btn {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 12px 30px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+    }
+
+        .contact-page__top-form .thm-btn:hover {
+            background-color: #000;
+        }
+
+    /* İletişim Bilgileri Kutuları */
+    .contact-page__bottom-single {
+        background-color: #f8f8f8;
+        border: 1px solid #eee;
+        padding: 25px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+        .contact-page__bottom-single:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+
+    /* Harita Stili */
+    .google-map-one__map {
+        filter: grayscale(20%) contrast(110%);
+        border: 1px solid #ddd;
+    }
+
+</style>
+
+@{
+    ViewData["Title"] = "İletisim";
+}
+<!--Start Page Header-->
+<section class="page-header">
+    <div class="page-header__bg" style="background-image: url(~/assets/images/backgrounds/page-header-bg.jpg)">
+    </div>
+    <div class="page-header__pattern"><img src="~/assets/images/pattern/page-header-pattern.png" alt=""></div>
+    <div class="container">
+        <div class="page-header__inner">
+            <h2 style="color: #000;">Contact Us</h2>
+            <ul class="thm-breadcrumb">
+                <li><a href="index.html" style="color: #000;">Home</a></li>
+                <li><span class="icon-right-arrow21"></span></li>
+                <li style="color: #000;">Contact Us</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--End Page Header-->
+<!--Start Contact Page-->
+<section class="contact-page">
+    <!--Start Contact Page Top-->
+    <div class="contact-page__top">
+        <div class="contact-page__top-pattern"
+             style="background-image: url(~/assets/images/pattern/contact-page-top-pattern.png);"></div>
+        <div class="container">
+            <div class="row">
+                <!--Start Contact Page Top Content-->
+                <div class="col-xl-6">
+                    <div class="contact-page__top-content">
+                        <div class="sec-title tg-heading-subheading animation-style2">
+                            <div class="sec-title__tagline">
+                                <div class="line"></div>
+                                <div class="text tg-element-title">
+                                    <h4 style="color: #000;">Contact us</h4>
+                                </div>
+                                <div class="icon">
+                                    <span class="icon-plane2 float-bob-x3"></span>
+                                </div>
+                            </div>
+                            <h2 class="sec-title__title tg-element-title" style="color: #000;">
+                                Get in Touch And We'll Help Your <br> Business
+                            </h2>
+                        </div>
+
+                        <div class="contact-page__top-content-text1">
+                            <p style="color: #000;">
+                                Our dedicated team of experts is here to guide you through every step of the
+                                insurance journey, ensuring you make informed choices tailored to your uniq
+                                needs choices tailored to your unique needs.
+                            </p>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="#"><span class="icon-facebook-f"></span></a>
+                            <a href="#"><span class="icon-instagram"></span></a>
+                            <a href="#"><span class="icon-twitter"></span></a>
+                            <a href="#"><span class="icon-linkedin"></span></a>
+                        </div>
+                    </div>
+                </div>
+                <!--End Contact Page Top Content-->
+                <!--Start Contact Page Top Form-->
+                <div class="col-xl-6">
+                    <div class="contact-page__top-form">
+                        <form class="contact-form-validated why-choose-one__form"
+                              action="~/assets/inc/sendemail.php" method="post" novalidate="novalidate">
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <div class="input-box">
+                                        <input type="text" name="name" placeholder="Name" required="">
+                                        <div class="icon"><span class="icon-user"></span></div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <div class="input-box">
+                                        <input type="email" name="email" placeholder="Email" required="">
+                                        <div class="icon"><span class="icon-email"></span></div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <div class="input-box">
+                                        <input type="text" name="Phone" placeholder="Phone" required="">
+                                        <div class="icon"><span class="icon-phone2"></span></div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <div class="input-box">
+                                        <div class="select-box">
+                                            <select class="selectmenu wide">
+                                                <option selected="selected">Subject</option>
+                                                <option>Freight Type 01</option>
+                                                <option>Freight Type 02</option>
+                                                <option>Freight Type 03</option>
+                                                <option>Freight Type 04</option>
+                                                <option>Freight Type 05</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-12">
+                                    <div class="input-box">
+                                        <textarea name="message" placeholder="Message"></textarea>
+                                        <div class="icon style2"><span class="icon-pen"></span></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-12">
+                                    <div class="why-choose-one__form-btn">
+                                        <button type="submit" class="thm-btn">
+                                            Submit Now
+                                            <i class="icon-right-arrow21"></i>
+                                            <span class="hover-btn hover-bx"></span>
+                                            <span class="hover-btn hover-bx2"></span>
+                                            <span class="hover-btn hover-bx3"></span>
+                                            <span class="hover-btn hover-bx4"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="result"></div>
+                    </div>
+                </div>
+                <!--End Contact Page Top Form-->
+            </div>
+        </div>
+    </div>
+    <!--End Contact Page Top-->
+    <!--Start Contact Page Bottom-->
+    <div class="contact-page__bottom">
+        <div class="container">
+            <div class="contact-page__bottom-inner">
+                <ul class="list-unstyled">
+                    <li class="contact-page__bottom-single">
+                        <div class="icon">
+                            <span class="icon-address"></span>
+                        </div>
+                        <div class="content">
+                            <h2 style="color: #000;">Location</h2>
+                            <p style="color: #000;">280 Granite Run Drive <br> SuiteHobert, LA 90010, USA.</p>
+                        </div>
+                    </li>
+
+                    <li class="contact-page__bottom-single">
+                        <div class="icon">
+                            <span class="icon-clock2"></span>
+                        </div>
+                        <div class="content">
+                            <h2 style="color: #000;">Working Hours</h2>
+                            <p style="color: #000;">Wednesday - Sunday <br> 7:00 AM - 5:00 PM</p>
+                        </div>
+                    </li>
+
+                    <li class="contact-page__bottom-single">
+                        <div class="icon">
+                            <span class="icon-email"></span>
+                        </div>
+                        <div class="content">
+                            <h2 style="color: #000;">Email</h2>
+                            <p style="color: #000;">
+                                <a href="mailto:support@logistra.com" style="color: #000;">support@logistra.com</a> <br>
+                                <a href="mailto:support@logistra.com" style="color: #000;">support@logistra.com</a>
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="contact-page__bottom-single">
+                        <div class="icon">
+                            <span class="icon-phone"></span>
+                        </div>
+                        <div class="content">
+                            <h2 style="color: #000;">Phones</h2>
+                            <p style="color: #000;">
+                                <a href="tel:880123456789" style="color: #000;">+880 123 456 789</a> <br>
+                                <a href="tel:880123456789" style="color: #000;">+880 123 456 789</a>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--End Contact Page Bottom-->
+</section>
+<!--End Contact Page-->
+<!--Start Google Map One-->
+<section class="google-map-one">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6209.242755903148!2d-77.04363602434464!3d38.90977276948481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1394992895496"
+            class="google-map-one__map">
+    </iframe>
+</section>
+<!--End Google Map One-->
