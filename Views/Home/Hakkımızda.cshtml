@@ -1,16 +1,118 @@
 ﻿
+@model HadımkoyAnkaraNakliyat_WEB.Models.TeklifFormModel
 @{
     ViewData["Title"] = "Hakkımızda";
 }
+@await Html.PartialAsync("_StatusMessage")
+<style>
+    .animated-alert {
+        padding: 15px 20px;
+        margin: 20px 0 30px 0;
+        border-radius: 8px;
+        font-weight: 500;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        opacity: 0;
+        animation: fadeInSlide 0.6s ease-out forwards;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+        border: 1.5px solid #e1e4e8;
+    }
+
+        .animated-alert.success {
+            background: #e7ffe9;
+            color: #106a1d;
+            border-color: #7ee195;
+        }
+
+        .animated-alert.error {
+            background: #fff3f1;
+            color: #a32517;
+            border-color: #f7c0b5;
+        }
+
+        .animated-alert .icon {
+            font-size: 22px;
+            margin-right: 6px;
+        }
+
+    @@keyframes fadeInSlide {
+        from
+
+    {
+        opacity: 0;
+        transform: translateY(-16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    }
+
+    .ranger-min-max-block {
+        display: flex;
+        align-items: center;
+        gap: 16px; /* Aradaki boşluk (dilersen artırabilirsin) */
+        margin-top: 10px; /* Kutunun üstüne de biraz boşluk bırakır */
+    }
+
+        .ranger-min-max-block input[type="text"].min,
+        .ranger-min-max-block input[type="text"].max {
+            width: 60px; /* Daha geniş kutular */
+            padding: 5px 8px;
+            font-size: 15px;
+            border-radius: 6px;
+            border: 1px solid #e1e4e8;
+            text-align: center;
+        }
+
+        .ranger-min-max-block span {
+            font-size: 18px;
+            margin: 0 8px;
+            color: #333;
+        }
+
+    input[type="hidden"] {
+        display: none !important;
+    }
+
+    .ranger-min-max-block {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-top: 10px;
+    }
+
+        .ranger-min-max-block input[type="text"].min,
+        .ranger-min-max-block input[type="text"].max {
+            width: 60px;
+            padding: 5px 8px;
+            font-size: 15px;
+            border-radius: 6px;
+            border: 1px solid #e1e4e8;
+            text-align: center;
+            background: #fff;
+        }
+
+        .ranger-min-max-block span {
+            font-size: 18px;
+            margin: 0 8px;
+            color: #333;
+        }
+
+</style>
 
 <!--Start Page Header-->
 <section class="page-header">
-    <div class="page-header__bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg)">
+    <div class="page-header__bg" style="background-image: url(/assets/images/gallery/hadimkoy_hakkimizda.png)">
     </div>
-    <div class="page-header__pattern"><img src="~/assets/images/pattern/page-header-pattern.png" alt=""></div>
+   
     <div class="container">
         <div class="page-header__inner">
-            <h2>About us</h2>
+            <h2>Hakkımızda</h2>
             <ul class="thm-breadcrumb">
                 <li><a href="/Home/Index">Ana Sayfa</a></li>
                 <li><span class="icon-right-arrow21"></span></li>
@@ -31,26 +133,24 @@
                         <div class="sec-title__tagline">
                             <div class="line"></div>
                             <div class="text tg-element-title">
-                                <h4>Our Company</h4>
+                                <h4>Hadımköy Ankara Nakliyat</h4>
                             </div>
                             <div class="icon">
                                 <span class="icon-plane2 float-bob-x3"></span>
                             </div>
                         </div>
                         <h2 class="sec-title__title tg-element-title">
-                            Our Expertise Stands in <br>
+                            Bizleri Arayın <br>
                             <span>
-                                Logistics
-                                Solutions
+                                7/24 Hizmet
+                                Verelim
                             </span>
                         </h2>
                     </div>
 
                     <div class="about-one__content-text1">
                         <p>
-                            Logistic service provider company plays a pivotal role in the global supply
-                            chain ecosystem by efficiently managing the movement of goods from origin to final
-                            destination. These companies offer a diverse.
+                            Hadımköy Ankara Nakliyat; şehirlerarası nakliyat, asansörlü taşımacılık, güvenilir evden eve nakliyat, profesyonel taşıma hizmeti, sigortalı taşımacılık ve uygun fiyat avantajı ile öne çıkıyor. Tecrübeli ekibiyle Ankara, İstanbul, İzmir, Bursa başta olmak üzere Türkiye geneline hızlı, kaliteli, müşteri memnuniyetine odaklı taşımacılık sunar.
                         </p>
                     </div>
 
@@ -64,11 +164,11 @@
                                         </div>
 
                                         <div class="title-box">
-                                            <h3>Worldwide Service</h3>
+                                            <h3>Şehirlerarası Hizmet</h3>
                                         </div>
                                     </div>
 
-                                    <p>Logistic service provider company plays a pivotal role in the global</p>
+                                    <p>Türkiyenin 81 iline tizit ve profesyonel hizmetlerle.</p>
                                 </div>
                             </div>
 
@@ -80,11 +180,11 @@
                                         </div>
 
                                         <div class="title-box">
-                                            <h3>24/7 Online Support</h3>
+                                            <h3>7/24 Online Destek</h3>
                                         </div>
                                     </div>
 
-                                    <p>Logistic service provider company plays a pivotal role in the global</p>
+                                    <p>Firmamız müşterilerine daima 7/24 ve her an ulaşılabilir hizmet vermekte.</p>
                                 </div>
                             </div>
                         </div>
@@ -92,8 +192,8 @@
 
                     <div class="about-one__content-bottom">
                         <div class="btn-box">
-                            <a class="thm-btn" href="about.html">
-                                More About Us
+                            <a class="thm-btn" href="/Home/İletisim">
+                                Bizlere Ulaşın
                                 <i class="icon-right-arrow21"></i>
                                 <span class="hover-btn hover-bx"></span>
                                 <span class="hover-btn hover-bx2"></span>
@@ -108,8 +208,8 @@
                             </div>
 
                             <div class="text-box">
-                                <p>Make A Phone Call</p>
-                                <h4><a href="tel:1234567890">+880 123 456 789 </a></h4>
+                                <p>Bizleri Arayın</p>
+                                <h4><a href="tel:05325436837">+0532 543 68 37 </a></h4>
                             </div>
                         </div>
                     </div>
@@ -131,14 +231,14 @@
 
                     <div class="about-one__img2">
                         <div class="about-one__img2-inner reveal">
-                            <img src="~/assets/images/about/about-v1-img2.jpg" alt="">
+                            <img src="~/assets/images/gallery/hadimkoy_ankara_nakliyat_koli_260x330.png" alt="">
                         </div>
 
                         <div class="about-one__circle-text">
                             <div class="about-one__round-text-box">
                                 <div class="inner">
                                     <div class="about-one__curved-circle rotate-me">
-                                        WELCOME TO OUR COMPANY SINCE 2002
+                                        2014 Yılından Bu Yana Dek Hizmetinizdeyiz
                                     </div>
                                 </div>
                                 <div class="overlay-icon-box">
@@ -160,7 +260,7 @@
 <!--Start Service One-->
 <section class="service-one">
     <div class="service-one__pattern"
-         style="background-image: url(~/assets/images/pattern/service-v1-pattern.jpg);"></div>
+         style="background-image: url(/assets/images/pattern/service-v1-pattern.jpg);"></div>
     <div class="container">
         <div class="sec-title center text-center tg-heading-subheading animation-style2">
             <div class="sec-title__tagline">
@@ -544,197 +644,31 @@
     </div>
 </section>
 <!--End Project One-->
-<!--Start Why Choose One-->
-<section class="why-choose-one">
-    <div class="why-choose-one__pattern">
-        <img src="~/assets/images/pattern/why-choose-v1-pattern.png" alt="">
-    </div>
-    <div class="shape1 float-bob-y"><img src="~/assets/images/shapes/why-choose-v1-shape1.png" alt=""></div>
-    <div class="container">
-        <div class="row">
-            <!--Start Why Choose One Content-->
-            <div class="col-xl-6">
-                <div class="why-choose-one__content">
-                    <div class="sec-title tg-heading-subheading animation-style2">
-                        <div class="sec-title__tagline">
-                            <div class="line"></div>
-                            <div class="text tg-element-title">
-                                <h4>Why Choose us</h4>
-                            </div>
-                            <div class="icon">
-                                <span class="icon-plane2 float-bob-x3"></span>
-                            </div>
-                        </div>
-                        <h2 class="sec-title__title tg-element-title">
-                            Efficient, Safe, & Swift <br> Logistics
-                            <span>Solution!</span>
-                        </h2>
-                    </div>
-
-                    <div class="why-choose-one__content-list">
-                        <ul>
-                            <li>
-                                <p><span class="icon-plane2"></span> Make long term business decisions</p>
-                            </li>
-                            <li>
-                                <p><span class="icon-plane2"></span> Transparent career journey and support.</p>
-                            </li>
-                            <li>
-                                <p>
-                                    <span class="icon-plane2"></span> Be a responsible member of the community
-                                </p>
-                            </li>
-                            <li>
-                                <p><span class="icon-plane2"></span> Provide a service we are proud of</p>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="btn-box">
-                        <a class="thm-btn" href="contact.html">
-                            Contact Us
-                            <i class="icon-right-arrow21"></i>
-                            <span class="hover-btn hover-bx"></span>
-                            <span class="hover-btn hover-bx2"></span>
-                            <span class="hover-btn hover-bx3"></span>
-                            <span class="hover-btn hover-bx4"></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!--End Why Choose One Content-->
-            <!--Start Why Choose One Form-->
-            <div class="col-xl-6">
-                <div class="why-choose-one__form-box wow fadeInRight" data-wow-delay="0ms"
-                     data-wow-duration="1500ms">
-                    <div class="title-box">
-                        <h2>Request a Quote</h2>
-                    </div>
-
-                    <form class="contact-form-validated why-choose-one__form" action="~/assets/inc/sendemail.php"
-                          method="post" novalidate="novalidate">
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-6 col-md-6">
-                                <div class="input-box">
-                                    <input type="text" name="name" placeholder="Name" required="">
-                                    <div class="icon"><span class="icon-user"></span></div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6">
-                                <div class="input-box">
-                                    <input type="email" name="email" placeholder="Email" required="">
-                                    <div class="icon"><span class="icon-email"></span></div>
-                                </div>
-                            </div>
-
-                            <div class="col-xl-6 col-lg-6 col-md-6">
-                                <div class="input-box">
-                                    <input type="text" name="Phone" placeholder="Phone" required="">
-                                    <div class="icon"><span class="icon-phone2"></span></div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6">
-                                <div class="input-box">
-                                    <input type="text" name="date" value="" placeholder="Date" id="datepicker">
-                                    <div class="icon"><span class="icon-calendar"></span></div>
-                                </div>
-                            </div>
-
-
-                            <div class="col-xl-12">
-                                <div class="why-choose-one__form-distance">
-                                    <div class="title">
-                                        <p>distance(Kilo):</p>
-                                    </div>
-                                    <div class="why-choose-one__form-distance-inner">
-                                        <div class="price-ranger">
-                                            <div id="slider-range"></div>
-                                            <div class="ranger-min-max-block">
-                                                <input type="text" readonly class="min">
-                                                <span>-</span>
-                                                <input type="text" readonly class="max">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-xl-6 col-lg-6 col-md-6">
-                                <div class="input-box">
-                                    <div class="select-box">
-                                        <select class="selectmenu wide">
-                                            <option selected="selected">Freight Type</option>
-                                            <option>Freight Type 01</option>
-                                            <option>Freight Type 02</option>
-                                            <option>Freight Type 03</option>
-                                            <option>Freight Type 04</option>
-                                            <option>Freight Type 05</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6">
-                                <div class="input-box">
-                                    <div class="select-box">
-                                        <select class="selectmenu wide">
-                                            <option selected="selected">Load</option>
-                                            <option>Freight Type 01</option>
-                                            <option>Freight Type 02</option>
-                                            <option>Freight Type 03</option>
-                                            <option>Freight Type 04</option>
-                                            <option>Freight Type 05</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-xl-12">
-                                <div class="why-choose-one__form-btn">
-                                    <button type="submit" class="thm-btn">
-                                        Contact Us
-                                        <i class="icon-right-arrow21"></i>
-                                        <span class="hover-btn hover-bx"></span>
-                                        <span class="hover-btn hover-bx2"></span>
-                                        <span class="hover-btn hover-bx3"></span>
-                                        <span class="hover-btn hover-bx4"></span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    <div class="result"></div>
-                </div>
-            </div>
-            <!--End Why Choose One Form-->
-        </div>
-    </div>
-</section>
-<!--End Why Choose One-->
 <!--Start Testimonial One-->
 <section class="testimonial-one">
     <div class="testimonial-one__pattern"
-         style="background-image: url(~/assets/images/pattern/testimonial-v1-pattern.png);"></div>
+         style="background-image: url(/assets/images/pattern/testimonial-v1-pattern.png);"></div>
     <div class="container">
         <div class="row">
             <!--Start Testimonial One Content-->
             <div class="col-xl-6">
                 <div class="testimonial-one__content">
                     <div class="big-title">
-                        <h2>TESTIMONIALS</h2>
+                        <h2>Müşterilerimiz</h2>
                     </div>
                     <div class="sec-title tg-heading-subheading animation-style2">
                         <div class="sec-title__tagline">
                             <div class="line"></div>
                             <div class="text tg-element-title">
-                                <h4>Client Testimonial</h4>
+                                <h4>Müşterilerimizin Yorumları</h4>
                             </div>
                             <div class="icon">
                                 <span class="icon-plane2 float-bob-x3"></span>
                             </div>
                         </div>
                         <h2 class="sec-title__title tg-element-title">
-                            What Our Customers <br>
-                            Say <span>About Us</span>
+                            Bizleri tercih eden değerli <br>
+                            <span>müşteri yorumları</span>
                         </h2>
                     </div>
 
@@ -751,12 +685,12 @@
                                 </div>
                                 <div class="author-box">
                                     <div class="img-box">
-                                        <img src="~/assets/images/testimonial/testimonial-v1-img1.png" alt="">
+                                        <img src="~/assets/images/gallery/icon_80x80.png" alt="">
                                     </div>
                                     <div class="author-info">
-                                        <h2>Ronald Richards</h2>
+                                        <h2>Ayşe Demir</h2>
                                         <div class="bottom-text">
-                                            <p>MANAGER</p>
+                                            <p>İstanbul → Ankara</p>
                                             <div class="rating-box">
                                                 <i class="icon-star"></i>
                                                 <i class="icon-star"></i>
@@ -770,51 +704,7 @@
 
                                 <div class="text-box">
                                     <p>
-                                        A logistic service provider company plays a pivotal role in the global
-                                        supply chain A logistic service provider companyA logistic service
-                                        provider company plays a pivotal role in the global supply chain A
-                                        logistic service provider company
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!--End Testimonial One Single-->
-                        <!--Start Testimonial One Single-->
-                        <div class="testimonial-one__single">
-                            <div class="icon">
-                                <span class="icon-quote1"></span>
-                            </div>
-                            <div class="testimonial-one__single-inner">
-                                <div class="shape1">
-                                    <img src="~/assets/images/shapes/testimonial-v1-shape1.png"
-                                         alt="">
-                                </div>
-                                <div class="author-box">
-                                    <div class="img-box">
-                                        <img src="~/assets/images/testimonial/testimonial-v1-img1.png" alt="">
-                                    </div>
-                                    <div class="author-info">
-                                        <h2>Ronald Richards</h2>
-                                        <div class="bottom-text">
-                                            <p>MANAGER</p>
-                                            <div class="rating-box">
-                                                <i class="icon-star"></i>
-                                                <i class="icon-star"></i>
-                                                <i class="icon-star"></i>
-                                                <i class="icon-star"></i>
-                                                <i class="icon-star"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="text-box">
-                                    <p>
-                                        A logistic service provider company plays a pivotal role in the global
-                                        supply chain A logistic service provider companyA logistic service
-                                        provider company plays a pivotal role in the global supply chain A
-                                        logistic service provider company
+                                        Hadımköy Ankara Nakliyat sayesinde şehirler arası taşınmam çok kolay oldu. Profesyonel evden eve nakliyat hizmetleri, zamanında teslimat ve sigortalı taşıma ile tüm eşyalarımız güvenle yeni adresimize ulaştı. Herkese gönül rahatlığıyla tavsiye ederim.
                                     </p>
                                 </div>
                             </div>
@@ -832,12 +722,49 @@
                                 </div>
                                 <div class="author-box">
                                     <div class="img-box">
-                                        <img src="~/assets/images/testimonial/testimonial-v1-img1.png" alt="">
+                                        <img src="~/assets/images/gallery/icon_80x80.png" alt="">
                                     </div>
                                     <div class="author-info">
-                                        <h2>Ronald Richards</h2>
+                                        <h2>Murat Yıldız</h2>
                                         <div class="bottom-text">
-                                            <p>MANAGER</p>
+                                            <p>Ankara → İstanbul</p>
+                                            <div class="rating-box">
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="text-box">
+                                    <p>
+                                        Eşyalarımızı paketlemeden montaj ve demontaja kadar her aşamada titiz çalışan bir ekip. Şehir içi nakliye konusunda deneyimli, müşteri memnuniyetine önem veren, güvenilir ve uygun fiyatlı bir firma arayanlara Hadımköy Ankara Nakliyat’ı kesinlikle öneriyorum.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Testimonial One Single-->
+                        <!--Start Testimonial One Single-->
+                        <div class="testimonial-one__single">
+                            <div class="icon">
+                                <span class="icon-quote1"></span>
+                            </div>
+                            <div class="testimonial-one__single-inner">
+                                <div class="shape1">
+                                    <img src="~/assets/images/shapes/testimonial-v1-shape1.png"
+                                         alt="">
+                                </div>
+                                <div class="author-box">
+                                    <div class="img-box">
+                                        <img src="~/assets/images/gallery/icon_80x80.png" alt="">
+                                    </div>
+                                    <div class="author-info">
+                                        <h2>Elif Kaya</h2>
+                                        <div class="bottom-text">
+                                            <p> İzmir → Ankara</p>
                                             <div class="rating-box">
                                                 <i class="icon-star"></i>
                                                 <i class="icon-star"></i>
@@ -851,10 +778,338 @@
 
                                 <div class="text-box">
                                     <p>
-                                        A logistic service provider company plays a pivotal role in the global
-                                        supply chain A logistic service provider companyA logistic service
-                                        provider company plays a pivotal role in the global supply chain A
-                                        logistic service provider company
+                                        Ofis taşımacılığı konusunda Hadımköy Ankara Nakliyat’tan hizmet aldım. Uzman ekip sayesinde hiçbir eşyam zarar görmedi. Ambalajlama ve hızlı taşıma konusunda gerçekten profesyoneller. Taşınmak isteyen herkese rahatlıkla tavsiye ederim.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Testimonial One Single-->
+                        <!--Start Testimonial One Single-->
+                        <div class="testimonial-one__single">
+                            <div class="icon">
+                                <span class="icon-quote1"></span>
+                            </div>
+                            <div class="testimonial-one__single-inner">
+                                <div class="shape1">
+                                    <img src="~/assets/images/shapes/testimonial-v1-shape1.png"
+                                         alt="">
+                                </div>
+                                <div class="author-box">
+                                    <div class="img-box">
+                                        <img src="~/assets/images/gallery/icon_80x80.png" alt="">
+                                    </div>
+                                    <div class="author-info">
+                                        <h2>Ali Koç</h2>
+                                        <div class="bottom-text">
+                                            <p> Bursa → Ankara</p>
+                                            <div class="rating-box">
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="text-box">
+                                    <p>
+                                        Asansörlü taşıma hizmeti sunmaları sayesinde tüm eşyalarım kısa sürede ve güvenle taşındı. Hadımköy Ankara Nakliyat, kurumsal taşıma ve parça eşya taşımacılığı konusunda beklentimin çok üzerinde bir hizmet verdi. Gerçekten memnun kaldım.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Testimonial One Single-->
+                         <!--Start Testimonial One Single-->
+                        <div class="testimonial-one__single">
+                            <div class="icon">
+                                <span class="icon-quote1"></span>
+                            </div>
+                            <div class="testimonial-one__single-inner">
+                                <div class="shape1">
+                                    <img src="~/assets/images/shapes/testimonial-v1-shape1.png"
+                                         alt="">
+                                </div>
+                                <div class="author-box">
+                                    <div class="img-box">
+                                        <img src="~/assets/images/gallery/icon_80x80.png" alt="">
+                                    </div>
+                                    <div class="author-info">
+                                        <h2>Mehmet Arslan</h2>
+                                        <div class="bottom-text">
+                                            <p> Ankara → Eskişehir</p>
+                                            <div class="rating-box">
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="text-box">
+                                    <p>
+                                        Hadımköy Ankara Nakliyat’tan parsiyel nakliyat hizmeti aldım. Eşyalarım özenle toplandı ve tam zamanında teslim edildi. Parsiyel taşıma için uygun fiyat ve güvenilir çözüm sunuyorlar, kesinlikle tavsiye ederim.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Testimonial One Single-->
+                         <!--Start Testimonial One Single-->
+                        <div class="testimonial-one__single">
+                            <div class="icon">
+                                <span class="icon-quote1"></span>
+                            </div>
+                            <div class="testimonial-one__single-inner">
+                                <div class="shape1">
+                                    <img src="~/assets/images/shapes/testimonial-v1-shape1.png"
+                                         alt="">
+                                </div>
+                                <div class="author-box">
+                                    <div class="img-box">
+                                        <img src="~/assets/images/gallery/icon_80x80.png" alt="">
+                                    </div>
+                                    <div class="author-info">
+                                        <h2>Gülşah Şen</h2>
+                                        <div class="bottom-text">
+                                            <p> Ankara → İstanbul</p>
+                                            <div class="rating-box">
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="text-box">
+                                    <p>
+                                        Ambar nakliyat hizmetine ihtiyacımız vardı ve Hadımköy Ankara Nakliyat sayesinde tüm ürünlerimiz eksiksiz ve sağlam ulaştı. Ambar taşımacılığında profesyonel ve zamanında hizmet almak isteyenlere öneririm.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Testimonial One Single-->
+                        <!--Start Testimonial One Single-->
+                        <div class="testimonial-one__single">
+                            <div class="icon">
+                                <span class="icon-quote1"></span>
+                            </div>
+                            <div class="testimonial-one__single-inner">
+                                <div class="shape1">
+                                    <img src="~/assets/images/shapes/testimonial-v1-shape1.png"
+                                         alt="">
+                                </div>
+                                <div class="author-box">
+                                    <div class="img-box">
+                                        <img src="~/assets/images/gallery/icon_80x80.png" alt="">
+                                    </div>
+                                    <div class="author-info">
+                                        <h2>Tuğba Öztürk</h2>
+                                        <div class="bottom-text">
+                                            <p>Ankara → İstanbul</p>
+                                            <div class="rating-box">
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="text-box">
+                                    <p>
+                                        Hadımköy Ankara Nakliyat ile şehirlerarası nakliyat hizmeti aldım. Eşyalarım Ankara’dan İstanbul’a tamamen güvenli ve sigortalı şekilde ulaştı. Hızlı, güvenilir ve profesyonel taşıma isteyenlere kesinlikle öneriyorum.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Testimonial One Single-->
+                        <!--Start Testimonial One Single-->
+                        <div class="testimonial-one__single">
+                            <div class="icon">
+                                <span class="icon-quote1"></span>
+                            </div>
+                            <div class="testimonial-one__single-inner">
+                                <div class="shape1">
+                                    <img src="~/assets/images/shapes/testimonial-v1-shape1.png"
+                                         alt="">
+                                </div>
+                                <div class="author-box">
+                                    <div class="img-box">
+                                        <img src="~/assets/images/gallery/icon_80x80.png" alt="">
+                                    </div>
+                                    <div class="author-info">
+                                        <h2>Cihan Korkmaz</h2>
+                                        <div class="bottom-text">
+                                            <p>Ankara → İstanbul</p>
+                                            <div class="rating-box">
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="text-box">
+                                    <p>
+                                        Şehirlerarası nakliyat için Hadımköy Ankara Nakliyat’ı tercih ettik. Taşınma süreci boyunca tüm eşyalarımız titizlikle taşındı, iletişimleri de çok iyiydi. Profesyonel kadro ve uygun fiyat arayanlar mutlaka denemeli.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Testimonial One Single-->
+                         <!--Start Testimonial One Single-->
+                        <div class="testimonial-one__single">
+                            <div class="icon">
+                                <span class="icon-quote1"></span>
+                            </div>
+                            <div class="testimonial-one__single-inner">
+                                <div class="shape1">
+                                    <img src="~/assets/images/shapes/testimonial-v1-shape1.png"
+                                         alt="">
+                                </div>
+                                <div class="author-box">
+                                    <div class="img-box">
+                                        <img src="~/assets/images/gallery/icon_80x80.png" alt="">
+                                    </div>
+                                    <div class="author-info">
+                                        <h2>Tolga Karaca</h2>
+                                        <div class="bottom-text">
+                                            <p> İstanbul → Ankara</p>
+                                            <div class="rating-box">
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="text-box">
+                                    <p>
+                                        Hadımköy Ankara Nakliyat ile parsiyel taşımacılık hizmetinden yararlandım. Firma hem iletişimde çok hızlı hem de eşyaların güvenliğini sağlıyor. Nakliyat işlerinde kesinlikle güvenilir bir adres.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Testimonial One Single-->
+                         <!--Start Testimonial One Single-->
+                        <div class="testimonial-one__single">
+                            <div class="icon">
+                                <span class="icon-quote1"></span>
+                            </div>
+                            <div class="testimonial-one__single-inner">
+                                <div class="shape1">
+                                    <img src="~/assets/images/shapes/testimonial-v1-shape1.png"
+                                         alt="">
+                                </div>
+                                <div class="author-box">
+                                    <div class="img-box">
+                                        <img src="~/assets/images/gallery/icon_80x80.png" alt="">
+                                    </div>
+                                    <div class="author-info">
+                                        <h2>Serkan Balcı</h2>
+                                        <div class="bottom-text">
+                                            <p>Ankara → İstanbul</p>
+                                            <div class="rating-box">
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="text-box">
+                                    <p>
+                                        Hadımköy Ankara Nakliyat ile parça eşya taşımacılığı ve parsiyel nakliyat konusunda mükemmel bir deneyim yaşadım. Şehirler arası güvenli taşımacılık, profesyonel ekip, hızlı teslimat ve uygun fiyat ile müşteri memnuniyeti odaklı hizmet veriyorlar. Tavsiye ederim.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Testimonial One Single-->
+                        <!--Start Testimonial One Single-->
+                        <div class="testimonial-one__single">
+                            <div class="icon">
+                                <span class="icon-quote1"></span>
+                            </div>
+                            <div class="testimonial-one__single-inner">
+                                <div class="shape1">
+                                    <img src="~/assets/images/shapes/testimonial-v1-shape1.png"
+                                         alt="">
+                                </div>
+                                <div class="author-box">
+                                    <div class="img-box">
+                                        <img src="~/assets/images/gallery/icon_80x80.png" alt="">
+                                    </div>
+                                    <div class="author-info">
+                                        <h2>Nilay Uysal</h2>
+                                        <div class="bottom-text">
+                                            <p>İstanbul → Ankara</p>
+                                            <div class="rating-box">
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="text-box">
+                                    <p>
+                                        Ambar nakliyat ve asansörlü taşımacılık ihtiyacım için Hadımköy Ankara Nakliyat’a başvurdum. Evden eve nakliyat, parça eşya taşıma, sigortalı taşıma gibi tüm işlemler hızlı ve sorunsuz gerçekleşti. Gerçekten profesyonel ve güvenilir bir nakliyat firması..
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Testimonial One Single-->
+                        <!--Start Testimonial One Single-->
+                        <div class="testimonial-one__single">
+                            <div class="icon">
+                                <span class="icon-quote1"></span>
+                            </div>
+                            <div class="testimonial-one__single-inner">
+                                <div class="shape1">
+                                    <img src="~/assets/images/shapes/testimonial-v1-shape1.png"
+                                         alt="">
+                                </div>
+                                <div class="author-box">
+                                    <div class="img-box">
+                                        <img src="~/assets/images/gallery/icon_80x80.png" alt="">
+                                    </div>
+                                    <div class="author-info">
+                                        <h2>Zeynep Aksoy</h2>
+                                        <div class="bottom-text">
+                                            <p>Ankara → İstanbul</p>
+                                            <div class="rating-box">
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="text-box">
+                                    <p>
+                                        Hadımköy Ankara Nakliyat ile taşınmak çok kolay ve hızlı oldu. Güler yüzlü personel, uygun fiyat, güvenli ve sigortalı taşıma hizmetleri ile yeni evimize sorunsuz yerleştik. Nakliyat sektöründe kesinlikle ilk tercihim olacak.
                                     </p>
                                 </div>
                             </div>
@@ -868,31 +1123,31 @@
             <div class="col-xl-6">
                 <div class="testimonial-one__img">
                     <div class="testimonial-one__img1 reveal">
-                        <img src="~/assets/images/testimonial/testimonial-v1-img2.jpg" alt="">
+                        <img src="~/assets/images/gallery/HAN_Testimonial.png" alt="">
                     </div>
 
                     <div class="testimonial-one__img-author">
                         <ul>
                             <li>
                                 <div class="img-box">
-                                    <img src="~/assets/images/banner/banner-v1-img2.jpg" alt="#">
+                                    <img src="~/assets/images/gallery/icon_50x50.png" alt="#">
                                 </div>
                             </li>
                             <li>
                                 <div class="img-box">
-                                    <img src="~/assets/images/banner/banner-v1-img3.jpg" alt="#">
+                                    <img src="~/assets/images/gallery/icon_50x50.png" alt="#">
                                 </div>
                             </li>
                             <li>
                                 <div class="img-box">
-                                    <img src="~/assets/images/banner/banner-v1-img4.jpg" alt="#">
+                                    <img src="~/assets/images/gallery/icon_50x50.png" alt="#">
                                 </div>
                             </li>
                         </ul>
 
                         <div class="text-box">
-                            <h2>Customer Satisfied</h2>
-                            <p>4.8 (15k Reviews)</p>
+                            <h2>Müşteri Yorumları</h2>
+                            <p>4.8 (2k görüntülenme)</p>
                         </div>
                     </div>
                 </div>
@@ -902,3 +1157,24 @@
     </div>
 </section>
 <!--End Testimonial One-->
+<script>
+    $(function() {
+        // SLIDER’I BAŞLAT
+        $("#slider-range").slider({
+            range: true,
+            min: 0,
+            max: 1000,
+            values: [100, 500],
+            slide: function(event, ui) {
+                // Burada formda hidden input’a ve min-max kutularına değer atıyoruz
+                $("#agirlikDegeri").val(ui.values[0] + "-" + ui.values[1]);
+                $(".min").val(ui.values[0]);
+                $(".max").val(ui.values[1]);
+            }
+        });
+        // Sayfa açıldığında default değerleri ata
+        $(".min").val($("#slider-range").slider("values", 0));
+        $(".max").val($("#slider-range").slider("values", 1));
+        $("#agirlikDegeri").val($("#slider-range").slider("values", 0) + "-" + $("#slider-range").slider("values", 1));
+    });
+</script>

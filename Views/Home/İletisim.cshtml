@@ -1,19 +1,7 @@
 ﻿@{
     ViewData["Title"] = "İletisim";
 }
-@if (TempData["SuccessMessage"] != null)
-{
-    <div class="animated-alert success">
-        <span class="icon">✔</span> @TempData["SuccessMessage"]
-    </div>
-}
-@if (TempData["ErrorMessage"] != null)
-{
-    <div class="animated-alert error">
-        <span class="icon">⚠</span> @TempData["ErrorMessage"]
-    </div>
-}
-
+@await Html.PartialAsync("_StatusMessage")
 
 
 <style>
@@ -50,17 +38,15 @@
         }
 
     @@keyframes fadeInSlide {
-        from
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
 
-    {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     /* Genel Yazı Renkleri */
@@ -138,38 +124,19 @@
             background-color: #000;
         }
 
-    /* İletişim Bilgileri Kutuları */
-    .contact-page__bottom-single {
-        background-color: #f8f8f8;
-        border: 1px solid #eee;
-        padding: 25px;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-    }
-
-        .contact-page__bottom-single:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transform: translateY(-5px);
-        }
-
-    /* Harita Stili */
-    .google-map-one__map {
-        filter: grayscale(20%) contrast(110%);
-        border: 1px solid #ddd;
-    }
 </style>
 
 <!--Start Page Header-->
 <section class="page-header">
-    <div class="page-header__bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg)"></div>
-    <div class="page-header__pattern"><img src="~/assets/images/pattern/page-header-pattern.png" alt=""></div>
+    <div class="page-header__bg" style="background-image: url(/assets/images/gallery/hadimkoy_iletisim.png)">
+    </div>   
     <div class="container">
         <div class="page-header__inner">
-            <h2 style="color: #000;">Contact Us</h2>
+            <h2>İletişim</h2>
             <ul class="thm-breadcrumb">
-                <li><a href="index.html" style="color: #000;">Home</a></li>
+                <li><a href="/Home/Index">Ana Sayfa</a></li>
                 <li><span class="icon-right-arrow21"></span></li>
-                <li style="color: #000;">Contact Us</li>
+                <li>İletişim</li>
             </ul>
         </div>
     </div>
@@ -177,32 +144,36 @@
 <!--End Page Header-->
 <!--Start Contact Page-->
 <section class="contact-page">
+    <!--Start Contact Page Top-->
     <div class="contact-page__top">
-        <div class="contact-page__top-pattern" style="background-image: url(assets/images/pattern/contact-page-top-pattern.png);"></div>
+        <div class="contact-page__top-pattern"
+             style="background-image: url(/assets/images/pattern/contact-page-top-pattern.png);"></div>
         <div class="container">
             <div class="row">
+                <!--Start Contact Page Top Content-->
                 <div class="col-xl-6">
                     <div class="contact-page__top-content">
                         <div class="sec-title tg-heading-subheading animation-style2">
                             <div class="sec-title__tagline">
                                 <div class="line"></div>
                                 <div class="text tg-element-title">
-                                    <h4 style="color: #000;">Contact us</h4>
+                                    <h4>İletişim</h4>
                                 </div>
                                 <div class="icon">
                                     <span class="icon-plane2 float-bob-x3"></span>
                                 </div>
                             </div>
-                            <h2 class="sec-title__title tg-element-title" style="color: #000;">
-                                Get in Touch And We'll Help Your <br> Business
+                            <h2 class="sec-title__title tg-element-title">
+                                Bizimle İletişime Geçin <br> 
                             </h2>
                         </div>
+
                         <div class="contact-page__top-content-text1">
-                            <p style="color: #000;">
-                                Our dedicated team of experts is here to guide you through every step of the
-                                insurance journey, ensuring you make informed choices tailored to your unique needs.
+                            <p>
+                                Bizimle iletişime geçerek taşınma sürecinizi kolaylaştırabilirsiniz. Hadımköy Ankara Nakliyat olarak her türlü soru, talep ve önerileriniz için sizlere bir telefon kadar yakınız. Hızlı geri dönüş ve profesyonel destek için iletişim bilgilerimizi kullanarak bize ulaşabilirsiniz. Müşteri memnuniyeti önceliğimizdir.
                             </p>
                         </div>
+
                         <div class="social-links">
                             <a href="#"><span class="icon-facebook-f"></span></a>
                             <a href="#"><span class="icon-instagram"></span></a>
@@ -211,7 +182,7 @@
                         </div>
                     </div>
                 </div>
-
+                <!--End Contact Page Top Content-->
                 <!--Start Contact Page Top Form-->
                 <div class="col-xl-6">
                     <div class="contact-page__top-form">
@@ -270,46 +241,56 @@
                     </div>
                 </div>
                 <!--End Contact Page Top Form-->
-            </div>
-        </div>
-    </div>
-
+                <!--End Contact Page Top-->
     <!--Start Contact Page Bottom-->
     <div class="contact-page__bottom">
         <div class="container">
             <div class="contact-page__bottom-inner">
                 <ul class="list-unstyled">
                     <li class="contact-page__bottom-single">
-                        <div class="icon"><span class="icon-address"></span></div>
+                        <div class="icon">
+                            <span class="icon-address"></span>
+                        </div>
                         <div class="content">
-                            <h2 style="color: #000;">Location</h2>
-                            <p style="color: #000;">280 Granite Run Drive <br> SuiteHobert, LA 90010, USA.</p>
+                                        <h2>Adresimiz</h2>
+                                        <p style="color: #000;">Veliefendi Mah 272 Sok. No/4 <br> Zeytinburnu, İstanbul, Türkiye.</p>
+                                    </div>
+                    </li>
+
+                    <li class="contact-page__bottom-single">
+                        <div class="icon">
+                            <span class="icon-clock2"></span>
+                        </div>
+                        <div class="content">
+                            <h2>Çalışma Saatlerimiz</h2>
+                                        <p style="color: #000;">Haftanın Bütün Günleri <br> 6:00 AM - 12:00 PM</p>
                         </div>
                     </li>
+
                     <li class="contact-page__bottom-single">
-                        <div class="icon"><span class="icon-clock2"></span></div>
-                        <div class="content">
-                            <h2 style="color: #000;">Working Hours</h2>
-                            <p style="color: #000;">Wednesday - Sunday <br> 7:00 AM - 5:00 PM</p>
+                        <div class="icon">
+                            <span class="icon-email"></span>
                         </div>
-                    </li>
-                    <li class="contact-page__bottom-single">
-                        <div class="icon"><span class="icon-email"></span></div>
                         <div class="content">
-                            <h2 style="color: #000;">Email</h2>
-                            <p style="color: #000;">
-                                <a href="mailto:support@logistra.com" style="color: #000;">support@logistra.com</a> <br>
-                                <a href="mailto:support@logistra.com" style="color: #000;">support@logistra.com</a>
+                            <h2>Email</h2>
+                            <p>
+                                            <a href="mailto:hadimkoyankaranakliyat@gmail.com" style="color: #000;">hadimkoyankaranakliyat@gmail.com</a> <br>
+                                            <a href="mailto:ziyavarli60@gmail.com" style="color: #000;">ziyavarli60@gmail.com</a>
+    
                             </p>
                         </div>
                     </li>
+
                     <li class="contact-page__bottom-single">
-                        <div class="icon"><span class="icon-phone"></span></div>
+                        <div class="icon">
+                            <span class="icon-phone"></span>
+                        </div>
                         <div class="content">
-                            <h2 style="color: #000;">Phones</h2>
-                            <p style="color: #000;">
-                                <a href="tel:880123456789" style="color: #000;">+880 123 456 789</a> <br>
-                                <a href="tel:880123456789" style="color: #000;">+880 123 456 789</a>
+                            <h2>Phones</h2>
+                            <p>
+                                            <a href="tel:0532 543 68 37" style="color: #000;">+90 532 543 68 37</a> <br>
+                                            <a href="tel:0536 022 56 60" style="color: #000;">+90 536 022 56 60</a>
+
                             </p>
                         </div>
                     </li>
@@ -322,6 +303,15 @@
 <!--End Contact Page-->
 <!--Start Google Map One-->
 <section class="google-map-one">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6209.242755903148!2d-77.04363602434464!3d38.90977276948481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1394992895496" class="google-map-one__map"></iframe>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.474708521231!2d28.911377415086315!3d41.00238317930201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa3987400f653%3A0x613d1b32c7e23a6c!2s272%20Sokak%204%2C%20Veliefendi%2C%20Zeytinburnu%2C%20Istanbul%2C%20Turkey!5e0!3m2!1sen!2sus!4v1699590026000!5m2!1sen!2sus"
+        class="google-map-one__map"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</section>
+
 </section>
 <!--End Google Map One-->

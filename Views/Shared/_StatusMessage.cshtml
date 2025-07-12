@@ -1,0 +1,12 @@
+﻿@if (TempData["SuccessMessage"] != null)
+{
+    <div class="animated-alert success">
+        <span class="icon">✔</span> @Html.Raw(TempData["SuccessMessage"])
+    </div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="animated-alert error">
+        <span class="icon">⚠</span> @Html.Raw(TempData["ErrorMessage"])
+    </div>
+}
