@@ -331,7 +331,7 @@
                                                     <span class="icon-email"></span>
                                                 </div>
                                                 <div class="text-box">
-                                                    <p><a href="mailto:hadimkoyankaranakliyat@gmail.com">nakliyat@gmail.com</a></p>
+                                                    <p><a href="mailto:hadimkoyankaranakliyat@gmail.com">hannakliyat@gmail.com</a></p>
                                                     <p><a href="mailto:ziyavarli60@gmail.com">ziyavarli@gmail.com</a></p>
                                                 </div>
                                             </li>
@@ -512,6 +512,65 @@
 
     <!-- template js -->
     <script src="~/assets/js/script.js"></script>
+
+
 </body>
+<!-- TIKLA ARA BUTTONU BAŞLANGIÇ -->
+<a href="tel:05325436837" class="call-now-btn" title="Hemen Ara">
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white" viewBox="0 0 24 24"><path d="M6.62 10.79a15.09 15.09 0 006.59 6.59l2.2-2.2a1 1 0 011-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.09a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.24 1z"></path></svg>
+    <span>Ara</span>
+</a>
+
+<style>
+    .call-now-btn {
+        position: fixed;
+        right: 18px;
+        bottom: 18px;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: #ff7300; /* Tema turuncusu. Değiştirebilirsin */
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 12px 18px;
+        border-radius: 30px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+        transition: background 0.2s, transform 0.15s;
+        text-decoration: none;
+    }
+
+        .call-now-btn:hover,
+        .call-now-btn:active {
+            background: #e35c00;
+            transform: scale(1.06);
+        }
+
+        .call-now-btn svg {
+            display: block;
+        }
+    @@media (max-width: 600px) {
+        .call-now-btn
+
+    {
+        font-size: 16px;
+        padding: 11px 14px;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .call-now-btn span {
+        display: inline;
+    }
+
+    }
+
+    .scroll-to-top, .scroll-to-target {
+        bottom: 90px !important;
+        z-index: 9998;
+    }
+</style>
+<!-- TIKLA ARA BUTTONU BİTİŞ -->
 
 </html>
