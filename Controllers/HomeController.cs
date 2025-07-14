@@ -167,5 +167,25 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
                 return RedirectToAction("İletisim");
             }
         }
+        public IActionResult Sehirlerarasi_Nakliyat()
+        {
+            return View();
+        }
+        public IActionResult İzmir_Ankara_Nakliyat()
+        {
+            return View();
+        }
+        public IActionResult Bursa_Ankara_Nakliyat()
+        {
+            return View();
+        }
+        public IActionResult Eskisehir_Ankara_Nakliyat()
+        {
+            return View();
+        }
+        public IActionResult Antalya_Ankara_Nakliyat()
+        {
+            return View();
+        }
     }
 }
