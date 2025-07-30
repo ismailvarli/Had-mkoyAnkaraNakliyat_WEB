@@ -74,66 +74,62 @@ Banner One
 
 
 .banner-one__location {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    position: relative;
+    width: 100%;
     max-width: 1030px;
-    min-height: 470px;
+    aspect-ratio: 1030 / 470;
     margin: 0 auto;
+    background-image: url('/assets/images/banner/banner-v1-img5.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     z-index: 7;
 }
 
-.banner-one__location-single {}
+@media (max-width: 600px) {
+    .banner-one__location-single.style1 {
+        left: 25%;
+        top: 25%;
+    }
 
+    .banner-one__location-single.style2 {
+        left: 60%;
+        top: 35%;
+    }
 
-.banner-one__location-single.style1 {
-    position: absolute;
-    top: 115px;
-    left: 40px;
+    .banner-one__location-single.style3 {
+        left: 55%;
+        top: 65%;
+    }
+
+    .banner-one__location-single.style4 {
+        left: 40%;
+        top: 55%;
+    }
+
+    .banner-one__location-single.style5 {
+        left: 70%;
+        top: 75%;
+    }
+
+    .banner-one__location-single.style6 {
+        left: 20%;
+        top: 70%;
+    }
+
+    .banner-one__location-single.style7 {
+        left: 68%;
+        top: 15%;
+    }
+
+    .banner-one__location-single.style8 {
+        left: 80%;
+        top: 20%;
+    }
 }
 
-.banner-one__location-single.style2 {
-    position: absolute;
-    top: 60px;
-    left: 360px;
-}
 
-.banner-one__location-single.style3 {
-    position: absolute;
-    top: 150px;
-    left: 570px;
-}
 
-.banner-one__location-single.style4 {
-    position: absolute;
-    left: 315px;
-    bottom: 150px;
-}
-
-.banner-one__location-single.style5 {
-    position: absolute;
-    left: 545px;
-    bottom: 145px;
-}
-
-.banner-one__location-single.style6 {
-    position: absolute;
-    top: 160px;
-    right: 265px;
-}
-
-.banner-one__location-single.style7 {
-    position: absolute;
-    right: 240px;
-    bottom: 185px;
-}
-
-.banner-one__location-single.style8 {
-    position: absolute;
-    top: 115px;
-    right: 25px;
-}
 
 
 .banner-one__location-single .round-box {

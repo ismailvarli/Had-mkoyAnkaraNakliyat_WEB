@@ -13,7 +13,12 @@
 # Google Map
 # Client Carousel
 --------------------------------------------------------------*/
-
+@media (max-width: 600px) {
+    .banner-one__location-single .round-box {
+        width: 14px;
+        height: 14px;
+    }
+}
 /*--------------------------------------------------------------
 # Common
 --------------------------------------------------------------*/
@@ -1885,6 +1890,7 @@ animation: spinner 1s infinite linear;
   transition: transform 500ms ease 500ms, visibility 500ms ease 500ms, -webkit-transform 500ms ease 500ms;
   visibility: hidden;
 }
+
 
 .mobile-nav__wrapper .container {
   padding-left: 0;

@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
@@ -63,7 +64,14 @@
     <link rel="stylesheet" href="~/assets/css/12-owl.theme.default.min.css" />
     <link rel="stylesheet" href="~/assets/css/13-jquery-ui.css" />
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17375615814"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
+        gtag('config', 'AW-17375615814');
+    </script>
 </head>
 
 <body>
@@ -135,10 +143,10 @@
 
                                     <div class="main-header-one__top-right">
                                         <div class="header-social-links">
-                                            <a href="#"><span class="icon-facebook-f"></span></a>
+                                            <a href="https://www.facebook.com/hadimkoyankaranakliyat"><span class="icon-facebook-f"></span></a>
                                             <a href="https://x.com/hadimkoyankanak"><span class="icon-twitter1"></span></a>
                                             <a href="https://www.instagram.com/hadimkoyankaranakliyat/"><span class="icon-instagram"></span></a>
-                                            <a href="#"><span class="icon-linkedin"></span></a>
+                                            <a href="https://www.linkedin.com/in/had%C4%B1mk%C3%B6y-ankara-nakliyat-3b1208376/"><span class="icon-linkedin"></span></a>
                                         </div> 
                                     </div>
                                 </div>
@@ -220,6 +228,9 @@
                                                         <li>
                                                             <a href="/Home/İletisim">İletişim</a>
                                                         </li>
+                                                        <li>
+                                                            <a href="/Home/Nakliyat_Hizmet_Fiyati">Nakliyat Hizmet Fiyatı</a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -227,8 +238,8 @@
 
                                         <div class="main-header-one__bottom-right">
                                             <div class="main-header-one__bottom-right-btn">
-                                                <a href="/Home/İletisim">
-                                                    İletişim Merkezi
+                                                <a href="/Home/Fiyat_Al">
+                                                    Fiyat al
                                                     <i class="icon-right-arrow21"></i>
                                                 </a>
                                             </div>
@@ -299,7 +310,7 @@
                                     <ul class="footer-one__quick-links-list">
                                         <li><a href="/Home/Index"><span class="icon-right-arrow1"></span> Ana Sayfa</a></li>
                                         <li>
-                                            <a href="/Home/Hakkimizda"><span class="icon-right-arrow1"></span>  Hakkımızda</a>
+                                            <a href="/Home/Hakkımızda"><span class="icon-right-arrow1"></span>  Hakkımızda</a>
                                         </li>
                                         <li>
                                             <a href="/Home/Hizmetlerimiz"><span class="icon-right-arrow1"></span> Hizmetlerimiz</a>
@@ -309,6 +320,9 @@
                                                 <span class="icon-right-arrow1"></span> İletişim 
                                                 
                                             </a>
+                                        </li>
+                                        <li>
+                                            <a href="/Home/Fiyat_Al"><span class="icon-right-arrow1"></span>  Fiyat Al</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -395,7 +409,7 @@
                         <div class="footer-one__social-links">
                             <ul>
                                 <li>
-                                    <a href="#"><span class="icon-facebook-f"></span></a>
+                                    <a href="https://www.facebook.com/hadimkoyankaranakliyat"><span class="icon-facebook-f"></span></a>
                                 </li>
 
                                 <li>
@@ -406,7 +420,7 @@
                                     <a href="https://x.com/hadimkoyankanak"><span class="icon-twitter1"></span></a>
                                 </li>
                                 <li>
-                                    <a href="#"><span class="icon-linkedin"></span></a>
+                                    <a href="https://www.linkedin.com/in/had%C4%B1mk%C3%B6y-ankara-nakliyat-3b1208376/"><span class="icon-linkedin"></span></a>
                                 </li>
                             </ul>
                         </div>
@@ -449,7 +463,7 @@
                 <div class="mobile-nav__social">
                     <a href="https://x.com/hadimkoyankanak" class="fab fa-twitter"></a>
                     <a href="#" class="fab fa-facebook-square"></a>
-                    <a href="#" class="fab fa-pinterest-p"></a>
+                    <a href="https://www.linkedin.com/in/had%C4%B1mk%C3%B6y-ankara-nakliyat-3b1208376/"><span class="icon-linkedin"></span></a>
                     <a href="https://www.instagram.com/hadimkoyankaranakliyat/" class="fab fa-instagram"></a>
                 </div><!-- /.mobile-nav__social -->
             </div><!-- /.mobile-nav__top -->
@@ -518,7 +532,7 @@
     <!-- template js -->
     <script src="~/assets/js/script.js"></script>
 
-
+    @RenderSection("Scripts", required: false)
 </body>
 <!-- TIKLA ARA BUTTONU BAŞLANGIÇ -->
 <a href="tel:05325436837" class="call-now-btn" title="Hemen Ara">

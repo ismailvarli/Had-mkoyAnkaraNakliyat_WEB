@@ -1,5 +1,6 @@
 using HadımkoyAnkaraNakliyat_WEB.Models;
 using Microsoft.AspNetCore.Mvc;
+using MimeKit;
 using System.Net;
 using System.Net.Mail;
 
@@ -123,7 +124,46 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
         {
             return View();
         }
-
+        public IActionResult İkitelli_Ankara_Nakliyat()
+        {
+            return View();
+        }
+        public IActionResult Çatalca_Ankara_Nakliyat()
+        {
+            return View();
+        }
+        public IActionResult Beylikdüzü_Ankara_Nakliyat()
+        {
+            return View();
+        }
+        public IActionResult Zeytinburnu_Ankara_Nakliyat()
+        {
+            return View();
+        }
+        public IActionResult Bayrampaşa_Ankara_Nakliyat()
+        {
+            return View();
+        }
+        public IActionResult Ostim_İstanbul_Nakliyat()
+        {
+            return View();
+        }
+        public IActionResult Yenimahalle_İstanbul_Nakliyat()
+        {
+            return View();
+        }
+        public IActionResult Kazan_İstanbul_Nakliyat()
+        {
+            return View();
+        }
+        public IActionResult Sincan_İstanbul_Nakliyat()
+        {
+            return View();
+        }
+        public IActionResult Temelli_İstanbul_Nakliyat()
+        {
+            return View();
+        }
         [HttpGet]
         public IActionResult İletisim()
         {
@@ -171,21 +211,75 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
         {
             return View();
         }
-        public IActionResult İzmir_Ankara_Nakliyat()
+        public IActionResult İstanbul_İzmir_Nakliyat()
         {
             return View();
         }
-        public IActionResult Bursa_Ankara_Nakliyat()
+        public IActionResult İstanbul_Bursa_Nakliyat()
         {
             return View();
         }
-        public IActionResult Eskisehir_Ankara_Nakliyat()
+        public IActionResult İstanbul_Eskişehir_Nakliyat()
         {
             return View();
         }
-        public IActionResult Antalya_Ankara_Nakliyat()
+        public IActionResult İstanbul_Antalya_Nakliyat()
         {
             return View();
+        }
+        public IActionResult Nakliyat_Hizmet_Fiyati()
+        {
+            return View();
+        }
+        public IActionResult Fiyat_Al()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Fiyat_Al(TeklifFormModel model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            var email = new MimeMessage();
+            email.From.Add(MailboxAddress.Parse("hadimkoyankaranakliyat@gmail.com"));
+            email.To.Add(MailboxAddress.Parse("hadimkoyankaranakliyat@gmail.com"));
+            email.Subject = "Yeni Teklif Formu";
+
+            var bodyBuilder = new BodyBuilder
+            {
+                HtmlBody = $@"
+            <h2>Teklif Talebi</h2>
+            <p><strong>Ad Soyad:</strong> {model.AdSoyad}</p>
+            <p><strong>Email:</strong> {model.Email}</p>
+            <p><strong>Telefon:</strong> {model.Telefon}</p>
+            <p><strong>Tarih:</strong> {model.Tarih}</p>
+            <p><strong>Ağırlık:</strong> {model.Agirlik}</p>
+            <p><strong>Alınacak Şehir:</strong> {model.AlinanSehir}</p>
+            <p><strong>Taşınacak Şehir:</strong> {model.TasinanSehir}</p>"
+            };
+            email.Body = bodyBuilder.ToMessageBody();
+
+            try
+            {
+                using (var smtp = new MailKit.Net.Smtp.SmtpClient())
+                {
+                    await smtp.ConnectAsync("smtp.gmail.com", 587, MailKit.Security.SecureSocketOptions.StartTls);
+                    await smtp.AuthenticateAsync("hadimkoyankaranakliyat@gmail.com", "qxco wuch zvtl rbxe"); // Uygulama şifresi
+                    await smtp.SendAsync(email);
+                    await smtp.DisconnectAsync(true);
+                }
+                TempData["SuccessMessage"] = "Teklifiniz başarıyla iletildi! En kısa sürede sizinle iletişime geçeceğiz.";
+                return RedirectToAction("Fiyat_Al");
+            }
+            catch (Exception ex)
+            {
+                // İstersen ViewBag veya TempData ile hata mesajı dönebilirsin
+                TempData["ErrorMessage"] = "Bir hata oluştu. Lütfen tekrar deneyin veya bizimle iletişime geçin.";
+                // Hatanın detayını loglaman önerilir!
+                return View(model);
+            }
         }
     }
 }

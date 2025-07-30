@@ -1,0 +1,132 @@
+﻿@{
+    ViewData["Title"] = "Nakliyat Hizmet Fiyatı | Taşıma Fiyatları Neye Göre Belirlenir?";
+    ViewData["Description"] = "Nakliyat fiyatı nasıl belirlenir? Hadımköy Ankara Nakliyat’ta taşınma mesafesi, eşya miktarı, kat durumu, paketleme, sigorta ve ek hizmetlere göre nakliye fiyatlandırması. Hemen iletişim kurun, en uygun fiyatı alın!";
+}
+
+<section class="price-info-one">
+    <div class="container">
+        <div class="sec-title center text-center">
+            <h1 class="sec-title__title">Nakliyat Hizmet Fiyatı: Neye Göre Belirlenir?</h1>
+            <p class="sec-title__desc">
+                Nakliyat hizmetinde fiyatlar; <strong>mesafe</strong>, <strong>eşya miktarı</strong>, <strong>kat durumu</strong>, <strong>paketleme</strong> ve <strong>sigorta</strong> gibi birçok etkene göre belirlenir. Her taşınma farklıdır; bu yüzden sabit bir fiyat yoktur, size özel teklif için <a href="/Home/İletisim"><b>iletişime geçin</b></a> veya <a href="/Home/Fiyat_Al"><b>teklif formunu doldurun</b></a>.
+            </p>
+        </div>
+
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <img src="~/assets/images/gallery/Nakliyat_Hizmet_Fiyati.png" alt="Nakliyat Fiyatı Kriterleri" style="width:100%; max-width:480px; border-radius:12px; box-shadow:0 4px 24px rgba(0,0,0,0.09); margin-bottom:24px;">
+            </div>
+            <div class="col-lg-6">
+                <ul class="price-feature-list">
+                    <li><b>Mesafe:</b> Şehir içi/şehirler arası taşınacak adresin uzaklığı.</li>
+                    <li><b>Eşya Hacmi:</b> Eşyaların miktarı, ağırlığı ve kapladığı alan.</li>
+                    <li><b>Kat & Asansör:</b> Eşyaların taşınacağı kat ve asansör durumu.</li>
+                    <li><b>Paketleme:</b> Ambalajlama, montaj ve demontaj hizmetleri.</li>
+                    <li><b>Sigorta:</b> Eşya sigortası isteğe bağlı olup fiyatı etkiler.</li>
+                    <li><b>İşçilik:</b> Gerekli personel ve taşıma zorluk derecesi.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="table-responsive mt-5 mb-4">
+            <table class="table table-bordered table-striped price-table">
+                <thead style="background:#f5f5f5;">
+                    <tr>
+                        <th>Fiyat Faktörü</th>
+                        <th>Etkisi ve Açıklaması</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mesafe</td>
+                        <td>Uzak mesafeler, yakıt ve zaman maliyetini artırdığı için ücreti yükseltir. Özellikle şehirler arası nakliyatta mesafe en önemli kriterlerden biridir.</td>
+                    </tr>
+                    <tr>
+                        <td>Eşya Miktarı / Hacmi</td>
+                        <td>Eşya sayısı fazla ve hacmi büyük ise daha büyük araç ve fazla personel gerekir; bu da maliyeti artırır.</td>
+                    </tr>
+                    <tr>
+                        <td>Kat Sayısı & Asansör</td>
+                        <td>Yüksek katlar/asansörsüz binalar taşıma zorluğunu ve süresini artırır, fiyatı yükseltir.</td>
+                    </tr>
+                    <tr>
+                        <td>Paketleme Hizmeti</td>
+                        <td>Profesyonel paketleme ve montaj hizmetleri ekstra işçilik ve malzeme gerektirir; ek ücret olarak yansır.</td>
+                    </tr>
+                    <tr>
+                        <td>Sigorta</td>
+                        <td>İsteğe bağlı eşya sigortası, taşınma sırasında oluşabilecek hasarlara karşı güvence sunar; fiyatı bir miktar artırabilir.</td>
+                    </tr>
+                    <tr>
+                        <td>Personel Sayısı</td>
+                        <td>Taşıma için gereken eleman sayısı arttıkça, işçilik maliyeti de yükselir.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="callout-info text-center mb-4">
+            <strong>Dikkat:</strong> Nakliyat fiyatları; eşyalar, mesafe ve taşınma koşullarına göre değişkenlik gösterir. Size net fiyat verebilmemiz için, ücretsiz teklif formunu doldurun veya <a href="/Home/İletisim"><b>hemen iletişime geçin</b></a>.
+        </div>
+        <div class="text-center mt-3">
+            <a class="thm-btn" href="/Home/Fiyat_Al" style="font-size:20px;">
+                Ücretsiz Fiyat Teklifi Al <i class="icon-right-arrow21"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .price-info-one {
+        padding: 48px 0 36px;
+    }
+
+        .price-info-one .sec-title__title {
+            font-size: 2.1rem;
+            font-weight: bold;
+        }
+
+        .price-info-one .sec-title__desc {
+            font-size: 1.15rem;
+            color: #333;
+            margin-bottom: 32px;
+        }
+
+    .price-feature-list {
+        font-size: 1.1rem;
+        padding-left: 20px;
+    }
+
+        .price-feature-list li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+    .price-table th, .price-table td {
+        font-size: 1.07rem;
+    }
+
+    .callout-info {
+        background: #e5f8ea;
+        color: #2b805c;
+        border-radius: 7px;
+        padding: 16px;
+        font-size: 1.1rem;
+    }
+    @@media (max-width: 768px) {
+        .price-info-one
+
+    {
+        padding: 20px 0;
+    }
+
+    .sec-title__title {
+        font-size: 1.3rem !important;
+    }
+
+    .price-table th, .price-table td {
+        font-size: 0.97rem;
+    }
+
+    }
+</style>

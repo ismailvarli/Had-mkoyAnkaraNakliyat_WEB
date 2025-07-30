@@ -1,0 +1,181 @@
+﻿@model TeklifFormModel
+@{
+    ViewData["Title"] = "Hadımköy Ankara Nakliyat | Şehirlerarası Nakliyat Fiyatları | Evden Eve Nakliyat Fiyatları";
+    ViewData["Description"] = "Şehirlerarası ve Evden Eve Nakliyat hizmetlerinden yararlanmak istiyorsanız bizlerle iletişime geçip fiyat bilgisi alın, en uygun fiyati öğrenin ve derhal hizmet sunalım!";
+}
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="teklif-basarili-kutu">
+        <span class="basarili-ikon">&#10003;</span>
+        @TempData["SuccessMessage"]
+    </div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="teklif-hata-kutu">
+        <span class="hata-ikon">&#9888;</span>
+        @TempData["ErrorMessage"]
+    </div>
+}
+<style> 
+    .teklif-formu-container {
+        background: #fff;
+        padding: 32px 24px 24px 24px;
+        max-width: 440px;
+        margin: 38px auto;
+        border-radius: 15px;
+        box-shadow: 0 6px 32px rgba(0,0,0,0.10);
+        border-top: 6px solid #ff9100;
+    }
+
+        .teklif-formu-container h2 {
+            text-align: center;
+            color: #ff9100;
+            margin-bottom: 26px;
+            font-size: 1.45rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+    .form-group {
+        margin-bottom: 18px;
+    }
+
+        .form-group label {
+            display: block;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #b15a00;
+        }
+
+    .form-control {
+        width: 100%;
+        padding: 10px 9px;
+        border: 1.5px solid #ffe0b2;
+        border-radius: 7px;
+        background: #fffaf4;
+        font-size: 1rem;
+        transition: border-color 0.2s;
+        outline: none;
+    }
+
+        .form-control:focus {
+            border-color: #ff9100;
+            background: #fff3e0;
+        }
+
+    .validation {
+        color: #c62828;
+        font-size: 0.97rem;
+        margin-top: 4px;
+        display: block;
+    }
+
+    .form-btn {
+        width: 100%;
+        background: linear-gradient(90deg,#ff9100 60%, #ffb300 100%);
+        color: #fff;
+        padding: 13px 0;
+        border: none;
+        border-radius: 7px;
+        font-size: 1.07rem;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(255,145,0,0.10);
+        letter-spacing: 1px;
+        transition: background 0.19s;
+    }
+
+        .form-btn:hover {
+            background: linear-gradient(90deg,#ffb300 0%,#ff9100 100%);
+        }
+    @@media (max-width: 500px) {
+        .teklif-formu-container
+
+    {
+        padding: 15px 3px;
+    }
+
+    }
+
+    .teklif-basarili-kutu {
+        background: linear-gradient(90deg, #ff9100 60%, #ffb300 100%);
+        color: #fff;
+        padding: 18px 20px;
+        border-radius: 9px;
+        margin-bottom: 18px;
+        font-size: 1.07rem;
+        font-weight: 600;
+        box-shadow: 0 4px 20px rgba(255,145,0,0.13);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        animation: fadeInBox 0.9s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .basarili-ikon {
+        font-size: 1.65rem;
+        font-weight: 900;
+    }
+    @@keyframes fadeInBox {
+        0%
+
+    {
+        opacity: 0;
+        transform: translateY(-18px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    }
+</style>
+<div class="teklif-formu-container">
+    <div class="contact-page__top-pattern"
+         style="background-image: url(/assets/images/pattern/contact-page-top-pattern.png);"></div>
+    
+    <h2>Anında Teklif Al</h2>
+    <form asp-action="Fiyat_Al" method="post">
+        <div class="form-group">
+            <label for="AdSoyad">Ad Soyad</label>
+            <input asp-for="AdSoyad" class="form-control" />
+            <span asp-validation-for="AdSoyad" class="validation"></span>
+        </div>
+        <div class="form-group">
+            <label for="Email">E-posta</label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="validation"></span>
+        </div>
+        <div class="form-group">
+            <label for="Telefon">Telefon</label>
+            <input asp-for="Telefon" class="form-control" />
+            <span asp-validation-for="Telefon" class="validation"></span>
+        </div>
+        <div class="form-group">
+            <label for="Tarih">Taşıma Tarihi</label>
+            <input asp-for="Tarih" class="form-control" type="date" />
+        </div>
+        <div class="form-group">
+            <label for="Agirlik">Tahmini Eşya Ağırlığı (isteğe bağlı)</label>
+            <input asp-for="Agirlik" class="form-control" placeholder="Örn: 1+1 Ev, 500 kg vb." />
+        </div>
+        <div class="form-group">
+            <label for="AlinanSehir">Yükleme Adresi</label>
+            <input asp-for="AlinanSehir" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="TasinanSehir">Teslimat Adresi</label>
+            <input asp-for="TasinanSehir" class="form-control" />
+        </div>
+        <button type="submit" class="form-btn">Teklif Al</button>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
