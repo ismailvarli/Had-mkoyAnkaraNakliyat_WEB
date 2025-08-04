@@ -164,6 +164,34 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
         {
             return View();
         }
+        public IActionResult Hizmet_Türleri()
+        {
+            return View();
+        }
+        public IActionResult Sehirlerarasi_Nakliyat()
+        {
+            return View();
+        }
+        public IActionResult Evden_Eve_Nakliyat()
+        {
+            return View();
+        }
+        public IActionResult Ambar_Nakliyat()
+        {
+            return View();
+        }
+        public IActionResult Ofis_Tasimaciligi()
+        {
+            return View();
+        }
+        public IActionResult Fuar_Tasimaciligi()
+        {
+            return View();
+        }
+        public IActionResult Parsiyel_Nakliyat()
+        {
+            return View();
+        }
         [HttpGet]
         public IActionResult İletisim()
         {
@@ -207,7 +235,7 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
                 return RedirectToAction("İletisim");
             }
         }
-        public IActionResult Sehirlerarasi_Nakliyat()
+        public IActionResult Sehirlerarasi_Hizmetlerimiz()
         {
             return View();
         }
