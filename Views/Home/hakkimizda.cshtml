@@ -1,0 +1,298 @@
+﻿
+@model HadımkoyAnkaraNakliyat_WEB.Models.TeklifFormModel
+@{
+    ViewData["Title"] = "Hakkımızda | Hadımköy Ankara Nakliyat";
+    ViewData["Description"] = "Yılların deneyimi, modern araç filosu ve güler yüzlü ekiple; İstanbul Ankara taşımacılığında sektör liderliğimizin sırrı kalite, şeffaflık ve müşteri odaklılık!";
+}
+@await Html.PartialAsync("_StatusMessage")
+<style>
+    .animated-alert {
+        padding: 15px 20px;
+        margin: 20px 0 30px 0;
+        border-radius: 8px;
+        font-weight: 500;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        opacity: 0;
+        animation: fadeInSlide 0.6s ease-out forwards;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+        border: 1.5px solid #e1e4e8;
+    }
+
+        .animated-alert.success {
+            background: #e7ffe9;
+            color: #106a1d;
+            border-color: #7ee195;
+        }
+
+        .animated-alert.error {
+            background: #fff3f1;
+            color: #a32517;
+            border-color: #f7c0b5;
+        }
+
+        .animated-alert .icon {
+            font-size: 22px;
+            margin-right: 6px;
+        }
+
+    @@keyframes fadeInSlide {
+        from
+
+    {
+        opacity: 0;
+        transform: translateY(-16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    }
+
+    .ranger-min-max-block {
+        display: flex;
+        align-items: center;
+        gap: 16px; /* Aradaki boşluk (dilersen artırabilirsin) */
+        margin-top: 10px; /* Kutunun üstüne de biraz boşluk bırakır */
+    }
+
+        .ranger-min-max-block input[type="text"].min,
+        .ranger-min-max-block input[type="text"].max {
+            width: 60px; /* Daha geniş kutular */
+            padding: 5px 8px;
+            font-size: 15px;
+            border-radius: 6px;
+            border: 1px solid #e1e4e8;
+            text-align: center;
+        }
+
+        .ranger-min-max-block span {
+            font-size: 18px;
+            margin: 0 8px;
+            color: #333;
+        }
+
+    input[type="hidden"] {
+        display: none !important;
+    }
+
+    .ranger-min-max-block {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-top: 10px;
+    }
+
+        .ranger-min-max-block input[type="text"].min,
+        .ranger-min-max-block input[type="text"].max {
+            width: 60px;
+            padding: 5px 8px;
+            font-size: 15px;
+            border-radius: 6px;
+            border: 1px solid #e1e4e8;
+            text-align: center;
+            background: #fff;
+        }
+
+        .ranger-min-max-block span {
+            font-size: 18px;
+            margin: 0 8px;
+            color: #333;
+        }
+
+</style>
+
+<!--Start Page Header-->
+<section class="page-header">
+    <div class="page-header__bg" style="background-image: url(/assets/images/gallery/hadimkoy_hakkimizda.png)">
+    </div>
+   
+    <div class="container">
+        <div class="page-header__inner">
+            <h1 style="color: white; font-weight: bold;">hakkimizda</h1>
+            <ul class="thm-breadcrumb">
+                <li><a href="/Home/Index">Ana Sayfa</a></li>
+                <li><span class="icon-right-arrow21"></span></li>
+                <li>hakkimizda</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--End Page Header-->
+<!--Start About One-->
+<section class="about-one">
+    <div class="container">
+        <div class="row">
+            <!--Start About One Content-->
+            <div class="col-xl-7">
+                <div class="about-one__content">
+                    <div class="sec-title tg-heading-subheading animation-style2">
+                        <div class="sec-title__tagline">
+                            <div class="line"></div>
+                            <div class="text tg-element-title">
+                                <h4><strong>Hadımköy Ankara Nakliyat</strong></h4>
+                            </div>
+                            <div class="icon">
+                                <span class="icon-plane2 float-bob-x3"></span>
+                            </div>
+                        </div>
+                        <h2 class="sec-title__title tg-element-title">
+                            Bizleri Arayın <br>
+                            <span>
+                                7/24 Hizmet
+                                Verelim
+                            </span>
+                        </h2>
+                    </div>
+
+                    <div class="about-one__content-text1">
+                        <p>
+                            <strong>Güvenilir <strong> ve </strong>Uzman Taşımacılık</strong>
+                            Hadımköy Ankara Nakliyat,şehirlerarası nakliyat sektöründe güvenilirliği ve uzmanlığı ile öne çıkan bir firmadır. Uzun yıllara dayanan tecrübemiz ve eğitimli kadromuz sayesinde müşterilerimize <strong>profesyonel ve sorunsuz taşımacılık</strong> çözümleri sunmaktayız. Güvenilir hizmet anlayışımız kapsamında eşyalarınızı sigortalı şekilde taşıyor, her adımda müşteri memnuniyetini ön planda tutuyoruz. Zamanında teslimat ilkemiz ve <strong>titiz çalışma</strong> prensibimizle taşınma sürecini sizin için stressiz hale getiriyoruz. Kuruluşumuzdan bu yana dürüstlük ve kalite prensiplerimizden ödün vermeden çalışarak sektörde öncü bir konum elde etmiş bulunmaktayız.
+                        </p>
+                        <p>
+                            <b>Kapsamlı Hizmet Yelpazesi</b> Kapsamlı Hizmet Yelpazesi
+                            Hadımköy Ankara Nakliyat olarak müşterilerimize geniş kapsamlı nakliye hizmetleri sunuyoruz.
+                        </p>
+
+                        <p> <b>Evden Eve Nakliyat:</b> Eşyalarınızı eski evinizden yenisine güvenle ve özenle taşıyoruz.
+                       </p>
+                        <p><b>Ofis Taşımacılığı:</b> Kurumsal taşınma ihtiyaçlarınızda planlı ve hızlı ofis taşıma desteği veriyoruz.
+                            </p>
+                        <p>
+                            <b>Fuar Taşımacılığı:</b> Fuar ve etkinlik malzemelerinizi zamanında, eksiksiz ve güvenli bir biçimde taşırız.
+                        </p>
+                        <p>
+                            <b>Ambar Nakliyat:</b> Parça yük ve ambar taşımacılığında ekonomik, hızlı ve güvenli çözümler sağlıyoruz.Türkiye'nin pek çok noktasında aktifiz. Özellikle İstanbul,İzmir, Bursa, Eskişehir, Antalya ve Kocaeli illerinden Ankara'ya şehirlerarası nakliyat hizmeti sunarak geniş bir ulaşım ağı oluşturduk. Modern araç filomuz, teknolojik ekipmanlarımız ve 7/24 müşteri desteğimiz ile her aşamada yanınızdayız. Profesyonel hizmet anlayışımız ve müşteri odaklı yaklaşımımızla Hadımköy Ankara Nakliyat, taşımacılıkta güvenin adresidir. <strong>Kaliteli hizmet</strong> standartlarımız ile eşyalarınızı zamanında ve eksiksiz teslim etmeyi taahhüt ediyoruz.
+                        </p>
+                        
+                    </div>
+
+                    <div class="about-one__content-text2">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                <div class="about-one__content-text2-single">
+                                    <div class="about-one__content-text2-single-top">
+                                        <div class="icon">
+                                            <span class="icon-worldwide-shipping-1"></span>
+                                        </div>
+
+                                        <div class="title-box">
+                                            <h3>Şehirlerarası Hizmet</h3>
+                                        </div>
+                                    </div>
+
+                                    <p>Türkiyenin 81 iline tizit ve profesyonel hizmetlerle.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                <div class="about-one__content-text2-single">
+                                    <div class="about-one__content-text2-single-top">
+                                        <div class="icon">
+                                            <span class="icon-24-hours-service"></span>
+                                        </div>
+
+                                        <div class="title-box">
+                                            <h3>7/24 Online Destek</h3>
+                                        </div>
+                                    </div>
+
+                                    <p>Firmamız müşterilerine daima 7/24 ve her an ulaşılabilir hizmet vermekte.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-one__content-bottom">
+                        <div class="btn-box">
+                            <a class="thm-btn" href="/Home/iletisim">
+                                Bizlere Ulaşın
+                                <i class="icon-right-arrow21"></i>
+                                <span class="hover-btn hover-bx"></span>
+                                <span class="hover-btn hover-bx2"></span>
+                                <span class="hover-btn hover-bx3"></span>
+                                <span class="hover-btn hover-bx4"></span>
+                            </a>
+                        </div>
+
+                        <div class="contact-box">
+                            <div class="icon">
+                                <span class="icon-phone2"></span>
+                            </div>
+
+                            <div class="text-box">
+                                <p>Bizleri Arayın</p>
+                                <h4><a href="tel:05325436837">+0532 543 68 37 </a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End About One Content-->
+            <!--Start About One Img-->
+            <div class="col-xl-5">
+                <div class="about-one__img">
+                    <div class="shape1 float-bob-y">
+                        <img src="~/assets/images/shapes/about-v1-shape1.png" alt="Hadımköy Ankara Nakliyat hakkimizda">
+                    </div>
+                    <div class="shape2 float-bob-y">
+                        <img src="~/assets/images/shapes/about-v1-shape2.png" alt="Şehirlerarası Nakliyat fiyatları">
+                    </div>
+                    <div class="about-one__img1 reveal">
+                        <img src="~/assets/images/gallery/nakliyat_360x400.png" alt="İstanbul Ankara Nakliyat Fiyatları">
+                    </div>
+
+                    <div class="about-one__img2">
+                        <div class="about-one__img2-inner reveal">
+                            <img src="~/assets/images/gallery/hadimkoy_ankara_nakliyat_koli_260x330.png" alt="Hadımköy Ankara Nakliyat Şehirlerası Taşımacılık Fiyatları">
+                        </div>
+
+                        <div class="about-one__circle-text">
+                            <div class="about-one__round-text-box">
+                                <div class="inner">
+                                    <div class="about-one__curved-circle rotate-me">
+                                        2014 Yılından Bu Yana Dek Hizmetinizdeyiz
+                                    </div>
+                                </div>
+                                <div class="overlay-icon-box">
+                                    <a href="#"><i class="icon-location1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shape3 float-bob-y">
+                            <img src="~/assets/images/shapes/about-v1-shape3.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End About One Img-->
+        </div>
+    </div>
+</section>
+<!--End About One-->
+<script>
+    $(function() {
+        // SLIDER’I BAŞLAT
+        $("#slider-range").slider({
+            range: true,
+            min: 0,
+            max: 1000,
+            values: [100, 500],
+            slide: function(event, ui) {
+                // Burada formda hidden input’a ve min-max kutularına değer atıyoruz
+                $("#agirlikDegeri").val(ui.values[0] + "-" + ui.values[1]);
+                $(".min").val(ui.values[0]);
+                $(".max").val(ui.values[1]);
+            }
+        });
+        // Sayfa açıldığında default değerleri ata
+        $(".min").val($("#slider-range").slider("values", 0));
+        $(".max").val($("#slider-range").slider("values", 1));
+        $("#agirlikDegeri").val($("#slider-range").slider("values", 0) + "-" + $("#slider-range").slider("values", 1));
+    });
+</script>

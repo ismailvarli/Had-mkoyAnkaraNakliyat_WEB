@@ -1,7 +1,7 @@
 ﻿@model TeklifFormModel
 @{
-    ViewData["Title"] = "Hadımköy Ankara Nakliyat | Şehirlerarası Nakliyat Fiyatları | Evden Eve Nakliyat Fiyatları";
-    ViewData["Description"] = "Şehirlerarası ve Evden Eve Nakliyat hizmetlerinden yararlanmak istiyorsanız bizlerle iletişime geçip fiyat bilgisi alın, en uygun fiyati öğrenin ve derhal hizmet sunalım!";
+    ViewData["Title"] = "Nakliyat Fiyatı Al | Hadımköy Ankara Nakliyat | 0532 543 68 37";
+    ViewData["Description"] = " İstanbul-Ankara arası taşımacılık fiyatınızı hemen öğrenin! Anında teklif formunu doldurun, en uygun ve şeffaf fiyatla profesyonel nakliye ayrıcalığını yaşayın.";
 }
 @if (TempData["SuccessMessage"] != null)
 {
@@ -138,7 +138,7 @@
          style="background-image: url(/assets/images/pattern/contact-page-top-pattern.png);"></div>
     
     <h2>Anında Teklif Al</h2>
-    <form asp-action="Fiyat_Al" method="post">
+    <form asp-action="fiyat_al" method="post">
         <div class="form-group">
             <label for="AdSoyad">Ad Soyad</label>
             <input asp-for="AdSoyad" class="form-control" />

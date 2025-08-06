@@ -20,18 +20,18 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
             return View();
         }
         [HttpGet]   
-        public IActionResult Hakkımızda()
+        public IActionResult hakkimizda()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult Hakkımızda(TeklifFormModel model)
+        public IActionResult hakkimizda(TeklifFormModel model)
         {
             if (!ModelState.IsValid)
             {
                 TempData["ErrorMessage"] = "Form verileri geçersiz.";
-                return RedirectToAction("Hakkımızda");
+                return RedirectToAction("hakkimizda");
             }
             try
             {
@@ -50,7 +50,7 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
                 var mail = new MailMessage
                 {
                     From = new MailAddress(smtp["UserName"]),
-                    Subject = "[Hakkımızda Teklif] Yeni Talep",
+                    Subject = "[hakkimizda Teklif] Yeni Talep",
                     Body = body,
                     IsBodyHtml = true
                 };
@@ -66,140 +66,140 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
                 smtpClient.Send(mail);
 
                 TempData["SuccessMessage"] = "Teklif talebiniz başarıyla gönderildi.";
-                return RedirectToAction("Hakkımızda");
+                return RedirectToAction("hakkimizda");
             }
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = "Hata: " + ex.Message;
-                return RedirectToAction("Hakkımızda");
+                return RedirectToAction("hakkimizda");
             }
         }
 
-        public IActionResult Hizmetlerimiz()
+        public IActionResult hizmetlerimiz()
         {
             return View();
         }
 
-        public IActionResult Hadimköy_Ankara_Nakliyat()
+        public IActionResult hadimkoy_ankara_nakliyat()
         {
             return View();
         }
 
-        public IActionResult İstanbul_Ankara_Nakliyat()
+        public IActionResult istanbul_ankara_nakliyat()
         {
             return View();
         }
 
-        public IActionResult İstanbul_Ankara_Kamyonet_Nakliyat()
+        public IActionResult istanbul_ankara_kamyonet_nakliyat()
         {
             return View();
         }
 
-        public IActionResult İstanbul_Ankara_Ambar_Nakliyat()
+        public IActionResult istanbul_ankara_ambar_nakliyat()
         {
             return View();
         }
 
-        public IActionResult İstanbul_Ankara_Parsiyel_Nakliyat()
+        public IActionResult istanbul_ankara_parsiyel_nakliyat()
         {
             return View();
         }
 
-        public IActionResult İstanbul_Ankara_Şehirlerarasi_Nakliyat()
+        public IActionResult istanbul_ankara_sehirlerarasi_nakliyat()
         {
             return View();
         }
 
-        public IActionResult İstanbul_Ankara_Evden_Eve_Nakliyat()
+        public IActionResult istanbul_ankara_evden_eve_nakliyat()
         {
             return View();
         }
 
-        public IActionResult İstanbul_Ankara_Ceyiz_Nakliyat()
+        public IActionResult istanbul_ankara_ceyiz_nakliyat()
         {
             return View();
         }
 
-        public IActionResult İstanbul_Ankara_Fuar_Nakliyat()
+        public IActionResult istanbul_ankara_fuar_nakliyat()
         {
             return View();
         }
-        public IActionResult İkitelli_Ankara_Nakliyat()
+        public IActionResult ikitelli_ankara_nakliyat()
         {
             return View();
         }
-        public IActionResult Çatalca_Ankara_Nakliyat()
+        public IActionResult catalca_ankara_nakliyat()
         {
             return View();
         }
-        public IActionResult Beylikdüzü_Ankara_Nakliyat()
+        public IActionResult beylikduzu_ankara_nakliyat()
         {
             return View();
         }
-        public IActionResult Zeytinburnu_Ankara_Nakliyat()
+        public IActionResult zeytinburnu_ankara_nakliyat()
         {
             return View();
         }
-        public IActionResult Bayrampaşa_Ankara_Nakliyat()
+        public IActionResult bayrampasa_ankara_nakliyat()
         {
             return View();
         }
-        public IActionResult Ostim_İstanbul_Nakliyat()
+        public IActionResult ostim_İstanbul_nakliyat()
         {
             return View();
         }
-        public IActionResult Yenimahalle_İstanbul_Nakliyat()
+        public IActionResult yenimahalle_İstanbul_nakliyat()
         {
             return View();
         }
-        public IActionResult Kazan_İstanbul_Nakliyat()
+        public IActionResult kazan_istanbul_nakliyat()
         {
             return View();
         }
-        public IActionResult Sincan_İstanbul_Nakliyat()
+        public IActionResult sincan_istanbul_nakliyat()
         {
             return View();
         }
-        public IActionResult Temelli_İstanbul_Nakliyat()
+        public IActionResult temelli_istanbul_nakliyat()
         {
             return View();
         }
-        public IActionResult Hizmet_Türleri()
+        public IActionResult hizmet_turleri()
         {
             return View();
         }
-        public IActionResult Sehirlerarasi_Nakliyat()
+        public IActionResult sehirlerarasi_nakliyat()
         {
             return View();
         }
-        public IActionResult Evden_Eve_Nakliyat()
+        public IActionResult evden_eve_nakliyat()
         {
             return View();
         }
-        public IActionResult Ambar_Nakliyat()
+        public IActionResult ambar_nakliyat()
         {
             return View();
         }
-        public IActionResult Ofis_Tasimaciligi()
+        public IActionResult ofis_tasimaciligi()
         {
             return View();
         }
-        public IActionResult Fuar_Tasimaciligi()
+        public IActionResult fuar_tasimaciligi()
         {
             return View();
         }
-        public IActionResult Parsiyel_Nakliyat()
+        public IActionResult parsiyel_nakliyat()
         {
             return View();
         }
         [HttpGet]
-        public IActionResult İletisim()
+        public IActionResult iletisim()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult İletisim(ContactFormModel model)
+        public IActionResult iletisim(ContactFormModel model)
         {
             if (!ModelState.IsValid)
                 return Content("Form verileri geçersiz.");
@@ -227,45 +227,45 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
                 smtpClient.Send(mail);
 
                 TempData["SuccessMessage"] = "Mesajınız başarıyla gönderildi.";
-                return RedirectToAction("İletisim");
+                return RedirectToAction("iletisim");
             }
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = "Hata: " + ex.Message;
-                return RedirectToAction("İletisim");
+                return RedirectToAction("iletisim");
             }
         }
-        public IActionResult Sehirlerarasi_Hizmetlerimiz()
+        public IActionResult sehirlerarasi_hizmetlerimiz()
         {
             return View();
         }
-        public IActionResult İstanbul_İzmir_Nakliyat()
+        public IActionResult istanbul_izmir_nakliyat()
         {
             return View();
         }
-        public IActionResult İstanbul_Bursa_Nakliyat()
+        public IActionResult istanbul_bursa_nakliyat()
         {
             return View();
         }
-        public IActionResult İstanbul_Eskişehir_Nakliyat()
+        public IActionResult istanbul_eskisehir_nakliyat()
         {
             return View();
         }
-        public IActionResult İstanbul_Antalya_Nakliyat()
+        public IActionResult istanbul_antalya_nakliyat()
         {
             return View();
         }
-        public IActionResult Nakliyat_Hizmet_Fiyati()
+        public IActionResult nakliyat_hizmet_fiyati()
         {
             return View();
         }
-        public IActionResult Fiyat_Al()
+        public IActionResult fiyat_al()
         {
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Fiyat_Al(TeklifFormModel model)
+        public async Task<IActionResult> fiyat_al(TeklifFormModel model)
         {
             if (!ModelState.IsValid)
                 return View(model);
@@ -299,7 +299,7 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
                     await smtp.DisconnectAsync(true);
                 }
                 TempData["SuccessMessage"] = "Teklifiniz başarıyla iletildi! En kısa sürede sizinle iletişime geçeceğiz.";
-                return RedirectToAction("Fiyat_Al");
+                return RedirectToAction("fiyat_al");
             }
             catch (Exception ex)
             {
