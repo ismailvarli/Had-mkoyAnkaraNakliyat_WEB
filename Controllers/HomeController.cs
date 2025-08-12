@@ -144,11 +144,11 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
         {
             return View();
         }
-        public IActionResult ostim_İstanbul_nakliyat()
+        public IActionResult ostim_istanbul_nakliyat()
         {
             return View();
         }
-        public IActionResult yenimahalle_İstanbul_nakliyat()
+        public IActionResult yenimahalle_istanbul_nakliyat()
         {
             return View();
         }
