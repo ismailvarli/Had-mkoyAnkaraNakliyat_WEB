@@ -1,0 +1,311 @@
+﻿@{
+    ViewData["Title"] = "Blog | Hadımköy Ankara Nakliyat";
+    Layout = "_Layout";
+}
+
+<style>
+    /* Grid */
+    .page-wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 24px;
+        display: grid;
+        gap: 24px;
+        grid-template-columns: 280px 1fr
+    }
+
+    @@media (max-width:992px) {
+        .page-wrap {
+            grid-template-columns: 1fr
+        }
+    }
+
+    /* Sidebar */
+    .side {
+        background: #0f172a;
+        border-radius: 14px;
+        padding: 18px
+    }
+
+        .side h3 {
+            color: #fff;
+            font-size: 18px;
+            margin: 0 0 12px;
+            font-weight: 800
+        }
+
+    .svc-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px
+    }
+
+    .svc-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #172036;
+        color: #e2e8f0;
+        padding: 10px 12px;
+        border-radius: 10px;
+        text-decoration: none;
+        border: 1px solid #23314f
+    }
+
+        .svc-item:hover {
+            background: #1f2a44
+        }
+
+        .svc-item .arrow {
+            background: #f97316;
+            color: #fff;
+            border-radius: 8px;
+            padding: 4px 8px;
+            font-weight: 700
+        }
+
+    /* Search */
+    .search {
+        margin-top: 16px;
+        display: flex;
+        gap: 8px
+    }
+
+        .search input {
+            flex: 1;
+            padding: 10px 12px;
+            border-radius: 10px;
+            border: 1px solid #d1d5db
+        }
+
+        .search button {
+            padding: 10px 14px;
+            border: none;
+            border-radius: 10px;
+            background: #f97316;
+            color: #fff;
+            font-weight: 700
+        }
+
+    /* Blog list */
+    .content h1 {
+        font-size: 28px;
+        margin: 0 0 12px;
+        font-weight: 900;
+        color: #0f172a
+    }
+
+    .blog-grid {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: repeat(12,1fr)
+    }
+
+    .blog-card {
+        grid-column: span 6;
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        border-radius: 14px;
+        overflow: hidden;
+        display: flex;
+        gap: 0;
+        flex-direction: column
+    }
+
+    @@media (max-width:768px) {
+        .blog-card {
+            grid-column: span 12
+        }
+    }
+
+    .blog-thumb {
+        aspect-ratio: 16/9;
+        background: #f3f4f6;
+        object-fit: cover;
+        width: 100%
+    }
+
+    .blog-body {
+        padding: 14px
+    }
+
+    .blog-meta {
+        font-size: 12px;
+        color: #64748b;
+        margin-bottom: 6px
+    }
+
+    .blog-title {
+        font-size: 18px;
+        font-weight: 800;
+        color: #0f172a;
+        margin: 0 0 6px
+    }
+
+    .blog-excerpt {
+        color: #334155;
+        margin: 0 0 10px
+    }
+
+    .blog-actions {
+        display: flex;
+        gap: 10px
+    }
+
+    .btn {
+        padding: 10px 12px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700
+    }
+
+    .btn-primary {
+        background: #f97316;
+        color: #fff
+    }
+
+    .btn-ghost {
+        border: 2px solid #f97316;
+        color: #f97316
+    }
+
+    /* Pagination */
+    .pager {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        margin-top: 18px
+    }
+
+        .pager a {
+            padding: 8px 12px;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+            text-decoration: none;
+            color: #111827
+        }
+
+            .pager a.active {
+                background: #0f172a;
+                color: #fff;
+                border-color: #0f172a
+            }
+</style>
+
+<div class="page-wrap">
+    <!-- SOL SİDEBAR -->
+    <aside class="side">
+        <h3>Hizmetlerimiz</h3>
+        <nav class="svc-list">
+            <a class="svc-item" href="/Home/istanbul_izmir_nakliyat"><span>İstanbul İzmir Nakliyat</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/istanbul_bursa_nakliyat"><span>İstanbul Bursa Nakliyat</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/istanbul_eskisehir_nakliyat"><span>İstanbul Eskişehir Nakliyat</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/istanbul_antalya_nakliyat"><span>İstanbul Antalya Nakliyat</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/istanbul_ankara_nakliyat"><span>İstanbul Ankara Nakliyat</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/sehirlerarasi_nakliyat"><span>Şehirlerarası Nakliyat</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/evden_eve_nakliyat"><span>Evden Eve Nakliyat</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/parsiyel_nakliyat"><span>Parsiyel Taşımacılık</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/ambar_nakliyat"><span>Ambar Nakliyat</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/ofis_tasimaciligi"><span>Ofis Taşımacılığı</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/fuar_tasimaciligi"><span>Fuar Taşımacılığı</span><span class="arrow">→</span></a>
+        </nav>
+    </aside>
+
+    <!-- İÇERİK -->
+    <main class="content">
+        <h1>Blog</h1>
+        <p class="blog-meta">Nakliyat, şehirlerarası taşıma, parsiyel, sigortalı ve asansörlü taşımaya dair pratik rehberler.</p>
+
+        <section id="blogGrid" class="blog-grid">
+            <!-- 1 -->
+            <article class="blog-card" data-title="istanbul ankara nakliyat fiyatları 2025 güncel rehber fiyat">
+                <img src="~/assets/images/gallery/blog-gorsel.png"                   
+                     style="width: 100%; height: auto; object-fit: cover;" alt="İstanbul Ankara nakliyat fiyatları 2025">
+                <div class="blog-body">
+                    <div class="blog-meta">Şehirlerarası • 2025 Rehberi</div>
+                    <h2 class="blog-title">İstanbul Ankara Nakliyat Fiyatları 2025 – Güncel Rehber</h2>
+                    <p class="blog-excerpt">Eşya hacmi, kat, asansör ve sigorta gibi etkenlerle 2025 maliyetlerini tek tabloda özetledik. Tasarruf ipuçları ve güvenli firma seçimi burada.</p>
+                    <div class="blog-actions">
+                        <a class="btn btn-primary" href="/Home/istanbul_ankara_nakliyat_fiyatlari_2025_guncel_rehber">Oku</a>
+                        <a class="btn btn-ghost" href="/Home/fiyat_al">Teklif Al</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 2 -->
+            <article class="blog-card" data-title="parsiyel nakliyat nedir istanbul ankara arasında avantajları parça yük">
+                <img src="~/assets/images/gallery/blog-gorsel.png"
+                     style="width: 100%; height: auto; object-fit: cover;" alt="Parsiyel nakliyat nedir ve avantajları">
+                <div class="blog-body">
+                    <div class="blog-meta">Parsiyel • Rehber</div>
+                    <h2 class="blog-title">Parsiyel Nakliyat Nedir? İstanbul Ankara Arasında Avantajları</h2>
+                    <p class="blog-excerpt">Parça yükler için maliyeti düşüren paylaşmalı taşıma modeli; fiyat hesaplama, uygun eşya türleri ve teslimat planlamasını net anlatıyoruz.</p>
+                    <div class="blog-actions">
+                        <a class="btn btn-primary" href="/Home/parsiyel_nakliyat_nedir_istanbul_ankara_arasinda__avantajlari">Oku</a>
+                        <a class="btn btn-ghost" href="/Home/fiyat_al">Teklif Al</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 3 -->
+            <article class="blog-card" data-title="evden eve nakliyat öncesi hazırlık rehberi paketleme etiketleme">
+                <img src="~/assets/images/gallery/blog-gorsel.png"
+                     style="width: 100%; height: auto; object-fit: cover;" alt="Evden eve nakliyat öncesi hazırlık rehberi">
+                <div class="blog-body">
+                    <div class="blog-meta">Evden Eve • Check-list</div>
+                    <h2 class="blog-title">Evden Eve Nakliyat Öncesi Hazırlık Rehberi</h2>
+                    <p class="blog-excerpt">Paketleme planı, oda oda etiketleme, kırılacakların korunması ve taşıma günü zaman çizelgesi—stresi azaltan pratik plan.</p>
+                    <div class="blog-actions">
+                        <a class="btn btn-primary" href="/Home/evden_eve_nakliyat_oncesi_hazirlik_rehberi">Oku</a>
+                        <a class="btn btn-ghost" href="/Home/fiyat_al">Teklif Al</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 4 -->
+            <article class="blog-card" data-title="asansörlü nakliyat istanbul ankara avantajları hızlı güvenli yüksek kat">
+                <img src="~/assets/images/gallery/blog-gorsel.png"
+                     style="width: 100%; height: auto; object-fit: cover;" alt="Asansörlü nakliyatın sağladığı kolaylıklar">
+                <div class="blog-body">
+                    <div class="blog-meta">Teknoloji • Verim</div>
+                    <h2 class="blog-title">Asansörlü Nakliyatın İstanbul–Ankara Taşımalarında Kolaylıkları</h2>
+                    <p class="blog-excerpt">Yükleme/boşaltma hızında %30–50 kısalma, dar merdiven risklerinin azalması ve maliyet dengesini anlatan teknik rehber.</p>
+                    <div class="blog-actions">
+                        <a class="btn btn-primary" href="/Home/asansorlu_nakliyatin_istanbul_ankara_tasimalarinda_sagladigi_kolayliklar">Oku</a>
+                        <a class="btn btn-ghost" href="/Home/fiyat_al">Teklif Al</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 5 -->
+            <article class="blog-card" data-title="sigortalı nakliyat eşya güvenliği all risk poliçe">
+                <img src="~/assets/images/gallery/blog-gorsel.png"
+                     style="width: 100%; height: auto; object-fit: cover;" alt="Sigortalı nakliyat ile eşyalarınızı güvence altına alın">
+                <div class="blog-body">
+                    <div class="blog-meta">Güvenlik • Poliçe</div>
+                    <h2 class="blog-title">Sigortalı Nakliyat – Eşyalarınızı Güvence Altına Alın</h2>
+                    <p class="blog-excerpt">Poliçe türleri, kapsam/istisnalar, hasar süreci ve maliyet etkisi. Değer beyanı, muafiyet ve all-risk paketleri özetledik.</p>
+                    <div class="blog-actions">
+                        <a class="btn btn-primary" href="/Home/sigortali_nakliyat_esyalarinizi_guvence_altina_alin">Oku</a>
+                        <a class="btn btn-ghost" href="/Home/fiyat_al">Teklif Al</a>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+    </main>
+</div>
+
+<script>
+    function filterCards(){
+        const q = (document.getElementById('q')?.value || '').toLowerCase().trim();
+        const cards = document.querySelectorAll('#blogGrid .blog-card');
+        cards.forEach(c=>{
+            const t = (c.getAttribute('data-title')||'').toLowerCase();
+            c.style.display = (!q || t.includes(q)) ? '' : 'none';
+        });
+    }
+    document.getElementById('q')?.addEventListener('keydown', function(e){
+        if(e.key === 'Enter') filterCards();
+    });
+</script>

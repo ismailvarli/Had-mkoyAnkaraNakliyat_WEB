@@ -1,0 +1,386 @@
+﻿@{
+    ViewData["Title"] = "İstanbul Ankara Nakliyat Fiyatları 2025 – Güncel Rehber";
+    ViewData["Description"] = "2025 İstanbul–Ankara nakliyat fiyatları: Ortalama aralıklar, maliyet kalemleri, tasarruf yöntemleri, senaryo örnekleri ve güvenilir firma seçimi. Net, şeffaf rehber.";
+}
+
+<style>
+    /* Layout grid (sidebar + content) */
+    .page-wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 24px;
+        display: grid;
+        gap: 24px;
+        grid-template-columns: 280px 1fr
+    }
+
+    @@media (max-width:992px) {
+        .page-wrap {
+            grid-template-columns: 1fr
+        }
+    }
+
+    /* Sidebar */
+    .side {
+        background: #0f172a;
+        border-radius: 14px;
+        padding: 18px
+    }
+
+        .side h3 {
+            color: #fff;
+            font-size: 18px;
+            margin: 0 0 12px;
+            font-weight: 800
+        }
+
+    .svc-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px
+    }
+
+    .svc-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #172036;
+        color: #e2e8f0;
+        padding: 10px 12px;
+        border-radius: 10px;
+        text-decoration: none;
+        border: 1px solid #23314f
+    }
+
+        .svc-item:hover {
+            background: #1f2a44
+        }
+
+        .svc-item .arrow {
+            background: #f97316;
+            color: #fff;
+            border-radius: 8px;
+            padding: 4px 8px;
+            font-weight: 700
+        }
+
+    .search {
+        margin-top: 16px;
+        display: flex;
+        gap: 8px
+    }
+
+        .search input {
+            flex: 1;
+            padding: 10px 12px;
+            border-radius: 10px;
+            border: 1px solid #d1d5db
+        }
+
+        .search button {
+            padding: 10px 14px;
+            border: none;
+            border-radius: 10px;
+            background: #f97316;
+            color: #fff;
+            font-weight: 700
+        }
+
+    /* Content */
+    .content h1 {
+        font-size: 32px;
+        font-weight: 900;
+        margin: 0 0 12px;
+        color: #0f172a
+    }
+
+    .blog-meta {
+        font-size: 14px;
+        color: #64748b;
+        margin-bottom: 16px
+    }
+
+    .blog-thumb {
+        border-radius: 14px;
+        overflow: hidden;
+        margin-bottom: 20px
+    }
+
+        .blog-thumb img {
+            width: 100%;
+            height: auto;
+            object-fit: cover
+        }
+
+    .blog-text p {
+        margin-bottom: 16px;
+        color: #334155;
+        line-height: 1.75
+    }
+
+    .blog-text h2 {
+        margin: 20px 0 10px;
+        color: #0f172a;
+        font-size: 22px
+    }
+
+    .blog-text h3 {
+        margin: 16px 0 8px;
+        color: #0f172a;
+        font-size: 18px
+    }
+
+    .blog-text ul {
+        margin: 0 0 16px 18px
+    }
+
+    .blog-text li {
+        margin-bottom: 8px
+    }
+
+    .note {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 12px 14px;
+        color: #334155;
+        margin: 12px 0 18px
+    }
+
+    .warn {
+        background: #fff7ed;
+        border-color: #fed7aa
+    }
+
+    .table-wrap {
+        overflow: auto;
+        margin: 10px 0 18px
+    }
+
+    .tbl {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 15px
+    }
+
+        .tbl th, .tbl td {
+            border: 1px solid #e2e8f0;
+            padding: 10px 12px;
+            text-align: left
+        }
+
+        .tbl th {
+            background: #f1f5f9;
+            color: #0f172a;
+            white-space: nowrap
+        }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 12px
+    }
+
+    @@media (max-width:992px) {
+        .cards {
+            grid-template-columns: 1fr
+        }
+    }
+
+    .card {
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 14px;
+        background: #fff
+    }
+
+        .card h4 {
+            margin: 0 0 8px;
+            font-size: 16px;
+            color: #0f172a
+        }
+
+        .card p {
+            margin: 0;
+            color: #334155
+        }
+
+    .cta-box {
+        background: #f97316;
+        color: #fff;
+        padding: 18px;
+        border-radius: 12px;
+        margin-top: 28px;
+        text-align: center
+    }
+
+        .cta-box a {
+            display: inline-block;
+            padding: 10px 18px;
+            background: #fff;
+            color: #f97316;
+            font-weight: 700;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 10px
+        }
+
+    .faq .q {
+        font-weight: 800;
+        color: #0f172a;
+        margin-bottom: 6px
+    }
+
+    .faq .a {
+        margin-bottom: 14px
+    }
+</style>
+
+<div class="page-wrap">
+    <!-- SOL SİDEBAR -->
+    <aside class="side">
+        <h3>Blog Yazılarımız</h3>
+        <nav class="svc-list">
+            <a class="svc-item" href="/Home/istanbul_ankara_nakliyat_fiyatlari_2025_guncel_rehber"><span>İstanbul Ankara Nakliyat Fiyatları 2025 – Güncel Rehber</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/parsiyel_nakliyat_nedir_istanbul_ankara_arasinda__avantajlari"><span>Parsiyel Nakliyat Nedir? Avantajları</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/evden_eve_nakliyat_oncesi_hazirlik_rehberi"><span>Evden Eve Nakliyat Öncesi Hazırlık Rehberi</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/asansorlu_nakliyatin_istanbul_ankara_tasimalarinda_sagladigi_kolayliklar"><span>Asansörlü Nakliyatın Sağladığı Kolaylıklar</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/sigortali_nakliyat_esyalarinizi_guvence_altina_alin"><span>Sigortalı Nakliyat – Eşyalarınızı Güvence Altına Alın</span><span class="arrow">→</span></a>
+        </nav>
+    </aside>
+
+    <!-- SAĞ İÇERİK -->
+    <main class="content">
+        <h1>İstanbul Ankara Nakliyat Fiyatları 2025 – Güncel Rehber</h1>
+        <div class="blog-meta">📅 2025 • 🚚 Şehirlerarası Taşımacılık • 🔎 Şeffaf Fiyatlandırma</div>
+
+        <div class="blog-thumb">
+            <img src="~/assets/images/gallery/İstanbul Ankara Nakliyat Fiyatları 2025 – Güncel Rehber.png"
+                 width="1200" height="675" loading="lazy"
+                 alt="İstanbul Ankara nakliyat fiyatları 2025 güncel rehber">
+        </div>
+
+        <div class="blog-text">
+            <p>
+                Türkiye’nin en yoğun şehirlerarası hattı olan <strong>İstanbul–Ankara</strong> güzergâhında her gün yüzlerce ev taşıma, parsiyel (parça yük) ve ticari sevkiyat gerçekleşiyor.
+                2025 yılında akaryakıt, otoyol ücretleri, işçilik maliyetleri ve paketleme kalitesi fiyatlar üzerinde belirleyici. Bu rehberde <strong>ortalama fiyat aralıklarını</strong>, gerçek hayat <strong>senaryolarını</strong>, <strong>tasarruf yöntemlerini</strong> ve <strong>güvenilir firma</strong> seçerken dikkat edilmesi gerekenleri tek sayfada topladık.
+            </p>
+
+            <h2>Fiyatları Etkileyen Başlıca Faktörler</h2>
+            <ul>
+                <li><strong>Mesafe ve güzergâh:</strong> 450–500 km; otoyol/köprü geçişleri toplam bedele eklenir.</li>
+                <li><strong>Eşya hacmi (m³) ve ağırlık:</strong> Kapasiteyi belirler, araç boyutunu ve ekip sayısını etkiler.</li>
+                <li><strong>Kat ve erişim durumu:</strong> Asansör var/yok, site kuralları, yürüme mesafesi.</li>
+                <li><strong>Paketleme seviyesi:</strong> Profesyonel ambalaj hasarı azaltır; maliyete yansır.</li>
+                <li><strong>Sigorta kapsamı:</strong> Emtea/All-Risk teminatlar ek maliyet getirir ama riski düşürür.</li>
+                <li><strong>Sezon ve gün seçimi:</strong> Ay başı/sonu, hafta sonu ve yaz sezonu daha yoğun ve pahalıdır.</li>
+            </ul>
+
+            <h2>2025 Ortalama Fiyat Aralıkları (İstanbul → Ankara)</h2>
+            <div class="table-wrap">
+                <table class="tbl">
+                    <thead>
+                        <tr><th>Hizmet</th><th>Ortalama Aralık (TL)</th><th>Not</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1+1 Ev Taşıma</td><td><strong>12.000 – 15.000</strong></td><td>Temel paket, standart erişim</td></tr>
+                        <tr><td>2+1 Ev Taşıma</td><td><strong>15.000 – 18.000</strong></td><td>Orta hacim; kat/asansör etkiler</td></tr>
+                        <tr><td>3+1 Ev Taşıma</td><td><strong>18.000 – 23.000</strong></td><td>Geniş hacim; ek ekip/araç</td></tr>
+                        <tr><td>Parsiyel (Parça Yük)</td><td><strong>3.000 – 6.000</strong></td><td>m³ ve kg birlikteliğine göre</td></tr>
+                        <tr><td>Asansör Kurulumu</td><td><strong>2.500 – 4.500</strong></td><td>Kat yüksekliği ve cepheye göre</td></tr>
+                        <tr><td>Profesyonel Paketleme</td><td><strong>2.000 – 6.000</strong></td><td>Seçilen malzeme kapsamına bağlı</td></tr>
+                        <tr><td>Sigortalı Taşıma (Emtea/All-Risk)</td><td><strong>Değer beyanına bağlı</strong></td><td>Toplam bedelin küçük yüzdesi</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="note warn"><strong>Not:</strong> Yoğun dönem, yüksek kat/merdiven, uzak yürüme mesafesi, hassas/özel paketleme ve geniş sigorta teminatı fiyatı yukarı çekebilir.</div>
+
+            <h2>Gerçek Hayat Senaryoları</h2>
+            <div class="cards">
+                <div class="card">
+                    <h4>🎒 Öğrenci/1 Oda Eşya (Parsiyel)</h4>
+                    <p>6–8 koli + küçük beyaz eşya. Düzenli parsiyel seferle <strong>3.000–5.000 TL</strong>. Koli ölçülerini standart tutmak fiyat/istif verimini artırır.</p>
+                </div>
+                <div class="card">
+                    <h4>🏠 2+1 Ev – Asansör Var</h4>
+                    <p>Ortalama hacim; profesyonel paket + sigorta ile <strong>15.000–18.000 TL</strong>. Asansör işlemi yoksa süre kısalır, maliyet dengelenir.</p>
+                </div>
+                <div class="card">
+                    <h4>🏢 Ofis/Workstation Taşıma</h4>
+                    <p>Elektronik ve arşiv ağırlıklı. Anti-statik, numaralı etiketleme ve hızlı kurulumla <strong>özel keşif</strong> sonrası net teklif verilir.</p>
+                </div>
+            </div>
+
+            <h2>Maliyet Kırılımı – Tipik Bir 2+1 Örneği</h2>
+            <div class="table-wrap">
+                <table class="tbl">
+                    <thead><tr><th>Kalem</th><th>Oransal Pay</th><th>Açıklama</th></tr></thead>
+                    <tbody>
+                        <tr><td>İşçilik & Ekip</td><td>~%35</td><td>Paketleme, sökme-takma, taşıma</td></tr>
+                        <tr><td>Yakıt & Otoyol</td><td>~%20</td><td>Mesafe + geçiş ücretleri</td></tr>
+                        <tr><td>Araç & Lojistik</td><td>~%20</td><td>Bakım, amortisman, planlama</td></tr>
+                        <tr><td>Paketleme Malzemesi</td><td>~%15</td><td>Balonlu, kutu, streç, köşe koruma</td></tr>
+                        <tr><td>Sigorta</td><td>~%5–10</td><td>Değer beyanına bağlı</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Tasarruf Etmenin 7 Yolu</h2>
+            <ul>
+                <li><strong>Yoğun dönem dışı</strong> günleri seçin (hafta içi, ay ortası, kış ayları).</li>
+                <li><strong>Parsiyel</strong> seçeneğini değerlendirin; aynı hatta küçük hacimde idealdir.</li>
+                <li><strong>Demontaj</strong> yaparak m³’ü küçültün; istiflenebilirlik fiyatı düşürür.</li>
+                <li><strong>Koli standardı</strong> kullanın (benzer ölçü); hız ve güvenlik artar.</li>
+                <li>Fotoğraflı <strong>envanter listesi</strong> hazırlayın; keşif ve fiyat netleşir.</li>
+                <li><strong>Asansörlü nakliyat</strong> mümkünse süreyi kısaltır, hasar riskini azaltır.</li>
+                <li>En az <strong>3 teklif</strong> alın; kapsam/teminat ve “ekstra masraf var mı?” detayını karşılaştırın.</li>
+            </ul>
+
+            <h2>Güvenilir Firma Nasıl Seçilir?</h2>
+            <ul>
+                <li><strong>Yetki belgesi (K3)</strong> ve sigorta poliçesi açıkça paylaşılmalı.</li>
+                <li><strong>Yazılı sözleşme</strong>: Saat, kapsam, ödeme, sigorta ve iade koşulları net olmalı.</li>
+                <li><strong>Şeffaf referans</strong> ve gerçek görseller; tutarlı iletişim.</li>
+                <li><strong>Kontratlı fiyat</strong> ve <em>ekstra masraf yok</em> ilkesi.</li>
+            </ul>
+            <p>Hadımköy Ankara Nakliyat’ta <strong>şeffaf fiyat</strong>, <strong>sigortalı taşıma</strong> ve <strong>zamanında teslim</strong> prensipleri ile çalışıyoruz. Ön keşif ve net teklif sonrasında sürpriz çıkarmıyoruz.</p>
+
+            <h2>2025’te Teknoloji ve Şeffaflık</h2>
+            <ul>
+                <li><strong>GPS takip</strong> ile araç konumu anlık gözlemlenebilir.</li>
+                <li><strong>Dijital evrak akışı</strong> (sözleşme, foto rapor) süreçleri hızlandırır.</li>
+                <li><strong>Online teklif & rezervasyon</strong> iletişimi kolaylaştırır; teslimat sürelerini netleştirir.</li>
+            </ul>
+
+            <h2>Kontrol Listesi – Taşınmadan 5 Gün Önce</h2>
+            <ul>
+                <li>Hacim ve envanter net → <strong>fotoğraflı liste</strong> hazır.</li>
+                <li><strong>Koli etiketleri</strong> (oda + içerik) yapıştırıldı.</li>
+                <li>Kırılganlar <strong>çift kat</strong> balonlu ve bölmeli kutuda.</li>
+                <li>Asansör/cephe uygunluğu ve site kuralları kontrol edildi.</li>
+                <li><strong>Sigorta</strong> için değer beyanı paylaşıldı.</li>
+            </ul>
+
+            <h2>Mini SSS</h2>
+            <div class="faq">
+                <div class="q">Fiyatlar neden firmadan firmaya değişiyor?</div>
+                <div class="a">Paketleme seviyesi, araç tipi, ekip sayısı, sigorta kapsamı ve yoğunluk politikaları farklı olabilir. Kapsamı eşitleyerek teklif kıyaslayın.</div>
+
+                <div class="q">Parsiyel mi komple araç mı daha uygun?</div>
+                <div class="a">Küçük hacimlerde parsiyel daha ekonomiktir. Büyük ve tek adrese gidecek yüklerde komple araç daha hızlı/avantajlı olabilir.</div>
+
+                <div class="q">Asansör şart mı?</div>
+                <div class="a">Yüksek kat ve dar merdivenlerde asansör hem süreyi kısaltır hem hasar riskini azaltır. Uygunluk ön keşifte netleşir.</div>
+
+                <div class="q">Sigorta gerçekten gerekli mi?</div>
+                <div class="a">Eşyaların toplam değeri yüksekse ve kırılgan/elektronik ürünler varsa <strong>Emtea/All-Risk</strong> tavsiye edilir. Değer beyanı doğru yapılmalıdır.</div>
+            </div>
+
+            <div class="cta-box">
+                <h3>İstanbul–Ankara İçin Net Fiyat İsteyin</h3>
+                <p>Hacim (m³), kat/asansör, paketleme ve sigorta tercihinize göre <strong>şeffaf ve yazılı teklif</strong> gönderelim. Ücretsiz keşif!</p>
+                <a href="/Home/fiyat_al">Hemen Teklif Al</a>
+            </div>
+        </div>
+    </main>
+</div>

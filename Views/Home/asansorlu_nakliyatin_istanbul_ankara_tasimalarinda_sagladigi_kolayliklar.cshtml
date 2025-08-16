@@ -1,0 +1,383 @@
+﻿@{
+    ViewData["Title"] = "Asansörlü Nakliyatın İstanbul–Ankara Taşımalarında Sağladığı Kolaylıklar";
+    ViewData["Description"] = "Asansörlü nakliyat ile yüksek katlara hızlı ve güvenli eşya taşıma. İstanbul–Ankara hattında kurulum şartları, maliyet, avantajlar, kontrol listesi ve SSS.";
+}
+
+<style>
+    .page-wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 24px;
+        display: grid;
+        gap: 24px;
+        grid-template-columns: 280px 1fr
+    }
+
+    @@media (max-width:992px) {
+        .page-wrap {
+            grid-template-columns: 1fr
+        }
+    }
+
+    /* Sidebar */
+    .side {
+        background: #0f172a;
+        border-radius: 14px;
+        padding: 18px
+    }
+
+        .side h3 {
+            color: #fff;
+            font-size: 18px;
+            margin: 0 0 12px;
+            font-weight: 800
+        }
+
+    .svc-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px
+    }
+
+    .svc-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #172036;
+        color: #e2e8f0;
+        padding: 10px 12px;
+        border-radius: 10px;
+        text-decoration: none;
+        border: 1px solid #23314f
+    }
+
+        .svc-item:hover {
+            background: #1f2a44
+        }
+
+        .svc-item .arrow {
+            background: #f97316;
+            color: #fff;
+            border-radius: 8px;
+            padding: 4px 8px;
+            font-weight: 700
+        }
+
+    /* Content */
+    .content h1 {
+        font-size: 32px;
+        font-weight: 900;
+        margin: 0 0 12px;
+        color: #0f172a
+    }
+
+    .blog-meta {
+        font-size: 14px;
+        color: #64748b;
+        margin-bottom: 16px
+    }
+
+    .blog-thumb {
+        border-radius: 14px;
+        overflow: hidden;
+        margin-bottom: 20px
+    }
+
+        .blog-thumb img {
+            width: 100%;
+            height: auto;
+            object-fit: cover
+        }
+
+    .blog-text p {
+        margin-bottom: 16px;
+        color: #334155;
+        line-height: 1.75
+    }
+
+    .blog-text h2 {
+        margin: 22px 0 10px;
+        color: #0f172a;
+        font-size: 22px
+    }
+
+    .blog-text h3 {
+        margin: 18px 0 8px;
+        color: #0f172a;
+        font-size: 18px
+    }
+
+    .blog-text ul {
+        margin: 0 0 16px 18px
+    }
+
+    .blog-text li {
+        margin-bottom: 8px
+    }
+
+    .note {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 12px 14px;
+        color: #334155;
+        margin: 12px 0 18px
+    }
+
+    .warn {
+        background: #fff7ed;
+        border-color: #fed7aa
+    }
+
+    .table-wrap {
+        overflow: auto;
+        margin: 10px 0 18px
+    }
+
+    .tbl {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 15px
+    }
+
+        .tbl th, .tbl td {
+            border: 1px solid #e2e8f0;
+            padding: 10px 12px;
+            text-align: left
+        }
+
+        .tbl th {
+            background: #f1f5f9;
+            color: #0f172a;
+            white-space: nowrap
+        }
+
+    .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 12px
+    }
+
+    @@media (max-width:992px) {
+        .grid-3 {
+            grid-template-columns: 1fr
+        }
+    }
+
+    .card {
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 14px;
+        background: #fff
+    }
+
+        .card h4 {
+            margin: 0 0 8px;
+            font-size: 16px;
+            color: #0f172a
+        }
+
+        .card p {
+            margin: 0;
+            color: #334155
+        }
+
+    .checklist {
+        columns: 2;
+        column-gap: 24px
+    }
+
+    @@media (max-width:992px) {
+        .checklist {
+            columns: 1
+        }
+    }
+
+    .checklist li {
+        break-inside: avoid;
+        margin-bottom: 10px
+    }
+
+    .cta-box {
+        background: #f97316;
+        color: #fff;
+        padding: 18px;
+        border-radius: 12px;
+        margin-top: 28px;
+        text-align: center
+    }
+
+        .cta-box a {
+            display: inline-block;
+            padding: 10px 18px;
+            background: #fff;
+            color: #f97316;
+            font-weight: 700;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 10px
+        }
+</style>
+
+<div class="page-wrap">
+    <!-- SOL SİDEBAR -->
+    <aside class="side">
+        <h3>Blog Yazılarımız</h3>
+        <nav class="svc-list">
+            <a class="svc-item" href="/Home/istanbul_ankara_nakliyat_fiyatlari_2025_guncel_rehber"><span>İstanbul–Ankara Nakliyat Fiyatları 2025</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/parsiyel_nakliyat_nedir_istanbul_ankara_arasinda__avantajlari"><span>Parsiyel Nakliyat – Avantajlar</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/evden_eve_nakliyat_oncesi_hazirlik_rehberi"><span>Evden Eve Hazırlık Rehberi</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/asansorlu_nakliyatin_istanbul_ankara_tasimalarinda_sagladigi_kolayliklar"><span>Asansörlü Nakliyat – Kolaylıklar</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/sigortali_nakliyat_esyalarinizi_guvence_altina_alin"><span>Sigortalı Nakliyat</span><span class="arrow">→</span></a>
+        </nav>
+    </aside>
+
+    <!-- İÇERİK -->
+    <main class="content">
+        <h1>Asansörlü Nakliyatın İstanbul–Ankara Taşımalarında Sağladığı Kolaylıklar</h1>
+        <div class="blog-meta">⚙️ Teknoloji • ⏱ Verimlilik • 🛡 Güvenlik</div>
+
+        <div class="blog-thumb">
+            <img src="/assets/images/gallery/Asansörlü Nakliyatın Sağladığı Kolaylıklar.png"
+                 width="1200" height="675" loading="lazy"
+                 alt="Asansörlü nakliyat ile yüksek kata hızlı ve güvenli taşıma">
+        </div>
+
+        <div class="blog-text">
+            <p>
+                <strong>Asansörlü nakliyat</strong>, yüksek katlı binalarda eşyaların <strong>hızlı</strong>, <strong>emniyetli</strong> ve <strong>düzenli</strong> biçimde taşınmasını sağlayan modern bir çözümdür.
+                İstanbul–Ankara hattında dar merdiven boşlukları, site kuralları ve yoğun trafik baskısı düşünüldüğünde; mobil dış cephe platformu kullanımı yalnızca operasyon süresini kısaltmakla kalmaz,
+                aynı zamanda çizik/kırık gibi hasar risklerini belirgin ölçüde düşürür. Doğru kurulum, uygun cephe seçimi ve profesyonel ekip ile bu yöntem <em>hem bireysel hem kurumsal</em> taşınmalarda net avantaj sağlar.
+            </p>
+
+            <h2>Asansörlü Sistem Nasıl Çalışır?</h2>
+            <p>
+                Araç üzerindeki <strong>hidrolik kaldırma sistemi</strong> ile platform, bina cephesine konumlanır. Eşyalar kapı–merdiven yerine <strong>balkon/pencereden</strong> platforma alınır,
+                sonra kontrollü biçimde aşağı indirilerek araca yerleştirilir. Ters akışta (boşaltmada) aynı prensip uygulanır. Böylece <strong>merdiven trafiği</strong> ortadan kalkar, bina içi sürtünme/çarpma ihtimali düşer.
+            </p>
+
+            <div class="table-wrap">
+                <table class="tbl">
+                    <thead><tr><th>Aşama</th><th>Uygulama</th><th>Kazanç</th></tr></thead>
+                    <tbody>
+                        <tr><td>Konumlandırma</td><td>Uygun park, düz zemin, cephe–açı testi</td><td>Hızlı kurulum, güvenli açı</td></tr>
+                        <tr><td>Yükleme</td><td>Platform → araç istifi, ağır eşyalar önce</td><td>%30–50 süre kısalması</td></tr>
+                        <tr><td>Boşaltma</td><td>Araç → platform → balkon/pencere</td><td>Çizik/kırık riskinin azalması</td></tr>
+                        <tr><td>Sökme</td><td>Platform kapatma, alanı eski haline getirme</td><td>Site kurallarına tam uyum</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Başlıca Avantajlar</h2>
+            <ul>
+                <li><strong>Hız:</strong> Kat başına tur sayısı düşer; operasyon süresi klasik yönteme göre <strong>%30–50</strong> kısalır.</li>
+                <li><strong>Güvenlik:</strong> Büyük dolaplar, beyaz eşyalar, camlı parçalar merdivenlerden zarar görmeden iner/çıkar.</li>
+                <li><strong>Düzen:</strong> Apartman içi sirkülasyon azalır, komşu şikayetleri ve site içi yoğunluk kontrol altına alınır.</li>
+                <li><strong>Maliyet/Verim:</strong> Kısa sürede tamamlanan iş, ek mesai ve bekleme maliyetlerini dengeler.</li>
+            </ul>
+
+            <h2>Kurulum Öncesi Uygunluk Kontrol Listesi</h2>
+            <ul class="checklist">
+                <li><strong>Park alanı:</strong> Aracın cepheye yaklaşabileceği genişlik ve düz zemin</li>
+                <li><strong>Çalışma açısı:</strong> Platformun uzanacağı balkon/pencere yüksekliği ve açıklığı</li>
+                <li><strong>Engeller:</strong> Ağaç, tabela, kablo, sundurma vb. etkenler</li>
+                <li><strong>Site/Belediye Kuralları:</strong> Zaman penceresi, gürültü sınırları, izinler</li>
+                <li><strong>Hava durumu:</strong> Şiddetli rüzgar/yağışta alternatif plan</li>
+                <li><strong>Komşu bilgilendirmesi:</strong> Güvenli alan şeritleri ve yönlendirme</li>
+            </ul>
+
+            <h2>Maliyet Etkisi Nasıl Hesaplanır?</h2>
+            <p>
+                Asansör bedeli tipik olarak toplam taşınma tutarının <strong>%10–20</strong>’si aralığındadır. Nihai fiyat; <em>kat yüksekliği</em>, <em>kurulum süresi</em>, <em>eşya yoğunluğu</em> ve <em>cephe mesafesi</em> gibi
+                parametrelere göre değişir. Aşağıdaki örnek tablo, tipik bir İstanbul–Ankara taşınmasında asansörlü/klasik yöntemi karşılaştırır:
+            </p>
+
+            <div class="table-wrap">
+                <table class="tbl">
+                    <thead><tr><th>Kalem</th><th>Klasik Yöntem</th><th>Asansörlü</th><th>Not</th></tr></thead>
+                    <tbody>
+                        <tr><td>Operasyon Süresi</td><td>6–8 saat</td><td>3.5–5 saat</td><td>%30–50 kısalma</td></tr>
+                        <tr><td>Hasar Riski</td><td>Orta</td><td>Düşük</td><td>Merdiven darbesi yok</td></tr>
+                        <tr><td>Apartman Trafiği</td><td>Yüksek</td><td>Düşük</td><td>Komşu şikayetinde azalma</td></tr>
+                        <tr><td>Ek Maliyet</td><td>–</td><td>%10–20</td><td>Zaman/hasar tasarrufu ile dengelenir</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="note"><strong>İpucu:</strong> Asansör kurulumu sayesinde ekip daha az tur yapar; bu da hem yorulmayı hem de hata payını azaltır.</div>
+
+            <h2>Güvenlik ve İzinler</h2>
+            <p>
+                Güvenli bir kurulum için alan şeritlenir, trafik–yaya akışı yönlendirilir ve platformun altına giriş engellenir. Site kurallarındaki saat sınırları ve belediye düzenlemeleri
+                (gürültü/park/alan kullanımı) önceden teyit edilmelidir. <strong>Hadımköy Ankara Nakliyat</strong> ekibi, gerekli bilgilendirmeleri üstlenerek süreci mevzuata uygun yürütür.
+            </p>
+
+            <h2>Hangi Durumlarda Asansör Şart?</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h4>Dar Merdiven – Büyük Eşya</h4>
+                    <p>Geniş dolap, buzdolabı, köşe koltuk gibi parçalar merdivenden dönmüyorsa.</p>
+                </div>
+                <div class="card">
+                    <h4>Yüksek Kat – Yoğun Site</h4>
+                    <p>Asansörsüz/yoğun apartmanlarda süreyi kısaltmak ve düzeni sağlamak için.</p>
+                </div>
+                <div class="card">
+                    <h4>Camlı/Parlak Yüzeyler</h4>
+                    <p>Çizik/kırık riski yüksek eşyaları bina içinden indirmemek gerektiğinde.</p>
+                </div>
+            </div>
+
+            <h2>Teknik Mini Rehber</h2>
+            <ul>
+                <li><strong>Platform Kapasitesi:</strong> Çoğu mobil sistem 250–400 kg/seyir aralığındadır.</li>
+                <li><strong>Maks. Uzanım:</strong> Cephe mesafesine bağlı; 8.–10. kat bandı yaygındır.</li>
+                <li><strong>Rüzgâr Limiti:</strong> Şiddetli rüzgârda çalışma durdurulur; alternatif plan devreye girer.</li>
+                <li><strong>Zemin:</strong> Düz ve kaymaz yüzey tercih edilir; gerekirse takoz/denge kullanılır.</li>
+            </ul>
+
+            <h2>Kurulum – Adım Adım</h2>
+            <ol>
+                <li><strong>Keşif:</strong> Cephe, park, çevresel engellerin analizi ve izin planı.</li>
+                <li><strong>Konumlandırma:</strong> Araç–platform hizalaması, açı ve mesafe doğrulaması.</li>
+                <li><strong>Güvenlik Seti:</strong> Şerit, uyarı levhası, yönlendirme noktaları.</li>
+                <li><strong>Yükleme/İstif:</strong> Ağır eşyalar önce; kırılganlar işaretli ve üstte.</li>
+                <li><strong>Boşaltma & Toplama:</strong> Oda planına göre yerleşim; alanı eski haline döndürme.</li>
+            </ol>
+
+            <h2>Asansörlü Nakliyat – SSS</h2>
+            <p>
+                <strong>Her binada kurulabilir mi?</strong><br>
+                Park alanı, düz zemin ve cephe açıklığı varsa genellikle evet. Ağaç, tabela, kablo gibi engeller keşifte değerlendirilir.
+            </p>
+            <p>
+                <strong>Maliyet neden %10–20 aralığında?</strong><br>
+                Kat yüksekliği, kurulum süresi ve eşya yoğunluğu çalışma zamanını belirler. Daha kısa operasyon ve düşük hasar riski toplam maliyeti dengeler.
+            </p>
+            <p>
+                <strong>Hava kötü olursa ne olur?</strong><br>
+                Şiddetli rüzgâr/yağışta iş güvenliği gereği durdurulur; alternatif saat veya klasik yöntem planı devreye alınır.
+            </p>
+            <p>
+                <strong>Siteyle kim iletişim kuracak?</strong><br>
+                Zaman penceresi, park izni ve bilgilendirme tarafımızca koordine edilir; yönetim onayı sürece dahil edilir.
+            </p>
+
+            <h2>Hadımköy Ankara Nakliyat ile Fark</h2>
+            <ul>
+                <li><strong>Uzman Ekip & Modern Ekipman:</strong> Hidrolik platform, köşe koruyucular, profesyonel paketleme.</li>
+                <li><strong>Sigortalı Taşıma:</strong> Emtea/All-Risk seçenekleri; poliçe detayları sözleşmede nettir.</li>
+                <li><strong>Şeffaf Fiyat & Yazılı Sözleşme:</strong> Sürpriz masraf yok; kapsam ve zaman planı baştan belirlenir.</li>
+                <li><strong>İstanbul–Ankara Hat Uzmanlığı:</strong> Yoğun sitelerde kurallara uyum, komşu memnuniyeti ve hız.</li>
+            </ul>
+
+            <div class="note warn"><strong>Uyarı:</strong> Platform altına geçişe izin vermeyin, alan şeritlerini kaldırmayın. Güvenlik talimatları operasyon boyunca korunmalıdır.</div>
+
+            <div class="cta-box">
+                <h3>Asansörlü Taşımada Hızlı Teklif Alın</h3>
+                <p>Uygun cephe analizi, güvenli kurulum ve sigortalı taşıma ile stres yaşamadan taşının.</p>
+                <a href="/Home/fiyat_al">Teklif Al</a>
+            </div>
+        </div>
+    </main>
+</div>

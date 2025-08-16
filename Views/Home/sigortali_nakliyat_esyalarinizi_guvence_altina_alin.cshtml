@@ -1,0 +1,356 @@
+﻿@{
+    ViewData["Title"] = "Sigortalı Nakliyat – Eşyalarınızı Güvence Altına Alın";
+    ViewData["Description"] = "Sigortalı nakliyat ile eşyalarınızı tüm risklere karşı koruyun. Poliçe kapsamı, kapsam dışı haller, değer beyanı, fiyat etkisi, eksper ve tazminat süreci dâhil eksiksiz rehber.";
+}
+
+<style>
+    .page-wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 24px;
+        display: grid;
+        gap: 24px;
+        grid-template-columns: 280px 1fr;
+    }
+
+    @@media (max-width:992px) {
+        .page-wrap {
+            grid-template-columns: 1fr
+        }
+    }
+
+    .side {
+        background: #0f172a;
+        border-radius: 14px;
+        padding: 18px
+    }
+
+        .side h3 {
+            color: #fff;
+            font-size: 18px;
+            margin: 0 0 12px;
+            font-weight: 800
+        }
+
+    .svc-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px
+    }
+
+    .svc-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #172036;
+        color: #e2e8f0;
+        padding: 10px 12px;
+        border-radius: 10px;
+        text-decoration: none;
+        border: 1px solid #23314f
+    }
+
+        .svc-item:hover {
+            background: #1f2a44
+        }
+
+        .svc-item .arrow {
+            background: #f97316;
+            color: #fff;
+            border-radius: 8px;
+            padding: 4px 8px;
+            font-weight: 700
+        }
+
+    .content h1 {
+        font-size: 32px;
+        font-weight: 900;
+        margin: 0 0 12px;
+        color: #0f172a
+    }
+
+    .blog-meta {
+        font-size: 14px;
+        color: #64748b;
+        margin-bottom: 16px
+    }
+
+    .blog-thumb {
+        border-radius: 14px;
+        overflow: hidden;
+        margin-bottom: 20px
+    }
+
+        .blog-thumb img {
+            width: 100%;
+            height: auto;
+            object-fit: cover
+        }
+
+    .blog-text p {
+        margin-bottom: 16px;
+        color: #334155;
+        line-height: 1.7
+    }
+
+    .blog-text h2 {
+        margin: 20px 0 10px;
+        font-size: 22px;
+        color: #0f172a
+    }
+
+    .blog-text h3 {
+        margin: 18px 0 8px;
+        font-size: 18px;
+        color: #0f172a
+    }
+
+    .blog-text ul {
+        margin: 0 0 16px 18px
+    }
+
+    .blog-text li {
+        margin-bottom: 8px
+    }
+
+    .note {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 12px 14px;
+        color: #334155
+    }
+
+    .oklist li {
+        margin-bottom: 6px
+    }
+
+    .bad {
+        color: #b91c1c;
+        font-weight: 700
+    }
+
+    .good {
+        color: #0284c7;
+        font-weight: 700
+    }
+
+    .table-wrap {
+        overflow: auto;
+        margin: 12px 0 18px
+    }
+
+    .tbl {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 15px
+    }
+
+        .tbl th, .tbl td {
+            border: 1px solid #e2e8f0;
+            padding: 10px 12px;
+            text-align: left
+        }
+
+        .tbl th {
+            background: #f1f5f9;
+            color: #0f172a;
+            white-space: nowrap
+        }
+
+    .cta-box {
+        background: #f97316;
+        color: #fff;
+        padding: 18px;
+        border-radius: 12px;
+        margin-top: 28px;
+        text-align: center
+    }
+
+        .cta-box a {
+            display: inline-block;
+            padding: 10px 18px;
+            background: #fff;
+            color: #f97316;
+            font-weight: 700;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 10px
+        }
+
+    .faq .q {
+        font-weight: 800;
+        color: #0f172a;
+        margin-bottom: 6px
+    }
+
+    .faq .a {
+        margin-bottom: 14px
+    }
+</style>
+
+<div class="page-wrap">
+    <!-- SOL SİDEBAR -->
+    <aside class="side">
+        <h3>Blog Yazılarımız</h3>
+        <nav class="svc-list">
+            <a class="svc-item" href="/Home/istanbul_ankara_nakliyat_fiyatlari_2025_guncel_rehber"><span>İstanbul–Ankara Nakliyat Fiyatları 2025</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/parsiyel_nakliyat_nedir_istanbul_ankara_arasinda__avantajlari"><span>Parsiyel Nakliyat Nedir? Avantajları</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/evden_eve_nakliyat_oncesi_hazirlik_rehberi"><span>Evden Eve Nakliyat Hazırlık Rehberi</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/asansorlu_nakliyatin_istanbul_ankara_tasimalarinda_sagladigi_kolayliklar"><span>Asansörlü Nakliyatın Kolaylıkları</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/sigortali_nakliyat_esyalarinizi_guvence_altina_alin"><span>Sigortalı Nakliyat – Eşyalar Güvende</span><span class="arrow">→</span></a>
+        </nav>
+    </aside>
+
+    <!-- İÇERİK -->
+    <main class="content">
+        <h1>Sigortalı Nakliyat – Eşyalarınızı Güvence Altına Alın</h1>
+        <div class="blog-meta">🛡 Güvence • 📜 Poliçe • ⏱ Planlı Teslim • 💬 Şeffaf Sözleşme</div>
+
+        <div class="blog-thumb">
+            <img src="/assets/images/gallery/Sigortalı Nakliyat – Eşyalarınızı Güvence Altına Alın.png"
+                 alt="Sigortalı nakliyat ile eşyaları güvenceye almak">
+        </div>
+
+        <div class="blog-text">
+            <p>
+                Şehirlerarası taşınmalarda akla gelen ilk soru şudur: <strong>“Eşyalarım güvende mi?”</strong>.
+                <strong>Sigortalı nakliyat</strong> tam da bu endişeyi ortadan kaldırır. Taşıma sürecinde
+                meydana gelebilecek darbe, düşme, çizilme, rutubet veya hırsızlık gibi risklere karşı
+                <strong>maddi güvence</strong> sağlayarak süreci stres olmaktan çıkarır. Biz, Hadımköy Ankara Nakliyat
+                olarak poliçe detaylarını baştan netleştirir, paketleme standartlarımızı belgelendirir ve
+                teslimat planınızı yazılı sözleşmeye işleriz.
+            </p>
+
+            <h2>Sigortalı Nakliyat Neleri Kapsar?</h2>
+            <p>Genel kapsam, sözleşme ve poliçe tipine göre değişebilmekle birlikte aşağıdaki başlıkları içerir:</p>
+            <ul class="oklist">
+                <li><strong>Darbe/çarpma ve düşme</strong> kaynaklı hasarlar</li>
+                <li><strong>Yükleme/boşaltma</strong> sırasında oluşabilecek zararlar</li>
+                <li><strong>Taşıma esnasında rutubet/su teması</strong> (poliçe şartlarına bağlı)</li>
+                <li><strong>Hırsızlık ve kayıp</strong> (All-Risk paketler ve şartlı teminatlarda)</li>
+                <li><strong>Kazaya bağlı</strong> araç kaynaklı hasarlar</li>
+            </ul>
+
+            <div class="table-wrap">
+                <table class="tbl">
+                    <thead>
+                        <tr><th>Kapsam</th><th>Açıklama</th><th>Not</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Emtea/Eşya Sigortası</strong></td>
+                            <td>Ev/ofis eşyalarının taşıma sürecinde korunması</td>
+                            <td>Standart kapsam; muafiyet ve istisnalar sözleşmede</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sorumluluk Sigortası</strong></td>
+                            <td>Firma kusuruna karşı ek teminat</td>
+                            <td>Profesyonel taşımalarda güvence katmanı</td>
+                        </tr>
+                        <tr>
+                            <td><strong>All-Risk Paket</strong></td>
+                            <td>Yükleme–boşaltma dahil geniş kapsam</td>
+                            <td>Hırsızlık vb. için genelde bu paket gerekir</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Kapsam Dışı Olabilecek Durumlar</h2>
+            <p>Her poliçenin istisnaları vardır. Aşağıdaki durumlar çoğu zaman kapsam dışıdır:</p>
+            <ul>
+                <li><span class="bad">Eksik veya hatalı değer beyanı</span> (tazminatın düşmesine yol açar)</li>
+                <li>Profesyonel paketleme olmadan <strong>müşteri tarafından kolilenen</strong> kırılgan eşyalar</li>
+                <li><strong>Özel değerli ürünler</strong> (antika, tablo, koleksiyon) beyan dışı bırakılmışsa</li>
+                <li>Yetersiz ambalaj/yanlış istifleme (profesyonel ekip haricinde)</li>
+                <li>Doğal afetler için teminat eklenmemişse</li>
+            </ul>
+            <div class="note">
+                <strong>İpucu:</strong> Değerli eşyalarınızı listeleyin, <em>“yüksek değer beyanı”</em> yapın ve
+                fotoğraflayın. Böylece olası bir dosyada ispat ve tazminat süreci hızlanır.
+            </div>
+
+            <h2>Değer Beyanı ve Maliyet Nasıl Hesaplanır?</h2>
+            <p>
+                Sigorta primi çoğunlukla <strong>eşya toplam değeri</strong>, taşıma mesafesi ve paket kapsamına göre
+                belirlenir. Pratikte toplam bedelin küçük bir yüzdesidir. <strong>Eksik beyan</strong> tazminatın
+                oransal düşmesine neden olabilir. Bu yüzden “gerçekçi ve belgeli beyan” çok kritiktir.
+            </p>
+            <ul>
+                <li><strong>Envanter listesi</strong> çıkarın (oda oda, kalem kalem).</li>
+                <li>Marka/model ve <strong>yaklaşık piyasa değeri</strong> ekleyin.</li>
+                <li>Özel kıymetli ürünler için <strong>ayrı satır ve fotoğraf</strong> hazırlayın.</li>
+            </ul>
+
+            <h2>Hasar Olursa Süreç Nasıl İşler?</h2>
+            <ol>
+                <li><strong>Fotoğraflayın:</strong> Hasarlı alanı birçok açıdan çekin, kolinin dışını da belgeleyin.</li>
+                <li><strong>Tutanak:</strong> Teslim anında taşıma ekibiyle birlikte tespit tutanağı düzenleyin.</li>
+                <li><strong>Bildirim:</strong> Poliçe sahibine ve firmaya aynı gün içinde yazılı bildirin.</li>
+                <li><strong>Eksper:</strong> Gerekirse sigorta eksperi inceleme yapar.</li>
+                <li><strong>Tazminat:</strong> Poliçe şartlarına göre onarım, ikame veya bedel ödemesi yapılır.</li>
+            </ol>
+            <div class="note">
+                <strong>Önemli:</strong> Koli ve ambalajları, sigorta onayı gelene kadar <em>atmayın</em>. Delil niteliğindedir.
+            </div>
+
+            <h2>Profesyonel Paketleme Standartlarımız</h2>
+            <ul>
+                <li>Mobilyada <strong>battaniye + streç</strong>, köşelerde koruyucu</li>
+                <li>Kırılganlarda <strong>çift kat balonlu</strong> ve bölmeli kutu</li>
+                <li>Elektronik için <strong>anti-statik</strong> ve şok emici malzeme</li>
+                <li>Vida/aksesuarlar <strong>etiketli poşet</strong> ve ilgili mobilya kutusuna bantlı</li>
+                <li>Koli üstlerinde <em>oda + içerik</em> etiketi; “fragile” işaretleme</li>
+            </ul>
+
+            <h2>Asansörlü + Sigortalı Taşıma: Hız ve Güven</h2>
+            <p>
+                Yüksek katlı binalarda <strong>asansörlü nakliyat</strong>, hem hızı artırır hem de çizik/kırık riskini azaltır.
+                Cepheye kurulan platformla eşyalar balkon/pencereden doğrudan araca alınır. Ön keşifte
+                <strong>park alanı, zemin ve açıklık</strong> uygunluğu kontrol ederiz; uygun değilse alternatif planı devreye alırız.
+            </p>
+
+            <h2>Parsiyel Gönderilerde Sigorta</h2>
+            <p>
+                <strong>Parsiyel (parça) nakliyat</strong>ta farklı müşterilerin eşyaları aynı araçta taşınır. Bu modelde de
+                sigorta geçerlidir ancak <em>her müşteri için ayrı envanter</em> ve etiketleme çok önemlidir. Biz, her parsiyel
+                koliyi ayrı barkod/etiket ile izler, teslim zincirini kayıt altına alırız.
+            </p>
+
+            <h2>Sık Yapılan Hatalar (Ve Çözümler)</h2>
+            <ul>
+                <li>“Şimdilik düşük değer yazalım” <span class="bad">→ Eksik tazminat</span>. <span class="good">Gerçekçi beyan yapın.</span></li>
+                <li>
+                    Kırılganları evde tek kat kâğıtla sarmak <span class="bad">→ Yetersiz koruma</span>.
+                    <span class="good">Profesyonel paketleme talep edin.</span>
+                </li>
+                <li>
+                    Faturası/seri no’su olan elektroniklerin belgesiz olması <span class="bad">→ İspat zorluğu</span>.
+                    <span class="good">Fotoğraf ve belge ekleyin.</span>
+                </li>
+            </ul>
+
+            <h2>Mini SSS</h2>
+            <div class="faq">
+                <div class="q">Sigorta primi pahalı mı?</div>
+                <div class="a">Genellikle toplam değerin küçük bir yüzdesidir; hasar riskine kıyasla <strong>fayda/maliyet</strong> oranı yüksektir.</div>
+
+                <div class="q">Antika tablolarım var, kapsama girer mi?</div>
+                <div class="a">Evet, ancak <strong>özel beyan</strong> ve değer tespiti gerekir. Gerekirse ayrı teminat eklenir.</div>
+
+                <div class="q">Kendi kolilediğim eşya zarar görürse?</div>
+                <div class="a">Poliçeye göre kapsam dışı kalabilir. En güvenlisi, <strong>paketlemeyi profesyonel ekibe</strong> yaptırmaktır.</div>
+
+                <div class="q">Hasarı nasıl ispatlarım?</div>
+                <div class="a">Teslim anı fotoğrafları, ambalaj görselleri, tespit tutanağı ve envanter listesi en güçlü delillerdir.</div>
+            </div>
+
+            <div class="cta-box">
+                <h3>Sigortalı Taşımada Hemen Teklif Alın</h3>
+                <p>Paket kapsamını, muafiyeti ve ücretlendirmeyi birlikte netleştirelim. Ücretsiz keşif ile en doğru poliçeyi belirleyelim.</p>
+                <a href="/Home/fiyat_al">Teklif Al</a>
+            </div>
+        </div>
+    </main>
+</div>

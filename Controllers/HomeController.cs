@@ -74,7 +74,30 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
                 return RedirectToAction("hakkimizda");
             }
         }
-
+        public IActionResult blog()
+        {
+            return View();
+        }
+        public IActionResult istanbul_ankara_nakliyat_fiyatlari_2025_guncel_rehber()
+        {
+            return View();
+        }
+        public IActionResult parsiyel_nakliyat_nedir_istanbul_ankara_arasinda__avantajlari()
+        {
+            return View();
+        }
+        public IActionResult evden_eve_nakliyat_oncesi_hazirlik_rehberi()
+        {
+            return View();
+        }
+        public IActionResult asansorlu_nakliyatin_istanbul_ankara_tasimalarinda_sagladigi_kolayliklar()
+        {
+            return View();
+        }
+        public IActionResult sigortali_nakliyat_esyalarinizi_guvence_altina_alin()
+        {
+            return View();
+        }
         public IActionResult hizmetlerimiz()
         {
             return View();

@@ -2960,3 +2960,6 @@ Main Header Three
 .stricky-header--style3 .main-header-three__bottom-right {
   display: none;
 }
+p {
+    margin-bottom: 20px;
+}

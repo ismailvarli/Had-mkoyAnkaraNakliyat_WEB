@@ -1,0 +1,189 @@
+﻿@{
+    ViewData["Title"] = "Parsiyel Nakliyat Nedir? İstanbul–Ankara Arasında Avantajları";
+    ViewData["Description"] = "Parsiyel (parça yük) nakliyat ile İstanbul–Ankara arası eşyalarınızı ekonomik, hızlı ve güvenli taşıyın. Nasıl çalışır, fiyatlandırma, süreç, paketleme ve SSS.";
+}
+
+<style>
+    .page-wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 24px;
+        display: grid;
+        gap: 24px;
+        grid-template-columns: 280px 1fr;
+    }
+    /* Razor içinde işareti kaçışı */
+    @@media (max-width: 992px){
+        .page-wrap{ grid-template-columns: 1fr; }
+    }
+
+    /* Sidebar */
+    .side{ background:#0f172a;border-radius:14px;padding:18px }
+    .side h3{ color:#fff;font-size:18px;margin:0 0 12px;font-weight:800 }
+    .svc-list{ display:flex;flex-direction:column;gap:10px }
+    .svc-item{
+        display:flex;align-items:center;justify-content:space-between;
+        background:#172036;color:#e2e8f0;padding:10px 12px;border-radius:10px;
+        text-decoration:none;border:1px solid #23314f
+    }
+    .svc-item:hover{ background:#1f2a44 }
+    .svc-item .arrow{ background:#f97316;color:#fff;border-radius:8px;padding:4px 8px;font-weight:700 }
+
+    /* Content */
+    .content h1{ font-size:28px;font-weight:900;margin-bottom:12px;color:#0f172a }
+    .blog-thumb{ width:100%;border-radius:14px;margin-bottom:18px;overflow:hidden }
+    .blog-thumb img{ width:100%;height:auto;object-fit:cover;display:block }
+    .blog-meta{ font-size:14px;color:#64748b;margin-bottom:14px }
+
+    .blog-body p{ color:#334155;line-height:1.7;margin-bottom:16px }
+    .blog-body h2{ margin:18px 0 10px;color:#0f172a;font-size:22px }
+    .blog-body h3{ margin:16px 0 8px;color:#0f172a;font-size:18px }
+    .blog-body ul{ margin:0 0 16px 18px }
+    .blog-body li{ margin-bottom:8px }
+    .note{ background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px;color:#334155;margin:12px 0 18px }
+    .table-wrap{ overflow:auto;margin:10px 0 18px }
+    .tbl{ width:100%;border-collapse:collapse;font-size:15px }
+    .tbl th,.tbl td{ border:1px solid #e2e8f0;padding:10px 12px;text-align:left }
+    .tbl th{ background:#f1f5f9;color:#0f172a;white-space:nowrap }
+
+    .btn-primary{
+        display:inline-block;background:#f97316;color:#fff;padding:12px 20px;border-radius:10px;
+        font-weight:700;text-decoration:none
+    }
+
+    .cta-box{ background:#f97316;color:#fff;padding:18px;border-radius:12px;margin-top:28px;text-align:center }
+    .cta-box a{
+        display:inline-block;padding:10px 18px;background:#fff;color:#f97316;font-weight:700;border-radius:8px;
+        text-decoration:none;margin-top:10px
+    }
+</style>
+
+<div class="page-wrap">
+    <!-- SOL SİDEBAR -->
+    <aside class="side">
+        <h3>Blog Yazılarımız</h3>
+        <nav class="svc-list">
+            <a class="svc-item" href="/Home/istanbul_ankara_nakliyat_fiyatlari_2025_guncel_rehber"><span>İstanbul–Ankara Nakliyat Fiyatları 2025 – Güncel Rehber</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/parsiyel_nakliyat_nedir_istanbul_ankara_arasinda__avantajlari"><span>Parsiyel Nakliyat Nedir? Avantajları</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/evden_eve_nakliyat_oncesi_hazirlik_rehberi"><span>Evden Eve Nakliyat Öncesi Hazırlık Rehberi</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/asansorlu_nakliyatin_istanbul_ankara_tasimalarinda_sagladigi_kolayliklar"><span>Asansörlü Nakliyatın Sağladığı Kolaylıklar</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/sigortali_nakliyat_esyalarinizi_guvence_altina_alin"><span>Sigortalı Nakliyat – Eşyalarınızı Güvence Altına Alın</span><span class="arrow">→</span></a>
+        </nav>
+    </aside>
+
+    <!-- İÇERİK -->
+    <main class="content">
+        <h1>Parsiyel Nakliyat Nedir? İstanbul–Ankara Arasında Avantajları</h1>
+
+        <div class="blog-thumb">
+            <!-- Dosya adında boşluk varsa %20 kullanın veya tireli ad kullanın -->
+            <img src="/assets/images/gallery/parsiyel%20nakliyat%20nedir.png"
+                 width="1200" height="675" loading="lazy"
+                 alt="Parsiyel nakliyat İstanbul–Ankara arası avantajları">
+        </div>
+
+        <div class="blog-meta">Parsiyel • Paylaşımlı Taşıma • Ekonomik • Düzenli Sefer</div>
+
+        <div class="blog-body">
+            <p>
+                <strong>Parsiyel nakliyat</strong> (parça yük taşımacılığı), aynı güzergâhta teslimatı bulunan farklı müşterilerin eşyalarının
+                tek bir araçta <strong>paylaşımlı kapasite</strong> ile taşınmasıdır. Böylece tam kamyon kiralamaya gerek kalmadan,
+                yalnızca <strong>kendi kapladığınız alan</strong> için ödeme yapar ve toplam maliyeti ciddi oranda düşürürsünüz.
+                İstanbul–Ankara hattı, yoğun ticaret ve taşınma trafiği sayesinde parsiyelde en uygun ve esnek seçenekleri sunar.
+            </p>
+
+            <h2>Parsiyel Nakliyat Nasıl Çalışır?</h2>
+            <ol>
+                <li><strong>Talep & Envanter:</strong> Eşya/ürün listesi, ölçüler ve tahmini hacim (m³) tarafımızla paylaşılır.</li>
+                <li><strong>Planlama:</strong> Güzergâh ve <em>sefer günü</em> belirlenir; yükünüz için uygun alan rezerve edilir.</li>
+                <li><strong>Paketleme & Etiketleme:</strong> Koliler oda/ürün bazlı etiketlenir, kırılganlar özel malzemelerle korunur.</li>
+                <li><strong>Yükleme:</strong> Depo/adresinizden alınır; araçta müşterilere göre bölümlendirilir ve sabitlenir.</li>
+                <li><strong>Teslimat:</strong> Ankara’daki varış noktasında <em>tutanakla</em> teslim edilir, sürece dair bildirim yapılır.</li>
+            </ol>
+
+            <h2>Kimler İçin İdeal?</h2>
+            <ul>
+                <li><strong>Öğrenciler ve bekar ev taşımaları:</strong> Birkaç koli + 1–2 parça mobilya.</li>
+                <li><strong>E-ticaret ve KOBİ’ler:</strong> Düzenli/tek seferlik ürün sevkiyatı.</li>
+                <li><strong>Kurumsal gönderiler:</strong> Fuar malzemeleri, numune ve promosyon ürünleri.</li>
+                <li><strong>Çeyiz/oda bazlı taşımalar:</strong> Komple ev olmayan ancak dikkat isteyen gönderiler.</li>
+            </ul>
+
+            <h2>Başlıca Avantajları</h2>
+            <ul>
+                <li><strong>Ekonomik:</strong> Tüm aracı değil, yalnızca kapladığınız alanı ödersiniz.</li>
+                <li><strong>Düzenli sefer:</strong> İstanbul–Ankara hattında haftada birden çok çıkış.</li>
+                <li><strong>Esnek hacim:</strong> 1 koliden birkaç palete kadar ölçeklenir.</li>
+                <li><strong>Sigortalı seçenek:</strong> All-Risk/Emtea ile güvence.</li>
+                <li><strong>Çevre dostu:</strong> Boş kapasite azalır, karbon izi düşer.</li>
+            </ul>
+
+            <div class="note"><strong>İpucu:</strong> Hacmi küçültmek için demontaj yapılmış, düzgün kolilenmiş ve istiflenebilir paketler hem fiyatı düşürür hem teslimatı hızlandırır.</div>
+
+            <h2>Fiyatlandırma Nasıl Yapılır?</h2>
+            <p>Parsiyel ücret; <strong>hacim (m³)</strong>, <strong>ağırlık</strong>, <strong>sefer günü</strong>, <strong>kat/asansör durumu</strong>, <strong>paketleme</strong> ve <strong>sigorta</strong> gibi kalemlere göre belirlenir.</p>
+            <div class="table-wrap">
+                <table class="tbl">
+                    <thead>
+                        <tr><th>Kriter</th><th>Etkisi</th><th/ ></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Hacim/Ağırlık</td><td>Alan ve yük sınırını belirler</td><td>m³ ve kg birlikte değerlendirilir</td></tr>
+                        <tr><td>Kat/Asansör</td><td>İşçilik ve süreyi etkiler</td><td>Asansörlü taşıma opsiyonu hız sağlar</td></tr>
+                        <tr><td>Paketleme</td><td>Hasar riski ve hız</td><td>Profesyonel paket, hasarı ve süreyi düşürür</td></tr>
+                        <tr><td>Sigorta</td><td>Teminat kapsamı</td><td>Değer beyanı + poliçe türü</td></tr>
+                        <tr><td>Sefer Günü</td><td>Planlama/termin</td><td>Dolu araçta daha ekonomik</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Profesyonel Paketleme & Etiketleme</h2>
+            <ul>
+                <li><strong>Kırılgan:</strong> Çift kat balonlu + bölmeli kutu, “fragile” etiketi</li>
+                <li><strong>Mobilya:</strong> Battaniye + streç + köşe koruyucu, demonte/etiketli vida poşeti</li>
+                <li><strong>Elektronik:</strong> Anti-statik malzeme + şok emici destek</li>
+                <li><strong>Koliler:</strong> Oda/ürün adı, teslim adresi ve telefon bilgisi</li>
+            </ul>
+
+            <h2>İstanbul–Ankara Parsiyelde Teslim Süresi</h2>
+            <p>
+                Planlı seferlerde <strong>aynı/ertesi gün</strong> yükleme ve programına göre <strong>1–2 iş günü</strong> teslim yaygındır.
+                Parsiyelde aracın <em>doluluk ve rota</em> sıralaması süreyi etkileyebilir; bu yüzden yükünüz alındığında size
+                <strong>ETA (tahmini varış)</strong> bildirimi yapılır ve süreç boyunca bilgilendirme devam eder.
+            </p>
+
+            <h2>Sigorta – Parsiyelde Güvence</h2>
+            <p>
+                Parsiyelde de <strong>sigortalı nakliyat</strong> geçerlidir. Özellikle kırılgan, elektronik ve kıymetli ürünlerde
+                <strong>değer beyanı</strong> ve görüntü kayıtları tazminat süreçlerini hızlandırır. Talebinize göre Emtea ya da All-Risk teminat uygulanır.
+            </p>
+
+            <h2>En Sık Yapılan Hatalar (ve Çözüm)</h2>
+            <ul>
+                <li><span style="color:#b91c1c;font-weight:700">Eksik beyan</span> → Tazminat düşer. <strong>Çözüm:</strong> Gerçekçi envanter + fotoğraf.</li>
+                <li><span style="color:#b91c1c;font-weight:700">Etiketsiz koliler</span> → Adreste karışıklık. <strong>Çözüm:</strong> Oda/ürün etiketi.</li>
+                <li><span style="color:#b91c1c;font-weight:700">Yetersiz paket</span> → Hasar riski. <strong>Çözüm:</strong> Profesyonel paketleme.</li>
+            </ul>
+
+            <h2>Mini SSS</h2>
+            <h3>Parsiyel mi, komple araç mı?</h3>
+            <p>Yükünüz küçükse parsiyel, hacimli ve tek adrese gidecekse komple araç daha hızlı/avantajlı olabilir.</p>
+
+            <h3>Tek parça büyük eşya (buzdolabı vb.) olur mu?</h3>
+            <p>Evet. Sabitleme ve koruma ile taşınır; ölçüleri önceden paylaşmanız yeterli.</p>
+
+            <h3>Fatura/irsaliye gerekiyor mu?</h3>
+            <p>Ticari ürünlerde evet; ev eşyasında sözleşme ve envanter yeterlidir.</p>
+
+            <div class="note"><strong>Kontrol Listesi:</strong> Envanter hazır → Koliler etiketli → Kırılganlar çift kat → Değer beyanı yapıldı → Teslim/iletişim bilgileri kolide.</div>
+
+            <p><a class="btn-primary" href="/Home/iletisim">Parsiyel Nakliyat İçin İletişime Geçin</a></p>
+
+            <div class="cta-box">
+                <h3>Parsiyel Taşımada En Uygun Fiyatı Öğrenin</h3>
+                <p>Sefer günü, hacim ve teslim adrese göre net fiyat ve ETA verelim. Ücretsiz keşif ve danışmanlık!</p>
+                <a href="/Home/fiyat_al">Teklif Al</a>
+            </div>
+        </div>
+    </main>
+</div>
