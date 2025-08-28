@@ -2,15 +2,22 @@
 <html lang="en">
 
 <head>
-
+    <!-- Google tag (gtag.js) - TEK KEZ -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17507094342"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'AW-17507094342');
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
     <meta name="description" content="@ViewData["Description"]" />
     <!-- favicons Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="~/assets/images/favicons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="~/assets/images/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="~/assets/images/favicons/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="~/assets/images/gallery/han_seffaf.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="~/assets/images/gallery/han_seffaf.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="~/assets/images/gallery/han_seffaf.png" />
     <link rel="stylesheet" href="~/assets/css/module-css/01-slider.css" />
     <link rel="stylesheet" href="~/assets/css/module-css/02-about.css" />
     <link rel="stylesheet" href="~/assets/css/module-css/03-services.css" />
@@ -64,25 +71,8 @@
     <link rel="stylesheet" href="~/assets/css/12-owl.theme.default.min.css" />
     <link rel="stylesheet" href="~/assets/css/13-jquery-ui.css" />
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17375615814"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'AW-17375615814');
-    </script>
-
-    <script>
-        gtag('config', 'AW-17375615814/5hEyCNORlvwaEMa2q91A', {
-          'phone_conversion_number': '05325436837'
-        });
-    </script>
-    <!-- Event snippet for Fiyat teklifi isteyin conversion page -->
-    <script>
-        gtag('event', 'conversion', {'send_to': 'AW-17375615814/MTKNCJWcp_UaEMa2q91A'});
-    </script>
-
+   
+    
 </head>
 
 <body>
@@ -106,7 +96,7 @@
 
                                                     <div class="text-box">
                                                         <p>
-                                                            <span>Bizi Arayın</span> <a href="tel:05325436837">
+                                                            <span>Bizi Arayın</span> <a href="tel:+905325436837">
                                                                 [+90 532 543 68 37]
                                                             </a>
                                                         </p>
@@ -145,8 +135,8 @@
                                         <div class="main-header-one__bottom-left">
                                             <div class="logo-box">
                                                 <a href="/Home/Index">
-                                                    <img src="~/assets/images/gallery/HadımköyAnkaraNakliyat_LOGO.png"
-                                                         alt="">
+                                                    <img src="~/assets/images/gallery/HadımköyAnkaraNakliyat_LOGO.png"  class="site-logo"
+                                                         alt="Hadımköy Ankara Nakliyat logo">
                                                 </a>
                                             </div>
 
@@ -293,7 +283,7 @@
                                             </div>
 
                                              <div class="login-box">
-                                                <a href="tel:05325436837">
+                                                <a href="tel:+905325436837">
                                                     <i  class="fa fa-sign-in"></i> <span>
                                                         Bizi <br>
                                                         Arayın 
@@ -343,7 +333,7 @@
 
                                         <div class="text-box">
                                             <p>Bizleri Arayın</p>
-                                            <h4><a href="tel:+05325436837">+0532 543 68 37</a></h4>
+                                            <h4><a href="tel:+905325436837">+0532 543 68 37</a></h4>
                                         </div>
                                     </div>
                                 </div>
@@ -408,7 +398,7 @@
                                                     <span class="icon-phone"></span>
                                                 </div>
                                                 <div class="text-box">
-                                                    <p><a href="tel:05325436837">+0532 543 68 37 </a></p>
+                                                    <p><a href="tel:+905325436837">+0532 543 68 37 </a></p>
                                                 </div>
                                             </li>
                                         </ul>
@@ -504,7 +494,7 @@
                 </li>
                 <li>
                     <i class="icon-phone"></i>
-                    <a href="tel:0532-543-6837">0532 543 6837</a>
+                    <a href="tel:+905325436837">0532 543 6837</a>
                 </li>
             </ul><!-- /.mobile-nav__contact -->
             <div class="mobile-nav__top">
@@ -580,64 +570,85 @@
     <!-- template js -->
     <script src="~/assets/js/script.js"></script>
 
+    
+    <style>
+  
+        .call-now-btn {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #ff7300; /* Tema turuncusu. Değiştirebilirsin */
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 12px 18px;
+            border-radius: 30px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+            transition: background 0.2s, transform 0.15s;
+            text-decoration: none;
+        }
+
+            .call-now-btn:hover,
+            .call-now-btn:active {
+                background: #e35c00;
+                transform: scale(1.06);
+            }
+
+            .call-now-btn svg {
+                display: block;
+            }
+
+        @@media (max-width: 600px) {
+            .call-now-btn {
+                font-size: 16px;
+                padding: 11px 14px;
+                right: 10px;
+                bottom: 10px;
+            }
+
+                .call-now-btn span {
+                    display: inline;
+                }
+        }
+
+        .scroll-to-top, .scroll-to-target {
+            bottom: 90px !important;
+            z-index: 9998;
+        }
+    </style>   
+    <script>
+        function gtag_report_conversion(url) {
+          try {
+            if (typeof gtag === 'function') {
+              var callback = function () { if (url) window.location = url; };
+              gtag('event', 'conversion', {
+                'send_to': 'AW-17507094342/B1I8CI3qs40bEMaehJxB',
+                'value': 1.0,
+                'currency': 'TRY',
+                'event_callback': callback
+              });
+              // Ek güvenlik: 1 sn içinde callback gelmezse yine ara
+              setTimeout(function(){ if (url) window.location = url; }, 1000);
+              return false;
+            }
+          } catch(e) { /* yut */ }
+          if (url) window.location = url; // gtag yoksa direkt ara
+          return false;
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+          document.querySelectorAll('a[href^="tel:"]').forEach(function (el) {
+            el.addEventListener('click', function (e) {
+              e.preventDefault();
+              gtag_report_conversion(this.getAttribute('href'));
+            });
+          });
+        });
+    </script>
     @RenderSection("Scripts", required: false)
+
 </body>
-<!-- TIKLA ARA BUTTONU BAŞLANGIÇ -->
-<a href="tel:05325436837" class="call-now-btn" title="Hemen Ara">
-    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white" viewBox="0 0 24 24"><path d="M6.62 10.79a15.09 15.09 0 006.59 6.59l2.2-2.2a1 1 0 011-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.09a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.24 1z"></path></svg>
-    <span>Ara</span>
-</a>
-
-<style>
-    .call-now-btn {
-        position: fixed;
-        right: 18px;
-        bottom: 18px;
-        z-index: 9999;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        background: #ff7300; /* Tema turuncusu. Değiştirebilirsin */
-        color: #fff;
-        font-size: 18px;
-        font-weight: 600;
-        padding: 12px 18px;
-        border-radius: 30px;
-        box-shadow: 0 4px 24px rgba(0,0,0,0.15);
-        transition: background 0.2s, transform 0.15s;
-        text-decoration: none;
-    }
-
-        .call-now-btn:hover,
-        .call-now-btn:active {
-            background: #e35c00;
-            transform: scale(1.06);
-        }
-
-        .call-now-btn svg {
-            display: block;
-        }
-    @@media (max-width: 600px) {
-        .call-now-btn
-
-    {
-        font-size: 16px;
-        padding: 11px 14px;
-        right: 10px;
-        bottom: 10px;
-    }
-
-    .call-now-btn span {
-        display: inline;
-    }
-
-    }
-
-    .scroll-to-top, .scroll-to-target {
-        bottom: 90px !important;
-        z-index: 9998;
-    }
-</style>
-<!-- TIKLA ARA BUTTONU BİTİŞ -->
-
-</html>

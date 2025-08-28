@@ -1,0 +1,346 @@
+﻿@{
+    ViewData["Title"] = "İstanbul Nakliyat | Profesyonel Evden Eve ve Şehirlerarası Taşımacılık";
+    ViewData["Description"] = "İstanbul nakliyat hizmetleri: Evden eve nakliyat, şehirlerarası taşımacılık, ofis ve büro nakliyatı, parsiyel taşıma, asansörlü nakliyat, kamyonet nakliye. Sigortalı ve güvenli çözümler için profesyonel nakliyat firması.";
+    ViewData["Keywords"] = "İstanbul nakliyat, evden eve nakliyat, şehirlerarası nakliyat, parça eşya taşıma, parsiyel taşımacılık, ofis taşımacılığı, sigortalı nakliyat, kamyonet nakliye, asansörlü nakliyat, profesyonel nakliyat firması, uygun fiyatlı nakliyat";
+}
+
+<style>
+    .istanbul-nakliyat .page-wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 24px;
+        display: grid;
+        gap: 24px;
+        grid-template-columns: 280px 1fr;
+    }
+
+    @@media (max-width:992px) {
+        .istanbul-nakliyat .page-wrap {
+            grid-template-columns: 1fr
+        }
+    }
+
+    /* Sidebar */
+    .istanbul-nakliyat .in-side {
+        background: #0f172a;
+        border-radius: 14px;
+        padding: 18px
+    }
+
+        .istanbul-nakliyat .in-side h3 {
+            color: #fff;
+            font-size: 18px;
+            margin: 0 0 12px;
+            font-weight: 800
+        }
+
+    .istanbul-nakliyat .svc-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px
+    }
+
+    .istanbul-nakliyat .svc-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #172036;
+        color: #e2e8f0;
+        padding: 10px 12px;
+        border-radius: 10px;
+        text-decoration: none;
+        border: 1px solid #23314f;
+    }
+
+        .istanbul-nakliyat .svc-item:hover {
+            background: #1f2a44
+        }
+
+        .istanbul-nakliyat .svc-item .arrow {
+            background: #f97316;
+            color: #fff;
+            border-radius: 8px;
+            padding: 4px 8px;
+            font-weight: 700
+        }
+
+    /* Content */
+    .istanbul-nakliyat .in-content h1 {
+        font-size: 32px;
+        font-weight: 900;
+        margin: 0 0 12px;
+        color: #0f172a
+    }
+
+    .istanbul-nakliyat .blog-meta {
+        font-size: 14px;
+        color: #64748b;
+        margin-bottom: 16px
+    }
+
+    .istanbul-nakliyat .blog-thumb {
+        border-radius: 14px;
+        overflow: hidden;
+        margin-bottom: 20px
+    }
+
+        .istanbul-nakliyat .blog-thumb img {
+            width: 100%;
+            height: auto;
+            object-fit: cover
+        }
+
+    .istanbul-nakliyat .blog-text p {
+        margin-bottom: 16px;
+        color: #334155;
+        line-height: 1.75
+    }
+
+    .istanbul-nakliyat .blog-text h2 {
+        margin: 20px 0 10px;
+        color: #0f172a;
+        font-size: 22px
+    }
+
+    .istanbul-nakliyat .blog-text h3 {
+        margin: 16px 0 8px;
+        color: #0f172a;
+        font-size: 18px
+    }
+
+    .istanbul-nakliyat .blog-text ul {
+        margin: 0 0 16px 18px
+    }
+
+    .istanbul-nakliyat .blog-text li {
+        margin-bottom: 8px
+    }
+
+    .istanbul-nakliyat .note {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 12px 14px;
+        color: #334155;
+        margin: 12px 0 18px
+    }
+
+    .istanbul-nakliyat .warn {
+        background: #fff7ed;
+        border-color: #fed7aa
+    }
+
+    .istanbul-nakliyat .table-wrap {
+        overflow: auto;
+        margin: 10px 0 18px
+    }
+
+    .istanbul-nakliyat .tbl {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 15px
+    }
+
+        .istanbul-nakliyat .tbl th, .istanbul-nakliyat .tbl td {
+            border: 1px solid #e2e8f0;
+            padding: 10px 12px;
+            text-align: left
+        }
+
+        .istanbul-nakliyat .tbl th {
+            background: #f1f5f9;
+            color: #0f172a;
+            white-space: nowrap
+        }
+
+    .istanbul-nakliyat .cards {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 12px
+    }
+
+    @@media (max-width:992px) {
+        .istanbul-nakliyat .cards {
+            grid-template-columns: 1fr
+        }
+    }
+
+    .istanbul-nakliyat .in-card {
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 14px;
+        background: #fff
+    }
+
+        .istanbul-nakliyat .in-card h4 {
+            margin: 0 0 8px;
+            font-size: 16px;
+            color: #0f172a
+        }
+
+        .istanbul-nakliyat .in-card p {
+            margin: 0;
+            color: #334155
+        }
+
+    .istanbul-nakliyat .cta-box {
+        background: #f97316;
+        color: #fff;
+        padding: 18px;
+        border-radius: 12px;
+        margin-top: 28px;
+        text-align: center;
+    }
+
+        .istanbul-nakliyat .cta-box a {
+            display: inline-block;
+            padding: 10px 18px;
+            background: #fff;
+            color: #f97316;
+            font-weight: 700;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+    .istanbul-nakliyat .checklist {
+        columns: 2;
+        column-gap: 24px
+    }
+
+    @@media (max-width:992px) {
+        .istanbul-nakliyat .checklist {
+            columns: 1
+        }
+    }
+
+    .istanbul-nakliyat .checklist li {
+        break-inside: avoid;
+        margin-bottom: 10px
+    }
+</style>
+
+<div class="istanbul-nakliyat">
+    <div class="page-wrap">
+        <!-- SOL SİDEBAR -->
+        <aside class="in-side">
+            <h3>Hizmetlerimiz</h3>
+            <nav class="svc-list">
+                <a class="svc-item" href="/Home/istanbul_izmir_nakliyat"><span>İstanbul İzmir Nakliyat</span><span class="arrow">→</span></a>
+                <a class="svc-item" href="/Home/istanbul_bursa_nakliyat"><span>İstanbul Bursa Nakliyat</span><span class="arrow">→</span></a>
+                <a class="svc-item" href="/Home/istanbul_eskisehir_nakliyat"><span>İstanbul Eskişehir Nakliyat</span><span class="arrow">→</span></a>
+                <a class="svc-item" href="/Home/istanbul_antalya_nakliyat"><span>İstanbul Antalya Nakliyat</span><span class="arrow">→</span></a>
+                <a class="svc-item" href="/Home/istanbul_ankara_nakliyat"><span>İstanbul Ankara Nakliyat</span><span class="arrow">→</span></a>
+                <a class="svc-item" href="/Home/sehirlerarasi_nakliyat"><span>Şehirlerarası Nakliyat</span><span class="arrow">→</span></a>
+                <a class="svc-item" href="/Home/evden_eve_nakliyat"><span>Evden Eve Nakliyat</span><span class="arrow">→</span></a>
+                <a class="svc-item" href="/Home/parsiyel_nakliyat"><span>Parsiyel Taşımacılık</span><span class="arrow">→</span></a>
+                <a class="svc-item" href="/Home/ambar_nakliyat"><span>Ambar Nakliyat</span><span class="arrow">→</span></a>
+                <a class="svc-item" href="/Home/ofis_tasimaciligi"><span>Ofis Taşımacılığı</span><span class="arrow">→</span></a>
+                <a class="svc-item" href="/Home/fuar_tasimaciligi"><span>Fuar Taşımacılığı</span><span class="arrow">→</span></a>
+            </nav>
+        </aside>
+
+        <main class="in-content">
+            <h1>İstanbul Nakliyat | Profesyonel ve Güvenilir Taşımacılık</h1>
+            <div class="blog-meta">📅 Güncellenme: 2025 • 🧭 Hazırlık &amp; Planlama • 🛡 Sigortalı Taşıma İpuçları</div>
+
+            <div class="blog-thumb">
+                <img src="@Url.Content("~/assets/images/gallery/istanbul_nakliyat.jpg")"
+                     width="1200" height="675" loading="lazy" alt="istanbul nakliyat" />
+            </div>
+
+            <div class="blog-text">
+                <p>
+                    <strong>İstanbul Nakliyat</strong> hizmetleri, Türkiye’nin en yoğun nüfusuna sahip metropolünde en çok ihtiyaç duyulan sektörlerden biridir.
+                    Gerek evden eve nakliyat, gerekse ofis taşımacılığı veya şehirlerarası nakliyat fark etmeksizin, profesyonel bir nakliye firması ile çalışmak hem zaman kazandırır hem de eşyaların güvenle taşınmasını sağlar.
+                    İstanbul gibi trafiği, yoğunluğu ve yapı çeşitliliği fazla olan bir şehirde nakliye süreci uzmanlık ve deneyim gerektirir.
+                    Bu nedenle doğru nakliyat firmasını seçmek büyük önem taşır.
+                </p>
+
+                <h2>Evden Eve İstanbul Nakliyat</h2>
+                <p>
+                    İnsanların en çok aradığı hizmetlerden biri <strong>evden eve nakliyat</strong>tır.
+                    İstanbul’da ev değiştirmek, şehir içi taşınmalarda sıkça ihtiyaç duyulan bir süreçtir.
+                    Profesyonel ekipler tarafından sunulan evden eve nakliyat hizmetlerinde, eşyalar özenle paketlenir, mobilyalar demonte edilerek taşınır ve yeni adreste tekrar monte edilir.
+                    Ayrıca sigortalı nakliyat seçeneği ile olası risklere karşı müşteriye güvence sağlanır.
+                    Bu noktada <em>İstanbul nakliyat firmaları</em> arasından deneyimli ve kurumsal bir şirketle çalışmak en doğru tercihtir.
+                </p>
+
+                <h2>Şehirlerarası Nakliyat Çözümleri</h2>
+                <p>
+                    İstanbul’dan Türkiye’nin farklı şehirlerine taşınmak isteyenler için <strong>şehirlerarası nakliyat</strong> hizmetleri devreye girer.
+                    Uzun yol taşımacılığı, güçlü lojistik planlama gerektirir.
+                    Nakliye firmaları, şehirlerarası nakliyat sürecinde araç planlamasını, güzergâh analizini ve yük güvenliğini eksiksiz şekilde yönetir.
+                    Böylece müşteriler, İstanbul’dan Ankara’ya, İzmir’e, Bursa’ya veya Türkiye’nin dört bir yanına güvenle taşınabilir.
+                </p>
+
+                <h2>Parça Eşya Taşıma ve Parsiyel Taşımacılık</h2>
+                <p>
+                    İstanbul nakliyat sektöründe sıklıkla tercih edilen bir diğer hizmet ise <strong>parça eşya taşıma</strong>dır.
+                    Özellikle birkaç parça mobilya, beyaz eşya veya özel eşyaların taşınmasında ekonomik çözümler sunar.
+                    Parsiyel taşımacılık sayesinde aynı güzergâha giden farklı müşterilerin eşyaları tek araçla taşınarak maliyetler düşürülür.
+                    Bu yöntem hem uygun fiyatlı nakliyat sağlar hem de çevre dostu bir çözüm oluşturur.
+                </p>
+
+                <h2>Ofis ve Büro Taşımacılığı</h2>
+                <p>
+                    İstanbul, iş dünyasının kalbi olduğu için <strong>ofis taşımacılığı</strong> da yoğun talep gören nakliyat hizmetlerinden biridir.
+                    Profesyonel nakliye firmaları, bilgisayar, yazıcı, arşiv dosyaları ve hassas ofis ekipmanlarını dikkatle taşır.
+                    Ayrıca iş kaybı yaşamamak adına planlı ve hızlı bir şekilde nakliyat gerçekleştirilir.
+                    Böylece şirketler, iş süreçlerini aksatmadan yeni ofislerine taşınabilir.
+                </p>
+
+                <h2>Asansörlü Nakliyat Avantajı</h2>
+                <p>
+                    İstanbul gibi yüksek katlı binaların yoğun olduğu bir şehirde, <strong>asansörlü nakliyat</strong> hizmeti büyük kolaylık sağlar.
+                    Bu sistem sayesinde eşyalar bina merdivenlerine zarar vermeden, hızlı ve güvenli şekilde taşınır.
+                    Ayrıca iş gücünden tasarruf sağlanır ve zamandan büyük kazanım elde edilir.
+                    Asansörlü nakliyat özellikle evden eve nakliyat süreçlerinde tercih edilen modern bir çözümdür.
+                </p>
+
+                <h2>Sigortalı ve Güvenli Nakliyat</h2>
+                <p>
+                    Müşterilerin en çok önem verdiği konuların başında <strong>sigortalı nakliyat</strong> gelir.
+                    İstanbul nakliyat firmaları, taşınma sürecinde oluşabilecek riskleri minimize etmek için sigorta hizmeti sunar.
+                    Böylece olası hasar durumlarında müşteri mağduriyet yaşamaz.
+                    Güvenli taşımacılık, kurumsal nakliyat firmalarının sunduğu en önemli ayrıcalıklardan biridir.
+                </p>
+
+                <h2>Kamyonet Nakliye ile Hızlı Çözümler</h2>
+                <p>
+                    Daha küçük ölçekli taşınmalarda <strong>kamyonet nakliye</strong> hizmeti en çok tercih edilen yöntemdir.
+                    Özellikle İstanbul içinde tek parça eşya taşıma, öğrenci taşımacılığı veya küçük ofis nakliyatlarında kamyonet nakliye uygun fiyatlı ve hızlı çözümler sunar.
+                    Bu yöntemle hem maliyetler düşer hem de şehir içi trafikte daha pratik bir taşınma süreci gerçekleşir.
+                </p>
+
+                <h2>Uygun Fiyatlı ve Profesyonel Nakliyat</h2>
+                <p>
+                    İstanbul’da nakliye hizmeti alırken fiyat, en belirleyici unsurlardan biridir.
+                    <strong>Uygun fiyatlı nakliyat</strong> isteyen müşteriler için firmalar, farklı bütçelere uygun çözümler sunar.
+                    Ancak fiyatın yanı sıra hizmet kalitesine dikkat etmek gerekir.
+                    <em>Profesyonel nakliyat firması</em> ile çalışmak, hem güvenliği hem de müşteri memnuniyetini garanti altına alır.
+                </p>
+
+                <h2>Lojistik ve Depolama Hizmetleri</h2>
+                <p>
+                    İstanbul nakliyat firmaları yalnızca taşıma değil, aynı zamanda lojistik ve depolama çözümleri de sunar.
+                    Eşyalarını geçici süreyle depolamak isteyen müşteriler için güvenli ve hijyenik depolar kullanılır.
+                    Ayrıca büyük çaplı taşınmalarda lojistik planlama sayesinde süreç sorunsuz bir şekilde yönetilir.
+                </p>
+
+                <h2>Sonuç: İstanbul’da Nakliyatın Güvencesi</h2>
+                <p>
+                    <strong>İstanbul nakliyat</strong> hizmetleri, geniş seçenekleri ve profesyonel yaklaşımıyla her geçen gün daha da gelişmektedir.
+                    Evden eve nakliyattan şehirlerarası taşımacılığa, ofis nakliyatından parsiyel taşımacılığa kadar her alanda güvenli çözümler sunulmaktadır.
+                    Doğru nakliyat firması ile çalışarak eşyalarınızı güvenle taşıyabilir, zamandan tasarruf edebilir ve taşınma sürecini stressiz hale getirebilirsiniz.
+                </p>
+            </div>
+
+            <div class="cta-box">
+                <h3>Hemen Teklif Alın</h3>
+                <p>Profesyonel ekip, sigortalı hizmet ve yazılı sözleşme ile sorunsuz taşının.</p>
+                <a href="/Home/fiyat_al">Teklif Al</a>
+            </div>
+        </main>
+    </div> <!-- page-wrap -->
+</div>

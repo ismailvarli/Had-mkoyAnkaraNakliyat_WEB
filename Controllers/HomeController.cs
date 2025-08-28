@@ -187,6 +187,10 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
         {
             return View();
         }
+        public IActionResult istanbul_nakliyat()
+        {
+            return View();
+        }
         public IActionResult hizmet_turleri()
         {
             return View();
