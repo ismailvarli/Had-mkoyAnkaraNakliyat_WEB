@@ -786,7 +786,7 @@ button {
   border-radius: 4px;
   -webkit-transition: all 300ms ease;
   -moz-transition: all 300ms ease;
-  -ms-transition: all 300ms ease;
+
   -o-transition: all 300ms ease;
   transition: all 300ms ease;
 }
@@ -806,7 +806,7 @@ button {
   transform: scale(0);
   -webkit-transition: all 300ms ease;
   -moz-transition: all 300ms ease;
-  -ms-transition: all 300ms ease;
+ 
   -o-transition: all 300ms ease;
   transition: all 300ms ease;
 }
@@ -1469,18 +1469,15 @@ img {
   opacity: 0;
   visibility: hidden;
   z-index: 99;
-  transform: perspective(500px) rotatex(-20deg);
+  transform: perspective(500px);
   transform-origin: 50% 0%;
   -webkit-box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 9%);
-  -khtml-box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 9%);
+ 
   -moz-box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 9%);
-  -ms-box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 9%);
-  -o-box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 9%);
+ 
   box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 9%);
   -webkit-transition: all 200ms linear 0ms;
-  -khtml-transition: all 200ms linear 0ms;
-  -moz-transition: all 200ms linear 0ms;
-  -ms-transition: all 200ms linear 0ms;
+ 
   -o-transition: all 200ms linear 0ms;
   transition: all 200ms linear 0ms;
 
@@ -1493,7 +1490,7 @@ img {
 .stricky-header .main-menu__list>li>ul>li:hover>ul {
   opacity: 1;
   visibility: visible;
-  transform: perspective(500px) rotatex(0);
+  transform: perspective(500px);
 }
 
 .shadow-box {
@@ -1537,9 +1534,9 @@ img {
   font-weight: 600;
   padding: 17px 0px 17px;
   -webkit-transition: all 200ms linear 0ms;
-  -khtml-transition: all 200ms linear 0ms;
+  
   -moz-transition: all 200ms linear 0ms;
-  -ms-transition: all 200ms linear 0ms;
+  
   -o-transition: all 200ms linear 0ms;
   transition: all 200ms linear 0ms;
 }
@@ -2490,6 +2487,7 @@ Main Header Two
   background-color: var(--logistiq-base);
 }
 
+
 /*--------------------------------------------------------------
 # Search Popup
 --------------------------------------------------------------*/
@@ -2833,4 +2831,22 @@ Main Header Three
 }
 p {
     margin-bottom: 20px;
+}
+/* Skill One mobil düzen */
+@media (max-width: 991px) {
+    .skill-one {
+        padding: 60px 0;
+    }
+
+    .skill-one__content {
+        margin-left: 0;
+        margin-top: 32px;
+    }
+
+    .skill-one__img2 {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin-top: 20px;
+    }
 }

@@ -16,7 +16,10 @@ Skill One
     display: block;
     z-index: 1;
 }
-
+    .skill-one__img .shape1,
+    .skill-one__img .shape2 {
+        display: none !important;
+    }
 .skill-one__img .shape1 {
     position: absolute;
     top: 30px;
@@ -192,7 +195,7 @@ Skill One
     border-radius: 0px;
     background-color: var(--logistiq-base);
     -webkit-transition: all 1500ms ease;
-    -ms-transition: all 1500ms ease;
+   
     -o-transition: all 1500ms ease;
     -moz-transition: all 1500ms ease;
     transition: all 1500ms ease;
@@ -215,7 +218,7 @@ Skill One
     background: var(--logistiq-base);
     opacity: 0;
     -webkit-transition: all 500ms ease;
-    -ms-transition: all 500ms ease;
+    
     -o-transition: all 500ms ease;
     -moz-transition: all 500ms ease;
     transition: all 500ms ease;

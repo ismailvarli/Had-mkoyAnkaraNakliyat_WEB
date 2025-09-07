@@ -2,22 +2,37 @@
 <html lang="en">
 
 <head>
-    <!-- Google tag (gtag.js) - TEK KEZ -->
+
+    <!-- Google tag (gtag.js) – TEK KEZ -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17507094342"></script>
     <script>
+        // 1) DataLayer
         window.dataLayer = window.dataLayer || [];
         function gtag(){ dataLayer.push(arguments); }
+
+        // 2) Consent varsayılanı (çerez banner'ın yoksa böyle kalsın)
+        //   Banner kullanırsan buton onayında:
+        //   gtag('consent','update',{ ad_storage:'granted', analytics_storage:'granted' });
+        gtag('consent', 'default', {
+          'ad_storage': 'granted',
+          'analytics_storage': 'granted'
+        });
+
+        // 3) Başlatma
         gtag('js', new Date());
+
+        // 4) Google Ads yapılandırma (AW satırı ŞART)
         gtag('config', 'AW-17507094342');
     </script>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
     <meta name="description" content="@ViewData["Description"]" />
     <!-- favicons Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="~/assets/images/gallery/han_seffaf.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="~/assets/images/gallery/han_seffaf.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="~/assets/images/gallery/han_seffaf.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="~/assets/images/gallery/Hadımköy_Ankara-NAkliyat_Alternatif_LOGO.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="~/assets/images/gallery/Hadımköy_Ankara-NAkliyat_Alternatif_LOGO.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="~/assets/images/gallery/Hadımköy_Ankara-NAkliyat_Alternatif_LOGO.png" />
     <link rel="stylesheet" href="~/assets/css/module-css/01-slider.css" />
     <link rel="stylesheet" href="~/assets/css/module-css/02-about.css" />
     <link rel="stylesheet" href="~/assets/css/module-css/03-services.css" />
@@ -71,7 +86,75 @@
     <link rel="stylesheet" href="~/assets/css/12-owl.theme.default.min.css" />
     <link rel="stylesheet" href="~/assets/css/13-jquery-ui.css" />
 
-   
+    <style>
+        /* Eski büyük butonlar varsa gizle */
+        .call-now-btn, .whatsapp-btn {
+            display: none !important;
+        }
+
+        :root {
+            --fab-size: 56px;
+            --fab-gap: 12px;
+        }
+
+        .fab-stack {
+            position: fixed;
+            right: max(16px, env(safe-area-inset-right));
+            bottom: max(16px, env(safe-area-inset-bottom));
+            z-index: 10000; /* scroll-to-top’tan yüksek */
+            display: flex;
+            flex-direction: column; /* üst üste */
+            gap: var(--fab-gap);
+            pointer-events: none; /* dışarıyı tıklanabilir bırak */
+        }
+
+            .fab-stack .fab {
+                pointer-events: auto; /* sadece butonlar tıklanabilir */
+                width: var(--fab-size);
+                height: var(--fab-size);
+                border-radius: 9999px;
+                display: grid;
+                place-items: center;
+                color: #fff;
+                text-decoration: none;
+                box-shadow: 0 8px 24px rgba(0,0,0,.18);
+                transform: translateZ(0);
+                transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
+            }
+
+        .fab:hover {
+            transform: scale(1.06);
+            filter: brightness(.96);
+            box-shadow: 0 10px 28px rgba(0,0,0,.22);
+        }
+
+        .fab-wa {
+            background: #25D366;
+        }
+
+        .fab-call {
+            background: #ff7300;
+        }
+
+        /* Scroll-to-top’ı butonların üstüne taşı */
+        .scroll-to-top, .scroll-to-target {
+            right: max(16px, env(safe-area-inset-right)) !important;
+            bottom: calc( max(16px, env(safe-area-inset-bottom)) + var(--fab-size) + var(--fab-gap) + var(--fab-size) + 16px ) !important;
+            z-index: 9998 !important;
+        }
+
+        /* Mobilde biraz küçült */
+        @@media (max-width: 600px) {
+            :root
+
+        {
+            --fab-size: 52px;
+            --fab-gap: 10px;
+        }
+
+        }
+    </style>
+
     
 </head>
 
@@ -467,6 +550,36 @@
             </div>
         </footer>
         <!--End Footer One-->
+        <!-- Mini FAB butonlar -->
+        <div class="fab-stack" role="region" aria-label="Hızlı iletişim">
+            <!-- WhatsApp -->
+            <a class="fab fab-wa" href="#"
+               aria-label="WhatsApp"
+               rel="nofollow noopener"
+               onclick="return gtag_whatsapp_conversion();">
+                <!-- WA icon -->
+                <svg width="24" height="24" viewBox="0 0 32 32" aria-hidden="true">
+                    <path fill="currentColor"
+                          d="M19.11 17.38c-.27-.14-1.58-.78-1.82-.87s-.42-.14-.59.14-.68.87-.83 1.05-.31.2-.59.07a6.9 6.9 0 0 1-2-1.22 7.57 7.57 0 0 1-1.39-1.73c-.15-.27 0-.41.12-.56s.27-.31.41-.48a1.88 1.88 0 0 0 .27-.45.51.51 0 0 0 0-.49c-.07-.14-.59-1.42-.81-1.95s-.43-.45-.59-.45h-.5a1 1 0 0 0-.73.35 3.06 3.06 0 0 0-.95 2.28 5.32 5.32 0 0 0 1.11 2.83 12.15 12.15 0 0 0 4.63 4.16 15.86 15.86 0 0 0 1.62.6 3.89 3.89 0 0 0 1.77.11 2.9 2.9 0 0 0 1.91-1.34 2.35 2.35 0 0 0 .16-1.34c-.06-.11-.24-.17-.51-.31z" />
+                    <path fill="currentColor"
+                          d="M16 3a13 13 0 0 0-11 19.77L3 29l6.41-1.98A13 13 0 1 0 16 3Zm7.7 20.7A10.26 10.26 0 0 1 9.46 26l-.44-.26-3.8 1.17 1.22-3.7-.28-.46a10.26 10.26 0 1 1 17.54 3.95Z" />
+                </svg>
+            </a>
+
+            <!-- Hemen Ara -->
+            <a class="fab fab-call"
+               href="tel:+905325436837"
+               aria-label="Hemen Ara"
+               onclick="return gtag_report_conversion('tel:+905325436837');">
+                <!-- Phone icon -->
+                <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor"
+                          d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.11.37 2.3.57 3.58.57a1 1 0 0 1 1 1V21a1 1 0 0 1-1 1C10.07 22 2 13.93 2 3a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.28.2 2.47.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2z" />
+                </svg>
+            </a>
+        </div>
+
+
 
     </div><!-- /.page-wrapper -->
 
@@ -571,55 +684,43 @@
     <script src="~/assets/js/script.js"></script>
 
     
-    <style>
-  
-        .call-now-btn {
-            position: fixed;
-            right: 18px;
-            bottom: 18px;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: #ff7300; /* Tema turuncusu. Değiştirebilirsin */
-            color: #fff;
-            font-size: 18px;
-            font-weight: 600;
-            padding: 12px 18px;
-            border-radius: 30px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.15);
-            transition: background 0.2s, transform 0.15s;
-            text-decoration: none;
+    <script>
+        function gtag_report_conversion(url) {
+          try{
+            if (typeof gtag === 'function') {
+              var cb = function(){ if (url) window.location = url; };
+              gtag('event','conversion',{
+                'send_to':'AW-17507094342/B1I8CI3qs40bEMaehJxB',
+                'value':1.0,'currency':'TRY',
+                'event_callback':cb
+              });
+              setTimeout(cb,800);
+              return false;
+            }
+          }catch(e){}
+          if (url) window.location = url;
+          return false;
         }
 
-            .call-now-btn:hover,
-            .call-now-btn:active {
-                background: #e35c00;
-                transform: scale(1.06);
+        function gtag_whatsapp_conversion() {
+          var msg = "Merhaba, bilgi almak istiyorum. Sayfa: " + document.title + " - " + location.href;
+          var wa  = "https://wa.me/905325436837?text=" + encodeURIComponent(msg);
+          try{
+            if (typeof gtag === 'function') {
+              var cb = function(){ window.open(wa,'_blank'); };
+              gtag('event','conversion',{
+                'send_to':'AW-17507094342/B1I8CI3qs40bEMaehJxB', /* İstersen WA için ayrı label koy */
+                'value':1.0,'currency':'TRY',
+                'event_callback':cb
+              });
+              setTimeout(cb,800);
+              return false;
             }
-
-            .call-now-btn svg {
-                display: block;
-            }
-
-        @@media (max-width: 600px) {
-            .call-now-btn {
-                font-size: 16px;
-                padding: 11px 14px;
-                right: 10px;
-                bottom: 10px;
-            }
-
-                .call-now-btn span {
-                    display: inline;
-                }
+          }catch(e){}
+          window.open(wa,'_blank'); return false;
         }
+    </script>
 
-        .scroll-to-top, .scroll-to-target {
-            bottom: 90px !important;
-            z-index: 9998;
-        }
-    </style>   
     <script>
         function gtag_report_conversion(url) {
           try {
@@ -650,5 +751,35 @@
         });
     </script>
     @RenderSection("Scripts", required: false)
+   
+    <script>
+        function gtag_report_conversion(url) {
+            var cb=function(){ if(typeof url!='undefined'){window.location=url;} };
+            gtag('event','conversion',{
+              'send_to':'AW-17507094342/B1I8CI3qs40bEMaehJxB',
+              'event_callback':cb
+            });
+            return false;
+        }
+
+        function gtag_whatsapp_conversion(){
+            var msg="Merhaba, bilgi almak istiyorum. Sayfa: "+document.title+" - "+location.href;
+            var wa="https://wa.me/905325436837?text="+encodeURIComponent(msg);
+            try{
+              if(typeof gtag==='function'){
+                var cb=function(){ window.open(wa,'_blank'); };
+                gtag('event','conversion',{
+                  'send_to':'AW-17507094342/B1I8CI3qs40bEMaehJxB',
+                  'value':1.0,'currency':'TRY',
+                  'event_callback':cb
+                });
+                setTimeout(cb,800);
+                return false;
+              }
+            }catch(e){}
+            window.open(wa,'_blank'); return false;
+        }
+    </script>
 
 </body>
+</html>

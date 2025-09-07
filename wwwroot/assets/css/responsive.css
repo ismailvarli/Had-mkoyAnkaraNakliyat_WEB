@@ -306,7 +306,7 @@
         padding: 120px 0px 90px;
     }
 
-    .why-choose-one .shape1 {
+    .why-choose-one {
         display: none;
     }
 
@@ -343,7 +343,7 @@
         margin-left: 0px;
     }
 
-    .faq-one .shape1 {
+    .faq-one {
         display: none;
     }
 
@@ -366,7 +366,7 @@
         display: none;
     }
 
-    .cta-one__inner .shape1 {
+    .cta-one__inner{
         display: none;
     }
 
