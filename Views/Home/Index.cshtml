@@ -3,6 +3,71 @@
     ViewData["Description"] = "İstanbul ve Ankara arasında evden eve, ofis, çeyiz, fuar, ambar ve parsiyel taşımacılıkta 7/24 hizmet. Ücretsiz ekspertiz ve sürprizsiz fiyat Hadımköy Ankara Nakliyat’ta!";
     ViewData["Keywords"] = "Şehirlerarası Nakliyat, evden eve nakliyat, Ambar Nakliyat, ofis taşımacılığı, fuar taşımacılığı, nakliyat firması";
 }
+<style>
+    /* ABOUT görsel düzeni */
+    .about-one__img {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* masaüstünde 2 sütun */
+        gap: 16px;
+        align-items: start;
+    }
+
+    /* Kart görünümü + oran sabitleme */
+    .about-one__img1,
+    .about-one__img2-inner {
+        border-radius: 12px;
+        overflow: hidden;
+        aspect-ratio: 4 / 3; /* CLS yok, şık kırpma */
+    }
+
+        .about-one__img1 img,
+        .about-one__img2-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* taşmadan, bozulmadan kırp */
+            display: block;
+        }
+
+    /* Döner yazı rozeti konum (mevcut tasarıma göre) */
+    .about-one__circle-text {
+        position: absolute;
+        left: -10px;
+        bottom: -10px;
+        pointer-events: none;
+    }
+
+    /* Mobil sadeleştirme */
+    @@media (max-width: 991.98px) {
+        .about-one__img
+
+    {
+        grid-template-columns: 1fr; /* tek sütun */
+    }
+
+    .about-one__img2 { /* ikinci görseli gizle */
+        display: none;
+    }
+
+    .about-one .shape1,
+    .about-one .shape2,
+    .about-one .shape3 { /* süsler gizli: kalabalığı al */
+        display: none;
+    }
+
+    .about-one__content { /* içerik ile görsel arası nefes */
+        margin-bottom: 16px;
+    }
+        @@media (max-width: 991.98px) {
+            .about-one__img, .about-one__img1, .about-one__img2, .about-one .shape1, .about-one .shape2, .about-one .shape3
+
+    {
+        display: none !important;
+    }
+
+    }
+    }
+</style>
 <!--Start Banner One-->
 <section class="banner-one">
     <div class="banner-one__pattern"
@@ -10,8 +75,7 @@
     <div class="banner-one__pattern2"><img src="~/assets/images/gallery/team-v2-pattern-1020x400.png" alt="hadımköy ankara nakliyat"></div>
 
     <div class="banner-one__img1">
-        <img class="float-bob-x" src="~/assets/images/gallery/HAN_KOLİ.png"
-             alt="hadımköy ankara parsiyel nakliyat">
+      
     </div>
     <div class="banner-one__img5">
         <img class="float-bob-y" src="~/assets/images/banner/banner-v1-img5.png"
@@ -103,7 +167,7 @@
                                         </div>
                                     </div>
 
-                                    <p>Türkiyenin 81 iline tizit ve profesyonel hizmetlerle.</p>
+                                    <p>Türkiye’nin 81 iline titiz ve profesyonel hizmetlerle.</p>
                                 </div>
                             </div>
 
@@ -144,7 +208,7 @@
 
                             <div class="text-box">
                                 <p>Bizleri Arayın</p>
-                                <h4><a href="tel:05325436837">+90 532 543 68 37 </a></h4>
+                                <h4><a href="tel:+905325436837">+90 532 543 68 37</a></h4>
                             </div>
                         </div>
                     </div>
@@ -548,117 +612,6 @@
     </div>
 </section>
 <!--End Project One-->
-<!--Start Skill One-->
-<section class="skill-one">
-    <div class="container">
-        <div class="row">
-            <!--Start Skill One Img-->
-            <div class="col-xl-5">
-                <div class="skill-one__img">
-                    <div class="shape1 float-bob-y">
-                        <img src="~/assets/images/shapes/skill-v1-shape1.png"  alt="">
-                    </div>
-                    <div class="shape2 float-bob-y">
-                        <img src="~/assets/images/shapes/skill-v1-shape2.png" alt="">
-                    </div>
-                    <div class="skill-one__img1 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_450x500_.png" alt="Nakliyat firması">
-                    </div>
-                    <div class="skill-one__img2 wow fadeInRight" data-wow-delay="0ms"
-                         data-wow-duration="1500ms">
-                        <div class="inner">
-                            <img src="~/assets/images/gallery/hadimkoy_ankara_nakliyat_325x380.png"   alt="evden eve ve sehirlerarasi nakliyat">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--End Skill One Img-->
-            <!--Start Skill One Content-->
-            <div class="col-xl-7">
-                <div class="skill-one__content">
-                    <div class="sec-title tg-heading-subheading animation-style2">
-                        <div class="sec-title__tagline">
-                            <div class="line"></div>
-                            <div class="text tg-element-title">
-                                <h4>Şehirlerarası Nakliyat</h4>
-                            </div>
-                            <div class="icon">
-                                <span class="icon-plane2 float-bob-x3"></span>
-                            </div>
-                        </div>
-                        <h2 class="sec-title__title tg-element-title">
-                            Şehirlerarası Nakliyat'da <br>Sık Sık Tercih
-                            <span>Ediliyoruz</span>
-                        </h2>
-                    </div>
-
-                    <div class="skill-one__content-text">
-                        <p>
-                           Şehirlerarası nakliyat denildiğinde Hadımköy Ankara Nakliyat, güvenilirliği ve profesyonelliğiyle öne çıkar. Türkiye genelinde sunduğumuz sigortalı taşıma hizmeti sayesinde eşyalarınızı hızlı, hasarsız ve zamanında teslim ediyoruz. Geniş araç filomuz, uzman kadromuz ve uygun fiyat politikamız ile müşterilerimizin ilk tercihi oluyoruz. Evden eve nakliyat, ofis taşımacılığı, fuar ve parça eşya taşımacılığında kaliteli çözümler sunarak şehirlerarası nakliyatın güvenilir adresi haline geldik
-                        </p>
-                    </div>
-
-                    <ul class="skill-one__progress">
-                        <li>
-                            <div class="skill-one__progress-single">
-                                <div class="title-box">
-                                    <p>Tercih Edilme</p>
-                                </div>
-
-                                <div class="bar">
-                                    <div class="bar-inner count-bar" data-percent="90%">
-                                        <div class="count-text">90%</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="skill-one__progress-single">
-                                <div class="title-box">
-                                    <p>Müşteri Memnunuyeti</p>
-                                </div>
-
-                                <div class="bar">
-                                    <div class="bar-inner count-bar" data-percent="99%">
-                                        <div class="count-text">99%</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="skill-one__progress-single">
-                                <div class="title-box">
-                                    <p>Başarılı Nakliyat</p>
-                                </div>
-
-                                <div class="bar">
-                                    <div class="bar-inner count-bar" data-percent="100%">
-                                        <div class="count-text">100%</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-
-                    <div class="skill-one__content-btn">
-                        <a class="thm-btn" href="/Home/iletisim">
-                            Bizlerle İletişime Geçin
-                            <i class="icon-right-arrow21"></i>
-                            <span class="hover-btn hover-bx"></span>
-                            <span class="hover-btn hover-bx2"></span>
-                            <span class="hover-btn hover-bx3"></span>
-                            <span class="hover-btn hover-bx4"></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!--End Skill One Content-->
-        </div>
-    </div>
-</section>
-<!--End Skill One-->    
 <!--Start Faq One-->
 <section class="faq-one">
     <div class="shape1 float-bob-x"><img src="~/assets/images/shapes/faq-v1-shape1.png"  alt="Nakliyat firması sıkça sorular sorular"></div>

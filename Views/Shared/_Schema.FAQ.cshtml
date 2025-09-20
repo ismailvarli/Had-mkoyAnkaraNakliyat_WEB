@@ -1,0 +1,16 @@
+﻿@{
+    var faq = ViewBag.FAQ as IEnumerable<(string Q, string A)> ?? Enumerable.Empty<(string, string)>();
+}
+@if (faq.Any())
+{
+    <script type="application/ld+json">
+        @Html.Raw(@"{
+          ""@context"": ""https://schema.org"",
+          ""@type"": ""FAQPage"",
+            ""mainEntity"": [" + string.Join(",", faq.Select(qa =>
+                @"{ ""@type"": ""Question"", ""name"": """ + qa.Q.Replace(@"""", @"\""") +
+                @""", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": """ + qa.A.Replace(@"""", @"\""") + @""" } }"
+            )) + @"]
+        }")
+</script>
+}

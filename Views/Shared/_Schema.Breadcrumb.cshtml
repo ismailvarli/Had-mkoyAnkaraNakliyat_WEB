@@ -1,0 +1,15 @@
+﻿@{
+    var items = ViewBag.Breadcrumb as IEnumerable<(string Name, string Url)> ?? Enumerable.Empty<(string, string)>();
+}
+@if (items.Any())
+{
+    <script type="application/ld+json">
+        @Html.Raw(@"{
+          ""@context"": ""https://schema.org"",
+          ""@type"": ""BreadcrumbList"",
+            ""itemListElement"": [" + string.Join(",", items.Select((it, i) =>
+                @"{ ""@type"": ""ListItem"", ""position"": " + (i+1) + @", ""name"": """ + it.Name.Replace(@"""", @"\""") + @""", ""item"": ""https://www.hadimkoyankaranakliyat.com" + it.Url + @""" }"
+            )) + @"]
+        }")
+</script>
+}
