@@ -1,6 +1,9 @@
 using System.Globalization;
 using System.Text;
 using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 namespace HadımkoyAnkaraNakliyat_WEB
 {
@@ -10,10 +13,10 @@ namespace HadımkoyAnkaraNakliyat_WEB
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // MVC
+            // MVC Servisleri
             builder.Services.AddControllersWithViews();
 
-            // İsteğe bağlı: Brotli + Gzip sıkıştırma
+            // Sıkıştırma (Performans için)
             builder.Services.AddResponseCompression(o =>
             {
                 o.EnableForHttps = true;
@@ -25,7 +28,7 @@ namespace HadımkoyAnkaraNakliyat_WEB
 
             var app = builder.Build();
 
-            // Hata yakalama + HSTS
+            // Hata Yakalama
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
@@ -35,57 +38,29 @@ namespace HadımkoyAnkaraNakliyat_WEB
             app.UseHttpsRedirection();
             app.UseResponseCompression();
 
-            // --- 301 sabit yönlendirmeler (senin liste) ---
-            app.Use(async (context, next) =>
-            {
-                var redirects = new Dictionary<string, string>(StringComparer.Ordinal)
-                {
-                    ["/Home/Fiyat_Al"] = "/Home/fiyat_al",
-                    ["/Home/İstanbul_Ankara_Fuar_Nakliyat"] = "/Home/istanbul_ankara_fuar_nakliyat",
-                    ["/Home/İletisim"] = "/Home/iletisim",
-                    ["/Home/İstanbul_Ankara_Nakliyat"] = "/Home/istanbul_ankara_nakliyat",
-                };
-
-                var path = context.Request.Path.Value ?? "/";
-                if (redirects.TryGetValue(path, out var dest))
-                {
-                    context.Response.Redirect(dest, permanent: true);
-                    return;
-                }
-
-                await next();
-            });
-
-            // --- URL normalizasyonu (sadece sayfa isteklerine, dosyalara DOKUNMAZ) ---
+            // -----------------------------------------------------------------
+            // 1. ADIM: URL Normalizasyonu (Büyük harf -> Küçük harf çevirici)
+            // Bu kod Google'ın sevdiği temiz URL yapısını sağlar.
+            // -----------------------------------------------------------------
             app.Use(async (ctx, next) =>
             {
                 var original = ctx.Request.Path.Value ?? "/";
 
-                // 1) Uzantılı istekleri (png, jpg, css, js, svg, webp, ico, map, woff2 vs.) BYPASS
-                if (Path.HasExtension(original))
+                // Dosyalara ve sistem yollarına dokunma
+                if (Path.HasExtension(original) ||
+                    original.StartsWith("/assets") ||
+                    original.StartsWith("/lib") ||
+                    original == "/robots.txt" ||
+                    original == "/sitemap.xml")
                 {
                     await next();
                     return;
                 }
 
-                // 2) Belirli kök klasörleri BYPASS (statik içerik)
-                if (original.StartsWith("/assets", StringComparison.OrdinalIgnoreCase) ||
-                    original.StartsWith("/lib", StringComparison.OrdinalIgnoreCase) ||
-                    original.StartsWith("/fonts", StringComparison.OrdinalIgnoreCase) ||
-                    string.Equals(original, "/robots.txt", StringComparison.OrdinalIgnoreCase) ||
-                    string.Equals(original, "/sitemap.xml", StringComparison.OrdinalIgnoreCase) ||
-                    string.Equals(original, "/favicon.ico", StringComparison.OrdinalIgnoreCase))
-                {
-                    await next();
-                    return;
-                }
-
+                // URL'yi temizle (Küçük harf yap, Türkçe karakterleri düzelt)
                 var normalized = SlugifyPath(original);
 
-                // sonda / kaldır (kök hariç)
-                if (normalized.EndsWith("/") && normalized != "/")
-                    normalized = normalized.TrimEnd('/');
-
+                // Eğer URL değişmişse yönlendir (301 Redirect)
                 if (!string.Equals(original, normalized, StringComparison.Ordinal))
                 {
                     var q = ctx.Request.QueryString.HasValue ? ctx.Request.QueryString.Value : "";
@@ -96,12 +71,14 @@ namespace HadımkoyAnkaraNakliyat_WEB
                 await next();
             });
 
-            // Statik dosyalar + uzun cache
+            // -----------------------------------------------------------------
+            // 2. ADIM: Statik Dosyalar (CSS, Resimler çalışsın diye ŞART)
+            // -----------------------------------------------------------------
             app.UseStaticFiles(new StaticFileOptions
             {
                 OnPrepareResponse = ctx =>
                 {
-                    // 1 yıl cache – dosya adında versiyon kullanırsan süper olur
+                    // Dosyaları tarayıcıda 1 yıl önbelleğe al (Hız için)
                     ctx.Context.Response.Headers["Cache-Control"] = "public,max-age=31536000,immutable";
                 }
             });
@@ -109,73 +86,48 @@ namespace HadımkoyAnkaraNakliyat_WEB
             app.UseRouting();
             app.UseAuthorization();
 
-            // robots.txt
-            app.MapGet("/robots.txt", () =>
-                Results.Text(
+            // -----------------------------------------------------------------
+            // 3. ADIM: robots.txt
+            // -----------------------------------------------------------------
+            app.MapGet("/robots.txt", () => Results.Text(
 @"User-agent: *
 Allow: /
 Sitemap: https://www.hadimkoyankaranakliyat.com/sitemap.xml", "text/plain"));
-            // ---- (5) sitemap.xml ----
+
+            // -----------------------------------------------------------------
+            // 4. ADIM: SITEMAP (Google için Harita)
+            // DİKKAT: Buradaki linklerin hepsi KÜÇÜK HARFLİ olmalı.
+            // -----------------------------------------------------------------
             app.MapGet("/sitemap.xml", (HttpContext http) =>
             {
                 http.Response.ContentType = "application/xml; charset=utf-8";
                 var host = "https://www.hadimkoyankaranakliyat.com";
 
-                // Tüm sayfaların listesi:
+                // Buraya tüm önemli sayfalarını KÜÇÜK HARFLE ekle
                 var urls = new[]
                 {
-        $"{host}/",
-        $"{host}/Home/Index",
-        $"{host}/Home/hakkimizda",
-        $"{host}/Home/iletisim",
-        $"{host}/Home/fiyat_al",
-        $"{host}/Home/hizmetlerimiz",
-        $"{host}/Home/hizmet_turleri",
-        $"{host}/Home/blog",
-
-        // Hizmet sayfaları
-        $"{host}/Home/hadimkoy_ankara_nakliyat",
-        $"{host}/Home/sehirlerarasi_hizmetlerimiz",
-        $"{host}/Home/evden_eve_nakliyat",
-        $"{host}/Home/ambar_nakliyat",
-        $"{host}/Home/fuar_tasimaciligi",
-        $"{host}/Home/ofis_tasimaciligi",
-        $"{host}/Home/parsiyel_nakliyat",
-        $"{host}/Home/asansorlu_nakliyatin_istanbul_ankara_iliskisi",
-        $"{host}/Home/evden_eve_nakliyat_oncesi_hazirlik_rehberi",
-
-        // Şehir bazlı
-        $"{host}/Home/istanbul_ankara_nakliyat",
-        $"{host}/Home/istanbul_ankara_evden_eve_nakliyat",
-        $"{host}/Home/istanbul_ankara_fuar_nakliyat",
-        $"{host}/Home/istanbul_ankara_kamyonet_nakliyat",
-        $"{host}/Home/istanbul_ankara_ambar_nakliyat",
-        $"{host}/Home/istanbul_ankara_parsiyel_nakliyat",
-        $"{host}/Home/istanbul_ankara_sehirlerarasi_nakliyat",
-        $"{host}/Home/istanbul_ankara_ceyiz_nakliyat",
-        $"{host}/Home/istanbul_ankara_nakliyat_fiyatlari_2025_guncel_rehber",
-
-        // Diğer şehirler
-        $"{host}/Home/istanbul_antalya_nakliyat",
-        $"{host}/Home/istanbul_bursa_nakliyat",
-        $"{host}/Home/istanbul_eskisehir_nakliyat",
-        $"{host}/Home/istanbul_izmir_nakliyat",
-        $"{host}/Home/kazan_istanbul_nakliyat",
-        $"{host}/Home/catalca_ankara_nakliyat",
-        $"{host}/Home/beylikduzu_ankara_nakliyat",
-        $"{host}/Home/bayrampasa_ankara_nakliyat",
-        $"{host}/Home/ikitelli_ankara_nakliyat",
-        $"{host}/Home/sincan_istanbul_nakliyat",
-        $"{host}/Home/temelli_istanbul_nakliyat",
-        $"{host}/Home/yenimahalle_istanbul_nakliyat",
-        $"{host}/Home/zeytinburnu_ankara_nakliyat",
-        $"{host}/Home/ostim_istanbul_nakliyat",
-
-        // Ekstra
-        $"{host}/Home/nakliyat_hizmet_fiyati",
-        $"{host}/Home/sigortali_nakliyat_esyalarinizi_guvence_altina_alin",
-        $"{host}/Home/parsiyel_nakliyat_nedir_istanbul_ankara_arasinda__avantajlari"
-    };
+                    $"{host}/",
+                    $"{host}/home/hakkimizda",
+                    $"{host}/home/iletisim",
+                    $"{host}/home/fiyat_al",
+                    $"{host}/home/hizmetlerimiz",
+                    $"{host}/home/blog",
+                    
+                    // Hizmetler (URL'ler middleware ile uyumlu, küçük harfli)
+                    $"{host}/home/istanbul_ankara_nakliyat",
+                    $"{host}/home/evden_eve_nakliyat",
+                    $"{host}/home/ambar_nakliyat",
+                    $"{host}/home/fuar_tasimaciligi",
+                    $"{host}/home/ofis_tasimaciligi",
+                    $"{host}/home/parsiyel_nakliyat",
+                    
+                    // Şehirler arası
+                    $"{host}/home/istanbul_ankara_evden_eve_nakliyat",
+                    $"{host}/home/istanbul_ankara_fuar_nakliyat",
+                    $"{host}/home/sincan_istanbul_nakliyat",
+                    $"{host}/home/beylikduzu_ankara_nakliyat",
+                    // ... diğer linklerini de buraya küçük harfle eklemeyi unutma
+                };
 
                 var sb = new StringBuilder();
                 sb.AppendLine(@"<?xml version=""1.0"" encoding=""UTF-8""?>");
@@ -192,48 +144,59 @@ Sitemap: https://www.hadimkoyankaranakliyat.com/sitemap.xml", "text/plain"));
                 return Results.Text(sb.ToString(), "application/xml; charset=utf-8");
             });
 
-            // MVC route
+            // MVC Rotaları
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
+        }
 
-            // --- Yardımcı: Türkçe karakterleri ve büyük harfleri normalize eder ---
-            static string SlugifyPath(string path)
+        // --- YARDIMCI METOT: URL TEMİZLEYİCİ ---
+        static string SlugifyPath(string path)
+        {
+            if (string.IsNullOrEmpty(path) || path == "/") return path;
+
+            var lower = path.ToLowerInvariant();
+
+            // Türkçe karakterleri İngilizceye çevir
+            lower = lower
+                .Replace('ğ', 'g')
+                .Replace('ü', 'u')
+                .Replace('ş', 's')
+                .Replace('ö', 'o')
+                .Replace('ç', 'c')
+                .Replace('ı', 'i');
+
+            // Güvenli karakterleri ayıkla
+            var normalized = lower.Normalize(NormalizationForm.FormD);
+            var sb = new StringBuilder();
+            foreach (var c in normalized)
             {
-                var lower = path.ToLowerInvariant();
-
-                // Türkçe karakterleri ASCII'ye çevir
-                lower = lower
-                    .Replace('ğ', 'g')
-                    .Replace('ü', 'u')
-                    .Replace('ş', 's')
-                    .Replace('ö', 'o')
-                    .Replace('ç', 'c')
-                    .Replace('ı', 'i');
-
-                // Unicode işaretlerini temizle
-                var normalized = lower.Normalize(NormalizationForm.FormD);
-                var sb = new StringBuilder(normalized.Length);
-                foreach (var ch in normalized)
-                {
-                    var cat = CharUnicodeInfo.GetUnicodeCategory(ch);
-                    if (cat != UnicodeCategory.NonSpacingMark) sb.Append(ch);
-                }
-                var noDiacritics = sb.ToString().Normalize(NormalizationForm.FormC);
-
-                // Boşluk -> '-' ; yalnızca güvenli karakterler
-                noDiacritics = noDiacritics.Replace(' ', '-');
-
-                var safe = new StringBuilder(noDiacritics.Length);
-                foreach (var c in noDiacritics)
-                {
-                    if (char.IsLetterOrDigit(c) || c == '/' || c == '-' || c == '_')
-                        safe.Append(c);
-                }
-                return safe.ToString();
+                if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
+                    sb.Append(c);
             }
+            var noDiacritics = sb.ToString().Normalize(NormalizationForm.FormC);
+
+            // Boşlukları tire yap
+            noDiacritics = noDiacritics.Replace(' ', '-');
+
+            var safe = new StringBuilder();
+            foreach (var c in noDiacritics)
+            {
+                if (char.IsLetterOrDigit(c) || c == '/' || c == '-' || c == '_')
+                    safe.Append(c);
+            }
+
+            // Çift tireleri temizle (istanbul--ankara olmasın diye)
+            var result = safe.ToString();
+            while (result.Contains("--")) result = result.Replace("--", "-");
+
+            // Sondaki gereksiz slash'ı sil (kök dizin değilse)
+            if (result.Length > 1 && result.EndsWith("/"))
+                result = result.TrimEnd('/');
+
+            return result;
         }
     }
 }

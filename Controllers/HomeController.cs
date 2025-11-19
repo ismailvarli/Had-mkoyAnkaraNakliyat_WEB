@@ -219,6 +219,32 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
         {
             return View();
         }
+        //Şehir Bazlı Taşımacılık Hizmetlerinin bulunduğu sayfalar BAŞLANGIÇ//
+        public IActionResult sehir_bazli_tasimacilik()
+        {
+            return View();
+        }
+        public IActionResult ankara_nakliyat()
+        {
+            return View();
+        }
+        //Şehir Bazlı Taşımacılık Hizmetlerinin bulunduğu sayfalar SON//
+
+        //ilce bazlı taşımacılık hizmetlerinin bulunduğu sayfalar BAŞLANGIÇ//
+        public IActionResult ilce_bazli_tasimacilik()
+        {
+            return View();
+        }
+        public IActionResult zeytinburnu_nakliyat()
+        {
+            return View();
+        }
+        public IActionResult esenyurt_nakliyat()
+        {
+            return View();
+        }
+        //ilce bazlı taşımacılık hizmetlerinin bulunduğu sayfalar BAŞLANGIÇ//
+
         [HttpGet]
         public IActionResult iletisim()
         {
