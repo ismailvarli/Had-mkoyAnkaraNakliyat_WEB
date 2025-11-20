@@ -191,6 +191,11 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
         {
             return View();
         }
+        public IActionResult gebze_ankara_nakliyat()
+        {
+            return View();
+        }
+        //Hizmet Türlerinin bulunduğu sayfalar BAŞLANGIÇ//
         public IActionResult hizmet_turleri()
         {
             return View();
@@ -219,6 +224,7 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
         {
             return View();
         }
+        //Hizmet Türlerinin bulunduğu sayfalar BAŞLANGIÇ//
         //Şehir Bazlı Taşımacılık Hizmetlerinin bulunduğu sayfalar BAŞLANGIÇ//
         public IActionResult sehir_bazli_tasimacilik()
         {
