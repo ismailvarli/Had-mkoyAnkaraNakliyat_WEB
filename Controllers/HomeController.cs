@@ -241,15 +241,284 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
         {
             return View();
         }
-        public IActionResult zeytinburnu_nakliyat()
+        // ==========================================
+        // İSTANBUL - ANKARA NAKLİYAT SAYFALARI
+        // ==========================================
+
+        // 1. ADALAR
+        [Route("adalar-nakliyat")]
+        public IActionResult adalar_nakliyat()
         {
             return View();
         }
+
+        // 2. ARNAVUTKÖY
+        [Route("arnavutkoy-nakliyat")]
+        public IActionResult arnavutkoy_nakliyat()
+        {
+            return View();
+        }
+
+        // 3. ATAŞEHİR
+        [Route("atasehir-nakliyat")]
+        public IActionResult atasehir_nakliyat()
+        {
+            return View();
+        }
+
+        // 4. AVCILAR
+        [Route("avcilar-nakliyat")]
+        public IActionResult avcilar_nakliyat()
+        {
+            return View();
+        }
+
+        // 5. BAĞCILAR
+        [Route("bagcilar-nakliyat")]
+        public IActionResult bagcilar_nakliyat()
+        {
+            return View();
+        }
+
+        // 6. BAHÇELİEVLER
+        [Route("bahcelievler-nakliyat")]
+        public IActionResult bahcelievler_nakliyat()
+        {
+            return View();
+        }
+
+        // 7. BAKIRKÖY
+        [Route("bakirkoy-nakliyat")]
+        public IActionResult bakirkoy_nakliyat()
+        {
+            return View();
+        }
+
+        // 8. BAŞAKŞEHİR
+        [Route("basaksehir-nakliyat")]
+        public IActionResult basaksehir_nakliyat()
+        {
+            return View();
+        }
+
+        // 9. BAYRAMPAŞA
+        [Route("bayrampasa-nakliyat")]
+        public IActionResult bayrampasa_nakliyat()
+        {
+            return View();
+        }
+
+        // 10. BEŞİKTAŞ
+        [Route("besiktas-nakliyat")]
+        public IActionResult besiktas_nakliyat()
+        {
+            return View();
+        }
+
+        // 11. BEYKOZ
+        [Route("beykoz-nakliyat")]
+        public IActionResult beykoz_nakliyat()
+        {
+            return View();
+        }
+
+        // 12. BEYLİKDÜZÜ
+        [Route("beylikduzu-nakliyat")]
+        public IActionResult beylikduzu_nakliyat()
+        {
+            return View();
+        }
+
+        // 13. BEYOĞLU
+        [Route("beyoglu-nakliyat")]
+        public IActionResult beyoglu_nakliyat()
+        {
+            return View();
+        }
+
+        // 14. BÜYÜKÇEKMECE
+        [Route("buyukcekmece-nakliyat")]
+        public IActionResult buyukcekmece_nakliyat()
+        {
+            return View();
+        }
+
+        // 15. ÇATALCA
+        [Route("catalca-nakliyat")]
+        public IActionResult catalca_nakliyat()
+        {
+            return View();
+        }
+
+        // 16. ÇEKMEKÖY
+        [Route("cekmekoy-nakliyat")]
+        public IActionResult cekmekoy_nakliyat()
+        {
+            return View();
+        }
+
+        // 17. ESENLER
+        [Route("esenler-nakliyat")]
+        public IActionResult esenler_nakliyat()
+        {
+            return View();
+        }
+
+        // 18. ESENYURT
+        [Route("esenyurt-nakliyat")]
         public IActionResult esenyurt_nakliyat()
         {
             return View();
         }
-        //ilce bazlı taşımacılık hizmetlerinin bulunduğu sayfalar BAŞLANGIÇ//
+
+        // 19. EYÜPSULTAN
+        [Route("eyupsultan-nakliyat")]
+        public IActionResult eyupsultan_nakliyat()
+        {
+            return View();
+        }
+
+        // 20. FATİH
+        [Route("fatih-nakliyat")]
+        public IActionResult fatih_nakliyat()
+        {
+            return View();
+        }
+
+        // 21. GAZİOSMANPAŞA
+        [Route("gaziosmanpasa-nakliyat")]
+        public IActionResult gaziosmanpasa_nakliyat()
+        {
+            return View();
+        }
+
+        // 22. GÜNGÖREN
+        [Route("gungoren-nakliyat")]
+        public IActionResult gungoren_nakliyat()
+        {
+            return View();
+        }
+
+        // 23. KADIKÖY
+        [Route("kadikoy-nakliyat")]
+        public IActionResult kadikoy_nakliyat()
+        {
+            return View();
+        }
+
+        // 24. KAĞITHANE
+        [Route("kagithane-nakliyat")]
+        public IActionResult kagithane_nakliyat()
+        {
+            return View();
+        }
+
+        // 25. KARTAL
+        [Route("kartal-nakliyat")]
+        public IActionResult kartal_nakliyat()
+        {
+            return View();
+        }
+
+        // 26. KÜÇÜKÇEKMECE
+        [Route("kucukcekmece-nakliyat")]
+        public IActionResult kucukcekmece_nakliyat()
+        {
+            return View();
+        }
+
+        // 27. MALTEPE
+        [Route("maltepe-nakliyat")]
+        public IActionResult maltepe_nakliyat()
+        {
+            return View();
+        }
+
+        // 28. PENDİK
+        [Route("pendik-nakliyat")]
+        public IActionResult pendik_nakliyat()
+        {
+            return View();
+        }
+
+        // 29. SANCAKTEPE
+        [Route("sancaktepe-nakliyat")]
+        public IActionResult sancaktepe_nakliyat()
+        {
+            return View();
+        }
+
+        // 30. SARIYER
+        [Route("sariyer-nakliyat")]
+        public IActionResult sariyer_nakliyat()
+        {
+            return View();
+        }
+
+        // 31. SİLİVRİ
+        [Route("silivri-nakliyat")]
+        public IActionResult silivri_nakliyat()
+        {
+            return View();
+        }
+
+        // 32. SULTANBEYLİ
+        [Route("sultanbeyli-nakliyat")]
+        public IActionResult sultanbeyli_nakliyat()
+        {
+            return View();
+        }
+
+        // 33. SULTANGAZİ
+        [Route("sultangazi-nakliyat")]
+        public IActionResult sultangazi_nakliyat()
+        {
+            return View();
+        }
+
+        // 34. ŞİLE
+        [Route("sile-nakliyat")]
+        public IActionResult sile_nakliyat()
+        {
+            return View();
+        }
+
+        // 35. ŞİŞLİ
+        [Route("sisli-nakliyat")]
+        public IActionResult sisli_nakliyat()
+        {
+            return View();
+        }
+
+        // 36. TUZLA
+        [Route("tuzla-nakliyat")]
+        public IActionResult tuzla_nakliyat()
+        {
+            return View();
+        }
+
+        // 37. ÜMRANİYE
+        [Route("umraniye-nakliyat")]
+        public IActionResult umraniye_nakliyat()
+        {
+            return View();
+        }
+
+        // 38. ÜSKÜDAR
+        [Route("uskudar-nakliyat")]
+        public IActionResult uskudar_nakliyat()
+        {
+            return View();
+        }
+
+        // 39. ZEYTİNBURNU
+        [Route("zeytinburnu-nakliyat")]
+        public IActionResult zeytinburnu_nakliyat()
+        {
+            return View();
+        }
+
+        //ilce bazlı taşımacılık hizmetlerinin bulunduğu sayfalar Bitiş//
 
         [HttpGet]
         public IActionResult iletisim()

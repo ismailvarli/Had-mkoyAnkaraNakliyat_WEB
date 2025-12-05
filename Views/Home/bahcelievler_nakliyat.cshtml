@@ -1,0 +1,444 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Bahçelievler Ankara Nakliyat: Asansörlü, Sigortalı ve Kurumsal Taşıma";
+    ViewData["Description"] = "Bahçelievler'den Ankara'ya asansörlü evden eve nakliyat. Şirinevler, Yenibosna ve Haznedar bölgelerinden Ankara'ya günlük sigortalı seferler. Hemen fiyat teklifi alın.";
+}
+
+<style>
+    :root {
+        --primary-color: #d35400; /* Kurumsal Turuncu */
+        --secondary-color: #2c3e50; /* Koyu Lacivert */
+        --accent-blue: #3498db; /* Güven mavisi */
+    }
+
+    /* GENEL SAYFA YAPISI */
+    .page-container {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* SOL MENÜ (SIDEBAR) */
+    .district-sidebar {
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 20px;
+        position: sticky;
+        top: 20px;
+        height: fit-content;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    }
+
+        .district-sidebar h3 {
+            color: var(--primary-color);
+            font-size: 18px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            margin-top: 0;
+        }
+
+    .district-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        max-height: 600px;
+        overflow-y: auto;
+    }
+
+        .district-list::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .district-list::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 3px;
+        }
+
+        .district-list li {
+            margin-bottom: 5px;
+        }
+
+        .district-list a {
+            display: block;
+            padding: 10px 15px;
+            color: #555;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s;
+            border-left: 3px solid transparent;
+            font-size: 14px;
+            background: #fdfdfd;
+            border: 1px solid #f1f1f1;
+        }
+
+            .district-list a:hover {
+                background: #fff3e0;
+                color: var(--primary-color);
+                border-left-color: var(--primary-color);
+                padding-left: 20px;
+            }
+
+            .district-list a.active {
+                background: var(--primary-color);
+                color: #fff;
+                border-color: var(--primary-color);
+                font-weight: bold;
+            }
+
+    /* SAĞ İÇERİK ALANI */
+    .content-area h1 {
+        font-size: 30px;
+        color: var(--secondary-color);
+        margin-bottom: 20px;
+        line-height: 1.3;
+    }
+
+    .hero-image-wrapper {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .hero-image-wrapper:hover img {
+            transform: scale(1.02);
+        }
+
+    .hero-badge {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        background: rgba(52, 152, 219, 0.9); /* Mavi ton */
+        color: #fff;
+        padding: 8px 15px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 600;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    /* İçerik Kutuları */
+    .intro-box {
+        background: #f0f8ff; /* Alice Blue */
+        border-left: 5px solid var(--accent-blue);
+        padding: 20px;
+        font-size: 1.1em;
+        line-height: 1.6;
+        color: #444;
+        margin-bottom: 30px;
+        border-radius: 0 8px 8px 0;
+    }
+
+    h2 {
+        color: var(--secondary-color);
+        font-size: 24px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+    }
+
+    /* Özellik Gridleri */
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+    }
+
+    .feature-card {
+        background: #fff;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        border: 1px solid #eee;
+        text-align: center;
+        transition: transform 0.3s;
+    }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .feature-card i {
+            font-size: 32px;
+            margin-bottom: 15px;
+            display: block;
+            color: var(--primary-color);
+        }
+
+        .feature-card h4 {
+            color: var(--secondary-color);
+            margin: 0 0 10px 0;
+            font-size: 18px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+    /* Tablo */
+    .info-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+        .info-table th {
+            background: var(--secondary-color);
+            color: #fff;
+            padding: 15px;
+            text-align: left;
+            width: 35%;
+        }
+
+        .info-table td {
+            background: #fff;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            color: #555;
+        }
+
+    /* SSS (Accordion) */
+    details {
+        background: #fff;
+        margin-bottom: 10px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+    }
+
+    summary {
+        padding: 15px 20px;
+        font-weight: 600;
+        cursor: pointer;
+        background: #f9f9f9;
+        list-style: none;
+        position: relative;
+    }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 18px;
+        }
+
+    details[open] summary::after {
+        content: '-';
+    }
+
+    details p {
+        padding: 20px;
+        color: #666;
+        margin: 0;
+        border-top: 1px solid #eee;
+        line-height: 1.6;
+    }
+
+    /* CTA Alanı */
+    .cta-wrapper {
+        background: linear-gradient(135deg, #2980b9 0%, #6dd5fa 100%); /* Mavi tonlu gradient */
+        padding: 40px;
+        text-align: center;
+        border-radius: 12px;
+        margin-top: 50px;
+        color: white;
+        box-shadow: 0 15px 30px rgba(41, 128, 185, 0.2);
+    }
+
+        .cta-wrapper h3 {
+            color: white;
+            margin-top: 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .cta-wrapper p {
+            color: #f0f8ff;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+    .btn-call {
+        display: inline-block;
+        background: #fff;
+        color: #2980b9;
+        padding: 16px 50px;
+        border-radius: 50px;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 20px;
+        margin-top: 25px;
+        transition: all 0.3s;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+        .btn-call:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            color: #c0392b;
+        }
+
+    /* MOBİL UYUMLULUK */
+    @@media (max-width: 768px) {
+        .page-container {
+            grid-template-columns: 1fr;
+        }
+
+        .district-sidebar {
+            order: 2;
+            margin-top: 30px;
+        }
+    }
+</style>
+
+<div class="page-container">
+
+    <aside class="district-sidebar">
+        <h3>📍 Hizmet Bölgelerimiz</h3>
+        <ul class="district-list">
+            <li><a href="/adalar-ankara-nakliyat">Adalar Nakliyat</a></li>
+            <li><a href="/arnavutkoy-ankara-nakliyat">Arnavutköy Nakliyat</a></li>
+            <li><a href="/atasehir-ankara-nakliyat">Ataşehir Nakliyat</a></li>
+            <li><a href="/avcilar-ankara-nakliyat">Avcılar Nakliyat</a></li>
+            <li><a href="/bagcilar-ankara-nakliyat">Bağcılar Nakliyat</a></li>
+            <li><a href="/bahcelievler-ankara-nakliyat" class="active">Bahçelievler Nakliyat</a></li>
+            <li><a href="/bakirkoy-ankara-nakliyat">Bakırköy Nakliyat</a></li>
+            <li><a href="/basaksehir-ankara-nakliyat">Başakşehir Nakliyat</a></li>
+            <li><a href="/bayrampasa-ankara-nakliyat">Bayrampaşa Nakliyat</a></li>
+            <li><a href="/besiktas-ankara-nakliyat">Beşiktaş Nakliyat</a></li>
+            <li><a href="/beykoz-ankara-nakliyat">Beykoz Nakliyat</a></li>
+            <li><a href="/beylikduzu-ankara-nakliyat">Beylikdüzü Nakliyat</a></li>
+            <li><a href="/beyoglu-ankara-nakliyat">Beyoğlu Nakliyat</a></li>
+            <li><a href="/buyukcekmece-ankara-nakliyat">Büyükçekmece Nakliyat</a></li>
+            <li><a href="/catalca-ankara-nakliyat">Çatalca Nakliyat</a></li>
+            <li><a href="/cekmekoy-ankara-nakliyat">Çekmeköy Nakliyat</a></li>
+            <li><a href="/esenler-ankara-nakliyat">Esenler Nakliyat</a></li>
+            <li><a href="/esenyurt-ankara-nakliyat">Esenyurt Nakliyat</a></li>
+            <li><a href="/eyupsultan-ankara-nakliyat">Eyüpsultan Nakliyat</a></li>
+            <li><a href="/fatih-ankara-nakliyat">Fatih Nakliyat</a></li>
+            <li><a href="/gaziosmanpasa-ankara-nakliyat">Gaziosmanpaşa Nakliyat</a></li>
+            <li><a href="/gungoren-ankara-nakliyat">Güngören Nakliyat</a></li>
+            <li><a href="/kadikoy-ankara-nakliyat">Kadıköy Nakliyat</a></li>
+            <li><a href="/kagithane-ankara-nakliyat">Kağıthane Nakliyat</a></li>
+            <li><a href="/kartal-ankara-nakliyat">Kartal Nakliyat</a></li>
+            <li><a href="/kucukcekmece-ankara-nakliyat">Küçükçekmece Nakliyat</a></li>
+            <li><a href="/maltepe-ankara-nakliyat">Maltepe Nakliyat</a></li>
+            <li><a href="/pendik-ankara-nakliyat">Pendik Nakliyat</a></li>
+            <li><a href="/sancaktepe-ankara-nakliyat">Sancaktepe Nakliyat</a></li>
+            <li><a href="/sariyer-ankara-nakliyat">Sarıyer Nakliyat</a></li>
+            <li><a href="/silivri-ankara-nakliyat">Silivri Nakliyat</a></li>
+            <li><a href="/sultanbeyli-ankara-nakliyat">Sultanbeyli Nakliyat</a></li>
+            <li><a href="/sultangazi-ankara-nakliyat">Sultangazi Nakliyat</a></li>
+            <li><a href="/sile-ankara-nakliyat">Şile Nakliyat</a></li>
+            <li><a href="/sisli-ankara-nakliyat">Şişli Nakliyat</a></li>
+            <li><a href="/tuzla-ankara-nakliyat">Tuzla Nakliyat</a></li>
+            <li><a href="/umraniye-ankara-nakliyat">Ümraniye Nakliyat</a></li>
+            <li><a href="/uskudar-ankara-nakliyat">Üsküdar Nakliyat</a></li>
+            <li><a href="/zeytinburnu-ankara-nakliyat">Zeytinburnu Nakliyat</a></li>
+        </ul>
+    </aside>
+
+    <main class="content-area">
+
+        <div class="hero-image-wrapper">
+            <img src="~/images/bahcelievler-ankara-nakliyat.jpg" alt="Bahçelievler Ankara Arası Asansörlü Nakliyat" onerror="this.src='https://via.placeholder.com/800x400?text=Bahcelievler+Ankara+Nakliyat'">
+            <div class="hero-badge">Bahçelievler'den Ankara'ya Güvenli Hat</div>
+        </div>
+
+        <h1>Bahçelievler Ankara Nakliyat: Asansörlü, Sigortalı ve Kurumsal Taşıma</h1>
+
+        <div class="intro-box">
+            İstanbul'un en köklü ve yoğun yerleşimlerinden biri olan <strong>Bahçelievler'den Ankara'ya</strong> taşınmak, özellikle dar sokaklar ve asansörsüz binalar düşünüldüğünde uzmanlık gerektirir. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Şirinevler, Yenibosna, Haznedar ve Yayla gibi tüm semtlerde, <strong>Modüler Dış Cephe Asansörümüz</strong> ile eşyalarınızı merdiven dahi görmeden, balkondan direkt araca yüklüyoruz.
+        </div>
+
+        <p>Bahçelievler'in yoğun trafiği ve bina yapısını çok iyi biliyoruz. Eski binalarda merdivenlerin dar olması taşınmayı kâbusa çevirmesin. Teknolojik ekipmanlarımız ve profesyonel paketleme ekibimizle, Ankara'ya taşınma sürecinizde %100 hasarsızlık garantisi veriyoruz.</p>
+
+        <h2>Bahçelievler Nakliyat Sürecinde Neden Biz?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i>🏗️</i>
+                <h4>Dış Cephe Asansörü</h4>
+                <p>Bahçelievler'in asansörsüz veya dar merdivenli binaları için 15. kata kadar ulaşan mobil asansör kuruyoruz.</p>
+            </div>
+            <div class="feature-card">
+                <i>📦</i>
+                <h4>Premium Ambalaj</h4>
+                <p>Mobilyalarınızın köşeleri özel koruyucularla, beyaz eşyalarınız ise balonlu naylonlarla (patpat) sarılır.</p>
+            </div>
+            <div class="feature-card">
+                <i>💼</i>
+                <h4>Sabit Fiyat Garantisi</h4>
+                <p>Ekspertiz sonrası verdiğimiz fiyat kesindir. "Asansör kurulacak, kat yüksekmiş" gibi bahanelerle ek ücret talep etmeyiz.</p>
+            </div>
+        </div>
+
+        <h2>Bahçelievler - Ankara Sefer Detayları</h2>
+        <table class="info-table">
+            <tr>
+                <th>Hizmet Bölgesi</th>
+                <td>İstanbul Bahçelievler (Tüm Semtler) ↔ Ankara</td>
+            </tr>
+            <tr>
+                <th>Asansör Kurulumu</th>
+                <td>Mevcut (Bina cephesi uygunsa kurulur)</td>
+            </tr>
+            <tr>
+                <th>Araç Tipleri</th>
+                <td>Tır, Kırkayak, Onteker ve Panelvan</td>
+            </tr>
+            <tr>
+                <th>Sigorta</th>
+                <td>AXA / Allianz Nakliye Sigortası</td>
+            </tr>
+        </table>
+
+        <h2>Sıkça Sorulan Sorular</h2>
+        <div class="faq-section">
+            <details>
+                <summary>Binamızda asansör yok ve merdivenler dar. Eşyalar zarar görür mü?</summary>
+                <p>Hayır. Bu durum Bahçelievler'de çok yaygındır. "Modüler Asansör" sistemimizi balkonunuza veya geniş bir pencerenize kurarak eşyaları binaya hiç değdirmeden direkt araca indiriyoruz.</p>
+            </details>
+            <details>
+                <summary>Şirinevler trafiğinde taşınma saatleri nasıl ayarlanıyor?</summary>
+                <p>Trafiğin en sakin olduğu sabah erken saatlerde (07:30 - 08:00 gibi) ekibimiz kapınızda olur. Hızlıca kurulum yapıp, trafik yoğunlaşmadan yüklemeyi bitirmeyi hedefleriz.</p>
+            </details>
+            <details>
+                <summary>Sadece Yenibosna'dan Ankara'ya parça eşya gönderimi yapıyor musunuz?</summary>
+                <p>Evet. "Parça Eşya Taşıma" hizmetimizle, Yenibosna, Şirinevler veya Bahçelievler merkezden Ankara'ya az miktardaki eşyalarınızı (öğrenci evi, çeyiz vb.) ekonomik fiyata taşıyoruz.</p>
+            </details>
+        </div>
+
+        <div class="cta-wrapper">
+            <h3>Bahçelievler'den Ankara'ya Asansörlü Taşının, Rahat Edin!</h3>
+            <p>Eşyalarınızı riske atmayın. Sigortalı ve asansörlü nakliye için hemen teklif alın.</p>
+            <a href="tel:+905555555555" class="btn-call">📞 HEMEN FİYAT AL</a>
+            <p style="margin-top:15px; font-size:14px;">WhatsApp üzerinden konum ve fotoğraf atarak 5 dakikada fiyat alabilirsiniz.</p>
+        </div>
+
+    </main>
+</div>

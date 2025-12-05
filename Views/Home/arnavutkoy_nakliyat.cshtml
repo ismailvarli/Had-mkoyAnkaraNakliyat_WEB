@@ -1,0 +1,432 @@
+﻿@{
+  
+    ViewData["Title"] = "Arnavutköy Ankara Nakliyat: Sigortalı & Asansörlü Taşıma";
+    ViewData["Description"] = "Arnavutköy'den Ankara'ya profesyonel evden eve nakliyat hizmeti. %100 hasarsızlık garantisi, sigortalı ve ambalajlı taşımacılık için hemen fiyat alın.";
+}
+
+<style>
+    :root {
+        --primary-color: #d35400; /* Kurumsal Turuncu */
+        --secondary-color: #2c3e50; /* Koyu Lacivert */
+        --bg-light: #f8f9fa;
+    }
+
+    /* GENEL DÜZEN */
+    .page-container {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* SOL SIDEBAR (MENÜ) */
+    .district-sidebar {
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        height: fit-content;
+        position: sticky;
+        top: 20px;
+    }
+
+        .district-sidebar h3 {
+            color: var(--primary-color);
+            font-size: 18px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+    .district-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        max-height: 600px;
+        overflow-y: auto;
+    }
+
+        /* Scrollbar Tasarımı */
+        .district-list::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .district-list::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 3px;
+        }
+
+        .district-list li {
+            margin-bottom: 5px;
+        }
+
+        .district-list a {
+            display: block;
+            padding: 10px 15px;
+            color: #555;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s;
+            border-left: 3px solid transparent;
+            font-size: 14px;
+            background: #fdfdfd;
+            border: 1px solid #f1f1f1;
+        }
+
+            .district-list a:hover {
+                background: #fff3e0;
+                color: var(--primary-color);
+                border-left-color: var(--primary-color);
+                transform: translateX(5px);
+            }
+
+            .district-list a.active {
+                background: var(--primary-color);
+                color: #fff;
+                border-color: var(--primary-color);
+                font-weight: bold;
+            }
+
+    /* SAĞ İÇERİK ALANI */
+    .content-area h1 {
+        font-size: 32px;
+        color: var(--secondary-color);
+        margin-bottom: 20px;
+        line-height: 1.3;
+    }
+
+    .hero-image-wrapper {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .hero-image-wrapper:hover img {
+            transform: scale(1.03);
+        }
+
+    .hero-badge {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        background: rgba(44, 62, 80, 0.85);
+        color: #fff;
+        padding: 8px 15px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    /* İçerik Metinleri */
+    .intro-box {
+        background: #fff8f0;
+        border-left: 5px solid var(--primary-color);
+        padding: 20px;
+        font-size: 1.1em;
+        line-height: 1.6;
+        color: #444;
+        margin-bottom: 30px;
+        border-radius: 0 8px 8px 0;
+    }
+
+    h2 {
+        color: var(--primary-color);
+        font-size: 24px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+
+    /* Özellik Gridleri */
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+    }
+
+    .feature-card {
+        background: #fff;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        border: 1px solid #eee;
+        text-align: center;
+        transition: transform 0.3s;
+    }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .feature-card i {
+            font-size: 30px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .feature-card h4 {
+            color: var(--secondary-color);
+            margin: 0 0 10px 0;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+        }
+
+    /* Tablo */
+    .info-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+        .info-table th {
+            background: var(--secondary-color);
+            color: #fff;
+            padding: 15px;
+            text-align: left;
+            width: 35%;
+        }
+
+        .info-table td {
+            background: #fff;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            color: #555;
+        }
+
+        .info-table tr:last-child td {
+            border-bottom: none;
+        }
+
+    /* SSS (Accordion) */
+    details {
+        background: #fff;
+        margin-bottom: 10px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    summary {
+        padding: 15px 20px;
+        font-weight: 600;
+        cursor: pointer;
+        background: #fcfcfc;
+        list-style: none;
+        position: relative;
+    }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 18px;
+        }
+
+    details[open] summary::after {
+        content: '-';
+    }
+
+    details p {
+        padding: 20px;
+        color: #666;
+        margin: 0;
+        border-top: 1px solid #eee;
+        line-height: 1.6;
+    }
+
+    /* CTA Alanı */
+    .cta-wrapper {
+        background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+        padding: 40px;
+        text-align: center;
+        border-radius: 12px;
+        margin-top: 50px;
+        border: 1px solid #ddd;
+    }
+
+    .btn-call {
+        display: inline-block;
+        background: linear-gradient(90deg, #ff512f 0%, #dd2476 100%);
+        color: #fff;
+        padding: 15px 40px;
+        border-radius: 50px;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 18px;
+        margin-top: 20px;
+        box-shadow: 0 10px 20px rgba(221, 36, 118, 0.3);
+        transition: all 0.3s;
+    }
+
+        .btn-call:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(221, 36, 118, 0.5);
+            color: #fff;
+        }
+
+    /* MOBİL */
+    @@media (max-width: 768px) {
+        .page-container {
+            grid-template-columns: 1fr;
+        }
+
+        .district-sidebar {
+            order: 2;
+            margin-top: 30px;
+        }
+    }
+</style>
+<div class="page-container">
+
+    <aside class="district-sidebar">
+        <h3>📍 Hizmet Bölgelerimiz</h3>
+        <ul class="district-list">
+            <li><a href="/adalar-nakliyat">Adalar Nakliyat</a></li>
+            <li><a href="/arnavutkoy-nakliyat" class="active">Arnavutköy Nakliyat</a></li>
+            <li><a href="/atasehir-nakliyat">Ataşehir Nakliyat</a></li>
+            <li><a href="/avcilar-nakliyat">Avcılar Nakliyat</a></li>
+            <li><a href="/bagcilar-nakliyat">Bağcılar Nakliyat</a></li>
+            <li><a href="/bahcelievler-nakliyat">Bahçelievler Nakliyat</a></li>
+            <li><a href="/bakirkoy-nakliyat">Bakırköy Nakliyat</a></li>
+            <li><a href="/basaksehir-nakliyat">Başakşehir Nakliyat</a></li>
+            <li><a href="/bayrampasa-nakliyat">Bayrampaşa Nakliyat</a></li>
+            <li><a href="/besiktas-nakliyat">Beşiktaş Nakliyat</a></li>
+            <li><a href="/beykoz-nakliyat">Beykoz Nakliyat</a></li>
+            <li><a href="/beylikduzu-nakliyat">Beylikdüzü Nakliyat</a></li>
+            <li><a href="/beyoglu-nakliyat">Beyoğlu Nakliyat</a></li>
+            <li><a href="/buyukcekmece-nakliyat">Büyükçekmece Nakliyat</a></li>
+            <li><a href="/catalca-nakliyat">Çatalca Nakliyat</a></li>
+            <li><a href="/cekmekoy-nakliyat">Çekmeköy Nakliyat</a></li>
+            <li><a href="/esenler-nakliyat">Esenler Nakliyat</a></li>
+            <li><a href="/esenyurt-nakliyat">Esenyurt Nakliyat</a></li>
+            <li><a href="/eyupsultan-nakliyat">Eyüpsultan Nakliyat</a></li>
+            <li><a href="/fatih-nakliyat">Fatih Nakliyat</a></li>
+            <li><a href="/gaziosmanpasa-nakliyat">Gaziosmanpaşa Nakliyat</a></li>
+            <li><a href="/gungoren-nakliyat">Güngören Nakliyat</a></li>
+            <li><a href="/kadikoy-nakliyat">Kadıköy Nakliyat</a></li>
+            <li><a href="/kagithane-nakliyat">Kağıthane Nakliyat</a></li>
+            <li><a href="/kartal-nakliyat">Kartal Nakliyat</a></li>
+            <li><a href="/kucukcekmece-nakliyat">Küçükçekmece Nakliyat</a></li>
+            <li><a href="/maltepe-nakliyat">Maltepe Nakliyat</a></li>
+            <li><a href="/pendik-nakliyat">Pendik Nakliyat</a></li>
+            <li><a href="/sancaktepe-nakliyat">Sancaktepe Nakliyat</a></li>
+            <li><a href="/sariyer-nakliyat">Sarıyer Nakliyat</a></li>
+            <li><a href="/silivri-nakliyat">Silivri Nakliyat</a></li>
+            <li><a href="/sultanbeyli-nakliyat">Sultanbeyli Nakliyat</a></li>
+            <li><a href="/sultangazi-nakliyat">Sultangazi Nakliyat</a></li>
+            <li><a href="/sile-nakliyat">Şile Nakliyat</a></li>
+            <li><a href="/sisli-nakliyat">Şişli Nakliyat</a></li>
+            <li><a href="/tuzla-nakliyat">Tuzla Nakliyat</a></li>
+            <li><a href="/umraniye-nakliyat">Ümraniye Nakliyat</a></li>
+            <li><a href="/uskudar-nakliyat">Üsküdar Nakliyat</a></li>
+            <li><a href="/zeytinburnu-nakliyat">Zeytinburnu Nakliyat</a></li>
+        </ul>
+    </aside>
+
+
+    <main class="content-area">
+
+        <div class="hero-image-wrapper">
+            <img src="~/images/arnavutkoy-ankara-nakliyat-banner.jpg" alt="İstanbul Arnavutköy Ankara Arası Nakliyat Tırı" onerror="this.src='https://via.placeholder.com/800x400?text=Hadimkoy+Ankara+Nakliyat'">
+            <div class="hero-badge">Arnavutköy ↔ Ankara Seferleri Başladı</div>
+        </div>
+
+        <h1>Arnavutköy Ankara Nakliyat: Sigortalı, Kurumsal ve Hızlı Çözümler</h1>
+
+        <div class="intro-box">
+            Arnavutköy çıkışlı Ankara seferlerimizde, eşyalarınız uzman ekibimiz tarafından sigortalı ve garantili şekilde, tam zamanında yeni adresinize güvenle teslim edilir. <strong>Hadımköy Ankara Nakliyat</strong> olarak, Arnavutköy'den Ankara'ya olan taşınma sürecinizi "stressiz bir deneyime" dönüştürüyoruz.
+        </div>
+
+        <p>İstanbul’un lojistik açıdan en stratejik noktalarından biri olan Arnavutköy bölgesinden, başkent Ankara’ya yapacağınız tüm taşınma işlemlerinde profesyonel çözüm ortağınızla tanışın. Sektördeki 20 yılı aşkın tecrübemizle, Arnavutköy çıkışlı evden eve nakliyat, ofis taşıma ve parça eşya transferlerinde <strong>%100 hasarsızlık garantisi</strong> sunuyoruz.</p>
+
+        <h2>Neden Bizi Tercih Etmelisiniz?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i>🛡️</i>
+                <h4>Tam Kapsamlı Sigorta</h4>
+                <p>Eşyalarınız AXA/Allianz güvencesiyle Ankara'ya kadar tam koruma altında.</p>
+            </div>
+            <div class="feature-card">
+                <i>🏗️</i>
+                <h4>Asansörlü Taşıma</h4>
+                <p>Yüksek katlar için modüler asansör sistemimizle hasarsız indirme/yükleme.</p>
+            </div>
+            <div class="feature-card">
+                <i>📦</i>
+                <h4>Profesyonel Paketleme</h4>
+                <p>Havalı patpat naylonlar ve kraft kağıtlarla mobilyalarınız zırh gibi sarılır.</p>
+            </div>
+        </div>
+
+        <h2>Hizmet Detayları ve Süreç</h2>
+        <table class="info-table">
+            <tr>
+                <th>Hizmet Bölgesi</th>
+                <td>İstanbul Arnavutköy ↔ Ankara (Tüm İlçeler)</td>
+            </tr>
+            <tr>
+                <th>Tahmini Mesafe</th>
+                <td>Ortalama 450 - 500 KM</td>
+            </tr>
+            <tr>
+                <th>Teslimat Süresi</th>
+                <td>Yükleme ertesi sabahı (24 Saat İçinde)</td>
+            </tr>
+            <tr>
+                <th>Hizmet Türleri</th>
+                <td>Evden Eve, Parça Eşya, Ofis Taşıma</td>
+            </tr>
+        </table>
+
+        <h2>Sıkça Sorulan Sorular</h2>
+        <div class="faq-section">
+            <details>
+                <summary>Arnavutköy'den Ankara'ya taşınma kaç saat sürer?</summary>
+                <p>Yükleme işlemi genellikle sabah başlar ve eşya yoğunluğuna göre öğlen biter. Yolculuk süresiyle birlikte eşyalarınız ertesi sabah Ankara'daki yeni adresinizde olur.</p>
+            </details>
+            <details>
+                <summary>Fiyata her şey dahil mi?</summary>
+                <p>Evet, sunduğumuz fiyatlar "Anahtar Teslim"dir. Nakliye, eleman, paketleme malzemesi, montaj/demontaj ve sigorta fiyata dahildir. Sürpriz ek ücret çıkmaz.</p>
+            </details>
+            <details>
+                <summary>Sadece koli veya parça eşya taşıyor musunuz?</summary>
+                <p>Elbette. Parsiyel (Parça) eşya taşıma hizmetimizle, komple araç tutmanıza gerek kalmadan sadece eşyanızın kapladığı yer kadar ödeme yaparsınız.</p>
+            </details>
+        </div>
+
+        <div class="cta-wrapper">
+            <h3>Arnavutköy'den Ankara'ya Taşınmak Hiç Bu Kadar Kolay Olmamıştı!</h3>
+            <p>Erken rezervasyon fırsatlarından yararlanmak ve net fiyat almak için hemen arayın.</p>
+            <a href="tel:+905555555555" class="btn-call">📞 HEMEN FİYAT AL</a>
+            <br>
+            <small style="display:block; margin-top:10px; color:#777;">veya WhatsApp üzerinden yazın</small>
+        </div>
+
+    </main>
+</div>
