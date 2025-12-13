@@ -1,14 +1,14 @@
 ﻿@{
     Layout = "_Layout";
-    ViewData["Title"] = "Zeytinburnu Ankara Nakliyat: Tekstil, Deri ve Rezidans Taşıma";
-    ViewData["Description"] = "Zeytinburnu'ndan Ankara'ya nakliyat. Tekstil ve deri ürünleri için ticari araçlar, sahil rezidansları ve kentsel dönüşüm bölgeleri için asansörlü ev taşıma.";
+    ViewData["Title"] = "Üsküdar Ankara Nakliyat: Tarihi ve Boğaz Hattı Özel Taşıma";
+    ViewData["Description"] = "Üsküdar'dan Ankara'ya sigortalı nakliyat. Çengelköy, Beylerbeyi ve Kandilli gibi tarihi semtlerde yalı, köşk ve ev eşyası taşımacılığında uzman hizmet.";
 }
 
 <style>
     :root {
         --primary-color: #d35400;
         --secondary-color: #2c3e50;
-        --accent-leather: #8d6e63; /* Deri ve Tekstil Kahvesi */
+        --accent-historic-teal: #16a085; /* Boğaz ve Tarih Yeşili */
     }
 
     /* CSS Blokları */
@@ -76,18 +76,18 @@
             border: 1px solid #f1f1f1;
         }
 
-            .district-list a:hover, .district-list a[href="/zeytinburnu-nakliyat"] {
-                background: #efebe9;
-                color: var(--accent-leather);
-                border-left-color: var(--accent-leather);
+            .district-list a:hover, .district-list a[href="/uskudar-nakliyat"] {
+                background: #e8f8f5;
+                color: var(--accent-historic-teal);
+                border-left-color: var(--accent-historic-teal);
                 padding-left: 20px;
                 font-weight: bold;
             }
 
             .district-list a.active {
-                background: var(--accent-leather);
+                background: var(--accent-historic-teal);
                 color: #fff !important;
-                border-color: var(--accent-leather);
+                border-color: var(--accent-historic-teal);
             }
 
     .content-area h1 {
@@ -120,7 +120,7 @@
         position: absolute;
         bottom: 20px;
         left: 20px;
-        background: rgba(141, 110, 99, 0.9);
+        background: rgba(22, 160, 133, 0.9);
         color: #fff;
         padding: 8px 15px;
         border-radius: 4px;
@@ -130,8 +130,8 @@
     }
 
     .intro-box {
-        background: #efebe9;
-        border-left: 5px solid var(--accent-leather);
+        background: #e8f8f5;
+        border-left: 5px solid var(--accent-historic-teal);
         padding: 20px;
         font-size: 1.1em;
         line-height: 1.6;
@@ -168,14 +168,14 @@
 
         .feature-card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent-leather);
+            border-color: var(--accent-historic-teal);
         }
 
         .feature-card i {
             font-size: 32px;
             margin-bottom: 15px;
             display: block;
-            color: var(--accent-leather);
+            color: var(--accent-historic-teal);
         }
 
         .feature-card h4 {
@@ -238,7 +238,7 @@
             position: absolute;
             right: 20px;
             font-weight: bold;
-            color: var(--accent-leather);
+            color: var(--accent-historic-teal);
             font-size: 18px;
         }
 
@@ -255,13 +255,13 @@
     }
 
     .cta-wrapper {
-        background: linear-gradient(135deg, #8d6e63 0%, #2c3e50 100%);
+        background: linear-gradient(135deg, #16a085 0%, #2c3e50 100%);
         padding: 40px;
         text-align: center;
         border-radius: 12px;
         margin-top: 50px;
         color: white;
-        box-shadow: 0 15px 30px rgba(141, 110, 99, 0.2);
+        box-shadow: 0 15px 30px rgba(22, 160, 133, 0.2);
     }
 
         .cta-wrapper h3 {
@@ -271,7 +271,7 @@
         }
 
         .cta-wrapper p {
-            color: #efebe9;
+            color: #e8f8f5;
             font-weight: 500;
             font-size: 16px;
         }
@@ -279,7 +279,7 @@
     .btn-call {
         display: inline-block;
         background: #fff;
-        color: #8d6e63;
+        color: #16a085;
         padding: 16px 50px;
         border-radius: 50px;
         font-weight: bold;
@@ -311,80 +311,81 @@
     <aside class="district-sidebar">
         <h3>📍 Hizmet Bölgelerimiz</h3>
         <ul class="district-list">
-            <li><a href="/uskudar-nakliyat">Üsküdar Nakliyat</a></li>
-            <li><a href="/zeytinburnu-nakliyat" class="active">Zeytinburnu Nakliyat</a></li>
+            <li><a href="/umraniye-nakliyat">Ümraniye Nakliyat</a></li>
+            <li><a href="/uskudar-nakliyat" class="active">Üsküdar Nakliyat</a></li>
+            <li><a href="/zeytinburnu-nakliyat">Zeytinburnu Nakliyat</a></li>
         </ul>
     </aside>
 
     <main class="content-area">
         <div class="hero-image-wrapper">
-            <img src="~/images/zeytinburnu-ankara-nakliyat.jpg" alt="Zeytinburnu Tekstil ve Rezidans Nakliyat" onerror="this.src='https://via.placeholder.com/800x400?text=Zeytinburnu+Ankara+Nakliyat'">
-            <div class="hero-badge">Tekstil ve Rezidans Lojistiği</div>
+            <img src="~/images/uskudar-ankara-nakliyat.jpg" alt="Üsküdar Tarihi Yalı ve Ev Nakliyat" onerror="this.src='https://via.placeholder.com/800x400?text=Uskudar+Ankara+Nakliyat'">
+            <div class="hero-badge">Tarihi Dokuya Saygılı Taşıma</div>
         </div>
 
-        <h1>Zeytinburnu Ankara Nakliyat: Tekstil, Deri ve Rezidans Taşıma</h1>
+        <h1>Üsküdar Ankara Nakliyat: Tarihi ve Boğaz Hattı Özel Taşıma</h1>
 
         <div class="intro-box">
-            İstanbul'un ticaret ve sahil yaşamının birleştiği <strong>Zeytinburnu'ndan Ankara'ya</strong> taşınmak, hem ticari hem de lüks konut tecrübesi ister. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Dericiler Sitesi ve tekstil piyasasının lojistik ihtiyaçlarına yanıt verirken, Büyükyalı ve Fişekhane gibi sahil bandındaki rezidanslarda VIP ev taşıma hizmeti sunuyoruz.
+            İstanbul'un en köklü ve tarihi dokusunu koruyan ilçesi <strong>Üsküdar'dan Ankara'ya</strong> taşınmak, dar sokaklar ve tarihi binalar nedeniyle hassasiyet gerektirir. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Çengelköy, Beylerbeyi ve Kuzguncuk gibi Boğaz semtlerinde ve Üsküdar Merkez'deki tarihi yapılarda "Zararsız Taşıma" garantisi veriyoruz.
         </div>
 
-        <p>Kentsel dönüşümün yoğun olduğu bölgelerde asansörlü sistemlerimizle, sanayi bölgelerinde ise geniş hacimli tırlarımızla hizmet vererek Zeytinburnu'nun her ihtiyacına profesyonel çözümler üretiyoruz.</p>
+        <p>Büyük araçların giremediği dar sokaklar için "Shuttle" (aktarma) hizmetimiz, tarihi ahşap binalar için ise yükü binaya bindirmeden taşıyan özel ekibimizle hizmetinizdeyiz. Ayrıca Acıbadem ve Altunizade'deki modern siteler için asansörlü çözümlerimiz mevcuttur.</p>
 
-        <h2>Zeytinburnu Nakliyat Hizmetinde Çifte Uzmanlık</h2>
+        <h2>Üsküdar Nakliyat Hizmetinde Butik Çözümler</h2>
         <div class="features-grid">
             <div class="feature-card">
-                <i>🧵</i>
-                <h4>Tekstil & Deri Taşıma</h4>
-                <p>Ticari ürünleriniz için askılı, raflı ve kolili özel araç tasarımı. Ankara mağazalarına direkt sevkiyat.</p>
+                <i>🏛️</i>
+                <h4>Tarihi Bina & Köşk</h4>
+                <p>Ahşap ve eski binaların hassas yapısına uygun, duvar ve merdiven korumalı taşıma teknikleri.</p>
             </div>
             <div class="feature-card">
-                <i>🏢</i>
-                <h4>Sahil Rezidansları</h4>
-                <p>Sahil şeridindeki lüks projelerde yönetim prosedürlerine uygun, sessiz ve hasarsız taşıma.</p>
+                <i>🌊</i>
+                <h4>Boğaz Hattı Lojistiği</h4>
+                <p>Kuzguncuk, Çengelköy, Kandilli hattındaki dar ve yokuşlu sokaklar için küçük araç desteği.</p>
             </div>
             <div class="feature-card">
-                <i>🏗️</i>
-                <h4>Kentsel Dönüşüm</h4>
-                <p>Yıkım ve yapım aşamasındaki dar sokaklarda mobil asansör kurulumu ile hızlı tahliye ve yerleşme.</p>
+                <i>🎹</i>
+                <h4>Hassas Eşya Taşıma</h4>
+                <p>Piyano, antika mobilya ve sanat eserleriniz için özel ambalaj ve sigortalı nakliye.</p>
             </div>
         </div>
 
-        <h2>Zeytinburnu - Ankara Sefer Detayları</h2>
+        <h2>Üsküdar - Ankara Sefer Detayları</h2>
         <table class="info-table">
             <tr>
                 <th>Hizmet Bölgesi</th>
-                <td>Zeytinburnu Merkez, Sahil Yolu, Sanayi Siteleri</td>
+                <td>Üsküdar Merkez, Çengelköy, Acıbadem, Beylerbeyi</td>
             </tr>
             <tr>
-                <th>Hizmet Türü</th>
-                <td>Ticari (Tekstil/Deri), Evden Eve, Ofis</td>
+                <th>Taşıma Tipi</th>
+                <td>VIP Ev, Tarihi Köşk, Standart Ev</td>
             </tr>
             <tr>
-                <th>Araç Tipi</th>
-                <td>Tır, Kamyon, Askılı Tekstil Aracı</td>
+                <th>Lojistik Yöntem</th>
+                <td>Shuttle (Aktarma) veya Direkt Yükleme</td>
             </tr>
             <tr>
                 <th>Sigorta</th>
-                <td>Tam Kapsamlı Emtia Sigortası</td>
+                <td>Yüksek Teminatlı Nakliyat Sigortası</td>
             </tr>
         </table>
 
         <h2>Sıkça Sorulan Sorular</h2>
         <div class="faq-section">
             <details>
-                <summary>Deri atölyemden Ankara'ya parça mal gönderebilir miyim?</summary>
-                <p>Evet. Parsiyel taşımacılık hizmetimizle, deri ve tekstil ürünlerinizi metreküp bazında fiyatlandırarak ekonomik şekilde Ankara'ya ulaştırıyoruz.</p>
+                <summary>Kuzguncuk'ta oturuyorum, sokağımız çok dar ve araç parkı yasak.</summary>
+                <p>Bu bölgeyi çok iyi biliyoruz. Aracımızı ana caddeye park edip, küçük panelvanlarımızla evinizden eşyayı alıyor ve ring seferiyle ana araca taşıyoruz.</p>
             </details>
             <details>
-                <summary>Büyükyalı projesinde oturuyorum, taşıma kurallarına uyuyor musunuz?</summary>
-                <p>Kesinlikle. Lüks rezidansların (asansör koruma, personel kimlik bildirimi, saat sınırlaması) tüm prosedürlerine hakim, tecrübeli bir ekibiz.</p>
+                <summary>Ahşap bir köşkte oturuyorum, merdivenler zarar görür mü?</summary>
+                <p>Hayır. Tarihi binalarda merdiven korkuluklarını ve basamakları özel koruyucu malzemelerle kaplıyor, eşyaları "sırt taşıma" tekniğiyle duvara değdirmeden indiriyoruz.</p>
             </details>
         </div>
 
         <div class="cta-wrapper">
-            <h3>Zeytinburnu'ndan Ankara'ya Profesyonel Köprü</h3>
-            <p>Ticaretiniz de eviniz de bizimle güvende.</p>
-            <a href="tel:+905555555555" class="btn-call">📞 HEMEN FİYAT AL</a>
+            <h3>Üsküdar'ın Tarihi Atmosferinden Ankara'ya</h3>
+            <p>Geleneksel dokuya modern nakliye çözümleri.</p>
+            <a href="tel:+905555555555" class="btn-call">📞 EKSPERTİZ TALEP ET</a>
         </div>
     </main>
 </div>

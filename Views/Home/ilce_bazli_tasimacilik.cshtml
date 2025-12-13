@@ -1,108 +1,730 @@
-﻿<!--Start Page Header-->
-<section class="page-header">
-    <div class="page-header__bg" style="background-image: url(/assets/images/gallery/hadimkoy_hakkimizda.png)">
-    </div>
-    <div class="container">
-        <div class="page-header__inner">
-            <h1 style="color: white; font-weight: bold;">İlçe Bazlı hizmetlerimiz</h1>
-            <ul class="thm-breadcrumb">
-                <li><a href="/Home/Index">Ana Sayfa</a></li>
-                <li><span class="icon-right-arrow21"></span></li>
-                <li>İlçe Bazlı hizmetlerimiz</li>
-            </ul>
-        </div>
-    </div>
-</section>
-<!--End Page Header-->
-<!--Start Service One-->
+﻿<style>
+    /* Kartların genel yapısını düzenle */
+    .service-one__single {
+        background: #fff;
+        border: 1px solid #eee; /* Hafif çerçeve */
+        border-radius: 10px;
+        overflow: hidden; /* Dışarı taşanları gizle */
+        margin-bottom: 30px; /* Alt satırla mesafe */
+        transition: all 0.3s ease;
+        height: 100%; /* Tüm kartları eşit boya zorla */
+        position: relative;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+        /* Hover efekti */
+        .service-one__single:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+    /* Resim alanını sabitle (En önemli kısım burası) */
+    .service-one__single-img {
+        width: 100%;
+        height: 220px; /* Resim yüksekliği sabitlendi */
+        overflow: hidden;
+        position: relative;
+        background-color: #f4f4f4; /* Resim yoksa gri fon görünsün */
+    }
+
+        /* Resmin kendisini kutuya sığdır */
+        .service-one__single-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Resmi ezmeden kutuya doldur */
+            display: block;
+        }
+
+    /* Siyah Kamyon İkonu (Icon Box) Düzenlemesi */
+    /* Temandaki orijinal sınıfa müdahale ediyoruz */
+    .service-one__single .icon {
+        position: absolute;
+        top: 190px; /* Resmin hemen altına denk gelecek şekilde */
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background-color: #1b2126; /* Koyu renk */
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        z-index: 10;
+        font-size: 30px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+
+    /* İçerik Alanı */
+    .service-one__single-content {
+        padding: 40px 25px 30px 25px; /* Üst boşluğu artırdık ki ikon çakışmasın */
+    }
+
+        .service-one__single-content h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+            .service-one__single-content h2 a {
+                color: #2c3e50;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+
+                .service-one__single-content h2 a:hover {
+                    color: #d35400; /* Hover rengi */
+                }
+
+        .service-one__single-content p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+    /* Buton */
+    .btn-box a {
+        color: #d35400;
+        font-weight: 600;
+        font-size: 14px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+    }
+
+        .btn-box a span {
+            margin-left: 5px;
+            font-size: 12px;
+        }
+</style>
 <section class="service-one service-one--service">
     <div class="container">
         <div class="row">
-            <!--Start Service One Single-->
-            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="0ms"
-                 data-wow-duration="1500ms">
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
                 <div class="service-one__single">
                     <div class="service-one__single-inner">
                         <div class="service-one__single-img">
-                            <img src="~/assets/images/gallery/zeytinburnu_nakliyat.png" loading="lazy" alt="Zeytinburnu nakliyat">
+                            <img src="~/assets/images/gallery/adalar_nakliyat.png" loading="lazy" alt="Adalar nakliyat" onerror="this.style.display='none'">
                         </div>
-
                         <div class="service-one__single-content">
-                            <h2><a href="/zeytinburnu-nakliyat">Zeytinburnu Nakliyat</a></h2>
-                            <p>
-                                "Zeytinburnu merkezli firmamızla Veliefendi ve tüm mahallelerde hızlı evden eve nakliyat. Yerel uzmanlık ve güvenilir taşıma için komşunuzu arayın."
-                            </p>
-                            <div class="btn-box">
-                                <a href="/zeytinburnu-nakliyat">
-                                    Devamını oku<span class="icon-right-arrow21"></span>
-                                </a>
-                            </div>
+                            <h2><a href="/adalar-nakliyat">Adalar Nakliyat</a></h2>
+                            <p>Büyükada ve Heybeliada'ya deniz entegreli, araçlı ve asansörlü kurumsal taşıma.</p>
+                            <div class="btn-box"><a href="/adalar-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
                         </div>
                     </div>
-
-                    <div class="icon">
-                        <span class="icon-shipment"></span>
-                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
                 </div>
             </div>
-            <!--End Service One Single-->
-            <!--Start Service One Single-->
-            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="0ms"
-                 data-wow-duration="1500ms">
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
                 <div class="service-one__single">
                     <div class="service-one__single-inner">
                         <div class="service-one__single-img">
-                            <img src="~/assets/images/gallery/esenyurt_nakliyat.png" loading="lazy" alt="esenyurt nakliyat">
+                            <img src="~/assets/images/gallery/arnavutkoy_nakliyat.png" loading="lazy" alt="Arnavutköy nakliyat" onerror="this.style.display='none'">
                         </div>
-
-                        <div class="service-one__single-content">
-                            <h2><a href="/esenyurt-nakliyat">esenyurt Nakliyat</a></h2>
-                            <p>
-                                "Esenyurt evden eve nakliyat ihtiyaçlarınızda modüler asansörlü sistemimizle yüksek katlara güvenli taşıma. Kıraç ve Haramidere bölgesinde ekonomik çözümler."
-                            </p>
-                            <div class="btn-box">
-                                <a href="/esenyurt-nakliyat">
-                                    Devamını oku<span class="icon-right-arrow21"></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="icon">
-                        <span class="icon-shipment"></span>
-                    </div>
-                </div>
-            </div>
-            <!--End Service One Single-->
-            <!--Start Service One Single-->
-            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="0ms"
-                 data-wow-duration="1500ms">
-                <div class="service-one__single">
-                    <div class="service-one__single-inner">
-                        <div class="service-one__single-img">
-                            <img src="~/assets/images/gallery/esenyurt_nakliyat.png" loading="lazy" alt="arnavutköy nakliyat">
-                        </div>
-
                         <div class="service-one__single-content">
                             <h2><a href="/arnavutkoy-nakliyat">Arnavutköy Nakliyat</a></h2>
-                            <p>
-                               acıklama
-                            </p>
-                            <div class="btn-box">
-                                <a href="/arnavutkoy-nakliyat">
-                                    Devamını oku<span class="icon-right-arrow21"></span>
-                                </a>
-                            </div>
+                            <p>Havalimanı bölgesi ve yeni yerleşimlerde geniş araç filosuyla sigortalı taşıma.</p>
+                            <div class="btn-box"><a href="/arnavutkoy-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
                         </div>
                     </div>
-
-                    <div class="icon">
-                        <span class="icon-shipment"></span>
-                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
                 </div>
             </div>
-            <!--End Service One Single-->
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/atasehir_nakliyat.png" loading="lazy" alt="Ataşehir nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/atasehir-nakliyat">Ataşehir Nakliyat</a></h2>
+                            <p>Finans merkezi ve sitelerde, dış cephe asansörleriyle hasarsız nakliyat.</p>
+                            <div class="btn-box"><a href="/atasehir-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/avcilar_nakliyat.png" loading="lazy" alt="Avcılar nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/avcilar-nakliyat">Avcılar Nakliyat</a></h2>
+                            <p>Kentsel dönüşüm ve sahil bölgesinde öğrenci ve ailelere ekonomik nakliye.</p>
+                            <div class="btn-box"><a href="/avcilar-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/bagcilar_nakliyat.png" loading="lazy" alt="Bağcılar nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/bagcilar-nakliyat">Bağcılar Nakliyat</a></h2>
+                            <p>Dar sokaklara uygun araçlarla tekstil ve ev taşımacılığında pratik çözümler.</p>
+                            <div class="btn-box"><a href="/bagcilar-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/bahcelievler_nakliyat.png" loading="lazy" alt="Bahçelievler nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/bahcelievler-nakliyat">Bahçelievler Nakliyat</a></h2>
+                            <p>Şirinevler ve Yenibosna'da asansörlü sistemle merdivensiz güvenli taşıma.</p>
+                            <div class="btn-box"><a href="/bahcelievler-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/bakirkoy_nakliyat.png" loading="lazy" alt="Bakırköy nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/bakirkoy-nakliyat">Bakırköy Nakliyat</a></h2>
+                            <p>Ataköy ve Florya'da VIP standartlarında, ambalajlı ve sigortalı premium nakliyat.</p>
+                            <div class="btn-box"><a href="/bakirkoy-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/basaksehir_nakliyat.png" loading="lazy" alt="Başakşehir nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/basaksehir-nakliyat">Başakşehir Nakliyat</a></h2>
+                            <p>Kayaşehir yüksek katlı sitelerde yönetim kurallarına uygun, asansörlü modern taşıma.</p>
+                            <div class="btn-box"><a href="/basaksehir-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/bayrampasa_nakliyat.png" loading="lazy" alt="Bayrampaşa nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/bayrampasa-nakliyat">Bayrampaşa Nakliyat</a></h2>
+                            <p>Otogar çıkışlı hızlı seferler ve Mega Center bölgesinde ticari yük taşımacılığı.</p>
+                            <div class="btn-box"><a href="/bayrampasa-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/besiktas_nakliyat.png" loading="lazy" alt="Beşiktaş nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/besiktas-nakliyat">Beşiktaş Nakliyat</a></h2>
+                            <p>Etiler ve Levent'te kurumsal ofis, Arnavutköy'ün dar sokaklarında shuttle hizmeti.</p>
+                            <div class="btn-box"><a href="/besiktas-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/beykoz_nakliyat.png" loading="lazy" alt="Beykoz nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/beykoz-nakliyat">Beykoz Nakliyat</a></h2>
+                            <p>Acarkent ve Kavacık'ta villa ve yalı taşımacılığında özel korumalı VIP hizmet.</p>
+                            <div class="btn-box"><a href="/beykoz-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/beylikduzu_nakliyat.png" loading="lazy" alt="Beylikdüzü nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/beylikduzu-nakliyat">Beylikdüzü Nakliyat</a></h2>
+                            <p>Geniş caddeler ve modern sitelerde, teleskopik asansörle 20. kata kadar taşıma.</p>
+                            <div class="btn-box"><a href="/beylikduzu-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/beyoglu_nakliyat.png" loading="lazy" alt="Beyoğlu nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/beyoglu-nakliyat">Beyoğlu Nakliyat</a></h2>
+                            <p>Cihangir ve Galata'nın tarihi dar sokaklarında küçük araçlarla aktarmalı butik taşıma.</p>
+                            <div class="btn-box"><a href="/beyoglu-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/buyukcekmece_nakliyat.png" loading="lazy" alt="Büyükçekmece nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/buyukcekmece-nakliyat">Büyükçekmece Nakliyat</a></h2>
+                            <p>Mimaroba ve Alkent'te villa, dubleks ve yazlıklar için geniş araç filosu.</p>
+                            <div class="btn-box"><a href="/buyukcekmece-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/catalca_nakliyat.png" loading="lazy" alt="Çatalca nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/catalca-nakliyat">Çatalca Nakliyat</a></h2>
+                            <p>Köy evleri ve çiftlikler için her türlü yol koşuluna uygun lojistik araç desteği.</p>
+                            <div class="btn-box"><a href="/catalca-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/cekmekoy_nakliyat.png" loading="lazy" alt="Çekmeköy nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/cekmekoy-nakliyat">Çekmeköy Nakliyat</a></h2>
+                            <p>Taşdelen ve Ömerli'deki site ve villalarda, doğa ile uyumlu hassas nakliyat.</p>
+                            <div class="btn-box"><a href="/cekmekoy-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/esenler_nakliyat.png" loading="lazy" alt="Esenler nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/esenler-nakliyat">Esenler Nakliyat</a></h2>
+                            <p>Otogar çevresinde hızlı parça eşya ve ev taşıma için ekonomik ve pratik çözümler.</p>
+                            <div class="btn-box"><a href="/esenler-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/esenyurt_nakliyat.png" loading="lazy" alt="Esenyurt nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/esenyurt-nakliyat">Esenyurt Nakliyat</a></h2>
+                            <p>Yüksek katlı rezidanslarda modüler asansör kurulumu ile hızlı ve güvenli nakliye.</p>
+                            <div class="btn-box"><a href="/esenyurt-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/eyupsultan_nakliyat.png" loading="lazy" alt="Eyüpsultan nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/eyupsultan-nakliyat">Eyüpsultan Nakliyat</a></h2>
+                            <p>Göktürk ve Kemerburgaz villalarından, Eyüp merkezdeki tarihi binalara uzman taşıma.</p>
+                            <div class="btn-box"><a href="/eyupsultan-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/fatih_nakliyat.png" loading="lazy" alt="Fatih nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/fatih-nakliyat">Fatih Nakliyat</a></h2>
+                            <p>Tarihi Yarımada'da shuttle araçlarla ev taşıma ve Laleli tekstil lojistiği.</p>
+                            <div class="btn-box"><a href="/fatih-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/gaziosmanpasa_nakliyat.png" loading="lazy" alt="Gaziosmanpaşa nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/gaziosmanpasa-nakliyat">Gaziosmanpaşa Nakliyat</a></h2>
+                            <p>Kentsel dönüşüm bölgelerinde dış cephe asansörlü, güvenli ve ekonomik nakliyat.</p>
+                            <div class="btn-box"><a href="/gaziosmanpasa-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/gungoren_nakliyat.png" loading="lazy" alt="Güngören nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/gungoren-nakliyat">Güngören Nakliyat</a></h2>
+                            <p>Merter tekstil taşımacılığı ve yoğun konut bölgelerinde pratik evden eve nakliye.</p>
+                            <div class="btn-box"><a href="/gungoren-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/kadikoy_nakliyat.png" loading="lazy" alt="Kadıköy nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/kadikoy-nakliyat">Kadıköy Nakliyat</a></h2>
+                            <p>Bağdat Caddesi ve Moda'da premium, sigortalı, hassas ve kurumsal taşıma hizmeti.</p>
+                            <div class="btn-box"><a href="/kadikoy-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/kagithane_nakliyat.png" loading="lazy" alt="Kağıthane nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/kagithane-nakliyat">Kağıthane Nakliyat</a></h2>
+                            <p>Vadistanbul ofis taşıma ve dik yokuşlu mahallelerde asansörlü çözümler.</p>
+                            <div class="btn-box"><a href="/kagithane-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/kartal_nakliyat.png" loading="lazy" alt="Kartal nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/kartal-nakliyat">Kartal Nakliyat</a></h2>
+                            <p>Dragos sahil siteleri ve Yakacık'ın yüksek bölgelerinde her yapıya uygun asansörlü taşıma.</p>
+                            <div class="btn-box"><a href="/kartal-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/kucukcekmece_nakliyat.png" loading="lazy" alt="Küçükçekmece nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/kucukcekmece-nakliyat">Küçükçekmece Nakliyat</a></h2>
+                            <p>Atakent ve Halkalı'daki toplu konut projelerinde site yönetimi kurallarına uygun nakliyat.</p>
+                            <div class="btn-box"><a href="/kucukcekmece-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/maltepe_nakliyat.png" loading="lazy" alt="Maltepe nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/maltepe-nakliyat">Maltepe Nakliyat</a></h2>
+                            <p>Zümrütevler yokuşları ve sahil bandı sitelerinde deneyimli ekip ve asansörlü taşıma.</p>
+                            <div class="btn-box"><a href="/maltepe-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/pendik_nakliyat.png" loading="lazy" alt="Pendik nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/pendik-nakliyat">Pendik Nakliyat</a></h2>
+                            <p>Kurtköy modern siteleri ve havalimanı bölgesinde hızlı, sigortalı evden eve nakliye.</p>
+                            <div class="btn-box"><a href="/pendik-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/sancaktepe_nakliyat.png" loading="lazy" alt="Sancaktepe nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/sancaktepe-nakliyat">Sancaktepe Nakliyat</a></h2>
+                            <p>Markalı konut projelerinde ve depolama ihtiyaçlarınızda, Samandıra ve Sarıgazi'de profesyonel çözüm.</p>
+                            <div class="btn-box"><a href="/sancaktepe-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/sariyer_nakliyat.png" loading="lazy" alt="Sarıyer nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/sariyer-nakliyat">Sarıyer Nakliyat</a></h2>
+                            <p>Zekeriyaköy villaları, Maslak plazaları ve Boğaz yalılarında VIP standartlarında gizlilik esaslı nakliyat.</p>
+                            <div class="btn-box"><a href="/sariyer-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/silivri_nakliyat.png" loading="lazy" alt="Silivri nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/silivri-nakliyat">Silivri Nakliyat</a></h2>
+                            <p>Yazlık, çiftlik evi ve sanayi bölgelerinden tüm Türkiye'ye ağır yük ve ev eşyası taşımacılığı.</p>
+                            <div class="btn-box"><a href="/silivri-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/sultanbeyli_nakliyat.png" loading="lazy" alt="Sultanbeyli nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/sultanbeyli-nakliyat">Sultanbeyli Nakliyat</a></h2>
+                            <p>TEM Otoyolu'na yakınlığıyla hızlı çıkış ve varış imkanı sunan, ekonomik ve sigortalı hizmet.</p>
+                            <div class="btn-box"><a href="/sultanbeyli-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/sultangazi_nakliyat.png" loading="lazy" alt="Sultangazi nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/sultangazi-nakliyat">Sultangazi Nakliyat</a></h2>
+                            <p>Gazi Mahallesi ve Sultançiftliği'nde geniş araç filomuzla yüksek kapasiteli ve güvenli nakliyat.</p>
+                            <div class="btn-box"><a href="/sultangazi-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/sile_nakliyat.png" loading="lazy" alt="Şile nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/sile-nakliyat">Şile Nakliyat</a></h2>
+                            <p>Ağva ve Şile merkezdeki yazlıklarınızdan parça eşya veya komple ev taşıma ihtiyaçlarınızda.</p>
+                            <div class="btn-box"><a href="/sile-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/sisli_nakliyat.png" loading="lazy" alt="Şişli nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/sisli-nakliyat">Şişli Nakliyat</a></h2>
+                            <p>Nişantaşı, Mecidiyeköy ve Bomonti'de plazalara ve tarihi binalara uygun, kurumsal taşıma.</p>
+                            <div class="btn-box"><a href="/sisli-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/tuzla_nakliyat.png" loading="lazy" alt="Tuzla nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/tuzla-nakliyat">Tuzla Nakliyat</a></h2>
+                            <p>Tersaneler bölgesi ve sanayi sitelerinden ağır yük, Marina çevresinden lüks ev taşıma hizmetleri.</p>
+                            <div class="btn-box"><a href="/tuzla-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/umraniye_nakliyat.png" loading="lazy" alt="Ümraniye nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/umraniye-nakliyat">Ümraniye Nakliyat</a></h2>
+                            <p>Finans Merkezi ofisleri ve Şerifali sitelerinde, iş aksatmayan hızlı ve garantili nakliyat çözümleri.</p>
+                            <div class="btn-box"><a href="/umraniye-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/uskudar_nakliyat.png" loading="lazy" alt="Üsküdar nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/uskudar-nakliyat">Üsküdar Nakliyat</a></h2>
+                            <p>Tarihi yalılar ve dar sokaklarda, Üsküdar'ın dokusuna zarar vermeden gerçekleştirilen butik taşıma.</p>
+                            <div class="btn-box"><a href="/uskudar-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img">
+                            <img src="~/assets/images/gallery/zeytinburnu_nakliyat.png" loading="lazy" alt="Zeytinburnu nakliyat" onerror="this.style.display='none'">
+                        </div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/zeytinburnu-nakliyat">Zeytinburnu Nakliyat</a></h2>
+                            <p>Tekstil ve deri sektörünün kalbinde ticari taşımacılık ve sahil bandı rezidanslarında evden eve nakliyat.</p>
+                            <div class="btn-box"><a href="/zeytinburnu-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-shipment"></span></div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
-<!--End Service One-->

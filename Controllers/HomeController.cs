@@ -108,10 +108,12 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
             return View();
         }
 
+        [Route("istanbul-ankara-nakliyat")]
         public IActionResult istanbul_ankara_nakliyat()
         {
             return View();
         }
+
 
         public IActionResult istanbul_ankara_kamyonet_nakliyat()
         {
@@ -187,10 +189,7 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
         {
             return View();
         }
-        public IActionResult istanbul_nakliyat()
-        {
-            return View();
-        }
+        
         public IActionResult gebze_ankara_nakliyat()
         {
             return View();
@@ -230,7 +229,13 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
         {
             return View();
         }
+        [Route("ankara-nakliyat")]
         public IActionResult ankara_nakliyat()
+        {
+            return View();
+        }
+        [Route("istanbul-nakliyat")]
+        public IActionResult istanbul_nakliyat()
         {
             return View();
         }

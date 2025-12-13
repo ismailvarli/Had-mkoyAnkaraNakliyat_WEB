@@ -1,14 +1,14 @@
 ﻿@{
     Layout = "_Layout";
-    ViewData["Title"] = "Zeytinburnu Ankara Nakliyat: Tekstil, Deri ve Rezidans Taşıma";
-    ViewData["Description"] = "Zeytinburnu'ndan Ankara'ya nakliyat. Tekstil ve deri ürünleri için ticari araçlar, sahil rezidansları ve kentsel dönüşüm bölgeleri için asansörlü ev taşıma.";
+    ViewData["Title"] = "Ümraniye Ankara Nakliyat: Finans Merkezi ve Kurumsal Taşıma";
+    ViewData["Description"] = "Ümraniye'den Ankara'ya kurumsal nakliyat. Finans Merkezi ofis taşıma, Dudullu OSB lojistik ve Şerifali siteler bölgesinden sigortalı, asansörlü evden eve nakliye.";
 }
 
 <style>
     :root {
         --primary-color: #d35400;
         --secondary-color: #2c3e50;
-        --accent-leather: #8d6e63; /* Deri ve Tekstil Kahvesi */
+        --accent-finance: #2c3e50; /* Finans Kurumsallığı / Koyu Gri-Lacivert */
     }
 
     /* CSS Blokları */
@@ -76,18 +76,18 @@
             border: 1px solid #f1f1f1;
         }
 
-            .district-list a:hover, .district-list a[href="/zeytinburnu-nakliyat"] {
-                background: #efebe9;
-                color: var(--accent-leather);
-                border-left-color: var(--accent-leather);
+            .district-list a:hover, .district-list a[href="/umraniye-nakliyat"] {
+                background: #eaf0f6;
+                color: var(--accent-finance);
+                border-left-color: var(--accent-finance);
                 padding-left: 20px;
                 font-weight: bold;
             }
 
             .district-list a.active {
-                background: var(--accent-leather);
+                background: var(--accent-finance);
                 color: #fff !important;
-                border-color: var(--accent-leather);
+                border-color: var(--accent-finance);
             }
 
     .content-area h1 {
@@ -120,7 +120,7 @@
         position: absolute;
         bottom: 20px;
         left: 20px;
-        background: rgba(141, 110, 99, 0.9);
+        background: rgba(44, 62, 80, 0.9);
         color: #fff;
         padding: 8px 15px;
         border-radius: 4px;
@@ -130,8 +130,8 @@
     }
 
     .intro-box {
-        background: #efebe9;
-        border-left: 5px solid var(--accent-leather);
+        background: #eaf0f6;
+        border-left: 5px solid var(--accent-finance);
         padding: 20px;
         font-size: 1.1em;
         line-height: 1.6;
@@ -168,14 +168,14 @@
 
         .feature-card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent-leather);
+            border-color: var(--accent-finance);
         }
 
         .feature-card i {
             font-size: 32px;
             margin-bottom: 15px;
             display: block;
-            color: var(--accent-leather);
+            color: var(--accent-finance);
         }
 
         .feature-card h4 {
@@ -238,7 +238,7 @@
             position: absolute;
             right: 20px;
             font-weight: bold;
-            color: var(--accent-leather);
+            color: var(--accent-finance);
             font-size: 18px;
         }
 
@@ -255,13 +255,13 @@
     }
 
     .cta-wrapper {
-        background: linear-gradient(135deg, #8d6e63 0%, #2c3e50 100%);
+        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
         padding: 40px;
         text-align: center;
         border-radius: 12px;
         margin-top: 50px;
         color: white;
-        box-shadow: 0 15px 30px rgba(141, 110, 99, 0.2);
+        box-shadow: 0 15px 30px rgba(44, 62, 80, 0.2);
     }
 
         .cta-wrapper h3 {
@@ -271,7 +271,7 @@
         }
 
         .cta-wrapper p {
-            color: #efebe9;
+            color: #eaf0f6;
             font-weight: 500;
             font-size: 16px;
         }
@@ -279,7 +279,7 @@
     .btn-call {
         display: inline-block;
         background: #fff;
-        color: #8d6e63;
+        color: #2c3e50;
         padding: 16px 50px;
         border-radius: 50px;
         font-weight: bold;
@@ -311,79 +311,81 @@
     <aside class="district-sidebar">
         <h3>📍 Hizmet Bölgelerimiz</h3>
         <ul class="district-list">
+            <li><a href="/tuzla-nakliyat">Tuzla Nakliyat</a></li>
+            <li><a href="/umraniye-nakliyat" class="active">Ümraniye Nakliyat</a></li>
             <li><a href="/uskudar-nakliyat">Üsküdar Nakliyat</a></li>
-            <li><a href="/zeytinburnu-nakliyat" class="active">Zeytinburnu Nakliyat</a></li>
+            <li><a href="/zeytinburnu-nakliyat">Zeytinburnu Nakliyat</a></li>
         </ul>
     </aside>
 
     <main class="content-area">
         <div class="hero-image-wrapper">
-            <img src="~/images/zeytinburnu-ankara-nakliyat.jpg" alt="Zeytinburnu Tekstil ve Rezidans Nakliyat" onerror="this.src='https://via.placeholder.com/800x400?text=Zeytinburnu+Ankara+Nakliyat'">
-            <div class="hero-badge">Tekstil ve Rezidans Lojistiği</div>
+            <img src="~/images/umraniye-ankara-nakliyat.jpg" alt="Ümraniye Finans Merkezi Nakliyat" onerror="this.src='https://via.placeholder.com/800x400?text=Umraniye+Ankara+Nakliyat'">
+            <div class="hero-badge">Finans Merkezi ve Plaza Lojistiği</div>
         </div>
 
-        <h1>Zeytinburnu Ankara Nakliyat: Tekstil, Deri ve Rezidans Taşıma</h1>
+        <h1>Ümraniye Ankara Nakliyat: Finans Merkezi ve Kurumsal Taşıma</h1>
 
         <div class="intro-box">
-            İstanbul'un ticaret ve sahil yaşamının birleştiği <strong>Zeytinburnu'ndan Ankara'ya</strong> taşınmak, hem ticari hem de lüks konut tecrübesi ister. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Dericiler Sitesi ve tekstil piyasasının lojistik ihtiyaçlarına yanıt verirken, Büyükyalı ve Fişekhane gibi sahil bandındaki rezidanslarda VIP ev taşıma hizmeti sunuyoruz.
+            İstanbul Finans Merkezi'ne ev sahipliği yapan <strong>Ümraniye'den Ankara'ya</strong> taşınmak, kurumsal bir ciddiyet ve planlama ister. <strong>Hadımköy Ankara Nakliyat</strong> olarak; İFM bölgesi, Şerifali ve Çakmak plazalarındaki şirket taşımalarında ve Atakent, Tatlısu gibi yoğun konut bölgelerinde profesyonel hizmet sunuyoruz.
         </div>
 
-        <p>Kentsel dönüşümün yoğun olduğu bölgelerde asansörlü sistemlerimizle, sanayi bölgelerinde ise geniş hacimli tırlarımızla hizmet vererek Zeytinburnu'nun her ihtiyacına profesyonel çözümler üretiyoruz.</p>
+        <p>Kurumsal müşterilerimiz için hafta sonu veya mesai saatleri dışında "İş Kesintisiz" ofis taşıma hizmeti verirken, bireysel müşterilerimiz için modern sitelere uygun asansörlü ev taşıma çözümleri üretiyoruz.</p>
 
-        <h2>Zeytinburnu Nakliyat Hizmetinde Çifte Uzmanlık</h2>
+        <h2>Ümraniye Nakliyat Hizmetinde Kurumsal Farklar</h2>
         <div class="features-grid">
             <div class="feature-card">
-                <i>🧵</i>
-                <h4>Tekstil & Deri Taşıma</h4>
-                <p>Ticari ürünleriniz için askılı, raflı ve kolili özel araç tasarımı. Ankara mağazalarına direkt sevkiyat.</p>
-            </div>
-            <div class="feature-card">
                 <i>🏢</i>
-                <h4>Sahil Rezidansları</h4>
-                <p>Sahil şeridindeki lüks projelerde yönetim prosedürlerine uygun, sessiz ve hasarsız taşıma.</p>
+                <h4>Finans Merkezi Lojistiği</h4>
+                <p>Plaza ve ofis taşımacılığında arşivleme, IT ekipmanı paketleme ve hızlı kurulum desteği.</p>
             </div>
             <div class="feature-card">
-                <i>🏗️</i>
-                <h4>Kentsel Dönüşüm</h4>
-                <p>Yıkım ve yapım aşamasındaki dar sokaklarda mobil asansör kurulumu ile hızlı tahliye ve yerleşme.</p>
+                <i>🏭</i>
+                <h4>Dudullu OSB</h4>
+                <p>Sanayi bölgesinden Ankara'ya ticari ürün, hammadde ve makine nakliyesi için tır filosu.</p>
+            </div>
+            <div class="feature-card">
+                <i>🏘️</i>
+                <h4>Şerifali Site Taşıma</h4>
+                <p>Modern sitelerde yönetim kurallarına (asansör koruma, saat) uygun, sessiz ve temiz nakliye.</p>
             </div>
         </div>
 
-        <h2>Zeytinburnu - Ankara Sefer Detayları</h2>
+        <h2>Ümraniye - Ankara Sefer Detayları</h2>
         <table class="info-table">
             <tr>
                 <th>Hizmet Bölgesi</th>
-                <td>Zeytinburnu Merkez, Sahil Yolu, Sanayi Siteleri</td>
+                <td>Ümraniye Merkez, Şerifali, Dudullu, İFM</td>
             </tr>
             <tr>
                 <th>Hizmet Türü</th>
-                <td>Ticari (Tekstil/Deri), Evden Eve, Ofis</td>
+                <td>Kurumsal Ofis, Evden Eve, Sanayi</td>
             </tr>
             <tr>
-                <th>Araç Tipi</th>
-                <td>Tır, Kamyon, Askılı Tekstil Aracı</td>
+                <th>Asansör</th>
+                <td>Dış Cephe Asansörü ve Yük Asansörü</td>
             </tr>
             <tr>
                 <th>Sigorta</th>
-                <td>Tam Kapsamlı Emtia Sigortası</td>
+                <td>AXA Sigorta (Emtia ve Eşya)</td>
             </tr>
         </table>
 
         <h2>Sıkça Sorulan Sorular</h2>
         <div class="faq-section">
             <details>
-                <summary>Deri atölyemden Ankara'ya parça mal gönderebilir miyim?</summary>
-                <p>Evet. Parsiyel taşımacılık hizmetimizle, deri ve tekstil ürünlerinizi metreküp bazında fiyatlandırarak ekonomik şekilde Ankara'ya ulaştırıyoruz.</p>
+                <summary>Plaza katındaki ofisimizi hafta sonu taşıyabilir misiniz?</summary>
+                <p>Evet. İş akışınızın bozulmaması için Cuma akşamı başlayıp Pazar günü biten operasyonlarla, Pazartesi günü Ankara'daki ofisinizde çalışmaya başlamanızı sağlıyoruz.</p>
             </details>
             <details>
-                <summary>Büyükyalı projesinde oturuyorum, taşıma kurallarına uyuyor musunuz?</summary>
-                <p>Kesinlikle. Lüks rezidansların (asansör koruma, personel kimlik bildirimi, saat sınırlaması) tüm prosedürlerine hakim, tecrübeli bir ekibiz.</p>
+                <summary>Modoko'dan aldığım mobilyaları Ankara'ya götürebilir miyim?</summary>
+                <p>Kesinlikle. Modoko mobilyacılar sitesinden aldığınız sıfır veya ikinci el mobilyaları paketleyip, Ankara'daki adresinize sigortalı olarak taşıyoruz.</p>
             </details>
         </div>
 
         <div class="cta-wrapper">
-            <h3>Zeytinburnu'ndan Ankara'ya Profesyonel Köprü</h3>
-            <p>Ticaretiniz de eviniz de bizimle güvende.</p>
+            <h3>Ümraniye'nin İş ve Yaşam Hızına Uygun Nakliyat</h3>
+            <p>Kurumsal ve güvenilir çözüm ortağınız.</p>
             <a href="tel:+905555555555" class="btn-call">📞 HEMEN FİYAT AL</a>
         </div>
     </main>

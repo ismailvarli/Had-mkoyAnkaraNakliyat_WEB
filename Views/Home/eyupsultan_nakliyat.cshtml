@@ -1,14 +1,14 @@
 ﻿@{
     Layout = "_Layout";
-    ViewData["Title"] = "Esenyurt Ankara Nakliyat: Yüksek Kat ve Site Taşıma Uzmanı";
-    ViewData["Description"] = "Esenyurt'tan Ankara'ya asansörlü nakliyat. Kıraç, Haramidere ve Cumhuriyet Mahallesi'ndeki yüksek katlı sitelerden Ankara'ya sigortalı, hızlı ve ekonomik taşıma.";
+    ViewData["Title"] = "Eyüpsultan Ankara Nakliyat: Göktürk, Kemerburgaz ve Merkezde Uzman";
+    ViewData["Description"] = "Eyüpsultan'dan Ankara'ya sigortalı nakliyat. Göktürk ve Kemerburgaz villalarından, tarihi Eyüp merkezine kadar her bölgeye özel asansörlü ve garantili taşıma.";
 }
 
 <style>
     :root {
         --primary-color: #d35400; /* Kurumsal Turuncu */
         --secondary-color: #2c3e50; /* Koyu Lacivert */
-        --accent-blue: #2980b9; /* Modern Site Mavisi */
+        --accent-teal: #008080; /* Eyüpsultan'ın Manevi Yeşili/Mavisi */
     }
 
     /* GENEL SAYFA YAPISI */
@@ -79,18 +79,18 @@
 
             /* Hover ve Aktif Durum */
             .district-list a:hover,
-            .district-list a[href="/esenyurt-nakliyat"] {
-                background: #ebf5fb; /* Mavi tonlu hover */
-                color: var(--accent-blue);
-                border-left-color: var(--accent-blue);
+            .district-list a[href="/eyupsultan-nakliyat"] {
+                background: #e0f2f1; /* Hafif teal tonlu hover */
+                color: var(--accent-teal);
+                border-left-color: var(--accent-teal);
                 padding-left: 20px;
                 font-weight: bold;
             }
 
             .district-list a.active {
-                background: var(--accent-blue);
+                background: var(--accent-teal);
                 color: #fff !important;
-                border-color: var(--accent-blue);
+                border-color: var(--accent-teal);
             }
 
     /* SAĞ İÇERİK ALANI */
@@ -124,7 +124,7 @@
         position: absolute;
         bottom: 20px;
         left: 20px;
-        background: rgba(41, 128, 185, 0.9); /* Mavi ton */
+        background: rgba(0, 128, 128, 0.9); /* Teal ton */
         color: #fff;
         padding: 8px 15px;
         border-radius: 4px;
@@ -135,8 +135,8 @@
 
     /* İçerik Kutuları */
     .intro-box {
-        background: #f0f7fb;
-        border-left: 5px solid var(--accent-blue);
+        background: #e0f2f1;
+        border-left: 5px solid var(--accent-teal);
         padding: 20px;
         font-size: 1.1em;
         line-height: 1.6;
@@ -174,14 +174,14 @@
 
         .feature-card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent-blue);
+            border-color: var(--accent-teal);
         }
 
         .feature-card i {
             font-size: 32px;
             margin-bottom: 15px;
             display: block;
-            color: var(--accent-blue);
+            color: var(--accent-teal);
         }
 
         .feature-card h4 {
@@ -246,7 +246,7 @@
             position: absolute;
             right: 20px;
             font-weight: bold;
-            color: var(--accent-blue);
+            color: var(--accent-teal);
             font-size: 18px;
         }
 
@@ -264,13 +264,13 @@
 
     /* CTA Alanı */
     .cta-wrapper {
-        background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%); /* Mavi-Lacivert Geçiş */
+        background: linear-gradient(135deg, #008080 0%, #34495e 100%); /* Teal-Lacivert Geçiş */
         padding: 40px;
         text-align: center;
         border-radius: 12px;
         margin-top: 50px;
         color: white;
-        box-shadow: 0 15px 30px rgba(41, 128, 185, 0.2);
+        box-shadow: 0 15px 30px rgba(0, 128, 128, 0.2);
     }
 
         .cta-wrapper h3 {
@@ -280,7 +280,7 @@
         }
 
         .cta-wrapper p {
-            color: #ebf5fb;
+            color: #e0f2f1;
             font-weight: 500;
             font-size: 16px;
         }
@@ -288,7 +288,7 @@
     .btn-call {
         display: inline-block;
         background: #fff;
-        color: #2980b9;
+        color: #008080;
         padding: 16px 50px;
         border-radius: 50px;
         font-weight: bold;
@@ -340,8 +340,8 @@
             <li><a href="/catalca-nakliyat">Çatalca Nakliyat</a></li>
             <li><a href="/cekmekoy-nakliyat">Çekmeköy Nakliyat</a></li>
             <li><a href="/esenler-nakliyat">Esenler Nakliyat</a></li>
-            <li><a href="/esenyurt-nakliyat" class="active">Esenyurt Nakliyat</a></li>
-            <li><a href="/eyupsultan-nakliyat">Eyüpsultan Nakliyat</a></li>
+            <li><a href="/esenyurt-nakliyat">Esenyurt Nakliyat</a></li>
+            <li><a href="/eyupsultan-nakliyat" class="active">Eyüpsultan Nakliyat</a></li>
             <li><a href="/fatih-nakliyat">Fatih Nakliyat</a></li>
             <li><a href="/gaziosmanpasa-nakliyat">Gaziosmanpaşa Nakliyat</a></li>
             <li><a href="/gungoren-nakliyat">Güngören Nakliyat</a></li>
@@ -368,78 +368,78 @@
     <main class="content-area">
 
         <div class="hero-image-wrapper">
-            <img src="~/images/esenyurt-ankara-nakliyat.jpg" alt="Esenyurt Yüksek Kat ve Site Nakliyatı" onerror="this.src='https://via.placeholder.com/800x400?text=Esenyurt+Ankara+Nakliyat'">
-            <div class="hero-badge">İstanbul'un En Yüksek Binalarına Çözüm</div>
+            <img src="~/images/eyupsultan-ankara-nakliyat.jpg" alt="Eyüpsultan Göktürk Kemerburgaz Nakliyat" onerror="this.src='https://via.placeholder.com/800x400?text=Eyupsultan+Ankara+Nakliyat'">
+            <div class="hero-badge">Göktürk ve Kemerburgaz'ın Tercihi</div>
         </div>
 
-        <h1>Esenyurt Ankara Nakliyat: Yüksek Kat ve Site Taşıma Uzmanı</h1>
+        <h1>Eyüpsultan Ankara Nakliyat: Göktürk, Kemerburgaz ve Merkezde Uzman</h1>
 
         <div class="intro-box">
-            İstanbul'un en yoğun nüfuslu ve en çok gökdelene sahip ilçesi <strong>Esenyurt'tan Ankara'ya</strong> taşınmak, klasik nakliye yöntemleriyle mümkün değildir. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Cumhuriyet Mahallesi, Kıraç, Haramidere ve Yeşilkent bölgelerindeki 20+ katlı rezidanslarda ve devasa sitelerde, <strong>Yüksek Kat Asansörlerimiz</strong> ve geniş araç filomuzla hizmet veriyoruz.
+            İstanbul'un manevi huzuru ile modern yaşamın birleştiği <strong>Eyüpsultan'dan Ankara'ya</strong> taşınmak, bölgenin çeşitliliğini (Tarihi Merkez, Alibeyköy, Göktürk) bilen profesyonel bir yaklaşım gerektirir. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Kemerburgaz ve Göktürk'teki lüks villalardan, Eyüp Sultan'ın tarihi sokaklarındaki apartmanlara kadar her noktaya özel çözümler üretiyoruz.
         </div>
 
-        <p>Esenyurt'un yoğun nüfus hareketliliğini biliyor, site yönetimlerinin taşınma kurallarına (asansör randevusu, koruma kılıfları, saat sınırlaması) %100 uyum sağlıyoruz. İster 1+0 stüdyo daire, ister 3+1 aile evi olsun; Ankara'ya en güvenli ve ekonomik taşıma çözümünü sunuyoruz.</p>
+        <p>Özellikle Göktürk ve Kemerburgaz bölgesindeki hassas eşya yoğunluğuna sahip evlerde, "Premium Ambalaj" ve "Kapalı Kasa Tır" hizmetimizle fark yaratıyoruz. Alibeyköy ve Yeşilpınar gibi yoğun yerleşimlerde ise asansörlü sistemlerimizle hızlı ve güvenli taşımacılık sağlıyoruz.</p>
 
-        <h2>Esenyurt Nakliyat Hizmetinde Neden Farklıyız?</h2>
+        <h2>Eyüpsultan Nakliyat Hizmetinde Bölgesel Uzmanlık</h2>
         <div class="features-grid">
             <div class="feature-card">
-                <i>🏙️</i>
-                <h4>Yüksek Kat Teknolojisi</h4>
-                <p>Esenyurt'un 30 katlı kuleleri için 25. kata kadar ulaşabilen teleskopik dış cephe asansörlerimizle hasarsız taşıma.</p>
+                <i>🏡</i>
+                <h4>Göktürk & Kemerburgaz</h4>
+                <p>Villa, müstakil ev ve lüks siteler için geniş ekip, XL araçlar ve VIP paketleme hizmeti.</p>
             </div>
             <div class="feature-card">
-                <i>🏢</i>
-                <h4>Site Yönetimi Uyumu</h4>
-                <p>Güvenlik geçişleri, yük asansörü kullanımı ve otopark düzenlemeleri konusunda tecrübeli, üniformalı ekip.</p>
+                <i>🕌</i>
+                <h4>Tarihi Merkez Lojistiği</h4>
+                <p>Eyüp Sultan Camii çevresindeki dar ve tarihi sokaklara uygun, küçük aktarma (shuttle) araçlarıyla hizmet.</p>
             </div>
             <div class="feature-card">
-                <i>🚛</i>
-                <h4>Geniş Araç Filosu</h4>
-                <p>Esenyurt'un nüfus yoğunluğuna yanıt verebilecek kapasitede, her boyutta (Kamyonet, Kamyon, Tır) araç seçeneği.</p>
+                <i>🏗️</i>
+                <h4>Alibeyköy Asansörlü</h4>
+                <p>Yoğun yapılaşmanın olduğu Alibeyköy ve Yeşilpınar'da, balkon kurulumlu mobil asansörle hızlı taşıma.</p>
             </div>
         </div>
 
-        <h2>Esenyurt - Ankara Sefer Detayları</h2>
+        <h2>Eyüpsultan - Ankara Sefer Detayları</h2>
         <table class="info-table">
             <tr>
                 <th>Hizmet Bölgesi</th>
-                <td>Esenyurt, Kıraç, Haramidere, Beylikdüzü Sınırı</td>
+                <td>Eyüp Merkez, Göktürk, Kemerburgaz, Alibeyköy</td>
             </tr>
             <tr>
-                <th>Asansör</th>
-                <td>Teleskopik Mobil Asansör ve Yük Asansörü</td>
+                <th>Taşıma Tipi</th>
+                <td>Villa (Premium), Standart Ev, Ofis</td>
             </tr>
             <tr>
-                <th>Teslimat Süresi</th>
-                <td>Yüklemenin Ertesi Sabahı (24 Saat)</td>
+                <th>Araç Filosu</th>
+                <td>Her Ebatta Kapalı Çelik Kasa Araçlar</td>
             </tr>
             <tr>
-                <th>Fiyat Avantajı</th>
-                <td>Bölgeye Özel Ekonomik Tarifeler</td>
+                <th>Sigorta</th>
+                <td>AXA Sigorta ile Tam Güvence</td>
             </tr>
         </table>
 
         <h2>Sıkça Sorulan Sorular</h2>
         <div class="faq-section">
             <details>
-                <summary>Rezidansın 20. katında oturuyorum, dış asansör ulaşır mı?</summary>
-                <p>Evet. Filomuzda Türkiye'nin en yüksek katlarına ulaşabilen özel asansörler mevcuttur. Eğer binanın konumu uygunsa 25. kata kadar dışarıdan kurulum yapabiliyoruz.</p>
+                <summary>Göktürk'teki villamda piyano ve kasa var, taşıyabilir misiniz?</summary>
+                <p>Kesinlikle. Göktürk bölgesinde sıkça hizmet veriyoruz. Piyano, çelik kasa gibi ağır ve hassas eşyalarınız için özel taşıma ekipmanlarımız ve uzman personelimiz mevcuttur.</p>
             </details>
             <details>
-                <summary>Kıraç bölgesinden Ankara'ya sanayi tipi malzeme taşıyor musunuz?</summary>
-                <p>Kesinlikle. Esenyurt ve Kıraç sanayi bölgelerinden Ankara'ya paletli yük, koli ve makine parçası taşımacılığı da yapıyoruz. Faturalı ve sigortalı hizmet sunuyoruz.</p>
+                <summary>Eyüp merkezde sokaklar dar, kamyon giremezse ne olur?</summary>
+                <p>Sorun değil. Büyük aracımızı ana caddeye park ediyoruz. Evinize "Shuttle" dediğimiz küçük panelvan araçlarla yanaşıp, eşyayı alıp ana araca aktarıyoruz. Ek ücret talep etmiyoruz.</p>
             </details>
             <details>
-                <summary>Taşınma için site yönetiminden izin almam gerekiyor mu?</summary>
-                <p>Evet, Esenyurt'taki çoğu site randevulu çalışır. Biz size araç plakasını ve personel bilgilerini önceden veriyoruz, siz de yönetimden kolayca izin alıp asansörü rezerve edebiliyorsunuz.</p>
+                <summary>Kemerburgaz'dan Ankara'ya eşyalar ne zaman ulaşır?</summary>
+                <p>Yükleme işlemi tamamlandıktan sonra aracımız yola çıkar. Kuzey Marmara Otoyolu bağlantısını kullanarak, genellikle ertesi sabah Ankara'daki adresinize teslimat yaparız.</p>
             </details>
         </div>
 
         <div class="cta-wrapper">
-            <h3>Esenyurt'un Zirvesinden Ankara'ya Güvenli İniş</h3>
-            <p>Yüksek katlar gözünüzü korkutmasın. Profesyonel ekibimiz yanınızda.</p>
-            <a href="tel:+905555555555" class="btn-call">📞 HEMEN FİYAT AL</a>
-            <p style="margin-top:15px; font-size:14px;">WhatsApp hattımızdan 7/24 hızlı teklif alabilirsiniz.</p>
+            <h3>Eyüpsultan'ın Her Köşesinden Ankara'ya Güvenle</h3>
+            <p>Villadan apartmana, her türlü nakliye ihtiyacınızda yanınızdayız.</p>
+            <a href="tel:+905555555555" class="btn-call">📞 EKSPERTİZ & FİYAT AL</a>
+            <p style="margin-top:15px; font-size:14px;">WhatsApp üzerinden konum atarak hızlı fiyat alabilirsiniz.</p>
         </div>
 
     </main>

@@ -1,17 +1,17 @@
 ﻿@{
     Layout = "_Layout";
-    ViewData["Title"] = "Zeytinburnu Ankara Nakliyat: Tekstil, Deri ve Rezidans Taşıma";
-    ViewData["Description"] = "Zeytinburnu'ndan Ankara'ya nakliyat. Tekstil ve deri ürünleri için ticari araçlar, sahil rezidansları ve kentsel dönüşüm bölgeleri için asansörlü ev taşıma.";
+    ViewData["Title"] = "Şişli Ankara Nakliyat: Nişantaşı, Bomonti ve Merkez Ofis Taşıma";
+    ViewData["Description"] = "Şişli'den Ankara'ya kurumsal nakliyat. Mecidiyeköy plazaları, Nişantaşı tarihi binaları ve Bomonti rezidansları için asansörlü, sigortalı ve profesyonel taşıma.";
 }
 
 <style>
     :root {
         --primary-color: #d35400;
         --secondary-color: #2c3e50;
-        --accent-leather: #8d6e63; /* Deri ve Tekstil Kahvesi */
+        --accent-luxury: #8e44ad; /* Nişantaşı Lüksü / Mor */
     }
 
-    /* CSS Blokları */
+    /* CSS BLOKLARI (Şile ile aynı yapı, renkler değişti) */
     .page-container {
         display: grid;
         grid-template-columns: 300px 1fr;
@@ -76,18 +76,18 @@
             border: 1px solid #f1f1f1;
         }
 
-            .district-list a:hover, .district-list a[href="/zeytinburnu-nakliyat"] {
-                background: #efebe9;
-                color: var(--accent-leather);
-                border-left-color: var(--accent-leather);
+            .district-list a:hover, .district-list a[href="/sisli-nakliyat"] {
+                background: #f4ecf7;
+                color: var(--accent-luxury);
+                border-left-color: var(--accent-luxury);
                 padding-left: 20px;
                 font-weight: bold;
             }
 
             .district-list a.active {
-                background: var(--accent-leather);
+                background: var(--accent-luxury);
                 color: #fff !important;
-                border-color: var(--accent-leather);
+                border-color: var(--accent-luxury);
             }
 
     .content-area h1 {
@@ -120,7 +120,7 @@
         position: absolute;
         bottom: 20px;
         left: 20px;
-        background: rgba(141, 110, 99, 0.9);
+        background: rgba(142, 68, 173, 0.9);
         color: #fff;
         padding: 8px 15px;
         border-radius: 4px;
@@ -130,8 +130,8 @@
     }
 
     .intro-box {
-        background: #efebe9;
-        border-left: 5px solid var(--accent-leather);
+        background: #f4ecf7;
+        border-left: 5px solid var(--accent-luxury);
         padding: 20px;
         font-size: 1.1em;
         line-height: 1.6;
@@ -168,14 +168,14 @@
 
         .feature-card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent-leather);
+            border-color: var(--accent-luxury);
         }
 
         .feature-card i {
             font-size: 32px;
             margin-bottom: 15px;
             display: block;
-            color: var(--accent-leather);
+            color: var(--accent-luxury);
         }
 
         .feature-card h4 {
@@ -238,7 +238,7 @@
             position: absolute;
             right: 20px;
             font-weight: bold;
-            color: var(--accent-leather);
+            color: var(--accent-luxury);
             font-size: 18px;
         }
 
@@ -255,13 +255,13 @@
     }
 
     .cta-wrapper {
-        background: linear-gradient(135deg, #8d6e63 0%, #2c3e50 100%);
+        background: linear-gradient(135deg, #8e44ad 0%, #2c3e50 100%);
         padding: 40px;
         text-align: center;
         border-radius: 12px;
         margin-top: 50px;
         color: white;
-        box-shadow: 0 15px 30px rgba(141, 110, 99, 0.2);
+        box-shadow: 0 15px 30px rgba(142, 68, 173, 0.2);
     }
 
         .cta-wrapper h3 {
@@ -271,7 +271,7 @@
         }
 
         .cta-wrapper p {
-            color: #efebe9;
+            color: #f4ecf7;
             font-weight: 500;
             font-size: 16px;
         }
@@ -279,7 +279,7 @@
     .btn-call {
         display: inline-block;
         background: #fff;
-        color: #8d6e63;
+        color: #8e44ad;
         padding: 16px 50px;
         border-radius: 50px;
         font-weight: bold;
@@ -311,80 +311,81 @@
     <aside class="district-sidebar">
         <h3>📍 Hizmet Bölgelerimiz</h3>
         <ul class="district-list">
-            <li><a href="/uskudar-nakliyat">Üsküdar Nakliyat</a></li>
-            <li><a href="/zeytinburnu-nakliyat" class="active">Zeytinburnu Nakliyat</a></li>
+            <li><a href="/sile-nakliyat">Şile Nakliyat</a></li>
+            <li><a href="/sisli-nakliyat" class="active">Şişli Nakliyat</a></li>
+            <li><a href="/tuzla-nakliyat">Tuzla Nakliyat</a></li>
         </ul>
     </aside>
 
     <main class="content-area">
         <div class="hero-image-wrapper">
-            <img src="~/images/zeytinburnu-ankara-nakliyat.jpg" alt="Zeytinburnu Tekstil ve Rezidans Nakliyat" onerror="this.src='https://via.placeholder.com/800x400?text=Zeytinburnu+Ankara+Nakliyat'">
-            <div class="hero-badge">Tekstil ve Rezidans Lojistiği</div>
+            <img src="~/images/sisli-ankara-nakliyat.jpg" alt="Şişli Nişantaşı Ofis ve Ev Taşıma" onerror="this.src='https://via.placeholder.com/800x400?text=Sisli+Ankara+Nakliyat'">
+            <div class="hero-badge">Nişantaşı, Bomonti & Mecidiyeköy</div>
         </div>
 
-        <h1>Zeytinburnu Ankara Nakliyat: Tekstil, Deri ve Rezidans Taşıma</h1>
+        <h1>Şişli Ankara Nakliyat: Nişantaşı, Bomonti ve Merkez Ofis Taşıma</h1>
 
         <div class="intro-box">
-            İstanbul'un ticaret ve sahil yaşamının birleştiği <strong>Zeytinburnu'ndan Ankara'ya</strong> taşınmak, hem ticari hem de lüks konut tecrübesi ister. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Dericiler Sitesi ve tekstil piyasasının lojistik ihtiyaçlarına yanıt verirken, Büyükyalı ve Fişekhane gibi sahil bandındaki rezidanslarda VIP ev taşıma hizmeti sunuyoruz.
+            İstanbul'un ticaret, moda ve yaşam merkezi <strong>Şişli'den Ankara'ya</strong> taşınmak; dar sokakları, yoğun trafiği ve yüksek binaları yönetebilecek bir uzmanlık ister. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Nişantaşı'nın tarihi apartmanları, Bomonti'nin modern rezidansları ve Mecidiyeköy'ün iş kuleleri için geliştirdiğimiz özel lojistik çözümlerle hizmetinizdeyiz.
         </div>
 
-        <p>Kentsel dönüşümün yoğun olduğu bölgelerde asansörlü sistemlerimizle, sanayi bölgelerinde ise geniş hacimli tırlarımızla hizmet vererek Zeytinburnu'nun her ihtiyacına profesyonel çözümler üretiyoruz.</p>
+        <p>Bölgenin yoğun temposuna ayak uyduran ekibimizle, ofis taşımacılığında iş kaybı yaşatmadan, ev taşımacılığında ise çevreye rahatsızlık vermeden hızlı ve sessiz bir operasyon yürütüyoruz.</p>
 
-        <h2>Zeytinburnu Nakliyat Hizmetinde Çifte Uzmanlık</h2>
+        <h2>Şişli Nakliyat Hizmetinde Kurumsal Farklar</h2>
         <div class="features-grid">
             <div class="feature-card">
-                <i>🧵</i>
-                <h4>Tekstil & Deri Taşıma</h4>
-                <p>Ticari ürünleriniz için askılı, raflı ve kolili özel araç tasarımı. Ankara mağazalarına direkt sevkiyat.</p>
-            </div>
-            <div class="feature-card">
                 <i>🏢</i>
-                <h4>Sahil Rezidansları</h4>
-                <p>Sahil şeridindeki lüks projelerde yönetim prosedürlerine uygun, sessiz ve hasarsız taşıma.</p>
+                <h4>Ofis & Plaza Taşıma</h4>
+                <p>Mecidiyeköy ve Esentepe'deki şirketler için profesyonel, sigortalı ve arşivleme destekli ofis nakliyesi.</p>
             </div>
             <div class="feature-card">
-                <i>🏗️</i>
-                <h4>Kentsel Dönüşüm</h4>
-                <p>Yıkım ve yapım aşamasındaki dar sokaklarda mobil asansör kurulumu ile hızlı tahliye ve yerleşme.</p>
+                <i>🛍️</i>
+                <h4>Nişantaşı Lojistiği</h4>
+                <p>Nişantaşı ve Teşvikiye'nin dar sokaklarında "Shuttle" (aktarma) araçlarıyla butik ve hassas taşıma.</p>
+            </div>
+            <div class="feature-card">
+                <i>🏙️</i>
+                <h4>Rezidans Uzmanlığı</h4>
+                <p>Bomonti ve Şişli Merkez'deki gökdelenlerde yük asansörü kullanımı ve site yönetimiyle koordinasyon.</p>
             </div>
         </div>
 
-        <h2>Zeytinburnu - Ankara Sefer Detayları</h2>
+        <h2>Şişli - Ankara Sefer Detayları</h2>
         <table class="info-table">
             <tr>
                 <th>Hizmet Bölgesi</th>
-                <td>Zeytinburnu Merkez, Sahil Yolu, Sanayi Siteleri</td>
+                <td>Şişli, Nişantaşı, Mecidiyeköy, Bomonti, Feriköy</td>
             </tr>
             <tr>
                 <th>Hizmet Türü</th>
-                <td>Ticari (Tekstil/Deri), Evden Eve, Ofis</td>
+                <td>Kurumsal Ofis, VIP Ev Taşıma, Parça Eşya</td>
             </tr>
             <tr>
-                <th>Araç Tipi</th>
-                <td>Tır, Kamyon, Askılı Tekstil Aracı</td>
+                <th>Operasyon Saati</th>
+                <td>7/24 (Hafta Sonu ve Gece Çalışması Mevcut)</td>
             </tr>
             <tr>
                 <th>Sigorta</th>
-                <td>Tam Kapsamlı Emtia Sigortası</td>
+                <td>Tam Kapsamlı Emtia Nakliyat Sigortası</td>
             </tr>
         </table>
 
         <h2>Sıkça Sorulan Sorular</h2>
         <div class="faq-section">
             <details>
-                <summary>Deri atölyemden Ankara'ya parça mal gönderebilir miyim?</summary>
-                <p>Evet. Parsiyel taşımacılık hizmetimizle, deri ve tekstil ürünlerinizi metreküp bazında fiyatlandırarak ekonomik şekilde Ankara'ya ulaştırıyoruz.</p>
+                <summary>Nişantaşı'nda sokağımız çok dar, kamyon giremez.</summary>
+                <p>Nişantaşı'nda bu durum standarttır. Büyük aracımızı ana caddeye park edip, küçük panelvan araçlarımızla evinizden eşyayı alıp ana araca taşıyoruz (Ring Sefer).</p>
             </details>
             <details>
-                <summary>Büyükyalı projesinde oturuyorum, taşıma kurallarına uyuyor musunuz?</summary>
-                <p>Kesinlikle. Lüks rezidansların (asansör koruma, personel kimlik bildirimi, saat sınırlaması) tüm prosedürlerine hakim, tecrübeli bir ekibiz.</p>
+                <summary>Mecidiyeköy'deki ofisimi Pazar günü taşıyabilir misiniz?</summary>
+                <p>Evet. İş dünyasının kalbi olan bu bölgede, mesai saatleri dışında (akşam veya hafta sonu) taşıma yaparak iş akışınızın kesilmemesini sağlıyoruz.</p>
             </details>
         </div>
 
         <div class="cta-wrapper">
-            <h3>Zeytinburnu'ndan Ankara'ya Profesyonel Köprü</h3>
-            <p>Ticaretiniz de eviniz de bizimle güvende.</p>
-            <a href="tel:+905555555555" class="btn-call">📞 HEMEN FİYAT AL</a>
+            <h3>Şişli'nin Kalitesine Uygun Profesyonel Hizmet</h3>
+            <p>Merkezden başkente sorunsuz geçiş için bizi tercih edin.</p>
+            <a href="tel:+905555555555" class="btn-call">📞 EKSPERTİZ & FİYAT AL</a>
         </div>
     </main>
 </div>

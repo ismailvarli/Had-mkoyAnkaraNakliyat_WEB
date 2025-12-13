@@ -1,4 +1,102 @@
-﻿
+﻿<style>
+    /* Kartların genel yapısını düzenle */
+    .service-one__single {
+        background: #fff;
+        border: 1px solid #eee; /* Hafif çerçeve */
+        border-radius: 10px;
+        overflow: hidden; /* Dışarı taşanları gizle */
+        margin-bottom: 30px; /* Alt satırla mesafe */
+        transition: all 0.3s ease;
+        height: 100%; /* Tüm kartları eşit boya zorla */
+        position: relative;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+        /* Hover efekti */
+        .service-one__single:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+    /* Resim alanını sabitle (En önemli kısım burası) */
+    .service-one__single-img {
+        width: 100%;
+        height: 220px; /* Resim yüksekliği sabitlendi */
+        overflow: hidden;
+        position: relative;
+        background-color: #f4f4f4; /* Resim yoksa gri fon görünsün */
+    }
+
+        /* Resmin kendisini kutuya sığdır */
+        .service-one__single-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Resmi ezmeden kutuya doldur */
+            display: block;
+        }
+
+    /* Siyah Kamyon İkonu (Icon Box) Düzenlemesi */
+    /* Temandaki orijinal sınıfa müdahale ediyoruz */
+    .service-one__single .icon {
+        position: absolute;
+        top: 190px; /* Resmin hemen altına denk gelecek şekilde */
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background-color: #1b2126; /* Koyu renk */
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        z-index: 10;
+        font-size: 30px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+
+    /* İçerik Alanı */
+    .service-one__single-content {
+        padding: 40px 25px 30px 25px; /* Üst boşluğu artırdık ki ikon çakışmasın */
+    }
+
+        .service-one__single-content h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+            .service-one__single-content h2 a {
+                color: #2c3e50;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+
+                .service-one__single-content h2 a:hover {
+                    color: #d35400; /* Hover rengi */
+                }
+
+        .service-one__single-content p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+    /* Buton */
+    .btn-box a {
+        color: #d35400;
+        font-weight: 600;
+        font-size: 14px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+    }
+
+        .btn-box a span {
+            margin-left: 5px;
+            font-size: 12px;
+        }
+</style>
 <!--Start Page Header-->
 <section class="page-header">
     <div class="page-header__bg" style="background-image: url(/assets/images/gallery/hadimkoy_hakkimizda.png)">
@@ -29,12 +127,12 @@
                         </div>
 
                         <div class="service-one__single-content">
-                            <h2><a href="/Home/ankara_nakliyat">Ankara Nakliyat</a></h2>
+                            <h2><a href="/ankara-nakliyat">Ankara Nakliyat</a></h2>
                             <p>
                                 "İstanbul Ankara nakliyat hizmetinde günlük seferler ve sigortalı taşımacılık. Dönüş araçlarıyla en uygun fiyat garantisi için hemen teklif alın."
                             </p>
                             <div class="btn-box">
-                                <a href="/Home/ankara_nakliyat">
+                                <a href="/ankara-nakliyat">
                                     Devamını oku<span class="icon-right-arrow21"></span>
                                 </a>
                             </div>
@@ -56,10 +154,10 @@
                             <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_395x300.png" loading="lazy" alt=" istanbul nakliyat">
                         </div>
                         <div class="service-one__single-content">
-                            <h2><a href="/Home/istanbul_nakliyat">  İstanbul Nakliyat</a></h2>
+                            <h2><a href="/istanbul-nakliyat">  İstanbul Nakliyat</a></h2>
                             <p>İstanbul Nakliyat ile taşınmanın stresini artık unutun. Hadımköy Ankara Nakliyat olarak İstanbul’da evden eve, ofis ve parça eşya taşımacılığını hızlı, güvenilir ve uzman ekibimizle gerçekleştiriyoruz...</p>
                             <div class="btn-box">
-                                <a href="/Home/istanbul_nakliyat">
+                                <a href="/istanbul-nakliyat">
                                     Devamını oku <span class="icon-right-arrow21"></span>
                                 </a>
                             </div>

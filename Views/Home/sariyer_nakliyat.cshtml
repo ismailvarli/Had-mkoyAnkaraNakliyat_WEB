@@ -1,17 +1,17 @@
 ﻿@{
     Layout = "_Layout";
-    ViewData["Title"] = "Zeytinburnu Ankara Nakliyat: Tekstil, Deri ve Rezidans Taşıma";
-    ViewData["Description"] = "Zeytinburnu'ndan Ankara'ya nakliyat. Tekstil ve deri ürünleri için ticari araçlar, sahil rezidansları ve kentsel dönüşüm bölgeleri için asansörlü ev taşıma.";
+    ViewData["Title"] = "Sarıyer Ankara Nakliyat: Yalı, Villa ve VIP Taşıma Hizmetleri";
+    ViewData["Description"] = "Sarıyer'den Ankara'ya VIP nakliyat. Zekeriyaköy villaları, Boğaz yalıları ve Maslak plazaları için sigortalı, hassas ve kurumsal taşıma çözümleri.";
 }
 
 <style>
     :root {
         --primary-color: #d35400;
         --secondary-color: #2c3e50;
-        --accent-leather: #8d6e63; /* Deri ve Tekstil Kahvesi */
+        --accent-bosphorus: #2980b9; /* Boğaz Mavisi */
     }
 
-    /* CSS Blokları */
+    /* STANDART CSS YAPISI */
     .page-container {
         display: grid;
         grid-template-columns: 300px 1fr;
@@ -76,18 +76,19 @@
             border: 1px solid #f1f1f1;
         }
 
-            .district-list a:hover, .district-list a[href="/zeytinburnu-nakliyat"] {
-                background: #efebe9;
-                color: var(--accent-leather);
-                border-left-color: var(--accent-leather);
+            /* SARIYER ÖZEL HOVER */
+            .district-list a:hover, .district-list a[href="/sariyer-nakliyat"] {
+                background: #ebf5fb;
+                color: var(--accent-bosphorus);
+                border-left-color: var(--accent-bosphorus);
                 padding-left: 20px;
                 font-weight: bold;
             }
 
             .district-list a.active {
-                background: var(--accent-leather);
+                background: var(--accent-bosphorus);
                 color: #fff !important;
-                border-color: var(--accent-leather);
+                border-color: var(--accent-bosphorus);
             }
 
     .content-area h1 {
@@ -120,7 +121,7 @@
         position: absolute;
         bottom: 20px;
         left: 20px;
-        background: rgba(141, 110, 99, 0.9);
+        background: rgba(41, 128, 185, 0.9);
         color: #fff;
         padding: 8px 15px;
         border-radius: 4px;
@@ -130,8 +131,8 @@
     }
 
     .intro-box {
-        background: #efebe9;
-        border-left: 5px solid var(--accent-leather);
+        background: #ebf5fb;
+        border-left: 5px solid var(--accent-bosphorus);
         padding: 20px;
         font-size: 1.1em;
         line-height: 1.6;
@@ -168,14 +169,14 @@
 
         .feature-card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent-leather);
+            border-color: var(--accent-bosphorus);
         }
 
         .feature-card i {
             font-size: 32px;
             margin-bottom: 15px;
             display: block;
-            color: var(--accent-leather);
+            color: var(--accent-bosphorus);
         }
 
         .feature-card h4 {
@@ -238,7 +239,7 @@
             position: absolute;
             right: 20px;
             font-weight: bold;
-            color: var(--accent-leather);
+            color: var(--accent-bosphorus);
             font-size: 18px;
         }
 
@@ -255,13 +256,13 @@
     }
 
     .cta-wrapper {
-        background: linear-gradient(135deg, #8d6e63 0%, #2c3e50 100%);
+        background: linear-gradient(135deg, #2980b9 0%, #34495e 100%);
         padding: 40px;
         text-align: center;
         border-radius: 12px;
         margin-top: 50px;
         color: white;
-        box-shadow: 0 15px 30px rgba(141, 110, 99, 0.2);
+        box-shadow: 0 15px 30px rgba(41, 128, 185, 0.2);
     }
 
         .cta-wrapper h3 {
@@ -271,7 +272,7 @@
         }
 
         .cta-wrapper p {
-            color: #efebe9;
+            color: #ebf5fb;
             font-weight: 500;
             font-size: 16px;
         }
@@ -279,7 +280,7 @@
     .btn-call {
         display: inline-block;
         background: #fff;
-        color: #8d6e63;
+        color: #2980b9;
         padding: 16px 50px;
         border-radius: 50px;
         font-weight: bold;
@@ -311,80 +312,82 @@
     <aside class="district-sidebar">
         <h3>📍 Hizmet Bölgelerimiz</h3>
         <ul class="district-list">
-            <li><a href="/uskudar-nakliyat">Üsküdar Nakliyat</a></li>
-            <li><a href="/zeytinburnu-nakliyat" class="active">Zeytinburnu Nakliyat</a></li>
+            <li><a href="/pendik-nakliyat">Pendik Nakliyat</a></li>
+            <li><a href="/sancaktepe-nakliyat">Sancaktepe Nakliyat</a></li>
+            <li><a href="/sariyer-nakliyat" class="active">Sarıyer Nakliyat</a></li>
+            <li><a href="/silivri-nakliyat">Silivri Nakliyat</a></li>
         </ul>
     </aside>
 
     <main class="content-area">
         <div class="hero-image-wrapper">
-            <img src="~/images/zeytinburnu-ankara-nakliyat.jpg" alt="Zeytinburnu Tekstil ve Rezidans Nakliyat" onerror="this.src='https://via.placeholder.com/800x400?text=Zeytinburnu+Ankara+Nakliyat'">
-            <div class="hero-badge">Tekstil ve Rezidans Lojistiği</div>
+            <img src="~/images/sariyer-ankara-nakliyat.jpg" alt="Sarıyer VIP ve Yalı Taşımacılığı" onerror="this.src='https://via.placeholder.com/800x400?text=Sariyer+VIP+Nakliyat'">
+            <div class="hero-badge">Sarıyer'in VIP Taşıma Çözümü</div>
         </div>
 
-        <h1>Zeytinburnu Ankara Nakliyat: Tekstil, Deri ve Rezidans Taşıma</h1>
+        <h1>Sarıyer Ankara Nakliyat: Yalı, Villa ve VIP Taşıma Hizmetleri</h1>
 
         <div class="intro-box">
-            İstanbul'un ticaret ve sahil yaşamının birleştiği <strong>Zeytinburnu'ndan Ankara'ya</strong> taşınmak, hem ticari hem de lüks konut tecrübesi ister. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Dericiler Sitesi ve tekstil piyasasının lojistik ihtiyaçlarına yanıt verirken, Büyükyalı ve Fişekhane gibi sahil bandındaki rezidanslarda VIP ev taşıma hizmeti sunuyoruz.
+            İstanbul'un en seçkin ve prestijli ilçesi <strong>Sarıyer'den Ankara'ya</strong> taşınmak, standartların ötesinde bir özen ve gizlilik gerektirir. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Zekeriyaköy'ün villalarından Yeniköy'ün yalılarına, Maslak'ın gökdelenlerinden Tarabya'nın köşklerine kadar en üst segment taşımacılık hizmetini sunuyoruz.
         </div>
 
-        <p>Kentsel dönüşümün yoğun olduğu bölgelerde asansörlü sistemlerimizle, sanayi bölgelerinde ise geniş hacimli tırlarımızla hizmet vererek Zeytinburnu'nun her ihtiyacına profesyonel çözümler üretiyoruz.</p>
+        <p>Değerli antika eşyalarınız, sanat eserleriniz ve piyanolarınız için "VIP Paketleme" standartlarımızla çalışıyoruz. Sarıyer'in dar sahil yollarında ve dik yokuşlarında, deneyimli şoförlerimiz ve özel süspansiyonlu araçlarımızla sarsıntısız bir transfer sağlıyoruz.</p>
 
-        <h2>Zeytinburnu Nakliyat Hizmetinde Çifte Uzmanlık</h2>
+        <h2>Sarıyer Nakliyat Hizmetinde Lüks Standartlar</h2>
         <div class="features-grid">
             <div class="feature-card">
-                <i>🧵</i>
-                <h4>Tekstil & Deri Taşıma</h4>
-                <p>Ticari ürünleriniz için askılı, raflı ve kolili özel araç tasarımı. Ankara mağazalarına direkt sevkiyat.</p>
+                <i>💎</i>
+                <h4>VIP Yalı Taşıma</h4>
+                <p>Boğaz hattındaki yalılar için deniz veya kara yolu bağlantılı, yüksek güvenlikli ve gizlilik esaslı nakliye.</p>
+            </div>
+            <div class="feature-card">
+                <i>🏡</i>
+                <h4>Zekeriyaköy Villa Lojistiği</h4>
+                <p>Büyük metrekareli villalar için XL araç filosu, kalabalık ekip ve anahtar teslim toplama/yerleştirme.</p>
             </div>
             <div class="feature-card">
                 <i>🏢</i>
-                <h4>Sahil Rezidansları</h4>
-                <p>Sahil şeridindeki lüks projelerde yönetim prosedürlerine uygun, sessiz ve hasarsız taşıma.</p>
-            </div>
-            <div class="feature-card">
-                <i>🏗️</i>
-                <h4>Kentsel Dönüşüm</h4>
-                <p>Yıkım ve yapım aşamasındaki dar sokaklarda mobil asansör kurulumu ile hızlı tahliye ve yerleşme.</p>
+                <h4>Maslak Ofis Taşıma</h4>
+                <p>Maslak plazalar bölgesindeki kurumsal şirketler için hafta sonu, iş kaybı yaşatmayan hızlı ofis transferi.</p>
             </div>
         </div>
 
-        <h2>Zeytinburnu - Ankara Sefer Detayları</h2>
+        <h2>Sarıyer - Ankara Sefer Detayları</h2>
         <table class="info-table">
             <tr>
                 <th>Hizmet Bölgesi</th>
-                <td>Zeytinburnu Merkez, Sahil Yolu, Sanayi Siteleri</td>
+                <td>Sarıyer (Tüm Semtler), Zekeriyaköy, Maslak</td>
             </tr>
             <tr>
-                <th>Hizmet Türü</th>
-                <td>Ticari (Tekstil/Deri), Evden Eve, Ofis</td>
+                <th>Hizmet Sınıfı</th>
+                <td>VIP, Premium, Kurumsal</td>
             </tr>
             <tr>
-                <th>Araç Tipi</th>
-                <td>Tır, Kamyon, Askılı Tekstil Aracı</td>
+                <th>Özel Taşıma</th>
+                <td>Kasa, Piyano, Antika, Sanat Eseri</td>
             </tr>
             <tr>
-                <th>Sigorta</th>
-                <td>Tam Kapsamlı Emtia Sigortası</td>
+                <th>Sigorta Limiti</th>
+                <td>Milyon TL Üzeri (İhtiyaca Özel Poliçe)</td>
             </tr>
         </table>
 
         <h2>Sıkça Sorulan Sorular</h2>
         <div class="faq-section">
             <details>
-                <summary>Deri atölyemden Ankara'ya parça mal gönderebilir miyim?</summary>
-                <p>Evet. Parsiyel taşımacılık hizmetimizle, deri ve tekstil ürünlerinizi metreküp bazında fiyatlandırarak ekonomik şekilde Ankara'ya ulaştırıyoruz.</p>
+                <summary>Zekeriyaköy'deki villamın eşyası çok fazla, paketleme kaç gün sürer?</summary>
+                <p>Büyük villalar için genellikle 1 gün önceden "Ön Paketleme Ekibi" gönderiyoruz. Tüm kırılabilecek eşyalar, kıyafetler ve mobilyalar profesyonelce paketlenir, ertesi gün araç yüklemesi yapılır.</p>
             </details>
             <details>
-                <summary>Büyükyalı projesinde oturuyorum, taşıma kurallarına uyuyor musunuz?</summary>
-                <p>Kesinlikle. Lüks rezidansların (asansör koruma, personel kimlik bildirimi, saat sınırlaması) tüm prosedürlerine hakim, tecrübeli bir ekibiz.</p>
+                <summary>Yeniköy'de sahil yolunda park sorunu var, nasıl çözüm üretiyorsunuz?</summary>
+                <p>Sahil şeridinde trafiği aksatmamak için sabahın erken saatlerinde (06:00 - 07:00) operasyona başlıyoruz. Gerekirse belediye ve emniyetten özel izinler alarak süreci yönetiyoruz.</p>
             </details>
         </div>
 
         <div class="cta-wrapper">
-            <h3>Zeytinburnu'ndan Ankara'ya Profesyonel Köprü</h3>
-            <p>Ticaretiniz de eviniz de bizimle güvende.</p>
-            <a href="tel:+905555555555" class="btn-call">📞 HEMEN FİYAT AL</a>
+            <h3>Sarıyer Prestijine Yakışır Bir Yolculuk</h3>
+            <p>Eşyalarınızın manevi ve maddi değerini koruyoruz. VIP teklif alın.</p>
+            <a href="tel:+905555555555" class="btn-call">📞 VIP EKSPERTİZ TALEP ET</a>
         </div>
     </main>
 </div>

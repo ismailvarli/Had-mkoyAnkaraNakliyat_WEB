@@ -1,17 +1,17 @@
 ﻿@{
     Layout = "_Layout";
-    ViewData["Title"] = "Zeytinburnu Ankara Nakliyat: Tekstil, Deri ve Rezidans Taşıma";
-    ViewData["Description"] = "Zeytinburnu'ndan Ankara'ya nakliyat. Tekstil ve deri ürünleri için ticari araçlar, sahil rezidansları ve kentsel dönüşüm bölgeleri için asansörlü ev taşıma.";
+    ViewData["Title"] = "Pendik Ankara Nakliyat: Kurtköy ve Havalimanı Bölgesi Taşıma";
+    ViewData["Description"] = "Pendik'ten Ankara'ya kurumsal nakliyat. Kurtköy villaları, Yenişehir siteleri ve havalimanı personeli için özel indirimli, sigortalı evden eve nakliye.";
 }
 
 <style>
     :root {
         --primary-color: #d35400;
         --secondary-color: #2c3e50;
-        --accent-leather: #8d6e63; /* Deri ve Tekstil Kahvesi */
+        --accent-pendik: #8e44ad; /* Modern ve Dinamik Mor */
     }
 
-    /* CSS Blokları */
+    /* CSS BLOKLARI (Maltepe ile aynı yapı, sadece renkler değişiyor) */
     .page-container {
         display: grid;
         grid-template-columns: 300px 1fr;
@@ -76,18 +76,18 @@
             border: 1px solid #f1f1f1;
         }
 
-            .district-list a:hover, .district-list a[href="/zeytinburnu-nakliyat"] {
-                background: #efebe9;
-                color: var(--accent-leather);
-                border-left-color: var(--accent-leather);
+            .district-list a:hover, .district-list a[href="/pendik-nakliyat"] {
+                background: #f4ecf7;
+                color: var(--accent-pendik);
+                border-left-color: var(--accent-pendik);
                 padding-left: 20px;
                 font-weight: bold;
             }
 
             .district-list a.active {
-                background: var(--accent-leather);
+                background: var(--accent-pendik);
                 color: #fff !important;
-                border-color: var(--accent-leather);
+                border-color: var(--accent-pendik);
             }
 
     .content-area h1 {
@@ -120,7 +120,7 @@
         position: absolute;
         bottom: 20px;
         left: 20px;
-        background: rgba(141, 110, 99, 0.9);
+        background: rgba(142, 68, 173, 0.9);
         color: #fff;
         padding: 8px 15px;
         border-radius: 4px;
@@ -130,8 +130,8 @@
     }
 
     .intro-box {
-        background: #efebe9;
-        border-left: 5px solid var(--accent-leather);
+        background: #f4ecf7;
+        border-left: 5px solid var(--accent-pendik);
         padding: 20px;
         font-size: 1.1em;
         line-height: 1.6;
@@ -168,14 +168,14 @@
 
         .feature-card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent-leather);
+            border-color: var(--accent-pendik);
         }
 
         .feature-card i {
             font-size: 32px;
             margin-bottom: 15px;
             display: block;
-            color: var(--accent-leather);
+            color: var(--accent-pendik);
         }
 
         .feature-card h4 {
@@ -238,7 +238,7 @@
             position: absolute;
             right: 20px;
             font-weight: bold;
-            color: var(--accent-leather);
+            color: var(--accent-pendik);
             font-size: 18px;
         }
 
@@ -255,13 +255,13 @@
     }
 
     .cta-wrapper {
-        background: linear-gradient(135deg, #8d6e63 0%, #2c3e50 100%);
+        background: linear-gradient(135deg, #8e44ad 0%, #2c3e50 100%);
         padding: 40px;
         text-align: center;
         border-radius: 12px;
         margin-top: 50px;
         color: white;
-        box-shadow: 0 15px 30px rgba(141, 110, 99, 0.2);
+        box-shadow: 0 15px 30px rgba(142, 68, 173, 0.2);
     }
 
         .cta-wrapper h3 {
@@ -271,7 +271,7 @@
         }
 
         .cta-wrapper p {
-            color: #efebe9;
+            color: #f4ecf7;
             font-weight: 500;
             font-size: 16px;
         }
@@ -279,7 +279,7 @@
     .btn-call {
         display: inline-block;
         background: #fff;
-        color: #8d6e63;
+        color: #8e44ad;
         padding: 16px 50px;
         border-radius: 50px;
         font-weight: bold;
@@ -311,79 +311,80 @@
     <aside class="district-sidebar">
         <h3>📍 Hizmet Bölgelerimiz</h3>
         <ul class="district-list">
-            <li><a href="/uskudar-nakliyat">Üsküdar Nakliyat</a></li>
-            <li><a href="/zeytinburnu-nakliyat" class="active">Zeytinburnu Nakliyat</a></li>
+            <li><a href="/maltepe-nakliyat">Maltepe Nakliyat</a></li>
+            <li><a href="/pendik-nakliyat" class="active">Pendik Nakliyat</a></li>
+            <li><a href="/sancaktepe-nakliyat">Sancaktepe Nakliyat</a></li>
         </ul>
     </aside>
 
     <main class="content-area">
         <div class="hero-image-wrapper">
-            <img src="~/images/zeytinburnu-ankara-nakliyat.jpg" alt="Zeytinburnu Tekstil ve Rezidans Nakliyat" onerror="this.src='https://via.placeholder.com/800x400?text=Zeytinburnu+Ankara+Nakliyat'">
-            <div class="hero-badge">Tekstil ve Rezidans Lojistiği</div>
+            <img src="~/images/pendik-ankara-nakliyat.jpg" alt="Pendik Kurtköy ve Havalimanı Nakliyat" onerror="this.src='https://via.placeholder.com/800x400?text=Pendik+Ankara+Nakliyat'">
+            <div class="hero-badge">Kurtköy & Havalimanı Bölgesi</div>
         </div>
 
-        <h1>Zeytinburnu Ankara Nakliyat: Tekstil, Deri ve Rezidans Taşıma</h1>
+        <h1>Pendik Ankara Nakliyat: Kurtköy ve Havalimanı Bölgesi Taşıma</h1>
 
         <div class="intro-box">
-            İstanbul'un ticaret ve sahil yaşamının birleştiği <strong>Zeytinburnu'ndan Ankara'ya</strong> taşınmak, hem ticari hem de lüks konut tecrübesi ister. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Dericiler Sitesi ve tekstil piyasasının lojistik ihtiyaçlarına yanıt verirken, Büyükyalı ve Fişekhane gibi sahil bandındaki rezidanslarda VIP ev taşıma hizmeti sunuyoruz.
+            İstanbul'un Anadolu'ya açılan kapısı <strong>Pendik'ten Ankara'ya</strong> taşınmak, ulaşım ağlarının merkezinde olmanın avantajını kullanmayı gerektirir. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Kurtköy ve Yenişehir'deki modern sitelerden, Pendik Merkez'deki çarşı içi konutlara kadar her noktada hızlı ve profesyonel hizmet sunuyoruz.
         </div>
 
-        <p>Kentsel dönüşümün yoğun olduğu bölgelerde asansörlü sistemlerimizle, sanayi bölgelerinde ise geniş hacimli tırlarımızla hizmet vererek Zeytinburnu'nun her ihtiyacına profesyonel çözümler üretiyoruz.</p>
+        <p>Sabiha Gökçen Havalimanı çalışanlarına özel indirimlerimiz ve YHT (Yüksek Hızlı Tren) istasyonuna yakın bölgelerde pratik parça eşya taşıma çözümlerimizle fark yaratıyoruz. Kurtköy'deki villalar için de VIP taşıma hizmetimiz mevcuttur.</p>
 
-        <h2>Zeytinburnu Nakliyat Hizmetinde Çifte Uzmanlık</h2>
+        <h2>Pendik Nakliyat Hizmetinde Lojistik Güç</h2>
         <div class="features-grid">
             <div class="feature-card">
-                <i>🧵</i>
-                <h4>Tekstil & Deri Taşıma</h4>
-                <p>Ticari ürünleriniz için askılı, raflı ve kolili özel araç tasarımı. Ankara mağazalarına direkt sevkiyat.</p>
+                <i>🏡</i>
+                <h4>Kurtköy Villa Taşıma</h4>
+                <p>Kurtköy ve Yenişehir'deki modern villa projeleri için geniş araç ve kalabalık ekip desteği.</p>
             </div>
             <div class="feature-card">
-                <i>🏢</i>
-                <h4>Sahil Rezidansları</h4>
-                <p>Sahil şeridindeki lüks projelerde yönetim prosedürlerine uygun, sessiz ve hasarsız taşıma.</p>
+                <i>✈️</i>
+                <h4>Havalimanı Personeli</h4>
+                <p>Sabiha Gökçen Havalimanı çalışanları ve pilotlar için tayin dönemlerinde özel indirimli fiyatlar.</p>
             </div>
             <div class="feature-card">
-                <i>🏗️</i>
-                <h4>Kentsel Dönüşüm</h4>
-                <p>Yıkım ve yapım aşamasındaki dar sokaklarda mobil asansör kurulumu ile hızlı tahliye ve yerleşme.</p>
+                <i>🚄</i>
+                <h4>Merkezi Konum</h4>
+                <p>Anadolu Otoyolu'na (TEM) yakınlığımızla, trafiğe girmeden Ankara'ya en hızlı çıkış ve teslimat.</p>
             </div>
         </div>
 
-        <h2>Zeytinburnu - Ankara Sefer Detayları</h2>
+        <h2>Pendik - Ankara Sefer Detayları</h2>
         <table class="info-table">
             <tr>
                 <th>Hizmet Bölgesi</th>
-                <td>Zeytinburnu Merkez, Sahil Yolu, Sanayi Siteleri</td>
+                <td>Pendik Merkez, Kurtköy, Yenişehir, Kaynarca</td>
             </tr>
             <tr>
-                <th>Hizmet Türü</th>
-                <td>Ticari (Tekstil/Deri), Evden Eve, Ofis</td>
+                <th>Taşıma Tipi</th>
+                <td>Villa, Site Dairesi, Parça Eşya</td>
             </tr>
             <tr>
-                <th>Araç Tipi</th>
-                <td>Tır, Kamyon, Askılı Tekstil Aracı</td>
+                <th>Asansör</th>
+                <td>Yük Asansörü veya Mobil Asansör</td>
             </tr>
             <tr>
-                <th>Sigorta</th>
-                <td>Tam Kapsamlı Emtia Sigortası</td>
+                <th>Güzergah</th>
+                <td>TEM Otoyolu (Hızlı Teslimat)</td>
             </tr>
         </table>
 
         <h2>Sıkça Sorulan Sorular</h2>
         <div class="faq-section">
             <details>
-                <summary>Deri atölyemden Ankara'ya parça mal gönderebilir miyim?</summary>
-                <p>Evet. Parsiyel taşımacılık hizmetimizle, deri ve tekstil ürünlerinizi metreküp bazında fiyatlandırarak ekonomik şekilde Ankara'ya ulaştırıyoruz.</p>
+                <summary>Kurtköy'deki sitemizde taşınma için yönetimden randevu almak şart mı?</summary>
+                <p>Evet, Kurtköy'deki çoğu yeni site randevulu sistemle çalışır. Biz size gerekli araç ve personel bilgilerini önceden ileterek izin almanızı kolaylaştırıyoruz.</p>
             </details>
             <details>
-                <summary>Büyükyalı projesinde oturuyorum, taşıma kurallarına uyuyor musunuz?</summary>
-                <p>Kesinlikle. Lüks rezidansların (asansör koruma, personel kimlik bildirimi, saat sınırlaması) tüm prosedürlerine hakim, tecrübeli bir ekibiz.</p>
+                <summary>Pendik YHT istasyonuna yakınım, parça eşyamı alabilir misiniz?</summary>
+                <p>Elbette. Trenle seyahat edip fazla eşyalarınızı bizimle göndermek isterseniz, kapınızdan alıp Ankara'daki adresinize teslim ediyoruz.</p>
             </details>
         </div>
 
         <div class="cta-wrapper">
-            <h3>Zeytinburnu'ndan Ankara'ya Profesyonel Köprü</h3>
-            <p>Ticaretiniz de eviniz de bizimle güvende.</p>
+            <h3>Pendik'ten Ankara'ya En Hızlı Rota</h3>
+            <p>Modern araç filomuzla eşyalarınız güvende.</p>
             <a href="tel:+905555555555" class="btn-call">📞 HEMEN FİYAT AL</a>
         </div>
     </main>

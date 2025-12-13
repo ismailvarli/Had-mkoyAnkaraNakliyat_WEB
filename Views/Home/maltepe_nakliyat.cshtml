@@ -1,17 +1,17 @@
 ﻿@{
     Layout = "_Layout";
-    ViewData["Title"] = "Zeytinburnu Ankara Nakliyat: Tekstil, Deri ve Rezidans Taşıma";
-    ViewData["Description"] = "Zeytinburnu'ndan Ankara'ya nakliyat. Tekstil ve deri ürünleri için ticari araçlar, sahil rezidansları ve kentsel dönüşüm bölgeleri için asansörlü ev taşıma.";
+    ViewData["Title"] = "Maltepe Ankara Nakliyat: Zümrütevler ve Sahil Hattı Taşıma";
+    ViewData["Description"] = "Maltepe'den Ankara'ya asansörlü nakliyat. Zümrütevler'in yokuşlarında ve sahil sitelerinde uzman, sigortalı evden eve nakliye hizmeti.";
 }
 
 <style>
     :root {
         --primary-color: #d35400;
         --secondary-color: #2c3e50;
-        --accent-leather: #8d6e63; /* Deri ve Tekstil Kahvesi */
+        --accent-maltepe: #e67e22; /* Maltepe Gün Batımı Turuncusu */
     }
 
-    /* CSS Blokları */
+    /* CSS Yapısı */
     .page-container {
         display: grid;
         grid-template-columns: 300px 1fr;
@@ -76,18 +76,18 @@
             border: 1px solid #f1f1f1;
         }
 
-            .district-list a:hover, .district-list a[href="/zeytinburnu-nakliyat"] {
-                background: #efebe9;
-                color: var(--accent-leather);
-                border-left-color: var(--accent-leather);
+            .district-list a:hover, .district-list a[href="/maltepe-nakliyat"] {
+                background: #fef5e7;
+                color: var(--accent-maltepe);
+                border-left-color: var(--accent-maltepe);
                 padding-left: 20px;
                 font-weight: bold;
             }
 
             .district-list a.active {
-                background: var(--accent-leather);
+                background: var(--accent-maltepe);
                 color: #fff !important;
-                border-color: var(--accent-leather);
+                border-color: var(--accent-maltepe);
             }
 
     .content-area h1 {
@@ -120,7 +120,7 @@
         position: absolute;
         bottom: 20px;
         left: 20px;
-        background: rgba(141, 110, 99, 0.9);
+        background: rgba(230, 126, 34, 0.9);
         color: #fff;
         padding: 8px 15px;
         border-radius: 4px;
@@ -130,8 +130,8 @@
     }
 
     .intro-box {
-        background: #efebe9;
-        border-left: 5px solid var(--accent-leather);
+        background: #fef5e7;
+        border-left: 5px solid var(--accent-maltepe);
         padding: 20px;
         font-size: 1.1em;
         line-height: 1.6;
@@ -168,14 +168,14 @@
 
         .feature-card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent-leather);
+            border-color: var(--accent-maltepe);
         }
 
         .feature-card i {
             font-size: 32px;
             margin-bottom: 15px;
             display: block;
-            color: var(--accent-leather);
+            color: var(--accent-maltepe);
         }
 
         .feature-card h4 {
@@ -238,7 +238,7 @@
             position: absolute;
             right: 20px;
             font-weight: bold;
-            color: var(--accent-leather);
+            color: var(--accent-maltepe);
             font-size: 18px;
         }
 
@@ -255,13 +255,13 @@
     }
 
     .cta-wrapper {
-        background: linear-gradient(135deg, #8d6e63 0%, #2c3e50 100%);
+        background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
         padding: 40px;
         text-align: center;
         border-radius: 12px;
         margin-top: 50px;
         color: white;
-        box-shadow: 0 15px 30px rgba(141, 110, 99, 0.2);
+        box-shadow: 0 15px 30px rgba(230, 126, 34, 0.2);
     }
 
         .cta-wrapper h3 {
@@ -271,7 +271,7 @@
         }
 
         .cta-wrapper p {
-            color: #efebe9;
+            color: #fef9e7;
             font-weight: 500;
             font-size: 16px;
         }
@@ -279,7 +279,7 @@
     .btn-call {
         display: inline-block;
         background: #fff;
-        color: #8d6e63;
+        color: #e67e22;
         padding: 16px 50px;
         border-radius: 50px;
         font-weight: bold;
@@ -293,7 +293,7 @@
         .btn-call:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            color: #d35400;
+            color: #2c3e50;
         }
     @@media (max-width: 768px) {
         .page-container {
@@ -311,79 +311,81 @@
     <aside class="district-sidebar">
         <h3>📍 Hizmet Bölgelerimiz</h3>
         <ul class="district-list">
-            <li><a href="/uskudar-nakliyat">Üsküdar Nakliyat</a></li>
-            <li><a href="/zeytinburnu-nakliyat" class="active">Zeytinburnu Nakliyat</a></li>
+            <li><a href="/kucukcekmece-nakliyat">Küçükçekmece Nakliyat</a></li>
+            <li><a href="/maltepe-nakliyat" class="active">Maltepe Nakliyat</a></li>
+            <li><a href="/pendik-nakliyat">Pendik Nakliyat</a></li>
+            <li><a href="/sancaktepe-nakliyat">Sancaktepe Nakliyat</a></li>
         </ul>
     </aside>
 
     <main class="content-area">
         <div class="hero-image-wrapper">
-            <img src="~/images/zeytinburnu-ankara-nakliyat.jpg" alt="Zeytinburnu Tekstil ve Rezidans Nakliyat" onerror="this.src='https://via.placeholder.com/800x400?text=Zeytinburnu+Ankara+Nakliyat'">
-            <div class="hero-badge">Tekstil ve Rezidans Lojistiği</div>
+            <img src="~/images/maltepe-ankara-nakliyat.jpg" alt="Maltepe Zümrütevler ve Sahil Nakliyat" onerror="this.src='https://via.placeholder.com/800x400?text=Maltepe+Ankara+Nakliyat'">
+            <div class="hero-badge">Zümrütevler ve Sahil Hattı Uzmanı</div>
         </div>
 
-        <h1>Zeytinburnu Ankara Nakliyat: Tekstil, Deri ve Rezidans Taşıma</h1>
+        <h1>Maltepe Ankara Nakliyat: Zümrütevler ve Sahil Hattı Taşıma</h1>
 
         <div class="intro-box">
-            İstanbul'un ticaret ve sahil yaşamının birleştiği <strong>Zeytinburnu'ndan Ankara'ya</strong> taşınmak, hem ticari hem de lüks konut tecrübesi ister. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Dericiler Sitesi ve tekstil piyasasının lojistik ihtiyaçlarına yanıt verirken, Büyükyalı ve Fişekhane gibi sahil bandındaki rezidanslarda VIP ev taşıma hizmeti sunuyoruz.
+            Anadolu Yakası'nın en uzun sahil şeridine sahip ilçesi <strong>Maltepe'den Ankara'ya</strong> taşınmak, Zümrütevler'in dik yokuşlarından Sahil Yolu'nun prestijli sitelerine kadar geniş bir coğrafyayı kapsar. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Maltepe'nin zorlu coğrafi koşullarına uygun, güçlü motorlu araçlarımız ve asansörlü sistemlerimizle hizmetinizdeyiz.
         </div>
 
-        <p>Kentsel dönüşümün yoğun olduğu bölgelerde asansörlü sistemlerimizle, sanayi bölgelerinde ise geniş hacimli tırlarımızla hizmet vererek Zeytinburnu'nun her ihtiyacına profesyonel çözümler üretiyoruz.</p>
+        <p>E-5'e ve sahil yoluna yakınlığımızı kullanarak, eşyalarınızı İstanbul trafiğine takılmadan hızla Ankara rotasına çıkarıyoruz. Hem üniversite öğrencilerine özel parça eşya taşıma hem de büyük aile evleri için komple nakliyat çözümleri sunuyoruz.</p>
 
-        <h2>Zeytinburnu Nakliyat Hizmetinde Çifte Uzmanlık</h2>
+        <h2>Maltepe Nakliyat Hizmetinde Bölgesel Çözümler</h2>
         <div class="features-grid">
             <div class="feature-card">
-                <i>🧵</i>
-                <h4>Tekstil & Deri Taşıma</h4>
-                <p>Ticari ürünleriniz için askılı, raflı ve kolili özel araç tasarımı. Ankara mağazalarına direkt sevkiyat.</p>
+                <i>⛰️</i>
+                <h4>Dik Yokuş Uzmanlığı</h4>
+                <p>Zümrütevler, Başıbüyük ve Fındıklı'nın dik sokaklarına uygun, yüksek torklu kamyonet ve asansör desteği.</p>
             </div>
             <div class="feature-card">
-                <i>🏢</i>
-                <h4>Sahil Rezidansları</h4>
-                <p>Sahil şeridindeki lüks projelerde yönetim prosedürlerine uygun, sessiz ve hasarsız taşıma.</p>
+                <i>🌊</i>
+                <h4>Sahil & Site Lojistiği</h4>
+                <p>Küçükyalı ve İdealtepe sahilindeki sitelerde sessiz, temiz ve yönetim kurallarına uygun taşıma.</p>
             </div>
             <div class="feature-card">
-                <i>🏗️</i>
-                <h4>Kentsel Dönüşüm</h4>
-                <p>Yıkım ve yapım aşamasındaki dar sokaklarda mobil asansör kurulumu ile hızlı tahliye ve yerleşme.</p>
+                <i>🎓</i>
+                <h4>Öğrenci Dostu</h4>
+                <p>Bölgedeki üniversitelere yakınlığımızla, öğrenciler için ekonomik "Parça Eşya" taşıma fırsatları.</p>
             </div>
         </div>
 
-        <h2>Zeytinburnu - Ankara Sefer Detayları</h2>
+        <h2>Maltepe - Ankara Sefer Detayları</h2>
         <table class="info-table">
             <tr>
                 <th>Hizmet Bölgesi</th>
-                <td>Zeytinburnu Merkez, Sahil Yolu, Sanayi Siteleri</td>
+                <td>Maltepe (Zümrütevler, Küçükyalı, İdealtepe) ↔ Ankara</td>
             </tr>
             <tr>
-                <th>Hizmet Türü</th>
-                <td>Ticari (Tekstil/Deri), Evden Eve, Ofis</td>
+                <th>Asansör</th>
+                <td>Mobil Dış Cephe Asansörü</td>
             </tr>
             <tr>
                 <th>Araç Tipi</th>
-                <td>Tır, Kamyon, Askılı Tekstil Aracı</td>
+                <td>Kamyon (Yokuş Uyumlu), Tır</td>
             </tr>
             <tr>
-                <th>Sigorta</th>
-                <td>Tam Kapsamlı Emtia Sigortası</td>
+                <th>Teslimat</th>
+                <td>Ertesi Gün (Hızlı Servis)</td>
             </tr>
         </table>
 
         <h2>Sıkça Sorulan Sorular</h2>
         <div class="faq-section">
             <details>
-                <summary>Deri atölyemden Ankara'ya parça mal gönderebilir miyim?</summary>
-                <p>Evet. Parsiyel taşımacılık hizmetimizle, deri ve tekstil ürünlerinizi metreküp bazında fiyatlandırarak ekonomik şekilde Ankara'ya ulaştırıyoruz.</p>
+                <summary>Zümrütevler'de evim çok dik bir yokuşta, araç çıkabilir mi?</summary>
+                <p>Evet. Araç filomuzda bu bölgeye özel, yokuş kalkış desteği güçlü ve manevra kabiliyeti yüksek kamyonetlerimiz bulunmaktadır.</p>
             </details>
             <details>
-                <summary>Büyükyalı projesinde oturuyorum, taşıma kurallarına uyuyor musunuz?</summary>
-                <p>Kesinlikle. Lüks rezidansların (asansör koruma, personel kimlik bildirimi, saat sınırlaması) tüm prosedürlerine hakim, tecrübeli bir ekibiz.</p>
+                <summary>Küçükyalı'dan Ankara'ya sadece bir oda eşyası taşınacak.</summary>
+                <p>Parça eşya taşıma (parsiyel) hizmetimizle, komple araç ücreti ödemeden sadece eşyanızın kapladığı alan kadar ödeyerek taşıma yapabilirsiniz.</p>
             </details>
         </div>
 
         <div class="cta-wrapper">
-            <h3>Zeytinburnu'ndan Ankara'ya Profesyonel Köprü</h3>
-            <p>Ticaretiniz de eviniz de bizimle güvende.</p>
+            <h3>Maltepe'den Ankara'ya Yokuşlar Engel Değil</h3>
+            <p>Zorlu yolları aşıyor, eşyanızı güvenle teslim ediyoruz.</p>
             <a href="tel:+905555555555" class="btn-call">📞 HEMEN FİYAT AL</a>
         </div>
     </main>

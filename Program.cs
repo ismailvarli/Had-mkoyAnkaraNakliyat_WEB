@@ -106,28 +106,79 @@ Sitemap: https://www.hadimkoyankaranakliyat.com/sitemap.xml", "text/plain"));
                 // Buraya tüm önemli sayfalarını KÜÇÜK HARFLE ekle
                 var urls = new[]
                 {
-                    $"{host}/",
-                    $"{host}/home/hakkimizda",
-                    $"{host}/home/iletisim",
-                    $"{host}/home/fiyat_al",
-                    $"{host}/home/hizmetlerimiz",
-                    $"{host}/home/blog",
-                    
-                    // Hizmetler (URL'ler middleware ile uyumlu, küçük harfli)
-                    $"{host}/home/istanbul_ankara_nakliyat",
-                    $"{host}/home/evden_eve_nakliyat",
-                    $"{host}/home/ambar_nakliyat",
-                    $"{host}/home/fuar_tasimaciligi",
-                    $"{host}/home/ofis_tasimaciligi",
-                    $"{host}/home/parsiyel_nakliyat",
-                    
-                    // Şehirler arası
-                    $"{host}/home/istanbul_ankara_evden_eve_nakliyat",
-                    $"{host}/home/istanbul_ankara_fuar_nakliyat",
-                    $"{host}/home/sincan_istanbul_nakliyat",
-                    $"{host}/home/beylikduzu_ankara_nakliyat",
-                    // ... diğer linklerini de buraya küçük harfle eklemeyi unutma
-                };
+        $"{host}/",
+        $"{host}/home/hakkimizda",
+        $"{host}/home/iletisim",
+        $"{host}/home/fiyat_al",
+        $"{host}/home/hizmetlerimiz",
+        $"{host}/home/blog",
+        
+        // Hizmetler (URL'ler middleware ile uyumlu, küçük harfli)        
+        $"{host}/home/evden_eve_nakliyat",
+        $"{host}/home/ambar_nakliyat",
+        $"{host}/home/fuar_tasimaciligi",
+        $"{host}/home/ofis_tasimaciligi",
+        $"{host}/home/parsiyel_nakliyat",
+        $"{host}/home/sehirlerarasi_nakliyat",
+        // Şehirler arası (Var olanlar)
+        $"{host}/istanbul-ankara-nakliyat",
+        $"{host}/home/istanbul_ankara_evden_eve_nakliyat",
+        $"{host}/home/istanbul_ankara_fuar_nakliyat",
+        $"{host}/home/istanbul_ankara_kamyonet_nakliyat",
+        $"{host}/home/istanbul_ankara_ambar_nakliyat",
+        $"{host}/home/istanbul_ankara_parsiyel_nakliyat",
+        $"{host}/home/istanbul_izmir_nakliyat",
+        $"{host}/home/istanbul_bursa_nakliyat",
+        $"{host}/home/istanbul_eskisehir_nakliyat",
+        $"{host}/home/istanbul_antalya_nakliyat",
+         //ilçe-Şehir
+          $"{host}/home/hadimkoy_ankara_nakliyat",
+          $"{host}/home/sincan_istanbul_nakliyat",
+          $"{host}/home/beylikduzu_ankara_nakliyat",
+        //şehir bazlı taşımacılık
+        $"{host}/ankara-nakliyat",
+        $"{host}/istanbul-nakliyat",
+        // İlçe Bazlı Taşımacılık (39 İlçe - Tam Liste)
+        $"{host}/adalar-nakliyat",
+        $"{host}/arnavutkoy-nakliyat",
+        $"{host}/atasehir-nakliyat",
+        $"{host}/avcilar-nakliyat",
+        $"{host}/bagcilar-nakliyat",
+        $"{host}/bahcelievler-nakliyat",
+        $"{host}/bakirkoy-nakliyat",
+        $"{host}/basaksehir-nakliyat",
+        $"{host}/bayrampasa-nakliyat",
+        $"{host}/besiktas-nakliyat",
+        $"{host}/beykoz-nakliyat",
+        $"{host}/beylikduzu-nakliyat",
+        $"{host}/beyoglu-nakliyat",
+        $"{host}/buyukcekmece-nakliyat",
+        $"{host}/catalca-nakliyat",
+        $"{host}/cekmekoy-nakliyat",
+        $"{host}/esenler-nakliyat",
+        $"{host}/esenyurt-nakliyat",
+        $"{host}/eyupsultan-nakliyat",
+        $"{host}/fatih-nakliyat",
+        $"{host}/gaziosmanpasa-nakliyat",
+        $"{host}/gungoren-nakliyat",
+        $"{host}/kadikoy-nakliyat",
+        $"{host}/kagithane-nakliyat",
+        $"{host}/kartal-nakliyat",
+        $"{host}/kucukcekmece-nakliyat",
+        $"{host}/maltepe-nakliyat",
+        $"{host}/pendik-nakliyat",
+        $"{host}/sancaktepe-nakliyat",
+        $"{host}/sariyer-nakliyat",
+        $"{host}/silivri-nakliyat",
+        $"{host}/sultanbeyli-nakliyat",
+        $"{host}/sultangazi-nakliyat",
+        $"{host}/sile-nakliyat",
+        $"{host}/sisli-nakliyat",
+        $"{host}/tuzla-nakliyat",
+        $"{host}/umraniye-nakliyat",
+        $"{host}/uskudar-nakliyat",
+        $"{host}/zeytinburnu-nakliyat"
+    };
 
                 var sb = new StringBuilder();
                 sb.AppendLine(@"<?xml version=""1.0"" encoding=""UTF-8""?>");
@@ -143,7 +194,6 @@ Sitemap: https://www.hadimkoyankaranakliyat.com/sitemap.xml", "text/plain"));
                 sb.AppendLine("</urlset>");
                 return Results.Text(sb.ToString(), "application/xml; charset=utf-8");
             });
-
             // MVC Rotaları
             app.MapControllerRoute(
                 name: "default",

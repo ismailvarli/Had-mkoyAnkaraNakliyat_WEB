@@ -1,17 +1,17 @@
 ﻿@{
     Layout = "_Layout";
-    ViewData["Title"] = "Zeytinburnu Ankara Nakliyat: Tekstil, Deri ve Rezidans Taşıma";
-    ViewData["Description"] = "Zeytinburnu'ndan Ankara'ya nakliyat. Tekstil ve deri ürünleri için ticari araçlar, sahil rezidansları ve kentsel dönüşüm bölgeleri için asansörlü ev taşıma.";
+    ViewData["Title"] = "Sancaktepe Ankara Nakliyat: Modern Site ve Depolama Çözümleri";
+    ViewData["Description"] = "Sancaktepe'den Ankara'ya asansörlü nakliyat. Sinpaş ve Samandıra bölgesindeki markalı konut projeleri için site kurallarına uygun, sigortalı ev taşıma.";
 }
 
 <style>
     :root {
         --primary-color: #d35400;
         --secondary-color: #2c3e50;
-        --accent-leather: #8d6e63; /* Deri ve Tekstil Kahvesi */
+        --accent-green: #27ae60; /* Doğa ve Site Yeşili */
     }
 
-    /* CSS Blokları */
+    /* CSS BLOKLARI (Standart yapı) */
     .page-container {
         display: grid;
         grid-template-columns: 300px 1fr;
@@ -76,18 +76,18 @@
             border: 1px solid #f1f1f1;
         }
 
-            .district-list a:hover, .district-list a[href="/zeytinburnu-nakliyat"] {
-                background: #efebe9;
-                color: var(--accent-leather);
-                border-left-color: var(--accent-leather);
+            .district-list a:hover, .district-list a[href="/sancaktepe-nakliyat"] {
+                background: #e9f7ef;
+                color: var(--accent-green);
+                border-left-color: var(--accent-green);
                 padding-left: 20px;
                 font-weight: bold;
             }
 
             .district-list a.active {
-                background: var(--accent-leather);
+                background: var(--accent-green);
                 color: #fff !important;
-                border-color: var(--accent-leather);
+                border-color: var(--accent-green);
             }
 
     .content-area h1 {
@@ -120,7 +120,7 @@
         position: absolute;
         bottom: 20px;
         left: 20px;
-        background: rgba(141, 110, 99, 0.9);
+        background: rgba(39, 174, 96, 0.9);
         color: #fff;
         padding: 8px 15px;
         border-radius: 4px;
@@ -130,8 +130,8 @@
     }
 
     .intro-box {
-        background: #efebe9;
-        border-left: 5px solid var(--accent-leather);
+        background: #e9f7ef;
+        border-left: 5px solid var(--accent-green);
         padding: 20px;
         font-size: 1.1em;
         line-height: 1.6;
@@ -168,14 +168,14 @@
 
         .feature-card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent-leather);
+            border-color: var(--accent-green);
         }
 
         .feature-card i {
             font-size: 32px;
             margin-bottom: 15px;
             display: block;
-            color: var(--accent-leather);
+            color: var(--accent-green);
         }
 
         .feature-card h4 {
@@ -238,7 +238,7 @@
             position: absolute;
             right: 20px;
             font-weight: bold;
-            color: var(--accent-leather);
+            color: var(--accent-green);
             font-size: 18px;
         }
 
@@ -255,13 +255,13 @@
     }
 
     .cta-wrapper {
-        background: linear-gradient(135deg, #8d6e63 0%, #2c3e50 100%);
+        background: linear-gradient(135deg, #27ae60 0%, #2980b9 100%);
         padding: 40px;
         text-align: center;
         border-radius: 12px;
         margin-top: 50px;
         color: white;
-        box-shadow: 0 15px 30px rgba(141, 110, 99, 0.2);
+        box-shadow: 0 15px 30px rgba(39, 174, 96, 0.2);
     }
 
         .cta-wrapper h3 {
@@ -271,7 +271,7 @@
         }
 
         .cta-wrapper p {
-            color: #efebe9;
+            color: #e9f7ef;
             font-weight: 500;
             font-size: 16px;
         }
@@ -279,7 +279,7 @@
     .btn-call {
         display: inline-block;
         background: #fff;
-        color: #8d6e63;
+        color: #27ae60;
         padding: 16px 50px;
         border-radius: 50px;
         font-weight: bold;
@@ -311,79 +311,80 @@
     <aside class="district-sidebar">
         <h3>📍 Hizmet Bölgelerimiz</h3>
         <ul class="district-list">
-            <li><a href="/uskudar-nakliyat">Üsküdar Nakliyat</a></li>
-            <li><a href="/zeytinburnu-nakliyat" class="active">Zeytinburnu Nakliyat</a></li>
+            <li><a href="/pendik-nakliyat">Pendik Nakliyat</a></li>
+            <li><a href="/sancaktepe-nakliyat" class="active">Sancaktepe Nakliyat</a></li>
+            <li><a href="/sariyer-nakliyat">Sarıyer Nakliyat</a></li>
         </ul>
     </aside>
 
     <main class="content-area">
         <div class="hero-image-wrapper">
-            <img src="~/images/zeytinburnu-ankara-nakliyat.jpg" alt="Zeytinburnu Tekstil ve Rezidans Nakliyat" onerror="this.src='https://via.placeholder.com/800x400?text=Zeytinburnu+Ankara+Nakliyat'">
-            <div class="hero-badge">Tekstil ve Rezidans Lojistiği</div>
+            <img src="~/images/sancaktepe-ankara-nakliyat.jpg" alt="Sancaktepe Markalı Konut Nakliyat" onerror="this.src='https://via.placeholder.com/800x400?text=Sancaktepe+Ankara+Nakliyat'">
+            <div class="hero-badge">Modern Siteler & Depolama</div>
         </div>
 
-        <h1>Zeytinburnu Ankara Nakliyat: Tekstil, Deri ve Rezidans Taşıma</h1>
+        <h1>Sancaktepe Ankara Nakliyat: Modern Site ve Depolama Çözümleri</h1>
 
         <div class="intro-box">
-            İstanbul'un ticaret ve sahil yaşamının birleştiği <strong>Zeytinburnu'ndan Ankara'ya</strong> taşınmak, hem ticari hem de lüks konut tecrübesi ister. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Dericiler Sitesi ve tekstil piyasasının lojistik ihtiyaçlarına yanıt verirken, Büyükyalı ve Fişekhane gibi sahil bandındaki rezidanslarda VIP ev taşıma hizmeti sunuyoruz.
+            Anadolu Yakası'nın hızla gelişen konut merkezi <strong>Sancaktepe'den Ankara'ya</strong> taşınmak, Sinpaş, Ağaoğlu gibi markalı konut projelerinin prosedürlerine hakimiyet gerektirir. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Samandıra ve Sarıgazi bölgelerindeki modern sitelerde, geniş araçlarımız ve asansörlü sistemlerimizle sorunsuz hizmet sunuyoruz.
         </div>
 
-        <p>Kentsel dönüşümün yoğun olduğu bölgelerde asansörlü sistemlerimizle, sanayi bölgelerinde ise geniş hacimli tırlarımızla hizmet vererek Zeytinburnu'nun her ihtiyacına profesyonel çözümler üretiyoruz.</p>
+        <p>Ayrıca taşınma öncesi veya sonrası eşya depolama ihtiyacınız varsa, Sancaktepe'deki anlaşmalı depolarımızda eşyalarınızı sigortalı olarak muhafaza ediyor, dilediğiniz zaman Ankara'ya sevk ediyoruz.</p>
 
-        <h2>Zeytinburnu Nakliyat Hizmetinde Çifte Uzmanlık</h2>
+        <h2>Sancaktepe Nakliyat Hizmetinde Profesyonel Dokunuş</h2>
         <div class="features-grid">
             <div class="feature-card">
-                <i>🧵</i>
-                <h4>Tekstil & Deri Taşıma</h4>
-                <p>Ticari ürünleriniz için askılı, raflı ve kolili özel araç tasarımı. Ankara mağazalarına direkt sevkiyat.</p>
-            </div>
-            <div class="feature-card">
                 <i>🏢</i>
-                <h4>Sahil Rezidansları</h4>
-                <p>Sahil şeridindeki lüks projelerde yönetim prosedürlerine uygun, sessiz ve hasarsız taşıma.</p>
+                <h4>Markalı Konut Uzmanlığı</h4>
+                <p>Büyük sitelerin katı taşınma kurallarına (randevu, koruma, saat) tam uyum sağlayan kurumsal ekip.</p>
             </div>
             <div class="feature-card">
-                <i>🏗️</i>
-                <h4>Kentsel Dönüşüm</h4>
-                <p>Yıkım ve yapım aşamasındaki dar sokaklarda mobil asansör kurulumu ile hızlı tahliye ve yerleşme.</p>
+                <i>📦</i>
+                <h4>Eşya Depolama</h4>
+                <p>Ankara'daki eviniz hazır değilse, eşyalarınızı Sancaktepe'deki güvenli depolarımızda bekletiyoruz.</p>
+            </div>
+            <div class="feature-card">
+                <i>🛣️</i>
+                <h4>Geniş Araç Girişi</h4>
+                <p>Sancaktepe'nin geniş caddeleri sayesinde büyük tırlarımızla kapıya kadar yanaşıp tek seferde taşıma yapıyoruz.</p>
             </div>
         </div>
 
-        <h2>Zeytinburnu - Ankara Sefer Detayları</h2>
+        <h2>Sancaktepe - Ankara Sefer Detayları</h2>
         <table class="info-table">
             <tr>
                 <th>Hizmet Bölgesi</th>
-                <td>Zeytinburnu Merkez, Sahil Yolu, Sanayi Siteleri</td>
+                <td>Sancaktepe, Samandıra, Sarıgazi, Yenidoğan</td>
             </tr>
             <tr>
                 <th>Hizmet Türü</th>
-                <td>Ticari (Tekstil/Deri), Evden Eve, Ofis</td>
+                <td>Site İçi Taşıma, Depolama, Ofis</td>
             </tr>
             <tr>
-                <th>Araç Tipi</th>
-                <td>Tır, Kamyon, Askılı Tekstil Aracı</td>
+                <th>Asansör</th>
+                <td>Site Yük Asansörü veya Mobil Asansör</td>
             </tr>
             <tr>
                 <th>Sigorta</th>
-                <td>Tam Kapsamlı Emtia Sigortası</td>
+                <td>AXA Sigorta ile Tam Kapsam</td>
             </tr>
         </table>
 
         <h2>Sıkça Sorulan Sorular</h2>
         <div class="faq-section">
             <details>
-                <summary>Deri atölyemden Ankara'ya parça mal gönderebilir miyim?</summary>
-                <p>Evet. Parsiyel taşımacılık hizmetimizle, deri ve tekstil ürünlerinizi metreküp bazında fiyatlandırarak ekonomik şekilde Ankara'ya ulaştırıyoruz.</p>
+                <summary>Sinpaş projelerinde oturuyorum, yönetim yük asansörüne izin veriyor mu?</summary>
+                <p>Genellikle evet. Ancak yönetimler yük asansörünün "koruyucu kılıf" ile kaplanmasını şart koşar. Biz bu ekipmana sahibiz ve asansörü koruyarak taşıma yapıyoruz.</p>
             </details>
             <details>
-                <summary>Büyükyalı projesinde oturuyorum, taşıma kurallarına uyuyor musunuz?</summary>
-                <p>Kesinlikle. Lüks rezidansların (asansör koruma, personel kimlik bildirimi, saat sınırlaması) tüm prosedürlerine hakim, tecrübeli bir ekibiz.</p>
+                <summary>Ankara'daki evim henüz hazır değil, eşyaları bekletebilir misiniz?</summary>
+                <p>Elbette. İsterseniz Sancaktepe'de, isterseniz Ankara'daki depolarımızda eşyalarınızı aylık cüzi bir ücret karşılığında sigortalı olarak depolayabiliriz.</p>
             </details>
         </div>
 
         <div class="cta-wrapper">
-            <h3>Zeytinburnu'ndan Ankara'ya Profesyonel Köprü</h3>
-            <p>Ticaretiniz de eviniz de bizimle güvende.</p>
+            <h3>Sancaktepe'nin Modern Yüzüne Yakışır Hizmet</h3>
+            <p>Sitelerden depolara, her ihtiyaca uygun çözüm.</p>
             <a href="tel:+905555555555" class="btn-call">📞 HEMEN FİYAT AL</a>
         </div>
     </main>

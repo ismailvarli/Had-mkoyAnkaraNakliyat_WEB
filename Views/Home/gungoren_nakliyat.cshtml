@@ -1,17 +1,18 @@
 ﻿@{
     Layout = "_Layout";
-    ViewData["Title"] = "Zeytinburnu Ankara Nakliyat: Tekstil, Deri ve Rezidans Taşıma";
-    ViewData["Description"] = "Zeytinburnu'ndan Ankara'ya nakliyat. Tekstil ve deri ürünleri için ticari araçlar, sahil rezidansları ve kentsel dönüşüm bölgeleri için asansörlü ev taşıma.";
+    ViewData["Title"] = "Güngören Ankara Nakliyat: Tekstil, Ofis ve Ev Taşıma";
+    ViewData["Description"] = "Güngören ve Merter'den Ankara'ya günlük seferler. Tekstil ürünleri, koli ve ev eşyası taşımacılığında hızlı, sigortalı ve profesyonel lojistik desteği.";
 }
 
 <style>
     :root {
         --primary-color: #d35400;
         --secondary-color: #2c3e50;
-        --accent-leather: #8d6e63; /* Deri ve Tekstil Kahvesi */
+        --accent-textile: #8e44ad; /* Tekstil ve Moda Moru */
     }
+    /* ... (CSS blokları yukarıdakiyle aynı yapı, sadece renkler değişti) ... */
+    /* Kopyala-Yapıştır kolaylığı için burayı kısa tutuyorum, yukarıdaki CSS'i kullanıp root renkleri değiştirebilirsin. */
 
-    /* CSS Blokları */
     .page-container {
         display: grid;
         grid-template-columns: 300px 1fr;
@@ -76,18 +77,18 @@
             border: 1px solid #f1f1f1;
         }
 
-            .district-list a:hover, .district-list a[href="/zeytinburnu-nakliyat"] {
-                background: #efebe9;
-                color: var(--accent-leather);
-                border-left-color: var(--accent-leather);
+            .district-list a:hover, .district-list a[href="/gungoren-nakliyat"] {
+                background: #f4ecf7;
+                color: var(--accent-textile);
+                border-left-color: var(--accent-textile);
                 padding-left: 20px;
                 font-weight: bold;
             }
 
             .district-list a.active {
-                background: var(--accent-leather);
+                background: var(--accent-textile);
                 color: #fff !important;
-                border-color: var(--accent-leather);
+                border-color: var(--accent-textile);
             }
 
     .content-area h1 {
@@ -120,7 +121,7 @@
         position: absolute;
         bottom: 20px;
         left: 20px;
-        background: rgba(141, 110, 99, 0.9);
+        background: rgba(142, 68, 173, 0.9);
         color: #fff;
         padding: 8px 15px;
         border-radius: 4px;
@@ -130,8 +131,8 @@
     }
 
     .intro-box {
-        background: #efebe9;
-        border-left: 5px solid var(--accent-leather);
+        background: #f4ecf7;
+        border-left: 5px solid var(--accent-textile);
         padding: 20px;
         font-size: 1.1em;
         line-height: 1.6;
@@ -168,14 +169,14 @@
 
         .feature-card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent-leather);
+            border-color: var(--accent-textile);
         }
 
         .feature-card i {
             font-size: 32px;
             margin-bottom: 15px;
             display: block;
-            color: var(--accent-leather);
+            color: var(--accent-textile);
         }
 
         .feature-card h4 {
@@ -238,7 +239,7 @@
             position: absolute;
             right: 20px;
             font-weight: bold;
-            color: var(--accent-leather);
+            color: var(--accent-textile);
             font-size: 18px;
         }
 
@@ -255,13 +256,13 @@
     }
 
     .cta-wrapper {
-        background: linear-gradient(135deg, #8d6e63 0%, #2c3e50 100%);
+        background: linear-gradient(135deg, #8e44ad 0%, #2c3e50 100%);
         padding: 40px;
         text-align: center;
         border-radius: 12px;
         margin-top: 50px;
         color: white;
-        box-shadow: 0 15px 30px rgba(141, 110, 99, 0.2);
+        box-shadow: 0 15px 30px rgba(142, 68, 173, 0.2);
     }
 
         .cta-wrapper h3 {
@@ -271,7 +272,7 @@
         }
 
         .cta-wrapper p {
-            color: #efebe9;
+            color: #f4ecf7;
             font-weight: 500;
             font-size: 16px;
         }
@@ -279,7 +280,7 @@
     .btn-call {
         display: inline-block;
         background: #fff;
-        color: #8d6e63;
+        color: #8e44ad;
         padding: 16px 50px;
         border-radius: 50px;
         font-weight: bold;
@@ -311,79 +312,80 @@
     <aside class="district-sidebar">
         <h3>📍 Hizmet Bölgelerimiz</h3>
         <ul class="district-list">
-            <li><a href="/uskudar-nakliyat">Üsküdar Nakliyat</a></li>
-            <li><a href="/zeytinburnu-nakliyat" class="active">Zeytinburnu Nakliyat</a></li>
+            <li><a href="/fatih-nakliyat">Fatih Nakliyat</a></li>
+            <li><a href="/gaziosmanpasa-nakliyat">Gaziosmanpaşa Nakliyat</a></li>
+            <li><a href="/gungoren-nakliyat" class="active">Güngören Nakliyat</a></li>
         </ul>
     </aside>
 
     <main class="content-area">
         <div class="hero-image-wrapper">
-            <img src="~/images/zeytinburnu-ankara-nakliyat.jpg" alt="Zeytinburnu Tekstil ve Rezidans Nakliyat" onerror="this.src='https://via.placeholder.com/800x400?text=Zeytinburnu+Ankara+Nakliyat'">
-            <div class="hero-badge">Tekstil ve Rezidans Lojistiği</div>
+            <img src="~/images/gungoren-ankara-nakliyat.jpg" alt="Güngören Merter Tekstil ve Ev Taşıma" onerror="this.src='https://via.placeholder.com/800x400?text=Gungoren+Tekstil+Nakliyat'">
+            <div class="hero-badge">Merter Tekstil & Ev Taşıma</div>
         </div>
 
-        <h1>Zeytinburnu Ankara Nakliyat: Tekstil, Deri ve Rezidans Taşıma</h1>
+        <h1>Güngören Ankara Nakliyat: Tekstil, Ofis ve Ev Taşıma</h1>
 
         <div class="intro-box">
-            İstanbul'un ticaret ve sahil yaşamının birleştiği <strong>Zeytinburnu'ndan Ankara'ya</strong> taşınmak, hem ticari hem de lüks konut tecrübesi ister. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Dericiler Sitesi ve tekstil piyasasının lojistik ihtiyaçlarına yanıt verirken, Büyükyalı ve Fişekhane gibi sahil bandındaki rezidanslarda VIP ev taşıma hizmeti sunuyoruz.
+            İstanbul'un ticaret ve tekstil merkezi Merter'i bünyesinde barındıran <strong>Güngören'den Ankara'ya</strong> taşınmak, hem ticari hem de bireysel ihtiyaçlar için profesyonellik gerektirir. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Merter'deki tekstil firmalarından, Güngören'in yoğun konut bölgelerine kadar geniş bir yelpazede hizmet veriyoruz.
         </div>
 
-        <p>Kentsel dönüşümün yoğun olduğu bölgelerde asansörlü sistemlerimizle, sanayi bölgelerinde ise geniş hacimli tırlarımızla hizmet vererek Zeytinburnu'nun her ihtiyacına profesyonel çözümler üretiyoruz.</p>
+        <p>Dar sokaklarda manevra kabiliyeti yüksek araçlarımızla evden eve nakliyat yaparken, Merter sanayi bölgesinden Ankara'ya koli, çuval ve askılı tekstil taşımacılığında da kurumsal çözüm ortağınızız.</p>
 
-        <h2>Zeytinburnu Nakliyat Hizmetinde Çifte Uzmanlık</h2>
+        <h2>Güngören Nakliyat Hizmetinde Çifte Uzmanlık</h2>
         <div class="features-grid">
             <div class="feature-card">
-                <i>🧵</i>
-                <h4>Tekstil & Deri Taşıma</h4>
-                <p>Ticari ürünleriniz için askılı, raflı ve kolili özel araç tasarımı. Ankara mağazalarına direkt sevkiyat.</p>
+                <i>👚</i>
+                <h4>Merter Tekstil Lojistiği</h4>
+                <p>Tekstil ürünleriniz için askılı, kolili ve çuvallı özel araçlar. Ankara mağazalarına direkt teslimat.</p>
             </div>
             <div class="feature-card">
-                <i>🏢</i>
-                <h4>Sahil Rezidansları</h4>
-                <p>Sahil şeridindeki lüks projelerde yönetim prosedürlerine uygun, sessiz ve hasarsız taşıma.</p>
+                <i>🏠</i>
+                <h4>Şehir İçi Pratik Ev Taşıma</h4>
+                <p>Güngören'in yoğun trafiğine takılmadan, erken saatlerde planlı ve asansörlü ev taşıma.</p>
             </div>
             <div class="feature-card">
-                <i>🏗️</i>
-                <h4>Kentsel Dönüşüm</h4>
-                <p>Yıkım ve yapım aşamasındaki dar sokaklarda mobil asansör kurulumu ile hızlı tahliye ve yerleşme.</p>
+                <i>🔄</i>
+                <h4>Günlük Seferler</h4>
+                <p>Ticaretin hızı kesilmesin diye Güngören - Ankara hattında her gün karşılıklı araç çıkışı.</p>
             </div>
         </div>
 
-        <h2>Zeytinburnu - Ankara Sefer Detayları</h2>
+        <h2>Güngören - Ankara Sefer Detayları</h2>
         <table class="info-table">
             <tr>
                 <th>Hizmet Bölgesi</th>
-                <td>Zeytinburnu Merkez, Sahil Yolu, Sanayi Siteleri</td>
+                <td>Güngören Merkez, Merter, Tozkoparan</td>
             </tr>
             <tr>
-                <th>Hizmet Türü</th>
-                <td>Ticari (Tekstil/Deri), Evden Eve, Ofis</td>
+                <th>Ticari Hizmet</th>
+                <td>Tekstil, Kumaş, Aksesuar Taşıma</td>
             </tr>
             <tr>
-                <th>Araç Tipi</th>
-                <td>Tır, Kamyon, Askılı Tekstil Aracı</td>
+                <th>Bireysel Hizmet</th>
+                <td>Evden Eve, Parça Eşya (Öğrenci/Memur)</td>
             </tr>
             <tr>
-                <th>Sigorta</th>
-                <td>Tam Kapsamlı Emtia Sigortası</td>
+                <th>Teslimat</th>
+                <td>24 Saat İçinde Teslimat Garantisi</td>
             </tr>
         </table>
 
         <h2>Sıkça Sorulan Sorular</h2>
         <div class="faq-section">
             <details>
-                <summary>Deri atölyemden Ankara'ya parça mal gönderebilir miyim?</summary>
-                <p>Evet. Parsiyel taşımacılık hizmetimizle, deri ve tekstil ürünlerinizi metreküp bazında fiyatlandırarak ekonomik şekilde Ankara'ya ulaştırıyoruz.</p>
+                <summary>Merter'deki atölyemden Ankara'ya 50 koli mal gönderebilir miyim?</summary>
+                <p>Evet. Parsiyel (Parça) yük taşıma hizmetimizle, komple araç tutmanıza gerek kalmadan ticari mallarınızı ekonomik fiyata taşıyoruz.</p>
             </details>
             <details>
-                <summary>Büyükyalı projesinde oturuyorum, taşıma kurallarına uyuyor musunuz?</summary>
-                <p>Kesinlikle. Lüks rezidansların (asansör koruma, personel kimlik bildirimi, saat sınırlaması) tüm prosedürlerine hakim, tecrübeli bir ekibiz.</p>
+                <summary>Tozkoparan'daki evim için asansör kurulabilir mi?</summary>
+                <p>Bina yapısı ve sokak durumu uygunsa dış cephe asansörü kuruyoruz. Uygun değilse, deneyimli personelimizle bina merdivenlerini koruyarak taşıma yapıyoruz.</p>
             </details>
         </div>
 
         <div class="cta-wrapper">
-            <h3>Zeytinburnu'ndan Ankara'ya Profesyonel Köprü</h3>
-            <p>Ticaretiniz de eviniz de bizimle güvende.</p>
+            <h3>Güngören'den Ankara'ya Ticaret ve Yaşam Köprüsü</h3>
+            <p>İster ev ister iş, en hızlı çözüm için bizi arayın.</p>
             <a href="tel:+905555555555" class="btn-call">📞 HEMEN FİYAT AL</a>
         </div>
     </main>

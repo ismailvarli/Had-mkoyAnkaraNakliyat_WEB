@@ -1,17 +1,17 @@
 ﻿@{
     Layout = "_Layout";
-    ViewData["Title"] = "Zeytinburnu Ankara Nakliyat: Tekstil, Deri ve Rezidans Taşıma";
-    ViewData["Description"] = "Zeytinburnu'ndan Ankara'ya nakliyat. Tekstil ve deri ürünleri için ticari araçlar, sahil rezidansları ve kentsel dönüşüm bölgeleri için asansörlü ev taşıma.";
+    ViewData["Title"] = "Kartal Ankara Nakliyat: Sahil, Adliye ve Yakacık Bölgesi Taşıma";
+    ViewData["Description"] = "Kartal'dan Ankara'ya sigortalı nakliyat. Dragos, Yakacık, Uğur Mumcu ve Adliye bölgesindeki ofis ve evler için asansörlü, kurumsal taşıma çözümleri.";
 }
 
 <style>
     :root {
         --primary-color: #d35400;
         --secondary-color: #2c3e50;
-        --accent-leather: #8d6e63; /* Deri ve Tekstil Kahvesi */
+        --accent-kartal: #2980b9; /* Kartal Sahil Mavisi */
     }
 
-    /* CSS Blokları */
+    /* STANDART CSS YAPISI */
     .page-container {
         display: grid;
         grid-template-columns: 300px 1fr;
@@ -76,18 +76,18 @@
             border: 1px solid #f1f1f1;
         }
 
-            .district-list a:hover, .district-list a[href="/zeytinburnu-nakliyat"] {
-                background: #efebe9;
-                color: var(--accent-leather);
-                border-left-color: var(--accent-leather);
+            .district-list a:hover, .district-list a[href="/kartal-nakliyat"] {
+                background: #eaf2f8;
+                color: var(--accent-kartal);
+                border-left-color: var(--accent-kartal);
                 padding-left: 20px;
                 font-weight: bold;
             }
 
             .district-list a.active {
-                background: var(--accent-leather);
+                background: var(--accent-kartal);
                 color: #fff !important;
-                border-color: var(--accent-leather);
+                border-color: var(--accent-kartal);
             }
 
     .content-area h1 {
@@ -120,7 +120,7 @@
         position: absolute;
         bottom: 20px;
         left: 20px;
-        background: rgba(141, 110, 99, 0.9);
+        background: rgba(41, 128, 185, 0.9);
         color: #fff;
         padding: 8px 15px;
         border-radius: 4px;
@@ -130,8 +130,8 @@
     }
 
     .intro-box {
-        background: #efebe9;
-        border-left: 5px solid var(--accent-leather);
+        background: #eaf2f8;
+        border-left: 5px solid var(--accent-kartal);
         padding: 20px;
         font-size: 1.1em;
         line-height: 1.6;
@@ -168,14 +168,14 @@
 
         .feature-card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent-leather);
+            border-color: var(--accent-kartal);
         }
 
         .feature-card i {
             font-size: 32px;
             margin-bottom: 15px;
             display: block;
-            color: var(--accent-leather);
+            color: var(--accent-kartal);
         }
 
         .feature-card h4 {
@@ -238,7 +238,7 @@
             position: absolute;
             right: 20px;
             font-weight: bold;
-            color: var(--accent-leather);
+            color: var(--accent-kartal);
             font-size: 18px;
         }
 
@@ -255,13 +255,13 @@
     }
 
     .cta-wrapper {
-        background: linear-gradient(135deg, #8d6e63 0%, #2c3e50 100%);
+        background: linear-gradient(135deg, #2980b9 0%, #2c3e50 100%);
         padding: 40px;
         text-align: center;
         border-radius: 12px;
         margin-top: 50px;
         color: white;
-        box-shadow: 0 15px 30px rgba(141, 110, 99, 0.2);
+        box-shadow: 0 15px 30px rgba(41, 128, 185, 0.2);
     }
 
         .cta-wrapper h3 {
@@ -271,7 +271,7 @@
         }
 
         .cta-wrapper p {
-            color: #efebe9;
+            color: #eaf2f8;
             font-weight: 500;
             font-size: 16px;
         }
@@ -279,7 +279,7 @@
     .btn-call {
         display: inline-block;
         background: #fff;
-        color: #8d6e63;
+        color: #2980b9;
         padding: 16px 50px;
         border-radius: 50px;
         font-weight: bold;
@@ -311,79 +311,81 @@
     <aside class="district-sidebar">
         <h3>📍 Hizmet Bölgelerimiz</h3>
         <ul class="district-list">
-            <li><a href="/uskudar-nakliyat">Üsküdar Nakliyat</a></li>
-            <li><a href="/zeytinburnu-nakliyat" class="active">Zeytinburnu Nakliyat</a></li>
+            <li><a href="/kadikoy-nakliyat">Kadıköy Nakliyat</a></li>
+            <li><a href="/kagithane-nakliyat">Kağıthane Nakliyat</a></li>
+            <li><a href="/kartal-nakliyat" class="active">Kartal Nakliyat</a></li>
+            <li><a href="/kucukcekmece-nakliyat">Küçükçekmece Nakliyat</a></li>
         </ul>
     </aside>
 
     <main class="content-area">
         <div class="hero-image-wrapper">
-            <img src="~/images/zeytinburnu-ankara-nakliyat.jpg" alt="Zeytinburnu Tekstil ve Rezidans Nakliyat" onerror="this.src='https://via.placeholder.com/800x400?text=Zeytinburnu+Ankara+Nakliyat'">
-            <div class="hero-badge">Tekstil ve Rezidans Lojistiği</div>
+            <img src="~/images/kartal-ankara-nakliyat.jpg" alt="Kartal Ankara Adliye ve Ev Taşıma" onerror="this.src='https://via.placeholder.com/800x400?text=Kartal+Ankara+Nakliyat'">
+            <div class="hero-badge">Dragos Sahil & Kartal Merkez Lojistiği</div>
         </div>
 
-        <h1>Zeytinburnu Ankara Nakliyat: Tekstil, Deri ve Rezidans Taşıma</h1>
+        <h1>Kartal Ankara Nakliyat: Sahil, Adliye ve Yakacık Bölgesi Taşıma</h1>
 
         <div class="intro-box">
-            İstanbul'un ticaret ve sahil yaşamının birleştiği <strong>Zeytinburnu'ndan Ankara'ya</strong> taşınmak, hem ticari hem de lüks konut tecrübesi ister. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Dericiler Sitesi ve tekstil piyasasının lojistik ihtiyaçlarına yanıt verirken, Büyükyalı ve Fişekhane gibi sahil bandındaki rezidanslarda VIP ev taşıma hizmeti sunuyoruz.
+            Anadolu Yakası'nın hızla gelişen iş ve yaşam merkezi <strong>Kartal'dan Ankara'ya</strong> taşınmak, farklı coğrafi yapılara (Sahil vs. Aydos Tepesi) uygun çözümler gerektirir. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Dragos sahilindeki lüks sitelerden, Yakacık ve Uğur Mumcu'nun yüksek rakımlı bloklarına kadar her noktada asansörlü ve sigortalı nakliye hizmeti sunuyoruz.
         </div>
 
-        <p>Kentsel dönüşümün yoğun olduğu bölgelerde asansörlü sistemlerimizle, sanayi bölgelerinde ise geniş hacimli tırlarımızla hizmet vererek Zeytinburnu'nun her ihtiyacına profesyonel çözümler üretiyoruz.</p>
+        <p>Ayrıca Kartal Adliyesi çevresindeki hukuk büroları ve ofislerin Ankara'ya taşınmasında, iş akışını bozmayan "Hızlı Kurumsal Nakliye" paketlerimizle hizmet veriyoruz.</p>
 
-        <h2>Zeytinburnu Nakliyat Hizmetinde Çifte Uzmanlık</h2>
+        <h2>Kartal Nakliyat Hizmetinde Çözüm Odaklılık</h2>
         <div class="features-grid">
             <div class="feature-card">
-                <i>🧵</i>
-                <h4>Tekstil & Deri Taşıma</h4>
-                <p>Ticari ürünleriniz için askılı, raflı ve kolili özel araç tasarımı. Ankara mağazalarına direkt sevkiyat.</p>
+                <i>⚖️</i>
+                <h4>Kurumsal Ofis Taşıma</h4>
+                <p>Adliye bölgesi ve plazalardaki ofisler için evrak arşivleme, mobilya montajı ve hızlı transfer.</p>
             </div>
             <div class="feature-card">
-                <i>🏢</i>
-                <h4>Sahil Rezidansları</h4>
-                <p>Sahil şeridindeki lüks projelerde yönetim prosedürlerine uygun, sessiz ve hasarsız taşıma.</p>
+                <i>🌊</i>
+                <h4>Dragos & Sahil Lojistiği</h4>
+                <p>Sahil yolundaki lüks sitelerde yönetim kurallarına uygun, sessiz ve premium evden eve nakliyat.</p>
             </div>
             <div class="feature-card">
-                <i>🏗️</i>
-                <h4>Kentsel Dönüşüm</h4>
-                <p>Yıkım ve yapım aşamasındaki dar sokaklarda mobil asansör kurulumu ile hızlı tahliye ve yerleşme.</p>
+                <i>⛰️</i>
+                <h4>Yakacık & Aydos</h4>
+                <p>Yüksek rakımlı ve dik yokuşlu bölgelerde, güçlü araçlar ve dış cephe asansörleriyle güvenli iniş.</p>
             </div>
         </div>
 
-        <h2>Zeytinburnu - Ankara Sefer Detayları</h2>
+        <h2>Kartal - Ankara Sefer Detayları</h2>
         <table class="info-table">
             <tr>
                 <th>Hizmet Bölgesi</th>
-                <td>Zeytinburnu Merkez, Sahil Yolu, Sanayi Siteleri</td>
+                <td>Kartal Merkez, Dragos, Yakacık, Uğur Mumcu</td>
             </tr>
             <tr>
-                <th>Hizmet Türü</th>
-                <td>Ticari (Tekstil/Deri), Evden Eve, Ofis</td>
+                <th>Asansör</th>
+                <td>18. Kata Kadar Mobil Asansör</td>
             </tr>
             <tr>
-                <th>Araç Tipi</th>
-                <td>Tır, Kamyon, Askılı Tekstil Aracı</td>
+                <th>Araç Seçenekleri</th>
+                <td>Kamyonet (Yokuşlar için), Tır (Uzun Yol)</td>
             </tr>
             <tr>
                 <th>Sigorta</th>
-                <td>Tam Kapsamlı Emtia Sigortası</td>
+                <td>AXA Sigorta Güvencesi</td>
             </tr>
         </table>
 
         <h2>Sıkça Sorulan Sorular</h2>
         <div class="faq-section">
             <details>
-                <summary>Deri atölyemden Ankara'ya parça mal gönderebilir miyim?</summary>
-                <p>Evet. Parsiyel taşımacılık hizmetimizle, deri ve tekstil ürünlerinizi metreküp bazında fiyatlandırarak ekonomik şekilde Ankara'ya ulaştırıyoruz.</p>
+                <summary>Yakacık'ta çok dik bir yokuşta oturuyorum, tır giremez.</summary>
+                <p>Yakacık ve Aydos bölgesinin coğrafi yapısına hakimiz. Tırın giremediği yerlerde "Aktarma (Shuttle)" hizmetimiz devreye girer. Küçük araçlarla evden alıp, ana caddede bekleyen tıra yükleme yaparız.</p>
             </details>
             <details>
-                <summary>Büyükyalı projesinde oturuyorum, taşıma kurallarına uyuyor musunuz?</summary>
-                <p>Kesinlikle. Lüks rezidansların (asansör koruma, personel kimlik bildirimi, saat sınırlaması) tüm prosedürlerine hakim, tecrübeli bir ekibiz.</p>
+                <summary>Kartal Adliyesi yanındaki ofisimi Ankara'ya taşıyabilir misiniz?</summary>
+                <p>Evet. Özellikle hafta sonu (Cumartesi-Pazar) operasyonlarıyla, Pazartesi günü Ankara'daki yeni ofisinizde çalışmaya başlamanızı sağlıyoruz.</p>
             </details>
         </div>
 
         <div class="cta-wrapper">
-            <h3>Zeytinburnu'ndan Ankara'ya Profesyonel Köprü</h3>
-            <p>Ticaretiniz de eviniz de bizimle güvende.</p>
+            <h3>Kartal'ın Her Noktasından Ankara'ya Güvenli Hat</h3>
+            <p>Sahilde veya tepede olmanız fark etmez. Profesyonel çözüm burada.</p>
             <a href="tel:+905555555555" class="btn-call">📞 HEMEN FİYAT AL</a>
         </div>
     </main>

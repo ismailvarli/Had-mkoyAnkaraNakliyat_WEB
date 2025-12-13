@@ -1,17 +1,17 @@
 ﻿@{
     Layout = "_Layout";
-    ViewData["Title"] = "Zeytinburnu Ankara Nakliyat: Tekstil, Deri ve Rezidans Taşıma";
-    ViewData["Description"] = "Zeytinburnu'ndan Ankara'ya nakliyat. Tekstil ve deri ürünleri için ticari araçlar, sahil rezidansları ve kentsel dönüşüm bölgeleri için asansörlü ev taşıma.";
+    ViewData["Title"] = "Silivri Ankara Nakliyat: Yazlık, Çiftlik ve Sanayi Taşıma";
+    ViewData["Description"] = "Silivri'den Ankara'ya ekonomik nakliyat. Gümüşyaka, Selimpaşa ve merkezden yazlık eşya, çiftlik malzemesi ve sanayi yükleri için günlük tır ve kamyon seferleri.";
 }
 
 <style>
     :root {
         --primary-color: #d35400;
         --secondary-color: #2c3e50;
-        --accent-leather: #8d6e63; /* Deri ve Tekstil Kahvesi */
+        --accent-summer: #f1c40f; /* Yazlık Güneşi Sarısı */
     }
 
-    /* CSS Blokları */
+    /* CSS BLOKLARI (Sarıyer ile aynı yapı, sadece renkler değişiyor) */
     .page-container {
         display: grid;
         grid-template-columns: 300px 1fr;
@@ -76,18 +76,18 @@
             border: 1px solid #f1f1f1;
         }
 
-            .district-list a:hover, .district-list a[href="/zeytinburnu-nakliyat"] {
-                background: #efebe9;
-                color: var(--accent-leather);
-                border-left-color: var(--accent-leather);
+            .district-list a:hover, .district-list a[href="/silivri-nakliyat"] {
+                background: #fcf3cf;
+                color: #d4ac0d;
+                border-left-color: #d4ac0d;
                 padding-left: 20px;
                 font-weight: bold;
             }
 
             .district-list a.active {
-                background: var(--accent-leather);
+                background: #d4ac0d;
                 color: #fff !important;
-                border-color: var(--accent-leather);
+                border-color: #d4ac0d;
             }
 
     .content-area h1 {
@@ -120,7 +120,7 @@
         position: absolute;
         bottom: 20px;
         left: 20px;
-        background: rgba(141, 110, 99, 0.9);
+        background: rgba(241, 196, 15, 0.9);
         color: #fff;
         padding: 8px 15px;
         border-radius: 4px;
@@ -130,8 +130,8 @@
     }
 
     .intro-box {
-        background: #efebe9;
-        border-left: 5px solid var(--accent-leather);
+        background: #fcf3cf;
+        border-left: 5px solid var(--accent-summer);
         padding: 20px;
         font-size: 1.1em;
         line-height: 1.6;
@@ -168,14 +168,14 @@
 
         .feature-card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent-leather);
+            border-color: var(--accent-summer);
         }
 
         .feature-card i {
             font-size: 32px;
             margin-bottom: 15px;
             display: block;
-            color: var(--accent-leather);
+            color: var(--accent-summer);
         }
 
         .feature-card h4 {
@@ -238,7 +238,7 @@
             position: absolute;
             right: 20px;
             font-weight: bold;
-            color: var(--accent-leather);
+            color: var(--accent-summer);
             font-size: 18px;
         }
 
@@ -255,13 +255,13 @@
     }
 
     .cta-wrapper {
-        background: linear-gradient(135deg, #8d6e63 0%, #2c3e50 100%);
+        background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);
         padding: 40px;
         text-align: center;
         border-radius: 12px;
         margin-top: 50px;
         color: white;
-        box-shadow: 0 15px 30px rgba(141, 110, 99, 0.2);
+        box-shadow: 0 15px 30px rgba(241, 196, 15, 0.2);
     }
 
         .cta-wrapper h3 {
@@ -271,7 +271,7 @@
         }
 
         .cta-wrapper p {
-            color: #efebe9;
+            color: #fcf3cf;
             font-weight: 500;
             font-size: 16px;
         }
@@ -279,7 +279,7 @@
     .btn-call {
         display: inline-block;
         background: #fff;
-        color: #8d6e63;
+        color: #f39c12;
         padding: 16px 50px;
         border-radius: 50px;
         font-weight: bold;
@@ -311,80 +311,82 @@
     <aside class="district-sidebar">
         <h3>📍 Hizmet Bölgelerimiz</h3>
         <ul class="district-list">
-            <li><a href="/uskudar-nakliyat">Üsküdar Nakliyat</a></li>
-            <li><a href="/zeytinburnu-nakliyat" class="active">Zeytinburnu Nakliyat</a></li>
+            <li><a href="/sancaktepe-nakliyat">Sancaktepe Nakliyat</a></li>
+            <li><a href="/sariyer-nakliyat">Sarıyer Nakliyat</a></li>
+            <li><a href="/silivri-nakliyat" class="active">Silivri Nakliyat</a></li>
+            <li><a href="/sultanbeyli-nakliyat">Sultanbeyli Nakliyat</a></li>
         </ul>
     </aside>
 
     <main class="content-area">
         <div class="hero-image-wrapper">
-            <img src="~/images/zeytinburnu-ankara-nakliyat.jpg" alt="Zeytinburnu Tekstil ve Rezidans Nakliyat" onerror="this.src='https://via.placeholder.com/800x400?text=Zeytinburnu+Ankara+Nakliyat'">
-            <div class="hero-badge">Tekstil ve Rezidans Lojistiği</div>
+            <img src="~/images/silivri-ankara-nakliyat.jpg" alt="Silivri Yazlık ve Çiftlik Nakliyat" onerror="this.src='https://via.placeholder.com/800x400?text=Silivri+Ankara+Nakliyat'">
+            <div class="hero-badge">Silivri - Ankara Arası Ekonomik Hat</div>
         </div>
 
-        <h1>Zeytinburnu Ankara Nakliyat: Tekstil, Deri ve Rezidans Taşıma</h1>
+        <h1>Silivri Ankara Nakliyat: Yazlık, Çiftlik ve Sanayi Taşıma</h1>
 
         <div class="intro-box">
-            İstanbul'un ticaret ve sahil yaşamının birleştiği <strong>Zeytinburnu'ndan Ankara'ya</strong> taşınmak, hem ticari hem de lüks konut tecrübesi ister. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Dericiler Sitesi ve tekstil piyasasının lojistik ihtiyaçlarına yanıt verirken, Büyükyalı ve Fişekhane gibi sahil bandındaki rezidanslarda VIP ev taşıma hizmeti sunuyoruz.
+            İstanbul'un en batı ucu olan ve sayfiye kimliğiyle öne çıkan <strong>Silivri'den Ankara'ya</strong> taşınmak, şehirler arası mesafeyi biraz daha uzatsa da bizim için sorun değil. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Gümüşyaka, Selimpaşa ve Silivri Merkez'deki yazlık evlerden, çiftliklerden ve sanayi bölgelerinden Ankara'ya direkt ve aktarmasız seferler düzenliyoruz.
         </div>
 
-        <p>Kentsel dönüşümün yoğun olduğu bölgelerde asansörlü sistemlerimizle, sanayi bölgelerinde ise geniş hacimli tırlarımızla hizmet vererek Zeytinburnu'nun her ihtiyacına profesyonel çözümler üretiyoruz.</p>
+        <p>Özellikle yaz sezonu başında ve sonunda artan "Yazlık Eşya Transferi" taleplerine, ekonomik "Parça Eşya" çözümlerimizle yanıt veriyoruz. Ayrıca Selimpaşa sanayi bölgesinden Ankara'ya fabrika ve atölye taşımacılığında tır filomuzla hizmet sunuyoruz.</p>
 
-        <h2>Zeytinburnu Nakliyat Hizmetinde Çifte Uzmanlık</h2>
+        <h2>Silivri Nakliyat Hizmetinde Yerel Çözümler</h2>
         <div class="features-grid">
             <div class="feature-card">
-                <i>🧵</i>
-                <h4>Tekstil & Deri Taşıma</h4>
-                <p>Ticari ürünleriniz için askılı, raflı ve kolili özel araç tasarımı. Ankara mağazalarına direkt sevkiyat.</p>
+                <i>🏖️</i>
+                <h4>Yazlık Eşya Transferi</h4>
+                <p>Sezonluk taşınmalar için parça eşya (koltuk takımı, beyaz eşya vb.) hizmetiyle uygun fiyatlı nakliye.</p>
             </div>
             <div class="feature-card">
-                <i>🏢</i>
-                <h4>Sahil Rezidansları</h4>
-                <p>Sahil şeridindeki lüks projelerde yönetim prosedürlerine uygun, sessiz ve hasarsız taşıma.</p>
+                <i>🏭</i>
+                <h4>Sanayi & Fabrika</h4>
+                <p>Selimpaşa ve Ortaköy sanayi bölgelerinden Ankara'ya makine, hammadde ve ofis malzemesi nakliyesi.</p>
             </div>
             <div class="feature-card">
-                <i>🏗️</i>
-                <h4>Kentsel Dönüşüm</h4>
-                <p>Yıkım ve yapım aşamasındaki dar sokaklarda mobil asansör kurulumu ile hızlı tahliye ve yerleşme.</p>
+                <i>🚜</i>
+                <h4>Köy & Çiftlik Evi</h4>
+                <p>Silivri'nin köylerindeki müstakil evler için her türlü yol koşuluna uygun araç ve ekipman desteği.</p>
             </div>
         </div>
 
-        <h2>Zeytinburnu - Ankara Sefer Detayları</h2>
+        <h2>Silivri - Ankara Sefer Detayları</h2>
         <table class="info-table">
             <tr>
                 <th>Hizmet Bölgesi</th>
-                <td>Zeytinburnu Merkez, Sahil Yolu, Sanayi Siteleri</td>
+                <td>Silivri Merkez, Gümüşyaka, Selimpaşa, Çanta</td>
             </tr>
             <tr>
                 <th>Hizmet Türü</th>
-                <td>Ticari (Tekstil/Deri), Evden Eve, Ofis</td>
+                <td>Yazlık, Çiftlik, Sanayi, Evden Eve</td>
             </tr>
             <tr>
                 <th>Araç Tipi</th>
-                <td>Tır, Kamyon, Askılı Tekstil Aracı</td>
+                <td>Tır, Kamyon, Kamyonet</td>
             </tr>
             <tr>
-                <th>Sigorta</th>
-                <td>Tam Kapsamlı Emtia Sigortası</td>
+                <th>Fiyat</th>
+                <td>Mesafeye Göre En Uygun Tarife</td>
             </tr>
         </table>
 
         <h2>Sıkça Sorulan Sorular</h2>
         <div class="faq-section">
             <details>
-                <summary>Deri atölyemden Ankara'ya parça mal gönderebilir miyim?</summary>
-                <p>Evet. Parsiyel taşımacılık hizmetimizle, deri ve tekstil ürünlerinizi metreküp bazında fiyatlandırarak ekonomik şekilde Ankara'ya ulaştırıyoruz.</p>
+                <summary>Gümüşyaka'daki yazlığımdan sadece buzdolabı ve çamaşır makinesi gidecek.</summary>
+                <p>Tam size göre bir hizmetimiz var: "Parça Eşya Taşıma". Sadece eşyalarınızın kapladığı yer kadar ödeme yaparak, komple araç tutmaktan çok daha ucuza taşıma yapabilirsiniz.</p>
             </details>
             <details>
-                <summary>Büyükyalı projesinde oturuyorum, taşıma kurallarına uyuyor musunuz?</summary>
-                <p>Kesinlikle. Lüks rezidansların (asansör koruma, personel kimlik bildirimi, saat sınırlaması) tüm prosedürlerine hakim, tecrübeli bir ekibiz.</p>
+                <summary>Cezaevi lojmanlarından Ankara'ya memur taşıyor musunuz?</summary>
+                <p>Evet. Silivri Ceza İnfaz Kurumları lojmanlarında görevli personel için sıkça hizmet veriyoruz. Tayin dönemlerinde memurlara özel indirimlerimiz mevcuttur.</p>
             </details>
         </div>
 
         <div class="cta-wrapper">
-            <h3>Zeytinburnu'ndan Ankara'ya Profesyonel Köprü</h3>
-            <p>Ticaretiniz de eviniz de bizimle güvende.</p>
-            <a href="tel:+905555555555" class="btn-call">📞 HEMEN FİYAT AL</a>
+            <h3>Silivri'nin Huzurunu Ankara'ya Taşıyoruz</h3>
+            <p>Uzaklık bahane değil, hizmet şahane. Hemen teklif isteyin.</p>
+            <a href="tel:+905555555555" class="btn-call">📞 CANLI DESTEK & FİYAT AL</a>
         </div>
     </main>
 </div>

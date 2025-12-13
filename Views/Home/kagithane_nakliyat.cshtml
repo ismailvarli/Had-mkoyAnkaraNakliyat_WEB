@@ -1,17 +1,17 @@
 ﻿@{
     Layout = "_Layout";
-    ViewData["Title"] = "Zeytinburnu Ankara Nakliyat: Tekstil, Deri ve Rezidans Taşıma";
-    ViewData["Description"] = "Zeytinburnu'ndan Ankara'ya nakliyat. Tekstil ve deri ürünleri için ticari araçlar, sahil rezidansları ve kentsel dönüşüm bölgeleri için asansörlü ev taşıma.";
+    ViewData["Title"] = "Kağıthane Ankara Nakliyat: Vadistanbul ve Ofis Taşıma Çözümleri";
+    ViewData["Description"] = "Kağıthane'den Ankara'ya profesyonel nakliyat. Vadistanbul ofis taşıma, Gültepe ve Çeliktepe'nin dik yokuşlarında asansörlü, güvenli evden eve nakliye hizmeti.";
 }
 
 <style>
     :root {
         --primary-color: #d35400;
         --secondary-color: #2c3e50;
-        --accent-leather: #8d6e63; /* Deri ve Tekstil Kahvesi */
+        --accent-modern: #16a085; /* Modern Ofis Yeşili/Mavisi */
     }
 
-    /* CSS Blokları */
+    /* Standart CSS blokları (Yukarıdaki Kadıköy CSS'inin aynısı, sadece renk değişkenlerini kullanır) */
     .page-container {
         display: grid;
         grid-template-columns: 300px 1fr;
@@ -76,18 +76,18 @@
             border: 1px solid #f1f1f1;
         }
 
-            .district-list a:hover, .district-list a[href="/zeytinburnu-nakliyat"] {
-                background: #efebe9;
-                color: var(--accent-leather);
-                border-left-color: var(--accent-leather);
+            .district-list a:hover, .district-list a[href="/kagithane-nakliyat"] {
+                background: #e8f8f5;
+                color: var(--accent-modern);
+                border-left-color: var(--accent-modern);
                 padding-left: 20px;
                 font-weight: bold;
             }
 
             .district-list a.active {
-                background: var(--accent-leather);
+                background: var(--accent-modern);
                 color: #fff !important;
-                border-color: var(--accent-leather);
+                border-color: var(--accent-modern);
             }
 
     .content-area h1 {
@@ -120,7 +120,7 @@
         position: absolute;
         bottom: 20px;
         left: 20px;
-        background: rgba(141, 110, 99, 0.9);
+        background: rgba(22, 160, 133, 0.9);
         color: #fff;
         padding: 8px 15px;
         border-radius: 4px;
@@ -130,8 +130,8 @@
     }
 
     .intro-box {
-        background: #efebe9;
-        border-left: 5px solid var(--accent-leather);
+        background: #e8f8f5;
+        border-left: 5px solid var(--accent-modern);
         padding: 20px;
         font-size: 1.1em;
         line-height: 1.6;
@@ -168,14 +168,14 @@
 
         .feature-card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent-leather);
+            border-color: var(--accent-modern);
         }
 
         .feature-card i {
             font-size: 32px;
             margin-bottom: 15px;
             display: block;
-            color: var(--accent-leather);
+            color: var(--accent-modern);
         }
 
         .feature-card h4 {
@@ -238,7 +238,7 @@
             position: absolute;
             right: 20px;
             font-weight: bold;
-            color: var(--accent-leather);
+            color: var(--accent-modern);
             font-size: 18px;
         }
 
@@ -255,13 +255,13 @@
     }
 
     .cta-wrapper {
-        background: linear-gradient(135deg, #8d6e63 0%, #2c3e50 100%);
+        background: linear-gradient(135deg, #16a085 0%, #2c3e50 100%);
         padding: 40px;
         text-align: center;
         border-radius: 12px;
         margin-top: 50px;
         color: white;
-        box-shadow: 0 15px 30px rgba(141, 110, 99, 0.2);
+        box-shadow: 0 15px 30px rgba(22, 160, 133, 0.2);
     }
 
         .cta-wrapper h3 {
@@ -271,7 +271,7 @@
         }
 
         .cta-wrapper p {
-            color: #efebe9;
+            color: #e8f8f5;
             font-weight: 500;
             font-size: 16px;
         }
@@ -279,7 +279,7 @@
     .btn-call {
         display: inline-block;
         background: #fff;
-        color: #8d6e63;
+        color: #16a085;
         padding: 16px 50px;
         border-radius: 50px;
         font-weight: bold;
@@ -311,80 +311,82 @@
     <aside class="district-sidebar">
         <h3>📍 Hizmet Bölgelerimiz</h3>
         <ul class="district-list">
-            <li><a href="/uskudar-nakliyat">Üsküdar Nakliyat</a></li>
-            <li><a href="/zeytinburnu-nakliyat" class="active">Zeytinburnu Nakliyat</a></li>
+            <li><a href="/arnavutkoy-nakliyat">Arnavutköy Nakliyat</a></li>
+            <li><a href="/kadikoy-nakliyat">Kadıköy Nakliyat</a></li>
+            <li><a href="/kagithane-nakliyat" class="active">Kağıthane Nakliyat</a></li>
+            <li><a href="/kartal-nakliyat">Kartal Nakliyat</a></li>
         </ul>
     </aside>
 
     <main class="content-area">
         <div class="hero-image-wrapper">
-            <img src="~/images/zeytinburnu-ankara-nakliyat.jpg" alt="Zeytinburnu Tekstil ve Rezidans Nakliyat" onerror="this.src='https://via.placeholder.com/800x400?text=Zeytinburnu+Ankara+Nakliyat'">
-            <div class="hero-badge">Tekstil ve Rezidans Lojistiği</div>
+            <img src="~/images/kagithane-ankara-nakliyat.jpg" alt="Kağıthane Vadistanbul Ankara Nakliyat" onerror="this.src='https://via.placeholder.com/800x400?text=Kagithane+Ankara+Nakliyat'">
+            <div class="hero-badge">Ofis ve Ev Taşımacılığında Lider</div>
         </div>
 
-        <h1>Zeytinburnu Ankara Nakliyat: Tekstil, Deri ve Rezidans Taşıma</h1>
+        <h1>Kağıthane Ankara Nakliyat: Vadistanbul ve Ofis Taşıma Çözümleri</h1>
 
         <div class="intro-box">
-            İstanbul'un ticaret ve sahil yaşamının birleştiği <strong>Zeytinburnu'ndan Ankara'ya</strong> taşınmak, hem ticari hem de lüks konut tecrübesi ister. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Dericiler Sitesi ve tekstil piyasasının lojistik ihtiyaçlarına yanıt verirken, Büyükyalı ve Fişekhane gibi sahil bandındaki rezidanslarda VIP ev taşıma hizmeti sunuyoruz.
+            İstanbul'un yeni iş merkezi Cendere Vadisi ve Vadistanbul'u barındıran <strong>Kağıthane'den Ankara'ya</strong> taşınmak, hem modern plazalara hem de dik yokuşlu mahallelere (Gültepe, Çeliktepe) hakimiyet gerektirir. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Kağıthane'nin coğrafi zorluklarını modern araçlarımızla aşıyor, kurumsal ofis ve ev taşımacılığında profesyonel çözümler sunuyoruz.
         </div>
 
-        <p>Kentsel dönüşümün yoğun olduğu bölgelerde asansörlü sistemlerimizle, sanayi bölgelerinde ise geniş hacimli tırlarımızla hizmet vererek Zeytinburnu'nun her ihtiyacına profesyonel çözümler üretiyoruz.</p>
+        <p>Bölgedeki kentsel dönüşüm projelerinde ve yeni yapılan modern sitelerde asansörlü taşıma hizmetimizle eşyalarınızı sıfır riskle taşıyoruz. Ankara'ya giden araçlarımız TEM otoyolu bağlantısını kullanarak en hızlı rotadan teslimat yapar.</p>
 
-        <h2>Zeytinburnu Nakliyat Hizmetinde Çifte Uzmanlık</h2>
+        <h2>Kağıthane Nakliyat Hizmetinde Çözüm Odaklılık</h2>
         <div class="features-grid">
             <div class="feature-card">
-                <i>🧵</i>
-                <h4>Tekstil & Deri Taşıma</h4>
-                <p>Ticari ürünleriniz için askılı, raflı ve kolili özel araç tasarımı. Ankara mağazalarına direkt sevkiyat.</p>
+                <i>🏢</i>
+                <h4>Kurumsal Ofis Taşıma</h4>
+                <p>Vadistanbul ve Cendere Caddesi üzerindeki ofisler için hızlı, sigortalı ve sistemli nakliye hizmeti.</p>
             </div>
             <div class="feature-card">
-                <i>🏢</i>
-                <h4>Sahil Rezidansları</h4>
-                <p>Sahil şeridindeki lüks projelerde yönetim prosedürlerine uygun, sessiz ve hasarsız taşıma.</p>
+                <i>⛰️</i>
+                <h4>Dik Yokuş Çözümleri</h4>
+                <p>Gültepe, Çeliktepe gibi dik yokuşlu semtlerde, güçlü motorlu ve manevra kabiliyeti yüksek araçlarımızla hizmet.</p>
             </div>
             <div class="feature-card">
                 <i>🏗️</i>
-                <h4>Kentsel Dönüşüm</h4>
-                <p>Yıkım ve yapım aşamasındaki dar sokaklarda mobil asansör kurulumu ile hızlı tahliye ve yerleşme.</p>
+                <h4>Modüler Asansör</h4>
+                <p>Dar sokaklarda ve yüksek katlı binalarda dış cephe asansörü kurarak eşyaları güvenle indiriyoruz.</p>
             </div>
         </div>
 
-        <h2>Zeytinburnu - Ankara Sefer Detayları</h2>
+        <h2>Kağıthane - Ankara Sefer Detayları</h2>
         <table class="info-table">
             <tr>
                 <th>Hizmet Bölgesi</th>
-                <td>Zeytinburnu Merkez, Sahil Yolu, Sanayi Siteleri</td>
+                <td>Kağıthane Merkez, Vadistanbul, Tüm Mahalleler</td>
             </tr>
             <tr>
                 <th>Hizmet Türü</th>
-                <td>Ticari (Tekstil/Deri), Evden Eve, Ofis</td>
+                <td>Ofis, Evden Eve, Parça Eşya</td>
             </tr>
             <tr>
-                <th>Araç Tipi</th>
-                <td>Tır, Kamyon, Askılı Tekstil Aracı</td>
+                <th>Araç Seçenekleri</th>
+                <td>Kamyonet (Dar Sokak), Kamyon, Tır</td>
             </tr>
             <tr>
-                <th>Sigorta</th>
-                <td>Tam Kapsamlı Emtia Sigortası</td>
+                <th>Teslimat</th>
+                <td>Ertesi Gün Teslimat</td>
             </tr>
         </table>
 
         <h2>Sıkça Sorulan Sorular</h2>
         <div class="faq-section">
             <details>
-                <summary>Deri atölyemden Ankara'ya parça mal gönderebilir miyim?</summary>
-                <p>Evet. Parsiyel taşımacılık hizmetimizle, deri ve tekstil ürünlerinizi metreküp bazında fiyatlandırarak ekonomik şekilde Ankara'ya ulaştırıyoruz.</p>
+                <summary>Gültepe'de evim çok dik bir yokuşta, araç çıkabilir mi?</summary>
+                <p>Araç filomuzda yokuş kalkış desteği olan ve bu şartlara uygun güçlü kamyonetlerimiz mevcuttur. Sokağınız çok darsa, gerekirse aktarma yaparak taşıma işlemini gerçekleştiriyoruz.</p>
             </details>
             <details>
-                <summary>Büyükyalı projesinde oturuyorum, taşıma kurallarına uyuyor musunuz?</summary>
-                <p>Kesinlikle. Lüks rezidansların (asansör koruma, personel kimlik bildirimi, saat sınırlaması) tüm prosedürlerine hakim, tecrübeli bir ekibiz.</p>
+                <summary>Vadistanbul'daki ofisimi hafta sonu taşıyabilir misiniz?</summary>
+                <p>Evet. İş kaybı yaşamamanız için Cuma akşamı veya Cumartesi günü yükleme yapıp, Pazartesi sabahı Ankara'daki yeni ofisinizde iş başı yapmanızı sağlıyoruz.</p>
             </details>
         </div>
 
         <div class="cta-wrapper">
-            <h3>Zeytinburnu'ndan Ankara'ya Profesyonel Köprü</h3>
-            <p>Ticaretiniz de eviniz de bizimle güvende.</p>
-            <a href="tel:+905555555555" class="btn-call">📞 HEMEN FİYAT AL</a>
+            <h3>Kağıthane'nin Yükselen Değeriyle Ankara'ya Taşının</h3>
+            <p>Zorlu yokuşlar veya yüksek plazalar fark etmez. Profesyonel çözüm burada.</p>
+            <a href="tel:+905555555555" class="btn-call">📞 EKSPERTİZ & FİYAT AL</a>
         </div>
     </main>
 </div>

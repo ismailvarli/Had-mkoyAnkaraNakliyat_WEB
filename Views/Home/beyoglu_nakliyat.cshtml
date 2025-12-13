@@ -1,14 +1,14 @@
 ﻿@{
     Layout = "_Layout";
-    ViewData["Title"] = "Esenyurt Ankara Nakliyat: Yüksek Kat ve Site Taşıma Uzmanı";
-    ViewData["Description"] = "Esenyurt'tan Ankara'ya asansörlü nakliyat. Kıraç, Haramidere ve Cumhuriyet Mahallesi'ndeki yüksek katlı sitelerden Ankara'ya sigortalı, hızlı ve ekonomik taşıma.";
+    ViewData["Title"] = "Beyoğlu Ankara Nakliyat: Tarihi ve Dar Sokaklarda Uzman Taşıma";
+    ViewData["Description"] = "Beyoğlu'ndan Ankara'ya profesyonel nakliyat. Cihangir, Galata ve Karaköy'ün dar sokaklarında 'Shuttle' araçlarla ev ve ofis taşıma. Tarihi binalara zarar vermeden güvenli hizmet.";
 }
 
 <style>
     :root {
         --primary-color: #d35400; /* Kurumsal Turuncu */
         --secondary-color: #2c3e50; /* Koyu Lacivert */
-        --accent-blue: #2980b9; /* Modern Site Mavisi */
+        --accent-ruby: #c0392b; /* Beyoğlu'nun Nostaljik Tramvay Kırmızısı */
     }
 
     /* GENEL SAYFA YAPISI */
@@ -79,18 +79,18 @@
 
             /* Hover ve Aktif Durum */
             .district-list a:hover,
-            .district-list a[href="/esenyurt-nakliyat"] {
-                background: #ebf5fb; /* Mavi tonlu hover */
-                color: var(--accent-blue);
-                border-left-color: var(--accent-blue);
+            .district-list a[href="/beyoglu-nakliyat"] {
+                background: #fdedec; /* Hafif kırmızı tonlu hover */
+                color: var(--accent-ruby);
+                border-left-color: var(--accent-ruby);
                 padding-left: 20px;
                 font-weight: bold;
             }
 
             .district-list a.active {
-                background: var(--accent-blue);
+                background: var(--accent-ruby);
                 color: #fff !important;
-                border-color: var(--accent-blue);
+                border-color: var(--accent-ruby);
             }
 
     /* SAĞ İÇERİK ALANI */
@@ -124,7 +124,7 @@
         position: absolute;
         bottom: 20px;
         left: 20px;
-        background: rgba(41, 128, 185, 0.9); /* Mavi ton */
+        background: rgba(192, 57, 43, 0.9); /* Kırmızı ton */
         color: #fff;
         padding: 8px 15px;
         border-radius: 4px;
@@ -135,8 +135,8 @@
 
     /* İçerik Kutuları */
     .intro-box {
-        background: #f0f7fb;
-        border-left: 5px solid var(--accent-blue);
+        background: #fdf2f2;
+        border-left: 5px solid var(--accent-ruby);
         padding: 20px;
         font-size: 1.1em;
         line-height: 1.6;
@@ -174,14 +174,14 @@
 
         .feature-card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent-blue);
+            border-color: var(--accent-ruby);
         }
 
         .feature-card i {
             font-size: 32px;
             margin-bottom: 15px;
             display: block;
-            color: var(--accent-blue);
+            color: var(--accent-ruby);
         }
 
         .feature-card h4 {
@@ -246,7 +246,7 @@
             position: absolute;
             right: 20px;
             font-weight: bold;
-            color: var(--accent-blue);
+            color: var(--accent-ruby);
             font-size: 18px;
         }
 
@@ -264,13 +264,13 @@
 
     /* CTA Alanı */
     .cta-wrapper {
-        background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%); /* Mavi-Lacivert Geçiş */
+        background: linear-gradient(135deg, #cb2d3e 0%, #ef473a 100%); /* Canlı Kırmızı Gradient */
         padding: 40px;
         text-align: center;
         border-radius: 12px;
         margin-top: 50px;
         color: white;
-        box-shadow: 0 15px 30px rgba(41, 128, 185, 0.2);
+        box-shadow: 0 15px 30px rgba(203, 45, 62, 0.2);
     }
 
         .cta-wrapper h3 {
@@ -280,7 +280,7 @@
         }
 
         .cta-wrapper p {
-            color: #ebf5fb;
+            color: #fdf2f2;
             font-weight: 500;
             font-size: 16px;
         }
@@ -288,7 +288,7 @@
     .btn-call {
         display: inline-block;
         background: #fff;
-        color: #2980b9;
+        color: #c0392b;
         padding: 16px 50px;
         border-radius: 50px;
         font-weight: bold;
@@ -302,7 +302,7 @@
         .btn-call:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            color: #d35400;
+            color: #2c3e50;
         }
 
     /* MOBİL UYUMLULUK */
@@ -335,12 +335,12 @@
             <li><a href="/besiktas-nakliyat">Beşiktaş Nakliyat</a></li>
             <li><a href="/beykoz-nakliyat">Beykoz Nakliyat</a></li>
             <li><a href="/beylikduzu-nakliyat">Beylikdüzü Nakliyat</a></li>
-            <li><a href="/beyoglu-nakliyat">Beyoğlu Nakliyat</a></li>
+            <li><a href="/beyoglu-nakliyat" class="active">Beyoğlu Nakliyat</a></li>
             <li><a href="/buyukcekmece-nakliyat">Büyükçekmece Nakliyat</a></li>
             <li><a href="/catalca-nakliyat">Çatalca Nakliyat</a></li>
             <li><a href="/cekmekoy-nakliyat">Çekmeköy Nakliyat</a></li>
             <li><a href="/esenler-nakliyat">Esenler Nakliyat</a></li>
-            <li><a href="/esenyurt-nakliyat" class="active">Esenyurt Nakliyat</a></li>
+            <li><a href="/esenyurt-nakliyat">Esenyurt Nakliyat</a></li>
             <li><a href="/eyupsultan-nakliyat">Eyüpsultan Nakliyat</a></li>
             <li><a href="/fatih-nakliyat">Fatih Nakliyat</a></li>
             <li><a href="/gaziosmanpasa-nakliyat">Gaziosmanpaşa Nakliyat</a></li>
@@ -368,78 +368,78 @@
     <main class="content-area">
 
         <div class="hero-image-wrapper">
-            <img src="~/images/esenyurt-ankara-nakliyat.jpg" alt="Esenyurt Yüksek Kat ve Site Nakliyatı" onerror="this.src='https://via.placeholder.com/800x400?text=Esenyurt+Ankara+Nakliyat'">
-            <div class="hero-badge">İstanbul'un En Yüksek Binalarına Çözüm</div>
+            <img src="~/images/beyoglu-ankara-nakliyat.jpg" alt="Beyoğlu Cihangir Ankara Nakliyat" onerror="this.src='https://via.placeholder.com/800x400?text=Beyoglu+Ankara+Nakliyat'">
+            <div class="hero-badge">Beyoğlu'nun Dar Sokaklarında Uzman</div>
         </div>
 
-        <h1>Esenyurt Ankara Nakliyat: Yüksek Kat ve Site Taşıma Uzmanı</h1>
+        <h1>Beyoğlu Ankara Nakliyat: Tarihi ve Dar Sokaklarda Uzman Taşıma</h1>
 
         <div class="intro-box">
-            İstanbul'un en yoğun nüfuslu ve en çok gökdelene sahip ilçesi <strong>Esenyurt'tan Ankara'ya</strong> taşınmak, klasik nakliye yöntemleriyle mümkün değildir. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Cumhuriyet Mahallesi, Kıraç, Haramidere ve Yeşilkent bölgelerindeki 20+ katlı rezidanslarda ve devasa sitelerde, <strong>Yüksek Kat Asansörlerimiz</strong> ve geniş araç filomuzla hizmet veriyoruz.
+            İstanbul'un tarihi dokusunun en yoğun hissedildiği <strong>Beyoğlu'ndan Ankara'ya</strong> taşınmak, dar sokaklar ve asansörsüz eski binalar nedeniyle gerçek bir uzmanlık ister. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Cihangir, Galata, Karaköy ve Taksim bölgesinin zorlu lojistik koşullarına özel çözümlerimizle, eşyalarınızı tarihi dokuya zarar vermeden Ankara'ya taşıyoruz.
         </div>
 
-        <p>Esenyurt'un yoğun nüfus hareketliliğini biliyor, site yönetimlerinin taşınma kurallarına (asansör randevusu, koruma kılıfları, saat sınırlaması) %100 uyum sağlıyoruz. İster 1+0 stüdyo daire, ister 3+1 aile evi olsun; Ankara'ya en güvenli ve ekonomik taşıma çözümünü sunuyoruz.</p>
+        <p>Araç girişinin zor olduğu Cihangir sokaklarında "Shuttle (Aktarma)" yöntemimizle, asansörsüz Rum binalarında ise profesyonel insan gücümüzle hizmet veriyoruz. Ayrıca Karaköy'deki reklam ajansları ve ofisler için hızlı ve sigortalı kurumsal taşımacılık sunuyoruz.</p>
 
-        <h2>Esenyurt Nakliyat Hizmetinde Neden Farklıyız?</h2>
+        <h2>Beyoğlu Nakliyat Hizmetinde Neden Biz?</h2>
         <div class="features-grid">
             <div class="feature-card">
-                <i>🏙️</i>
-                <h4>Yüksek Kat Teknolojisi</h4>
-                <p>Esenyurt'un 30 katlı kuleleri için 25. kata kadar ulaşabilen teleskopik dış cephe asansörlerimizle hasarsız taşıma.</p>
+                <i>🚐</i>
+                <h4>Shuttle Hizmeti</h4>
+                <p>Kamyonun giremediği dar Cihangir ve Galata sokaklarında, küçük araçlarla evinize yanaşıp ana araca aktarma yapıyoruz.</p>
             </div>
             <div class="feature-card">
-                <i>🏢</i>
-                <h4>Site Yönetimi Uyumu</h4>
-                <p>Güvenlik geçişleri, yük asansörü kullanımı ve otopark düzenlemeleri konusunda tecrübeli, üniformalı ekip.</p>
+                <i>🏛️</i>
+                <h4>Tarihi Bina Deneyimi</h4>
+                <p>Yüksek tavanlı, dar merdivenli eski İstanbul apartmanlarında eşya taşıma konusunda eğitimli, hassas ekip.</p>
             </div>
             <div class="feature-card">
-                <i>🚛</i>
-                <h4>Geniş Araç Filosu</h4>
-                <p>Esenyurt'un nüfus yoğunluğuna yanıt verebilecek kapasitede, her boyutta (Kamyonet, Kamyon, Tır) araç seçeneği.</p>
+                <i>💼</i>
+                <h4>Ofis & Ajans Taşıma</h4>
+                <p>Beyoğlu'nun kreatif ofisleri için hafta sonu veya mesai dışı saatlerde, iş kaybı yaşatmayan hızlı nakliye.</p>
             </div>
         </div>
 
-        <h2>Esenyurt - Ankara Sefer Detayları</h2>
+        <h2>Beyoğlu - Ankara Sefer Detayları</h2>
         <table class="info-table">
             <tr>
                 <th>Hizmet Bölgesi</th>
-                <td>Esenyurt, Kıraç, Haramidere, Beylikdüzü Sınırı</td>
+                <td>Beyoğlu (Cihangir, Galata, Karaköy, Taksim) ↔ Ankara</td>
+            </tr>
+            <tr>
+                <th>Lojistik Yöntem</th>
+                <td>Shuttle (Aktarma) veya Doğrudan Yükleme</td>
             </tr>
             <tr>
                 <th>Asansör</th>
-                <td>Teleskopik Mobil Asansör ve Yük Asansörü</td>
+                <td>Cephesi Uygun Binalarda Modüler Asansör</td>
             </tr>
             <tr>
-                <th>Teslimat Süresi</th>
-                <td>Yüklemenin Ertesi Sabahı (24 Saat)</td>
-            </tr>
-            <tr>
-                <th>Fiyat Avantajı</th>
-                <td>Bölgeye Özel Ekonomik Tarifeler</td>
+                <th>Park İzni</th>
+                <td>Belediye ve Emniyet İzinleri Firmamızca Alınır</td>
             </tr>
         </table>
 
         <h2>Sıkça Sorulan Sorular</h2>
         <div class="faq-section">
             <details>
-                <summary>Rezidansın 20. katında oturuyorum, dış asansör ulaşır mı?</summary>
-                <p>Evet. Filomuzda Türkiye'nin en yüksek katlarına ulaşabilen özel asansörler mevcuttur. Eğer binanın konumu uygunsa 25. kata kadar dışarıdan kurulum yapabiliyoruz.</p>
+                <summary>Cihangir'de oturuyorum, sokağımız çok dar. Nasıl taşınacağız?</summary>
+                <p>Endişelenmeyin. Büyük nakliye tırımızı ana caddeye park ediyoruz. Evinize panelvan araçlarımızla (Shuttle) yanaşıp eşyayı alıyor ve tıra aktarıyoruz. Bu işlem Beyoğlu'nda standart prosedürümüzdür.</p>
             </details>
             <details>
-                <summary>Kıraç bölgesinden Ankara'ya sanayi tipi malzeme taşıyor musunuz?</summary>
-                <p>Kesinlikle. Esenyurt ve Kıraç sanayi bölgelerinden Ankara'ya paletli yük, koli ve makine parçası taşımacılığı da yapıyoruz. Faturalı ve sigortalı hizmet sunuyoruz.</p>
+                <summary>Binamız tarihi eser, asansör yok ve merdivenler dar.</summary>
+                <p>Ekibimiz tarihi bina taşımacılığında uzmandır. Eşyalarınızı merdivenlerden hasar görmeyecek şekilde "sırt taşıma" tekniğiyle veya mümkünse dış cephe asansörüyle indiriyoruz.</p>
             </details>
             <details>
-                <summary>Taşınma için site yönetiminden izin almam gerekiyor mu?</summary>
-                <p>Evet, Esenyurt'taki çoğu site randevulu çalışır. Biz size araç plakasını ve personel bilgilerini önceden veriyoruz, siz de yönetimden kolayca izin alıp asansörü rezerve edebiliyorsunuz.</p>
+                <summary>İstiklal Caddesi üzerindeki ofisimizi ne zaman taşıyabilirsiniz?</summary>
+                <p>İstiklal Caddesi araç girişine kapalı olduğu için, belediyenin izin verdiği saat aralıklarında (genellikle gece veya sabah çok erken) özel izinle giriş yapıp taşıma işlemini gerçekleştiriyoruz.</p>
             </details>
         </div>
 
         <div class="cta-wrapper">
-            <h3>Esenyurt'un Zirvesinden Ankara'ya Güvenli İniş</h3>
-            <p>Yüksek katlar gözünüzü korkutmasın. Profesyonel ekibimiz yanınızda.</p>
-            <a href="tel:+905555555555" class="btn-call">📞 HEMEN FİYAT AL</a>
-            <p style="margin-top:15px; font-size:14px;">WhatsApp hattımızdan 7/24 hızlı teklif alabilirsiniz.</p>
+            <h3>Beyoğlu'nun Zorlu Şartlarında Profesyonel Çözüm</h3>
+            <p>Tarihi dokuya saygılı, güvenli ve hızlı nakliyat için bize ulaşın.</p>
+            <a href="tel:+905555555555" class="btn-call">📞 EKSPERTİZ TALEP ET</a>
+            <p style="margin-top:15px; font-size:14px;">WhatsApp hattımızdan sokak fotoğrafı atarak bilgi alabilirsiniz.</p>
         </div>
 
     </main>

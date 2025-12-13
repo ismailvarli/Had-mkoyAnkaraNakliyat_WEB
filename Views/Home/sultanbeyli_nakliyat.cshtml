@@ -1,17 +1,17 @@
 ﻿@{
     Layout = "_Layout";
-    ViewData["Title"] = "Zeytinburnu Ankara Nakliyat: Tekstil, Deri ve Rezidans Taşıma";
-    ViewData["Description"] = "Zeytinburnu'ndan Ankara'ya nakliyat. Tekstil ve deri ürünleri için ticari araçlar, sahil rezidansları ve kentsel dönüşüm bölgeleri için asansörlü ev taşıma.";
+    ViewData["Title"] = "Sultanbeyli Ankara Nakliyat: TEM Otoyolu Yanı Hızlı Lojistik";
+    ViewData["Description"] = "Sultanbeyli'den Ankara'ya ekonomik ve hızlı nakliyat. TEM otoyolu avantajıyla trafiğe girmeden, sigortalı ve asansörlü evden eve taşıma hizmeti.";
 }
 
 <style>
     :root {
         --primary-color: #d35400;
         --secondary-color: #2c3e50;
-        --accent-leather: #8d6e63; /* Deri ve Tekstil Kahvesi */
+        --accent-highway: #34495e; /* Otoyol Asfalt Rengi / Koyu Gri */
     }
 
-    /* CSS Blokları */
+    /* STANDART CSS YAPISI */
     .page-container {
         display: grid;
         grid-template-columns: 300px 1fr;
@@ -76,18 +76,19 @@
             border: 1px solid #f1f1f1;
         }
 
-            .district-list a:hover, .district-list a[href="/zeytinburnu-nakliyat"] {
-                background: #efebe9;
-                color: var(--accent-leather);
-                border-left-color: var(--accent-leather);
+            /* SULTANBEYLİ ÖZEL HOVER */
+            .district-list a:hover, .district-list a[href="/sultanbeyli-nakliyat"] {
+                background: #ebedef;
+                color: var(--accent-highway);
+                border-left-color: var(--accent-highway);
                 padding-left: 20px;
                 font-weight: bold;
             }
 
             .district-list a.active {
-                background: var(--accent-leather);
+                background: var(--accent-highway);
                 color: #fff !important;
-                border-color: var(--accent-leather);
+                border-color: var(--accent-highway);
             }
 
     .content-area h1 {
@@ -120,7 +121,7 @@
         position: absolute;
         bottom: 20px;
         left: 20px;
-        background: rgba(141, 110, 99, 0.9);
+        background: rgba(52, 73, 94, 0.9);
         color: #fff;
         padding: 8px 15px;
         border-radius: 4px;
@@ -130,8 +131,8 @@
     }
 
     .intro-box {
-        background: #efebe9;
-        border-left: 5px solid var(--accent-leather);
+        background: #ebedef;
+        border-left: 5px solid var(--accent-highway);
         padding: 20px;
         font-size: 1.1em;
         line-height: 1.6;
@@ -168,14 +169,14 @@
 
         .feature-card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent-leather);
+            border-color: var(--accent-highway);
         }
 
         .feature-card i {
             font-size: 32px;
             margin-bottom: 15px;
             display: block;
-            color: var(--accent-leather);
+            color: var(--accent-highway);
         }
 
         .feature-card h4 {
@@ -238,7 +239,7 @@
             position: absolute;
             right: 20px;
             font-weight: bold;
-            color: var(--accent-leather);
+            color: var(--accent-highway);
             font-size: 18px;
         }
 
@@ -255,13 +256,13 @@
     }
 
     .cta-wrapper {
-        background: linear-gradient(135deg, #8d6e63 0%, #2c3e50 100%);
+        background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
         padding: 40px;
         text-align: center;
         border-radius: 12px;
         margin-top: 50px;
         color: white;
-        box-shadow: 0 15px 30px rgba(141, 110, 99, 0.2);
+        box-shadow: 0 15px 30px rgba(52, 73, 94, 0.2);
     }
 
         .cta-wrapper h3 {
@@ -271,7 +272,7 @@
         }
 
         .cta-wrapper p {
-            color: #efebe9;
+            color: #ecf0f1;
             font-weight: 500;
             font-size: 16px;
         }
@@ -279,7 +280,7 @@
     .btn-call {
         display: inline-block;
         background: #fff;
-        color: #8d6e63;
+        color: #34495e;
         padding: 16px 50px;
         border-radius: 50px;
         font-weight: bold;
@@ -311,79 +312,80 @@
     <aside class="district-sidebar">
         <h3>📍 Hizmet Bölgelerimiz</h3>
         <ul class="district-list">
-            <li><a href="/uskudar-nakliyat">Üsküdar Nakliyat</a></li>
-            <li><a href="/zeytinburnu-nakliyat" class="active">Zeytinburnu Nakliyat</a></li>
+            <li><a href="/silivri-nakliyat">Silivri Nakliyat</a></li>
+            <li><a href="/sultanbeyli-nakliyat" class="active">Sultanbeyli Nakliyat</a></li>
+            <li><a href="/sultangazi-nakliyat">Sultangazi Nakliyat</a></li>
         </ul>
     </aside>
 
     <main class="content-area">
         <div class="hero-image-wrapper">
-            <img src="~/images/zeytinburnu-ankara-nakliyat.jpg" alt="Zeytinburnu Tekstil ve Rezidans Nakliyat" onerror="this.src='https://via.placeholder.com/800x400?text=Zeytinburnu+Ankara+Nakliyat'">
-            <div class="hero-badge">Tekstil ve Rezidans Lojistiği</div>
+            <img src="~/images/sultanbeyli-ankara-nakliyat.jpg" alt="Sultanbeyli Ankara Hızlı Nakliyat" onerror="this.src='https://via.placeholder.com/800x400?text=Sultanbeyli+Ankara+Nakliyat'">
+            <div class="hero-badge">TEM Otoyolu'na En Yakın Lojistik</div>
         </div>
 
-        <h1>Zeytinburnu Ankara Nakliyat: Tekstil, Deri ve Rezidans Taşıma</h1>
+        <h1>Sultanbeyli Ankara Nakliyat: TEM Otoyolu Yanı Hızlı Lojistik</h1>
 
         <div class="intro-box">
-            İstanbul'un ticaret ve sahil yaşamının birleştiği <strong>Zeytinburnu'ndan Ankara'ya</strong> taşınmak, hem ticari hem de lüks konut tecrübesi ister. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Dericiler Sitesi ve tekstil piyasasının lojistik ihtiyaçlarına yanıt verirken, Büyükyalı ve Fişekhane gibi sahil bandındaki rezidanslarda VIP ev taşıma hizmeti sunuyoruz.
+            Anadolu Yakası'nın lojistik açısından en kilit noktası olan <strong>Sultanbeyli'den Ankara'ya</strong> taşınmak, trafik stresine girmeden yapılabilecek en hızlı işlemdir. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Sultanbeyli'nin TEM otoyolu giriş-çıkışlarına yakınlığını avantaja çeviriyor, eşyalarınızı yüklediğimiz gibi doğrudan Ankara yoluna çıkartıyoruz.
         </div>
 
-        <p>Kentsel dönüşümün yoğun olduğu bölgelerde asansörlü sistemlerimizle, sanayi bölgelerinde ise geniş hacimli tırlarımızla hizmet vererek Zeytinburnu'nun her ihtiyacına profesyonel çözümler üretiyoruz.</p>
+        <p>Bölgedeki yoğun yapılaşma ve dar sokaklar için özel geliştirdiğimiz "Modüler Asansör" sistemimizle, eşyalarınızı bina merdivenlerine değdirmeden, hasarsız bir şekilde araçlarımıza yüklüyoruz. Uygun fiyat politikamızla bütçenizi koruyoruz.</p>
 
-        <h2>Zeytinburnu Nakliyat Hizmetinde Çifte Uzmanlık</h2>
+        <h2>Sultanbeyli Nakliyat Hizmetinde Avantajlarımız</h2>
         <div class="features-grid">
             <div class="feature-card">
-                <i>🧵</i>
-                <h4>Tekstil & Deri Taşıma</h4>
-                <p>Ticari ürünleriniz için askılı, raflı ve kolili özel araç tasarımı. Ankara mağazalarına direkt sevkiyat.</p>
-            </div>
-            <div class="feature-card">
-                <i>🏢</i>
-                <h4>Sahil Rezidansları</h4>
-                <p>Sahil şeridindeki lüks projelerde yönetim prosedürlerine uygun, sessiz ve hasarsız taşıma.</p>
+                <i>🛣️</i>
+                <h4>Hızlı Çıkış & Varış</h4>
+                <p>Şehir içi trafiğine hiç girmeden TEM üzerinden Ankara'ya direkt ve kesintisiz sevkiyat.</p>
             </div>
             <div class="feature-card">
                 <i>🏗️</i>
-                <h4>Kentsel Dönüşüm</h4>
-                <p>Yıkım ve yapım aşamasındaki dar sokaklarda mobil asansör kurulumu ile hızlı tahliye ve yerleşme.</p>
+                <h4>Asansörlü Taşıma</h4>
+                <p>Sultanbeyli'nin yüksek katlı ve dar merdivenli binaları için 18. kata kadar mobil asansör kurulumu.</p>
+            </div>
+            <div class="feature-card">
+                <i>💰</i>
+                <h4>Ekonomik Tarife</h4>
+                <p>Lojistik maliyetlerinin düşük olduğu bu bölgede, müşterilerimize özel indirimli fiyatlar sunuyoruz.</p>
             </div>
         </div>
 
-        <h2>Zeytinburnu - Ankara Sefer Detayları</h2>
+        <h2>Sultanbeyli - Ankara Sefer Detayları</h2>
         <table class="info-table">
             <tr>
                 <th>Hizmet Bölgesi</th>
-                <td>Zeytinburnu Merkez, Sahil Yolu, Sanayi Siteleri</td>
+                <td>Sultanbeyli Merkez, Mimarsinan, Turgut Reis</td>
             </tr>
             <tr>
-                <th>Hizmet Türü</th>
-                <td>Ticari (Tekstil/Deri), Evden Eve, Ofis</td>
+                <th>Taşıma Tipi</th>
+                <td>Evden Eve, Parça Eşya, Ofis</td>
             </tr>
             <tr>
-                <th>Araç Tipi</th>
-                <td>Tır, Kamyon, Askılı Tekstil Aracı</td>
+                <th>Güzergah</th>
+                <td>Anadolu Otoyolu (TEM)</td>
             </tr>
             <tr>
                 <th>Sigorta</th>
-                <td>Tam Kapsamlı Emtia Sigortası</td>
+                <td>AXA Sigorta Güvencesi</td>
             </tr>
         </table>
 
         <h2>Sıkça Sorulan Sorular</h2>
         <div class="faq-section">
             <details>
-                <summary>Deri atölyemden Ankara'ya parça mal gönderebilir miyim?</summary>
-                <p>Evet. Parsiyel taşımacılık hizmetimizle, deri ve tekstil ürünlerinizi metreküp bazında fiyatlandırarak ekonomik şekilde Ankara'ya ulaştırıyoruz.</p>
+                <summary>Sultanbeyli'nin dar sokaklarına büyük araç giriyor mu?</summary>
+                <p>Bazı sokaklar dardır. Bu durumda küçük 'Shuttle' araçlarımızla eşyayı evden alıp, geniş caddede bekleyen tırımıza aktarma yapıyoruz. Bu işlem ücretsizdir.</p>
             </details>
             <details>
-                <summary>Büyükyalı projesinde oturuyorum, taşıma kurallarına uyuyor musunuz?</summary>
-                <p>Kesinlikle. Lüks rezidansların (asansör koruma, personel kimlik bildirimi, saat sınırlaması) tüm prosedürlerine hakim, tecrübeli bir ekibiz.</p>
+                <summary>Ankara'ya giden boş aracınız var mı?</summary>
+                <p>Sultanbeyli lojistik ağımızın merkezinde olduğu için sürekli araç sirkülasyonumuz vardır. "Dönüş Aracı" fırsatlarını yakalayarak çok daha uygun fiyata taşınabilirsiniz.</p>
             </details>
         </div>
 
         <div class="cta-wrapper">
-            <h3>Zeytinburnu'ndan Ankara'ya Profesyonel Köprü</h3>
-            <p>Ticaretiniz de eviniz de bizimle güvende.</p>
+            <h3>Sultanbeyli'den Ankara'ya Zaman Kaybetmeden Taşının</h3>
+            <p>Hızlı, güvenli ve ekonomik çözüm için hemen arayın.</p>
             <a href="tel:+905555555555" class="btn-call">📞 HEMEN FİYAT AL</a>
         </div>
     </main>

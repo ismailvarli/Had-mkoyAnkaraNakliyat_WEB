@@ -1,14 +1,14 @@
 ﻿@{
     Layout = "_Layout";
-    ViewData["Title"] = "Esenyurt Ankara Nakliyat: Yüksek Kat ve Site Taşıma Uzmanı";
-    ViewData["Description"] = "Esenyurt'tan Ankara'ya asansörlü nakliyat. Kıraç, Haramidere ve Cumhuriyet Mahallesi'ndeki yüksek katlı sitelerden Ankara'ya sigortalı, hızlı ve ekonomik taşıma.";
+    ViewData["Title"] = "Esenler Ankara Nakliyat: Otogar Çıkışlı Hızlı ve Ekonomik Taşıma";
+    ViewData["Description"] = "Esenler'den Ankara'ya en uygun fiyatlı nakliyat. Otogar bağlantılı günlük seferler ile parça eşya, koli ve ev eşyası taşımacılığında hızlı ve sigortalı çözüm.";
 }
 
 <style>
     :root {
         --primary-color: #d35400; /* Kurumsal Turuncu */
         --secondary-color: #2c3e50; /* Koyu Lacivert */
-        --accent-blue: #2980b9; /* Modern Site Mavisi */
+        --accent-urban: #7f8c8d; /* Şehir Gri/Beton Tonu */
     }
 
     /* GENEL SAYFA YAPISI */
@@ -79,18 +79,18 @@
 
             /* Hover ve Aktif Durum */
             .district-list a:hover,
-            .district-list a[href="/esenyurt-nakliyat"] {
-                background: #ebf5fb; /* Mavi tonlu hover */
-                color: var(--accent-blue);
-                border-left-color: var(--accent-blue);
+            .district-list a[href="/esenler-nakliyat"] {
+                background: #f0f3f4; /* Gri tonlu hover */
+                color: var(--secondary-color);
+                border-left-color: var(--secondary-color);
                 padding-left: 20px;
                 font-weight: bold;
             }
 
             .district-list a.active {
-                background: var(--accent-blue);
+                background: var(--secondary-color);
                 color: #fff !important;
-                border-color: var(--accent-blue);
+                border-color: var(--secondary-color);
             }
 
     /* SAĞ İÇERİK ALANI */
@@ -124,7 +124,7 @@
         position: absolute;
         bottom: 20px;
         left: 20px;
-        background: rgba(41, 128, 185, 0.9); /* Mavi ton */
+        background: rgba(44, 62, 80, 0.9); /* Koyu gri/lacivert ton */
         color: #fff;
         padding: 8px 15px;
         border-radius: 4px;
@@ -135,8 +135,8 @@
 
     /* İçerik Kutuları */
     .intro-box {
-        background: #f0f7fb;
-        border-left: 5px solid var(--accent-blue);
+        background: #f2f4f6;
+        border-left: 5px solid var(--secondary-color);
         padding: 20px;
         font-size: 1.1em;
         line-height: 1.6;
@@ -174,14 +174,14 @@
 
         .feature-card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent-blue);
+            border-color: var(--secondary-color);
         }
 
         .feature-card i {
             font-size: 32px;
             margin-bottom: 15px;
             display: block;
-            color: var(--accent-blue);
+            color: var(--secondary-color);
         }
 
         .feature-card h4 {
@@ -246,7 +246,7 @@
             position: absolute;
             right: 20px;
             font-weight: bold;
-            color: var(--accent-blue);
+            color: var(--secondary-color);
             font-size: 18px;
         }
 
@@ -264,13 +264,13 @@
 
     /* CTA Alanı */
     .cta-wrapper {
-        background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%); /* Mavi-Lacivert Geçiş */
+        background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%); /* Kurumsal Gri-Mavi Gradient */
         padding: 40px;
         text-align: center;
         border-radius: 12px;
         margin-top: 50px;
         color: white;
-        box-shadow: 0 15px 30px rgba(41, 128, 185, 0.2);
+        box-shadow: 0 15px 30px rgba(44, 62, 80, 0.2);
     }
 
         .cta-wrapper h3 {
@@ -280,7 +280,7 @@
         }
 
         .cta-wrapper p {
-            color: #ebf5fb;
+            color: #ecf0f1;
             font-weight: 500;
             font-size: 16px;
         }
@@ -288,7 +288,7 @@
     .btn-call {
         display: inline-block;
         background: #fff;
-        color: #2980b9;
+        color: #2c3e50;
         padding: 16px 50px;
         border-radius: 50px;
         font-weight: bold;
@@ -339,8 +339,8 @@
             <li><a href="/buyukcekmece-nakliyat">Büyükçekmece Nakliyat</a></li>
             <li><a href="/catalca-nakliyat">Çatalca Nakliyat</a></li>
             <li><a href="/cekmekoy-nakliyat">Çekmeköy Nakliyat</a></li>
-            <li><a href="/esenler-nakliyat">Esenler Nakliyat</a></li>
-            <li><a href="/esenyurt-nakliyat" class="active">Esenyurt Nakliyat</a></li>
+            <li><a href="/esenler-nakliyat" class="active">Esenler Nakliyat</a></li>
+            <li><a href="/esenyurt-nakliyat">Esenyurt Nakliyat</a></li>
             <li><a href="/eyupsultan-nakliyat">Eyüpsultan Nakliyat</a></li>
             <li><a href="/fatih-nakliyat">Fatih Nakliyat</a></li>
             <li><a href="/gaziosmanpasa-nakliyat">Gaziosmanpaşa Nakliyat</a></li>
@@ -368,79 +368,80 @@
     <main class="content-area">
 
         <div class="hero-image-wrapper">
-            <img src="~/images/esenyurt-ankara-nakliyat.jpg" alt="Esenyurt Yüksek Kat ve Site Nakliyatı" onerror="this.src='https://via.placeholder.com/800x400?text=Esenyurt+Ankara+Nakliyat'">
-            <div class="hero-badge">İstanbul'un En Yüksek Binalarına Çözüm</div>
+            <img src="~/images/esenler-ankara-nakliyat.jpg" alt="Esenler Otogar Ankara Nakliyat" onerror="this.src='https://via.placeholder.com/800x400?text=Esenler+Ankara+Nakliyat'">
+            <div class="hero-badge">Esenler Otogar Çıkışlı Hızlı Seferler</div>
         </div>
 
-        <h1>Esenyurt Ankara Nakliyat: Yüksek Kat ve Site Taşıma Uzmanı</h1>
+        <h1>Esenler Ankara Nakliyat: Otogar Çıkışlı Hızlı ve Ekonomik Taşıma</h1>
 
         <div class="intro-box">
-            İstanbul'un en yoğun nüfuslu ve en çok gökdelene sahip ilçesi <strong>Esenyurt'tan Ankara'ya</strong> taşınmak, klasik nakliye yöntemleriyle mümkün değildir. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Cumhuriyet Mahallesi, Kıraç, Haramidere ve Yeşilkent bölgelerindeki 20+ katlı rezidanslarda ve devasa sitelerde, <strong>Yüksek Kat Asansörlerimiz</strong> ve geniş araç filomuzla hizmet veriyoruz.
+            İstanbul'un en yoğun yerleşimlerinden biri olan ve ulaşımın merkezi sayılan <strong>Esenler'den Ankara'ya</strong> taşınmak, doğru organizasyonla çok uygun maliyetlere yapılabilir. <strong>Hadımköy Ankara Nakliyat</strong> olarak; 15 Temmuz Demokrasi Otogarı'na (Esenler Otogarı) yakınlığımızı avantaja çeviriyor, Esenler'in her mahallesinden Ankara'ya "Hızlı, Ekonomik ve Güvenli" nakliyat hizmeti sunuyoruz.
         </div>
 
-        <p>Esenyurt'un yoğun nüfus hareketliliğini biliyor, site yönetimlerinin taşınma kurallarına (asansör randevusu, koruma kılıfları, saat sınırlaması) %100 uyum sağlıyoruz. İster 1+0 stüdyo daire, ister 3+1 aile evi olsun; Ankara'ya en güvenli ve ekonomik taşıma çözümünü sunuyoruz.</p>
+        <p>Gerek komple ev taşımacılığı, gerekse otogardan koli/parça eşya gönderimi konusunda uzmanız. Esenler'in yoğun trafiğinde vakit kaybetmeden, otoban bağlantılarını kullanarak eşyalarınızı en kısa sürede Ankara'ya ulaştırıyoruz.</p>
 
-        <h2>Esenyurt Nakliyat Hizmetinde Neden Farklıyız?</h2>
+        <h2>Esenler Nakliyat Hizmetinde Lojistik Avantajlar</h2>
         <div class="features-grid">
             <div class="feature-card">
-                <i>🏙️</i>
-                <h4>Yüksek Kat Teknolojisi</h4>
-                <p>Esenyurt'un 30 katlı kuleleri için 25. kata kadar ulaşabilen teleskopik dış cephe asansörlerimizle hasarsız taşıma.</p>
+                <i>🚌</i>
+                <h4>Otogar Lojistiği</h4>
+                <p>Otogara yakınlığımız sayesinde acil koli, çeyiz veya parça eşyalarınızı bekletmeden Ankara araçlarına aktarıyoruz.</p>
             </div>
             <div class="feature-card">
-                <i>🏢</i>
-                <h4>Site Yönetimi Uyumu</h4>
-                <p>Güvenlik geçişleri, yük asansörü kullanımı ve otopark düzenlemeleri konusunda tecrübeli, üniformalı ekip.</p>
+                <i>💰</i>
+                <h4>Ekonomik Fiyat</h4>
+                <p>Araç sirkülasyonumuzun yoğun olduğu bu bölgede, "Dönüş Aracı" fırsatlarıyla bütçe dostu fiyatlar sunuyoruz.</p>
             </div>
             <div class="feature-card">
-                <i>🚛</i>
-                <h4>Geniş Araç Filosu</h4>
-                <p>Esenyurt'un nüfus yoğunluğuna yanıt verebilecek kapasitede, her boyutta (Kamyonet, Kamyon, Tır) araç seçeneği.</p>
+                <i>⚡</i>
+                <h4>Hızlı Teslimat</h4>
+                <p>Esenler - Ankara hattında günlük seferlerimizle eşyalarınızı (hava/yol durumuna göre) 24 saat içinde teslim ediyoruz.</p>
             </div>
         </div>
 
-        <h2>Esenyurt - Ankara Sefer Detayları</h2>
+        <h2>Esenler - Ankara Sefer Detayları</h2>
         <table class="info-table">
             <tr>
                 <th>Hizmet Bölgesi</th>
-                <td>Esenyurt, Kıraç, Haramidere, Beylikdüzü Sınırı</td>
+                <td>Esenler (Tüm Mahalleler) ve Otogar ↔ Ankara</td>
             </tr>
             <tr>
-                <th>Asansör</th>
-                <td>Teleskopik Mobil Asansör ve Yük Asansörü</td>
+                <th>Taşıma Tipi</th>
+                <td>Ev Eşyası, Parça Eşya, Ticari Koli</td>
             </tr>
             <tr>
-                <th>Teslimat Süresi</th>
-                <td>Yüklemenin Ertesi Sabahı (24 Saat)</td>
+                <th>Araç Seçenekleri</th>
+                <td>Kamyonet, Kamyon, Tır</td>
             </tr>
             <tr>
-                <th>Fiyat Avantajı</th>
-                <td>Bölgeye Özel Ekonomik Tarifeler</td>
+                <th>Fiyat Politikası</th>
+                <td>Sabit Fiyat (Ekstra Ücret Yok)</td>
             </tr>
         </table>
 
         <h2>Sıkça Sorulan Sorular</h2>
         <div class="faq-section">
             <details>
-                <summary>Rezidansın 20. katında oturuyorum, dış asansör ulaşır mı?</summary>
-                <p>Evet. Filomuzda Türkiye'nin en yüksek katlarına ulaşabilen özel asansörler mevcuttur. Eğer binanın konumu uygunsa 25. kata kadar dışarıdan kurulum yapabiliyoruz.</p>
+                <summary>Otogar'dan Ankara'ya koli göndermek istiyorum, alıyor musunuz?</summary>
+                <p>Evet. Otobüs bagajıyla uğraşmak istemeyen müşterilerimiz için, kapıdan alıp kapıya teslim (veya otogar çevresinden teslim alma) şeklinde parça yük taşıma hizmetimiz vardır.</p>
             </details>
             <details>
-                <summary>Kıraç bölgesinden Ankara'ya sanayi tipi malzeme taşıyor musunuz?</summary>
-                <p>Kesinlikle. Esenyurt ve Kıraç sanayi bölgelerinden Ankara'ya paletli yük, koli ve makine parçası taşımacılığı da yapıyoruz. Faturalı ve sigortalı hizmet sunuyoruz.</p>
+                <summary>Esenler'in dar sokaklarına büyük kamyon giriyor mu?</summary>
+                <p>Bazı sokaklar dar olabiliyor. Bu durumda 'Aktarma (Shuttle)' yöntemini kullanıyoruz. Küçük aracımızla eşyayı evden alıp, geniş caddede bekleyen ana kamyonumuza yüklüyoruz. Ücretsizdir.</p>
             </details>
             <details>
-                <summary>Taşınma için site yönetiminden izin almam gerekiyor mu?</summary>
-                <p>Evet, Esenyurt'taki çoğu site randevulu çalışır. Biz size araç plakasını ve personel bilgilerini önceden veriyoruz, siz de yönetimden kolayca izin alıp asansörü rezerve edebiliyorsunuz.</p>
+                <summary>Fiyatlarınız neden uygun?</summary>
+                <p>Esenler lojistik ağımızın merkezinde olduğu için araçlarımız sürekli bu bölgededir. Boş dönüş yapmak yerine uygun fiyatla eşya taşıyarak hem size hem bize kazandırıyoruz.</p>
             </details>
         </div>
 
         <div class="cta-wrapper">
-            <h3>Esenyurt'un Zirvesinden Ankara'ya Güvenli İniş</h3>
-            <p>Yüksek katlar gözünüzü korkutmasın. Profesyonel ekibimiz yanınızda.</p>
-            <a href="tel:+905555555555" class="btn-call">📞 HEMEN FİYAT AL</a>
-            <p style="margin-top:15px; font-size:14px;">WhatsApp hattımızdan 7/24 hızlı teklif alabilirsiniz.</p>
+            <h3>Esenler'den Ankara'ya En Uygun Fiyatla Taşının!</h3>
+            <p>Otogar karmaşasına girmeden, profesyonel hizmet alın.</p>
+            <a href="tel:+905555555555" class="btn-call">📞 CANLI DESTEK & FİYAT AL</a>
+            <p style="margin-top:15px; font-size:14px;">WhatsApp hattımız üzerinden 7/24 hızlı fiyat alabilirsiniz.</p>
         </div>
 
     </main>
 </div>
+
