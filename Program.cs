@@ -83,6 +83,32 @@ namespace HadımkoyAnkaraNakliyat_WEB
                 }
             });
 
+            app.Use(async (context, next) =>
+            {
+                var path = context.Request.Path.Value;
+
+                // YÖNLENDİRME SÖZLÜĞÜ: Eski URL -> Yeni URL
+                // Buraya tüm eski URL'leri ve yeni karşılıklarını ekleyin.
+                var redirects = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+    {
+        // 1. ANA HİZMETLER
+        {"/home/istanbul_ankara_nakliyat", "/istanbul-ankara-nakliyat"},
+        {"/home/zeytinburnu_nakliyat", "/zeytinburnu-nakliyat"},
+        {"/home/istanbul_nakliyat", "/istanbul-nakliyat"},
+        {"/home/esenyurt_nakliyat", "/esenyurt-nakliyat"},
+        {"/home/ankara_nakliyat", "/ankara-nakliyat"},
+        // Örn: {"/home/eski_sayfa", "/yeni-sayfa"}
+    };
+
+                if (redirects.TryGetValue(path, out var newUrl))
+                {
+                    // 301 Kalıcı Yönlendirme
+                    context.Response.Redirect(newUrl, permanent: true);
+                    return;
+                }
+
+                await next();
+            });
             app.UseRouting();
             app.UseAuthorization();
 
