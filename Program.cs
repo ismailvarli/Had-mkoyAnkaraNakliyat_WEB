@@ -111,8 +111,19 @@ Sitemap: https://www.hadimkoyankaranakliyat.com/sitemap.xml", "text/plain"));
         $"{host}/home/iletisim",
         $"{host}/home/fiyat_al",
         $"{host}/home/hizmetlerimiz",
+        $"{host}/home/hizmet_turleri",
         $"{host}/home/blog",
-        
+        $"{host}/home/iletisim",
+        $"{host}/home/nakliyat_hizmet_fiyati",
+
+        //blog
+        $"{host}/home/istanbul_ankara_nakliyat_fiyatlari_2025_guncel_rehber",
+        $"{host}/home/parsiyel_nakliyat_nedir_istanbul_ankara_arasinda__avantajlari",
+        $"{host}/home/evden_eve_nakliyat_oncesi_hazirlik_rehberi",
+        $"{host}/home/asansorlu_nakliyatin_istanbul_ankara_tasimalarinda_sagladigi_kolayliklar",
+        $"{host}/home/sigortali_nakliyat_esyalarinizi_guvence_altina_alin",
+
+
         // Hizmetler (URL'ler middleware ile uyumlu, küçük harfli)        
         $"{host}/home/evden_eve_nakliyat",
         $"{host}/home/ambar_nakliyat",
@@ -127,6 +138,8 @@ Sitemap: https://www.hadimkoyankaranakliyat.com/sitemap.xml", "text/plain"));
         $"{host}/home/istanbul_ankara_kamyonet_nakliyat",
         $"{host}/home/istanbul_ankara_ambar_nakliyat",
         $"{host}/home/istanbul_ankara_parsiyel_nakliyat",
+        $"{host}/home/istanbul_ankara_sehirlerarasi_nakliyat",
+        $"{host}/home/istanbul_ankara_ceyiz_nakliyat",
         $"{host}/home/istanbul_izmir_nakliyat",
         $"{host}/home/istanbul_bursa_nakliyat",
         $"{host}/home/istanbul_eskisehir_nakliyat",
@@ -135,10 +148,21 @@ Sitemap: https://www.hadimkoyankaranakliyat.com/sitemap.xml", "text/plain"));
           $"{host}/home/hadimkoy_ankara_nakliyat",
           $"{host}/home/sincan_istanbul_nakliyat",
           $"{host}/home/beylikduzu_ankara_nakliyat",
+          $"{host}/home/ikitelli_ankara_nakliyat",
+          $"{host}/home/catalca_ankara_nakliyat",
+          $"{host}/home/zeytinburnu_ankara_nakliyat",
+          $"{host}/home/bayrampasa_ankara_nakliyat",
+          $"{host}/home/ostim_istanbul_nakliyat",
+          $"{host}/home/yenimahalle_istanbul_nakliyat",
+          $"{host}/home/kazan_istanbul_nakliyat",
+          $"{host}/home/temelli_istanbul_nakliyat",
+          $"{host}/home/gebze_ankara_nakliyat",
         //şehir bazlı taşımacılık
+        $"{host}/home/sehir_bazli_tasimacilik",
         $"{host}/ankara-nakliyat",
         $"{host}/istanbul-nakliyat",
         // İlçe Bazlı Taşımacılık (39 İlçe - Tam Liste)
+        $"{host}/home/ilce_bazli_tasimacilik",
         $"{host}/adalar-nakliyat",
         $"{host}/arnavutkoy-nakliyat",
         $"{host}/atasehir-nakliyat",

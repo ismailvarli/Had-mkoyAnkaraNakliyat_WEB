@@ -1,7 +1,446 @@
-﻿
-@{
-    ViewData["Title"] = "adalar_nakliyat";
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Adalar Ankara Nakliyat: Deniz ve Kara Entegreli Özel Taşıma";
+    ViewData["Description"] = "Adalar'dan Ankara'ya profesyonel nakliyat. Büyükada, Heybeliada, Burgazada ve Kınalıada'dan çıkarma gemisi ve elektrikli araçlarla evden eve nakliye.";
 }
 
-<h1>adalar_nakliyat</h1>
+<style>
+    :root {
+        --primary-color: #d35400; /* Kurumsal Turuncu */
+        --secondary-color: #2c3e50; /* Koyu Lacivert */
+        --accent-island: #1abc9c; /* Adalar Denizi Turkuazı */
+    }
 
+    /* GENEL SAYFA YAPISI */
+    .page-container {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* SOL MENÜ (SIDEBAR) */
+    .district-sidebar {
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 20px;
+        position: sticky;
+        top: 20px;
+        height: fit-content;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    }
+
+        .district-sidebar h3 {
+            color: var(--primary-color);
+            font-size: 18px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            margin-top: 0;
+        }
+
+    .district-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        max-height: 600px;
+        overflow-y: auto;
+    }
+
+        .district-list::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .district-list::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 3px;
+        }
+
+        .district-list li {
+            margin-bottom: 5px;
+        }
+
+        .district-list a {
+            display: block;
+            padding: 10px 15px;
+            color: #555;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s;
+            border-left: 3px solid transparent;
+            font-size: 14px;
+            background: #fdfdfd;
+            border: 1px solid #f1f1f1;
+        }
+
+            /* Hover ve Aktif Durum */
+            .district-list a:hover,
+            .district-list a[href="/adalar-nakliyat"] {
+                background: #e0f2f1; /* Turkuazımsı hover */
+                color: var(--accent-island);
+                border-left-color: var(--accent-island);
+                padding-left: 20px;
+                font-weight: bold;
+            }
+
+            .district-list a.active {
+                background: var(--accent-island);
+                color: #fff !important;
+                border-color: var(--accent-island);
+            }
+
+    /* SAĞ İÇERİK ALANI */
+    .content-area h1 {
+        font-size: 30px;
+        color: var(--secondary-color);
+        margin-bottom: 20px;
+        line-height: 1.3;
+    }
+
+    .hero-image-wrapper {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .hero-image-wrapper:hover img {
+            transform: scale(1.02);
+        }
+
+    .hero-badge {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        background: rgba(26, 188, 156, 0.9); /* Turkuaz ton */
+        color: #fff;
+        padding: 8px 15px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 600;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    /* İçerik Kutuları */
+    .intro-box {
+        background: #e0f2f1;
+        border-left: 5px solid var(--accent-island);
+        padding: 20px;
+        font-size: 1.1em;
+        line-height: 1.6;
+        color: #444;
+        margin-bottom: 30px;
+        border-radius: 0 8px 8px 0;
+    }
+
+    h2 {
+        color: var(--secondary-color);
+        font-size: 24px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+    }
+
+    /* Özellik Gridleri */
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+    }
+
+    .feature-card {
+        background: #fff;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        border: 1px solid #eee;
+        text-align: center;
+        transition: transform 0.3s;
+    }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-island);
+        }
+
+        .feature-card i {
+            font-size: 32px;
+            margin-bottom: 15px;
+            display: block;
+            color: var(--accent-island);
+        }
+
+        .feature-card h4 {
+            color: var(--secondary-color);
+            margin: 0 0 10px 0;
+            font-size: 18px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+    /* Tablo */
+    .info-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+        .info-table th {
+            background: var(--secondary-color);
+            color: #fff;
+            padding: 15px;
+            text-align: left;
+            width: 35%;
+        }
+
+        .info-table td {
+            background: #fff;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            color: #555;
+        }
+
+    /* SSS (Accordion) */
+    details {
+        background: #fff;
+        margin-bottom: 10px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+    }
+
+    summary {
+        padding: 15px 20px;
+        font-weight: 600;
+        cursor: pointer;
+        background: #f9f9f9;
+        list-style: none;
+        position: relative;
+    }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            font-weight: bold;
+            color: var(--accent-island);
+            font-size: 18px;
+        }
+
+    details[open] summary::after {
+        content: '-';
+    }
+
+    details p {
+        padding: 20px;
+        color: #666;
+        margin: 0;
+        border-top: 1px solid #eee;
+        line-height: 1.6;
+    }
+
+    /* CTA Alanı */
+    .cta-wrapper {
+        background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%); /* Turkuaz Gradient */
+        padding: 40px;
+        text-align: center;
+        border-radius: 12px;
+        margin-top: 50px;
+        color: white;
+        box-shadow: 0 15px 30px rgba(22, 160, 133, 0.2);
+    }
+
+        .cta-wrapper h3 {
+            color: white;
+            margin-top: 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .cta-wrapper p {
+            color: #e0f2f1;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+    .btn-call {
+        display: inline-block;
+        background: #fff;
+        color: #16a085;
+        padding: 16px 50px;
+        border-radius: 50px;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 20px;
+        margin-top: 25px;
+        transition: all 0.3s;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+        .btn-call:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            color: #d35400;
+        }
+
+    /* MOBİL UYUMLULUK */
+    @@media (max-width: 768px) {
+        .page-container {
+            grid-template-columns: 1fr;
+        }
+
+        .district-sidebar {
+            order: 2;
+            margin-top: 30px;
+        }
+    }
+</style>
+
+<div class="page-container">
+
+    <aside class="district-sidebar">
+        <h3>📍 Hizmet Bölgelerimiz</h3>
+        <ul class="district-list">
+            <li><a href="/adalar-nakliyat" class="active">Adalar Nakliyat</a></li>
+            <li><a href="/arnavutkoy-nakliyat">Arnavutköy Nakliyat</a></li>
+            <li><a href="/atasehir-nakliyat">Ataşehir Nakliyat</a></li>
+            <li><a href="/avcilar-nakliyat">Avcılar Nakliyat</a></li>
+            <li><a href="/bagcilar-nakliyat">Bağcılar Nakliyat</a></li>
+            <li><a href="/bahcelievler-nakliyat">Bahçelievler Nakliyat</a></li>
+            <li><a href="/bakirkoy-nakliyat">Bakırköy Nakliyat</a></li>
+            <li><a href="/basaksehir-nakliyat">Başakşehir Nakliyat</a></li>
+            <li><a href="/bayrampasa-nakliyat">Bayrampaşa Nakliyat</a></li>
+            <li><a href="/besiktas-nakliyat">Beşiktaş Nakliyat</a></li>
+            <li><a href="/beykoz-nakliyat">Beykoz Nakliyat</a></li>
+            <li><a href="/beylikduzu-nakliyat">Beylikdüzü Nakliyat</a></li>
+            <li><a href="/beyoglu-nakliyat">Beyoğlu Nakliyat</a></li>
+            <li><a href="/buyukcekmece-nakliyat">Büyükçekmece Nakliyat</a></li>
+            <li><a href="/catalca-nakliyat">Çatalca Nakliyat</a></li>
+            <li><a href="/cekmekoy-nakliyat">Çekmeköy Nakliyat</a></li>
+            <li><a href="/esenler-nakliyat">Esenler Nakliyat</a></li>
+            <li><a href="/esenyurt-nakliyat">Esenyurt Nakliyat</a></li>
+            <li><a href="/eyupsultan-nakliyat">Eyüpsultan Nakliyat</a></li>
+            <li><a href="/fatih-nakliyat">Fatih Nakliyat</a></li>
+            <li><a href="/gaziosmanpasa-nakliyat">Gaziosmanpaşa Nakliyat</a></li>
+            <li><a href="/gungoren-nakliyat">Güngören Nakliyat</a></li>
+            <li><a href="/kadikoy-nakliyat">Kadıköy Nakliyat</a></li>
+            <li><a href="/kagithane-nakliyat">Kağıthane Nakliyat</a></li>
+            <li><a href="/kartal-nakliyat">Kartal Nakliyat</a></li>
+            <li><a href="/kucukcekmece-nakliyat">Küçükçekmece Nakliyat</a></li>
+            <li><a href="/maltepe-nakliyat">Maltepe Nakliyat</a></li>
+            <li><a href="/pendik-nakliyat">Pendik Nakliyat</a></li>
+            <li><a href="/sancaktepe-nakliyat">Sancaktepe Nakliyat</a></li>
+            <li><a href="/sariyer-nakliyat">Sarıyer Nakliyat</a></li>
+            <li><a href="/silivri-nakliyat">Silivri Nakliyat</a></li>
+            <li><a href="/sultanbeyli-nakliyat">Sultanbeyli Nakliyat</a></li>
+            <li><a href="/sultangazi-nakliyat">Sultangazi Nakliyat</a></li>
+            <li><a href="/sile-nakliyat">Şile Nakliyat</a></li>
+            <li><a href="/sisli-nakliyat">Şişli Nakliyat</a></li>
+            <li><a href="/tuzla-nakliyat">Tuzla Nakliyat</a></li>
+            <li><a href="/umraniye-nakliyat">Ümraniye Nakliyat</a></li>
+            <li><a href="/uskudar-nakliyat">Üsküdar Nakliyat</a></li>
+            <li><a href="/zeytinburnu-nakliyat">Zeytinburnu Nakliyat</a></li>
+        </ul>
+    </aside>
+
+    <main class="content-area">
+
+        <div class="hero-image-wrapper">
+            <img src="~/images/adalar-ankara-nakliyat.jpg" alt="Adalar Büyükada Ankara Nakliyat" onerror="this.src='https://via.placeholder.com/800x400?text=Adalar+Deniz+Entegreli+Nakliyat'">
+            <div class="hero-badge">Deniz ve Kara Entegreli Özel Lojistik</div>
+        </div>
+
+        <h1>Adalar Ankara Nakliyat: Deniz ve Kara Entegreli Özel Taşıma</h1>
+
+        <div class="intro-box">
+            İstanbul'un en özel ve lojistik açıdan en zorlu bölgesi olan <strong>Adalar'dan (Prens Adaları) Ankara'ya</strong> taşınmak, sıradan bir nakliye operasyonu değildir. <strong>Hadımköy Ankara Nakliyat</strong> olarak; Büyükada, Heybeliada, Burgazada ve Kınalıada'daki araç yasağı, gemi tarifeleri ve iskele lojistiğini sizin adınıza yönetiyoruz.
+        </div>
+
+        <p>Adalar'da motorlu taşıt trafiğine kapalı alanlarda, belediye onaylı elektrikli araçlarımızla evinizden iskeleye taşıma yapıyor, ardından çıkarma gemisi veya tarifeli seferlerle anakaraya (Maltepe/Kartal) geçirip tırlarımıza yüklüyoruz. Bu süreci "Anahtar Teslim" yöneterek sizi stresten kurtarıyoruz.</p>
+
+        <h2>Adalar Nakliyat Hizmetinde Lojistik Farkımız</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i>🚢</i>
+                <h4>Deniz Lojistiği</h4>
+                <p>Ada iskelesinden anakaraya geçiş sürecinde gemi/motor ayarlamaları ve iskele vergileri tarafımızca yönetilir.</p>
+            </div>
+            <div class="feature-card">
+                <i>🛺</i>
+                <h4>Elektrikli Araçlar</h4>
+                <p>Adalar'ın dar sokaklarında ve araç yasağı olan bölgelerde sessiz, izinli elektrikli nakliye araçları kullanılır.</p>
+            </div>
+            <div class="feature-card">
+                <i>📦</i>
+                <h4>Butik Paketleme</h4>
+                <p>Eşyalarınız gemi ve araç arasında aktarma göreceği için "Çift Katmanlı" özel koruyucu ambalajlama yapılır.</p>
+            </div>
+        </div>
+
+        <h2>Adalar - Ankara Sefer Detayları</h2>
+        <table class="info-table">
+            <tr>
+                <th>Hizmet Bölgesi</th>
+                <td>Büyükada, Heybeliada, Burgazada, Kınalıada</td>
+            </tr>
+            <tr>
+                <th>Taşıma Yöntemi</th>
+                <td>Elektrikli Araç + Gemi + Tır</td>
+            </tr>
+            <tr>
+                <th>Aktarma Noktası</th>
+                <td>Maltepe veya Kartal İskelesi</td>
+            </tr>
+            <tr>
+                <th>Teslimat Süresi</th>
+                <td>Hava Koşullarına Bağlı (Ortalama 2 Gün)</td>
+            </tr>
+        </table>
+
+        <h2>Sıkça Sorulan Sorular</h2>
+        <div class="faq-section">
+            <details>
+                <summary>Büyükada'daki evime kamyon gelemiyor, eşyalar iskeleye nasıl inecek?</summary>
+                <p>Adalar'da motorlu araç yasağı vardır. Evinizden eşyaları almak için belediye izinli elektrikli nakliye araçlarımızı veya "pırpır" adı verilen küçük araçları kullanıyoruz. Ekibimiz eşyaları iskeleye kadar indirir.</p>
+            </details>
+            <details>
+                <summary>Gemi ücretleri fiyata dahil mi?</summary>
+                <p>Evet. Verdiğimiz fiyat teklifi "Anahtar Teslim"dir. Elektrikli araç, hamaliye, iskele vergileri ve gemi geçiş ücretleri fiyata dahildir. Sürpriz ek ücret çıkarılmaz.</p>
+            </details>
+            <details>
+                <summary>Hava durumu taşınmayı etkiler mi?</summary>
+                <p>Evet, deniz ulaşımı olduğu için şiddetli lodos veya fırtınada seferler iptal edilebilir. Bu durumda sizi önceden bilgilendirip en yakın güvenli tarihe planlama yapıyoruz.</p>
+            </details>
+        </div>
+
+        <div class="cta-wrapper">
+            <h3>Adalar'ın Zorlu Lojistiğini Bize Bırakın</h3>
+            <p>Denizden karaya, oradan Ankara'ya güvenli köprü kuruyoruz.</p>
+            <a href="tel:+905555555555" class="btn-call">📞 ÖZEL FİYAT AL</a>
+            <p style="margin-top:15px; font-size:14px;">WhatsApp hattımızdan ada ve konum bilgisi paylaşarak hızlı teklif alabilirsiniz.</p>
+        </div>
+
+    </main>
+</div>
