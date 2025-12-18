@@ -3,7 +3,31 @@
     ViewData["Title"] = "Adalar Ankara Nakliyat: Deniz ve Kara Entegreli Özel Taşıma";
     ViewData["Description"] = "Adalar'dan Ankara'ya profesyonel nakliyat. Büyükada, Heybeliada, Burgazada ve Kınalıada'dan çıkarma gemisi ve elektrikli araçlarla evden eve nakliye.";
 }
-
+<script type="application/ld+json">
+@{
+    @Html.Raw(@"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""Service"",
+      ""serviceType"": ""Evden Eve Nakliyat"",
+      ""name"": ""Adalar'dan Ankara'ya ve Adalar'da Taşımacılık Hizmeti"",
+      ""provider"": {
+        ""@type"": ""LocalBusiness"",
+        ""name"": ""Hadımköy Ankara Nakliyat""
+      },
+      ""areaServed"": {
+        ""@type"": ""City"",
+        ""name"": ""Adalar, İstanbul""
+      },
+      ""description"": ""Büyükada, Heybeliada ve Kınalıada'dan karayolu entegreli, sigortalı ve elektrikli araçlarla şehirlerarası nakliyat hizmeti."",
+      ""offers"": {
+          ""@type"": ""Offer"",
+          ""priceCurrency"": ""TRY"",
+          ""price"": ""5000"", // Ortalama başlangıç fiyatı (isteğe bağlı)
+          ""availability"": ""https://schema.org/InStock""
+      }
+    }")
+}
+</script>
 <style>
     :root {
         --primary-color: #d35400; /* Kurumsal Turuncu */

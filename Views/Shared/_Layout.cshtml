@@ -3,6 +3,49 @@
 
 <head>
 
+    @{
+        // C# tarafında JSON verisini hazırlıyoruz (Editör hatasını önlemek için en temiz yol)
+        var localBusinessJson = @"{
+        ""@context"": ""https://schema.org"",
+        ""@type"": ""LocalBusiness"",
+        ""name"": ""Hadımköy Ankara Nakliyat"",
+        ""image"": ""https://www.hadimkoyankaranakliyat.com/assets/images/logo.png"",
+        ""url"": ""https://www.hadimkoyankaranakliyat.com"",
+        ""telephone"": ""+90 538 040 18 34"",
+        ""address"": {
+        ""@type"": ""PostalAddress"",
+        ""streetAddress"": ""Çırpıcı Modabağ 5. Sokak No:1"",
+        ""addressLocality"": ""Zeytinburnu"",
+        ""addressRegion"": ""İstanbul"",
+        ""postalCode"": ""34020"",
+        ""addressCountry"": ""TR""
+        },
+        ""priceRange"": ""$$$"",
+        ""openingHoursSpecification"": [
+        {
+        ""@type"": ""OpeningHoursSpecification"",
+        ""dayOfWeek"": [""Monday"", ""Tuesday"", ""Wednesday"", ""Thursday"", ""Friday"", ""Saturday""],
+        ""opens"": ""08:00"",
+        ""closes"": ""20:00""
+        },
+        {
+        ""@type"": ""OpeningHoursSpecification"",
+        ""dayOfWeek"": ""Sunday"",
+        ""opens"": ""09:00"",
+        ""closes"": ""22:00""
+        }
+        ],
+        ""areaServed"": [
+        { ""@type"": ""State"", ""name"": ""İstanbul"" },
+        { ""@type"": ""State"", ""name"": ""Ankara"" }
+        ],
+        ""hasMap"": ""https://maps.google.com/?q=Zeytinburnu+Hadimkoy+Ankara+Nakliyat""
+        }";
+    }
+
+    <script type="application/ld+json">
+        @Html.Raw(localBusinessJson)
+    </script>
     <!-- Google tag (gtag.js) – TEK KEZ -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17507094342"></script>
     <script>
@@ -67,7 +110,7 @@
     <link rel="stylesheet" href="~/assets/css/style.css" />
     <link rel="stylesheet" href="~/assets/css/responsive.css" />
     <link rel="manifest" href="~/assets/images/favicons/site.webmanifest" />
-    
+
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
@@ -145,17 +188,14 @@
 
         /* Mobilde biraz küçült */
         @@media (max-width: 600px) {
-            :root
-
-        {
-            --fab-size: 52px;
-            --fab-gap: 10px;
-        }
-
+            :root {
+                --fab-size: 52px;
+                --fab-gap: 10px;
+            }
         }
     </style>
 
-    
+
 </head>
 
 <body>
@@ -207,7 +247,7 @@
                                             <a href="https://x.com/hadimkoyankanak"><span class="icon-twitter1"></span></a>
                                             <a href="https://www.instagram.com/hadimkoyankaranakliyat/"><span class="icon-instagram"></span></a>
                                             <a href="https://www.linkedin.com/in/had%C4%B1mk%C3%B6y-ankara-nakliyat-3b1208376/"><span class="icon-linkedin"></span></a>
-                                        </div> 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -218,7 +258,7 @@
                                         <div class="main-header-one__bottom-left">
                                             <div class="logo-box">
                                                 <a href="/Home/Index">
-                                                    <img src="~/assets/images/gallery/HadımköyAnkaraNakliyat_LOGO.png"   class="site-logo"
+                                                    <img src="~/assets/images/gallery/HadımköyAnkaraNakliyat_LOGO.png" class="site-logo"
                                                          alt="Hadımköy Ankara Nakliyat logo">
                                                 </a>
                                             </div>
@@ -230,7 +270,7 @@
                                                     </a>
                                                     <ul class="main-menu__list">
                                                         <li>
-                                                            <a href="/Home/Index">Ana Sayfa </a>      
+                                                            <a href="/Home/Index">Ana Sayfa </a>
                                                         </li>
                                                         <li>
                                                             <a href="/Home/hakkimizda">Hakkımızda</a>
@@ -260,17 +300,18 @@
                                                                         Sigortalı Nakliyat – Eşyalarınızı Güvence Altına Alın
                                                                     </a>
                                                                 </li>
-                                                               
+
                                                             </ul>
                                                         </li>
                                                         <li class="dropdown">
                                                             <a href="/Home/hizmetlerimiz">hizmetlerimiz</a>
                                                             <ul>
-                                                                <li><a href="/Home/hadimkoy_ankara_nakliyat">Hadımköy Ankara Nakliyat</a>
-                                                                    </li>
+                                                                <li>
+                                                                    <a href="/Home/hadimkoy_ankara_nakliyat">Hadımköy Ankara Nakliyat</a>
+                                                                </li>
                                                                 <li>
                                                                     <a href="/Home/sehirlerarasi_hizmetlerimiz">Şehirlerarası hizmetlerimiz</a>
-                                                                    </li>
+                                                                </li>
 
                                                                 <li>
                                                                     <a href="/istanbul-ankara-nakliyat">
@@ -323,7 +364,7 @@
                                                                     </a>
                                                                 </li>
                                                             </ul>
-                                                        </li>  
+                                                        </li>
                                                         <li class="dropdown">
                                                             <a href="/Home/hizmet_turleri">Hizmet Türler</a>
                                                             <ul>
@@ -353,7 +394,7 @@
                                                                     <a href="/Home/parsiyel_nakliyat">
                                                                         Parsiyel Nakliyat
                                                                     </a>
-                                                                </li>                                                        
+                                                                </li>
                                                             </ul>
                                                         </li>
                                                         <li>
@@ -375,11 +416,11 @@
                                                 </a>
                                             </div>
 
-                                             <div class="login-box">
+                                            <div class="login-box">
                                                 <a href="tel:+905380401834">
-                                                    <i  class="fa fa-sign-in"></i> <span>
+                                                    <i class="fa fa-sign-in"></i> <span>
                                                         Bizi <br>
-                                                        Arayın 
+                                                        Arayın
                                                     </span>
                                                 </a>
                                             </div>
@@ -397,8 +438,7 @@
         <div class="stricky-header stricky-header--style1 stricked-menu main-menu">
             <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
         </div><!-- /.stricky-header -->
-
-                                        @RenderBody()
+        @RenderBody()
 
         <!--Start Footer One-->
         <footer class="footer-one">
@@ -416,7 +456,7 @@
                                         </a>
                                     </div>
                                     <p class="footer-one__about-text">
-                                       Daima Türkiyenin 81 ilinde Şehirlerarası Nakliyat, Evden eve Nakliyat, Ambar Nakliyat, ofis Taşımacılığı, Fuar Taşımacılığı Hizmeti Vermekte.
+                                        Daima Türkiyenin 81 ilinde Şehirlerarası Nakliyat, Evden eve Nakliyat, Ambar Nakliyat, ofis Taşımacılığı, Fuar Taşımacılığı Hizmeti Vermekte.
                                     </p>
 
                                     <div class="footer-one__about-contact-info">
@@ -448,8 +488,8 @@
                                         </li>
                                         <li>
                                             <a href="/Home/iletisim">
-                                                <span class="icon-right-arrow1"></span> İletişim 
-                                                
+                                                <span class="icon-right-arrow1"></span> İletişim
+
                                             </a>
                                         </li>
                                         <li>
@@ -686,44 +726,6 @@
     <!-- template js -->
     <script src="~/assets/js/script.js"></script>
 
-    
-    <script>
-        function gtag_report_conversion(url) {
-          try{
-            if (typeof gtag === 'function') {
-              var cb = function(){ if (url) window.location = url; };
-              gtag('event','conversion',{
-                'send_to':'AW-17507094342/B1I8CI3qs40bEMaehJxB',
-                'value':1.0,'currency':'TRY',
-                'event_callback':cb
-              });
-              setTimeout(cb,800);
-              return false;
-            }
-          }catch(e){}
-          if (url) window.location = url;
-          return false;
-        }
-
-        function gtag_whatsapp_conversion() {
-          var msg = "Merhaba, bilgi almak istiyorum. Sayfa: " + document.title + " - " + location.href;
-          var wa  = "https://wa.me/905380401834?text=" + encodeURIComponent(msg);
-          try{
-            if (typeof gtag === 'function') {
-              var cb = function(){ window.open(wa,'_blank'); };
-              gtag('event','conversion',{
-                'send_to':'AW-17507094342/B1I8CI3qs40bEMaehJxB', /* İstersen WA için ayrı label koy */
-                'value':1.0,'currency':'TRY',
-                'event_callback':cb
-              });
-              setTimeout(cb,800);
-              return false;
-            }
-          }catch(e){}
-          window.open(wa,'_blank'); return false;
-        }
-    </script>
-
     <script>
         function gtag_report_conversion(url) {
           try {
@@ -745,7 +747,7 @@
         }
 
         document.addEventListener('DOMContentLoaded', function () {
-          document.querySelectorAll('a[href^="tel:"]').forEach(function (el) {
+          document.querySelectorAll('a[href^="tel:+905380401834"]').forEach(function (el) {
             el.addEventListener('click', function (e) {
               e.preventDefault();
               gtag_report_conversion(this.getAttribute('href'));
@@ -754,7 +756,7 @@
         });
     </script>
     @RenderSection("Scripts", required: false)
-   
+
     <script>
         function gtag_report_conversion(url) {
             var cb=function(){ if(typeof url!='undefined'){window.location=url;} };
@@ -766,7 +768,7 @@
         }
 
         function gtag_whatsapp_conversion(){
-            var msg="Merhaba, bilgi almak istiyorum. Sayfa: "+document.title+" - "+location.href;
+            var msg="Merhaba, bilgi almak istiyorum. Hizmet Bilgisi: "+location.href;
             var wa="https://wa.me/905380401834?text="+encodeURIComponent(msg);
             try{
               if(typeof gtag==='function'){
