@@ -3,7 +3,28 @@
     ViewData["Description"] = "Evinizi taşımak artık zahmetli değil! Her şeyin başında müşteri memnuniyetiyle, profesyonel ve sigortalı evden eve nakliyat. Farkı yaşayın, eşyalarınız güvende!";
    
 }
+@{
+    var serviceJson = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""Service"",
+      ""serviceType"": ""Evden Eve Nakliyat"",
+      ""name"": ""Profesyonel Evden Eve Nakliyat Hizmeti"",
+      ""provider"": { ""@type"": ""LocalBusiness"", ""name"": ""Hadımköy Ankara Nakliyat"" },
+      ""areaServed"": ""Türkiye"",
+      ""description"": ""Sigortalı, asansörlü ve marangozlu evden eve nakliyat hizmetleri. Eşyalarınız profesyonel ekiplerce paketlenir ve güvenle taşınır.""
+    }";
 
+    var faqJson = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        { ""@type"": ""Question"", ""name"": ""Eşyalar nasıl paketleniyor?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Tüm mobilyalarınız havalı balonlu naylonlarla sarılır, beyaz eşyalarınız korunaklı hale getirilir."" } },
+        { ""@type"": ""Question"", ""name"": ""Marangoz hizmeti dahil mi?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Evet, gardırop ve yatak gibi mobilyaların demontaj ve montaj işlemleri profesyonel marangozlarımız tarafından yapılır."" } }
+      ]
+    }";
+}
+<script type="application/ld+json">@Html.Raw(serviceJson)</script>
+<script type="application/ld+json">@Html.Raw(faqJson)</script>
 <style>
     .team-details__top-content-text p {
         margin-bottom: 18px;

@@ -3,49 +3,28 @@
 
 <head>
 
-    @{
-        // C# tarafında JSON verisini hazırlıyoruz (Editör hatasını önlemek için en temiz yol)
-        var localBusinessJson = @"{
-        ""@context"": ""https://schema.org"",
-        ""@type"": ""LocalBusiness"",
-        ""name"": ""Hadımköy Ankara Nakliyat"",
-        ""image"": ""https://www.hadimkoyankaranakliyat.com/assets/images/logo.png"",
-        ""url"": ""https://www.hadimkoyankaranakliyat.com"",
-        ""telephone"": ""+90 538 040 18 34"",
-        ""address"": {
+   @{
+    var layoutBusinessJson = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""LocalBusiness"",
+      ""name"": ""Hadımköy Ankara Nakliyat"",
+      ""image"": ""https://www.hadimkoyankaranakliyat.com/assets/images/logo.png"",
+      ""url"": ""https://www.hadimkoyankaranakliyat.com"",
+      ""telephone"": ""+90 538 040 18 34"",
+      ""address"": {
         ""@type"": ""PostalAddress"",
         ""streetAddress"": ""Çırpıcı Modabağ 5. Sokak No:1"",
         ""addressLocality"": ""Zeytinburnu"",
         ""addressRegion"": ""İstanbul"",
         ""postalCode"": ""34020"",
         ""addressCountry"": ""TR""
-        },
-        ""priceRange"": ""$$$"",
-        ""openingHoursSpecification"": [
-        {
-        ""@type"": ""OpeningHoursSpecification"",
-        ""dayOfWeek"": [""Monday"", ""Tuesday"", ""Wednesday"", ""Thursday"", ""Friday"", ""Saturday""],
-        ""opens"": ""08:00"",
-        ""closes"": ""20:00""
-        },
-        {
-        ""@type"": ""OpeningHoursSpecification"",
-        ""dayOfWeek"": ""Sunday"",
-        ""opens"": ""09:00"",
-        ""closes"": ""22:00""
-        }
-        ],
-        ""areaServed"": [
-        { ""@type"": ""State"", ""name"": ""İstanbul"" },
-        { ""@type"": ""State"", ""name"": ""Ankara"" }
-        ],
-        ""hasMap"": ""https://maps.google.com/?q=Zeytinburnu+Hadimkoy+Ankara+Nakliyat""
-        }";
-    }
-
-    <script type="application/ld+json">
-        @Html.Raw(localBusinessJson)
-    </script>
+      },
+      ""priceRange"": ""$$$""
+    }";
+}
+<script type="application/ld+json">
+    @Html.Raw(layoutBusinessJson)
+</script>
     <!-- Google tag (gtag.js) – TEK KEZ -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17507094342"></script>
     <script>

@@ -3,7 +3,28 @@
     ViewData["Description"] = "Fuar ve etkinlik taşımacılığında zaman, hız ve güven Hadımköy Ankara Nakliyat’ta. Stand ve ekipmanlarınız zamanında fuar alanında!";
     
 }
+@{
+    var expoService = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""Service"",
+      ""serviceType"": ""Fuar ve Stand Taşımacılığı"",
+      ""name"": ""Zaman Odaklı Fuar Nakliyesi"",
+      ""provider"": { ""@type"": ""LocalBusiness"", ""name"": ""Hadımköy Ankara Nakliyat"" },
+      ""areaServed"": ""Türkiye"",
+      ""description"": ""Fuar stantları, reklam materyalleri ve hassas ürünler için profesyonel lojistik destek. Tam zamanında teslimat garantisi.""
+    }";
 
+    var expoFaq = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        { ""@type"": ""Question"", ""name"": ""Fuar sonrası geri dönüş nakliyesi dahil mi?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Evet, fuar bitiminde eşyalarınızın toplanması ve geri getirilmesi süreçlerini de uçtan uca yönetiyoruz."" } },
+        { ""@type"": ""Question"", ""name"": ""Hassas malzemeler için özel koruma var mı?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Ekranlar, stant malzemeleri ve cam aksamlar için özel sandıklama ve darbeye dayanıklı ambalaj malzemeleri kullanıyoruz."" } }
+      ]
+    }";
+}
+<script type="application/ld+json">@Html.Raw(expoService)</script>
+<script type="application/ld+json">@Html.Raw(expoFaq)</script>
 <style>
     .team-details__top-content-text p {
         margin-bottom: 18px;

@@ -2,7 +2,48 @@
     ViewData["Title"] = "Sincan İstanbul Nakliyat | Kaliteli ve Hızlı Nakliyat";
     ViewData["Description"] = "Sincan’dan İstanbul’a ev, ofis, yük taşımacılığında profesyonel hizmet. Her bütçeye uygun fiyat ve zamanında teslimatla öne çıkıyoruz.";
     }
+@{
+    // Sadece burayı değiştirmen yeterli! (Örn: "Adalar", "Beşiktaş", "Kadıköy")
+    var ilce = "Sincan";
 
+    // 1. Service Şeması: O ilçeye özel yerel hizmet vurgusu
+    var ilceIstanbulService = string.Format(@"{{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""Service"",
+      ""serviceType"": ""Şehir İçi Nakliyat"",
+      ""name"": ""{0} İstanbul Nakliyat - Profesyonel Ev Taşıma"",
+      ""provider"": {{ ""@type"": ""LocalBusiness"", ""name"": ""Hadımköy Ankara Nakliyat"" }},
+      ""areaServed"": {{ ""@type"": ""City"", ""name"": ""{0}, İstanbul"" }},
+      ""description"": ""{0} İstanbul nakliyat hizmeti ile {0} ilçesinden İstanbul'un tüm semtlerine asansörlü, sigortalı ve marangozlu evden eve nakliye.""
+    }}", ilce);
+
+    // 2. FAQ Şeması: İlçe içi ve İstanbul geneli sorular
+    var ilceIstanbulFaq = string.Format(@"{{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        {{
+          ""@type"": ""Question"",
+          ""name"": ""{0} İstanbul nakliyat fiyatları neye göre belirleniyor?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""{0} çıkışlı taşımalarda fiyatlar; eşya miktarınıza (1+1, 2+1), gidilecek mesafeye ve kat durumuna göre ücretsiz ekspertiz sonucu belirlenir."" }}
+        }},
+        {{
+          ""@type"": ""Question"",
+          ""name"": ""{0} ilçesinde asansörlü araç kullanıyor musunuz?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""Evet, {0} bölgesindeki dar sokaklar ve yüksek girişler için uygun mobil asansörlerimizle eşyalarınızı hasarsız taşıyoruz."" }}
+        }},
+        {{
+          ""@type"": ""Question"",
+          ""name"": ""{0} içinden İstanbul'un diğer yakasına taşıma var mı?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""Elbette. {0} ilçesinden Avrupa veya Anadolu yakasındaki tüm ilçelere günlük sevkiyatımız mevcuttur."" }}
+        }}
+      ]
+    }}", ilce);
+}
+
+@* HTML Çıktısı *@
+<script type="application/ld+json">@Html.Raw(ilceIstanbulService)</script>
+<script type="application/ld+json">@Html.Raw(ilceIstanbulFaq)</script>
 <!--Start Page Header-->
 <section class="page-header">
     <div class="page-header__bg" style="background-image: url(/assets/images/gallery/hadimkoy_hakkimizda.png)">

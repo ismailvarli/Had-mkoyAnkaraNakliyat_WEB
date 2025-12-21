@@ -3,31 +3,51 @@
     ViewData["Title"] = "Adalar Ankara Nakliyat: Deniz ve Kara Entegreli Özel Taşıma";
     ViewData["Description"] = "Adalar'dan Ankara'ya profesyonel nakliyat. Büyükada, Heybeliada, Burgazada ve Kınalıada'dan çıkarma gemisi ve elektrikli araçlarla evden eve nakliye.";
 }
-<script type="application/ld+json">
 @{
-    @Html.Raw(@"{
+    // Sadece burayı değiştirmen yeterli! (Örn: "Beşiktaş", "Çatalca", "Arnavutköy")
+    var ilce = "Adalar";
+
+    // Dinamik JSON-LD Hazırlığı
+    // DÜZELTME: "adalar" yazan yerleri {0} yaptık. Artık yukarıdaki değişken neyse o gelecek.
+    var ilceServiceJson = string.Format(@"{{
       ""@context"": ""https://schema.org"",
       ""@type"": ""Service"",
       ""serviceType"": ""Evden Eve Nakliyat"",
-      ""name"": ""Adalar'dan Ankara'ya ve Adalar'da Taşımacılık Hizmeti"",
-      ""provider"": {
-        ""@type"": ""LocalBusiness"",
-        ""name"": ""Hadımköy Ankara Nakliyat""
-      },
-      ""areaServed"": {
-        ""@type"": ""City"",
-        ""name"": ""Adalar, İstanbul""
-      },
-      ""description"": ""Büyükada, Heybeliada ve Kınalıada'dan karayolu entegreli, sigortalı ve elektrikli araçlarla şehirlerarası nakliyat hizmeti."",
-      ""offers"": {
-          ""@type"": ""Offer"",
-          ""priceCurrency"": ""TRY"",
-          ""price"": ""5000"", // Ortalama başlangıç fiyatı (isteğe bağlı)
-          ""availability"": ""https://schema.org/InStock""
-      }
-    }")
+      ""name"": ""{0} Nakliyat - İstanbul Ankara Arası Güvenli Taşıma"",
+      ""provider"": {{ ""@type"": ""LocalBusiness"", ""name"": ""Hadımköy Ankara Nakliyat"" }},
+      ""areaServed"": {{ ""@type"": ""City"", ""name"": ""{0}, İstanbul"" }},
+      ""description"": ""{0} bölgesinden Ankara'ya sigortalı, asansörlü ve marangozlu evden eve nakliyat hizmeti. Eşyalarınız profesyonel ekiplerle taşınır.""
+    }}", ilce);
+
+    var ilceFaqJson = string.Format(@"{{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        {{
+          ""@type"": ""Question"",
+          ""name"": ""{0} nakliyat fiyatları ne kadar?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""{0}'dan Ankara'ya nakliye fiyatları eşya hacmi ve kat durumuna göre değişir. Ücretsiz keşif için bizi arayın."" }}
+        }},
+        {{
+          ""@type"": ""Question"",
+          ""name"": ""{0} bölgesinde asansörlü nakliyat var mı?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""Evet, {0} bölgesindeki tüm yüksek katlı binalar için mobil dış cephe asansörlerimizle hizmet veriyoruz."" }}
+        }}
+      ]
+    }}", ilce);
 }
-</script>
+
+@* HTML Çıktısı *@
+<script type="application/ld+json">@Html.Raw(ilceServiceJson)</script>
+<script type="application/ld+json">@Html.Raw(ilceFaqJson)</script>
+
+@* HTML Çıktısı - Bu kısım tarayıcıya tertemiz gider *@
+<script type="application/ld+json">@Html.Raw(ilceServiceJson)</script>
+<script type="application/ld+json">@Html.Raw(ilceFaqJson)</script>
+
+@* HTML Çıktısı *@
+<script type="application/ld+json">@Html.Raw(ilceServiceJson)</script>
+<script type="application/ld+json">@Html.Raw(ilceFaqJson)</script>
 <style>
     :root {
         --primary-color: #d35400; /* Kurumsal Turuncu */

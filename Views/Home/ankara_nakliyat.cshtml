@@ -2,7 +2,39 @@
     ViewData["Title"] = "Ankara Nakliyat - Günlük Seferler & Sigortalı Taşıma 2025";
     ViewData["Description"] = "Hadımköy Ankara Nakliyat ile İstanbul-Ankara arası günlük evden eve nakliyat seferleri. Sigortalı, ambalajlı, asansörlü ve uygun fiyatlı dönüş araçları.";
 }
+@{
+    // Ankara Sayfasına Özel Yapılandırılmış Veri
+    var ankaraService = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""Service"",
+      ""serviceType"": ""Ankara Şehirlerarası Nakliyat"",
+      ""name"": ""İstanbul'dan Ankara'ya Profesyonel Taşıma"",
+      ""provider"": { ""@type"": ""LocalBusiness"", ""name"": ""Hadımköy Ankara Nakliyat"" },
+      ""areaServed"": { ""@type"": ""City"", ""name"": ""Ankara"" },
+      ""description"": ""İstanbul'dan Ankara'nın tüm ilçelerine (Çankaya, Keçiören, Yenimahalle vb.) günlük seferlerle sigortalı ve asansörlü evden eve nakliyat.""
+    }";
 
+    var ankaraFaq = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        {
+            ""@type"": ""Question"",
+            ""name"": ""İstanbul'dan Ankara'ya nakliye kaç saat sürer?"",
+            ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Yol durumu ve mesafeye bağlı olarak araçlarımız ortalama 6-8 saatte Ankara'ya varır. Eşyalarınız genellikle ertesi sabah teslim edilir."" }
+        },
+        {
+            ""@type"": ""Question"",
+            ""name"": ""Ankara dönüş araçlarınız var mı?"",
+            ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Evet, İstanbul-Ankara hattında sürekli çalışan araçlarımız sayesinde dönüş yüklerinizi (Ankara'dan İstanbul'a) daha ekonomik fiyatlarla taşıyoruz."" }
+        }
+      ]
+    }";
+}
+
+@* HTML Çıktısı *@
+<script type="application/ld+json">@Html.Raw(ankaraService)</script>
+<script type="application/ld+json">@Html.Raw(ankaraFaq)</script>
 <div class="container my-5">
     <div class="row align-items-center mb-5">
         <div class="col-lg-7">

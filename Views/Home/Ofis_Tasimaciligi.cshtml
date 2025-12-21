@@ -3,7 +3,28 @@
     ViewData["Description"] = "Ofis, büro veya işyeri taşınmalarında her detayı önemsiyoruz. Kablolamadan mobilyaya, paketlemeden kuruluma anahtar teslim ofis taşımacılığı!";
     
 }
+@{
+    var officeService = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""Service"",
+      ""serviceType"": ""Ofis ve Büro Taşımacılığı"",
+      ""name"": ""Kurumsal Ofis Taşıma Hizmetleri"",
+      ""provider"": { ""@type"": ""LocalBusiness"", ""name"": ""Hadımköy Ankara Nakliyat"" },
+      ""areaServed"": ""Türkiye"",
+      ""description"": ""İş kesintisini minimuma indiren, profesyonel paketleme ve teknolojik ekipman taşıma odaklı kurumsal ofis nakliye çözümleri.""
+    }";
 
+    var officeFaq = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        { ""@type"": ""Question"", ""name"": ""Dosya ve arşivler nasıl taşınıyor?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Tüm arşiv ve dosyalarınız numaralandırılarak kolilenir, yeni ofisinizde aynı düzenle yerlerine yerleştirilir."" } },
+        { ""@type"": ""Question"", ""name"": ""Hafta sonu taşıma yapıyor musunuz?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Evet, iş kaybını önlemek amacıyla hafta sonu veya akşam saatlerinde ofis taşıma hizmeti sunmaktayız."" } }
+      ]
+    }";
+}
+<script type="application/ld+json">@Html.Raw(officeService)</script>
+<script type="application/ld+json">@Html.Raw(officeFaq)</script>
 
 <style>
     .team-details__top-content-text p {

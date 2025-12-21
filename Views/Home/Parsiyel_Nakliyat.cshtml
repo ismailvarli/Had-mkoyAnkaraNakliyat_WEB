@@ -3,7 +3,28 @@
     ViewData["Description"] = "Parsiyel taşımacılıkta az miktarda yükünüzü ekonomik şekilde şehirlerarası taşıyalım. Zamanında teslimat, şeffaf fiyat, güler yüzlü hizmet!";
    
 }
+@{
+    var serviceJson = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""Service"",
+      ""serviceType"": ""Parsiyel Nakliyat"",
+      ""name"": ""Ekonomik Parça Eşya Taşımacılığı"",
+      ""provider"": { ""@type"": ""LocalBusiness"", ""name"": ""Hadımköy Ankara Nakliyat"" },
+      ""areaServed"": ""Türkiye"",
+      ""description"": ""Az miktardaki eşyalarınız için tam araç ücreti ödemeden, ekonomik parsiyel taşıma hizmetimizden yararlanın.""
+    }";
 
+    var faqJson = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        { ""@type"": ""Question"", ""name"": ""Parsiyel nakliyat avantajlı mı?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Evet, sadece eşyanızın kapladığı alan kadar ücret ödediğiniz için çok daha ekonomiktir."" } },
+        { ""@type"": ""Question"", ""name"": ""Tek parça eşya taşır mısınız?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Evet, buzdolabı, koltuk veya birkaç koli gibi tek parça eşyalarınızı da şehirlerarası taşıyoruz."" } }
+      ]
+    }";
+}
+<script type="application/ld+json">@Html.Raw(serviceJson)</script>
+<script type="application/ld+json">@Html.Raw(faqJson)</script>
 <style>
     .team-details__top-content-text p {
         margin-bottom: 18px;

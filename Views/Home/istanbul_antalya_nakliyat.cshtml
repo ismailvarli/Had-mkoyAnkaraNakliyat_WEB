@@ -4,7 +4,41 @@
  
 
 }
+@{
+    // DEĞİŞTİRİLECEK KISIM: Hedef Şehir Adı (Örn: "İzmir", "Antalya", "Trabzon")
+    var hedefSehir = "Antalya";
 
+    var sehirlerarasiService = string.Format(@"{{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""Service"",
+      ""serviceType"": ""Şehirlerarası Nakliyat"",
+      ""name"": ""İstanbul {0} Nakliyat - Şehirlerarası Güvenli Hat"",
+      ""provider"": {{ ""@type"": ""LocalBusiness"", ""name"": ""Hadımköy Ankara Nakliyat"" }},
+      ""areaServed"": [ {{ ""@type"": ""City"", ""name"": ""İstanbul"" }}, {{ ""@type"": ""City"", ""name"": ""{0}"" }} ],
+      ""description"": ""İstanbul'dan {0} iline ve {0}'den İstanbul'a karşılıklı seferlerle komple ve parsiyel ev eşyası taşımacılığı.""
+    }}", hedefSehir);
+
+    var sehirlerarasiFaq = string.Format(@"{{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        {{
+          ""@type"": ""Question"",
+          ""name"": ""İstanbul {0} nakliyat kaç gün sürer?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""İstanbul ile {0} arasındaki mesafeye bağlı olarak eşyalarınız genellikle 24 ila 48 saat içerisinde güvenle teslim edilir."" }}
+        }},
+        {{
+          ""@type"": ""Question"",
+          ""name"": ""İstanbul {0} arası sigortalı taşıma var mı?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""Evet, İstanbul-{0} hattındaki tüm sevkiyatlarımızda AXA/Allianz güvenceli emtia nakliyat sigortası standarttır."" }}
+        }}
+      ]
+    }}", hedefSehir);
+}
+
+@* HTML Çıktısı *@
+<script type="application/ld+json">@Html.Raw(sehirlerarasiService)</script>
+<script type="application/ld+json">@Html.Raw(sehirlerarasiFaq)</script>
 
 <!--Start Page Header-->
 <section class="page-header">

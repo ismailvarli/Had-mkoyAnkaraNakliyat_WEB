@@ -3,7 +3,41 @@
     ViewData["Description"] = "Hadımköy'den Ankara'ya ve tüm Türkiye'ye sigortalı ve profesyonel nakliye hizmetleri. Şehirlerarası ve şehiriçi taşımacılıkta en uygun fiyatlarla güvenilir ve hızlı çözümler. Anahtar teslim nakliyat deneyimi için hemen tıklayın!";
 }
 
+@{
+    // DEĞİŞTİRİLECEK KISIM: İlçe Adı (Örn: "Beşiktaş", "Sarıyer")
+    var ilce = "Hadımköy";
 
+    var ilceAnkaraService = string.Format(@"{{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""Service"",
+      ""serviceType"": ""Şehirlerarası Nakliyat"",
+      ""name"": ""{0} Ankara Nakliyat - Hızlı ve Sigortalı Taşıma"",
+      ""provider"": {{ ""@type"": ""LocalBusiness"", ""name"": ""Hadımköy Ankara Nakliyat"" }},
+      ""areaServed"": [ {{ ""@type"": ""City"", ""name"": ""{0}"" }}, {{ ""@type"": ""City"", ""name"": ""Ankara"" }} ],
+      ""description"": ""İstanbul {0} ilçesinden Ankara'nın tüm bölgelerine haftalık düzenli seferlerle, asansörlü ve sigortalı evden eve nakliyat hizmeti.""
+    }}", ilce);
+
+    var ilceAnkaraFaq = string.Format(@"{{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        {{
+          ""@type"": ""Question"",
+          ""name"": ""{0} Ankara nakliyat fiyatları ne kadar?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""{0} çıkışlı Ankara taşımalarında fiyatlar eşya hacmine (1+1, 2+1, 3+1) göre belirlenir. Ücretsiz ekspertiz için arayınız."" }}
+        }},
+        {{
+          ""@type"": ""Question"",
+          ""name"": ""{0} bölgesinden parça eşya alıyor musunuz?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""Evet, {0} ve çevresinden Ankara'ya gidecek parça eşyalarınızı parsiyel araçlarımızla ekonomik fiyata taşıyoruz."" }}
+        }}
+      ]
+    }}", ilce);
+}
+
+@* HTML Çıktısı *@
+<script type="application/ld+json">@Html.Raw(ilceAnkaraService)</script>
+<script type="application/ld+json">@Html.Raw(ilceAnkaraFaq)</script>
 <!--Start Page Header-->
 <section class="page-header">
     <div class="page-header__bg" style="background-image: url(/assets/images/gallery/hadimkoy_hakkimizda.png)">

@@ -3,7 +3,28 @@
     ViewData["Description"] = " 81 ilde şehirlerarası nakliyat; Hadımköy Ankara Nakliyat güvencesiyle ev, ofis, parça eşya ve ticari taşımalarınız için profesyonel çözümler!";
    
 }
+@{
+    var serviceJson = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""Service"",
+      ""serviceType"": ""Şehirlerarası Nakliyat"",
+      ""name"": ""81 İle Şehirlerarası Ev Taşıma"",
+      ""provider"": { ""@type"": ""LocalBusiness"", ""name"": ""Hadımköy Ankara Nakliyat"" },
+      ""areaServed"": ""Türkiye"",
+      ""description"": ""İstanbul ve Ankara merkezli olmak üzere Türkiye'nin tüm şehirlerine sigortalı ve hızlı şehirlerarası nakliyat çözümleri.""
+    }";
 
+    var faqJson = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        { ""@type"": ""Question"", ""name"": ""Şehirlerarası taşıma kaç gün sürer?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Mesafeye bağlı olarak genellikle 24 ile 48 saat içerisinde teslimat gerçekleştirilir."" } },
+        { ""@type"": ""Question"", ""name"": ""Yol sigortası yapılıyor mu?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Evet, tüm şehirlerarası sevkiyatlarımız emtia nakliyat sigortası güvencesi altındadır."" } }
+      ]
+    }";
+}
+<script type="application/ld+json">@Html.Raw(serviceJson)</script>
+<script type="application/ld+json">@Html.Raw(faqJson)</script>
 
 <style>
     .team-details__top-content-text p {

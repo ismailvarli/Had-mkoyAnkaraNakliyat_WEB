@@ -4,7 +4,28 @@
     
 }
 
+@{
+    var ambarService = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""Service"",
+      ""serviceType"": ""Ambar Taşımacılığı"",
+      ""name"": ""İstanbul Ankara Ambar Nakliyat Çözümleri"",
+      ""provider"": { ""@type"": ""LocalBusiness"", ""name"": ""Hadımköy Ankara Nakliyat"" },
+      ""areaServed"": [""İstanbul"", ""Ankara""],
+      ""description"": ""Ekonomik ve güvenli ambar taşımacılığı. Parça yükleriniz İstanbul ve Ankara ambarlarımızda toplanarak sigortalı şekilde sevk edilir.""
+    }";
 
+    var ambarFaq = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        { ""@type"": ""Question"", ""name"": ""Ambar nakliyat fiyatları nasıl hesaplanır?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Fiyatlar, yükünüzün hacmi (desi), ağırlığı ve kapladığı alana göre belirlenir. Komple araç yerine maliyet paylaşımı yapıldığı için en ekonomik yöntemdir."" } },
+        { ""@type"": ""Question"", ""name"": ""Ambar yükleri sigortalı mı?"", ""acceptedAnswer"": { ""@type"": ""Answer"": ""Evet, ambar nakliyat kapsamında taşınan tüm emtialar, nakliyat sigortası ile olası hasarlara karşı güvence altına alınır."" } }
+      ]
+    }";
+}
+<script type="application/ld+json">@Html.Raw(ambarService)</script>
+<script type="application/ld+json">@Html.Raw(ambarFaq)</script>
 <style>
     .team-details__top-content-text p {
         margin-bottom: 18px;

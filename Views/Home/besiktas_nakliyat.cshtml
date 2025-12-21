@@ -3,7 +3,43 @@
     ViewData["Title"] = "Beşiktaş Ankara Nakliyat: Tarihi Dokuda Modern ve Güvenli Taşıma";
     ViewData["Description"] = "Beşiktaş'tan Ankara'ya kurumsal nakliyat. Levent, Etiler ofis taşıma ve Arnavutköy, Bebek dar sokak taşımacılığında uzman çözümler. Sigortalı ve asansörlü hizmet.";
 }
+@{
+    // Sadece burayı değiştirmen yeterli! (Örn: "Beşiktaş", "Çatalca", "Arnavutköy")
+    var ilce = "Beşiktaş";
 
+    // Dinamik JSON-LD Hazırlığı
+    // DÜZELTME: "adalar" yazan yerleri {0} yaptık. Artık yukarıdaki değişken neyse o gelecek.
+    var ilceServiceJson = string.Format(@"{{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""Service"",
+      ""serviceType"": ""Evden Eve Nakliyat"",
+      ""name"": ""{0} Nakliyat - İstanbul Ankara Arası Güvenli Taşıma"",
+      ""provider"": {{ ""@type"": ""LocalBusiness"", ""name"": ""Hadımköy Ankara Nakliyat"" }},
+      ""areaServed"": {{ ""@type"": ""City"", ""name"": ""{0}, İstanbul"" }},
+      ""description"": ""{0} bölgesinden Ankara'ya sigortalı, asansörlü ve marangozlu evden eve nakliyat hizmeti. Eşyalarınız profesyonel ekiplerle taşınır.""
+    }}", ilce);
+
+    var ilceFaqJson = string.Format(@"{{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        {{
+          ""@type"": ""Question"",
+          ""name"": ""{0} nakliyat fiyatları ne kadar?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""{0}'dan Ankara'ya nakliye fiyatları eşya hacmi ve kat durumuna göre değişir. Ücretsiz keşif için bizi arayın."" }}
+        }},
+        {{
+          ""@type"": ""Question"",
+          ""name"": ""{0} bölgesinde asansörlü nakliyat var mı?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""Evet, {0} bölgesindeki tüm yüksek katlı binalar için mobil dış cephe asansörlerimizle hizmet veriyoruz."" }}
+        }}
+      ]
+    }}", ilce);
+}
+
+@* HTML Çıktısı *@
+<script type="application/ld+json">@Html.Raw(ilceServiceJson)</script>
+<script type="application/ld+json">@Html.Raw(ilceFaqJson)</script>
 <style>
     :root {
         --primary-color: #d35400; /* Kurumsal Turuncu */

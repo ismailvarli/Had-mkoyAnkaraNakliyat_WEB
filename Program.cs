@@ -74,11 +74,13 @@ namespace HadımkoyAnkaraNakliyat_WEB
             // -----------------------------------------------------------------
             // 2. ADIM: Statik Dosyalar (CSS, Resimler çalışsın diye ŞART)
             // -----------------------------------------------------------------
+            // Statik dosyalar (resim, css, js) için Gelişmiş Cache Ayarı
             app.UseStaticFiles(new StaticFileOptions
             {
                 OnPrepareResponse = ctx =>
                 {
-                    // Dosyaları tarayıcıda 1 yıl önbelleğe al (Hız için)
+                    // Dosyaları tarayıcıda 1 yıl (31536000 saniye) önbelleğe al
+                    // "immutable" sayesinde dosya değişmedikçe tarayıcı tekrar sormaz.
                     ctx.Context.Response.Headers["Cache-Control"] = "public,max-age=31536000,immutable";
                 }
             });

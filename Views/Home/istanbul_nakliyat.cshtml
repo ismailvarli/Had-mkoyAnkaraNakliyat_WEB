@@ -3,7 +3,39 @@
     ViewData["Description"] = "İstanbul nakliyat hizmetleri: Evden eve nakliyat, şehirlerarası taşımacılık, ofis ve büro nakliyatı, parsiyel taşıma, asansörlü nakliyat, kamyonet nakliye. Sigortalı ve güvenli çözümler için profesyonel nakliyat firması.";
     
 }
+@{
+    // İstanbul Sayfasına Özel Yapılandırılmış Veri
+    var istanbulService = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""Service"",
+      ""serviceType"": ""İstanbul Şehirlerarası Nakliyat"",
+      ""name"": ""Ankara'dan İstanbul'a Güvenli Nakliye"",
+      ""provider"": { ""@type"": ""LocalBusiness"", ""name"": ""Hadımköy Ankara Nakliyat"" },
+      ""areaServed"": { ""@type"": ""City"", ""name"": ""İstanbul"" },
+      ""description"": ""Ankara ve diğer illerden İstanbul'un her iki yakasına (Anadolu ve Avrupa) kurumsal, sigortalı ve asansörlü taşımacılık hizmetleri.""
+    }";
 
+    var istanbulFaq = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        {
+            ""@type"": ""Question"",
+            ""name"": ""Anadolu ve Avrupa yakası fiyat farkı var mı?"",
+            ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Genellikle sabit fiyat politikası uygulasak da, köprü geçiş maliyetleri ve mesafeye göre (örneğin Tuzla ile Beylikdüzü arası) küçük farklılıklar olabilir."" }
+        },
+        {
+            ""@type"": ""Question"",
+            ""name"": ""İstanbul içine girmeden depolama imkanı var mı?"",
+            ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Evet, eşyalarınızın teslim tarihine kadar bekletilmesi gerekiyorsa, İstanbul girişindeki güvenli depolarımızda muhafaza hizmeti sunuyoruz."" }
+        }
+      ]
+    }";
+}
+
+@* HTML Çıktısı *@
+<script type="application/ld+json">@Html.Raw(istanbulService)</script>
+<script type="application/ld+json">@Html.Raw(istanbulFaq)</script>
 <style>
     .istanbul-nakliyat .page-wrap {
         max-width: 1200px;
