@@ -1,0 +1,180 @@
+{
+  "settings": {
+    "components": {
+      "code": false,
+      "binaries": false
+    },
+    "targetId": "net10.0",
+    "targetDisplayName": ".NETCoreApp,Version=v10.0"
+  },
+  "analysisStartTime": "2025-12-21T21:29:01.9184359Z",
+  "analysisEndTime": "2025-12-21T21:29:05.2553258Z",
+  "privacyModeHelpUrl": "https://go.microsoft.com/fwlink/?linkid=2270980",
+  "stats": {
+    "summary": {
+      "projects": 1,
+      "issues": 3,
+      "incidents": 3,
+      "effort": 3
+    },
+    "charts": {
+      "severity": {
+        "Mandatory": 1,
+        "Optional": 0,
+        "Potential": 2,
+        "Information": 0
+      },
+      "category": {
+        "NuGet": 1,
+        "Project": 1,
+        "Api": 1
+      }
+    }
+  },
+  "projects": [
+    {
+      "path": "Had\u0131mkoyAnkaraNakliyat_WEB.csproj",
+      "startingProject": true,
+      "issues": 3,
+      "storyPoints": 3,
+      "properties": {
+        "appName": "Had\u0131mkoyAnkaraNakliyat_WEB",
+        "projectKind": "AspNetCore",
+        "frameworks": [
+          "net8.0"
+        ],
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": true,
+        "numberOfFiles": 591,
+        "numberOfCodeFiles": 102,
+        "linesTotal": 680472,
+        "linesOfCode": 33482,
+        "totalApiScanned": 27979,
+        "minLinesOfCodeToChange": 1,
+        "maxLinesOfCodeToChange": 1
+      },
+      "ruleInstances": [
+        {
+          "incidentId": "ac53004c-c03a-4d8a-bdc9-00e8d066c46e",
+          "ruleId": "NuGet.0002",
+          "projectPath": "Had\u0131mkoyAnkaraNakliyat_WEB.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.VisualStudio.Web.CodeGeneration.Design, 8.0.22\n\n\u00D6neri:\n\nRemove Microsoft.VisualStudio.Web.CodeGeneration.Design, and replace with new package Microsoft.VisualStudio.Web.CodeGeneration.Design 10.0.1",
+              "protected": "Microsoft.VisualStudio.Web.CodeGeneration.Design, 8.0.22\n\n\u00D6neri:\n\nRemove Microsoft.VisualStudio.Web.CodeGeneration.Design, and replace with new package Microsoft.VisualStudio.Web.CodeGeneration.Design 10.0.1"
+            },
+            "kind": "File",
+            "path": "Had\u0131mkoyAnkaraNakliyat_WEB.csproj",
+            "snippet": "Microsoft.VisualStudio.Web.CodeGeneration.Design, 8.0.22\n\n\u00D6neri:\n\nRemove Microsoft.VisualStudio.Web.CodeGeneration.Design, and replace with new package Microsoft.VisualStudio.Web.CodeGeneration.Design 10.0.1",
+            "protectedSnippet": "Microsoft.VisualStudio.Web.CodeGeneration.Design, 8.0.22\n\n\u00D6neri:\n\nRemove Microsoft.VisualStudio.Web.CodeGeneration.Design, and replace with new package Microsoft.VisualStudio.Web.CodeGeneration.Design 10.0.1",
+            "label": "Microsoft.VisualStudio.Web.CodeGeneration.Design 8.0.22",
+            "properties": {
+              "PackageId": "Microsoft.VisualStudio.Web.CodeGeneration.Design",
+              "PackageVersion": "8.0.22",
+              "PackageNewVersion": "10.0.1",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "969c2a94-04fb-478e-b6ee-63c8b2f39396",
+          "ruleId": "Project.0002",
+          "projectPath": "Had\u0131mkoyAnkaraNakliyat_WEB.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Ge\u00E7erli hedef \u00E7er\u00E7eve: net8.0\n\u00D6nerilen hedef \u00E7er\u00E7eve: net10.0",
+              "protected": "Ge\u00E7erli hedef \u00E7er\u00E7eve: net8.0\n\u00D6nerilen hedef \u00E7er\u00E7eve: net10.0"
+            },
+            "kind": "File",
+            "path": "Had\u0131mkoyAnkaraNakliyat_WEB.csproj",
+            "snippet": "Ge\u00E7erli hedef \u00E7er\u00E7eve: net8.0\n\u00D6nerilen hedef \u00E7er\u00E7eve: net10.0",
+            "protectedSnippet": "Ge\u00E7erli hedef \u00E7er\u00E7eve: net8.0\n\u00D6nerilen hedef \u00E7er\u00E7eve: net10.0",
+            "properties": {
+              "CurrentTargetFramework": "net8.0",
+              "RecommendedTargetFramework": "net10.0"
+            }
+          }
+        },
+        {
+          "incidentId": "f7d93de1-d910-423f-bae8-816690bc26df",
+          "ruleId": "Api.0003",
+          "description": "Breaking change: Exception diagnostics are suppressed when IExceptionHandler.TryHandleAsync returns true ",
+          "projectPath": "Had\u0131mkoyAnkaraNakliyat_WEB.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "app.UseExceptionHandler(\u0022/Home/Error\u0022);",
+              "protected": "M:Microsoft.AspNetCore.Builder.ExceptionHandlerExtensions.UseExceptionHandler(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.String)"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "app.UseExceptionHandler(\u0022/Home/Error\u0022);",
+            "protectedSnippet": "M:Microsoft.AspNetCore.Builder.ExceptionHandlerExtensions.UseExceptionHandler(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.String)",
+            "label": "M:Microsoft.AspNetCore.Builder.ExceptionHandlerExtensions.UseExceptionHandler(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.String)",
+            "links": [
+              {
+                "title": "API belgeleri",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/aspnet-core/10/exception-handler-diagnostics-suppressed.md",
+                "isCustom": false
+              }
+            ],
+            "line": 33,
+            "column": 16
+          }
+        }
+      ],
+      "features": []
+    }
+  ],
+  "rules": {
+    "NuGet.0002": {
+      "id": "NuGet.0002",
+      "isFeature": false,
+      "description": "Se\u00E7ili hedef \u00E7er\u00E7eve i\u00E7in NuGet paketi y\u00FCkseltmesi \u00F6nerilir.\n\nStandart .NET paketlerinin, projenin hedefledi\u011Fi .NET s\u00FCr\u00FCm\u00FCyle e\u015Fle\u015Fen s\u00FCr\u00FCmlere sahip olmas\u0131 \u00F6nerilir.\n\nBaz\u0131 di\u011Fer paketlerin se\u00E7ili hedef \u00E7er\u00E7eveler i\u00E7in daha iyi \u00E7al\u0131\u015Ft\u0131\u011F\u0131 da bilinir.",
+      "label": "NuGet paketinin y\u00FCkseltilmesi \u00F6nerilir",
+      "severity": "Potential",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262530",
+          "isCustom": false
+        }
+      ]
+    },
+    "Project.0002": {
+      "id": "Project.0002",
+      "isFeature": false,
+      "description": "Projenin hedef \u00E7er\u00E7evelerinin, bu y\u00FCkseltme i\u00E7in se\u00E7ti\u011Finiz yeni hedef \u00E7er\u00E7eve olarak de\u011Fi\u015Ftirilmesi gerekir.\n\nY\u00FCkseltme s\u0131ras\u0131nda hedef \u00E7er\u00E7eve uygun oldu\u011Funda ilgili platforma ayarlan\u0131r. Baz\u0131 durumlarda proje, modern .NET \u00E7er\u00E7evelerinde (Windows, iOS, Android vb.) art\u0131k kendi platformlar\u0131na sahip \u00F6zellikler kullan\u0131yorsa y\u00FCkseltmeden sonra birden \u00E7ok hedef \u00E7er\u00E7eve ortaya \u00E7\u0131kar.",
+      "label": "Projenin hedef \u00E7er\u00E7evelerinin de\u011Fi\u015Ftirilmesi gerekiyor",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": ".NET Framework\u2019ten .NET\u0027e ta\u015F\u0131maya genel bak\u0131\u015F",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265227",
+          "isCustom": false
+        },
+        {
+          "title": ".NET proje SDK\u0027lar\u0131",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265226",
+          "isCustom": false
+        }
+      ]
+    },
+    "Api.0003": {
+      "id": "Api.0003",
+      "isFeature": false,
+      "description": "API has a behavioral change in selected .NET version: code and binaries may behave differently at runtime without needing recompilation, but the new behavior might be undesirable and require updates.",
+      "label": "Behavioral change in selected .NET version",
+      "severity": "Potential",
+      "effort": 1
+    }
+  }
+}
