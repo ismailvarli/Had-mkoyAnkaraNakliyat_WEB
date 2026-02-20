@@ -82,6 +82,11 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
         {
             return View();
         }
+        [Route("istanbul-ankara-nakliyat-fiyatlari-2026-guncel-rehber")]
+        public IActionResult istanbul_ankara_nakliyat_fiyatlari_2026_guncel_rehber()
+        {
+            return View();
+        }
         public IActionResult parsiyel_nakliyat_nedir_istanbul_ankara_arasinda__avantajlari()
         {
             return View();

@@ -1,46 +1,58 @@
 ﻿@{
     ViewData["Title"] = "İstanbul Ankara Nakliyat | Şehirlerarası ve Evden Eve Nakliyat, Sigortalı ve Hızlı Taşıma";
-    ViewData["Description"] = "İstanbul’dan Ankara’ya evden eve, parsiyel ve ticari yük Nakliyat. Deneyimli ekip, sigortalı taşıma, şeffaf fiyat. Ücretsiz keşif için arayın: +905344300360.";
-   
+    ViewData["Description"] = "İstanbul’dan Ankara’ya evden eve, parsiyel ve ticari yük Nakliyat. Hadımköy çıkışlı araçlarımızla deneyimli ekip, sigortalı taşıma. Ücretsiz keşif: +905344300360.";
 }
+
 <link rel="canonical" href="https://hadimkoyankaranakliyat.com/istanbul-ankara-nakliyat" />
 
-@{
-    // 1. Service (Hizmet) Verisi
-    var serviceJson = @"{
-      ""@context"": ""https://schema.org"",
-      ""@type"": ""Service"",
-      ""serviceType"": ""Şehirlerarası Evden Eve Nakliyat"",
-      ""name"": ""İstanbul Ankara Hızlı Nakliyat"",
-      ""provider"": {
-        ""@type"": ""LocalBusiness"",
-        ""name"": ""Hadımköy Ankara Nakliyat""
-      },
-      ""areaServed"": [""İstanbul"", ""Ankara""],
-      ""description"": ""İstanbul'dan Ankara'ya haftalık seferlerle şehirlerarası profesyonel, sigortalı ve asansörlü ev, ofis taşıma ve nakliye hizmetleri."",
-      ""offers"": {
-          ""@type"": ""Offer"",
-          ""priceCurrency"": ""TRY"",
-          ""price"": ""12000"",
-          ""availability"": ""https://schema.org/InStock""
-      }
-    }";
-
-    // 2. FAQ (SSS) Verisi
-    var faqJson = @"{
-      ""@context"": ""https://schema.org"",
-      ""@type"": ""FAQPage"",
-      ""mainEntity"": [
-        { ""@type"": ""Question"", ""name"": ""İstanbul–Ankara taşımaları kaç günde tamamlanır?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Planlı bir operasyonda genellikle aynı gün yükleme ve ertesi gün/aynı gün boşaltma yapılır."" } },
-        { ""@type"": ""Question"", ""name"": ""Eşyalarım sigortalı mı?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Evet. Taşıma sürecinin tamamı sigorta kapsamındadır."" } },
-        { ""@type"": ""Question"", ""name"": ""Taşıma günü nelere dikkat etmeliyim?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Kırılacak eşyaları etiketlemek ve bina yönetimini bilgilendirmek süreci hızlandırır."" } }
-      ]
-    }";
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "Service",
+  "name": "İstanbul Ankara Nakliyat",
+  "areaServed": ["İstanbul", "Ankara", "Türkiye"],
+  "provider": { 
+      "@@type": "LocalBusiness", 
+      "name": "Hadımköy Ankara Nakliyat", 
+      "telephone": "+905344300360" 
+  },
+  "serviceType": "Şehirlerarası Nakliyat",
+  "url": "https://hadimkoyankaranakliyat.com/istanbul-ankara-nakliyat",
+  "description": "İstanbul'dan Ankara'ya haftalık seferlerle şehirlerarası profesyonel, sigortalı ve asansörlü ev, ofis taşıma ve nakliye hizmetleri.",
+  "offers": { 
+      "@@type": "Offer", 
+      "availability": "https://schema.org/InStock", 
+      "priceCurrency": "TRY",
+      "price": "12000"
+  }
 }
+</script>
 
-@* HTML Çıktısı - Bu kısım Visual Studio'yu yormaz *@
-<script type="application/ld+json">@Html.Raw(serviceJson)</script>
-<script type="application/ld+json">@Html.Raw(faqJson)</script>
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "FAQPage",
+  "mainEntity": [
+    { "@@type": "Question", "name": "İstanbul–Ankara taşımaları kaç günde tamamlanır?", "acceptedAnswer": { "@@type": "Answer", "text": "Planlı bir operasyonda genellikle aynı gün yükleme ve ertesi gün/aynı gün boşaltma yapılır. Parsiyel taşımada sefer günlerine göre değişebilir." } },
+    { "@@type": "Question", "name": "Eşyalarım sigortalı mı?", "acceptedAnswer": { "@@type": "Answer", "text": "Evet. Taşıma sürecinin tamamı sigorta kapsamındadır. Poliçe kapsamı ve bedelleri sözleşmede yazılıdır." } },
+    { "@@type": "Question", "name": "Asansörlü nakliyat her binada kurulabilir mi?", "acceptedAnswer": { "@@type": "Answer", "text": "Uygun park alanı, düz zemin ve balkon/pencere açıklığı gerekiyorsa evet. Keşif sırasında teknik uygunluğu birlikte kontrol ediyoruz." } },
+    { "@@type": "Question", "name": "Parsiyel nakliyatla tek parça eşya gönderebilir miyim?", "acceptedAnswer": { "@@type": "Answer", "text": "Evet. Düzenli parsiyel seferlerle tek parça/az hacimli gönderiler ekonomik şekilde taşınır; yalnızca kendi alanınıza ödeme yaparsınız." } },
+    { "@@type": "Question", "name": "Ek ücret çıkar mı?", "acceptedAnswer": { "@@type": "Answer", "text": "Hayır. Şeffaf fiyat ilkesine bağlıyız; tüm kalemler sözleşmede yer alır, sonradan sürpriz olmaz." } }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://hadimkoyankaranakliyat.com/" },
+    { "@@type": "ListItem", "position": 2, "name": "İstanbul Ankara Nakliyat", "item": "https://hadimkoyankaranakliyat.com/istanbul-ankara-nakliyat" }
+  ]
+}
+</script>
+
 <style>
   /* Metin aralığı */
   .team-details__top-content-text p { margin-bottom: 18px; }
@@ -52,7 +64,7 @@
 
   /* İÇİNDEKİLER (TOC) */
   .toc {
-    --header-height: 80px; /* header yüksekliğin farklıysa güncelle */
+    --header-height: 80px;
     position: sticky;
     top: calc(var(--header-height) + 16px);
     z-index: 2;
@@ -112,33 +124,22 @@
   }
 </style>
 
-<!--Start Page Header-->
 <section class="page-header">
   <div class="page-header__bg" style="background-image:url(/assets/images/gallery/hadimkoy_hakkimizda.png)"></div>
   <div class="container">
     <div class="page-header__inner">
       <h1 style="color:#fff;font-weight:700;">İstanbul Ankara Nakliyat</h1>
-      <ul class="thm-breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/Home/Index" itemprop="item"><span itemprop="name">Ana Sayfa</span></a>
-          <meta itemprop="position" content="1" />
-        </li>
+      <ul class="thm-breadcrumb">
+        <li><a href="/Home/Index">Ana Sayfa</a></li>
         <li><span class="icon-right-arrow21"></span></li>
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <span itemprop="name">İstanbul Ankara Nakliyat</span>
-          <meta itemprop="position" content="2" />
-        </li>
+        <li><span>İstanbul Ankara Nakliyat</span></li>
       </ul>
     </div>
   </div>
 </section>
-<!--End Page Header-->
-
-<!--Start Service Details-->
 <section class="service-details">
   <div class="container">
     <div class="row">
-      <!--Start Sidebar-->
       <aside class="col-xl-4">
         <div class="service-details__sidebar">
           <div class="service-details__sidebar-single">
@@ -176,12 +177,8 @@
           </div>
         </div>
       </aside>
-      <!--End Sidebar-->
-
-      <!--Start Content-->
       <div class="col-xl-8">
-        <article class="service-details__content" itemscope itemtype="https://schema.org/Service">
-          <meta itemprop="serviceType" content="İstanbul Ankara Nakliyat" />
+        <article class="service-details__content">
 
           <div class="service-details__content-img1">
             <div class="inner">
@@ -191,7 +188,6 @@
             </div>
           </div>
 
-          <!-- İçindekiler (TOC) -->
           <nav class="toc toc-card" aria-label="İçindekiler">
             <h2>İçindekiler</h2>
             <ul>
@@ -203,7 +199,6 @@
             </ul>
           </nav>
 
-          <!-- NEDEN BİZ -->
           <section class="service-details__content-text1" id="neden">
             <h2>İstanbul Ankara Nakliyat: Neden Bizi Tercih Etmelisiniz?</h2>
             <p>
@@ -214,43 +209,33 @@
               yalnızca araç ve ekip göndermiyor, <em>baştan sona bir taşınma planı</em> sunuyoruz.
             </p>
             <p>
+              <strong>Firmamıza Özel Sefer Takvimi:</strong> Araçlarımız ağırlıklı olarak İstanbul Hadımköy merkez garajımızdan hareket etmekte olup, Ankara yönüne haftanın 6 günü kesintisiz sefer düzenlemektedir. Bu yerel güç ve lojistik ağımız sayesinde bekleme sürelerini ortadan kaldırıyor, eşyalarınızı depolarda bekletmeden direkt olarak varış noktasına ulaştırıyoruz.
+            </p>
+            <p>
               İlk adımda <strong>ücretsiz ekspertiz</strong> ile envanter ve metraj çıkarır, kat-asansör durumunu analiz eder ve rota/araç tipini netleştiririz. 
               Hazırladığımız teklif <strong>şeffaftır</strong>; gizli maliyet ve sürpriz masraf çıkmaz. 
-              Tüm eşyalar, türüne uygun <strong>ambalaj malzemeleri</strong> (balonlu naylon, kraft, mukavva köşe, streç vb.) ile paketlenir; 
-              mobilyalar profesyonelce demonte edilir ve varışta yeniden kurulur. 
-              Yol boyunca eşyalar <strong>sigortalıdır</strong>; böylece riskleri minimuma indirir, psikolojik yükü ortadan kaldırırız. 
-              Yüksek katlı binalar için <strong>asansörlü nakliyat</strong> kullanır, dar merdiven/trafik sorunlarını süreçten çıkarırız. 
-              Amacımız; eşyalarınızı sağlam, hızlı ve planlı biçimde teslim ederken sizin için taşınmayı <em>stres olmaktan</em> çıkarmaktır.
+              Tüm eşyalar, türüne uygun <strong>ambalaj malzemeleri</strong> ile paketlenir; 
+              yol boyunca eşyalar <strong>sigortalıdır</strong>. Amacımız; eşyalarınızı sağlam, hızlı ve planlı biçimde teslim ederken sizin için taşınmayı <em>stres olmaktan</em> çıkarmaktır.
             </p>
           </section>
 
-          <!-- HİZMETLER -->
           <section class="service-details__content-text2" id="hizmetler">
             <h3>Verdiğimiz Hizmetler (İstanbul–Ankara Hattında Düzenli Seferler)</h3>
             <p>
-              Hangi kapsamda ihtiyacınız olursa olsun, İstanbul’dan Ankara’ya ya da Ankara’dan İstanbul’a <strong>çift yönlü</strong> çözümler üretiyoruz. 
-              Aşağıdaki hizmetlerin her birinde planlama, paketleme, yükleme, sigortalı taşıma ve yerleşim/kurulum adımlarını dikkatle yönetiyoruz:
+              Hangi kapsamda ihtiyacınız olursa olsun, detaylı çözümler üretiyoruz. İlgilendiğiniz hizmetin detaylarına aşağıdaki bağlantılardan ulaşabilirsiniz:
             </p>
             <ul>
               <li>
-                <strong>Evden Eve Nakliyat:</strong> Oda oda envanter, özel ambalaj, mobilya demontaj–montaj, elektroniklerin güvenli taşınması ve odalara göre yerleşim. 
-                Çok katlı binalarda asansörlü taşıma ile hız ve güven artışı.
+                <a href="/Home/istanbul_ankara_evden_eve_nakliyat"><strong>Evden Eve Nakliyat:</strong></a> Oda oda envanter, özel ambalaj, mobilya demontaj–montaj ve güvenli taşıma detayları için sayfamızı inceleyin.
               </li>
               <li>
-                <strong>Parsiyel (Parça) Nakliyat:</strong> Tam araç kiralamadan, yalnızca kapladığınız alan kadar ödeme. 
-                Düzenli <strong>parsiyel sefer</strong> takvimiyle ekonomik ve zamanında teslimat; öğrenci eşyaları, tek parça mobilya, ticari paketler için ideal.
+                <a href="/Home/istanbul_ankara_parsiyel_nakliyat"><strong>Parsiyel (Parça) Nakliyat:</strong></a> Tam araç kiralamadan, yalnızca kapladığınız alan kadar ödeme yapacağınız ekonomik çözümlerimiz.
               </li>
               <li>
-                <strong>Ofis &amp; Kurumsal Taşıma:</strong> Belgeler, arşiv, IT ekipmanları ve mobilyalar için iş kesintisini azaltan planlı taşınma; gece/hafta sonu çalışması opsiyonu.
+                <a href="/Home/istanbul_ankara_fuar_nakliyat"><strong>Ofis &amp; Fuar Taşıma:</strong></a> İş kesintisini azaltan planlı taşınma, stand ve materyal lojistiği detayları.
               </li>
               <li>
-                <strong>Asansörlü Nakliyat:</strong> Mobil dış cephe platformu ile balkondan/pencereden yükleme-boşaltma; apartman içi trafik ve çizik riskinde ciddi azalma, %30–50 hız avantajı.
-              </li>
-              <li>
-                <strong>Ambar/Depolu Nakliyat &amp; Kamyonet Çözümleri:</strong> Paletli yükler, kısmi sevkiyatlar ve kısa süreli depolama ihtiyaçları için pratik ve uygun maliyetli çözümler.
-              </li>
-              <li>
-                <strong>Sigortalı Şehirlerarası Nakliyat:</strong> Tüm süreç boyunca eşya güvence altındadır; kapsam ve poliçe bilgileri sözleşmede yazılıdır.
+                <a href="/Home/istanbul_ankara_ambar_nakliyat"><strong>Ambar &amp; Kamyonet Nakliyat:</strong></a> Paletli yükler, kısmi sevkiyatlar ve daha küçük hacimli hızlı çözümlerimiz hakkında bilgi alın.
               </li>
             </ul>
 
@@ -272,198 +257,94 @@
                 </div>
               </div>
             </div>
-
-            <p>
-              Hizmet yelpazemizin tamamında hedefimiz aynıdır: <strong>Emniyet, zamanında teslim ve şeffaf fiyat.</strong> 
-              Tek parça gönderiden komple ev/iş yeri taşımaya kadar, her ölçek için uygun bir plan oluşturur ve süreci uçtan uca yönetiriz.
-            </p>
           </section>
 
-          <!-- SÜREÇ -->
           <section id="surec">
-            <h4>Taşıma Süreci Nasıl İlerliyor? (Adım Adım Yol Haritası)</h4>
+            <h3>Taşıma Süreci Nasıl İlerliyor? (Adım Adım Yol Haritası)</h3>
             <p>
               Başarılı bir <strong>evden eve nakliyat</strong> operasyonu rastgele değil, net bir sistemin sonucudur. 
-              İstanbul–Ankara arasında uyguladığımız standart süreç, hataları azaltır ve hız-kalite dengesini korur:
+              İstanbul–Ankara arasında uyguladığımız standart süreç:
             </p>
             <ol>
-              <li>
-                <strong>Ön Görüşme &amp; Ücretsiz Ekspertiz:</strong> Eşya listesi/odalara göre envanter, kat–asansör bilgisi, park–kurulum koşulları değerlendirilir. 
-                Gerekirse adreste keşif yapılır ve <em>en doğru araç tipi</em> belirlenir.
-              </li>
-              <li>
-                <strong>Planlama &amp; Sözleşme:</strong> Tarih, saat, ekip sayısı, paketleme kapsamı, <strong>sigorta</strong>, ödeme ve teslimat taahhüdü sözleşmeye girer; <em>sürpriz masraf yoktur</em>.
-              </li>
-              <li>
-                <strong>Paketleme &amp; Demontaj:</strong> Kırılacaklar çift kat balonlu naylon/köşe koruyucu ile sarılır, mobilya demonte edilir; vida ve bağlantı elemanları etiketli poşetlerde saklanır.
-              </li>
-              <li>
-                <strong>Yükleme:</strong> Önce kırılacaklar ve elektronikler, ardından hacimli mobilyalar yüklenir; araç içi sabitleme ile yol titreşimi etkisi azaltılır.
-              </li>
-              <li>
-                <strong>Ulaşım &amp; Bilgilendirme:</strong> Rota/trafik anlık takip edilir; müşteriye süreç ve ETA (tahmini varış) bildirilir.
-              </li>
-              <li>
-                <strong>Boşaltma &amp; Yerleşim:</strong> Odalara göre yerleşim yapılır; mobilya montajı ve temel kurulum tamamlanır, ambalaj atıkları toplanır.
-              </li>
+              <li><strong>Ön Görüşme &amp; Ücretsiz Ekspertiz:</strong> Eşya listesi, kat–asansör bilgisi ve rota değerlendirilir.</li>
+              <li><strong>Planlama &amp; Sözleşme:</strong> Tarih, saat, ekip sayısı, sigorta ve ödeme sözleşmeye girer; sürpriz masraf yoktur.</li>
+              <li><strong>Paketleme &amp; Demontaj:</strong> Kırılacaklar ve mobilyalar profesyonelce paketlenir ve sökülür.</li>
+              <li><strong>Yükleme:</strong> Araç içi sabitleme ile yol titreşimi etkisi azaltılarak yükleme yapılır.</li>
+              <li><strong>Ulaşım &amp; Bilgilendirme:</strong> Rota takip edilir; müşteriye süreç ve varış zamanı bildirilir.</li>
+              <li><strong>Boşaltma &amp; Yerleşim:</strong> Odalara göre yerleşim yapılır; mobilya montajı tamamlanır.</li>
             </ol>
-            <p>
-              Yüksek katlı binalarda, site kuralları ve güvenlik gereksinimleri doğrultusunda <strong>asansörlü nakliyat</strong> kurulumunu önceden planlarız. 
-              Gerekli izin ve bilgilendirmeler (site yönetimi, güvenlik, komşular) yapılarak apartman içi trafiği ve olası şikâyetler en aza indirilir.
-            </p>
           </section>
 
-          <!-- FİYAT -->
           <section id="fiyat">
-            <h4>Fiyatlandırma Politikamız (Şeffaf, Sürprizsiz)</h4>
+            <h3>Fiyatlandırma Politikamız (Şeffaf, Sürprizsiz)</h3>
             <p>
-              <strong>İstanbul Ankara nakliyat fiyatları</strong> eşyaların hacmi (1+1/2+1/3+1), kat–asansör durumu, asansörlü taşıma gereksinimi, 
-              mesafe ve paketleme kapsamına göre belirlenir. Parsiyel taşımada yalnızca kapladığınız alan için ödeme yaparsınız; 
-              böylece kullanılmayan kapasitenin bedelini ödemezsiniz. 
-              Tüm bedeller <strong>yazılı teklifte</strong> baştan netleşir ve sözleşmeye eklenir. 
-              <em>Ekstra masraf çıkarılmaz.</em> 
-              Dilerseniz paketleme, montaj–demontaj, kat kurulum, depolama gibi hizmetleri paket halinde alarak maliyeti optimize edebilirsiniz.
+              <strong>İstanbul Ankara nakliyat fiyatları</strong> eşyaların hacmine, kat–asansör durumuna, mesafe ve paketleme kapsamına göre belirlenir. Parsiyel taşımada yalnızca kapladığınız alan için ödeme yaparsınız. Tüm bedeller <strong>yazılı teklifte</strong> baştan netleşir ve sözleşmeye eklenir. <em>Ekstra masraf çıkarılmaz.</em>
             </p>
             <p>
               En doğru fiyatı almak için bize ulaşın; <strong>ücretsiz keşif</strong> ile sürprizleri ortadan kaldıralım. 
-              Hemen arayın: <a href="tel:+905344300360"><strong>+90 534 430 03 60</strong></a> (WhatsApp: <a href="https://wa.me/905344300360" target="_blank" rel="noopener">tıklayın</a>)
+              Hemen arayın: <a href="tel:+905344300360"><strong>+90 534 430 03 60</strong></a>
             </p>
           </section>
 
-          <!-- SSS -->
           <section class="faq-section" id="sss">
-  <h2>Sık Sorulan Sorular</h2>
-  <div class="faq-item">
-    <h5>İstanbul–Ankara taşımaları kaç günde tamamlanır?</h5>
-    <p>
-      Planlı ve programlı yapılan bir <strong>İstanbul–Ankara nakliyat</strong> operasyonunda,
-      eşyalarınız genellikle <strong>aynı gün içinde yüklenir</strong> ve mesafe ile yol durumuna göre
-      çoğunlukla <strong>aynı gün ya da ertesi gün</strong> adresinize ulaştırılır. 
-      <em>Parsiyel taşımacılık</em> hizmetlerinde ise sefer günleri belirli olduğu için teslimat süresi,
-      çıkış ve varış programına göre şekillenir. Düzenli haftalık ve günlük seferlerimiz sayesinde,
-      eşyalarınız zamanında ve güvenle teslim edilir.
-    </p>
-  </div>
+            <h2>Sık Sorulan Sorular</h2>
+            
+            <div class="faq-item">
+              <h3>İstanbul–Ankara taşımaları kaç günde tamamlanır?</h3>
+              <p>
+                Planlı ve programlı yapılan bir <strong>İstanbul–Ankara nakliyat</strong> operasyonunda,
+                eşyalarınız genellikle <strong>aynı gün içinde yüklenir</strong> ve mesafe ile yol durumuna göre
+                çoğunlukla <strong>aynı gün ya da ertesi gün</strong> adresinize ulaştırılır. 
+                <em>Parsiyel taşımacılık</em> hizmetlerinde ise teslimat süresi çıkış ve varış programına göre şekillenir.
+              </p>
+            </div>
 
-  <div class="faq-item">
-    <h3>Eşyalarım sigortalı mı?</h3>
-    <p>
-      Evet. Tüm taşımacılık süreci boyunca eşyalarınız <strong>nakliyat sigortası</strong> kapsamındadır. 
-      Yükleme, taşıma ve boşaltma esnasında yaşanabilecek olası hasarlara karşı eşyalarınız güvence altına alınır.
-      Poliçenin kapsamı, bedelleri ve sigorta detayları, <strong>yazılı sözleşme</strong> içerisinde açıkça belirtilir.
-      Bu sayede müşterilerimiz hiçbir sürpriz yaşamadan, gönül rahatlığıyla taşınma sürecini tamamlar.
-    </p>
-  </div>
+            <div class="faq-item">
+              <h3>Eşyalarım sigortalı mı?</h3>
+              <p>
+                Evet. Tüm taşımacılık süreci boyunca eşyalarınız <strong>nakliyat sigortası</strong> kapsamındadır. 
+                Poliçenin kapsamı, bedelleri ve sigorta detayları, <strong>yazılı sözleşme</strong> içerisinde açıkça belirtilir.
+              </p>
+            </div>
 
-  <div class="faq-item">
-    <h6>Asansörlü nakliyat her binada kurulabilir mi?</h6>
-    <p>
-      Asansörlü nakliyat, yüksek katlı binalarda büyük kolaylık sağlar; ancak her bina için uygun olmayabilir.
-      Bunun için <strong>uygun park alanı</strong>, <strong>düz zemin</strong> ve
-      <strong>balkon/pencere açıklığı</strong> gibi teknik şartların sağlanması gerekir. 
-      Keşif ekibimiz, taşınma öncesinde adresinize gelerek bu uygunluğu kontrol eder
-      ve <strong>asansörlü taşıma</strong> seçeneğinin mümkün olup olmadığını size bildirir.
-      Böylece taşınma günü herhangi bir sorun yaşanmaz.
-    </p>
-  </div>
+            <div class="faq-item">
+              <h3>Asansörlü nakliyat her binada kurulabilir mi?</h3>
+              <p>
+                Asansörlü nakliyat büyük kolaylık sağlar; ancak her bina için uygun olmayabilir.
+                Bunun için <strong>uygun park alanı</strong>, <strong>düz zemin</strong> ve
+                <strong>balkon/pencere açıklığı</strong> gibi teknik şartların sağlanması gerekir. 
+                Keşif ekibimiz adresinize gelerek bu uygunluğu kontrol eder.
+              </p>
+            </div>
 
-  <div class="faq-item">
-    <h6>Parsiyel nakliyatla tek parça eşya gönderebilir miyim?</h6>
-    <p>
-      Evet, parsiyel nakliyatın en büyük avantajlarından biri budur. 
-      Tek parça ya da az hacimli eşyalarınızı, düzenli olarak gerçekleştirdiğimiz 
-      <strong>parsiyel seferler</strong> ile uygun maliyetlerle gönderebilirsiniz. 
-      Yalnızca kendi kapladığınız alan için ücret ödersiniz, bu da özellikle öğrenci taşımaları, 
-      küçük ofis eşyaları ya da birkaç koli gönderimi için oldukça ekonomik bir çözüm sunar. 
-      Ayrıca eşyalarınız diğer müşterilerin yükleriyle karışmadan, 
-      <strong>özenle etiketlenerek</strong> taşınır.
-    </p>
-  </div>
+            <div class="faq-item">
+              <h3>Parsiyel nakliyatla tek parça eşya gönderebilir miyim?</h3>
+              <p>
+                Evet, düzenli olarak gerçekleştirdiğimiz <strong>parsiyel seferler</strong> ile uygun maliyetlerle tek parça eşya gönderebilirsiniz. 
+                Yalnızca kendi kapladığınız alan için ücret ödersiniz.
+              </p>
+            </div>
 
-  <div class="faq-item">
-    <h6>Ek ücret çıkar mı?</h6>
-    <p>
-      Hayır, kesinlikle ek ücret çıkmaz. <strong>Şeffaf fiyat politikası</strong> bizim en önemli prensiplerimizdendir. 
-      Tüm fiyatlandırma kalemleri, taşıma sözleşmesi içerisinde açıkça belirtilir. 
-      Gizli maliyet, sonradan eklenen taşıma bedeli veya sürpriz masraf söz konusu değildir. 
-      Böylece taşınma sürecinizin başından sonuna kadar gönül rahatlığıyla hareket edebilir, 
-      <em>önceden belirlenen fiyat üzerinden</em> hizmet alabilirsiniz.
-    </p>
-  </div>
+            <div class="faq-item">
+              <h3>Ek ücret çıkar mı?</h3>
+              <p>
+                Hayır, kesinlikle ek ücret çıkmaz. Tüm fiyatlandırma kalemleri, taşıma sözleşmesi içerisinde açıkça belirtilir. 
+                Gizli maliyet veya sürpriz masraf söz konusu değildir.
+              </p>
+            </div>
+          </section>
 
-  <div class="faq-item">
-    <h6>Taşıma günü nelere dikkat etmeliyim?</h6>
-    <p>
-      Taşıma günü, sürecin en kritik aşamasıdır. 
-      Bu nedenle önceden hazırlık yaparak süreci hızlandırabilirsiniz. 
-      Kırılacak eşyaları önceden etiketlemek, önemli evrak ve değerli eşyalarınızı ayrı paketlemek,
-      nakliye ekibine büyük kolaylık sağlar. Ayrıca bina yönetimi ve komşularınızı bilgilendirmeniz,
-      taşıma esnasında yaşanabilecek olası sorunların önüne geçer. 
-      <strong>Hadımköy Ankara Nakliyat</strong> ekibi, taşıma günü tüm aşamaları koordine ederek 
-      size yalnızca süreci izlemenin rahatlığını bırakır.
-    </p>
-  </div>
-</section>
         </article>
       </div>
-      <!--End Content-->
-    </div>
+      </div>
   </div>
 </section>
-<!--End Service Details-->
 
-<!-- FAQ & Breadcrumb JSON-LD -->
-<script type="application/ld+json">
-@Html.Raw(@"{
-  ""@context"": ""https://schema.org"",
-  ""@type"": ""FAQPage"",
-  ""mainEntity"": [
-    { ""@type"": ""Question"", ""name"": ""İstanbul–Ankara taşımaları kaç günde tamamlanır?"",
-      ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Planlı bir operasyonda genellikle aynı gün yükleme ve ertesi gün/aynı gün boşaltma yapılır. Parsiyel taşımada sefer günlerine göre değişebilir."" } },
-    { ""@type"": ""Question"", ""name"": ""Eşyalarım sigortalı mı?"",
-      ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Evet. Taşıma sürecinin tamamı sigorta kapsamındadır. Poliçe kapsamı ve bedelleri sözleşmede yazılıdır."" } },
-    { ""@type"": ""Question"", ""name"": ""Asansörlü nakliyat her binada kurulabilir mi?"",
-      ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Uygun park alanı, düz zemin ve balkon/pencere açıklığı gerekiyorsa evet. Keşif sırasında teknik uygunluğu birlikte kontrol ediyoruz."" } },
-    { ""@type"": ""Question"", ""name"": ""Parsiyel nakliyatla tek parça eşya gönderebilir miyim?"",
-      ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Evet. Düzenli parsiyel seferlerle tek parça/az hacimli gönderiler ekonomik şekilde taşınır; yalnızca kendi alanınıza ödeme yaparsınız."" } },
-    { ""@type"": ""Question"", ""name"": ""Ek ücret çıkar mı?"",
-      ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Hayır. Şeffaf fiyat ilkesine bağlıyız; tüm kalemler sözleşmede yer alır, sonradan sürpriz olmaz."" } }
-  ]
-}")
-</script>
-
-<script type="application/ld+json">
-@Html.Raw(@"{
-  ""@context"": ""https://schema.org"",
-  ""@type"": ""BreadcrumbList"",
-  ""itemListElement"": [
-    { ""@type"": ""ListItem"", ""position"": 1, ""name"": ""Ana Sayfa"", ""item"": ""https://hadimkoyankaranakliyat.com/"" },
-    { ""@type"": ""ListItem"", ""position"": 2, ""name"": ""İstanbul Ankara Nakliyat"", ""item"": ""https://hadimkoyankaranakliyat.com/istanbul-ankara-nakliyat"" }
-  ]
-}")
-</script>
-
-<!-- Service JSON-LD -->
-<script type="application/ld+json">
-@Html.Raw(@"{
-  ""@context"": ""https://schema.org"",
-  ""@type"": ""Service"",
-  ""name"": ""İstanbul Ankara Nakliyat"",
-  ""areaServed"": [""İstanbul"", ""Ankara"", ""Türkiye""],
-  ""provider"": { ""@type"": ""LocalBusiness"", ""name"": ""Hadımköy Ankara Nakliyat"", ""telephone"": ""+905344300360"" },
-  ""serviceType"": ""Şehirlerarası Nakliyat"",
-  ""url"": ""https://hadimkoyankaranakliyat.com/istanbul-ankara-nakliyat"",
-  ""offers"": { ""@type"": ""Offer"", ""availability"": ""https://schema.org/InStock"", ""priceCurrency"": ""TRY"" }
-}")
-</script>
-
-<!-- TOC: Smooth scroll + aktif link -->
 <script>
   (function () {
     const headerVar = getComputedStyle(document.documentElement).getPropertyValue('--header-height') || '80px';
     const headerH = (headerVar.replace('px','')*1) || 80;
 
-    // Smooth scroll
     document.querySelectorAll('.toc a[href^="#"]').forEach(a => {
       a.addEventListener('click', function (e) {
         e.preventDefault();
@@ -475,7 +356,6 @@
       });
     });
 
-    // Aktif başlığı vurgula
     const map = {};
     document.querySelectorAll('.toc a[href^="#"]').forEach(a => { map[a.getAttribute('href').slice(1)] = a; });
 
