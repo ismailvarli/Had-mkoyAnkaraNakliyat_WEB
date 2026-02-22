@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
     <link rel="canonical" href="@(Context.Request.Scheme)://@(Context.Request.Host)@(Context.Request.Path)" />
@@ -51,6 +51,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
     <meta name="description" content="@ViewData["Description"]" />
+    <meta name="theme-color" content="#ff7300" />
+
+    <!-- Open Graph (sosyal medya önizlemesi) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Hadımköy Ankara Nakliyat" />
+    <meta property="og:title" content="@ViewData["Title"]" />
+    <meta property="og:description" content="@ViewData["Description"]" />
+    <meta property="og:url" content="@(Context.Request.Scheme)://@(Context.Request.Host)@(Context.Request.Path)" />
+    <meta property="og:image" content="https://www.hadimkoyankaranakliyat.com/assets/images/gallery/HadımköyAnkaraNakliyat_LOGO.png" />
+    <meta property="og:locale" content="tr_TR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="@ViewData["Title"]" />
+    <meta name="twitter:description" content="@ViewData["Description"]" />
+    <meta name="twitter:image" content="https://www.hadimkoyankaranakliyat.com/assets/images/gallery/HadımköyAnkaraNakliyat_LOGO.png" />
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="~/assets/images/gallery/hadimkoy_logo_180x180.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="~/assets/images/gallery/hadimkoy_logo_32x32.png" />
@@ -462,21 +478,15 @@
 
                                     <ul class="footer-one__quick-links-list">
                                         <li><a href="/Home/Index"><span class="icon-right-arrow1"></span> Ana Sayfa</a></li>
-                                        <li>
-                                            <a href="/Home/hakkimizda"><span class="icon-right-arrow1"></span>Hakkımızda</a>
-                                        </li>
-                                        <li>
-                                            <a href="/Home/hizmetlerimiz"><span class="icon-right-arrow1"></span> hizmetlerimiz</a>
-                                        </li>
-                                        <li>
-                                            <a href="/Home/iletisim">
-                                                <span class="icon-right-arrow1"></span> İletişim
-
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/Home/fiyat_al"><span class="icon-right-arrow1"></span>  Fiyat Al</a>
-                                        </li>
+                                        <li><a href="/istanbul-ankara-nakliyat"><span class="icon-right-arrow1"></span> İstanbul Ankara Nakliyat</a></li>
+                                        <li><a href="/Home/evden_eve_nakliyat"><span class="icon-right-arrow1"></span> Evden Eve Nakliyat</a></li>
+                                        <li><a href="/Home/parsiyel_nakliyat"><span class="icon-right-arrow1"></span> Parsiyel Nakliyat</a></li>
+                                        <li><a href="/Home/hadimkoy_ankara_nakliyat"><span class="icon-right-arrow1"></span> Hadımköy Ankara Nakliyat</a></li>
+                                        <li><a href="/Home/nakliyat_hizmet_fiyati"><span class="icon-right-arrow1"></span> Nakliyat Fiyatları</a></li>
+                                        <li><a href="/Home/hakkimizda"><span class="icon-right-arrow1"></span> Hakkımızda</a></li>
+                                        <li><a href="/Home/blog"><span class="icon-right-arrow1"></span> Blog</a></li>
+                                        <li><a href="/Home/iletisim"><span class="icon-right-arrow1"></span> İletişim</a></li>
+                                        <li><a href="/Home/fiyat_al"><span class="icon-right-arrow1"></span> Ücretsiz Fiyat Al</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -585,9 +595,10 @@
         <!-- Mini FAB butonlar -->
         <div class="fab-stack" role="region" aria-label="Hızlı iletişim">
             <!-- WhatsApp -->
-            <a class="fab fab-wa" href="#"
+            <a class="fab fab-wa" href="https://wa.me/905344300360"
                aria-label="WhatsApp"
                rel="nofollow noopener"
+               target="_blank"
                onclick="return gtag_whatsapp_conversion();">
                 <!-- WA icon -->
                 <svg width="24" height="24" viewBox="0 0 32 32" aria-hidden="true">
@@ -740,15 +751,6 @@
     @RenderSection("Scripts", required: false)
 
     <script>
-        function gtag_report_conversion(url) {
-            var cb=function(){ if(typeof url!='undefined'){window.location=url;} };
-            gtag('event','conversion',{
-              'send_to':'AW-17507094342/B1I8CI3qs40bEMaehJxB',
-              'event_callback':cb
-            });
-            return false;
-        }
-
         function gtag_whatsapp_conversion(){
             var msg="Merhaba, bilgi almak istiyorum. Hizmet Bilgisi: "+location.href;
             var wa="https://wa.me/905344300360?text="+encodeURIComponent(msg);

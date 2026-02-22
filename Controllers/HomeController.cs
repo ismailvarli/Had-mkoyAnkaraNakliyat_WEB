@@ -1,6 +1,5 @@
 using HadımkoyAnkaraNakliyat_WEB.Models;
 using Microsoft.AspNetCore.Mvc;
-using MimeKit;
 using System.Net;
 using System.Net.Mail;
 
@@ -540,7 +539,10 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
         public IActionResult iletisim(ContactFormModel model)
         {
             if (!ModelState.IsValid)
-                return Content("Form verileri geçersiz.");
+            {
+                TempData["ErrorMessage"] = "Lütfen tüm zorunlu alanları doldurun.";
+                return RedirectToAction("iletisim");
+            }
 
             try
             {
@@ -608,42 +610,39 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
             if (!ModelState.IsValid)
                 return View(model);
 
-            var email = new MimeMessage();
-            email.From.Add(MailboxAddress.Parse("hadimkoyankaranakliyat@gmail.com"));
-            email.To.Add(MailboxAddress.Parse("hadimkoyankaranakliyat@gmail.com"));
-            email.Subject = "Yeni Teklif Formu";
+            var smtp = _config.GetSection("Smtp");
 
-            var bodyBuilder = new BodyBuilder
+            var mail = new MailMessage
             {
-                HtmlBody = $@"
-            <h2>Teklif Talebi</h2>
-            <p><strong>Ad Soyad:</strong> {model.AdSoyad}</p>
-            <p><strong>Email:</strong> {model.Email}</p>
-            <p><strong>Telefon:</strong> {model.Telefon}</p>
-            <p><strong>Tarih:</strong> {model.Tarih}</p>
-            <p><strong>Ağırlık:</strong> {model.Agirlik}</p>
-            <p><strong>Alınacak Şehir:</strong> {model.AlinanSehir}</p>
-            <p><strong>Taşınacak Şehir:</strong> {model.TasinanSehir}</p>"
+                From = new MailAddress(smtp["UserName"]!),
+                Subject = "Yeni Teklif Formu",
+                Body = $@"
+                    <h2>Teklif Talebi</h2>
+                    <p><strong>Ad Soyad:</strong> {model.AdSoyad}</p>
+                    <p><strong>Email:</strong> {model.Email}</p>
+                    <p><strong>Telefon:</strong> {model.Telefon}</p>
+                    <p><strong>Tarih:</strong> {model.Tarih}</p>
+                    <p><strong>Ağırlık:</strong> {model.Agirlik}</p>
+                    <p><strong>Alınacak Şehir:</strong> {model.AlinanSehir}</p>
+                    <p><strong>Taşınacak Şehir:</strong> {model.TasinanSehir}</p>",
+                IsBodyHtml = true
             };
-            email.Body = bodyBuilder.ToMessageBody();
+            mail.To.Add(smtp["ToEmail"]!);
 
             try
             {
-                using (var smtp = new MailKit.Net.Smtp.SmtpClient())
+                using var smtpClient = new SmtpClient(smtp["Host"], int.Parse(smtp["Port"]!))
                 {
-                    await smtp.ConnectAsync("smtp.gmail.com", 587, MailKit.Security.SecureSocketOptions.StartTls);
-                    await smtp.AuthenticateAsync("hadimkoyankaranakliyat@gmail.com", "qxco wuch zvtl rbxe"); // Uygulama şifresi
-                    await smtp.SendAsync(email);
-                    await smtp.DisconnectAsync(true);
-                }
+                    Credentials = new NetworkCredential(smtp["UserName"], smtp["Password"]),
+                    EnableSsl = bool.Parse(smtp["EnableSSL"]!)
+                };
+                await smtpClient.SendMailAsync(mail);
                 TempData["SuccessMessage"] = "Teklifiniz başarıyla iletildi! En kısa sürede sizinle iletişime geçeceğiz.";
                 return RedirectToAction("fiyat_al");
             }
-            catch (Exception ex)
+            catch
             {
-                // İstersen ViewBag veya TempData ile hata mesajı dönebilirsin
                 TempData["ErrorMessage"] = "Bir hata oluştu. Lütfen tekrar deneyin veya bizimle iletişime geçin.";
-                // Hatanın detayını loglaman önerilir!
                 return View(model);
             }
         }

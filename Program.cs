@@ -72,7 +72,37 @@ namespace HadımkoyAnkaraNakliyat_WEB
             });
 
             // -----------------------------------------------------------------
-            // 2. ADIM: Statik Dosyalar (CSS, Resimler çalışsın diye ŞART)
+            // 2. ADIM: WebP Middleware
+            // Tarayıcı WebP destekliyorsa PNG/JPG yerine otomatik WebP servis eder.
+            // .cshtml dosyalarına dokunmaya gerek yok.
+            // -----------------------------------------------------------------
+            app.Use(async (context, next) =>
+            {
+                var path = context.Request.Path.Value ?? "";
+
+                if (path.EndsWith(".png", StringComparison.OrdinalIgnoreCase) ||
+                    path.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) ||
+                    path.EndsWith(".jpeg", StringComparison.OrdinalIgnoreCase))
+                {
+                    var accept = context.Request.Headers["Accept"].ToString();
+                    if (accept.Contains("image/webp"))
+                    {
+                        var webpPath = Path.ChangeExtension(path, ".webp");
+                        var webpFile = Path.Combine(app.Environment.WebRootPath,
+                                                    webpPath.TrimStart('/').Replace('/', Path.DirectorySeparatorChar));
+                        if (File.Exists(webpFile))
+                        {
+                            context.Request.Path = webpPath;
+                            context.Response.Headers["Vary"] = "Accept";
+                        }
+                    }
+                }
+
+                await next();
+            });
+
+            // -----------------------------------------------------------------
+            // 3. ADIM: Statik Dosyalar (CSS, Resimler çalışsın diye ŞART)
             // -----------------------------------------------------------------
             // Statik dosyalar (resim, css, js) için Gelişmiş Cache Ayarı
             app.UseStaticFiles(new StaticFileOptions
@@ -85,6 +115,9 @@ namespace HadımkoyAnkaraNakliyat_WEB
                 }
             });
 
+            // -----------------------------------------------------------------
+            // 4. ADIM: URL Yönlendirmeleri
+            // -----------------------------------------------------------------
             app.Use(async (context, next) =>
             {
                 var path = context.Request.Path.Value;
@@ -115,7 +148,7 @@ namespace HadımkoyAnkaraNakliyat_WEB
             app.UseAuthorization();
 
             // -----------------------------------------------------------------
-            // 3. ADIM: robots.txt
+            // 5. ADIM: robots.txt
             // -----------------------------------------------------------------
             app.MapGet("/robots.txt", () => Results.Text(
 @"User-agent: *
@@ -123,7 +156,7 @@ Allow: /
 Sitemap: https://www.hadimkoyankaranakliyat.com/sitemap.xml", "text/plain"));
 
             // -----------------------------------------------------------------
-            // 4. ADIM: SITEMAP (Google için Harita)
+            // 6. ADIM: SITEMAP (Google için Harita)
             // DİKKAT: Buradaki linklerin hepsi KÜÇÜK HARFLİ olmalı.
             // -----------------------------------------------------------------
             app.MapGet("/sitemap.xml", (HttpContext http) =>
@@ -141,11 +174,11 @@ Sitemap: https://www.hadimkoyankaranakliyat.com/sitemap.xml", "text/plain"));
         $"{host}/home/hizmetlerimiz",
         $"{host}/home/hizmet_turleri",
         $"{host}/home/blog",
-        $"{host}/home/iletisim",
         $"{host}/home/nakliyat_hizmet_fiyati",
 
         //blog
         $"{host}/home/istanbul_ankara_nakliyat_fiyatlari_2025_guncel_rehber",
+        $"{host}/istanbul-ankara-nakliyat-fiyatlari-2026-guncel-rehber",
         $"{host}/home/parsiyel_nakliyat_nedir_istanbul_ankara_arasinda__avantajlari",
         $"{host}/home/evden_eve_nakliyat_oncesi_hazirlik_rehberi",
         $"{host}/home/asansorlu_nakliyatin_istanbul_ankara_tasimalarinda_sagladigi_kolayliklar",
