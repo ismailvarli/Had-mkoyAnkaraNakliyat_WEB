@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WebOptimizer;
 
 namespace HadımkoyAnkaraNakliyat_WEB
 {
@@ -15,6 +16,88 @@ namespace HadımkoyAnkaraNakliyat_WEB
 
             // MVC Servisleri
             builder.Services.AddControllersWithViews();
+
+            // Bundle + Minify (43 CSS + 26 JS → 1+1 dosya)
+            builder.Services.AddWebOptimizer(pipeline =>
+            {
+                // ── CSS BUNDLE ──────────────────────────────────────────────
+                // Orijinal _Layout.cshtml yükleme sırası korundu
+                pipeline.AddCssBundle("/css/bundle.css",
+                    // Module CSS
+                    "assets/css/module-css/01-slider.css",
+                    "assets/css/module-css/02-about.css",
+                    "assets/css/module-css/03-services.css",
+                    "assets/css/module-css/04-testimonial.css",
+                    "assets/css/module-css/05-team.css",
+                    "assets/css/module-css/06-blog.css",
+                    "assets/css/module-css/07-brand.css",
+                    "assets/css/module-css/08-contact.css",
+                    "assets/css/module-css/09-counter.css",
+                    "assets/css/module-css/10-error.css",
+                    "assets/css/module-css/11-faq.css",
+                    "assets/css/module-css/12-footer.css",
+                    "assets/css/module-css/13-page-header.css",
+                    "assets/css/module-css/14-shop.css",
+                    "assets/css/module-css/15-video.css",
+                    "assets/css/module-css/awards.css",
+                    "assets/css/module-css/banner.css",
+                    "assets/css/module-css/cta.css",
+                    "assets/css/module-css/design-interior.css",
+                    "assets/css/module-css/feature.css",
+                    "assets/css/module-css/pricing.css",
+                    "assets/css/module-css/projects.css",
+                    "assets/css/module-css/quote.css",
+                    "assets/css/module-css/skill.css",
+                    "assets/css/module-css/sliding-text.css",
+                    "assets/css/module-css/why-choose.css",
+                    "assets/css/module-css/working-process.css",
+                    // Library CSS
+                    "assets/css/swiper.min.css",
+                    "assets/css/style.css",
+                    "assets/css/responsive.css",
+                    "assets/css/01-bootstrap.min.css",
+                    "assets/css/02-animate.min.css",
+                    "assets/css/03-custom-animate.css",
+                    "assets/css/05-flaticon.css",
+                    "assets/css/06-font-awesome-all.css",
+                    "assets/css/07-jarallax.css",
+                    "assets/css/08-jquery.magnific-popup.css",
+                    "assets/css/09-nice-select.css",
+                    "assets/css/11-owl.carousel.min.css",
+                    "assets/css/12-owl.theme.default.min.css",
+                    "assets/css/13-jquery-ui.css"
+                );
+
+                // ── JS BUNDLE ───────────────────────────────────────────────
+                // jQuery en başta, script.js en sonda — sıra kritik
+                pipeline.AddJavaScriptBundle("/js/bundle.js",
+                    "assets/js/jquery-3.6.0.min.js",
+                    "assets/js/jquery.ajaxchimp.min.js",
+                    "assets/js/jquery.validate.min.js",
+                    "assets/js/swiper.min.js",
+                    "assets/js/wNumb.min.js",
+                    "assets/js/curved-text/jquery.circleType.js",
+                    "assets/js/curved-text/jquery.fittext.js",
+                    "assets/js/curved-text/jquery.lettering.min.js",
+                    "assets/js/gsap/gsap.js",
+                    "assets/js/gsap/ScrollTrigger.js",
+                    "assets/js/gsap/SplitText.js",
+                    "assets/js/01-bootstrap.bundle.min.js",
+                    "assets/js/02-countdown.min.js",
+                    "assets/js/03-jquery.appear.min.js",
+                    "assets/js/04-jquery.nice-select.min.js",
+                    "assets/js/05-jquery-sidebar-content.js",
+                    "assets/js/06-marquee.min.js",
+                    "assets/js/07-owl.carousel.min.js",
+                    "assets/js/08-jarallax.min.js",
+                    "assets/js/09-odometer.min.js",
+                    "assets/js/10-jquery-ui.js",
+                    "assets/js/11-jquery.magnific-popup.min.js",
+                    "assets/js/12-wow.js",
+                    "assets/js/13-isotope.js",
+                    "assets/js/script.js"
+                );
+            });
 
             // Sıkıştırma (Performans için)
             builder.Services.AddResponseCompression(o =>
@@ -37,6 +120,7 @@ namespace HadımkoyAnkaraNakliyat_WEB
 
             app.UseHttpsRedirection();
             app.UseResponseCompression();
+            app.UseWebOptimizer();
 
             // -----------------------------------------------------------------
             // 1. ADIM: URL Normalizasyonu (Büyük harf -> Küçük harf çevirici)

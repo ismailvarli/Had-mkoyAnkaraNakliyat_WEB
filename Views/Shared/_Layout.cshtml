@@ -68,61 +68,19 @@
     <meta name="twitter:description" content="@ViewData["Description"]" />
     <meta name="twitter:image" content="https://www.hadimkoyankaranakliyat.com/assets/images/gallery/HadımköyAnkaraNakliyat_LOGO.png" />
     <!-- favicons Icons -->
+
     <link rel="apple-touch-icon" sizes="180x180" href="~/assets/images/gallery/hadimkoy_logo_180x180.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="~/assets/images/gallery/hadimkoy_logo_32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="~/assets/images/gallery/hadimkoy_logo_16x16.png" />
-    <link rel="stylesheet" href="~/assets/css/module-css/01-slider.css" />
-    <link rel="stylesheet" href="~/assets/css/module-css/02-about.css" />
-    <link rel="stylesheet" href="~/assets/css/module-css/03-services.css" />
-    <link rel="stylesheet" href="~/assets/css/module-css/04-testimonial.css" />
-    <link rel="stylesheet" href="~/assets/css/module-css/05-team.css" />
-    <link rel="stylesheet" href="~/assets/css/module-css/06-blog.css" />
-    <link rel="stylesheet" href="~/assets/css/module-css/07-brand.css" />
-    <link rel="stylesheet" href="~/assets/css/module-css/08-contact.css" />
-    <link rel="stylesheet" href="~/assets/css/module-css/09-counter.css" />
-    <link rel="stylesheet" href="~/assets/css/module-css/10-error.css" />
-    <link rel="stylesheet" href="~/assets/css/module-css/11-faq.css" />
-    <link rel="stylesheet" href="~/assets/css/module-css/12-footer.css" />
-    <link rel="stylesheet" href="~/assets/css/module-css/13-page-header.css" />
-    <link rel="stylesheet" href="~/assets/css/module-css/14-shop.css" />
-    <link rel="stylesheet" href="~/assets/css/module-css/15-video.css" />
-    <link rel="stylesheet" href="~/assets/css/module-css/awards.css" />
-    <link rel="stylesheet" href="~/assets/css/module-css/banner.css" />
-    <link rel="stylesheet" href="~/assets/css/module-css/cta.css" />
-    <link rel="stylesheet" href="~/assets/css/module-css/design-interior.css" />
-    <link rel="stylesheet" href="~/assets/css/module-css/feature.css" />
-    <link rel="stylesheet" href="~/assets/css/module-css/pricing.css" />
-    <link rel="stylesheet" href="~/assets/css/module-css/projects.css" />
-    <link rel="stylesheet" href="~/assets/css/module-css/quote.css" />
-    <link rel="stylesheet" href="~/assets/css/module-css/skill.css" />
-    <link rel="stylesheet" href="~/assets/css/module-css/sliding-text.css" />
-    <link rel="stylesheet" href="~/assets/css/module-css/why-choose.css" />
-    <link rel="stylesheet" href="~/assets/css/module-css/working-process.css" />
-
-
-    <link rel="stylesheet" href="~/assets/css/swiper.min.css" />
-    <!-- template styles -->
-    <link rel="stylesheet" href="~/assets/css/style.css" />
-    <link rel="stylesheet" href="~/assets/css/responsive.css" />
+    <!-- Bundle: 43 CSS dosyası → 1 istek (WebOptimizer) -->
+    <link rel="stylesheet" href="~/css/bundle.css" />
     <link rel="manifest" href="~/assets/images/favicons/site.webmanifest" />
 
-
-    <!-- Fonts -->
+    <!-- Google Fonts (external – bundle'lanamaz) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
           rel="stylesheet">
-
-
-    <link rel="stylesheet" href="~/assets/css/01-bootstrap.min.css" />
-    <link rel="stylesheet" href="~/assets/css/02-animate.min.css" />
-    <link rel="stylesheet" href="~/assets/css/03-custom-animate.css" />
-    <link rel="stylesheet" href="~/assets/css/05-flaticon.css" />
-    <link rel="stylesheet" href="~/assets/css/06-font-awesome-all.css" />
-    <link rel="stylesheet" href="~/assets/css/07-jarallax.css" />
-    <link rel="stylesheet" href="~/assets/css/08-jquery.magnific-popup.css" />
-    <link rel="stylesheet" href="~/assets/css/09-nice-select.css" />
-    <link rel="stylesheet" href="~/assets/css/11-owl.carousel.min.css" />
-    <link rel="stylesheet" href="~/assets/css/12-owl.theme.default.min.css" />
-    <link rel="stylesheet" href="~/assets/css/13-jquery-ui.css" />
 
     <style>
         /* Eski büyük butonlar varsa gizle */
@@ -172,6 +130,69 @@
 
         .fab-call {
             background: #ff7300;
+        }
+
+        /* Varsayılan sayfa başlığı kapak fotoğrafı */
+        .page-header__bg {
+            background-image: url(‘/assets/images/gallery/HAN_1920x500_Ta%C5%9F%C4%B1mac%C4%B1l%C4%B1k.png’);
+        }
+
+        /* İlgili Hizmetler Bloğu (ilçe sayfaları) */
+        .han-services-grid {
+            background: linear-gradient(135deg, #0e1d2a 0%, #122535 100%);
+            border-radius: 12px;
+            padding: 28px 30px 24px;
+            margin: 32px 0;
+            border-top: 3px solid #ff7300;
+        }
+        .han-services-title {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0 0 18px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .han-services-icon { font-size: 22px; }
+        .han-services-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .han-scard {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,115,0,0.25);
+            border-radius: 8px;
+            padding: 11px 14px;
+            color: #e8e8e8;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: background 0.2s, border-color 0.2s, color 0.2s;
+        }
+        .han-scard:hover {
+            background: rgba(255,115,0,0.18);
+            border-color: #ff7300;
+            color: #ff7300;
+        }
+        .han-scard-cta {
+            background: rgba(255,115,0,0.15);
+            border-color: rgba(255,115,0,0.5);
+            color: #ffb070;
+        }
+        .han-scard-cta:hover {
+            background: rgba(255,115,0,0.3);
+            border-color: #ff7300;
+            color: #ff7300;
+        }
+        .han-scard-icon { font-size: 16px; flex-shrink: 0; }
+        @@media (max-width: 600px) {
+            .han-services-cards { grid-template-columns: repeat(2, 1fr); }
+            .han-services-grid { padding: 20px 16px; }
         }
 
         /* Scroll-to-top’ı butonların üstüne taşı */
@@ -688,36 +709,8 @@
         <!-- /.search-popup__content -->
     </div>
     <!-- /.search-popup -->
-    <script src="~/assets/js/jquery-3.6.0.min.js"></script>
-    <script src="~/assets/js/jquery.ajaxchimp.min.js"></script>
-    <script src="~/assets/js/jquery.validate.min.js"></script>
-    <script src="~/assets/js/swiper.min.js"></script>
-    <script src="~/assets/js/wNumb.min.js"></script>
-    <script src="~/assets/js/curved-text/jquery.circleType.js"></script>
-    <script src="~/assets/js/curved-text/jquery.fittext.js"></script>
-    <script src="~/assets/js/curved-text/jquery.lettering.min.js"></script>
-    <script src="~/assets/js/gsap/gsap.js"></script>
-    <script src="~/assets/js/gsap/ScrollTrigger.js"></script>
-    <script src="~/assets/js/gsap/SplitText.js"></script>
-
-
-    <script src="~/assets/js/01-bootstrap.bundle.min.js"></script>
-    <script src="~/assets/js/02-countdown.min.js"></script>
-    <script src="~/assets/js/03-jquery.appear.min.js"></script>
-    <script src="~/assets/js/04-jquery.nice-select.min.js"></script>
-    <script src="~/assets/js/05-jquery-sidebar-content.js"></script>
-    <script src="~/assets/js/06-marquee.min.js"></script>
-    <script src="~/assets/js/07-owl.carousel.min.js"></script>
-    <script src="~/assets/js/08-jarallax.min.js"></script>
-    <script src="~/assets/js/09-odometer.min.js"></script>
-    <script src="~/assets/js/10-jquery-ui.js"></script>
-    <script src="~/assets/js/11-jquery.magnific-popup.min.js"></script>
-    <script src="~/assets/js/12-wow.js"></script>
-    <script src="~/assets/js/13-isotope.js"></script>
-
-
-    <!-- template js -->
-    <script src="~/assets/js/script.js"></script>
+    <!-- Bundle: 26 JS dosyası → 1 istek (WebOptimizer) -->
+    <script src="~/js/bundle.js"></script>
 
     <script>
         function gtag_report_conversion(url) {
