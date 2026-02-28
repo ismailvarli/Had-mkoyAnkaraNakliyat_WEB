@@ -145,7 +145,9 @@ namespace HadımkoyAnkaraNakliyat_WEB
                 var normalized = SlugifyPath(original);
 
                 // Eğer URL değişmişse yönlendir (301 Redirect)
-                if (!string.Equals(original, normalized, StringComparison.Ordinal))
+                // OrdinalIgnoreCase: sadece Türkçe karakter farkı varsa redirect at,
+                // /Home/ -> /home/ gibi sadece büyük/küçük harf farkı olunca atma.
+                if (!string.Equals(original, normalized, StringComparison.OrdinalIgnoreCase))
                 {
                     var q = ctx.Request.QueryString.HasValue ? ctx.Request.QueryString.Value : "";
                     ctx.Response.Redirect(normalized + q, permanent: true);
@@ -216,7 +218,6 @@ namespace HadımkoyAnkaraNakliyat_WEB
         {"/home/istanbul_nakliyat", "/istanbul-nakliyat"},
         {"/home/esenyurt_nakliyat", "/esenyurt-nakliyat"},
         {"/home/ankara_nakliyat", "/ankara-nakliyat"},
-        // Örn: {"/home/eski_sayfa", "/yeni-sayfa"}
     };
 
                 if (redirects.TryGetValue(path, out var newUrl))
@@ -259,6 +260,11 @@ Sitemap: https://www.hadimkoyankaranakliyat.com/sitemap.xml", "text/plain"));
         $"{host}/home/hizmet_turleri",
         $"{host}/home/blog",
         $"{host}/home/nakliyat_hizmet_fiyati",
+        $"{host}/home/musteriyorumlari",
+        $"{host}/home/sehirlerarasi_hizmetlerimiz",
+        $"{host}/parca-esya-tasima",
+        $"{host}/istanbul-ankara-parca-esya-tasima",
+        $"{host}/sehirlerarasi-parca-esya-tasima-fiyatlari",
 
         //blog
         $"{host}/home/istanbul_ankara_nakliyat_fiyatlari_2025_guncel_rehber",
@@ -267,6 +273,11 @@ Sitemap: https://www.hadimkoyankaranakliyat.com/sitemap.xml", "text/plain"));
         $"{host}/home/evden_eve_nakliyat_oncesi_hazirlik_rehberi",
         $"{host}/home/asansorlu_nakliyatin_istanbul_ankara_tasimalarinda_sagladigi_kolayliklar",
         $"{host}/home/sigortali_nakliyat_esyalarinizi_guvence_altina_alin",
+        $"{host}/home/nakliyat_firmasi_nasil_secilir_7_kritik_soru",
+        $"{host}/home/tasinirken_yapilan_10_hata",
+        $"{host}/home/parca_esya_mi_tam_arac_mi",
+        $"{host}/home/nakliyat_dolandiriciligi",
+        $"{host}/home/tasinma_gunu_kontrol_listesi",
 
 
         // Hizmetler (URL'ler middleware ile uyumlu, küçük harfli)        

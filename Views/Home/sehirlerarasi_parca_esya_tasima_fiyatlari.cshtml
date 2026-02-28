@@ -1,0 +1,342 @@
+@{
+    ViewData["Title"] = "Şehirler Arası Parça Eşya Taşıma Fiyatları 2026";
+    ViewData["Description"] = "Şehirler arası parça eşya taşıma fiyatları 2026. Parça eşya taşıma fiyat hesaplama rehberi. İstanbul Ankara arası az eşya taşıma maliyeti ve fiyat tablosu.";
+}
+@{
+    var faqJson = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        {
+          ""@type"": ""Question"",
+          ""name"": ""Şehirler arası parça eşya taşıma fiyatı nasıl hesaplanır?"",
+          ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Fiyat; eşyanın toplam hacmi (m³), ağırlığı, taşınacak mesafe, kat ve asansör durumu ile özel paketleme gereksinimine göre hesaplanır. Fiyat hesaplama için bizi aramanız yeterlidir."" }
+        },
+        {
+          ""@type"": ""Question"",
+          ""name"": ""İstanbul Ankara arası parça eşya taşıma ne kadar?"",
+          ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""İstanbul-Ankara arası parça eşya taşıma fiyatı; tek beyaz eşya için 1.500-2.500 TL, koltuk takımı için 2.000-3.500 TL, birkaç koli için 500-1.500 TL aralığında başlamaktadır."" }
+        },
+        {
+          ""@type"": ""Question"",
+          ""name"": ""Tam araç fiyatıyla parça eşya fiyatı arasındaki fark nedir?"",
+          ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Tam araç kiralamada sabit bir ücret ödersiniz. Parça eşya taşımada ise yalnızca kullandığınız alan kadar ödersiniz. Az eşya için parça eşya taşıma %60-70 daha ekonomik olabilir."" }
+        },
+        {
+          ""@type"": ""Question"",
+          ""name"": ""Fiyata sigorta dahil mi?"",
+          ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Temel taşıma sigortası fiyata dahildir. Yüksek değerli eşyalar için ek sigorta seçeneği sunulmaktadır."" }
+        },
+        {
+          ""@type"": ""Question"",
+          ""name"": ""Kat taşıması ücrete dahil mi?"",
+          ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Zemin kat ve asansörlü taşımalar standart fiyata dahildir. Asansörsüz kat taşıması için kat başına ek ücret alınmaktadır. Önceden belirtmenizi öneririz."" }
+        }
+      ]
+    }";
+}
+<script type="application/ld+json">@Html.Raw(faqJson)</script>
+
+<style>
+    .fiyat-hero {
+        background: linear-gradient(135deg, #1a1a2e 0%, #c0392b 100%);
+        padding: 60px 0 40px; color: #fff; text-align: center;
+    }
+    .fiyat-hero h1 { font-size: 2rem; font-weight: 700; margin-bottom: 14px; }
+    .fiyat-hero p { font-size: 1.05rem; opacity: .9; max-width: 680px; margin: 0 auto 28px; }
+    .fiyat-hero .btn-cta { background: #ff7300; color: #fff; font-weight: 700; padding: 14px 36px; border-radius: 8px; text-decoration: none; display: inline-block; margin: 6px; }
+    .fiyat-hero .btn-outline { border: 2px solid #fff; color: #fff; font-weight: 600; padding: 12px 32px; border-radius: 8px; text-decoration: none; display: inline-block; margin: 6px; }
+    .fiyat-section { padding: 52px 0; }
+    .fiyat-section h2 { font-size: 1.6rem; font-weight: 700; color: #1a1a2e; margin-bottom: 18px; }
+    .fiyat-section h3 { font-size: 1.15rem; font-weight: 600; color: #ff7300; margin: 22px 0 10px; }
+    .fiyat-section p { color: #444; line-height: 1.8; margin-bottom: 14px; }
+    .table-wrapper { overflow-x: auto; margin: 28px 0; }
+    .price-table { width: 100%; border-collapse: collapse; min-width: 540px; }
+    .price-table thead tr { background: #ff7300; color: #fff; }
+    .price-table th { padding: 14px 16px; text-align: left; font-weight: 600; }
+    .price-table td { padding: 13px 16px; border-bottom: 1px solid #eee; color: #444; }
+    .price-table tbody tr:hover { background: #fff8f2; }
+    .price-table tr:last-child td { border-bottom: none; }
+    .price-tag { color: #ff7300; font-weight: 700; }
+    .etken-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; margin: 28px 0; }
+    .etken-card { background: #fff; border-radius: 10px; padding: 22px 18px; box-shadow: 0 2px 10px rgba(0,0,0,.07); text-align: center; }
+    .etken-card .icon { font-size: 2rem; margin-bottom: 10px; }
+    .etken-card h4 { font-weight: 700; color: #1a1a2e; margin-bottom: 6px; font-size: .95rem; }
+    .etken-card p { font-size: .88rem; color: #666; margin: 0; }
+    .karsilastirma { background: #f0f7ff; border-radius: 14px; padding: 32px; margin: 32px 0; }
+    .karsilastirma h3 { font-size: 1.2rem; color: #1a1a2e; margin-bottom: 20px; }
+    .kar-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #dce8f5; gap: 12px; flex-wrap: wrap; }
+    .kar-row:last-child { border-bottom: none; }
+    .kar-label { font-weight: 600; color: #333; flex: 1; min-width: 160px; }
+    .kar-tam { color: #e74c3c; font-weight: 700; flex: 1; text-align: center; }
+    .kar-parca { color: #27ae60; font-weight: 700; flex: 1; text-align: center; }
+    .faq-section { background: #f9f9f9; padding: 48px 0; }
+    .faq-section h2 { font-size: 1.6rem; font-weight: 700; color: #1a1a2e; margin-bottom: 24px; }
+    .faq-item { background: #fff; border-radius: 10px; margin-bottom: 10px; }
+    .faq-item summary { padding: 16px 20px; font-weight: 600; color: #1a1a2e; cursor: pointer; list-style: none; display: flex; justify-content: space-between; }
+    .faq-item summary::after { content: "+"; color: #ff7300; font-size: 1.2rem; }
+    details[open] summary::after { content: "−"; }
+    .faq-item p { padding: 0 20px 16px; color: #555; line-height: 1.7; margin: 0; }
+    .fiyat-cta { background: linear-gradient(135deg, #ff7300, #e05a00); padding: 52px 0; text-align: center; color: #fff; }
+    .fiyat-cta h2 { font-size: 1.7rem; font-weight: 700; margin-bottom: 12px; }
+    .fiyat-cta p { opacity: .9; margin-bottom: 28px; }
+    .btn-white { background: #fff; color: #ff7300; font-weight: 700; padding: 14px 36px; border-radius: 8px; text-decoration: none; display: inline-block; margin: 6px; }
+    .btn-border-w { border: 2px solid #fff; color: #fff; padding: 12px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; margin: 6px; }
+    @@media (max-width:600px) { .fiyat-hero h1 { font-size: 1.45rem; } }
+</style>
+
+<!-- HERO -->
+<section class="fiyat-hero">
+    <div class="container">
+        <h1>Şehirler Arası Parça Eşya Taşıma Fiyatları 2026</h1>
+        <p>Az eşyanız için tam araç ücretini ödemek zorunda değilsiniz. Güncel fiyat tablomuzu inceleyin, eşyanıza özel teklif alın.</p>
+        <a href="tel:+905344300360" class="btn-cta">&#128222; Ücretsiz Fiyat Al</a>
+        <a href="/Home/fiyat_al" class="btn-outline">Online Teklif Formu</a>
+    </div>
+</section>
+
+<section class="fiyat-section">
+    <div class="container">
+
+        <h2>2026 Güncel Parça Eşya Taşıma Fiyatları</h2>
+        <p>Aşağıdaki tablo; İstanbul-Ankara, İstanbul-İzmir ve İstanbul-Bursa gibi popüler güzergahlar için tahmini parça eşya taşıma fiyatlarını göstermektedir. Kesin fiyat eşyanın özelliklerine göre değişir.</p>
+
+        <div class="table-wrapper">
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Güzergah</th>
+                        <th>Tek Beyaz Eşya</th>
+                        <th>Koltuk Takımı</th>
+                        <th>1 Oda Eşyası</th>
+                        <th>5-10 Koli</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>İstanbul → Ankara</strong></td>
+                        <td class="price-tag">1.500 – 2.500 ₺</td>
+                        <td class="price-tag">2.000 – 3.500 ₺</td>
+                        <td class="price-tag">4.000 – 7.000 ₺</td>
+                        <td class="price-tag">800 – 1.500 ₺</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ankara → İstanbul</strong></td>
+                        <td class="price-tag">1.500 – 2.500 ₺</td>
+                        <td class="price-tag">2.000 – 3.500 ₺</td>
+                        <td class="price-tag">4.000 – 7.000 ₺</td>
+                        <td class="price-tag">800 – 1.500 ₺</td>
+                    </tr>
+                    <tr>
+                        <td><strong>İstanbul → İzmir</strong></td>
+                        <td class="price-tag">2.000 – 3.500 ₺</td>
+                        <td class="price-tag">3.000 – 5.000 ₺</td>
+                        <td class="price-tag">6.000 – 10.000 ₺</td>
+                        <td class="price-tag">1.200 – 2.500 ₺</td>
+                    </tr>
+                    <tr>
+                        <td><strong>İstanbul → Bursa</strong></td>
+                        <td class="price-tag">800 – 1.500 ₺</td>
+                        <td class="price-tag">1.200 – 2.000 ₺</td>
+                        <td class="price-tag">2.500 – 4.500 ₺</td>
+                        <td class="price-tag">400 – 900 ₺</td>
+                    </tr>
+                    <tr>
+                        <td><strong>İstanbul → Antalya</strong></td>
+                        <td class="price-tag">2.500 – 4.000 ₺</td>
+                        <td class="price-tag">3.500 – 6.000 ₺</td>
+                        <td class="price-tag">7.000 – 12.000 ₺</td>
+                        <td class="price-tag">1.500 – 3.000 ₺</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="font-size:.85rem;color:#888;">* Fiyatlar tahmini olup KDV hariçtir. Asansörsüz kat, özel paketleme ve hafta sonu taşımaları ek ücrete tabidir.</p>
+
+        <h2>Fiyatı Etkileyen Faktörler</h2>
+        <p>Parça eşya taşıma fiyatı tek bir değişkene bağlı değildir. İşte fiyatı belirleyen temel etkenler:</p>
+        <div class="etken-grid">
+            <div class="etken-card">
+                <div class="icon">&#128230;</div>
+                <h4>Hacim ve Ağırlık</h4>
+                <p>Eşyanın kapladığı m³ ve ağırlığı fiyatın en büyük belirleyicisidir.</p>
+            </div>
+            <div class="etken-card">
+                <div class="icon">&#128652;</div>
+                <h4>Mesafe</h4>
+                <p>Güzergah uzadıkça km başına birim maliyet orantılı artar.</p>
+            </div>
+            <div class="etken-card">
+                <div class="icon">&#127968;</div>
+                <h4>Kat Durumu</h4>
+                <p>Asansörsüz katlarda indirme/bindirme için ek işçilik ücreti alınır.</p>
+            </div>
+            <div class="etken-card">
+                <div class="icon">&#128274;</div>
+                <h4>Paketleme</h4>
+                <p>Kırılgan ve özel eşyalar için ek paketleme malzemesi ve işçilik.</p>
+            </div>
+        </div>
+
+        <!-- Karşılaştırma -->
+        <div class="karsilastirma">
+            <h3>&#9878; Tam Araç vs Parça Eşya Taşıma (İstanbul-Ankara)</h3>
+            <div class="kar-row" style="font-weight:700;color:#888;font-size:.85rem;">
+                <span class="kar-label">Eşya Miktarı</span>
+                <span class="kar-tam">&#128666; Tam Araç</span>
+                <span class="kar-parca">&#128230; Parça Eşya</span>
+            </div>
+            <div class="kar-row">
+                <span class="kar-label">Tek beyaz eşya</span>
+                <span class="kar-tam">8.000 – 15.000 ₺</span>
+                <span class="kar-parca">1.500 – 2.500 ₺</span>
+            </div>
+            <div class="kar-row">
+                <span class="kar-label">1 oda eşyası</span>
+                <span class="kar-tam">8.000 – 15.000 ₺</span>
+                <span class="kar-parca">4.000 – 7.000 ₺</span>
+            </div>
+            <div class="kar-row">
+                <span class="kar-label">2 oda eşyası</span>
+                <span class="kar-tam">8.000 – 15.000 ₺</span>
+                <span class="kar-parca">6.000 – 10.000 ₺</span>
+            </div>
+            <div class="kar-row">
+                <span class="kar-label">3+ oda (tam ev)</span>
+                <span class="kar-tam" style="color:#27ae60;">8.000 – 15.000 ₺</span>
+                <span class="kar-parca" style="color:#e74c3c;">12.000 – 20.000 ₺+</span>
+            </div>
+            <p style="font-size:.85rem;color:#666;margin-top:16px;margin-bottom:0;">&#9888; Tam ev taşımada tam araç daha ekonomik olabilir. Ücretsiz danışmanlık için bizi arayın.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- TASARRUF İPUÇLARI -->
+<section class="fiyat-section">
+    <div class="container">
+        <h2>Parça Eşya Taşımada Para Tasarrufu İpuçları</h2>
+        <p>Doğru planlama yaparak şehirler arası parça eşya taşıma maliyetinizi önemli ölçüde düşürebilirsiniz. İşte bütçenizi korumanın pratik yolları:</p>
+
+        <h3>&#9998; Esnek Tarih Seçin</h3>
+        <p>Belirli bir tarihe bağlı değilseniz, taşıma tarihinizi bir hafta kadar esnek bırakın. Nakliye firmalarının aracı dolu çıktığı günlerde fiyatlar daha uygun olur çünkü boş alan daha azdır. Hafta içi taşımalar genellikle hafta sonu taşımalardan %10-15 daha ekonomiktir.</p>
+
+        <h3>&#9998; Eşyaları Kendiniz Paketleyin</h3>
+        <p>Kolilerinizi önceden hazırlayıp etiketlerseniz hem zamandan hem de işçilik ücretinden tasarruf edersiniz. Kırılgan olmayan eşyalar için standart karton koliler yeterlidir. Kırılgan eşyalar için ise profesyonel paketleme hizmetini tercih etmenizi öneririz — bu konuda tasarruf etmek ilerleyen süreçte daha büyük bir maliyet yaratabilir.</p>
+
+        <h3>&#9998; Demontaj Yapın</h3>
+        <p>Büyük mobilyaların demonte edilmesi taşıma aracındaki alan kullanımını optimize eder. Bir gardırop dolu haldeyken 3 m³ yer kaplıyorsa demonte halde 1,5 m³'e inebilir. Bu da faturanıza doğrudan yansır.</p>
+
+        <h3>&#9998; Gereksiz Eşyaları Eleyin</h3>
+        <p>Taşımadan önce hangi eşyaların gerçekten gitmesi gerektiğini gözden geçirin. Uzun süredir kullanmadığınız eşyaları bağış yapabilir, satabilir veya imha edebilirsiniz. Her çıkarılan eşya taşıma maliyetinizi düşürür.</p>
+
+        <h2>Şehirler Arası Parça Eşya Taşımada Dikkat Edilmesi Gerekenler</h2>
+        <p>Uzun mesafeli parça eşya taşımada kısa mesafelere kıyasla dikkat edilmesi gereken bazı ek noktalar vardır:</p>
+
+        <h3>Sigorta Mutlaka Olmalı</h3>
+        <p>Kısa mesafeli taşımalarda göz ardı edilebilecek sigorta, şehirlerarası taşımalarda kritik önem taşır. Eşyanız yüzlerce kilometre yol katedecek ve bu süreçte beklenmedik durumlar yaşanabilir. Taşıma sigortası standart hizmetimize dahildir; ancak değeri yüksek eşyalar için ek sigorta seçeneğini değerlendirmenizi öneririz.</p>
+
+        <h3>Teslim Alacak Kişiyi Belirleyin</h3>
+        <p>Şehirlerarası taşımalarda teslimat saati önceden netleştirilmelidir. Ankara'da eşyayı teslim alacak kişinin o gün hazır bulunması gerekir. Eğer siz bizzat alamıyorsanız, yetkili biri için teslim belgesi düzenleyebiliyoruz.</p>
+
+        <h3>Adres Bilgilerini Eksiksiz Verin</h3>
+        <p>Ankara'daki teslimat adresi; mahalle, sokak, bina no ve daire numarasıyla eksiksiz verilmelidir. Kat bilgisi ve asansör durumu da mutlaka belirtilmeli — bu bilgiler hem zamanı hem de ek maliyeti doğrudan etkiler.</p>
+
+        <h2>Hangi Nakliye Şirketini Seçmelisiniz?</h2>
+        <p>Şehirler arası parça eşya taşıma firması seçerken şu kriterlere dikkat edin:</p>
+        <ul style="color:#444;line-height:2.2;padding-left:20px;">
+            <li><strong>Güzergah deneyimi:</strong> Firmaya kaç yıldır İstanbul-Ankara gibi uzun mesafeli taşıma yaptığını sorun. Tecrübeli firmalar olası sorunları çok daha hızlı çözer.</li>
+            <li><strong>Sigorta belgesi:</strong> Taşıma sigortasının varlığını belgesiyle teyit edin. "Sigortalı taşıyoruz" demek yetmez, belge isteyebilirsiniz.</li>
+            <li><strong>Google yorumları:</strong> Firmayı Google Haritalar'da aratın ve müşteri yorumlarını okuyun. Hem olumlu hem olumsuz yorumlara bakın — olumsuz yorumlara verilen cevaplar firmayı tanımak için çok değerlidir.</li>
+            <li><strong>Net fiyat teklifi:</strong> Telefonda verilen fiyatın yazılı olarak da teyit edilmesini isteyin. Bu, ilerleyen süreçte anlaşmazlık yaşamanızı önler.</li>
+            <li><strong>Referans:</strong> Mümkünse daha önce aynı güzergahta taşıma yaptıran tanıdıklarınızdan öneri alın.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- SSS -->
+<section class="faq-section">
+    <div class="container">
+        <h2>Sık Sorulan Sorular</h2>
+        <div class="faq-item">
+            <details>
+                <summary>Şehirler arası parça eşya taşıma fiyatı nasıl hesaplanır?</summary>
+                <p>Fiyat; eşyanın toplam hacmi (m³), ağırlığı, taşınacak mesafe, kat ve asansör durumu ile özel paketleme gereksinimine göre hesaplanır. Fiyat hesaplama için bizi aramanız yeterlidir.</p>
+            </details>
+        </div>
+        <div class="faq-item">
+            <details>
+                <summary>İstanbul Ankara arası parça eşya taşıma ne kadar?</summary>
+                <p>İstanbul-Ankara arası parça eşya taşıma fiyatı; tek beyaz eşya için 1.500-2.500 TL, koltuk takımı için 2.000-3.500 TL, birkaç koli için 500-1.500 TL aralığında başlamaktadır.</p>
+            </details>
+        </div>
+        <div class="faq-item">
+            <details>
+                <summary>Tam araç fiyatıyla parça eşya fiyatı arasındaki fark nedir?</summary>
+                <p>Tam araç kiralamada sabit bir ücret ödersiniz. Parça eşya taşımada ise yalnızca kullandığınız alan kadar ödersiniz. Az eşya için parça eşya taşıma %60-70 daha ekonomik olabilir.</p>
+            </details>
+        </div>
+        <div class="faq-item">
+            <details>
+                <summary>Fiyata sigorta dahil mi?</summary>
+                <p>Temel taşıma sigortası fiyata dahildir. Yüksek değerli eşyalar için ek sigorta seçeneği sunulmaktadır.</p>
+            </details>
+        </div>
+        <div class="faq-item">
+            <details>
+                <summary>Kat taşıması ücrete dahil mi?</summary>
+                <p>Zemin kat ve asansörlü taşımalar standart fiyata dahildir. Asansörsüz kat taşıması için kat başına ek ücret alınmaktadır. Önceden belirtmenizi öneririz.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- İÇ LİNKLEME -->
+<div class="container" style="padding: 40px 15px;">
+    <div class="han-services-grid">
+        <h3 class="han-services-title">
+            <span class="han-services-icon">&#128666;</span>
+            İlgili Hizmetlerimiz
+        </h3>
+        <div class="han-services-cards">
+            <a href="/parca-esya-tasima" class="han-scard">
+                <span class="han-scard-icon">&#128230;</span>
+                <span class="han-scard-text">Parça Eşya Taşıma</span>
+            </a>
+            <a href="/istanbul-ankara-parca-esya-tasima" class="han-scard">
+                <span class="han-scard-icon">&#128506;</span>
+                <span class="han-scard-text">İstanbul Ankara Parça Eşya</span>
+            </a>
+            <a href="/Home/parsiyel_nakliyat" class="han-scard">
+                <span class="han-scard-icon">&#128666;</span>
+                <span class="han-scard-text">Parsiyel Nakliyat</span>
+            </a>
+            <a href="/Home/istanbul_ankara_parsiyel_nakliyat" class="han-scard">
+                <span class="han-scard-icon">&#128506;</span>
+                <span class="han-scard-text">&#304;stanbul Ankara Parsiyel</span>
+            </a>
+            <a href="/istanbul-ankara-nakliyat" class="han-scard">
+                <span class="han-scard-icon">&#128652;</span>
+                <span class="han-scard-text">İstanbul Ankara Nakliyat</span>
+            </a>
+            <a href="/Home/ambar_nakliyat" class="han-scard">
+                <span class="han-scard-icon">&#127981;</span>
+                <span class="han-scard-text">Ambar Nakliyat</span>
+            </a>
+            <a href="/Home/nakliyat_hizmet_fiyati" class="han-scard han-scard-cta">
+                <span class="han-scard-icon">&#128176;</span>
+                <span class="han-scard-text">Tüm Nakliyat Fiyatları</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- CTA -->
+<section class="fiyat-cta">
+    <div class="container">
+        <h2>Eşyanıza Özel Fiyat Almak İster misiniz?</h2>
+        <p>Eşya listesini söyleyin, 2 dakikada net fiyat verelim. Sürpriz ücret yok.</p>
+        <a href="tel:+905344300360" class="btn-white">&#128222; 0534 430 03 60</a>
+        <a href="/Home/fiyat_al" class="btn-border-w">Online Teklif Al</a>
+    </div>
+</section>

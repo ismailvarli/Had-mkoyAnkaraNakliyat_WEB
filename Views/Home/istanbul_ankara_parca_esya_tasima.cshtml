@@ -1,0 +1,311 @@
+@{
+    ViewData["Title"] = "İstanbul Ankara Parça Eşya Taşıma | Şehirler Arası Az Eşya";
+    ViewData["Description"] = "İstanbul'dan Ankara'ya parça eşya taşıma hizmetleri. Tek parça eşya, az eşya ve şehirler arası küçük çaplı taşımalarda uzman ekip, sigortalı taşıma.";
+}
+@{
+    var faqJson = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        {
+          ""@type"": ""Question"",
+          ""name"": ""İstanbul'dan Ankara'ya parça eşya taşıma kaç günde teslim edilir?"",
+          ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""İstanbul-Ankara güzergahında haftanın her günü sefer düzenliyoruz. Eşyalarınız genellikle 24-48 saat içinde teslim edilir."" }
+        },
+        {
+          ""@type"": ""Question"",
+          ""name"": ""İstanbul Ankara arası parça eşya taşıma fiyatı nedir?"",
+          ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Fiyat eşyanın hacmi ve türüne göre değişir. Tek beyaz eşya için 1.500-2.500 TL, birkaç koli için 800-1.500 TL aralığında başlamaktadır. Kesin fiyat için bizi arayın."" }
+        },
+        {
+          ""@type"": ""Question"",
+          ""name"": ""Ankara'dan İstanbul'a da taşıma yapıyor musunuz?"",
+          ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Evet. Hem İstanbul'dan Ankara'ya hem de Ankara'dan İstanbul'a parça eşya taşıma hizmeti veriyoruz."" }
+        },
+        {
+          ""@type"": ""Question"",
+          ""name"": ""Kırılgan eşyaları güvenli taşıyor musunuz?"",
+          ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Evet. Cam, ayna, tablo veya elektronik gibi kırılgan eşyalar özel balonlu naylon, nakliye battaniyesi ve ahşap kasalarla paketlenerek taşınır."" }
+        },
+        {
+          ""@type"": ""Question"",
+          ""name"": ""Kapıdan kapıya servis var mı?"",
+          ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Evet. İstanbul'daki adresinizden alıp Ankara'daki adresinize teslim ediyoruz. Kat farkı ve asansörsüz taşıma için önceden bilgi almanızı öneririz."" }
+        }
+      ]
+    }";
+
+    var serviceJson = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""Service"",
+      ""serviceType"": ""İstanbul Ankara Parça Eşya Taşıma"",
+      ""name"": ""İstanbul Ankara Arası Parça Eşya ve Az Eşya Taşıma"",
+      ""provider"": { ""@type"": ""LocalBusiness"", ""name"": ""Hadımköy Ankara Nakliyat"", ""telephone"": ""+905344300360"" },
+      ""areaServed"": [""İstanbul"", ""Ankara""],
+      ""description"": ""İstanbul'dan Ankara'ya ve Ankara'dan İstanbul'a parça eşya, tek parça eşya ve az eşya taşıma hizmeti.""
+    }";
+}
+<script type="application/ld+json">@Html.Raw(faqJson)</script>
+<script type="application/ld+json">@Html.Raw(serviceJson)</script>
+
+<style>
+    .ista-hero {
+        background: linear-gradient(135deg, #0f3460 0%, #ff7300 100%);
+        padding: 60px 0 40px; color: #fff; text-align: center;
+    }
+    .ista-hero h1 { font-size: 2rem; font-weight: 700; margin-bottom: 14px; }
+    .ista-hero p { font-size: 1.05rem; opacity: .9; max-width: 660px; margin: 0 auto 28px; }
+    .ista-hero .btn-cta { background: #fff; color: #ff7300; font-weight: 700; padding: 14px 36px; border-radius: 8px; text-decoration: none; display: inline-block; margin: 6px; }
+    .ista-hero .btn-outline { border: 2px solid #fff; color: #fff; font-weight: 600; padding: 12px 32px; border-radius: 8px; text-decoration: none; display: inline-block; margin: 6px; }
+    .ista-section { padding: 52px 0; }
+    .ista-section h2 { font-size: 1.6rem; font-weight: 700; color: #1a1a2e; margin-bottom: 18px; }
+    .ista-section h3 { font-size: 1.15rem; font-weight: 600; color: #ff7300; margin: 22px 0 10px; }
+    .ista-section p { color: #444; line-height: 1.8; margin-bottom: 14px; }
+    .route-box {
+        display: flex; align-items: center; justify-content: center; gap: 16px;
+        background: #fff8f2; border-radius: 14px; padding: 28px; margin: 32px 0;
+        flex-wrap: wrap;
+    }
+    .route-city { text-align: center; }
+    .route-city .city-name { font-size: 1.4rem; font-weight: 700; color: #1a1a2e; }
+    .route-city .city-sub { font-size: .85rem; color: #888; }
+    .route-arrow { font-size: 2rem; color: #ff7300; }
+    .route-info { background: #ff7300; color: #fff; border-radius: 10px; padding: 12px 20px; text-align: center; }
+    .route-info strong { display: block; font-size: 1.1rem; }
+    .route-info span { font-size: .85rem; opacity: .9; }
+    .adim-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 28px 0; }
+    .adim-card { background: #fff; border-left: 4px solid #ff7300; border-radius: 8px; padding: 20px 18px; box-shadow: 0 2px 10px rgba(0,0,0,.06); }
+    .adim-card .num { font-size: 1.6rem; font-weight: 800; color: #ff7300; margin-bottom: 8px; }
+    .adim-card h4 { font-weight: 700; color: #1a1a2e; margin-bottom: 6px; font-size: .95rem; }
+    .adim-card p { font-size: .88rem; color: #666; margin: 0; }
+    .fiyat-bg { background: #f9f9f9; padding: 48px 0; }
+    .fiyat-table { width: 100%; border-collapse: collapse; }
+    .fiyat-table th { background: #1a1a2e; color: #fff; padding: 12px 16px; text-align: left; }
+    .fiyat-table td { padding: 12px 16px; border-bottom: 1px solid #eee; color: #444; }
+    .fiyat-table tr:last-child td { border-bottom: none; }
+    .ista-faq { padding: 48px 0; }
+    .ista-faq h2 { font-size: 1.6rem; font-weight: 700; color: #1a1a2e; margin-bottom: 24px; }
+    .faq-item { background: #fff; border: 1px solid #e8e8e8; border-radius: 10px; margin-bottom: 10px; }
+    .faq-item summary { padding: 16px 20px; font-weight: 600; color: #1a1a2e; cursor: pointer; list-style: none; display: flex; justify-content: space-between; }
+    .faq-item summary::after { content: "+"; color: #ff7300; font-size: 1.2rem; }
+    details[open] summary::after { content: "−"; }
+    .faq-item p { padding: 0 20px 16px; color: #555; line-height: 1.7; margin: 0; }
+    .ista-cta { background: #1a1a2e; color: #fff; padding: 52px 0; text-align: center; }
+    .ista-cta h2 { font-size: 1.7rem; font-weight: 700; margin-bottom: 12px; }
+    .ista-cta p { opacity: .85; margin-bottom: 28px; }
+    .btn-orange { background: #ff7300; color: #fff; font-weight: 700; padding: 14px 36px; border-radius: 8px; text-decoration: none; display: inline-block; margin: 6px; }
+    .btn-border { border: 2px solid #fff; color: #fff; font-weight: 600; padding: 12px 32px; border-radius: 8px; text-decoration: none; display: inline-block; margin: 6px; }
+    @@media (max-width:600px) { .ista-hero h1 { font-size: 1.45rem; } }
+</style>
+
+<!-- HERO -->
+<section class="ista-hero">
+    <div class="container">
+        <h1>İstanbul Ankara Parça Eşya Taşıma</h1>
+        <p>Birkaç parça eşyanız için tam kamyon kiralamak zorunda değilsiniz. İstanbul-Ankara arasında parça eşya taşımada 15 yıllık deneyimle güvenli, sigortalı ve uygun fiyatlı hizmet sunuyoruz.</p>
+        <a href="tel:+905344300360" class="btn-cta">&#128222; Hemen Ara</a>
+        <a href="/Home/fiyat_al" class="btn-outline">Fiyat Teklifi Al</a>
+    </div>
+</section>
+
+<section class="ista-section">
+    <div class="container">
+
+        <!-- ROTA KUTUSU -->
+        <div class="route-box">
+            <div class="route-city">
+                <div class="city-name">&#127968; İstanbul</div>
+                <div class="city-sub">Tüm ilçeler kapıdan alım</div>
+            </div>
+            <div class="route-arrow">&#8594;</div>
+            <div class="route-info">
+                <strong>24-48 Saat</strong>
+                <span>Haftanın 7 günü sefer</span>
+            </div>
+            <div class="route-arrow">&#8594;</div>
+            <div class="route-city">
+                <div class="city-name">&#127963; Ankara</div>
+                <div class="city-sub">Kapıya teslim</div>
+            </div>
+        </div>
+
+        <h2>İstanbul-Ankara Parça Eşya Taşıma Neden Tercih Edilmeli?</h2>
+        <p>İstanbul ile Ankara arasındaki 450 km'lik mesafe, az eşya için tam kamyon kiralamayı ekonomik olmaktan çıkarır. Parça eşya taşıma hizmetimizde aynı güzergaha giden diğer yüklerle aracı paylaşır, yalnızca eşyanızın kapladığı alan kadar ücret ödersiniz.</p>
+        <p>Hadımköy'ün İstanbul'daki stratejik konumu sayesinde hem Avrupa hem Anadolu yakasındaki tüm ilçelerden eşya alım yapabiliyoruz. Ankara'daki geniş dağıtım ağımız ile şehir içinde her adrese teslimat gerçekleştiriyoruz.</p>
+
+        <h2>Nasıl Çalışır?</h2>
+        <div class="adim-grid">
+            <div class="adim-card">
+                <div class="num">1</div>
+                <h4>Bizi Arayın</h4>
+                <p>Eşyanızın türünü, miktarını ve adreslerinizi bildirin. Anında fiyat verelim.</p>
+            </div>
+            <div class="adim-card">
+                <div class="num">2</div>
+                <h4>Hazırlayın</h4>
+                <p>Ekibimiz belirttiğiniz gün ve saatte İstanbul adresinize gelir, eşyayı paketler.</p>
+            </div>
+            <div class="adim-card">
+                <div class="num">3</div>
+                <h4>Taşıyoruz</h4>
+                <p>Eşyalarınız güvenli araçta Ankara'ya hareket eder. Süreç boyunca bilgilendirilirsiniz.</p>
+            </div>
+            <div class="adim-card">
+                <div class="num">4</div>
+                <h4>Teslim</h4>
+                <p>Ankara'daki adresinize kapıdan teslim. İsterseniz yerine yerleştirme de yapıyoruz.</p>
+            </div>
+        </div>
+
+        <h3>Taşıyabileceğimiz Eşyalar</h3>
+        <p>İstanbul-Ankara parça eşya taşımada herhangi bir eşya türü kısıtlaması yoktur:</p>
+        <ul style="color:#444;line-height:2;padding-left:20px;">
+            <li>Beyaz eşya (buzdolabı, çamaşır makinesi, fırın, bulaşık makinesi)</li>
+            <li>Mobilya (koltuk, masa, sandalye, dolap, yatak)</li>
+            <li>Elektronik (TV, bilgisayar, ses sistemi)</li>
+            <li>Kırılgan eşya (ayna, cam tabla, tablo, heykel)</li>
+            <li>Koli ve paketler</li>
+            <li>Ofis ekipmanları</li>
+        </ul>
+    </div>
+</section>
+
+<!-- İSTANBUL'DAN ALINAN İLÇELER -->
+<section class="ista-section" style="background:#f9f9f9;padding:48px 0;">
+    <div class="container">
+        <h2>İstanbul'un Her İlçesinden Alım Yapıyoruz</h2>
+        <p>Hadımköy'ün TEM ve E-5 bağlantı noktasındaki konumu sayesinde İstanbul'un 39 ilçesinin tamamına araç gönderebiliyoruz. İster Avrupa yakasında Beylikdüzü'nde ister Anadolu yakasında Kadıköy'de olun, kapınıza geliyoruz.</p>
+
+        <h3>Avrupa Yakası — Sık Hizmet Verdiğimiz İlçeler</h3>
+        <p>Beylikdüzü, Esenyurt, Avcılar, Küçükçekmece, Bağcılar, Bahçelievler, Bakırköy, Zeytinburnu, Fatih, Beyoğlu, Şişli, Beşiktaş, Sarıyer, Kağıthane, Eyüpsultan, Sultangazi, Gaziosmanpaşa, Bayrampaşa, Başakşehir ve Arnavutköy ilçelerinde düzenli parça eşya alımı yapılmaktadır.</p>
+
+        <h3>Anadolu Yakası — Sık Hizmet Verdiğimiz İlçeler</h3>
+        <p>Kadıköy, Üsküdar, Ataşehir, Maltepe, Kartal, Pendik, Tuzla, Ümraniye, Sancaktepe ve Çekmeköy gibi Anadolu yakası ilçelerinden de düzenli alım yapıyoruz. Köprü ve tünel ücretleri standart fiyata dahildir, sürpriz ek ücret çıkmaz.</p>
+
+        <h2>Ankara'da Hangi Bölgelere Teslim Yapıyoruz?</h2>
+        <p>Ankara'daki geniş dağıtım ağımız sayesinde şehrin tüm mahalle ve semtlerine kapıdan teslim gerçekleştiriyoruz. Çankaya, Keçiören, Mamak, Yenimahalle, Etimesgut, Sincan, Pursaklar ve Gölbaşı başta olmak üzere Ankara'nın tüm ilçelerine teslimat yapabiliyoruz. Ankara'da ambar hizmetimiz de mevcuttur — eşyalarınızı ambarımızda güvenle saklayabilir, istediğiniz zaman teslim alabilirsiniz.</p>
+
+        <h2>İstanbul-Ankara Güzergahında 15 Yıllık Deneyim</h2>
+        <p>Hadımköy Ankara Nakliyat olarak İstanbul-Ankara güzergahında 15 yılı aşkın süredir hizmet veriyoruz. Bu süre zarfında binlerce başarılı parça eşya taşıması gerçekleştirdik. Güzergahı iyi bilmek sadece hızlı teslimat anlamına gelmez — aynı zamanda olası trafik ve yol sorunlarına karşı alternatif güzergah bilgisi demektir.</p>
+        <p>Her taşımada aynı özen ve titizliği gösteriyoruz: eşyanızın büyüklüğü ne olursa olsun, bir koli de olsa bir kamyon dolusu da olsa aynı profesyonelliği uyguluyoruz. Bu anlayışla oluşan müşteri memnuniyeti, sitemizin Google yorumlarına yansımıştır.</p>
+
+        <h2>Sık Taşınan Eşyalar — İstanbul'dan Ankara'ya</h2>
+        <p>İstanbul-Ankara güzergahında en çok taşınan parça eşyalar şunlardır:</p>
+        <ul style="color:#444;line-height:2.2;padding-left:20px;">
+            <li><strong>Öğrenci eşyaları:</strong> Ankara'daki üniversite şehri kimliği nedeniyle her eğitim döneminde yoğun talep alıyoruz. Yatak, masa, bilgisayar ve koli kombinasyonları sık karşılaştığımız taşımalardır.</li>
+            <li><strong>Beyaz eşya:</strong> Buzdolabı, çamaşır makinesi ve bulaşık makinesi gibi büyük beyaz eşyalar parça eşya taşımanın en yaygın kullanım alanıdır.</li>
+            <li><strong>Mobilya:</strong> Koltuk takımı, yemek masası, yatak başlığı gibi büyük ama az sayıdaki mobilyalar tam araç kiralamak yerine parça eşya ile taşınır.</li>
+            <li><strong>E-ticaret ve ticari ürünler:</strong> İstanbul'da üretilen veya satın alınan ürünlerin Ankara'daki müşteri veya depoya gönderimi.</li>
+            <li><strong>Ofis ekipmanları:</strong> Şube açılışı veya ofis taşıması kapsamında az sayıda mobilya ve elektronik ekipman.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- FİYAT TABLOSU -->
+<section class="fiyat-bg">
+    <div class="container">
+        <h2 style="font-size:1.6rem;font-weight:700;color:#1a1a2e;margin-bottom:8px;">İstanbul-Ankara Parça Eşya Taşıma Fiyatları (2026)</h2>
+        <p style="color:#666;margin-bottom:24px;">Aşağıdaki fiyatlar tahmini olup eşya miktarı, kat ve özel gereksinimlere göre değişir.</p>
+        <table class="fiyat-table">
+            <thead>
+                <tr>
+                    <th>Eşya</th>
+                    <th>Tahmini Fiyat</th>
+                    <th>Teslim Süresi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Tek beyaz eşya</td><td>1.500 – 2.500 ₺</td><td>24-48 saat</td></tr>
+                <tr><td>Koltuk takımı</td><td>2.000 – 3.500 ₺</td><td>24-48 saat</td></tr>
+                <tr><td>1-5 koli</td><td>500 – 1.000 ₺</td><td>24-48 saat</td></tr>
+                <tr><td>5-20 koli</td><td>1.000 – 2.500 ₺</td><td>24-48 saat</td></tr>
+                <tr><td>1 oda eşyası (az eşya)</td><td>4.000 – 6.000 ₺</td><td>1-2 gün</td></tr>
+                <tr><td>2 oda eşyası</td><td>6.000 – 9.000 ₺</td><td>1-2 gün</td></tr>
+            </tbody>
+        </table>
+        <p style="margin-top:14px;font-size:.88rem;color:#888;">* Fiyatlara KDV dahil değildir. Asansörsüz kat taşıması ek ücrete tabidir.</p>
+    </div>
+</section>
+
+<!-- SSS -->
+<section class="ista-faq">
+    <div class="container">
+        <h2>Sık Sorulan Sorular</h2>
+        <div class="faq-item">
+            <details>
+                <summary>İstanbul'dan Ankara'ya parça eşya taşıma kaç günde teslim edilir?</summary>
+                <p>İstanbul-Ankara güzergahında haftanın her günü sefer düzenliyoruz. Eşyalarınız genellikle 24-48 saat içinde teslim edilir.</p>
+            </details>
+        </div>
+        <div class="faq-item">
+            <details>
+                <summary>İstanbul Ankara arası parça eşya taşıma fiyatı nedir?</summary>
+                <p>Fiyat eşyanın hacmi ve türüne göre değişir. Tek beyaz eşya için 1.500-2.500 TL, birkaç koli için 800-1.500 TL aralığında başlamaktadır. Kesin fiyat için bizi arayın.</p>
+            </details>
+        </div>
+        <div class="faq-item">
+            <details>
+                <summary>Ankara'dan İstanbul'a da taşıma yapıyor musunuz?</summary>
+                <p>Evet. Hem İstanbul'dan Ankara'ya hem de Ankara'dan İstanbul'a parça eşya taşıma hizmeti veriyoruz.</p>
+            </details>
+        </div>
+        <div class="faq-item">
+            <details>
+                <summary>Kırılgan eşyaları güvenli taşıyor musunuz?</summary>
+                <p>Evet. Cam, ayna, tablo veya elektronik gibi kırılgan eşyalar özel balonlu naylon, nakliye battaniyesi ve ahşap kasalarla paketlenerek taşınır.</p>
+            </details>
+        </div>
+        <div class="faq-item">
+            <details>
+                <summary>Kapıdan kapıya servis var mı?</summary>
+                <p>Evet. İstanbul'daki adresinizden alıp Ankara'daki adresinize teslim ediyoruz. Kat farkı ve asansörsüz taşıma için önceden bilgi almanızı öneririz.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- İÇ LİNKLEME -->
+<div class="container" style="padding: 0 15px 40px;">
+    <div class="han-services-grid">
+        <h3 class="han-services-title">
+            <span class="han-services-icon">&#128666;</span>
+            İlgili Hizmetlerimiz
+        </h3>
+        <div class="han-services-cards">
+            <a href="/parca-esya-tasima" class="han-scard">
+                <span class="han-scard-icon">&#128230;</span>
+                <span class="han-scard-text">Parça Eşya Taşıma</span>
+            </a>
+            <a href="/sehirlerarasi-parca-esya-tasima-fiyatlari" class="han-scard">
+                <span class="han-scard-icon">&#128176;</span>
+                <span class="han-scard-text">Şehirler Arası Fiyatlar</span>
+            </a>
+            <a href="/Home/istanbul_ankara_parsiyel_nakliyat" class="han-scard">
+                <span class="han-scard-icon">&#128506;</span>
+                <span class="han-scard-text">İstanbul Ankara Parsiyel</span>
+            </a>
+            <a href="/istanbul-ankara-nakliyat" class="han-scard">
+                <span class="han-scard-icon">&#128652;</span>
+                <span class="han-scard-text">İstanbul Ankara Nakliyat</span>
+            </a>
+            <a href="/Home/ambar_nakliyat" class="han-scard">
+                <span class="han-scard-icon">&#127981;</span>
+                <span class="han-scard-text">Ambar Nakliyat</span>
+            </a>
+            <a href="/Home/nakliyat_hizmet_fiyati" class="han-scard han-scard-cta">
+                <span class="han-scard-icon">&#128176;</span>
+                <span class="han-scard-text">Nakliyat Fiyatları</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- CTA -->
+<section class="ista-cta">
+    <div class="container">
+        <h2>İstanbul-Ankara Parça Eşya Fiyatı Öğrenmek İster misiniz?</h2>
+        <p>Eşyanızın türünü ve miktarını söyleyin, 2 dakikada fiyat verelim.</p>
+        <a href="tel:+905344300360" class="btn-orange">&#128222; 0534 430 03 60</a>
+        <a href="/Home/fiyat_al" class="btn-border">Ücretsiz Teklif Al</a>
+    </div>
+</section>

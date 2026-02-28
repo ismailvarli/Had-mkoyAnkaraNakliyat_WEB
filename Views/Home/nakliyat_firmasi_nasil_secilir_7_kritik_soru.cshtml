@@ -1,0 +1,150 @@
+@{
+    ViewData["Title"] = "Nakliyat Firması Nasıl Seçilir? Pişman Olmamak İçin 7 Kritik Soru";
+    ViewData["Description"] = "Nakliyat firması seçmeden önce sormanız gereken 7 kritik soru. Dolandırıcılıktan korunun, sigortalı ve güvenilir firmayı bu rehberle bulun.";
+}
+@{
+    var faqJson = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        { ""@type"": ""Question"", ""name"": ""Nakliyat firması seçerken en önemli kriter nedir?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Sigorta belgesi, yazılı sözleşme ve Google yorumları en kritik üç kriterdir. Bu üçü olmayan firmalarla çalışmayın."" } },
+        { ""@type"": ""Question"", ""name"": ""Nakliyat firmasının belgesi nasıl kontrol edilir?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Firmanın vergi levhası, ticaret sicil kaydı ve taşımacılık yetki belgesi (U2 belgesi) olup olmadığını sorun. Yasal firmalar bu belgeleri göstermekte çekinmez."" } },
+        { ""@type"": ""Question"", ""name"": ""Nakliyat sözleşmesinde neler olmalı?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Taşınacak eşya listesi, toplam fiyat, teslim tarihi, sigorta kapsamı ve ek ücret koşulları mutlaka yazılı olmalıdır."" } },
+        { ""@type"": ""Question"", ""name"": ""Nakliyat firması referansı nasıl alınır?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Google Haritalar yorumları, firmadan referans müşteri listesi istemek ve tanıdıklardan tavsiye almak en güvenilir yöntemlerdir."" } }
+      ]
+    }";
+}
+<script type="application/ld+json">@Html.Raw(faqJson)</script>
+
+<style>
+    .page-wrap { max-width:1200px;margin:0 auto;padding:24px;display:grid;gap:24px;grid-template-columns:280px 1fr }
+    @@media(max-width:992px){ .page-wrap{ grid-template-columns:1fr } }
+    .side{ background:#0f172a;border-radius:14px;padding:18px }
+    .side h3{ color:#fff;font-size:18px;margin:0 0 12px;font-weight:800 }
+    .svc-list{ display:flex;flex-direction:column;gap:8px }
+    .svc-item{ display:flex;align-items:center;justify-content:space-between;background:#172036;color:#e2e8f0;padding:9px 12px;border-radius:10px;text-decoration:none;border:1px solid #23314f;font-size:13px }
+    .svc-item:hover{ background:#1f2a44 }
+    .svc-item .arrow{ background:#f97316;color:#fff;border-radius:8px;padding:3px 7px;font-weight:700;flex-shrink:0;margin-left:8px }
+    .content h1{ font-size:28px;font-weight:900;margin-bottom:12px;color:#0f172a }
+    .blog-meta{ font-size:14px;color:#64748b;margin-bottom:14px }
+    .blog-body p{ color:#334155;line-height:1.7;margin-bottom:16px }
+    .blog-body h2{ margin:28px 0 10px;color:#0f172a;font-size:22px;border-left:4px solid #f97316;padding-left:12px }
+    .blog-body h3{ margin:16px 0 8px;color:#1e293b;font-size:18px }
+    .blog-body ul,.blog-body ol{ margin:0 0 16px 20px }
+    .blog-body li{ margin-bottom:8px;color:#334155;line-height:1.6 }
+    .note{ background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;color:#334155;margin:14px 0 18px }
+    .warn-box{ background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 16px;border-radius:0 10px 10px 0;margin:14px 0 18px;color:#92400e }
+    .good-box{ background:#ecfdf5;border-left:4px solid #10b981;padding:14px 16px;border-radius:0 10px 10px 0;margin:14px 0 18px;color:#065f46 }
+    .soru-card{ background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;margin-bottom:18px;box-shadow:0 2px 8px rgba(0,0,0,.04) }
+    .soru-card .soru-no{ display:inline-block;background:#f97316;color:#fff;border-radius:8px;padding:3px 10px;font-weight:800;font-size:13px;margin-bottom:10px }
+    .soru-card h3{ margin:0 0 8px;color:#0f172a;font-size:18px }
+    .soru-card p{ margin:0;color:#475569;line-height:1.6 }
+    .cta-box{ background:#f97316;color:#fff;padding:24px;border-radius:12px;margin-top:32px;text-align:center }
+    .cta-box h3{ margin:0 0 8px;font-size:20px }
+    .cta-box p{ margin:0 0 14px;opacity:.9 }
+    .cta-box a{ display:inline-block;padding:11px 20px;background:#fff;color:#f97316;font-weight:700;border-radius:8px;text-decoration:none;margin:4px }
+</style>
+
+<div class="page-wrap">
+    <aside class="side">
+        <h3>Blog Yazılarımız</h3>
+        <nav class="svc-list">
+            <a class="svc-item" href="/Home/nakliyat_firmasi_nasil_secilir_7_kritik_soru"><span>Nakliyat Firması Nasıl Seçilir?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/tasinirken_yapilan_10_hata"><span>Taşınırken Yapılan 10 Hata</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/parca_esya_mi_tam_arac_mi"><span>Parça Eşya mı, Tam Araç mı?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/nakliyat_dolandiriciligi"><span>Nakliyat Dolandırıcılığı</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/tasinma_gunu_kontrol_listesi"><span>Taşınma Günü Kontrol Listesi</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/parsiyel_nakliyat_nedir_istanbul_ankara_arasinda__avantajlari"><span>Parsiyel Nakliyat Nedir?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/evden_eve_nakliyat_oncesi_hazirlik_rehberi"><span>Evden Eve Hazırlık Rehberi</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/sigortali_nakliyat_esyalarinizi_guvence_altina_alin"><span>Sigortalı Nakliyat Rehberi</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/blog"><span>Tüm Blog Yazıları</span><span class="arrow">→</span></a>
+        </nav>
+    </aside>
+
+    <main class="content">
+        <h1>Nakliyat Firması Nasıl Seçilir? Pişman Olmamak İçin 7 Kritik Soru</h1>
+        <div class="blog-meta">Rehber • Firma Seçimi • 7 dk okuma</div>
+
+        <div class="blog-body">
+            <p>
+                Her yıl binlerce kişi yanlış nakliyat firması seçimi yüzünden hem maddi zarar görüyor hem de ciddi stres yaşıyor. Eşyalar hasar görüyor, teslim tarihleri kaçırılıyor, anlaşılan fiyat kapıda iki katına çıkıyor. Oysa doğru firma seçimi için sormanız gereken yalnızca 7 kritik soru var. Bu soruların cevaplarına bakarak güvenilir firmayı, dolandırıcıdan kolaylıkla ayırt edebilirsiniz.
+            </p>
+            <p>
+                <a href="/Home/nakliyat_hizmet_fiyati">Nakliyat fiyatları</a> araştırırken fiyatın tek başına hiçbir anlam ifade etmediğini unutmayın. En ucuz teklifi veren firma çoğunlukla en kötü hizmeti sunandır. Bu rehberde, fiyatın ötesinde sormanız gereken soruları ve beklemeniz gereken cevapları bulacaksınız.
+            </p>
+
+            <div class="soru-card">
+                <span class="soru-no">Soru 1</span>
+                <h3>Firmanın Taşımacılık Yetki Belgesi Var mı?</h3>
+                <p>Türkiye'de şehirlerarası yük taşımacılığı yapabilmek için Ulaştırma Bakanlığı'ndan alınan <strong>U2 yetki belgesi</strong> zorunludur. Bu belge olmayan bir firma yasadışı faaliyet gösteriyor demektir. Belgeyi görmenizi sağlamayan ya da "büroda" olduğunu söyleyen firmalardan uzak durun. Güvenilir firmalar bu belgeyi kibarca ama hızla gösterir.</p>
+            </div>
+
+            <div class="soru-card">
+                <span class="soru-no">Soru 2</span>
+                <h3>Nakliyat Sigortası Sunuyor mu? Belgesiyle mi?</h3>
+                <p>"Sigortalı taşıyoruz" demek yetmez — belgesini isteyin. Gerçek <a href="/Home/sigortali_nakliyat_esyalarinizi_guvence_altina_alin">nakliyat sigortası</a>, eşyalarınızın hasar gördüğünde tazminat almanızı sağlar. Sigorta poliçesi olmayan bir firmada eşyanız kırılırsa yasal hiçbir dayanağınız yoktur. Sigorta belgesi gösteren firmalar hem daha güvenilirdir hem de eşyalara daha özenli davranır.</p>
+            </div>
+
+            <div class="soru-card">
+                <span class="soru-no">Soru 3</span>
+                <h3>Fiyat Teklifi Yazılı Olarak Veriliyor mu?</h3>
+                <p>Telefonda verilen sözlü fiyat, yasal olarak bağlayıcı değildir. Taşıma günü kapıda "eşya sandığımızdan fazla çıktı", "kat parası eklenecek", "ambalaj ücreti ayrı" gibi bahanelerle fiyatı artıran firmalar ne yazık ki çok yaygın. <strong>Her koşulda yazılı teklif ve imzalı sözleşme isteyin.</strong> Sözleşmede; taşınacak eşya listesi, toplam tutar, teslim tarihi ve ödeme koşulları açıkça yer almalıdır.</p>
+            </div>
+
+            <div class="soru-card">
+                <span class="soru-no">Soru 4</span>
+                <h3>Google Yorumları Nasıl ve Kaç Tane?</h3>
+                <p>Bir firmanın Google Haritalar profilindeki yorumlar, en objektif kaynaktır. Yorumları incelerken şunlara bakın: Yorum sayısı 20'nin altındaysa firma ya yeni ya da az çalışıyordur. Tüm yorumlar 5 yıldızsa sahte olabilir — gerçek yorumlar arasında zaman zaman olumsuz olanlar da bulunur. <strong>Olumsuz yorumlara firmanın nasıl cevap verdiğine bakın</strong> — bu, firmanın müşteri hizmetleri anlayışını en net ortaya koyan göstergedir.</p>
+            </div>
+
+            <div class="soru-card">
+                <span class="soru-no">Soru 5</span>
+                <h3>Kaç Yıllık Deneyimleri Var ve Referans Gösterebiliyorlar mı?</h3>
+                <p>Nakliyat sektöründe deneyim, kalitesiz hizmet verenler zaman içinde elendiği için önemli bir güvencedir. 5 yılın üzerinde hizmet veren ve referans müşteri gösterebilen firmalar genellikle güvenilirdir. Referans isteğinizi garip karşılayan ya da geçiştiren firmalara dikkat edin.</p>
+            </div>
+
+            <div class="soru-card">
+                <span class="soru-no">Soru 6</span>
+                <h3>Araçlar Firmaya mı Ait, Yoksa Kiralık mı?</h3>
+                <p>Kendi aracı olmayan, her taşıma için farklı taşeron kullanan firmalar hem kalite kontrolü açısından hem de sorumluluk açısından risklidir. Bir sorun çıktığında "biz taşeron kullandık, bizimle değil onlarla konuşun" yanıtıyla karşılaşabilirsiniz. Kendi filosu olan firmalar, süreç boyunca tam kontrol sağlar ve hesap sorulabilir olmak zorundadır.</p>
+            </div>
+
+            <div class="soru-card">
+                <span class="soru-no">Soru 7</span>
+                <h3>Kapıdan Kapıya Servis Dahil mi, Ek Ücret Var mı?</h3>
+                <p>Bazı firmalar çok düşük fiyat verip "kapıya kadar" hizmet sunar; kat taşıması, ambalaj, montaj/demontaj hepsi ayrı ücrete tabidir. Teklifin neyi kapsadığını ve nelerin ekstra olduğunu baştan netleştirin. Şeffaf bir firma, bu soruyu rahatsız olmadan detaylıca yanıtlar.</p>
+            </div>
+
+            <div class="good-box">
+                <strong>✓ Güvenilir firma şu soruları sorar:</strong> "Eşyalarınızın listesi var mı? Kat durumu nasıl? Asansör var mı? Kırılgan eşyanız var mı?" — Bu soruları soran firma, doğru fiyatı hesaplamak istiyor demektir.
+            </div>
+
+            <div class="warn-box">
+                <strong>⚠ Dikkat:</strong> "Hemen şimdi karar verirseniz bu fiyat geçerli", "sözleşmeye gerek yok, güvenin bize" veya "peşin ödeme %30 indirim" diyen firmalar kırmızı bayrak taşıyor. Bu baskı taktiklerine kanmayın.
+            </div>
+
+            <h2>Firma Karşılaştırması Nasıl Yapılır?</h2>
+            <p>
+                En az 3 firmadan teklif alın. Teklifleri yalnızca fiyat üzerinden değil, kapsamına göre karşılaştırın. Birisi 5.000 TL verip her şeyi kapsıyorsa, diğeri 3.500 TL verip kat, ambalaj ve sigortayı ayrı tutuyorsa gerçekte daha pahalıya gelebilir.
+            </p>
+            <p>
+                Teklifleri Excel'e veya basit bir kağıda döküp yan yana koyun: fiyat, sigorta dahil mi, kapıdan kapıya mı, ambalaj dahil mi, montaj/demontaj var mı, tahmini süre ne. Bu karşılaştırma tablosu en doğru kararı vermenizi sağlar.
+            </p>
+
+            <h2>Sonuç: Doğru Firmayı Seçmek Pahalı Değil, Yanlış Firmayı Seçmek Pahalı</h2>
+            <p>
+                Nakliyat sektöründe "ucuz" çoğu zaman "eksik" anlamına gelir. Sigorta yok, deneyimsiz ekip, köhne araç — ve sonuçta hasar gören eşyalar, kaçırılan teslim tarihleri. Biraz daha araştırarak ve bu 7 soruyu sorarak hem bütçenizi hem eşyalarınızı koruyabilirsiniz.
+            </p>
+            <p>
+                <a href="/parca-esya-tasima">Parça eşya taşıma</a>, <a href="/Home/parsiyel_nakliyat">parsiyel nakliyat</a> veya <a href="/Home/evden_eve_nakliyat">evden eve nakliyat</a> ihtiyacınız olsun — doğru firmayı seçmek için bu rehberi bir kez okumak yeterli.
+            </p>
+
+            <div class="cta-box">
+                <h3>Hadımköy Ankara Nakliyat — 7 Soruya da Evet Diyoruz</h3>
+                <p>Yetki belgemiz, sigortamız, yazılı sözleşmemiz ve 15 yıllık deneyimimizle hizmetinizdeyiz.</p>
+                <a href="tel:+905344300360">📞 0534 430 03 60</a>
+                <a href="/Home/fiyat_al">Ücretsiz Teklif Al</a>
+            </div>
+        </div>
+    </main>
+</div>

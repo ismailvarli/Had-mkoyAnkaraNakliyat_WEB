@@ -3,6 +3,49 @@
     ViewData["Description"] = "Evden eve nakliyat öncesi hazırlık: zaman planı, envanter, paketleme, etiketleme, asansör/cephe uygunluğu, sigorta, maliyet kırılımı, kontrol listesi ve SSS.";
 }
 
+@{
+    var howToJson = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""HowTo"",
+      ""name"": ""Evden Eve Nakliyat Öncesi Hazırlık: Adım Adım Rehber"",
+      ""description"": ""Evden eve nakliyat öncesi yapılması gerekenler. 3 hafta öncesinden taşıma gününe kadar eksiksiz hazırlık planı."",
+      ""totalTime"": ""P21D"",
+      ""step"": [
+        {
+          ""@type"": ""HowToStep"",
+          ""position"": 1,
+          ""name"": ""3 Hafta Önce: Planlama ve Firma Seçimi"",
+          ""text"": ""Ön keşif/teklif alın, taşınma tarihini belirleyin, sözleşme taslağı hazırlayın. Ay başı/sonu ve hafta sonu yoğunluklarını hesaba katın.""
+        },
+        {
+          ""@type"": ""HowToStep"",
+          ""position"": 2,
+          ""name"": ""2 Hafta Önce: Envanter ve Eşya Eleme"",
+          ""text"": ""Oda oda envanter ve m³ listesi çıkarın. Kullanmadığınız eşyaları elden çıkarın veya bağışlayın. Hacmi küçültmek taşıma fiyatını düşürür.""
+        },
+        {
+          ""@type"": ""HowToStep"",
+          ""position"": 3,
+          ""name"": ""1 Hafta Önce: Paketleme Hazırlığı"",
+          ""text"": ""Koli, balonlu naylon, bant ve köşe koruyucu malzemeleri temin edin. Kırılgan eşyaları önceden paketleyin. Standart koli ölçüleri kullanın.""
+        },
+        {
+          ""@type"": ""HowToStep"",
+          ""position"": 4,
+          ""name"": ""2-3 Gün Önce: Lojistik Kontroller"",
+          ""text"": ""Asansör ve cephe uygunluğunu kontrol edin, site yönetiminden izin alın, park alanı ayarlayın. Komşuları bilgilendirin.""
+        },
+        {
+          ""@type"": ""HowToStep"",
+          ""position"": 5,
+          ""name"": ""Taşıma Günü: Yükleme ve Teslim"",
+          ""text"": ""Kırılgan ve elektronikleri ilk yükleyin. Oda planına göre yerleşim yapın. Eşya sayımını ve tutanağı tamamlayın. Anahtar, sayaç ve posta teslimini gerçekleştirin.""
+        }
+      ]
+    }";
+}
+<script type="application/ld+json">@Html.Raw(howToJson)</script>
+
 <style>
     .page-wrap {
         max-width: 1200px;

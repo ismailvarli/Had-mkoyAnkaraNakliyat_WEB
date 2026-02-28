@@ -1,0 +1,329 @@
+@{
+    ViewData["Title"] = "Parça Eşya Taşıma | Az Eşya Taşıma Hizmetleri";
+    ViewData["Description"] = "Az eşya taşıma, tek parça eşya taşıma ve şehirler arası parça eşya taşımacılığı. Tam araç kiralamadan, yalnızca eşyanızın kapladığı alan kadar ücret ödeyin.";
+}
+@{
+    var faqJson = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        {
+          ""@type"": ""Question"",
+          ""name"": ""Parça eşya taşıma nedir?"",
+          ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Parça eşya taşıma; bir ya da birkaç mobilya, koli veya küçük miktardaki eşyanızı tam araç kiralamadan, diğer yüklerle birlikte taşıtan ekonomik bir hizmettir. Yalnızca eşyanızın kapladığı alan kadar ücret ödersiniz."" }
+        },
+        {
+          ""@type"": ""Question"",
+          ""name"": ""Tek parça eşya taşır mısınız?"",
+          ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Evet. Buzdolabı, çamaşır makinesi, koltuk takımı veya tek bir sandık gibi tek parça eşyalarınızı şehir içi ve şehirlerarası taşıyoruz."" }
+        },
+        {
+          ""@type"": ""Question"",
+          ""name"": ""Az eşya taşımada minimum yük var mı?"",
+          ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Hayır, minimum yük şartımız yok. Tek bir koli bile taşıyabiliriz. Fiyatlandırma eşyanın hacmi ve taşıma mesafesine göre belirlenir."" }
+        },
+        {
+          ""@type"": ""Question"",
+          ""name"": ""Parça eşya taşıma fiyatı nasıl hesaplanır?"",
+          ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Fiyat; eşyanın ağırlığı, hacmi, taşınacak mesafe ve kattan indirme/bindirme gereksinimine göre hesaplanır. Ücretsiz fiyat almak için bizi arayabilirsiniz."" }
+        },
+        {
+          ""@type"": ""Question"",
+          ""name"": ""Eşyalarım sigortalı mı taşınıyor?"",
+          ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Evet, tüm parça eşya taşıma hizmetlerimizde eşyalarınız taşıma sigortası kapsamındadır. Hasar durumunda yasal güvenceniz mevcuttur."" }
+        }
+      ]
+    }";
+
+    var serviceJson = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""Service"",
+      ""serviceType"": ""Parça Eşya Taşıma"",
+      ""name"": ""Az Eşya ve Parça Eşya Taşıma Hizmetleri"",
+      ""provider"": { ""@type"": ""LocalBusiness"", ""name"": ""Hadımköy Ankara Nakliyat"", ""telephone"": ""+905344300360"" },
+      ""areaServed"": ""Türkiye"",
+      ""description"": ""Tek parça eşya, az eşya ve küçük çaplı taşımalar için uygun fiyatlı parça eşya taşıma hizmetleri.""
+    }";
+}
+<script type="application/ld+json">@Html.Raw(faqJson)</script>
+<script type="application/ld+json">@Html.Raw(serviceJson)</script>
+
+<style>
+    .parca-hero {
+        background: linear-gradient(135deg, #1a1a2e 0%, #ff7300 100%);
+        padding: 60px 0 40px;
+        color: #fff;
+        text-align: center;
+    }
+    .parca-hero h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 16px; }
+    .parca-hero p { font-size: 1.1rem; opacity: .9; max-width: 680px; margin: 0 auto 28px; }
+    .parca-hero .btn-cta {
+        background: #fff; color: #ff7300; font-weight: 700;
+        padding: 14px 36px; border-radius: 8px; text-decoration: none;
+        display: inline-block; margin: 6px; transition: .2s;
+    }
+    .parca-hero .btn-cta:hover { background: #ff7300; color: #fff; }
+    .parca-hero .btn-outline {
+        border: 2px solid #fff; color: #fff; font-weight: 600;
+        padding: 12px 32px; border-radius: 8px; text-decoration: none;
+        display: inline-block; margin: 6px; transition: .2s;
+    }
+    .parca-hero .btn-outline:hover { background: #fff; color: #ff7300; }
+    .parca-section { padding: 56px 0; }
+    .parca-section h2 { font-size: 1.7rem; font-weight: 700; color: #1a1a2e; margin-bottom: 20px; }
+    .parca-section h3 { font-size: 1.2rem; font-weight: 600; color: #ff7300; margin: 24px 0 10px; }
+    .parca-section p { color: #444; line-height: 1.8; margin-bottom: 14px; }
+    .parca-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 32px 0; }
+    .parca-card {
+        background: #fff; border: 1px solid #e8e8e8; border-radius: 12px;
+        padding: 28px 20px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,.06);
+        transition: .2s;
+    }
+    .parca-card:hover { box-shadow: 0 6px 24px rgba(255,115,0,.15); border-color: #ff7300; }
+    .parca-card .icon { font-size: 2.2rem; margin-bottom: 12px; }
+    .parca-card h4 { font-size: 1rem; font-weight: 700; color: #1a1a2e; margin-bottom: 8px; }
+    .parca-card p { font-size: .9rem; color: #666; margin: 0; }
+    .parca-fiyat { background: #fff8f2; border-radius: 16px; padding: 36px; margin: 32px 0; }
+    .parca-fiyat h3 { color: #ff7300; font-size: 1.3rem; margin-bottom: 20px; }
+    .fiyat-table { width: 100%; border-collapse: collapse; }
+    .fiyat-table th { background: #ff7300; color: #fff; padding: 12px 16px; text-align: left; }
+    .fiyat-table td { padding: 12px 16px; border-bottom: 1px solid #f0e8e0; color: #444; }
+    .fiyat-table tr:last-child td { border-bottom: none; }
+    .parca-faq { padding: 48px 0; background: #f9f9f9; }
+    .parca-faq h2 { font-size: 1.6rem; font-weight: 700; color: #1a1a2e; margin-bottom: 28px; }
+    .faq-item { background: #fff; border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
+    .faq-item summary { padding: 18px 20px; font-weight: 600; color: #1a1a2e; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    .faq-item summary::after { content: "+"; font-size: 1.3rem; color: #ff7300; }
+    details[open] summary::after { content: "−"; }
+    .faq-item p { padding: 0 20px 18px; color: #555; line-height: 1.7; margin: 0; }
+    .parca-cta { background: linear-gradient(135deg, #ff7300, #e05a00); padding: 52px 0; text-align: center; color: #fff; }
+    .parca-cta h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 14px; }
+    .parca-cta p { opacity: .9; margin-bottom: 28px; font-size: 1.05rem; }
+    .btn-white { background: #fff; color: #ff7300; font-weight: 700; padding: 14px 36px; border-radius: 8px; text-decoration: none; display: inline-block; margin: 6px; }
+    .btn-white:hover { background: #1a1a2e; color: #fff; }
+    @@media (max-width: 600px) {
+        .parca-hero h1 { font-size: 1.5rem; }
+        .parca-hero { padding: 40px 0 28px; }
+    }
+</style>
+
+<!-- HERO -->
+<section class="parca-hero">
+    <div class="container">
+        <h1>Parça Eşya Taşıma Hizmetleri</h1>
+        <p>Taşınmıyorsunuz, sadece birkaç eşyanızı gönderiyorsunuz. Tam araç kiralamak zorunda değilsiniz — yalnızca eşyanızın kapladığı alan kadar ödeyin.</p>
+        <a href="tel:+905344300360" class="btn-cta">&#128222; Hemen Ara</a>
+        <a href="/Home/fiyat_al" class="btn-outline">Ücretsiz Fiyat Al</a>
+    </div>
+</section>
+
+<!-- KART GRID -->
+<section class="parca-section">
+    <div class="container">
+        <h2>Hangi Durumlarda Parça Eşya Taşıma Tercih Edilir?</h2>
+        <p>Tüm evinizi değil, sadece birkaç parça eşyanızı taşıtmanız gerektiğinde parça eşya taşıma hizmeti en ekonomik ve pratik seçenektir. Özellikle şu durumlarda tercih edilir:</p>
+        <div class="parca-cards">
+            <div class="parca-card">
+                <div class="icon">&#127968;</div>
+                <h4>Tek Parça Eşya</h4>
+                <p>Buzdolabı, çamaşır makinesi, koltuk gibi tek büyük eşya taşımaları</p>
+            </div>
+            <div class="parca-card">
+                <div class="icon">&#128230;</div>
+                <h4>Koli ve Paket</h4>
+                <p>E-ticaret, hediye veya kişisel kolilerinizin şehirler arası gönderimi</p>
+            </div>
+            <div class="parca-card">
+                <div class="icon">&#128187;</div>
+                <h4>Ofis Ekipmanı</h4>
+                <p>Birkaç masa, sandalye veya elektronik ekipmanın güvenli taşınması</p>
+            </div>
+            <div class="parca-card">
+                <div class="icon">&#127754;</div>
+                <h4>Öğrenci Eşyası</h4>
+                <p>Az eşyayla yurt veya kiralık daireye taşınan öğrenciler için ideal</p>
+            </div>
+        </div>
+
+        <h2>Parça Eşya Taşımanın Avantajları</h2>
+        <p>Geleneksel nakliyatta siz bir kamyon kiralamak zorunda kalırsınız — eşyanız az olsa bile. Parça eşya taşımada ise aracın yalnızca kullandığınız kısmını ödersiniz. Bu şu anlama gelir:</p>
+
+        <h3>&#10003; Büyük Maliyet Tasarrufu</h3>
+        <p>Tam kamyon yerine eşyanızın hacmine göre fiyat ödersiniz. Özellikle İstanbul-Ankara gibi uzun mesafelerde bu fark yüzlerce lira olabilir. Birkaç koliden oluşan yükünüz için tam araç kiralama mantıklı değil; parça eşya taşıma hem cebinize hem de size zaman kazandırır.</p>
+
+        <h3>&#10003; Hızlı Teslim</h3>
+        <p>Düzenli güzergah seferleri sayesinde eşyalarınız genellikle 24-48 saat içinde teslim edilir. İstanbul-Ankara güzergahında haftanın her günü sefer düzenliyoruz.</p>
+
+        <h3>&#10003; Profesyonel Paketleme</h3>
+        <p>Kırılgan ve değerli eşyalarınız nakliye battaniyesi, streç film ve özel koruyucu malzemelerle sarılarak taşınır. Hasar riski en aza indirilir.</p>
+
+        <h3>&#10003; Sigortalı Taşıma</h3>
+        <p>Tüm parça eşya taşımalarımız taşıma sigortası kapsamındadır. Olası bir hasar durumunda yasal güvenceniz bulunmaktadır.</p>
+
+        <!-- Fiyat Tablosu -->
+        <div class="parca-fiyat">
+            <h3>&#128176; Tahmini Fiyat Rehberi (2026)</h3>
+            <p style="color:#666;font-size:.9rem;margin-bottom:16px;">Fiyatlar eşya hacmi, kat ve mesafeye göre değişir. Kesin fiyat için bizi arayın.</p>
+            <table class="fiyat-table">
+                <thead>
+                    <tr>
+                        <th>Eşya Türü</th>
+                        <th>İstanbul → Ankara</th>
+                        <th>Süre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tek beyaz eşya (buzdolabı vb.)</td>
+                        <td>1.500 – 2.500 ₺</td>
+                        <td>24-48 saat</td>
+                    </tr>
+                    <tr>
+                        <td>Koltuk takımı (3'lü)</td>
+                        <td>2.000 – 3.500 ₺</td>
+                        <td>24-48 saat</td>
+                    </tr>
+                    <tr>
+                        <td>5-10 koli</td>
+                        <td>800 – 1.500 ₺</td>
+                        <td>24-48 saat</td>
+                    </tr>
+                    <tr>
+                        <td>1-2 oda eşyası (az eşya)</td>
+                        <td>4.000 – 7.000 ₺</td>
+                        <td>1-2 gün</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- NASIL HAZIRLANIR -->
+<section class="parca-section" style="background:#f9f9f9;padding:52px 0;">
+    <div class="container">
+        <h2>Parça Eşya Taşımaya Nasıl Hazırlanırsınız?</h2>
+        <p>Taşımadan önce birkaç basit adım hem süreci hızlandırır hem de eşyalarınızın zarar görmesini engeller.</p>
+
+        <h3>&#10003; Eşyaları Önceden Listeleyin</h3>
+        <p>Taşıyacağınız her eşyayı bir listeye yazın. Boyutları, ağırlığı ve kırılgan olup olmadığını belirtin. Bu liste hem fiyat teklifini hızlandırır hem de taşıma ekibinin hazırlık yapmasını sağlar. Büyük mobilyalar için ölçüleri önceden almak, kapı ve asansör geçişlerinde sürpriz yaşanmasını önler.</p>
+
+        <h3>&#10003; Kırılgan Eşyaları Belirtin</h3>
+        <p>Cam, porselen, elektronik veya antika gibi kırılgan eşyalarınızı ekibimize önceden bildirin. Bu eşyalar için özel balonlu naylon, köpük tampon ve ahşap sandık gibi ek koruma malzemeleri kullanılır. Kırılgan eşyaları sıradan kolilerle birlikte göndermemek, hasar riskini önemli ölçüde azaltır.</p>
+
+        <h3>&#10003; Demonte Edilebilecek Parçaları Ayırın</h3>
+        <p>Büyük mobilyalar (dolap, yatak, masa gibi) mümkünse parçalarına ayrılarak taşınmalıdır. Demonte mobilyalar hem daha az yer kaplar hem de hasar görmeden taşınır. Ekibimiz istek halinde demontaj ve montaj hizmeti de sunmaktadır.</p>
+
+        <h3>&#10003; Değerli ve Kişisel Eşyaları Ayırın</h3>
+        <p>Evrak, mücevher, nakit para ve özel belgeler hiçbir zaman nakliye kolisine konulmamalıdır. Bu tür kişisel eşyaları bizzat taşımanızı öneririz. Sigortalı taşıma kapsamına bu tür kişisel değerliler dahil edilemez.</p>
+
+        <h2>Neden Hadımköy Ankara Nakliyat?</h2>
+        <p>İstanbul-Ankara güzergahında 15 yılı aşkın tecrübemizle binlerce parça eşya taşıması gerçekleştirdik. Müşterilerimizin bizi tekrar tercih etmesinin nedenleri şunlar:</p>
+        <ul style="color:#444;line-height:2.2;padding-left:20px;">
+            <li><strong>Hadımköy'ün stratejik konumu:</strong> Hem TEM hem E-5 otoyoluna yakınlığımız sayesinde İstanbul'un her noktasından hızlı alım yapıyoruz.</li>
+            <li><strong>Günlük sefer:</strong> İstanbul-Ankara güzergahında haftanın 7 günü araç çalıştırıyoruz. Bekleme yok.</li>
+            <li><strong>Şeffaf fiyatlandırma:</strong> Fiyat teklifinde gizli ücret yoktur. Verilen rakam nihai rakamdır.</li>
+            <li><strong>Deneyimli ekip:</strong> Tüm personelimiz eşya sarma, paketleme ve yükleme konusunda eğitimlidir.</li>
+            <li><strong>Takip imkânı:</strong> Eşyanızın yola çıktığını ve teslim edildiğini SMS ile bildiriyoruz.</li>
+        </ul>
+
+        <h2>Parça Eşya Taşıma Sürecinde Sıkça Yapılan Hatalar</h2>
+        <p>Yıllar içinde edindiğimiz tecrübe, müşterilerin en sık yaptığı hataları gözlemlememizi sağladı. Bu hatalardan kaçınarak taşıma sürecinizi sorunsuz geçirebilirsiniz:</p>
+
+        <h3>&#10007; En Ucuz Firmayı Seçmek</h3>
+        <p>Fiyat karşılaştırması yaparken yalnızca rakama değil, hizmet kapsamına bakın. Çok düşük teklifler genellikle sigortasız taşıma, deneyimsiz ekip veya gizli ücretler anlamına gelir. Eşyalarınızın değeri, birkaç yüz liralık fark etmeyecek bir tasarruftan çok daha önemlidir.</p>
+
+        <h3>&#10007; Taşıma Öncesi Ölçü Almamak</h3>
+        <p>Özellikle büyük mobilyaları taşırken kapı, merdiven ve asansör ölçülerini kontrol etmemek ciddi sorunlara yol açabilir. Eşyanız içeri veya dışarı çıkmıyorsa ek işçilik ve zaman kaybı yaşarsınız.</p>
+
+        <h3>&#10007; Sigorta Yaptırmamak</h3>
+        <p>Temel taşıma sigortası standart hizmetimizin bir parçasıdır. Ancak değerli ve antika eşyalar için ek sigorta yaptırmanızı şiddetle öneririz. Küçük bir sigorta primi, büyük bir maddi kayıbı önler.</p>
+    </div>
+</section>
+
+<!-- SSS -->
+<section class="parca-faq">
+    <div class="container">
+        <h2>Sık Sorulan Sorular</h2>
+        <div class="faq-item">
+            <details>
+                <summary>Parça eşya taşıma nedir?</summary>
+                <p>Parça eşya taşıma; bir ya da birkaç mobilya, koli veya küçük miktardaki eşyanızı tam araç kiralamadan, diğer yüklerle birlikte taşıtan ekonomik bir hizmettir. Yalnızca eşyanızın kapladığı alan kadar ücret ödersiniz.</p>
+            </details>
+        </div>
+        <div class="faq-item">
+            <details>
+                <summary>Tek parça eşya taşır mısınız?</summary>
+                <p>Evet. Buzdolabı, çamaşır makinesi, koltuk takımı veya tek bir sandık gibi tek parça eşyalarınızı şehir içi ve şehirlerarası taşıyoruz.</p>
+            </details>
+        </div>
+        <div class="faq-item">
+            <details>
+                <summary>Az eşya taşımada minimum yük var mı?</summary>
+                <p>Hayır, minimum yük şartımız yok. Tek bir koli bile taşıyabiliriz. Fiyatlandırma eşyanın hacmi ve taşıma mesafesine göre belirlenir.</p>
+            </details>
+        </div>
+        <div class="faq-item">
+            <details>
+                <summary>Parça eşya taşıma fiyatı nasıl hesaplanır?</summary>
+                <p>Fiyat; eşyanın ağırlığı, hacmi, taşınacak mesafe ve kattan indirme/bindirme gereksinimine göre hesaplanır. Ücretsiz fiyat almak için bizi arayabilirsiniz.</p>
+            </details>
+        </div>
+        <div class="faq-item">
+            <details>
+                <summary>Eşyalarım sigortalı mı taşınıyor?</summary>
+                <p>Evet, tüm parça eşya taşıma hizmetlerimizde eşyalarınız taşıma sigortası kapsamındadır. Hasar durumunda yasal güvenceniz mevcuttur.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- İÇ LİNKLEME -->
+<div class="container" style="padding: 40px 15px 0;">
+    <div class="han-services-grid">
+        <h3 class="han-services-title">
+            <span class="han-services-icon">&#128666;</span>
+            İlgili Hizmetlerimiz
+        </h3>
+        <div class="han-services-cards">
+            <a href="/Home/parsiyel_nakliyat" class="han-scard">
+                <span class="han-scard-icon">&#128230;</span>
+                <span class="han-scard-text">Parsiyel Nakliyat</span>
+            </a>
+            <a href="/Home/istanbul_ankara_parsiyel_nakliyat" class="han-scard">
+                <span class="han-scard-icon">&#128506;</span>
+                <span class="han-scard-text">&#304;stanbul Ankara Parsiyel</span>
+            </a>
+            <a href="/istanbul-ankara-parca-esya-tasima" class="han-scard">
+                <span class="han-scard-icon">&#128506;</span>
+                <span class="han-scard-text">İstanbul Ankara Parça Eşya</span>
+            </a>
+            <a href="/sehirlerarasi-parca-esya-tasima-fiyatlari" class="han-scard">
+                <span class="han-scard-icon">&#128176;</span>
+                <span class="han-scard-text">Taşıma Fiyatları</span>
+            </a>
+            <a href="/Home/ambar_nakliyat" class="han-scard">
+                <span class="han-scard-icon">&#127981;</span>
+                <span class="han-scard-text">Ambar Nakliyat</span>
+            </a>
+            <a href="/istanbul-ankara-nakliyat" class="han-scard">
+                <span class="han-scard-icon">&#128652;</span>
+                <span class="han-scard-text">İstanbul Ankara Nakliyat</span>
+            </a>
+            <a href="/Home/nakliyat_hizmet_fiyati" class="han-scard han-scard-cta">
+                <span class="han-scard-icon">&#128176;</span>
+                <span class="han-scard-text">Nakliyat Fiyatları</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- CTA -->
+<section class="parca-cta" style="margin-top:40px;">
+    <div class="container">
+        <h2>Parça Eşya Taşıma Fiyatı Öğrenmek İster misiniz?</h2>
+        <p>Eşyanızın boyutunu ve gideceği şehri söyleyin, size hemen fiyat verelim.</p>
+        <a href="tel:+905344300360" class="btn-white">&#128222; 0534 430 03 60</a>
+        <a href="/Home/fiyat_al" class="btn-white" style="background:transparent;color:#fff;border:2px solid #fff;margin-left:8px;">Fiyat Teklifi Al</a>
+    </div>
+</section>

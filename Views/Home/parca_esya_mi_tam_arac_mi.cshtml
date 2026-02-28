@@ -1,0 +1,180 @@
+@{
+    ViewData["Title"] = "Parça Eşya mı, Tam Araç mı? Hangisi Ne Zaman Mantıklı?";
+    ViewData["Description"] = "Parça eşya taşıma ile tam araç kiralama arasındaki fark nedir? Hangisi daha ekonomik? Karşılaştırma tablosu ve uzman önerileriyle doğru kararı verin.";
+}
+@{
+    var faqJson = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        { ""@type"": ""Question"", ""name"": ""Parça eşya taşıma ne zaman tercih edilmeli?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""1-2 oda eşyası veya birkaç parça mobilya/beyaz eşya taşıyacaksanız parça eşya taşıma çok daha ekonomiktir. Tam araç doldurmak için yeterli eşyanız yoksa parça eşyayı tercih edin."" } },
+        { ""@type"": ""Question"", ""name"": ""Tam araç ne zaman daha mantıklı?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""3+ oda eşyası veya büyük bir ev taşıyorsanız, tam araç kiralamak hem daha hızlı hem de daha güvenli olur. Eşya miktarı arttıkça parça eşya ile tam araç fiyatı birbirine yaklaşır."" } },
+        { ""@type"": ""Question"", ""name"": ""Parça eşya taşımada teslim süresi ne kadar?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""İstanbul-Ankara güzergahında parça eşya teslimatı genellikle 24-48 saat içinde tamamlanır. Eşyalar aynı güzergaha giden başka yüklerle birleştirilir."" } },
+        { ""@type"": ""Question"", ""name"": ""Parça eşya taşımada eşyalarım karışır mı?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Hayır. Her müşterinin eşyası ayrı ayrı etiketlenir ve kargo içinde ayrı bölümlerde taşınır. Profesyonel firmalar eşya karışmasını önlemek için özel sistemler kullanır."" } }
+      ]
+    }";
+}
+<script type="application/ld+json">@Html.Raw(faqJson)</script>
+
+<style>
+    .page-wrap { max-width:1200px;margin:0 auto;padding:24px;display:grid;gap:24px;grid-template-columns:280px 1fr }
+    @@media(max-width:992px){ .page-wrap{ grid-template-columns:1fr } }
+    .side{ background:#0f172a;border-radius:14px;padding:18px }
+    .side h3{ color:#fff;font-size:18px;margin:0 0 12px;font-weight:800 }
+    .svc-list{ display:flex;flex-direction:column;gap:8px }
+    .svc-item{ display:flex;align-items:center;justify-content:space-between;background:#172036;color:#e2e8f0;padding:9px 12px;border-radius:10px;text-decoration:none;border:1px solid #23314f;font-size:13px }
+    .svc-item:hover{ background:#1f2a44 }
+    .svc-item .arrow{ background:#f97316;color:#fff;border-radius:8px;padding:3px 7px;font-weight:700;flex-shrink:0;margin-left:8px }
+    .content h1{ font-size:28px;font-weight:900;margin-bottom:12px;color:#0f172a }
+    .blog-meta{ font-size:14px;color:#64748b;margin-bottom:14px }
+    .blog-body p{ color:#334155;line-height:1.7;margin-bottom:16px }
+    .blog-body h2{ margin:28px 0 10px;color:#0f172a;font-size:22px;border-left:4px solid #f97316;padding-left:12px }
+    .blog-body h3{ margin:16px 0 8px;color:#1e293b;font-size:18px }
+    .blog-body ul,.blog-body ol{ margin:0 0 16px 20px }
+    .blog-body li{ margin-bottom:8px;color:#334155;line-height:1.6 }
+    .compare-grid{ display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0 }
+    @@media(max-width:640px){ .compare-grid{ grid-template-columns:1fr } }
+    .compare-card{ border-radius:12px;padding:20px }
+    .compare-card.parca{ background:#eff6ff;border:2px solid #3b82f6 }
+    .compare-card.tam{ background:#fefce8;border:2px solid #eab308 }
+    .compare-card h3{ margin:0 0 12px;font-size:17px }
+    .compare-card.parca h3{ color:#1d4ed8 }
+    .compare-card.tam h3{ color:#92400e }
+    .compare-card ul{ margin:0;padding-left:18px }
+    .compare-card li{ margin-bottom:6px;font-size:14px;color:#334155 }
+    .table-wrap{ overflow:auto;margin:10px 0 24px }
+    .tbl{ width:100%;border-collapse:collapse;font-size:15px }
+    .tbl th,.tbl td{ border:1px solid #e2e8f0;padding:11px 14px;text-align:left }
+    .tbl th{ background:#f1f5f9;color:#0f172a;font-weight:700 }
+    .tbl td.evet{ color:#059669;font-weight:700 }
+    .tbl td.hayir{ color:#dc2626;font-weight:700 }
+    .verdict{ background:#f0fdf4;border:2px solid #22c55e;border-radius:12px;padding:18px 20px;margin:20px 0 }
+    .verdict h3{ color:#15803d;margin:0 0 8px }
+    .verdict p{ margin:0;color:#166534 }
+    .note{ background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;color:#334155;margin:14px 0 18px }
+    .cta-box{ background:#f97316;color:#fff;padding:24px;border-radius:12px;margin-top:32px;text-align:center }
+    .cta-box h3{ margin:0 0 8px;font-size:20px }
+    .cta-box p{ margin:0 0 14px;opacity:.9 }
+    .cta-box a{ display:inline-block;padding:11px 20px;background:#fff;color:#f97316;font-weight:700;border-radius:8px;text-decoration:none;margin:4px }
+</style>
+
+<div class="page-wrap">
+    <aside class="side">
+        <h3>Blog Yazılarımız</h3>
+        <nav class="svc-list">
+            <a class="svc-item" href="/Home/nakliyat_firmasi_nasil_secilir_7_kritik_soru"><span>Nakliyat Firması Nasıl Seçilir?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/tasinirken_yapilan_10_hata"><span>Taşınırken Yapılan 10 Hata</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/parca_esya_mi_tam_arac_mi"><span>Parça Eşya mı, Tam Araç mı?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/nakliyat_dolandiriciligi"><span>Nakliyat Dolandırıcılığı</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/tasinma_gunu_kontrol_listesi"><span>Taşınma Günü Kontrol Listesi</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/parsiyel_nakliyat_nedir_istanbul_ankara_arasinda__avantajlari"><span>Parsiyel Nakliyat Nedir?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/evden_eve_nakliyat_oncesi_hazirlik_rehberi"><span>Evden Eve Hazırlık Rehberi</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/sigortali_nakliyat_esyalarinizi_guvence_altina_alin"><span>Sigortalı Nakliyat Rehberi</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/blog"><span>Tüm Blog Yazıları</span><span class="arrow">→</span></a>
+        </nav>
+    </aside>
+
+    <main class="content">
+        <h1>Parça Eşya mı, Tam Araç mı? Hangisi Ne Zaman Mantıklı?</h1>
+        <div class="blog-meta">Karşılaştırma • Taşıma Rehberi • 6 dk okuma</div>
+
+        <div class="blog-body">
+            <p>
+                Taşıma ihtiyacınız olduğunda karşınıza iki temel seçenek çıkar: tüm aracı kendiniz için kiralamak ya da başka müşterilerle paylaşarak yalnızca eşyanızın kapladığı alan kadar ödemek. Bu iki yöntemin doğru anlaşılması, gereksiz para harcamanızı önler.
+            </p>
+            <p>
+                Az eşyası olan biri tam araç kiralasa fazla ödemiş olur; çok eşyası olan biri <a href="/parca-esya-tasima">parça eşya</a> ile taşısa hem pahalıya hem de yavaşa gelir. Peki hangisi sizin için doğru?
+            </p>
+
+            <h2>İki Sistemin Temel Farkı</h2>
+            <div class="compare-grid">
+                <div class="compare-card parca">
+                    <h3>📦 Parça Eşya Taşıma</h3>
+                    <ul>
+                        <li>Tek parça veya az sayıda eşya</li>
+                        <li>Başka müşterilerle aynı araçta</li>
+                        <li>Yalnızca kullandığınız alan kadar ücret</li>
+                        <li>24-48 saat teslimat</li>
+                        <li>Düşük bütçe için ideal</li>
+                    </ul>
+                </div>
+                <div class="compare-card tam">
+                    <h3>🚛 Tam Araç Kiralama</h3>
+                    <ul>
+                        <li>Tüm ev veya büyük taşımalar</li>
+                        <li>Araç yalnızca size ait</li>
+                        <li>Sabit ve öngörülebilir ücret</li>
+                        <li>Aynı gün veya ertesi gün teslimat</li>
+                        <li>Büyük taşımalar için verimli</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Detaylı Karşılaştırma Tablosu</h2>
+            <div class="table-wrap">
+                <table class="tbl">
+                    <thead>
+                        <tr><th>Kriter</th><th>Parça Eşya</th><th>Tam Araç</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Fiyatlandırma</td><td>Hacim/ağırlık başına</td><td>Sabit araç ücreti</td></tr>
+                        <tr><td>Az eşya için maliyet</td><td class="evet">Çok ekonomik</td><td class="hayir">Pahalı</td></tr>
+                        <tr><td>Çok eşya için maliyet</td><td class="hayir">Pahalı olabilir</td><td class="evet">Ekonomik</td></tr>
+                        <tr><td>Teslim hızı</td><td>24-48 saat</td><td class="evet">Aynı gün/ertesi</td></tr>
+                        <tr><td>Eşya güvenliği</td><td>Etiketli, ayrı bölme</td><td class="evet">Tek müşteri</td></tr>
+                        <tr><td>Esneklik</td><td class="evet">Yüksek</td><td>Sınırlı</td></tr>
+                        <tr><td>Minimum eşya</td><td class="evet">Yok</td><td>Araç doluluk oranı</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Parça Eşya Taşıma Ne Zaman Mantıklı?</h2>
+            <p>Aşağıdaki durumlardan biri geçerliyse parça eşya kesinlikle doğru seçimdir:</p>
+            <ul>
+                <li><strong>1-2 oda eşyası taşıyorsunuz</strong> — yurt içinde okumaya giden öğrenci, ilk evine taşınan genç ya da mevsimlik taşınmalar</li>
+                <li><strong>Tek parça beyaz eşya veya mobilya</strong> — buzdolabı, çamaşır makinesi, koltuk takımı</li>
+                <li><strong>Küçük çaplı ofis taşıması</strong> — birkaç masa, sandalye ve bilgisayar ekipmanı</li>
+                <li><strong>E-ticaret veya ticari ürün gönderimi</strong> — koli bazında şehirlerarası sevkiyat</li>
+                <li><strong>Bütçe kısıtı var</strong> — tam araç fiyatını ödeyemeyecek durumdaysanız</li>
+            </ul>
+
+            <div class="verdict">
+                <h3>✓ Kural: Az eşyada parça eşya %50-70 daha ucuz</h3>
+                <p>Tek beyaz eşya için İstanbul-Ankara arası tam araç ~15.000 TL tutarken, <a href="/istanbul-ankara-parca-esya-tasima">parça eşya</a> ile aynı hizmet 1.500-2.500 TL'ye yapılabilir. Bu fark görmezden gelinemez.</p>
+            </div>
+
+            <h2>Tam Araç Kiralama Ne Zaman Mantıklı?</h2>
+            <p>Şu durumlarda tam araç kiralamak daha doğru tercih olur:</p>
+            <ul>
+                <li><strong>3+ oda ev taşıması</strong> — büyük ev taşımalarında parça eşya ile tam araç fiyatı yaklaşır veya tersine döner</li>
+                <li><strong>Zaman kritik</strong> — aynı gün ya da belirli bir saatte teslim şartınız varsa</li>
+                <li><strong>Özel veya hassas eşya</strong> — piyano, antika, sanat eseri gibi başka eşyayla aynı araçta taşımaması gereken eşyalar</li>
+                <li><strong>Kurumsal ofis taşıması</strong> — tüm ofisi aynı anda boşaltıp kurmak gerekiyorsa</li>
+            </ul>
+
+            <h2>Fiyat Hesabı: Hangi Noktada Dengelenir?</h2>
+            <p>
+                Genel bir kural olarak: taşınacak eşya <strong>15-20 m³'ün altındaysa parça eşya</strong>, üzerindeyse tam araç daha ekonomiktir. Ancak güzergah, kat sayısı ve ekstra hizmetler bu dengeyi değiştirebilir.
+            </p>
+            <p>
+                En doğru hesaplamayı yapmak için eşya listenizi hazırlayın ve her iki seçenek için de teklif isteyin. <a href="/sehirlerarasi-parca-esya-tasima-fiyatlari">Şehirlerarası parça eşya fiyatları rehberimize</a> göz atabilirsiniz.
+            </p>
+
+            <h2>Parsiyel Nakliyat Farkı Nedir?</h2>
+            <p>
+                <a href="/Home/parsiyel_nakliyat">Parsiyel nakliyat</a>, parça eşya taşımanın bir alt kategorisidir. Her ikisi de aynı temel mantıkla çalışır: araç kapasitesi birden fazla müşteri arasında paylaşılır. Parsiyel genellikle ticari yükler için kullanılan bir terim olup, parça eşya ise bireysel ev taşımalarında tercih edilen ifadedir.
+            </p>
+
+            <div class="note">
+                <strong>📌 Karar veremiyorsanız:</strong> Eşya listenizi bizimle paylaşın. Her iki seçenek için fiyat çıkarıp hangisinin daha avantajlı olduğunu karşılaştırmalı sunalım. Karar size ait, yönlendirme bizden.
+            </div>
+
+            <div class="cta-box">
+                <h3>Hangi Seçenek Size Uygun? Birlikte Hesaplayalım.</h3>
+                <p>Eşya listenizi söyleyin, size en uygun ve ekonomik seçeneği sunalım.</p>
+                <a href="tel:+905344300360">📞 0534 430 03 60</a>
+                <a href="/Home/fiyat_al">Ücretsiz Teklif Al</a>
+            </div>
+        </div>
+    </main>
+</div>

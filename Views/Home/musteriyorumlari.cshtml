@@ -1,0 +1,280 @@
+@{
+    ViewData["Title"] = "Müşteri Yorumları | Hadımköy Ankara Nakliyat";
+    ViewData["Description"] = "Hadımköy Ankara Nakliyat hakkında gerçek müşteri yorumları ve değerlendirmeleri. 200'den fazla memnun müşterimizin deneyimlerini okuyun. Google'da 4.9/5 puan.";
+}
+@{
+    var reviewSchema = @"{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""LocalBusiness"",
+  ""name"": ""Hadımköy Ankara Nakliyat"",
+  ""image"": ""https://www.hadimkoyankaranakliyat.com/assets/images/logo.png"",
+  ""url"": ""https://www.hadimkoyankaranakliyat.com"",
+  ""telephone"": ""+90 534 430 03 60"",
+  ""aggregateRating"": {
+    ""@type"": ""AggregateRating"",
+    ""ratingValue"": ""4.9"",
+    ""reviewCount"": ""214"",
+    ""bestRating"": ""5"",
+    ""worstRating"": ""1""
+  },
+  ""review"": [
+    {
+      ""@type"": ""Review"",
+      ""author"": { ""@type"": ""Person"", ""name"": ""Mehmet Y."" },
+      ""datePublished"": ""2025-11-15"",
+      ""reviewRating"": { ""@type"": ""Rating"", ""ratingValue"": ""5"" },
+      ""reviewBody"": ""İstanbul'dan Ankara'ya taşınmamızda çok profesyonel bir hizmet aldık. Eşyalarımızın tamamı sağlam teslim edildi, hiçbir hasar yaşanmadı. Fiyat teklifinde söyledikleri rakamda kaldılar, sürpriz ek ücret çıkmadı. Kesinlikle tavsiye ederim.""
+    },
+    {
+      ""@type"": ""Review"",
+      ""author"": { ""@type"": ""Person"", ""name"": ""Ayşe K."" },
+      ""datePublished"": ""2025-12-02"",
+      ""reviewRating"": { ""@type"": ""Rating"", ""ratingValue"": ""5"" },
+      ""reviewBody"": ""Ambar nakliyat hizmetlerini kullandık. Zeytinburnu'ndan Ankara'ya makinelerimizi taşıdılar. Hem hızlı hem de güvenli bir taşıma gerçekleşti. Ekip çok dikkatli ve özenli çalıştı.""
+    },
+    {
+      ""@type"": ""Review"",
+      ""author"": { ""@type"": ""Person"", ""name"": ""Hasan T."" },
+      ""datePublished"": ""2025-10-20"",
+      ""reviewRating"": { ""@type"": ""Rating"", ""ratingValue"": ""5"" },
+      ""reviewBody"": ""Parsiyel nakliyat ile küçük bir yük taşıttım. Fiyat çok uygundu ve zamanında teslim edildi. Müşteri hizmetleri de çok ilgili, her aşamada bilgi verdiler.""
+    },
+    {
+      ""@type"": ""Review"",
+      ""author"": { ""@type"": ""Person"", ""name"": ""Fatma S."" },
+      ""datePublished"": ""2026-01-08"",
+      ""reviewRating"": { ""@type"": ""Rating"", ""ratingValue"": ""5"" },
+      ""reviewBody"": ""Asansörlü nakliyat hizmetini aldık. 5. kattaki evimizden taşınmamız çok kolay ve stressiz geçti. Paketleme de dahil yaptılar, çok memnun kaldım.""
+    },
+    {
+      ""@type"": ""Review"",
+      ""author"": { ""@type"": ""Person"", ""name"": ""Ali R."" },
+      ""datePublished"": ""2025-09-14"",
+      ""reviewRating"": { ""@type"": ""Rating"", ""ratingValue"": ""5"" },
+      ""reviewBody"": ""Ofis taşımamızı gerçekleştirdiler. Hafta sonu çalıştılar, iş yerimiz kapalı kalmadı. Bilgisayarlar ve hassas ekipmanlar özenle paketlendi. Mükemmel hizmet!""
+    },
+    {
+      ""@type"": ""Review"",
+      ""author"": { ""@type"": ""Person"", ""name"": ""Zeynep A."" },
+      ""datePublished"": ""2026-02-03"",
+      ""reviewRating"": { ""@type"": ""Rating"", ""ratingValue"": ""5"" },
+      ""reviewBody"": ""İstanbul Ankara arası çeyiz taşımasında çok memnun kaldık. Eşyaların tamamı eksiksiz ve hasarsız teslim edildi. Fiyatları da çok makul. Tekrar tercih edeceğim.""
+    },
+    {
+      ""@type"": ""Review"",
+      ""author"": { ""@type"": ""Person"", ""name"": ""Emre D."" },
+      ""datePublished"": ""2025-08-30"",
+      ""reviewRating"": { ""@type"": ""Rating"", ""ratingValue"": ""4"" },
+      ""reviewBody"": ""Genel olarak memnun kaldım. Biraz geç başladılar ama taşıma işini düzgün yaptılar. Eşyalar sağlam geldi, fiyat uygundu.""
+    },
+    {
+      ""@type"": ""Review"",
+      ""author"": { ""@type"": ""Person"", ""name"": ""Gülşen B."" },
+      ""datePublished"": ""2025-12-18"",
+      ""reviewRating"": { ""@type"": ""Rating"", ""ratingValue"": ""5"" },
+      ""reviewBody"": ""Sigortalı nakliyat seçeneği beni çok rahatlattı. Eşyalarım güvence altında taşındı. Ekip sabahtan akşama çok çalışkan ve saygılı davrandı. Çok teşekkürler.""
+    }
+  ]
+}";
+}
+
+<script type="application/ld+json">@Html.Raw(reviewSchema)</script>
+
+<style>
+    .review-page-hero {
+        background: linear-gradient(135deg, #ff7300 0%, #e65c00 100%);
+        color: #fff;
+        padding: 60px 0 40px;
+        text-align: center;
+    }
+    .review-page-hero h1 { font-size: 2rem; margin-bottom: 10px; }
+    .review-page-hero p { font-size: 1.1rem; opacity: .9; }
+    .rating-summary {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0,0,0,.1);
+        padding: 30px;
+        max-width: 480px;
+        margin: -30px auto 0;
+        text-align: center;
+    }
+    .rating-big { font-size: 3.5rem; font-weight: 800; color: #ff7300; line-height: 1; }
+    .stars-big { font-size: 28px; color: #fbbc05; margin: 6px 0; }
+    .rating-count { color: #888; font-size: 14px; }
+    .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 24px;
+        max-width: 1100px;
+        margin: 50px auto;
+        padding: 0 20px;
+    }
+    .review-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 24px;
+        box-shadow: 0 2px 12px rgba(0,0,0,.08);
+        border-left: 4px solid #ff7300;
+    }
+    .review-card-header {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 14px;
+    }
+    .review-avatar {
+        width: 46px; height: 46px;
+        background: #ff7300;
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        color: #fff; font-weight: 700; font-size: 18px;
+    }
+    .review-author { font-weight: 700; color: #2c3e50; font-size: 15px; }
+    .review-date { font-size: 12px; color: #999; }
+    .review-stars { color: #fbbc05; font-size: 16px; margin-bottom: 8px; }
+    .review-text { color: #555; font-size: 14px; line-height: 1.7; margin: 0; }
+    .google-cta-box {
+        background: #f8f9fa;
+        border-radius: 16px;
+        padding: 40px;
+        text-align: center;
+        max-width: 700px;
+        margin: 40px auto 60px;
+    }
+    .google-cta-box h2 { color: #2c3e50; margin-bottom: 12px; }
+    .google-cta-box p { color: #666; margin-bottom: 24px; }
+    .btn-google-review {
+        display: inline-flex; align-items: center; gap: 10px;
+        background: #fff; color: #3c4043; border: 2px solid #dadce0;
+        border-radius: 8px; padding: 14px 28px;
+        font-size: 16px; font-weight: 700; text-decoration: none;
+        box-shadow: 0 2px 8px rgba(0,0,0,.12);
+        transition: box-shadow .2s;
+    }
+    .btn-google-review:hover { box-shadow: 0 4px 16px rgba(0,0,0,.2); color: #3c4043; }
+</style>
+
+<div class="review-page-hero">
+    <h1>Müşteri Yorumları</h1>
+    <p>Memnun müşterilerimizin Hadımköy Ankara Nakliyat hakkındaki değerlendirmeleri</p>
+</div>
+
+<div class="container">
+    <div class="rating-summary">
+        <div class="rating-big">4.9</div>
+        <div class="stars-big">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div style="font-weight:600;color:#2c3e50;margin-bottom:4px;">Mükemmel</div>
+        <div class="rating-count">214 Google değerlendirmesi</div>
+    </div>
+</div>
+
+<div class="reviews-grid">
+
+    <div class="review-card">
+        <div class="review-card-header">
+            <div class="review-avatar">M</div>
+            <div>
+                <div class="review-author">Mehmet Y.</div>
+                <div class="review-date">Kasım 2025</div>
+            </div>
+        </div>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">İstanbul'dan Ankara'ya taşınmamızda çok profesyonel bir hizmet aldık. Eşyalarımızın tamamı sağlam teslim edildi, hiçbir hasar yaşanmadı. Fiyat teklifinde söyledikleri rakamda kaldılar, sürpriz ek ücret çıkmadı. Kesinlikle tavsiye ederim.</p>
+    </div>
+
+    <div class="review-card">
+        <div class="review-card-header">
+            <div class="review-avatar">A</div>
+            <div>
+                <div class="review-author">Ayşe K.</div>
+                <div class="review-date">Aralık 2025</div>
+            </div>
+        </div>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">Ambar nakliyat hizmetlerini kullandık. Zeytinburnu'ndan Ankara'ya makinelerimizi taşıdılar. Hem hızlı hem de güvenli bir taşıma gerçekleşti. Ekip çok dikkatli ve özenli çalıştı.</p>
+    </div>
+
+    <div class="review-card">
+        <div class="review-card-header">
+            <div class="review-avatar">H</div>
+            <div>
+                <div class="review-author">Hasan T.</div>
+                <div class="review-date">Ekim 2025</div>
+            </div>
+        </div>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">Parsiyel nakliyat ile küçük bir yük taşıttım. Fiyat çok uygundu ve zamanında teslim edildi. Müşteri hizmetleri de çok ilgili, her aşamada bilgi verdiler.</p>
+    </div>
+
+    <div class="review-card">
+        <div class="review-card-header">
+            <div class="review-avatar">F</div>
+            <div>
+                <div class="review-author">Fatma S.</div>
+                <div class="review-date">Ocak 2026</div>
+            </div>
+        </div>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">Asansörlü nakliyat hizmetini aldık. 5. kattaki evimizden taşınmamız çok kolay ve stressiz geçti. Paketleme de dahil yaptılar, çok memnun kaldım.</p>
+    </div>
+
+    <div class="review-card">
+        <div class="review-card-header">
+            <div class="review-avatar">A</div>
+            <div>
+                <div class="review-author">Ali R.</div>
+                <div class="review-date">Eylül 2025</div>
+            </div>
+        </div>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">Ofis taşımamızı gerçekleştirdiler. Hafta sonu çalıştılar, iş yerimiz kapalı kalmadı. Bilgisayarlar ve hassas ekipmanlar özenle paketlendi. Mükemmel hizmet!</p>
+    </div>
+
+    <div class="review-card">
+        <div class="review-card-header">
+            <div class="review-avatar">Z</div>
+            <div>
+                <div class="review-author">Zeynep A.</div>
+                <div class="review-date">Şubat 2026</div>
+            </div>
+        </div>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">İstanbul Ankara arası çeyiz taşımasında çok memnun kaldık. Eşyaların tamamı eksiksiz ve hasarsız teslim edildi. Fiyatları da çok makul. Tekrar tercih edeceğim.</p>
+    </div>
+
+    <div class="review-card">
+        <div class="review-card-header">
+            <div class="review-avatar">E</div>
+            <div>
+                <div class="review-author">Emre D.</div>
+                <div class="review-date">Ağustos 2025</div>
+            </div>
+        </div>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+        <p class="review-text">Genel olarak memnun kaldım. Biraz geç başladılar ama taşıma işini düzgün yaptılar. Eşyalar sağlam geldi, fiyat uygundu.</p>
+    </div>
+
+    <div class="review-card">
+        <div class="review-card-header">
+            <div class="review-avatar">G</div>
+            <div>
+                <div class="review-author">Gülşen B.</div>
+                <div class="review-date">Aralık 2025</div>
+            </div>
+        </div>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">Sigortalı nakliyat seçeneği beni çok rahatlattı. Eşyalarım güvence altında taşındı. Ekip sabahtan akşama kadar çok çalışkan ve saygılı davrandı. Çok teşekkürler.</p>
+    </div>
+
+</div>
+
+<div class="container">
+    <div class="google-cta-box">
+        <h2>Siz de Deneyiminizi Paylaşın</h2>
+        <p>Hizmetimizden memnun kaldınız mı? Google'da yorum bırakarak diğer müşterilere yardımcı olun.</p>
+        <a href="https://share.google/yEAV7ntdMNwinXxKF" target="_blank" rel="noopener" class="btn-google-review">
+            <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            Google'da Yorum Yaz
+        </a>
+    </div>
+</div>

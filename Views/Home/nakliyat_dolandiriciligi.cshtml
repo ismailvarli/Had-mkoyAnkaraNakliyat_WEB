@@ -1,0 +1,155 @@
+@{
+    ViewData["Title"] = "Nakliyat Dolandırıcılığına Dikkat: Bu 6 Tuzağa Düşmeyin";
+    ViewData["Description"] = "Nakliyat dolandırıcılarının kullandığı 6 yaygın tuzak ve korunma yolları. Sahte firma, gizli ücret ve eşya rehin gibi yöntemlere karşı bilinçlenin.";
+}
+@{
+    var faqJson = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        { ""@type"": ""Question"", ""name"": ""Nakliyat dolandırıcılığı nasıl anlaşılır?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Piyasanın çok altında fiyat teklifi, peşin ödeme baskısı, yazılı sözleşme reddi ve sigorta belgesi gösterememek dolandırıcılığın başlıca işaretleridir."" } },
+        { ""@type"": ""Question"", ""name"": ""Nakliyat firması eşyamı rehin alabilir mi?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Yasal olarak hayır. Ancak bazı sahte firmalar eşyaları araca yükledikten sonra fazladan ücret talep ederek teslim etmeyi reddedebilir. Sözleşmesiz çalışıldığında bunu ispat etmek zordur. Bu nedenle yazılı sözleşme zorunludur."" } },
+        { ""@type"": ""Question"", ""name"": ""Nakliyat dolandırıcılığından nasıl korunurum?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Yetki belgesi isteyin, yazılı sözleşme imzalayın, peşin ödeme yapmayın, Google yorumlarını inceleyin ve çok düşük tekliflere şüpheyle yaklaşın."" } },
+        { ""@type"": ""Question"", ""name"": ""Nakliyat dolandırıcılığına maruz kalırsam ne yapabilirim?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Tüketici Hakları Derneği'ne şikayet edin, tüketici mahkemesine başvurun ve sosyal medyada deneyiminizi paylaşın. Yazılı sözleşmeniz varsa hukuki süreç çok daha kolay ilerler."" } }
+      ]
+    }";
+}
+<script type="application/ld+json">@Html.Raw(faqJson)</script>
+
+<style>
+    .page-wrap { max-width:1200px;margin:0 auto;padding:24px;display:grid;gap:24px;grid-template-columns:280px 1fr }
+    @@media(max-width:992px){ .page-wrap{ grid-template-columns:1fr } }
+    .side{ background:#0f172a;border-radius:14px;padding:18px }
+    .side h3{ color:#fff;font-size:18px;margin:0 0 12px;font-weight:800 }
+    .svc-list{ display:flex;flex-direction:column;gap:8px }
+    .svc-item{ display:flex;align-items:center;justify-content:space-between;background:#172036;color:#e2e8f0;padding:9px 12px;border-radius:10px;text-decoration:none;border:1px solid #23314f;font-size:13px }
+    .svc-item:hover{ background:#1f2a44 }
+    .svc-item .arrow{ background:#f97316;color:#fff;border-radius:8px;padding:3px 7px;font-weight:700;flex-shrink:0;margin-left:8px }
+    .content h1{ font-size:28px;font-weight:900;margin-bottom:12px;color:#0f172a }
+    .blog-meta{ font-size:14px;color:#64748b;margin-bottom:14px }
+    .blog-body p{ color:#334155;line-height:1.7;margin-bottom:16px }
+    .blog-body h2{ margin:28px 0 10px;color:#0f172a;font-size:22px;border-left:4px solid #dc2626;padding-left:12px }
+    .blog-body h3{ margin:16px 0 8px;color:#1e293b;font-size:18px }
+    .blog-body ul,.blog-body ol{ margin:0 0 16px 20px }
+    .blog-body li{ margin-bottom:8px;color:#334155;line-height:1.6 }
+    .tuzak-card{ background:#fff5f5;border:1px solid #fecaca;border-radius:12px;padding:18px 20px;margin-bottom:18px;border-left:5px solid #dc2626 }
+    .tuzak-card .no{ display:inline-block;background:#dc2626;color:#fff;border-radius:8px;padding:3px 10px;font-weight:800;font-size:13px;margin-bottom:10px }
+    .tuzak-card h3{ margin:0 0 8px;color:#7f1d1d;font-size:18px }
+    .tuzak-card p{ margin:0 0 8px;color:#334155;font-size:14.5px;line-height:1.6 }
+    .tuzak-card .koruma{ background:#f0fdf4;border-radius:8px;padding:10px 14px;color:#14532d;font-size:14px;margin-top:8px }
+    .warn-box{ background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 16px;border-radius:0 10px 10px 0;margin:14px 0 18px;color:#92400e }
+    .good-box{ background:#ecfdf5;border-left:4px solid #10b981;padding:14px 16px;border-radius:0 10px 10px 0;margin:14px 0 18px;color:#065f46 }
+    .checklist{ list-style:none;padding:0;margin:0 0 16px }
+    .checklist li{ padding:8px 12px;border-radius:8px;margin-bottom:5px;display:flex;gap:10px;align-items:flex-start;background:#f8fafc;border:1px solid #e2e8f0;color:#334155 }
+    .checklist li::before{ content:"✓";color:#10b981;font-weight:700;flex-shrink:0;font-size:16px }
+    .cta-box{ background:#f97316;color:#fff;padding:24px;border-radius:12px;margin-top:32px;text-align:center }
+    .cta-box h3{ margin:0 0 8px;font-size:20px }
+    .cta-box p{ margin:0 0 14px;opacity:.9 }
+    .cta-box a{ display:inline-block;padding:11px 20px;background:#fff;color:#f97316;font-weight:700;border-radius:8px;text-decoration:none;margin:4px }
+</style>
+
+<div class="page-wrap">
+    <aside class="side">
+        <h3>Blog Yazılarımız</h3>
+        <nav class="svc-list">
+            <a class="svc-item" href="/Home/nakliyat_firmasi_nasil_secilir_7_kritik_soru"><span>Nakliyat Firması Nasıl Seçilir?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/tasinirken_yapilan_10_hata"><span>Taşınırken Yapılan 10 Hata</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/parca_esya_mi_tam_arac_mi"><span>Parça Eşya mı, Tam Araç mı?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/nakliyat_dolandiriciligi"><span>Nakliyat Dolandırıcılığı</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/tasinma_gunu_kontrol_listesi"><span>Taşınma Günü Kontrol Listesi</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/parsiyel_nakliyat_nedir_istanbul_ankara_arasinda__avantajlari"><span>Parsiyel Nakliyat Nedir?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/evden_eve_nakliyat_oncesi_hazirlik_rehberi"><span>Evden Eve Hazırlık Rehberi</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/sigortali_nakliyat_esyalarinizi_guvence_altina_alin"><span>Sigortalı Nakliyat Rehberi</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/blog"><span>Tüm Blog Yazıları</span><span class="arrow">→</span></a>
+        </nav>
+    </aside>
+
+    <main class="content">
+        <h1>Nakliyat Dolandırıcılığına Dikkat: Bu 6 Tuzağa Düşmeyin</h1>
+        <div class="blog-meta">Uyarı • Tüketici Hakları • 7 dk okuma</div>
+
+        <div class="blog-body">
+            <p>
+                Türkiye'de her yıl binlerce kişi nakliyat dolandırıcılığına uğruyor. Kimi eşyasını rehin olarak buluyor, kimi anlaşılan fiyatın 3 katını ödüyor, kimi ise parçalanan eşyaları için hiçbir tazminat alamıyor. Bu yazıda dolandırıcı firmaların en çok kullandığı 6 yöntemi ve her birine karşı korunma yollarını açıklıyoruz.
+            </p>
+            <p>
+                Bir nakliyat firması seçmeden önce <a href="/Home/nakliyat_firmasi_nasil_secilir_7_kritik_soru">nakliyat firması nasıl seçilir rehberimizi</a> de okumanızı öneririz. Bilinçli müşteri, dolandırıcıların en büyük düşmanıdır.
+            </p>
+
+            <div class="tuzak-card">
+                <span class="no">Tuzak 1</span>
+                <h3>Piyasanın Çok Altında Fiyat Teklifi (Yem ve Tuzak)</h3>
+                <p>Gerçekçi olmayan düşük bir fiyatla müşteriyi çekerler. Eşyalar yüklendikten ve araç yola çıktıktan sonra "ek ücret" talepleri başlar: kat parası, ambalaj ücreti, yardımcı işçilik, akaryakıt farkı... Toplam tutar, başlangıç teklifinin 2-3 katına ulaşabilir.</p>
+                <div class="koruma">✓ Korunma: Ortalama fiyatı araştırın. 3 firmadan teklif alın. Teklif piyasa ortalamasının %30'undan fazla düşükse şüpheyle yaklaşın. Her şeyin dahil olduğu yazılı sözleşme isteyin.</div>
+            </div>
+
+            <div class="tuzak-card">
+                <span class="no">Tuzak 2</span>
+                <h3>Yazılı Sözleşme Yapmayı Reddetmek</h3>
+                <p>"Biz güvenilir bir firmayız, sözleşmeye gerek yok" veya "sözleşme zahmet, sizi güvence altına alırız" gibi ifadeler dolandırıcılığın açık işaretidir. Sözleşmesiz yapılan taşımalarda anlaşmazlık çıktığında hiçbir hukuki dayanağınız yoktur.</p>
+                <div class="koruma">✓ Korunma: Sözleşme yapmayı reddeden firmadan kesinlikle hizmet almayın. Sözleşmede eşya listesi, toplam fiyat, teslim tarihi ve sigorta kapsamı mutlaka yer almalı.</div>
+            </div>
+
+            <div class="tuzak-card">
+                <span class="no">Tuzak 3</span>
+                <h3>Peşin Ödeme Baskısı</h3>
+                <p>"Bugün ödeme yaparsanız bu fiyat geçerli", "depomuza yatırın, çalışmaya başlayalım" veya "sahibimiz bu fiyatı sadece bugüne kabul etti" gibi baskıcı ifadeler kullanırlar. Tamamını peşin aldıktan sonra ortadan kaybolabilirler.</p>
+                <div class="koruma">✓ Korunma: Güvenilir firmalar yükleme günü veya teslimatta ödeme kabul eder. Toplam ücretin %20-30'undan fazlasını peşin ödemeyin. "Önce hizmet, sonra ödeme" prensibini benimseyin.</div>
+            </div>
+
+            <div class="tuzak-card">
+                <span class="no">Tuzak 4</span>
+                <h3>Eşyaları Rehin Tutmak</h3>
+                <p>Eşyalar araca yüklendikten sonra kapıda anlaşılan tutarın çok üzerinde ücret talep ederler. Ödemezseniz eşyalarınızı teslim etmeyeceklerini söylerler. Bu hem yasadışıdır hem de eşyalarınızı kurtarmak için çoğu zaman haksız ücret ödeme zorunda kalırsınız.</p>
+                <div class="koruma">✓ Korunma: Her şeyi yazılı sözleşmeye bağlayın. Yükleme başlamadan önce fiyatı netleştirin. Şüpheli durumda Tüketici Hakları Derneği'ni ve gerekirse polisi arayın.</div>
+            </div>
+
+            <div class="tuzak-card">
+                <span class="no">Tuzak 5</span>
+                <h3>Sigortasız Taşıma</h3>
+                <p>"Sigortalı taşıyoruz" deyip belge gösteremeyen firmalar, hasar durumunda tazminat ödemez. "Biz hiç hasar vermedik" argümanı yeterli güvence değildir. Eşyanız hasar gördüğünde belgesiz firmadan hiçbir şey alınamamaktadır.</p>
+                <div class="koruma">✓ Korunma: <a href="/Home/sigortali_nakliyat_esyalarinizi_guvence_altina_alin">Nakliyat sigorta poliçesini</a> belgesiyle isteyin. Sadece söz yetmez, sözleşmede sigorta kapsamı ve şartları açıkça belirtilmeli.</div>
+            </div>
+
+            <div class="tuzak-card">
+                <span class="no">Tuzak 6</span>
+                <h3>Sahte Yorumlar ve Referanslar</h3>
+                <p>Kısa sürede çok sayıda 5 yıldızlı yorum almış ancak içerikleri yüzeysel ve birbirine benzer firmalar sahte yorum satın almış olabilir. "Referanslarımız var" deyip arayabileceğiniz gerçek kişi veremeyen firmalar da şüphe uyandırmalıdır.</p>
+                <div class="koruma">✓ Korunma: Yorumların tarihlerine bakın — kısa sürede yığılan yorumlar şüphelidir. Olumsuz yorumları okuyun ve firmının cevaplarına dikkat edin. Gerçek referans kişi adı ve telefonu isteyin.</div>
+            </div>
+
+            <div class="warn-box">
+                <strong>⚠ Önemli Uyarı:</strong> Sosyal medyada "nakliyat" veya "taşımacılık" araması yaparak bulunan, yalnızca WhatsApp numarası bulunan, fiziksel adresi ve vergi numarası olmayan firmalar yüksek risk taşır. Her zaman firmanın vergi levhasını ve Ulaştırma Bakanlığı yetki belgesini isteyin.
+            </div>
+
+            <h2>Dolandırıcılıktan Korunma Kontrol Listesi</h2>
+            <ul class="checklist">
+                <li>Firmanın taşımacılık yetki belgesi (U2) var mı?</li>
+                <li>Yazılı sözleşme imzalanıyor mu?</li>
+                <li>Sigorta poliçesi belgesiyle gösterildi mi?</li>
+                <li>Fiyat açık ve kapsamlı şekilde yazılı mı?</li>
+                <li>Google Haritalar'da gerçek ve çeşitli yorumlar var mı?</li>
+                <li>Fiziksel iş adresi var mı?</li>
+                <li>Tamamı peşin ödeme istenmedi mi?</li>
+                <li>Referans müşteri listesi sunabiliyorlar mı?</li>
+            </ul>
+
+            <h2>Başıma Geldiyse Ne Yapmalıyım?</h2>
+            <p>
+                Eşyalarınız rehin alındıysa veya fazla ödeme için zorlandıysanız: önce sözleşmenizi/yazışmalarınızı toplayın, ardından <strong>Tüketici Hakları Derneği'ne</strong> şikayet edin. Somut hasar veya hırsızlık varsa <strong>savcılığa suç duyurusunda</strong> bulunun. Yazılı sözleşmeniz olmasa bile yazışma ekran görüntüleri, banka dekontları ve tanık ifadeleri delil niteliği taşır.
+            </p>
+
+            <div class="good-box">
+                <strong>✓ En İyi Korunma: Doğru Firma Seçimi</strong><br>
+                15 yıllık tecrübemiz, binlerce referans müşterimiz, yazılı sözleşme ve sigorta poliçemizle hizmetinizdeyiz. Taşımadan önce şüphe duyduğunuz her soruyu sormaktan çekinmeyin.
+            </div>
+
+            <div class="cta-box">
+                <h3>Hadımköy Ankara Nakliyat — Şeffaf ve Güvenilir Hizmet</h3>
+                <p>Belgeli, sigortalı, sözleşmeli. Hiçbir gizli ücret olmadan, kapıdan kapıya hizmet.</p>
+                <a href="tel:+905344300360">📞 0534 430 03 60</a>
+                <a href="/Home/fiyat_al">Ücretsiz Teklif Al</a>
+            </div>
+        </div>
+    </main>
+</div>

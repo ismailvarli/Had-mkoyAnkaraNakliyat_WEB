@@ -102,6 +102,26 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
         {
             return View();
         }
+        public IActionResult nakliyat_firmasi_nasil_secilir_7_kritik_soru()
+        {
+            return View();
+        }
+        public IActionResult tasinirken_yapilan_10_hata()
+        {
+            return View();
+        }
+        public IActionResult parca_esya_mi_tam_arac_mi()
+        {
+            return View();
+        }
+        public IActionResult nakliyat_dolandiriciligi()
+        {
+            return View();
+        }
+        public IActionResult tasinma_gunu_kontrol_listesi()
+        {
+            return View();
+        }
         public IActionResult hizmetlerimiz()
         {
             return View();
@@ -596,6 +616,29 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
             return View();
         }
         public IActionResult nakliyat_hizmet_fiyati()
+        {
+            return View();
+        }
+
+        public IActionResult musteriyorumlari()
+        {
+            return View();
+        }
+
+        [Route("parca-esya-tasima")]
+        public IActionResult parca_esya_tasima()
+        {
+            return View();
+        }
+
+        [Route("istanbul-ankara-parca-esya-tasima")]
+        public IActionResult istanbul_ankara_parca_esya_tasima()
+        {
+            return View();
+        }
+
+        [Route("sehirlerarasi-parca-esya-tasima-fiyatlari")]
+        public IActionResult sehirlerarasi_parca_esya_tasima_fiyatlari()
         {
             return View();
         }

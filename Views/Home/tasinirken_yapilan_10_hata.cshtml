@@ -1,0 +1,184 @@
+@{
+    ViewData["Title"] = "Taşınırken Yapılan 10 Hata ve Nasıl Önlenir";
+    ViewData["Description"] = "Ev taşırken en sık yapılan 10 hata ve çözüm yolları. Eşya hasarını, gecikmeyi ve gereksiz masrafı önleyin. Uzmanlardan pratik taşınma rehberi.";
+}
+@{
+    var howToJson = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""HowTo"",
+      ""name"": ""Stressiz Taşınma İçin 10 Adım"",
+      ""description"": ""Ev taşınırken yapılan 10 yaygın hatadan kaçınarak sorunsuz ve güvenli taşınmanın adım adım yolu."",
+      ""totalTime"": ""P14D"",
+      ""step"": [
+        { ""@type"": ""HowToStep"", ""position"": 1, ""name"": ""Erken Planlama Yapın"", ""text"": ""Taşınma tarihinden en az 2-3 hafta önce nakliyat firmasını ayarlayın. Son dakika hem seçenek azaltır hem de fiyatı artırır."" },
+        { ""@type"": ""HowToStep"", ""position"": 2, ""name"": ""Eşyaları Doğru Paketleyin"", ""text"": ""Her koli sıkıca doldurulmalı, boşluklar gazete veya balonlu naylon ile doldurulmalı. Koli altları çift bantlanmalı."" },
+        { ""@type"": ""HowToStep"", ""position"": 3, ""name"": ""Kolileri Etiketleyin"", ""text"": ""Her koliye içindekiler ve hangi oda için olduğunu yazın. Kırılgan eşyalar için büyük harflerle KIRILGAN yazın."" },
+        { ""@type"": ""HowToStep"", ""position"": 4, ""name"": ""Değerli Eşyaları Ayrı Tutun"", ""text"": ""Mücevher, nakit, önemli belgeler ve hatıra değeri taşıyan eşyaları nakliye kolisine koymayın. Bunları bizzat kendiniz taşıyın."" },
+        { ""@type"": ""HowToStep"", ""position"": 5, ""name"": ""Kırılgan Eşyaları Özel Koruyun"", ""text"": ""Cam, porselen ve elektronik için balonlu naylon, köpük tampon kullanın. Nakliyat ekibine kırılgan eşyaları önceden gösterin."" },
+        { ""@type"": ""HowToStep"", ""position"": 6, ""name"": ""Kapı ve Asansör Ölçüsü Alın"", ""text"": ""Büyük mobilyaların yeni eve girmesi için kapı genişliği ve asansör boyutlarını önceden ölçün. Gerekirse demonte planı yapın."" },
+        { ""@type"": ""HowToStep"", ""position"": 7, ""name"": ""Nakliyat Sigortası Yaptırın"", ""text"": ""Özellikle şehirlerarası taşımalarda nakliyat sigortası kritiktir. Sigorta poliçesini belgesiyle isteyin."" },
+        { ""@type"": ""HowToStep"", ""position"": 8, ""name"": ""Taşınmadan Önce Eşya Eleyin"", ""text"": ""Kullanmadığınız eşyaları bağışlayın veya satın. Daha az eşya daha düşük taşıma maliyeti anlamına gelir."" },
+        { ""@type"": ""HowToStep"", ""position"": 9, ""name"": ""Teslimat Adresini Eksiksiz Bildirin"", ""text"": ""Mahalle, sokak, bina no, daire, kat ve asansör durumunu eksiksiz verin. Bir yedek iletişim numarası da bırakın."" },
+        { ""@type"": ""HowToStep"", ""position"": 10, ""name"": ""Doğru Nakliyat Firması Seçin"", ""text"": ""En ucuz değil, en kapsamlı teklifi seçin. Yetki belgesi, sigorta ve yazılı sözleşme üç olmazsa olmazdır."" }
+      ]
+    }";
+
+    var faqJson = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        { ""@type"": ""Question"", ""name"": ""Taşınmadan kaç gün önce hazırlığa başlamalıyım?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""En az 2-3 hafta önce hazırlığa başlamak idealdir. Nakliyat firması ayarlamak, paketleme malzemesi temin etmek ve eşya listesi çıkarmak için bu süre gereklidir."" } },
+        { ""@type"": ""Question"", ""name"": ""Eşyaları nasıl paketlemeliyim?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Kırılgan eşyalar balonlu naylon ve köpükle sarılmalı, koliler dolayısıyla boş bırakılmamalıdır. Her koliye içindekiler ve hangi oda için olduğu yazılmalıdır."" } },
+        { ""@type"": ""Question"", ""name"": ""Değerli eşyaları nasıl taşımalıyım?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Mücevher, nakit para, önemli belgeler ve elektronik cihazlar nakliye kolisine konulmamalıdır. Bu eşyaları bizzat kendiniz taşıyın."" } },
+        { ""@type"": ""Question"", ""name"": ""Nakliyatta sigorta yaptırmak gerekli mi?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Evet, özellikle şehirlerarası taşımalarda sigorta kritiktir. Eşyanız hasar görürse tazminat almanızı sağlar. Sigorta belgesi gösteremeyen firmalarla çalışmayın."" } }
+      ]
+    }";
+}
+<script type="application/ld+json">@Html.Raw(howToJson)</script>
+<script type="application/ld+json">@Html.Raw(faqJson)</script>
+
+<style>
+    .page-wrap { max-width:1200px;margin:0 auto;padding:24px;display:grid;gap:24px;grid-template-columns:280px 1fr }
+    @@media(max-width:992px){ .page-wrap{ grid-template-columns:1fr } }
+    .side{ background:#0f172a;border-radius:14px;padding:18px }
+    .side h3{ color:#fff;font-size:18px;margin:0 0 12px;font-weight:800 }
+    .svc-list{ display:flex;flex-direction:column;gap:8px }
+    .svc-item{ display:flex;align-items:center;justify-content:space-between;background:#172036;color:#e2e8f0;padding:9px 12px;border-radius:10px;text-decoration:none;border:1px solid #23314f;font-size:13px }
+    .svc-item:hover{ background:#1f2a44 }
+    .svc-item .arrow{ background:#f97316;color:#fff;border-radius:8px;padding:3px 7px;font-weight:700;flex-shrink:0;margin-left:8px }
+    .content h1{ font-size:28px;font-weight:900;margin-bottom:12px;color:#0f172a }
+    .blog-meta{ font-size:14px;color:#64748b;margin-bottom:14px }
+    .blog-body p{ color:#334155;line-height:1.7;margin-bottom:16px }
+    .blog-body h2{ margin:28px 0 10px;color:#0f172a;font-size:22px;border-left:4px solid #ef4444;padding-left:12px }
+    .blog-body h3{ margin:16px 0 8px;color:#1e293b;font-size:18px }
+    .blog-body ul,.blog-body ol{ margin:0 0 16px 20px }
+    .blog-body li{ margin-bottom:8px;color:#334155;line-height:1.6 }
+    .hata-card{ background:#fff;border:1px solid #fecaca;border-radius:12px;padding:18px 20px;margin-bottom:18px;border-left:5px solid #ef4444 }
+    .hata-card .no{ display:inline-block;background:#ef4444;color:#fff;border-radius:8px;padding:3px 10px;font-weight:800;font-size:13px;margin-bottom:10px }
+    .hata-card h3{ margin:0 0 6px;color:#0f172a;font-size:18px }
+    .hata-card .sorun{ color:#dc2626;margin-bottom:6px;font-size:14px }
+    .hata-card .cozum{ color:#059669;font-size:14px }
+    .note{ background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;color:#334155;margin:14px 0 18px }
+    .good-box{ background:#ecfdf5;border-left:4px solid #10b981;padding:14px 16px;border-radius:0 10px 10px 0;margin:14px 0 18px;color:#065f46 }
+    .cta-box{ background:#f97316;color:#fff;padding:24px;border-radius:12px;margin-top:32px;text-align:center }
+    .cta-box h3{ margin:0 0 8px;font-size:20px }
+    .cta-box p{ margin:0 0 14px;opacity:.9 }
+    .cta-box a{ display:inline-block;padding:11px 20px;background:#fff;color:#f97316;font-weight:700;border-radius:8px;text-decoration:none;margin:4px }
+</style>
+
+<div class="page-wrap">
+    <aside class="side">
+        <h3>Blog Yazılarımız</h3>
+        <nav class="svc-list">
+            <a class="svc-item" href="/Home/nakliyat_firmasi_nasil_secilir_7_kritik_soru"><span>Nakliyat Firması Nasıl Seçilir?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/tasinirken_yapilan_10_hata"><span>Taşınırken Yapılan 10 Hata</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/parca_esya_mi_tam_arac_mi"><span>Parça Eşya mı, Tam Araç mı?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/nakliyat_dolandiriciligi"><span>Nakliyat Dolandırıcılığı</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/tasinma_gunu_kontrol_listesi"><span>Taşınma Günü Kontrol Listesi</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/parsiyel_nakliyat_nedir_istanbul_ankara_arasinda__avantajlari"><span>Parsiyel Nakliyat Nedir?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/evden_eve_nakliyat_oncesi_hazirlik_rehberi"><span>Evden Eve Hazırlık Rehberi</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/sigortali_nakliyat_esyalarinizi_guvence_altina_alin"><span>Sigortalı Nakliyat Rehberi</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/blog"><span>Tüm Blog Yazıları</span><span class="arrow">→</span></a>
+        </nav>
+    </aside>
+
+    <main class="content">
+        <h1>Taşınırken Yapılan 10 Hata ve Nasıl Önlenir</h1>
+        <div class="blog-meta">Rehber • Taşınma Hazırlığı • 8 dk okuma</div>
+
+        <div class="blog-body">
+            <p>
+                Taşınmak; doğru planlandığında sorunsuz geçen, yanlış yönetildiğinde stres dolu bir süreçtir. Yıllar içinde binlerce taşıma yapan ekibimiz, müşterilerin tekrar tekrar aynı hataları yaptığını gözlemledi. Bu hataların çoğu kolaylıkla önlenebilir. Eşyalarınızı güvenle yeni evinize taşımak için bu 10 hatadan kaçının.
+            </p>
+
+            <div class="hata-card">
+                <span class="no">Hata 1</span>
+                <h3>Son Dakikaya Bırakmak</h3>
+                <p class="sorun">⚠ Sorun: Taşınma tarihinden 1-2 gün önce firma aramak, hem seçenek azaltır hem de fiyatı artırır. Güvenilir firmalar genellikle dolu olur.</p>
+                <p class="cozum">✓ Çözüm: Taşınma tarihinden en az 2-3 hafta önce nakliyat firmasını ayarlayın. Hem seçenek bolluğu hem de daha iyi fiyat elde edersiniz.</p>
+            </div>
+
+            <div class="hata-card">
+                <span class="no">Hata 2</span>
+                <h3>Paketlemeyi Hafife Almak</h3>
+                <p class="sorun">⚠ Sorun: "Bu kadar mesafe için ne olacak" düşüncesiyle gevşek paketleme yapmak, taşıma sırasında eşyaların birbirine çarpmasına ve kırılmasına yol açar.</p>
+                <p class="cozum">✓ Çözüm: Her koli sıkıca doldurulmalı, boşluklar gazete kağıdı veya balonlu naylon ile doldurulmalıdır. Koli altları çift bantlanmalıdır.</p>
+            </div>
+
+            <div class="hata-card">
+                <span class="no">Hata 3</span>
+                <h3>Kolilere Etiket Yazmamak</h3>
+                <p class="sorun">⚠ Sorun: Yüzlerce koli yeni eve geldiğinde ne nerede olduğunu bilmemek, eşya açmayı kaosa çevirir. Ayrıca "kırılgan" yazmayan koliler sert şekilde taşınabilir.</p>
+                <p class="cozum">✓ Çözüm: Her koliye içindekiler, hangi oda için olduğu ve kırılgan ise büyük harflerle "KIRILGAN" yazın. Farklı odalar için farklı renk bant kullanabilirsiniz.</p>
+            </div>
+
+            <div class="hata-card">
+                <span class="no">Hata 4</span>
+                <h3>Değerli Eşyaları Koli İçine Koymak</h3>
+                <p class="sorun">⚠ Sorun: Mücevher, nakit para, önemli belgeler veya hatıra değeri taşıyan küçük eşyaların koliye konulması, kaybolma veya karışma riskini artırır.</p>
+                <p class="cozum">✓ Çözüm: Bu eşyaları bizzat kendiniz taşıyın. <a href="/Home/sigortali_nakliyat_esyalarinizi_guvence_altina_alin">Nakliyat sigortası</a> kişisel değerleri kapsamaz.</p>
+            </div>
+
+            <div class="hata-card">
+                <span class="no">Hata 5</span>
+                <h3>Kırılgan Eşyaları Yeterince Korumamak</h3>
+                <p class="sorun">⚠ Sorun: Cam, porselen, elektronik ve ayna gibi eşyaların standart koli içinde taşınması ciddi hasar riskidir. Araç hareket halindeyken titreşim kaçınılmazdır.</p>
+                <p class="cozum">✓ Çözüm: Kırılgan eşyalar için balonlu naylon, köpük tampon ve gerekirse ahşap kasa kullanın. Profesyonel ekiplerden paketleme hizmetini talep edin.</p>
+            </div>
+
+            <div class="hata-card">
+                <span class="no">Hata 6</span>
+                <h3>Kapı ve Asansör Ölçüsü Almamak</h3>
+                <p class="sorun">⚠ Sorun: Büyük mobilyanızın yeni eve girmediğini taşıma günü öğrenmek hem masraflı hem sinir bozucudur. Ek işçilik ve zaman kaybı kaçınılmaz olur.</p>
+                <p class="cozum">✓ Çözüm: Taşıma öncesinde yeni evin kapı genişliklerini, asansör boyutlarını ve merdiven dönüşlerini ölçün. Büyük mobilyaları önceden demonte etmeyi planlayın.</p>
+            </div>
+
+            <div class="hata-card">
+                <span class="no">Hata 7</span>
+                <h3>Sigorta Yaptırmamak</h3>
+                <p class="sorun">⚠ Sorun: Sigorta masraf gibi görünebilir ama hasar durumunda tazminatsız kalırsınız. Özellikle şehirlerarası uzun mesafe taşımalarda hasar ihtimali artar.</p>
+                <p class="cozum">✓ Çözüm: Taşıma sigortasını standart hizmetin bir parçası olarak isteyin. Değerli eşyalar için ek sigorta yaptırın. <a href="/Home/sigortali_nakliyat_esyalarinizi_guvence_altina_alin">Sigortalı nakliyat rehberimizi</a> okuyun.</p>
+            </div>
+
+            <div class="hata-card">
+                <span class="no">Hata 8</span>
+                <h3>Eşyaları Elemeden Taşımak</h3>
+                <p class="sorun">⚠ Sorun: Her eşyayı taşımak hem maliyeti artırır hem de yeni evinizde gereksiz yığılmaya neden olur. Kullanmadığınız eşyaları taşımak için para ödemek anlamsızdır.</p>
+                <p class="cozum">✓ Çözüm: Taşınmadan 1 ay önce eşya eleme yapın. Kullanmadığınız eşyaları bağış edin, satın veya imha edin. Daha az eşya = daha düşük taşıma maliyeti.</p>
+            </div>
+
+            <div class="hata-card">
+                <span class="no">Hata 9</span>
+                <h3>Teslimat Adresini Eksik Vermek</h3>
+                <p class="sorun">⚠ Sorun: Eksik adres bilgisi nakliye ekibini yanlış yere götürebilir ya da teslimat gecikebilir. Özellikle <a href="/istanbul-ankara-parca-esya-tasima">şehirlerarası taşımalarda</a> bu kritik önem taşır.</p>
+                <p class="cozum">✓ Çözüm: Mahalle, sokak, bina no, daire no, kat ve asansör durumunu eksiksiz verin. Bir de yedek iletişim numarası bırakın.</p>
+            </div>
+
+            <div class="hata-card">
+                <span class="no">Hata 10</span>
+                <h3>Yalnızca Fiyata Bakarak En Ucuz Firmayı Seçmek</h3>
+                <p class="sorun">⚠ Sorun: Çok düşük fiyat teklifi genellikle sigortasız taşıma, deneyimsiz ekip veya gizli ekstra ücretler anlamına gelir. En ucuz firma en pahalıya gelebilir.</p>
+                <p class="cozum">✓ Çözüm: En az 3 firmadan teklif alın ve fiyatı değil kapsamı karşılaştırın. <a href="/Home/nakliyat_firmasi_nasil_secilir_7_kritik_soru">Nakliyat firması seçim rehberimizi</a> okuyun.</p>
+            </div>
+
+            <div class="good-box">
+                <strong>✓ Özet: Başarılı Taşınmanın 3 Altın Kuralı</strong><br>
+                1. Erken başlayın — en az 2 hafta önceden planlayın.<br>
+                2. Düzgün paketleyin — her koli etiketli, her kırılgan korumalı.<br>
+                3. Doğru firma seçin — belge, sigorta, yazılı sözleşme.
+            </div>
+
+            <h2>Taşınma Stresini Azaltmanın En Kolay Yolu</h2>
+            <p>
+                Profesyonel ve deneyimli bir nakliyat firması seçmek, bu 10 hatanın büyük bölümünü otomatik olarak önler. Deneyimli ekipler eşyaları nasıl paketleyeceğini, ölçü sorunlarını nasıl çözeceğini ve kırılgan eşyaları nasıl koruyacağını zaten bilir. <a href="/Home/tasinma_gunu_kontrol_listesi">Taşınma günü kontrol listemizi</a> de inceleyerek hiçbir detayı atlamayın.
+            </p>
+
+            <div class="cta-box">
+                <h3>Bu Hataları Bize Bırakın</h3>
+                <p>15 yıllık deneyimimizle eşyalarınızı güvenle taşıyoruz. Sigortalı, sözleşmeli ve zamanında teslimat.</p>
+                <a href="tel:+905344300360">📞 0534 430 03 60</a>
+                <a href="/Home/fiyat_al">Ücretsiz Teklif Al</a>
+            </div>
+        </div>
+    </main>
+</div>
