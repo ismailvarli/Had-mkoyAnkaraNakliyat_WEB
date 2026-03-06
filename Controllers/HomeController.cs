@@ -122,6 +122,26 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
         {
             return View();
         }
+        public IActionResult ofis_tasima_rehberi_2026()
+        {
+            return View();
+        }
+        public IActionResult esya_paketleme_teknikleri()
+        {
+            return View();
+        }
+        public IActionResult nakliyat_sozlesmesi_nedir()
+        {
+            return View();
+        }
+        public IActionResult ankaraya_tasinmak_rehberi()
+        {
+            return View();
+        }
+        public IActionResult tasinma_maliyetleri_nasil_dusurulur()
+        {
+            return View();
+        }
         public IActionResult hizmetlerimiz()
         {
             return View();

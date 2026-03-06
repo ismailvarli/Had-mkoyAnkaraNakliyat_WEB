@@ -278,6 +278,11 @@ Sitemap: https://www.hadimkoyankaranakliyat.com/sitemap.xml", "text/plain"));
         $"{host}/home/parca_esya_mi_tam_arac_mi",
         $"{host}/home/nakliyat_dolandiriciligi",
         $"{host}/home/tasinma_gunu_kontrol_listesi",
+        $"{host}/home/ofis_tasima_rehberi_2026",
+        $"{host}/home/esya_paketleme_teknikleri",
+        $"{host}/home/nakliyat_sozlesmesi_nedir",
+        $"{host}/home/ankaraya_tasinmak_rehberi",
+        $"{host}/home/tasinma_maliyetleri_nasil_dusurulur",
 
 
         // Hizmetler (URL'ler middleware ile uyumlu, küçük harfli)        
@@ -363,12 +368,23 @@ Sitemap: https://www.hadimkoyankaranakliyat.com/sitemap.xml", "text/plain"));
                 var sb = new StringBuilder();
                 sb.AppendLine(@"<?xml version=""1.0"" encoding=""UTF-8""?>");
                 sb.AppendLine(@"<urlset xmlns=""http://www.sitemaps.org/schemas/sitemap/0.9"">");
+                var lastmod = "2026-03-06";
                 foreach (var u in urls)
                 {
+                    // Ana sayfa: 1.0, ilce sayfalari: 0.9, diger: 0.8
+                    string priority;
+                    if (u == host + "/")
+                        priority = "1.0";
+                    else if (u.Contains("-nakliyat") && !u.Contains("/home/"))
+                        priority = "0.9";
+                    else
+                        priority = "0.8";
+
                     sb.AppendLine("  <url>");
                     sb.AppendLine($"    <loc>{u}</loc>");
+                    sb.AppendLine($"    <lastmod>{lastmod}</lastmod>");
                     sb.AppendLine("    <changefreq>weekly</changefreq>");
-                    sb.AppendLine("    <priority>0.8</priority>");
+                    sb.AppendLine($"    <priority>{priority}</priority>");
                     sb.AppendLine("  </url>");
                 }
                 sb.AppendLine("</urlset>");

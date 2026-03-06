@@ -1,0 +1,213 @@
+@{
+    ViewData["Title"] = "Taşınma Maliyetleri Nasıl Düşürülür? 10 Pratik Para Tasarrufu Yolu";
+    ViewData["Description"] = "Taşınma bütçenizi nasıl kontrol altında tutarsınız? Nakliyat maliyetlerini düşürmek için 10 pratik yol. Kaliteden ödün vermeden tasarruf rehberi.";
+}
+@{
+    var faqJson = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        { ""@type"": ""Question"", ""name"": ""Taşınma maliyetlerini nasıl azaltabilirim?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Gereksiz eşyaları önceden elden çıkarmak, hafta sonu yerine hafta içi taşınmak, paketlemeyi kendiniz yapmak ve birden fazla firmadan teklif almak maliyetleri önemli ölçüde düşürür."" } },
+        { ""@type"": ""Question"", ""name"": ""Hangi günler nakliyat daha ucuz?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Hafta içi (Salı-Çarşamba-Perşembe) ve ay ortası günleri nakliyat talebi düştüğünden fiyatlar %10-20 daha uygun olabilir. Ay başı ve sonu, Cuma-Cumartesi günleri en yoğun ve pahalı dönemlerdir."" } },
+        { ""@type"": ""Question"", ""name"": ""Parsiyel nakliyat ne kadar tasarruf sağlar?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Az eşyayla taşınıyorsanız parsiyel nakliyat tam araç kiralamanın yüzde 40-60 daha ucuzuna mal olabilir. Yalnızca kapladığınız alan için ödeme yaparsınız."" } },
+        { ""@type"": ""Question"", ""name"": ""Taşınmadan önce eşya satmak mantıklı mı?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Evet. Sahibinden.com, Letgo veya Facebook Marketplace üzerinden eski mobilya ve beyaz eşyaları satmak hem nakliyat hacmini düşürür hem de ek gelir sağlar. Yeni eşya almak yerine bu gelirle kaliteli ikinci el eşya edinebilirsiniz."" } }
+      ]
+    }";
+}
+<script type="application/ld+json">@Html.Raw(faqJson)</script>
+
+<style>
+    .page-wrap { max-width:1200px;margin:0 auto;padding:24px;display:grid;gap:24px;grid-template-columns:280px 1fr }
+    @@media(max-width:992px){ .page-wrap{ grid-template-columns:1fr } }
+    .side{ background:#0f172a;border-radius:14px;padding:18px }
+    .side h3{ color:#fff;font-size:18px;margin:0 0 12px;font-weight:800 }
+    .svc-list{ display:flex;flex-direction:column;gap:8px }
+    .svc-item{ display:flex;align-items:center;justify-content:space-between;background:#172036;color:#e2e8f0;padding:9px 12px;border-radius:10px;text-decoration:none;border:1px solid #23314f;font-size:13px }
+    .svc-item:hover{ background:#1f2a44 }
+    .svc-item .arrow{ background:#f97316;color:#fff;border-radius:8px;padding:3px 7px;font-weight:700;flex-shrink:0;margin-left:8px }
+    .content h1{ font-size:28px;font-weight:900;margin-bottom:12px;color:#0f172a }
+    .blog-meta{ font-size:14px;color:#64748b;margin-bottom:14px }
+    .blog-body p{ color:#334155;line-height:1.7;margin-bottom:16px }
+    .blog-body h2{ margin:28px 0 10px;color:#0f172a;font-size:22px;border-left:4px solid #f97316;padding-left:12px }
+    .blog-body h3{ margin:16px 0 8px;color:#1e293b;font-size:18px }
+    .blog-body ul,.blog-body ol{ margin:0 0 16px 20px }
+    .blog-body li{ margin-bottom:8px;color:#334155;line-height:1.6 }
+    .note{ background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;color:#334155;margin:14px 0 18px }
+    .warn-box{ background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 16px;border-radius:0 10px 10px 0;margin:14px 0 18px;color:#92400e }
+    .good-box{ background:#ecfdf5;border-left:4px solid #10b981;padding:14px 16px;border-radius:0 10px 10px 0;margin:14px 0 18px;color:#065f46 }
+    .tip-card{ background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:12px;display:flex;gap:12px;align-items:flex-start;box-shadow:0 2px 6px rgba(0,0,0,.04) }
+    .tip-num{ background:#f97316;color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;flex-shrink:0 }
+    .cta-box{ background:#f97316;color:#fff;padding:24px;border-radius:12px;margin-top:32px;text-align:center }
+    .cta-box h3{ margin:0 0 8px;font-size:20px }
+    .cta-box p{ margin:0 0 14px;opacity:.9 }
+    .cta-box a{ display:inline-block;padding:11px 20px;background:#fff;color:#f97316;font-weight:700;border-radius:8px;text-decoration:none;margin:4px }
+</style>
+
+<div class="page-wrap">
+    <aside class="side">
+        <h3>Blog Yazılarımız</h3>
+        <nav class="svc-list">
+            <a class="svc-item" href="/Home/ofis_tasima_rehberi_2026"><span>Ofis Taşıma Rehberi 2026</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/esya_paketleme_teknikleri"><span>Eşya Paketleme Teknikleri</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/nakliyat_sozlesmesi_nedir"><span>Nakliyat Sözleşmesi Nedir?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/ankaraya_tasinmak_rehberi"><span>Ankara'ya Taşınmak Rehberi</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/tasinma_maliyetleri_nasil_dusurulur"><span>Taşınma Maliyeti Nasıl Düşer?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/nakliyat_firmasi_nasil_secilir_7_kritik_soru"><span>Nakliyat Firması Nasıl Seçilir?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/parca_esya_mi_tam_arac_mi"><span>Parça Eşya mı, Tam Araç mı?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/nakliyat_dolandiriciligi"><span>Nakliyat Dolandırıcılığı</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/blog"><span>Tüm Blog Yazıları →</span><span class="arrow">☰</span></a>
+        </nav>
+    </aside>
+
+    <div class="content">
+        <h1>Taşınma Maliyetleri Nasıl Düşürülür? 10 Pratik Para Tasarrufu Yolu</h1>
+        <p class="blog-meta">📅 Mart 2026 &nbsp;|&nbsp; ⏱ 7 dk okuma &nbsp;|&nbsp; 🏷 Maliyet Tasarrufu</p>
+
+        <div class="blog-body">
+            <p>
+                <strong>Taşınma maliyetleri</strong> son yıllarda önemli ölçüde arttı.
+                Ancak doğru stratejilerle bütçenizi kontrol altına alırken güvenli ve
+                profesyonel bir taşıma deneyimi yaşamak mümkün. Bu rehberde
+                kaliteden ödün vermeden taşınma giderlerinizi azaltmanın
+                10 pratik yolunu paylaşıyoruz.
+            </p>
+
+            <div class="warn-box">
+                ⚠️ <strong>Önemli Uyarı:</strong> "En ucuz nakliyat firması" arayışı
+                çoğu zaman hasarlı eşya, sözleşmesiz taşıma veya dolandırıcılık
+                riski anlamına gelir. Maliyet düşürme stratejileri, firma kalitesinden
+                değil süreç verimliliğinden gelmelidir.
+            </div>
+
+            <h2>10 Adımda Nakliyat Maliyetini Düşürme</h2>
+
+            <div class="tip-card">
+                <span class="tip-num">1</span>
+                <div>
+                    <h3>Gereksiz Eşyaları Önceden Elden Çıkarın</h3>
+                    <p>Taşınan eşya hacmi ne kadar azalırsa maliyet o kadar düşer.
+                    Sahibinden.com, Letgo veya Facebook Marketplace üzerinden kullanmadığınız
+                    mobilya, elektronik ve giysileri satın. Bağış noktalarına götürmek de
+                    hem cüzdanınızı hem çevreyi rahatlatır.</p>
+                </div>
+            </div>
+
+            <div class="tip-card">
+                <span class="tip-num">2</span>
+                <div>
+                    <h3>Hafta İçi Taşının</h3>
+                    <p>Salı, Çarşamba ve Perşembe günleri nakliyat talebi düşüktür.
+                    Ay ortası günleri de (10-20 arası) uygun fiyat dönemidir.
+                    Ay başı-sonu ve hafta sonu nakliyat %10-20 daha pahalıya mal
+                    olabilir. İşvereniyle anlaşabilen çalışanlar bu tasarruftan yararlanabilir.</p>
+                </div>
+            </div>
+
+            <div class="tip-card">
+                <span class="tip-num">3</span>
+                <div>
+                    <h3>Paketlemeyi Kendiniz Yapın</h3>
+                    <p>Profesyonel paketleme hizmeti rahat ve güvenilir olmakla birlikte
+                    ek maliyet gerektirir. Kırılmayan eşyalarınızı (giysiler, kitaplar,
+                    mutfak gereçleri) kendiniz paketleyerek tasarruf edebilirsiniz.
+                    Kırılgan ve değerli eşyalar için ise profesyonel paketi koruyun.</p>
+                </div>
+            </div>
+
+            <div class="tip-card">
+                <span class="tip-num">4</span>
+                <div>
+                    <h3>Birden Fazla Firma'dan Teklif Alın</h3>
+                    <p>En az 3 farklı firmadan yazılı teklif alın ve karşılaştırın.
+                    Sadece fiyata değil; sigorta, sözleşme ve referanslara da bakın.
+                    Rekabetçi tekliflerle fiyat müzakeresi yapabilirsiniz.</p>
+                </div>
+            </div>
+
+            <div class="tip-card">
+                <span class="tip-num">5</span>
+                <div>
+                    <h3>Parsiyel Nakliyatı Değerlendirin</h3>
+                    <p>Az eşyanız varsa tam araç kiralamak yerine <a href="/home/istanbul_ankara_parsiyel_nakliyat">parsiyel nakliyat</a>
+                    seçin. Yalnızca kapladığınız alan için ödeme yaparsınız; tasarruf
+                    %40-60 olabilir. İstanbul-Ankara hattında düzenli parsiyel seferlerimiz mevcuttur.</p>
+                </div>
+            </div>
+
+            <div class="tip-card">
+                <span class="tip-num">6</span>
+                <div>
+                    <h3>Paketleme Malzemelerini Bedavaya Temin Edin</h3>
+                    <p>Süpermarket ve marketlerden atılan koliler, kargo firmalarının kullanılmış
+                    kutuları ve komşulardan kalan malzemeler işe yarar. Gazete yerine kraft
+                    kağıt kullanın; gazete mürekkebi eşyaları kirletebilir.</p>
+                </div>
+            </div>
+
+            <div class="tip-card">
+                <span class="tip-num">7</span>
+                <div>
+                    <h3>Ağır Beyaz Eşyaları Satın</h3>
+                    <p>Eski buzdolabı veya çamaşır makinesi taşımanın maliyeti, çoğu zaman
+                    yeni adresinize uygun ikinci el beyaz eşya almanın maliyetine eşdeğer
+                    olabilir. Taşıma öncesi bu hesabı yapın.</p>
+                </div>
+            </div>
+
+            <div class="tip-card">
+                <span class="tip-num">8</span>
+                <div>
+                    <h3>Katlı Taşıma Güçlüğünü Önceden Çözün</h3>
+                    <p>Yükleme veya boşaltma adresinde asansör yoksa ya da dar merdiven varsa
+                    nakliyat maliyeti artar. Apartman yöneticisiyle önceden konuşun,
+                    komşuların eşya koridoru bloke etmesini önleyin. Bu hazırlık
+                    ek saat ücretinden sizi kurtarır.</p>
+                </div>
+            </div>
+
+            <div class="tip-card">
+                <span class="tip-num">9</span>
+                <div>
+                    <h3>Giysileri Valizle Taşıyın</h3>
+                    <p>Giysiler için ayrıca koli ve ambalaj malzemesi kullanmak yerine
+                    mevcut valizlerinizi doldurun. Bu hem ambalaj maliyetini düşürür
+                    hem de aracın içindeki eşya düzenini kolaylaştırır.</p>
+                </div>
+            </div>
+
+            <div class="tip-card">
+                <span class="tip-num">10</span>
+                <div>
+                    <h3>Taşınmayı Önceden Planlayın</h3>
+                    <p>Son dakika taşımaları her zaman daha pahalıdır — hem nakliyat
+                    firmaları için hem de sizin için. 4-6 hafta önceden planlama yaparak
+                    hem daha iyi fiyat pazarlığı yapabilir hem de daha organize bir
+                    taşınma süreci yaşayabilirsiniz.</p>
+                </div>
+            </div>
+
+            <h2>Tasarruf Ederken Kaliteden Ödün Vermeyin</h2>
+            <p>
+                Maliyet düşürmenin yanlış yolları da vardır. Bunlardan kesinlikle kaçının:
+            </p>
+            <ul>
+                <li><strong>Sigortasız firma seçmek:</strong> Eşya hasarı durumunda tazminat alamazsınız.</li>
+                <li><strong>Sözleşmesiz çalışmak:</strong> Taşıma günü sürpriz zamlarına karşı savunmasız kalırsınız.</li>
+                <li><strong>Referanssız ucuz firmayı seçmek:</strong> Hasar riski tasarrufun çok ötesine geçebilir.</li>
+                <li><strong>Eşyaları fazla sıkıştırmak:</strong> Kutu başına ağırlığı artırmak hasar riskini yükseltir.</li>
+            </ul>
+            <div class="good-box">
+                ✅ <strong>Hadımköy Ankara Nakliyat:</strong> Uygun fiyatlı, sözleşmeli ve
+                sigortalı taşıma. Ücretsiz keşif sonrası garanti fiyat — taşıma gününde
+                sürpriz çıkmaz.
+            </div>
+
+            <div class="cta-box">
+                <h3>Ücretsiz Fiyat Teklifi Alın</h3>
+                <p>Keşif sonrası en uygun nakliyat fiyatı için hemen arayın.</p>
+                <a href="tel:+905344300360">📞 0534 430 03 60</a>
+                <a href="https://wa.me/905344300360">💬 WhatsApp</a>
+            </div>
+        </div>
+    </div>
+</div>

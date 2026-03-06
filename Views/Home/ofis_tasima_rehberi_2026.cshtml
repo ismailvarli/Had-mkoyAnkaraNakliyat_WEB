@@ -1,0 +1,239 @@
+@{
+    ViewData["Title"] = "Ofis Taşıma Rehberi 2026: Kurumsal Nakliyat Nasıl Planlanır?";
+    ViewData["Description"] = "Ofis taşıma sürecini kesintisiz yönetmek için 2026 güncel rehber. İş sürekliliğini koruyarak kurumsal nakliyat nasıl planlanır, maliyetler nasıl hesaplanır?";
+}
+@{
+    var faqJson = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        { ""@type"": ""Question"", ""name"": ""Ofis taşıma ne kadar sürer?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Küçük ofisler (10-20 kişilik) genellikle 1 günde tamamlanır. 50+ kişilik kurumsal ofisler için 2-3 gün planlanmalıdır. Hafta sonu taşıma ile iş günü kaybı sıfıra indirilebilir."" } },
+        { ""@type"": ""Question"", ""name"": ""Ofis taşıma fiyatları ne kadar?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Küçük ofisler için 15.000-30.000 TL, orta ölçekli ofisler için 30.000-70.000 TL, büyük kurumsal ofisler için 70.000 TL+ fiyat aralığındadır. BT ekipmanları ve özel ambalaj ihtiyacı fiyatı etkiler."" } },
+        { ""@type"": ""Question"", ""name"": ""Ofis taşımasında BT ekipmanları nasıl korunur?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Sunucular, bilgisayarlar ve ekranlar anti-statik köpük ve özel balonlu naylon ile paketlenir. Kablo etiketlemesi yapılır, montaj sonrası IT ekibi devreye alınır."" } },
+        { ""@type"": ""Question"", ""name"": ""Ofis taşıma hafta sonu yapılabilir mi?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Evet, çoğu kurumsal ofis taşıması hafta sonu yapılır. Böylece pazartesi sabahı yeni ofiste normale dönülür, çalışan kaybı yaşanmaz."" } }
+      ]
+    }";
+}
+<script type="application/ld+json">@Html.Raw(faqJson)</script>
+
+<style>
+    .page-wrap { max-width:1200px;margin:0 auto;padding:24px;display:grid;gap:24px;grid-template-columns:280px 1fr }
+    @@media(max-width:992px){ .page-wrap{ grid-template-columns:1fr } }
+    .side{ background:#0f172a;border-radius:14px;padding:18px }
+    .side h3{ color:#fff;font-size:18px;margin:0 0 12px;font-weight:800 }
+    .svc-list{ display:flex;flex-direction:column;gap:8px }
+    .svc-item{ display:flex;align-items:center;justify-content:space-between;background:#172036;color:#e2e8f0;padding:9px 12px;border-radius:10px;text-decoration:none;border:1px solid #23314f;font-size:13px }
+    .svc-item:hover{ background:#1f2a44 }
+    .svc-item .arrow{ background:#f97316;color:#fff;border-radius:8px;padding:3px 7px;font-weight:700;flex-shrink:0;margin-left:8px }
+    .content h1{ font-size:28px;font-weight:900;margin-bottom:12px;color:#0f172a }
+    .blog-meta{ font-size:14px;color:#64748b;margin-bottom:14px }
+    .blog-body p{ color:#334155;line-height:1.7;margin-bottom:16px }
+    .blog-body h2{ margin:28px 0 10px;color:#0f172a;font-size:22px;border-left:4px solid #f97316;padding-left:12px }
+    .blog-body h3{ margin:16px 0 8px;color:#1e293b;font-size:18px }
+    .blog-body ul,.blog-body ol{ margin:0 0 16px 20px }
+    .blog-body li{ margin-bottom:8px;color:#334155;line-height:1.6 }
+    .note{ background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;color:#334155;margin:14px 0 18px }
+    .warn-box{ background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 16px;border-radius:0 10px 10px 0;margin:14px 0 18px;color:#92400e }
+    .good-box{ background:#ecfdf5;border-left:4px solid #10b981;padding:14px 16px;border-radius:0 10px 10px 0;margin:14px 0 18px;color:#065f46 }
+    .step-card{ background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,.04);display:flex;gap:14px;align-items:flex-start }
+    .step-num{ background:#f97316;color:#fff;border-radius:10px;padding:6px 12px;font-weight:900;font-size:18px;flex-shrink:0 }
+    .cta-box{ background:#f97316;color:#fff;padding:24px;border-radius:12px;margin-top:32px;text-align:center }
+    .cta-box h3{ margin:0 0 8px;font-size:20px }
+    .cta-box p{ margin:0 0 14px;opacity:.9 }
+    .cta-box a{ display:inline-block;padding:11px 20px;background:#fff;color:#f97316;font-weight:700;border-radius:8px;text-decoration:none;margin:4px }
+</style>
+
+<div class="page-wrap">
+    <aside class="side">
+        <h3>Blog Yazılarımız</h3>
+        <nav class="svc-list">
+            <a class="svc-item" href="/Home/ofis_tasima_rehberi_2026"><span>Ofis Taşıma Rehberi 2026</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/esya_paketleme_teknikleri"><span>Eşya Paketleme Teknikleri</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/nakliyat_sozlesmesi_nedir"><span>Nakliyat Sözleşmesi Nedir?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/ankaraya_tasinmak_rehberi"><span>Ankara'ya Taşınmak Rehberi</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/tasinma_maliyetleri_nasil_dusurulur"><span>Taşınma Maliyeti Nasıl Düşer?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/nakliyat_firmasi_nasil_secilir_7_kritik_soru"><span>Nakliyat Firması Nasıl Seçilir?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/tasinirken_yapilan_10_hata"><span>Taşınırken Yapılan 10 Hata</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/nakliyat_dolandiriciligi"><span>Nakliyat Dolandırıcılığı</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/tasinma_gunu_kontrol_listesi"><span>Taşınma Günü Kontrol Listesi</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/blog"><span>Tüm Blog Yazıları →</span><span class="arrow">☰</span></a>
+        </nav>
+    </aside>
+
+    <div class="content">
+        <h1>Ofis Taşıma Rehberi 2026: Kurumsal Nakliyat Nasıl Planlanır?</h1>
+        <p class="blog-meta">📅 Mart 2026 &nbsp;|&nbsp; ⏱ 8 dk okuma &nbsp;|&nbsp; 🏷 Kurumsal Nakliyat</p>
+
+        <div class="blog-body">
+            <p>
+                <strong>Ofis taşıma</strong>, ev taşımasından çok daha karmaşık bir süreçtir. BT altyapısı,
+                arşivler, ergonomik mobilyalar, çalışan koordinasyonu ve iş sürekliliği — tüm bu
+                faktörleri eş zamanlı yönetmek gerekir. Yanlış planlanan bir ofis taşıması günlerce
+                iş kaybına, müşteri memnuniyetsizliğine ve çalışan motivasyon düşüşüne yol açabilir.
+                Bu rehberde 2026 yılı için güncel ofis nakliyat stratejisini adım adım ele aldık.
+            </p>
+
+            <h2>Ofis Taşıma Planlaması: Ne Kadar Önceden Başlanmalı?</h2>
+            <p>
+                Ofis büyüklüğüne göre planlama süresi değişir. Genel kural şudur:
+                ofisteki çalışan sayısını ikiyle çarpın — bu kaç hafta önceden başlamanız
+                gerektiğinin yaklaşık yanıtıdır.
+            </p>
+            <ul>
+                <li><strong>10 kişiye kadar küçük ofis:</strong> 3-4 hafta önceden planlama yeterlidir.</li>
+                <li><strong>10-50 kişilik orta ölçekli ofis:</strong> 6-8 hafta önceden başlanmalıdır.</li>
+                <li><strong>50+ kişilik kurumsal ofis:</strong> 3-6 ay önceden proje yöneticisi atanmalıdır.</li>
+            </ul>
+            <div class="warn-box">
+                ⚠️ <strong>Kritik Hata:</strong> Birçok şirket ofis taşımasını son dakikaya bırakır.
+                Yeni ofisteki elektrik, internet altyapısı ve tadilat işlerinin tamamlanması için
+                bile 4-6 haftalık süre gerekir. Nakliyat öncesinde yeni alanın hazır olduğundan emin olun.
+            </div>
+
+            <h2>Adım Adım Ofis Taşıma Süreci</h2>
+
+            <div class="step-card">
+                <span class="step-num">1</span>
+                <div>
+                    <h3>Envanter ve Eşya Listesi Çıkarın</h3>
+                    <p>Her masa, sandalye, bilgisayar, monitor, dolap ve ekipmanı listeleyin.
+                    Hangilerinin yeni ofise taşınacağına, hangilerinin hibe/atık edileceğine karar verin.
+                    Gereksiz eşyaları taşımak hem zaman hem maliyet kaybıdır.</p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <span class="step-num">2</span>
+                <div>
+                    <h3>IT ve Altyapı Planı Yapın</h3>
+                    <p>BT ekibinizle birlikte sunucu, network ekipmanı ve kablo altyapısının
+                    yeni ofisteki yerleşimini planlayın. Sunucu odasının kliması, UPS sistemi
+                    ve fiber hat bağlantısı taşınmadan önce hazır olmalıdır.</p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <span class="step-num">3</span>
+                <div>
+                    <h3>Taşıma Tarihini Belirleyin</h3>
+                    <p>İş kaybını minimize etmek için <strong>cuma akşamı yükleme, pazartesi sabahı yeni
+                    ofiste çalışmaya başlama</strong> modelini tercih edin. Müşterilerinizi ve
+                    iş ortaklarınızı en az 2 hafta öncesinden bilgilendirin.</p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <span class="step-num">4</span>
+                <div>
+                    <h3>Profesyonel Ofis Nakliyat Firması Seçin</h3>
+                    <p>Kurumsal nakliyatta deneyimli, BT ekipman paketlemesini bilen ve
+                    yazılı sözleşme sunan bir firma tercih edin. Referans listesi isteyin;
+                    benzer ölçekte ofis taşımaları yapmış mı sorun.</p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <span class="step-num">5</span>
+                <div>
+                    <h3>Çalışanları Koordine Edin</h3>
+                    <p>Her çalışana kendi masasını paketleme sorumluluğu verin. Kişisel eşyalar
+                    için özel kutular dağıtın ve her kutuya ad + yeni masa numarası yazılmasını
+                    isteyin. Bu, yerleşim sürecini yarı yarıya kısaltır.</p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <span class="step-num">6</span>
+                <div>
+                    <h3>Arşiv ve Evrak Yönetimi</h3>
+                    <p>Fiziksel arşivleri taşımadan önce dijitalleştirme fırsatı değerlendirin.
+                    Taşınacak evraklar mühürlü kutularda, etiketlenmiş şekilde saklanmalı;
+                    kritik belgeler yönetici kontrolünde taşınmalıdır.</p>
+                </div>
+            </div>
+
+            <h2>Ofis Taşımasında BT Ekipmanları Nasıl Korunur?</h2>
+            <p>
+                BT ekipmanları ofis taşımasının en hassas kalemidir. Yanlış taşınan bir
+                sunucu, şirkete maliyetin çok üzerinde zarar verebilir.
+            </p>
+            <ul>
+                <li><strong>Sunucu ve NAS cihazları:</strong> Rack'ten çıkarılır, anti-statik köpükle
+                sarılır, orijinal kutu yoksa özel ahşap kasa kullanılır.</li>
+                <li><strong>Bilgisayarlar ve iMacler:</strong> Sabit disklerin bağlantısı kontrol edilir,
+                balonlu naylon + köpük ile çevrilir.</li>
+                <li><strong>Monitörler:</strong> Ekran yüzleri koruyucu film ile kaplanır, dik konumda taşınır.</li>
+                <li><strong>Kablolar:</strong> Her kablo demet haline getirilir ve etiketlenir.
+                Fotoğraflanarak belgelenir — kurulum sırasında büyük zaman kazandırır.</li>
+            </ul>
+            <div class="good-box">
+                ✅ <strong>Profesyonel Öneri:</strong> Taşıma öncesi tüm kritik verilerin yedeğini alın.
+                Bulut yedekleme sistemlerinizi kontrol edin. Taşıma sırasında yaşanabilecek
+                olası donanım arızalarına karşı sigorta poliçenizi güncelleyin.
+            </div>
+
+            <h2>Ofis Taşıma Fiyatları 2026</h2>
+            <p>
+                Ofis taşıma maliyetleri birçok faktöre bağlıdır: çalışan sayısı, kat ve
+                asansör durumu, BT ekipmanı yoğunluğu, hafta içi/sonu farkı ve mesafe.
+                2026 yılı için genel fiyat aralıkları:
+            </p>
+            <ul>
+                <li><strong>Küçük ofis (1-10 kişi):</strong> 15.000 – 30.000 TL</li>
+                <li><strong>Orta ölçek (10-30 kişi):</strong> 30.000 – 70.000 TL</li>
+                <li><strong>Büyük kurumsal (30-100 kişi):</strong> 70.000 – 200.000 TL</li>
+                <li><strong>Şirket merkezi (100+ kişi):</strong> Teklif bazlı proje</li>
+            </ul>
+            <div class="note">
+                💡 Bu fiyatlar İstanbul içi ve İstanbul-Ankara arası ofis taşımaları için
+                geçerli 2026 ortalama değerleridir. Kesin fiyat için ücretsiz keşif şarttır.
+            </div>
+
+            <h2>İstanbul'dan Ankara'ya Ofis Taşıma</h2>
+            <p>
+                Şehirler arası ofis taşımaları daha kapsamlı planlama gerektirir.
+                <strong>İstanbul'dan Ankara'ya ofis taşıma</strong> sürecinde dikkat edilmesi gerekenler:
+            </p>
+            <ul>
+                <li>Her iki şehirde de sorumlu bir koordinatör belirleyin.</li>
+                <li>Yeni ofisteki IT altyapısı taşınmadan en az 2 hafta önce hazır olmalıdır.</li>
+                <li>Taşıma sırasında kritik sistemler için VPN + uzaktan erişim geçici çözüm olabilir.</li>
+                <li>İstanbul SGK müdürlüğünden Ankara'ya işyeri nakli bildirimini unutmayın.</li>
+                <li>Vergi dairesi adres güncelleme işlemlerini önceden başlatın.</li>
+            </ul>
+            <p>
+                <a href="/home/istanbul_ankara_nakliyat">İstanbul Ankara nakliyat hizmetimiz</a> kapsamında
+                kurumsal ofis taşımalarını da yürütüyoruz. Haftalık düzenli seferlerimizle
+                İstanbul'dan Ankara'ya kurumsal nakliyat hizmeti sunuyoruz.
+            </p>
+
+            <h2>Ofis Taşıma Sonrası Yapılacaklar Listesi</h2>
+            <ol>
+                <li>IT sistemlerinin açılışını ve ağ bağlantılarını test edin.</li>
+                <li>Telefon hatlarının yeni ofisin numarasına yönlendirildiğini doğrulayın.</li>
+                <li>Adres değişikliğini tüm müşteri ve tedarikçilere bildirin.</li>
+                <li>Google İşletme Profilinizdeki adresi güncelleyin.</li>
+                <li>Resmi yazışma adresinizi (fatura, sözleşme) güncelleyin.</li>
+                <li>Yangın söndürücü ve çıkış kapısı konumlarını tüm çalışanlara tanıtın.</li>
+            </ol>
+
+            <h2>Sık Sorulan Sorular: Ofis Taşıma</h2>
+            <h3>Ofis taşıma ne kadar sürer?</h3>
+            <p>10 kişilik küçük ofis 1 günde, 30-50 kişilik ofis 2 günde, 100+ kişilik
+            kurumsal ofis 3-5 günde taşınabilir. Hafta sonu başlayıp pazartesiye yetişmek
+            en yaygın modeldir.</p>
+
+            <h3>Demonte masaları kim montajlar?</h3>
+            <p>Profesyonel ofis nakliyat firmamız mobilya demontajı ve montajını dahil hizmet
+            olarak sunar. Moduler ofis mobilyaları, toplantı masaları ve dolap sistemleri
+            dahil olmak üzere tüm montaj işlemleri ekibimizce yapılır.</p>
+
+            <div class="cta-box">
+                <h3>Ofis Taşıma Teklifi Alın</h3>
+                <p>Ücretsiz keşif sonrası yazılı, garantili ofis nakliyat fiyatı.</p>
+                <a href="tel:+905344300360">📞 0534 430 03 60</a>
+                <a href="https://wa.me/905344300360">💬 WhatsApp</a>
+            </div>
+        </div>
+    </div>
+</div>

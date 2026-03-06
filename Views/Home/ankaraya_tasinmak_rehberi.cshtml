@@ -1,0 +1,181 @@
+@{
+    ViewData["Title"] = "Ankara'ya Taşınmak: Yeni Şehire Kapsamlı Hazırlık Rehberi 2026";
+    ViewData["Description"] = "İstanbul'dan Ankara'ya taşınmak için bilmeniz gereken her şey. Semt seçimi, kira fiyatları, resmi işlemler ve Ankara'ya uyum süreci için 2026 güncel rehber.";
+}
+@{
+    var faqJson = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        { ""@type"": ""Question"", ""name"": ""Ankara'da hangi semt yaşamak için uygun?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Çankaya ve Çayyolu üst gelir grubuna hitap eder. Keçiören ve Mamak uygun fiyatlıdır. Yenimahalle merkezi konumuyla pratiktir. Etimesgut ve Sincan yeni yapılaşma ile gelişmektedir. Tercih, bütçe ve işyerine mesafeye göre belirlenir."" } },
+        { ""@type"": ""Question"", ""name"": ""Ankara kira fiyatları 2026'da ne kadar?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""2026 yılında Ankara'da 2+1 daire kirası Çankaya'da 15.000-25.000 TL, Keçiören'de 8.000-13.000 TL, Yenimahalle'de 10.000-16.000 TL aralığındadır. İstanbul fiyatlarıyla kıyaslandığında yaklaşık %30-40 daha uygun."" } },
+        { ""@type"": ""Question"", ""name"": ""İstanbul'dan Ankara'ya taşınmak ne kadar sürer?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Planlama süresi 1-3 ay, fiili taşıma ise 1-2 gündür. Aynı gün yükleme, ertesi gün teslim prensibimizle İstanbul'dan Ankara'ya konforlu bir taşınma deneyimi sunuyoruz."" } },
+        { ""@type"": ""Question"", ""name"": ""Ankara'ya taşındıktan sonra hangi resmi işlemler yapılmalı?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Adres değişikliği için e-Devlet veya muhtarlık üzerinden nüfus müdürlüğüne başvurun. Araç tescili için Ankara İl Emniyet Müdürlüğü'ne gidin. Sağlık sigortası için yeni SGK bölge müdürlüğüne bildirimde bulunun."" } }
+      ]
+    }";
+}
+<script type="application/ld+json">@Html.Raw(faqJson)</script>
+
+<style>
+    .page-wrap { max-width:1200px;margin:0 auto;padding:24px;display:grid;gap:24px;grid-template-columns:280px 1fr }
+    @@media(max-width:992px){ .page-wrap{ grid-template-columns:1fr } }
+    .side{ background:#0f172a;border-radius:14px;padding:18px }
+    .side h3{ color:#fff;font-size:18px;margin:0 0 12px;font-weight:800 }
+    .svc-list{ display:flex;flex-direction:column;gap:8px }
+    .svc-item{ display:flex;align-items:center;justify-content:space-between;background:#172036;color:#e2e8f0;padding:9px 12px;border-radius:10px;text-decoration:none;border:1px solid #23314f;font-size:13px }
+    .svc-item:hover{ background:#1f2a44 }
+    .svc-item .arrow{ background:#f97316;color:#fff;border-radius:8px;padding:3px 7px;font-weight:700;flex-shrink:0;margin-left:8px }
+    .content h1{ font-size:28px;font-weight:900;margin-bottom:12px;color:#0f172a }
+    .blog-meta{ font-size:14px;color:#64748b;margin-bottom:14px }
+    .blog-body p{ color:#334155;line-height:1.7;margin-bottom:16px }
+    .blog-body h2{ margin:28px 0 10px;color:#0f172a;font-size:22px;border-left:4px solid #f97316;padding-left:12px }
+    .blog-body h3{ margin:16px 0 8px;color:#1e293b;font-size:18px }
+    .blog-body ul,.blog-body ol{ margin:0 0 16px 20px }
+    .blog-body li{ margin-bottom:8px;color:#334155;line-height:1.6 }
+    .note{ background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;color:#334155;margin:14px 0 18px }
+    .good-box{ background:#ecfdf5;border-left:4px solid #10b981;padding:14px 16px;border-radius:0 10px 10px 0;margin:14px 0 18px;color:#065f46 }
+    .semt-grid{ display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0 20px }
+    @@media(max-width:600px){ .semt-grid{ grid-template-columns:1fr } }
+    .semt-card{ background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px;box-shadow:0 2px 6px rgba(0,0,0,.04) }
+    .semt-card h3{ margin:0 0 6px;font-size:16px;color:#0f172a }
+    .semt-card p{ margin:0;font-size:13px;color:#64748b }
+    .semt-card .fiyat{ display:inline-block;background:#f97316;color:#fff;padding:2px 8px;border-radius:6px;font-size:12px;font-weight:700;margin-top:6px }
+    .cta-box{ background:#f97316;color:#fff;padding:24px;border-radius:12px;margin-top:32px;text-align:center }
+    .cta-box h3{ margin:0 0 8px;font-size:20px }
+    .cta-box p{ margin:0 0 14px;opacity:.9 }
+    .cta-box a{ display:inline-block;padding:11px 20px;background:#fff;color:#f97316;font-weight:700;border-radius:8px;text-decoration:none;margin:4px }
+</style>
+
+<div class="page-wrap">
+    <aside class="side">
+        <h3>Blog Yazılarımız</h3>
+        <nav class="svc-list">
+            <a class="svc-item" href="/Home/ofis_tasima_rehberi_2026"><span>Ofis Taşıma Rehberi 2026</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/esya_paketleme_teknikleri"><span>Eşya Paketleme Teknikleri</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/nakliyat_sozlesmesi_nedir"><span>Nakliyat Sözleşmesi Nedir?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/ankaraya_tasinmak_rehberi"><span>Ankara'ya Taşınmak Rehberi</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/tasinma_maliyetleri_nasil_dusurulur"><span>Taşınma Maliyeti Nasıl Düşer?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/nakliyat_firmasi_nasil_secilir_7_kritik_soru"><span>Nakliyat Firması Nasıl Seçilir?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/tasinirken_yapilan_10_hata"><span>Taşınırken Yapılan 10 Hata</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/blog"><span>Tüm Blog Yazıları →</span><span class="arrow">☰</span></a>
+        </nav>
+    </aside>
+
+    <div class="content">
+        <h1>Ankara'ya Taşınmak: Yeni Şehire Kapsamlı Hazırlık Rehberi 2026</h1>
+        <p class="blog-meta">📅 Mart 2026 &nbsp;|&nbsp; ⏱ 9 dk okuma &nbsp;|&nbsp; 🏷 Şehirlerarası Taşınma</p>
+
+        <div class="blog-body">
+            <p>
+                İstanbul'dan <strong>Ankara'ya taşınmak</strong> büyük bir yaşam kararıdır.
+                İş değişikliği, devlet kurumu tayini, ev almak veya daha uygun maliyetli
+                bir şehirde yaşam için Ankara'ya geçiş yapanların sayısı son yıllarda
+                artış göstermektedir. Bu rehberde Ankara'ya taşınmadan önce bilmeniz
+                gereken her şeyi — semt seçimi, kira fiyatları, yaşam maliyeti,
+                resmi işlemler ve taşınma süreci — kapsamlı biçimde ele aldık.
+            </p>
+
+            <h2>Ankara'da Semt Seçimi: Nerede Oturmalıyım?</h2>
+            <p>
+                Ankara, İstanbul'a kıyasla çok daha planlı bir şehir yapısına sahiptir.
+                Doğu-batı hattında Çankaya – Etimesgut – Sincan koridoru; kuzey-güney
+                hattında Keçiören – Çankaya – Gölbaşı doğrultusu öne çıkar.
+            </p>
+            <div class="semt-grid">
+                <div class="semt-card">
+                    <h3>Çankaya & Kavaklıdere</h3>
+                    <p>Büyükelçilikler, bakanlıklar ve üniversitelere yakın; Ankara'nın en prestijli semtleri. Yürüyüş mesafesinde alışveriş, restoran ve park imkânı.</p>
+                    <span class="fiyat">2+1: 18.000–28.000 TL</span>
+                </div>
+                <div class="semt-card">
+                    <h3>Keçiören</h3>
+                    <p>Ulaşım ağı güçlü, metro ve otobüs hattı ile merkeze kolay erişim. Fiyat avantajı yüksek, ailelere uygun sakin semt yapısı.</p>
+                    <span class="fiyat">2+1: 8.000–13.000 TL</span>
+                </div>
+                <div class="semt-card">
+                    <h3>Yenimahalle & Batıkent</h3>
+                    <p>Ankaray ve metro hatlarına yakın. Geniş yeşil alanlar, uygun fiyatlı konut seçenekleri. Çalışan aileler için ideal konum.</p>
+                    <span class="fiyat">2+1: 10.000–16.000 TL</span>
+                </div>
+                <div class="semt-card">
+                    <h3>Etimesgut & Sincan</h3>
+                    <p>Yeni yapılaşma bölgeleri, geniş daireler ve uygun fiyat. Metro hattı ile merkeze bağlı. Özellikle genç aileler tercih ediyor.</p>
+                    <span class="fiyat">2+1: 8.000–12.000 TL</span>
+                </div>
+            </div>
+
+            <h2>Ankara Yaşam Maliyeti: İstanbul ile Karşılaştırma</h2>
+            <p>
+                Ankara'ya taşınmanın en büyük avantajlarından biri yaşam maliyetidir.
+                İstanbul'a kıyasla önemli farklar:
+            </p>
+            <ul>
+                <li><strong>Kira:</strong> Benzer konfor ve büyüklükte daire için %30-40 daha uygun.</li>
+                <li><strong>Ulaşım:</strong> Trafik yoğunluğu İstanbul'a göre düşük; araç kullanımı daha az stresli.</li>
+                <li><strong>Market fiyatları:</strong> Benzer seviyelerde, ancak şehir içi gidip gelme maliyeti daha düşük.</li>
+                <li><strong>Restoran ve eğlence:</strong> Genel olarak %15-20 daha uygun fiyatlı.</li>
+            </ul>
+            <div class="note">
+                💡 Devlet memurları ve kamu çalışanları için Ankara'da konut edinme destekleri
+                ve TOKİ projeleri mevcuttur. Taşınmadan önce kurumunuzdan bilgi alın.
+            </div>
+
+            <h2>İstanbul'dan Ankara'ya Taşınma Süreci</h2>
+            <p>
+                <strong>İstanbul-Ankara arası taşınma</strong> için önerilen takvim:
+            </p>
+            <ol>
+                <li><strong>8-12 hafta önce:</strong> Ankara'daki konutu belirleyin ve sözleşmeyi imzalayın.</li>
+                <li><strong>6-8 hafta önce:</strong> Nakliyat firmasıyla keşif randevusu alın, tarih belirleyin.</li>
+                <li><strong>4-6 hafta önce:</strong> Çocuklar için okul kayıt işlemlerine başlayın.</li>
+                <li><strong>2-4 hafta önce:</strong> Ankara'daki doğalgaz, elektrik, su aboneliklerini başlatın.</li>
+                <li><strong>1-2 hafta önce:</strong> Paketlemeye başlayın, gereksiz eşyaları bağışlayın veya satın.</li>
+                <li><strong>Taşıma günü:</strong> Yükleme sabah başlar, eşyalar ertesi gün Ankara'da.</li>
+                <li><strong>Taşındıktan sonra:</strong> Resmi adres değişikliği işlemlerini tamamlayın.</li>
+            </ol>
+
+            <h2>Ankara'ya Taşındıktan Sonra Resmi İşlemler</h2>
+            <p>
+                Ankara'ya yerleştikten sonra tamamlamanız gereken resmi işlemler:
+            </p>
+            <ul>
+                <li><strong>Nüfus adres değişikliği:</strong> e-Devlet veya en yakın nüfus müdürlüğüne
+                20 gün içinde başvurun. Kiracılar için kira sözleşmesi yeterlidir.</li>
+                <li><strong>Araç tescil değişikliği:</strong> Ankara plakalı araç edinecekseniz
+                veya aracınızı Ankara'ya tescil ettirecekseniz trafik tescil bürosuna başvurun.</li>
+                <li><strong>Sağlık sigortası:</strong> SGK kapsamında aile hekiminizi Ankara'daki
+                bir hekimle değiştirin. e-Nabız üzerinden online yapılabilir.</li>
+                <li><strong>Banka ve fatura adresleri:</strong> İnternet bankacılığı ve e-Devlet
+                üzerinden kolayca güncellenebilir.</li>
+                <li><strong>Google İşletme Profili:</strong> Serbest meslek veya işletme sahibiyseniz
+                GBP adresini güncelleyin.</li>
+            </ul>
+
+            <h2>Ankara'ya Uyum Süreci: Pratik Tüyolar</h2>
+            <ul>
+                <li><strong>EGO (Ankara otobüs):</strong> EGO Kart ile ulaşım çok pratiktir.
+                Metro, ankaray ve otobüs entegre çalışır.</li>
+                <li><strong>Alışveriş merkezleri:</strong> Kentpark, Armada, ANKAmall başlıca AVM'ler.
+                Ulus Kapalıçarşı yerel alışveriş için cazip.</li>
+                <li><strong>Hava durumu:</strong> Ankara karasal iklime sahiptir; kışın soğuk ve
+                karlı, yazın sıcak ve kuru. İstanbul'dan farklı bir adaptasyon gerekir.</li>
+                <li><strong>Komşuluk kültürü:</strong> Ankara mahalleleri daha sakin ve
+                komşuluk ilişkileri daha yakın olabilir — bu birçok kişi için büyük avantaj.</li>
+            </ul>
+
+            <div class="good-box">
+                ✅ <strong>Hadımköy Ankara Nakliyat Güvencesi:</strong> 10+ yıldır
+                İstanbul'un 39 ilçesinden Ankara'ya taşınma konusunda uzmanız.
+                Aynı gün yükleme, ertesi gün teslim garantimizle yeni hayatınıza
+                sorunsuz başlayın.
+            </div>
+
+            <div class="cta-box">
+                <h3>Ankara'ya Taşınma Fiyatı Öğrenin</h3>
+                <p>Ücretsiz keşif sonrası yazılı, garantili nakliyat teklifi.</p>
+                <a href="tel:+905344300360">📞 0534 430 03 60</a>
+                <a href="https://wa.me/905344300360">💬 WhatsApp</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -882,7 +882,7 @@ button {
     }
 }
 
-/* Hero görünümü (CLS=0 için boyut sabit) */
+/* Hero gï¿½rï¿½nï¿½mï¿½ (CLS=0 iï¿½in boyut sabit) */
 #hero {
     display: block;
     width: 100%;
@@ -890,13 +890,13 @@ button {
     object-fit: cover
 }
 
-/* Offscreen alanlarý ertele */
+/* Offscreen alanlarï¿½ ertele */
 .lazy-section {
     content-visibility: auto;
     contain-intrinsic-size: 1000px
 }
 
-/* Lazy img yer tutucu ve CLS korumasý */
+/* Lazy img yer tutucu ve CLS korumasï¿½ */
 img[loading="lazy"] {
     background: #0f3a43
 }
@@ -905,7 +905,7 @@ img {
     height: auto
 }
 
-/* Menüde aðýr text-shadow’u kapat (performans) */
+/* Menï¿½de aï¿½ï¿½r text-shadowï¿½u kapat (performans) */
 .main-menu .main-menu__list > li > ul > li:hover > a {
     text-shadow: none;
 }
@@ -2437,6 +2437,60 @@ Main Header Two
   display: none;
 }
 
+/* â”€â”€ Ä°lÃ§e sayfasÄ± gÃ¼Ã§lendirme: FAQ + GÃ¼ven bÃ¶lÃ¼mleri â”€â”€ */
+.han-faq-list {
+  margin: 1.5rem 0 2rem;
+}
+.han-faq-item {
+  border-left: 3px solid #ff7300;
+  padding: .75rem 1.1rem;
+  margin-bottom: 1rem;
+  background: #f9f7f5;
+  border-radius: 0 4px 4px 0;
+}
+.han-faq-item h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: .35rem;
+  color: #1a1a1a;
+}
+.han-faq-item p {
+  margin-bottom: 0;
+  font-size: .95rem;
+}
+
+.han-trust-list li {
+  margin-bottom: .5rem;
+}
+
+.han-reviews-mini {
+  margin: 1.5rem 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+@media (max-width: 768px) {
+  .han-reviews-mini {
+    grid-template-columns: 1fr;
+  }
+}
+.han-review {
+  border-left: 4px solid #ff7300;
+  padding: 1rem 1.25rem;
+  background: #fff9f4;
+  font-style: italic;
+  border-radius: 0 6px 6px 0;
+}
+.han-review p {
+  margin-bottom: .4rem;
+  font-size: .95rem;
+}
+.han-review cite {
+  font-style: normal;
+  font-size: .85rem;
+  color: #666;
+}
+
 .stricky-header--style2 .main-header-two__bottom .shape1 {
   display: none;
 }
@@ -2832,7 +2886,7 @@ Main Header Three
 p {
     margin-bottom: 20px;
 }
-/* Skill One mobil düzen */
+/* Skill One mobil dï¿½zen */
 @media (max-width: 991px) {
     .skill-one {
         padding: 60px 0;

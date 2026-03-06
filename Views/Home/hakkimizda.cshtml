@@ -1,303 +1,846 @@
-﻿
 @model HadımkoyAnkaraNakliyat_WEB.Models.TeklifFormModel
 @{
-    ViewData["Title"] = "Hakkımızda | Hadımköy Ankara Nakliyat";
-    ViewData["Description"] = "Yılların deneyimi, modern araç filosu ve güler yüzlü ekiple; İstanbul Ankara taşımacılığında sektör liderliğimizin sırrı kalite, şeffaflık ve müşteri odaklılık!";
+    ViewData["Title"] = "Hakkımızda | Hadımköy Ankara Nakliyat – 2014'ten Bu Yana";
+    ViewData["Description"] = "2014'ten bu yana İstanbul–Ankara hattında uzmanlaşmış Hadımköy Ankara Nakliyat. Ekibimizi, araç filomuz ve hizmet anlayışımızı tanıyın.";
 }
 @await Html.PartialAsync("_StatusMessage")
+
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "LocalBusiness",
+  "name": "Hadımköy Ankara Nakliyat",
+  "url": "https://hadimkoyankaranakliyat.com",
+  "logo": "https://hadimkoyankaranakliyat.com/assets/images/logo.png",
+  "image": "https://hadimkoyankaranakliyat.com/assets/images/gallery/hadimkoy_hakkimizda.png",
+  "telephone": "+905344300360",
+  "foundingDate": "2014",
+  "description": "2014'ten bu yana İstanbul–Ankara hattında şehirlerarası evden eve, parsiyel ve ticari nakliyat hizmetleri sunan profesyonel firma.",
+  "address": {
+    "@@type": "PostalAddress",
+    "streetAddress": "Çırpıcı Modabağ 5. Sokak No:1",
+    "addressLocality": "Zeytinburnu",
+    "addressRegion": "İstanbul",
+    "postalCode": "34020",
+    "addressCountry": "TR"
+  },
+  "areaServed": ["İstanbul", "Ankara", "Türkiye"],
+  "openingHoursSpecification": {
+    "@@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "07:00",
+    "closes": "22:00"
+  },
+  "sameAs": [
+    "https://share.google/yEAV7ntdMNwinXxKF"
+  ]
+}
+</script>
+
 <style>
-    .animated-alert {
-        padding: 15px 20px;
-        margin: 20px 0 30px 0;
-        border-radius: 8px;
-        font-weight: 500;
-        font-size: 16px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        opacity: 0;
-        animation: fadeInSlide 0.6s ease-out forwards;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-        border: 1.5px solid #e1e4e8;
-    }
+  /* ── STATS BAR ── */
+  .han-stats {
+    background: var(--thm-primary, #ff7300);
+    padding: 48px 0;
+  }
+  .han-stats__item {
+    text-align: center;
+    color: #fff;
+    padding: 12px 0;
+  }
+  .han-stats__number {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 800;
+    line-height: 1;
+    display: block;
+  }
+  .han-stats__label {
+    font-size: 15px;
+    opacity: .88;
+    margin-top: 6px;
+    display: block;
+    font-weight: 500;
+  }
+  .han-stats__divider {
+    width: 1px;
+    background: rgba(255,255,255,.3);
+    align-self: stretch;
+    margin: 0 auto;
+  }
 
-        .animated-alert.success {
-            background: #e7ffe9;
-            color: #106a1d;
-            border-color: #7ee195;
-        }
+  /* ── STORY ── */
+  .han-story { padding: 80px 0 60px; }
+  .han-story__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff5ec;
+    border: 1px solid #ff7300;
+    color: #ff7300;
+    font-weight: 700;
+    font-size: 13px;
+    border-radius: 20px;
+    padding: 6px 16px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+  }
+  .han-story__title {
+    font-size: clamp(26px, 3.5vw, 38px);
+    font-weight: 800;
+    line-height: 1.22;
+    margin-bottom: 20px;
+    color: #0b1726;
+  }
+  .han-story__title span { color: #ff7300; }
+  .han-story__text p {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #444;
+    margin-bottom: 16px;
+  }
+  .han-story__img-wrap {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0,0,0,.13);
+  }
+  .han-story__img-wrap img { width: 100%; height: auto; display: block; }
+  .han-story__year-badge {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    background: #ff7300;
+    color: #fff;
+    border-radius: 12px;
+    padding: 12px 20px;
+    font-weight: 800;
+    font-size: 15px;
+    line-height: 1.3;
+    box-shadow: 0 4px 16px rgba(255,115,0,.4);
+  }
 
-        .animated-alert.error {
-            background: #fff3f1;
-            color: #a32517;
-            border-color: #f7c0b5;
-        }
+  /* ── PLACEHOLDER IMG ── */
+  .han-img-placeholder {
+    background: #f4f4f4;
+    border: 2px dashed #ccc;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 280px;
+    color: #999;
+    font-size: 14px;
+    text-align: center;
+    padding: 24px;
+    gap: 10px;
+  }
+  .han-img-placeholder .ph-icon { font-size: 40px; opacity: .4; }
+  .han-img-placeholder code {
+    background: #e8e8e8;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #555;
+  }
 
-        .animated-alert .icon {
-            font-size: 22px;
-            margin-right: 6px;
-        }
+  /* ── VALUES ── */
+  .han-values { background: #f8f9fc; padding: 70px 0; }
+  .han-values__card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px 24px;
+    height: 100%;
+    box-shadow: 0 4px 20px rgba(0,0,0,.06);
+    transition: transform .25s, box-shadow .25s;
+    border-top: 4px solid transparent;
+  }
+  .han-values__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 32px rgba(0,0,0,.1);
+    border-top-color: #ff7300;
+  }
+  .han-values__icon {
+    width: 60px;
+    height: 60px;
+    background: #fff5ec;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    font-size: 28px;
+    color: #ff7300;
+  }
+  .han-values__card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #0b1726;
+  }
+  .han-values__card p {
+    font-size: 14.5px;
+    color: #666;
+    line-height: 1.65;
+    margin: 0;
+  }
 
-    @@keyframes fadeInSlide {
-        from
+  /* ── PROCESS ── */
+  .han-process { padding: 70px 0; }
+  .han-process__step {
+    text-align: center;
+    position: relative;
+    padding: 0 16px;
+  }
+  .han-process__step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 28px;
+    right: -10%;
+    width: 20%;
+    height: 2px;
+    background: repeating-linear-gradient(90deg, #ff7300 0, #ff7300 6px, transparent 6px, transparent 12px);
+  }
+  .han-process__num {
+    width: 56px;
+    height: 56px;
+    background: #ff7300;
+    color: #fff;
+    font-weight: 800;
+    font-size: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    box-shadow: 0 4px 14px rgba(255,115,0,.35);
+  }
+  .han-process__step h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0b1726;
+    margin-bottom: 8px;
+  }
+  .han-process__step p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+  }
 
-    {
-        opacity: 0;
-        transform: translateY(-16px);
-    }
+  /* ── TEAM ── */
+  .han-team { background: #f8f9fc; padding: 70px 0; }
+  .han-team__card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,.07);
+    transition: transform .25s;
+    text-align: center;
+  }
+  .han-team__card:hover { transform: translateY(-4px); }
+  .han-team__photo {
+    position: relative;
+    overflow: hidden;
+    height: 220px;
+    background: #f0f0f0;
+  }
+  .han-team__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .han-team__body { padding: 20px 16px 24px; }
+  .han-team__name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0b1726;
+    margin-bottom: 4px;
+  }
+  .han-team__role {
+    font-size: 13px;
+    color: #ff7300;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    margin-bottom: 10px;
+  }
+  .han-team__desc {
+    font-size: 13.5px;
+    color: #666;
+    line-height: 1.55;
+    margin: 0;
+  }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  /* ── FLEET ── */
+  .han-fleet { padding: 70px 0; }
+  .han-fleet__card {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,.08);
+    height: 100%;
+  }
+  .han-fleet__img {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+  }
+  .han-fleet__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .han-fleet__body {
+    background: #fff;
+    padding: 20px 20px 24px;
+  }
+  .han-fleet__body h4 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #0b1726;
+    margin-bottom: 6px;
+  }
+  .han-fleet__body p {
+    font-size: 13.5px;
+    color: #666;
+    margin: 0;
+    line-height: 1.55;
+  }
 
-    }
+  /* ── TRUST ── */
+  .han-trust { background: #f8f9fc; padding: 60px 0; }
+  .han-trust__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.05);
+    height: 100%;
+  }
+  .han-trust__ico {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    background: #fff5ec;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #ff7300;
+  }
+  .han-trust__item h5 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0b1726;
+    margin: 0 0 4px;
+  }
+  .han-trust__item p {
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
+  }
 
-    .ranger-min-max-block {
-        display: flex;
-        align-items: center;
-        gap: 16px; /* Aradaki boşluk (dilersen artırabilirsin) */
-        margin-top: 10px; /* Kutunun üstüne de biraz boşluk bırakır */
-    }
+  /* ── SECTION TITLE ── */
+  .han-sec-title { text-align: center; margin-bottom: 48px; }
+  .han-sec-title .tag {
+    display: inline-block;
+    background: #fff5ec;
+    color: #ff7300;
+    font-weight: 700;
+    font-size: 12px;
+    border-radius: 20px;
+    padding: 5px 14px;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    margin-bottom: 12px;
+  }
+  .han-sec-title h2 {
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 800;
+    color: #0b1726;
+    margin-bottom: 12px;
+  }
+  .han-sec-title h2 span { color: #ff7300; }
+  .han-sec-title p {
+    font-size: 16px;
+    color: #666;
+    max-width: 560px;
+    margin: 0 auto;
+    line-height: 1.65;
+  }
 
-        .ranger-min-max-block input[type="text"].min,
-        .ranger-min-max-block input[type="text"].max {
-            width: 60px; /* Daha geniş kutular */
-            padding: 5px 8px;
-            font-size: 15px;
-            border-radius: 6px;
-            border: 1px solid #e1e4e8;
-            text-align: center;
-        }
+  /* ── CTA BAND ── */
+  .han-cta {
+    background: linear-gradient(135deg, #0b1726 0%, #1a2f4a 100%);
+    padding: 70px 0;
+    text-align: center;
+  }
+  .han-cta h2 {
+    color: #fff;
+    font-size: clamp(24px, 3.5vw, 36px);
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+  .han-cta p {
+    color: rgba(255,255,255,.75);
+    font-size: 16px;
+    margin-bottom: 32px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .han-cta__btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .han-cta__btn-primary {
+    background: #ff7300;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 8px;
+    padding: 14px 32px;
+    text-decoration: none;
+    transition: background .2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .han-cta__btn-primary:hover { background: #e06800; color: #fff; }
+  .han-cta__btn-secondary {
+    background: transparent;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    border: 2px solid rgba(255,255,255,.4);
+    border-radius: 8px;
+    padding: 14px 32px;
+    text-decoration: none;
+    transition: border-color .2s, background .2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .han-cta__btn-secondary:hover {
+    border-color: #ff7300;
+    background: rgba(255,115,0,.1);
+    color: #fff;
+  }
 
-        .ranger-min-max-block span {
-            font-size: 18px;
-            margin: 0 8px;
-            color: #333;
-        }
-
-    input[type="hidden"] {
-        display: none !important;
-    }
-
-    .ranger-min-max-block {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        margin-top: 10px;
-    }
-
-        .ranger-min-max-block input[type="text"].min,
-        .ranger-min-max-block input[type="text"].max {
-            width: 60px;
-            padding: 5px 8px;
-            font-size: 15px;
-            border-radius: 6px;
-            border: 1px solid #e1e4e8;
-            text-align: center;
-            background: #fff;
-        }
-
-        .ranger-min-max-block span {
-            font-size: 18px;
-            margin: 0 8px;
-            color: #333;
-        }
-
+  @@media (max-width: 767px) {
+    .han-process__step:not(:last-child)::after { display: none; }
+    .han-story { padding: 48px 0 40px; }
+  }
 </style>
 
-<!--Start Page Header-->
+<!-- ═══════════════ PAGE HEADER ═══════════════ -->
 <section class="page-header">
-    <div class="page-header__bg" style="background-image: url(/assets/images/gallery/hadimkoy_hakkimizda.png)">
+  <div class="page-header__bg" style="background-image:url(/assets/images/gallery/hadimkoy_hakkimizda.png)"></div>
+  <div class="container">
+    <div class="page-header__inner">
+      <h1 style="color:#fff;font-weight:800;">Hakkımızda</h1>
+      <ul class="thm-breadcrumb">
+        <li><a href="/Home/Index">Ana Sayfa</a></li>
+        <li><span class="icon-right-arrow21"></span></li>
+        <li><span>Hakkımızda</span></li>
+      </ul>
     </div>
-   
-    <div class="container">
-        <div class="page-header__inner">
-            <h1 style="color: white; font-weight: bold;">Hakkımızda</h1>
-            <ul class="thm-breadcrumb">
-                <li><a href="/Home/Index">Ana Sayfa</a></li>
-                <li><span class="icon-right-arrow21"></span></li>
-                <li>Hakkımızda</li>
-            </ul>
-        </div>
-    </div>
+  </div>
 </section>
-<!--End Page Header-->
-<!--Start About One-->
-<section class="about-one">
-    <div class="container">
-        <div class="row">
-            <!--Start About One Content-->
-            <div class="col-xl-7">
-                <div class="about-one__content">
-                    <div class="sec-title tg-heading-subheading animation-style2">
-                        <div class="sec-title__tagline">
-                            <div class="line"></div>
-                            <div class="text tg-element-title">
-                                <h4><strong>Hadımköy Ankara Nakliyat</strong></h4>
-                            </div>
-                            <div class="icon">
-                                <span class="icon-plane2 float-bob-x3"></span>
-                            </div>
-                        </div>
-                        <h2 class="sec-title__title tg-element-title">
-                            Bizleri Arayın <br>
-                            <span>
-                                7/24 Hizmet
-                                Verelim
-                            </span>
-                        </h2>
-                    </div>
 
-                    <div class="about-one__content-text1">
-                        <p>
-                            <strong>Güvenilir ve Uzman Taşımacılık</strong>
-                            Hadımköy Ankara Nakliyat, <a href="/istanbul-ankara-nakliyat">şehirlerarası nakliyat</a> sektöründe güvenilirliği ve uzmanlığı ile öne çıkan bir firmadır. Uzun yıllara dayanan tecrübemiz ve eğitimli kadromuz sayesinde müşterilerimize <strong>profesyonel ve sorunsuz taşımacılık</strong> çözümleri sunmaktayız. Güvenilir hizmet anlayışımız kapsamında eşyalarınızı <a href="/Home/sigortali_nakliyat_esyalarinizi_guvence_altina_alin">sigortalı şekilde taşıyor</a>, her adımda müşteri memnuniyetini ön planda tutuyoruz. Zamanında teslimat ilkemiz ve <strong>titiz çalışma</strong> prensibimizle taşınma sürecini sizin için stressiz hale getiriyoruz.
-                        </p>
-                        <p>
-                            <b>Kapsamlı Hizmet Yelpazesi</b> — Hadımköy Ankara Nakliyat olarak müşterilerimize geniş kapsamlı nakliye hizmetleri sunuyoruz:
-                        </p>
-
-                        <p> <a href="/Home/evden_eve_nakliyat"><b>Evden Eve Nakliyat:</b></a> Eşyalarınızı eski evinizden yenisine güvenle ve özenle taşıyoruz.
-                       </p>
-                        <p><a href="/Home/ofis_tasimaciligi"><b>Ofis Taşımacılığı:</b></a> Kurumsal taşınma ihtiyaçlarınızda planlı ve hızlı ofis taşıma desteği veriyoruz.
-                            </p>
-                        <p>
-                            <a href="/Home/fuar_tasimaciligi"><b>Fuar Taşımacılığı:</b></a> Fuar ve etkinlik malzemelerinizi zamanında, eksiksiz ve güvenli bir biçimde taşırız.
-                        </p>
-                        <p>
-                            <a href="/Home/ambar_nakliyat"><b>Ambar Nakliyat:</b></a> <a href="/Home/parsiyel_nakliyat">Parça yük ve ambar taşımacılığında</a> ekonomik, hızlı ve güvenli çözümler sağlıyoruz. Türkiye'nin pek çok noktasında aktifiz. Özellikle
-                            <a href="/istanbul-nakliyat">İstanbul</a>,
-                            <a href="/Home/istanbul_izmir_nakliyat">İzmir</a>,
-                            <a href="/Home/istanbul_bursa_nakliyat">Bursa</a>,
-                            <a href="/Home/istanbul_eskisehir_nakliyat">Eskişehir</a>,
-                            <a href="/Home/istanbul_antalya_nakliyat">Antalya</a>'dan
-                            <a href="/ankara-nakliyat">Ankara'ya şehirlerarası nakliyat</a> hizmeti sunarak geniş bir ulaşım ağı oluşturduk. Modern araç filomuz, teknolojik ekipmanlarımız ve 7/24 müşteri desteğimiz ile her aşamada yanınızdayız. <a href="/Home/fiyat_al">Ücretsiz teklif alın!</a>
-                        </p>
-
-                    </div>
-
-                    <div class="about-one__content-text2">
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-6 col-md-6">
-                                <div class="about-one__content-text2-single">
-                                    <div class="about-one__content-text2-single-top">
-                                        <div class="icon">
-                                            <span class="icon-worldwide-shipping-1"></span>
-                                        </div>
-
-                                        <div class="title-box">
-                                            <h3>Şehirlerarası Hizmet</h3>
-                                        </div>
-                                    </div>
-
-                                    <p>Türkiyenin 81 iline tizit ve profesyonel hizmetlerle.</p>
-                                </div>
-                            </div>
-
-                            <div class="col-xl-6 col-lg-6 col-md-6">
-                                <div class="about-one__content-text2-single">
-                                    <div class="about-one__content-text2-single-top">
-                                        <div class="icon">
-                                            <span class="icon-24-hours-service"></span>
-                                        </div>
-
-                                        <div class="title-box">
-                                            <h3>7/24 Online Destek</h3>
-                                        </div>
-                                    </div>
-
-                                    <p>Firmamız müşterilerine daima 7/24 ve her an ulaşılabilir hizmet vermekte.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="about-one__content-bottom">
-                        <div class="btn-box">
-                            <a class="thm-btn" href="/Home/iletisim">
-                                Bizlere Ulaşın
-                                <i class="icon-right-arrow21"></i>
-                                <span class="hover-btn hover-bx"></span>
-                                <span class="hover-btn hover-bx2"></span>
-                                <span class="hover-btn hover-bx3"></span>
-                                <span class="hover-btn hover-bx4"></span>
-                            </a>
-                        </div>
-
-                        <div class="contact-box">
-                            <div class="icon">
-                                <span class="icon-phone2"></span>
-                            </div>
-
-                            <div class="text-box">
-                                <p>Bizleri Arayın</p>
-                                <h4><a href="tel:+905344300360">+0534 430 03 60 </a></h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--End About One Content-->
-            <!--Start About One Img-->
-            <div class="col-xl-5">
-                <div class="about-one__img">
-                    <div class="shape1 float-bob-y">
-                        <img src="~/assets/images/shapes/about-v1-shape1.png"  alt="Hadımköy Ankara Nakliyat hakkimizda">
-                    </div>
-                    <div class="shape2 float-bob-y">
-                        <img src="~/assets/images/shapes/about-v1-shape2.png"  alt="Şehirlerarası Nakliyat fiyatları">
-                    </div>
-                    <div class="about-one__img1 reveal">
-                        <img src="~/assets/images/gallery/nakliyat_360x400.png" loading="lazy" alt="İstanbul Ankara Nakliyat Fiyatları">
-                    </div>
-
-                    <div class="about-one__img2">
-                        <div class="about-one__img2-inner reveal">
-                            <img src="~/assets/images/gallery/hadimkoy_ankara_nakliyat_koli_260x330.png" loading="lazy" alt="Hadımköy Ankara Nakliyat Şehirlerası Taşımacılık Fiyatları">
-                        </div>
-
-                        <div class="about-one__circle-text">
-                            <div class="about-one__round-text-box">
-                                <div class="inner">
-                                    <div class="about-one__curved-circle rotate-me">
-                                        2014 Yılından Bu Yana Dek Hizmetinizdeyiz
-                                    </div>
-                                </div>
-                                <div class="overlay-icon-box">
-                                    <a href="#"><i class="icon-location1"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="shape3 float-bob-y">
-                            <img src="~/assets/images/shapes/about-v1-shape3.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--End About One Img-->
+<!-- ═══════════════ STATS BAR ═══════════════ -->
+<section class="han-stats">
+  <div class="container">
+    <div class="row align-items-center text-center gy-4">
+      <div class="col-6 col-md-3">
+        <div class="han-stats__item">
+          <span class="han-stats__number">10+</span>
+          <span class="han-stats__label">Yıllık Deneyim</span>
         </div>
+      </div>
+      <div class="col-md-auto d-none d-md-block">
+        <div class="han-stats__divider" style="height:70px;"></div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="han-stats__item">
+          <span class="han-stats__number">5.000+</span>
+          <span class="han-stats__label">Tamamlanan Taşıma</span>
+        </div>
+      </div>
+      <div class="col-md-auto d-none d-md-block">
+        <div class="han-stats__divider" style="height:70px;"></div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="han-stats__item">
+          <span class="han-stats__number">81</span>
+          <span class="han-stats__label">İle Hizmet</span>
+        </div>
+      </div>
+      <div class="col-md-auto d-none d-md-block">
+        <div class="han-stats__divider" style="height:70px;"></div>
+      </div>
+      <div class="col-6 col-md-2">
+        <div class="han-stats__item">
+          <span class="han-stats__number">7/24</span>
+          <span class="han-stats__label">Müşteri Desteği</span>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
-<!--End About One-->
-<script>
-    $(function() {
-        // SLIDER’I BAŞLAT
-        $("#slider-range").slider({
-            range: true,
-            min: 0,
-            max: 1000,
-            values: [100, 500],
-            slide: function(event, ui) {
-                // Burada formda hidden input’a ve min-max kutularına değer atıyoruz
-                $("#agirlikDegeri").val(ui.values[0] + "-" + ui.values[1]);
-                $(".min").val(ui.values[0]);
-                $(".max").val(ui.values[1]);
-            }
-        });
-        // Sayfa açıldığında default değerleri ata
-        $(".min").val($("#slider-range").slider("values", 0));
-        $(".max").val($("#slider-range").slider("values", 1));
-        $("#agirlikDegeri").val($("#slider-range").slider("values", 0) + "-" + $("#slider-range").slider("values", 1));
-    });
-</script>
+
+<!-- ═══════════════ HİKAYEMİZ ═══════════════ -->
+<section class="han-story">
+  <div class="container">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-6 order-lg-2">
+        <div class="han-story__img-wrap">
+          <!-- GÖRSEL 1: wwwroot/assets/images/hakkimizda/hikaye.jpg -->
+          <img src="/assets/images/gallery/nakliyat_360x400.png"
+               alt="Hadımköy Ankara Nakliyat ekibi ve araçları"
+               width="600" height="450" loading="lazy" />
+          <div class="han-story__year-badge">2014'ten<br>Bu Yana</div>
+        </div>
+      </div>
+      <div class="col-lg-6 order-lg-1">
+        <div class="han-story__badge">
+          <span class="icon-plane2"></span>
+          Hadımköy Ankara Nakliyat
+        </div>
+        <h2 class="han-story__title">
+          İstanbul–Ankara Hattında<br><span>10 Yılı Aşkın Deneyim</span>
+        </h2>
+        <div class="han-story__text">
+          <p>
+            Hadımköy Ankara Nakliyat; 2014 yılında İstanbul'un lojistik merkezi Hadımköy'de, <strong>şehirlerarası nakliyat</strong> alanında uzmanlaşmış bir firma olarak yola çıktı. Kuruluşumuzdan bu yana tek bir hedefle çalışıyoruz: eşyalarınızı sağlam, hızlı ve şeffaf bir süreçle yeni adresinize ulaştırmak.
+          </p>
+          <p>
+            Yaklaşık <strong>450 km'lik İstanbul–Ankara güzergâhı</strong>nda her gün binlerce hane ve işletme taşınır. Bu yoğun trafiği yönetmek; planlama, ekip uzmanlığı, araç kalitesi ve müşteri iletişimi açısından ciddi bir altyapı gerektirir. Biz bu altyapıyı on yılda inşa ettik.
+          </p>
+          <p>
+            Bugün <strong>5.000'den fazla başarılı taşıma</strong> arkasında, deneyimli ekibimiz ve modern araç filomuzla İstanbul'un 39 ilçesinden Ankara'ya düzenli sefer düzenliyoruz. Evden eve, parsiyel, ofis, fuar ve ambar taşımacılığında sunduğumuz <strong>sigortalı ve şeffaf fiyat garantili</strong> hizmet anlayışımız, bizi sektörde öne çıkaran en önemli unsurdur.
+          </p>
+          <p>
+            Taşınmak stresli bir süreçtir. Biz bu stresi ortadan kaldırmak için varız.
+          </p>
+        </div>
+        <div class="mt-4">
+          <a class="thm-btn" href="tel:+905344300360">
+            <span class="icon-phone2" style="margin-right:8px;"></span>
+            Hemen Ara: +90 534 430 03 60
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ DEĞERLERİMİZ ═══════════════ -->
+<section class="han-values">
+  <div class="container">
+    <div class="han-sec-title">
+      <span class="tag">Neden Bizi Seçmelisiniz?</span>
+      <h2>Farkımızı Yaratan <span>4 Temel İlke</span></h2>
+      <p>Her taşıma sürecinde bu dört ilkeyi ön planda tutarak hareket ediyoruz.</p>
+    </div>
+    <div class="row gy-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="han-values__card">
+          <div class="han-values__icon">
+            <span class="icon-insurance"></span>
+          </div>
+          <h3>Sigortalı Taşıma</h3>
+          <p>Tüm eşyalarınız nakliyat sigortası kapsamındadır. Poliçe detayları sözleşmede açıkça belirtilir; sürpriz yoktur.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="han-values__card">
+          <div class="han-values__icon">
+            <span class="icon-price-tag"></span>
+          </div>
+          <h3>Şeffaf Fiyat</h3>
+          <p>Teklif aşamasında verilen fiyat sabittir. Taşıma günü ek ücret veya sürpriz masraf çıkmaz; her kalem sözleşmede yazar.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="han-values__card">
+          <div class="han-values__icon">
+            <span class="icon-24-hours-service"></span>
+          </div>
+          <h3>7/24 İletişim</h3>
+          <p>Taşıma öncesi, sırası ve sonrasında her sorunuz için 7 gün 24 saat telefon ve WhatsApp üzerinden ulaşabilirsiniz.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="han-values__card">
+          <div class="han-values__icon">
+            <span class="icon-fast-delivery"></span>
+          </div>
+          <h3>Zamanında Teslimat</h3>
+          <p>İstanbul–Ankara hattında günlük seferlerimizle eşyalarınız kararlaştırılan tarih ve saatte teslim edilir.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ÇALIŞMA SÜRECİ ═══════════════ -->
+<section class="han-process">
+  <div class="container">
+    <div class="han-sec-title">
+      <span class="tag">Nasıl Çalışıyoruz?</span>
+      <h2>Taşınma Süreciniz <span>4 Adımda</span></h2>
+      <p>İlk aramadan teslimata kadar her adımı şeffaf ve planlı yönetiyoruz.</p>
+    </div>
+    <div class="row gy-5">
+      <div class="col-6 col-lg-3">
+        <div class="han-process__step">
+          <div class="han-process__num">1</div>
+          <h4>Ücretsiz Keşif</h4>
+          <p>Eşya listesi, kat-asansör durumu ve rota detayları belirlenir; şeffaf teklif hazırlanır.</p>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="han-process__step">
+          <div class="han-process__num">2</div>
+          <h4>Planlama ve Sözleşme</h4>
+          <p>Tarih, saat, sigorta ve ödeme bilgileri yazılı sözleşmeye girer. Tüm koşullar netleşir.</p>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="han-process__step">
+          <div class="han-process__num">3</div>
+          <h4>Paketleme ve Yükleme</h4>
+          <p>Eşyalar malzemesiyle paketlenir, demonte edilir ve titreşim minimumda tutularak araca yüklenir.</p>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="han-process__step">
+          <div class="han-process__num">4</div>
+          <h4>Teslimat ve Yerleşim</h4>
+          <p>Varış adresinde boşaltma, montaj ve oda bazlı yerleşim tamamlanır. İmzalı teslim tutanağı düzenlenir.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ EKİBİMİZ ═══════════════ -->
+<section class="han-team">
+  <div class="container">
+    <div class="han-sec-title">
+      <span class="tag">Ekibimiz</span>
+      <h2>Taşınmanızın Arkasındaki <span>Profesyonel Kadro</span></h2>
+      <p>Her biri alanında uzmanlaşmış, deneyimli çalışanlarımız taşıma sürecinizin her aşamasında yanınızdadır.</p>
+    </div>
+    <div class="row gy-4">
+
+      <!-- Ekip Üyesi 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="han-team__card">
+          <div class="han-team__photo">
+            <!-- GÖRSEL: wwwroot/assets/images/hakkimizda/ekip-genel-mudur.jpg -->
+            <img src="/assets/images/gallery/ekip-genel-mudur.jpg"
+                 alt="Komple ev taşıma TIR aracı - Hadımköy Ankara Nakliyat"
+                 width="400" height="220" loading="lazy"
+                 style="width:100%;height:220px;object-fit:cover;display:block;">
+          </div>
+          <div class="han-team__body">
+            <div class="han-team__name">Operasyon Müdürü</div>
+            <div class="han-team__role">Yönetim &amp; Operasyon</div>
+            <p class="han-team__desc">10 yılı aşkın nakliyat sektörü deneyimiyle tüm İstanbul–Ankara seferlerini koordine eder.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ekip Üyesi 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="han-team__card">
+          <div class="han-team__photo">
+            <!-- GÖRSEL: wwwroot/assets/images/hakkimizda/ekip-saha-sorumlusu.jpg -->
+           <img src="/assets/images/gallery/ekip-saha-sorumlusu.jpg"
+                 alt="Komple ev taşıma TIR aracı - Hadımköy Ankara Nakliyat"
+                 width="400" height="220" loading="lazy"
+                 style="width:100%;height:220px;object-fit:cover;display:block;">
+          </div>
+          <div class="han-team__body">
+            <div class="han-team__name">Saha Operasyon Sorumlusu</div>
+            <div class="han-team__role">Paketleme &amp; Taşıma</div>
+            <p class="han-team__desc">Paketleme, yükleme ve boşaltma süreçlerini yerinde yöneterek eşya güvenliğini sağlar.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ekip Üyesi 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="han-team__card">
+          <div class="han-team__photo">
+            <img src="/assets/images/gallery/ekip-musteri-temsilcisi.jpg"
+                 alt="Müşteri İlişkileri Temsilcisi - Hadımköy Ankara Nakliyat"
+                 width="400" height="220" loading="lazy"
+                 style="width:100%;height:220px;object-fit:cover;display:block;">
+          </div>
+          <div class="han-team__body">
+            <div class="han-team__name">Müşteri İlişkileri</div>
+            <div class="han-team__role">Teklif &amp; Destek</div>
+            <p class="han-team__desc">Taşıma öncesinden teslimata kadar müşterilerle sürekli iletişimde kalır, tüm soruları yanıtlar.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ARAÇ FİLOMUZ ═══════════════ -->
+<section class="han-fleet">
+  <div class="container">
+    <div class="han-sec-title">
+      <span class="tag">Araç Filomuz</span>
+      <h2>Modern ve <span>Bakımlı Araçlar</span></h2>
+      <p>Eşyalarınız, düzenli bakımı yapılan, koruyucu donanımlı araçlarımızla taşınır.</p>
+    </div>
+    <div class="row gy-4">
+
+      <div class="col-md-6 col-lg-4">
+        <div class="han-fleet__card">
+          <div class="han-fleet__img">
+            <!-- GÖRSEL: wwwroot/assets/images/hakkimizda/filo-tir.jpg -->
+            <img src="/assets/images/gallery/filo-tir.jpeg"
+                 alt="Komple ev taşıma TIR aracı - Hadımköy Ankara Nakliyat"
+                 width="400" height="220" loading="lazy"
+                 style="width:100%;height:220px;object-fit:cover;display:block;">
+          </div>
+          <div class="han-fleet__body">
+            <h4>Komple Ev Taşıma Araçları</h4>
+            <p>3+1 ve üzeri daireler için kapalı kasa TIR ve büyük kamyonlar. Komple ev ve ofis taşımalarında kullanılır.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="han-fleet__card">
+          <div class="han-fleet__img">
+            <!-- GÖRSEL: wwwroot/assets/images/hakkimizda/filo-kamyon.jpg -->
+            <img src="/assets/images/gallery/filo-kamyon.jpg"
+                 alt="Orta ölçekli taşıma kamyonu - Hadımköy Ankara Nakliyat"
+                 width="400" height="220" loading="lazy"
+                 style="width:100%;height:220px;object-fit:cover;display:block;">
+          </div>
+          <div class="han-fleet__body">
+            <h4>Orta Ölçekli Taşıma Araçları</h4>
+            <p>1+1 ve 2+1 daireler, küçük ofisler ve parsiyel yükler için ideal kamyon ve tenteli araçlar.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="han-fleet__card">
+          <div class="han-fleet__img">
+            <!-- GÖRSEL: wwwroot/assets/images/hakkimizda/filo-kamyonet.jpg -->
+            <img src="/assets/images/gallery/filo-kamyonet.jpg"
+                 alt="Ekspres kamyonet - Hadımköy Ankara Nakliyat"
+                 width="400" height="220" loading="lazy"
+                 style="width:100%;height:220px;object-fit:cover;display:block;">
+          </div>
+          <div class="han-fleet__body">
+            <h4>Kamyonet ve Ekspres Araçlar</h4>
+            <p>Tek parça eşya, küçük hacimli ve acil gönderiler için esnek kamyonet filosu.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ GÜVEN SİNYALLERİ ═══════════════ -->
+<section class="han-trust">
+  <div class="container">
+    <div class="han-sec-title">
+      <span class="tag">Güven ve Şeffaflık</span>
+      <h2>Neden <span>Güvenle Tercih Ediliyoruz?</span></h2>
+    </div>
+    <div class="row gy-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="han-trust__item">
+          <div class="han-trust__ico"><span class="icon-insurance"></span></div>
+          <div>
+            <h5>Nakliyat Sigortası</h5>
+            <p>Her taşımada zorunlu nakliyat sigortası uygulanır. Hasar durumunda sigorta şirketi devreye girer.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="han-trust__item">
+          <div class="han-trust__ico"><span class="icon-agreement"></span></div>
+          <div>
+            <h5>Yazılı Sözleşme</h5>
+            <p>Her taşıma için imzalı sözleşme düzenlenir. Fiyat, tarih, kapsam ve sigorta bilgileri kayıt altına alınır.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="han-trust__item">
+          <div class="han-trust__ico"><span class="icon-star"></span></div>
+          <div>
+            <h5>Müşteri Yorumları</h5>
+            <p>Google ve platform yorumlarında yüksek memnuniyet oranı. Gerçek müşteri deneyimlerini inceleyin.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="han-trust__item">
+          <div class="han-trust__ico"><span class="icon-worker"></span></div>
+          <div>
+            <h5>Eğitimli Personel</h5>
+            <p>Ekibimiz paketleme, yükleme ve montaj konularında düzenli eğitimden geçmektedir.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="han-trust__item">
+          <div class="han-trust__ico"><span class="icon-tracking"></span></div>
+          <div>
+            <h5>Anlık Bilgilendirme</h5>
+            <p>Taşıma sürecinde aracın konumu ve tahmini varış saati müşteriye bildirilir.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="han-trust__item">
+          <div class="han-trust__ico"><span class="icon-recycle"></span></div>
+          <div>
+            <h5>Çevre Dostu Ambalaj</h5>
+            <p>Geri dönüştürülebilir ambalaj malzemeleri tercih ediliyor. Kullanılan malzeme miktarı minimize ediliyor.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CTA SON ═══════════════ -->
+<section class="han-cta">
+  <div class="container">
+    <h2>Taşınma Planınız Hazır mı?</h2>
+    <p>Ücretsiz keşif ve net fiyat teklifi için hemen arayın veya WhatsApp'tan yazın.</p>
+    <div class="han-cta__btns">
+      <a href="tel:+905344300360" class="han-cta__btn-primary">
+        <span class="icon-phone2"></span>
+        +90 534 430 03 60
+      </a>
+      <a href="https://wa.me/905344300360" target="_blank" rel="noopener" class="han-cta__btn-secondary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.119.553 4.105 1.523 5.82L0 24l6.32-1.497A11.96 11.96 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.795 9.795 0 01-5.003-1.372l-.36-.213-3.75.888.936-3.632-.234-.374A9.762 9.762 0 012.182 12C2.182 6.579 6.579 2.182 12 2.182S21.818 6.579 21.818 12 17.421 21.818 12 21.818z"/></svg>
+        WhatsApp'tan Yaz
+      </a>
+      <a href="/Home/musteriyorumlari" class="han-cta__btn-secondary">
+        <span class="icon-star"></span>
+        Müşteri Yorumlarını Gör
+      </a>
+    </div>
+  </div>
+</section>

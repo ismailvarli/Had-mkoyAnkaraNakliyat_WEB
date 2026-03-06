@@ -1,0 +1,213 @@
+@{
+    ViewData["Title"] = "Eşya Paketleme Teknikleri: Hasarsız Taşıma İçin Profesyonel İpuçları";
+    ViewData["Description"] = "Eşyalarınızı taşınmadan önce nasıl paketeleyeceğinizi öğrenin. Kırılgan eşyalar, mobilyalar, elektronikler ve değerli eşyalar için profesyonel paketleme teknikleri.";
+}
+@{
+    var faqJson = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        { ""@type"": ""Question"", ""name"": ""Kırılgan eşyalar nasıl paketlenir?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Her parça ayrı ayrı balonlu naylon ile sarılır, kutunun alt ve yanlarına köpük veya gazete konur, parçalar birbirine değmeyecek şekilde yerleştirilir. Kutu 'KIRILGAN' olarak etiketlenir ve dik taşınır."" } },
+        { ""@type"": ""Question"", ""name"": ""Elektronik eşyalar nasıl paketlenir?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Mümkünse orijinal kutusu kullanılır. Değilse, anti-statik balonlu naylon veya özel elektronik köpükle sarılır. Kablolar ayrı torbalara konur ve etiketlenir."" } },
+        { ""@type"": ""Question"", ""name"": ""Paketleme malzemeleri nereden alınır?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Balonlu naylon, kraft kağıt ve hareketli kutular büyük marketlerden, kargo firmalarından veya nakliyat firmalarından temin edilebilir. Profesyonel nakliyat firmamız tüm paketleme malzemelerini sağlar."" } },
+        { ""@type"": ""Question"", ""name"": ""Mobilyalar nasıl paketlenir?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Mobilyalar taşıma öncesinde battaniye veya streç film ile sarılır. Köşe koruyucular köşelere yerleştirilir. Cam paneller ayrı korunur, çekmecelerin içleri boşaltılır."" } }
+      ]
+    }";
+}
+<script type="application/ld+json">@Html.Raw(faqJson)</script>
+
+<style>
+    .page-wrap { max-width:1200px;margin:0 auto;padding:24px;display:grid;gap:24px;grid-template-columns:280px 1fr }
+    @@media(max-width:992px){ .page-wrap{ grid-template-columns:1fr } }
+    .side{ background:#0f172a;border-radius:14px;padding:18px }
+    .side h3{ color:#fff;font-size:18px;margin:0 0 12px;font-weight:800 }
+    .svc-list{ display:flex;flex-direction:column;gap:8px }
+    .svc-item{ display:flex;align-items:center;justify-content:space-between;background:#172036;color:#e2e8f0;padding:9px 12px;border-radius:10px;text-decoration:none;border:1px solid #23314f;font-size:13px }
+    .svc-item:hover{ background:#1f2a44 }
+    .svc-item .arrow{ background:#f97316;color:#fff;border-radius:8px;padding:3px 7px;font-weight:700;flex-shrink:0;margin-left:8px }
+    .content h1{ font-size:28px;font-weight:900;margin-bottom:12px;color:#0f172a }
+    .blog-meta{ font-size:14px;color:#64748b;margin-bottom:14px }
+    .blog-body p{ color:#334155;line-height:1.7;margin-bottom:16px }
+    .blog-body h2{ margin:28px 0 10px;color:#0f172a;font-size:22px;border-left:4px solid #f97316;padding-left:12px }
+    .blog-body h3{ margin:16px 0 8px;color:#1e293b;font-size:18px }
+    .blog-body ul,.blog-body ol{ margin:0 0 16px 20px }
+    .blog-body li{ margin-bottom:8px;color:#334155;line-height:1.6 }
+    .note{ background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;color:#334155;margin:14px 0 18px }
+    .warn-box{ background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 16px;border-radius:0 10px 10px 0;margin:14px 0 18px;color:#92400e }
+    .good-box{ background:#ecfdf5;border-left:4px solid #10b981;padding:14px 16px;border-radius:0 10px 10px 0;margin:14px 0 18px;color:#065f46 }
+    .mat-card{ background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:16px 18px;margin-bottom:12px;display:flex;gap:12px;align-items:flex-start;box-shadow:0 2px 6px rgba(0,0,0,.04) }
+    .mat-icon{ font-size:28px;flex-shrink:0 }
+    .cta-box{ background:#f97316;color:#fff;padding:24px;border-radius:12px;margin-top:32px;text-align:center }
+    .cta-box h3{ margin:0 0 8px;font-size:20px }
+    .cta-box p{ margin:0 0 14px;opacity:.9 }
+    .cta-box a{ display:inline-block;padding:11px 20px;background:#fff;color:#f97316;font-weight:700;border-radius:8px;text-decoration:none;margin:4px }
+</style>
+
+<div class="page-wrap">
+    <aside class="side">
+        <h3>Blog Yazılarımız</h3>
+        <nav class="svc-list">
+            <a class="svc-item" href="/Home/ofis_tasima_rehberi_2026"><span>Ofis Taşıma Rehberi 2026</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/esya_paketleme_teknikleri"><span>Eşya Paketleme Teknikleri</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/nakliyat_sozlesmesi_nedir"><span>Nakliyat Sözleşmesi Nedir?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/ankaraya_tasinmak_rehberi"><span>Ankara'ya Taşınmak Rehberi</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/tasinma_maliyetleri_nasil_dusurulur"><span>Taşınma Maliyeti Nasıl Düşer?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/nakliyat_firmasi_nasil_secilir_7_kritik_soru"><span>Nakliyat Firması Nasıl Seçilir?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/tasinirken_yapilan_10_hata"><span>Taşınırken Yapılan 10 Hata</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/nakliyat_dolandiriciligi"><span>Nakliyat Dolandırıcılığı</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/tasinma_gunu_kontrol_listesi"><span>Taşınma Günü Kontrol Listesi</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/blog"><span>Tüm Blog Yazıları →</span><span class="arrow">☰</span></a>
+        </nav>
+    </aside>
+
+    <div class="content">
+        <h1>Eşya Paketleme Teknikleri: Hasarsız Taşıma İçin Profesyonel İpuçları</h1>
+        <p class="blog-meta">📅 Mart 2026 &nbsp;|&nbsp; ⏱ 7 dk okuma &nbsp;|&nbsp; 🏷 Paketleme</p>
+
+        <div class="blog-body">
+            <p>
+                Taşınma sürecinde eşyaların hasar görmesinin en büyük nedeni yetersiz veya
+                yanlış paketlemedir. <strong>Profesyonel eşya paketleme</strong> teknikleriyle
+                kırılgan eşyalarınızı, elektroniklerinizi ve değerli eşyalarınızı hasarsız
+                taşıyabilirsiniz. Bu rehberde nakliyat ekiplerimizin yıllarca kullandığı
+                paketleme yöntemlerini paylaşıyoruz.
+            </p>
+
+            <h2>Paketleme Malzemeleri: Neyi, Nerede Kullanırsınız?</h2>
+
+            <div class="mat-card">
+                <span class="mat-icon">🔵</span>
+                <div>
+                    <h3>Balonlu Naylon (Bubble Wrap)</h3>
+                    <p>Kırılgan eşyalar, elektronikler ve camlar için idealdir. Küçük kabarcıklı
+                    versiyon ince camlar için, büyük kabarcıklı versiyon ağır elektronikler için
+                    kullanılır. Eşyanın üzerine saatlı yönde sarılmalıdır.</p>
+                </div>
+            </div>
+
+            <div class="mat-card">
+                <span class="mat-icon">📦</span>
+                <div>
+                    <h3>Kraft Kağıt (Ambalaj Kağıdı)</h3>
+                    <p>Porselen, cam bardak ve dekoratif eşyalar için balonlu naylondan önce
+                    ek koruma katmanı sağlar. Mürekkep içermediğinden eşyayı kirletmez.
+                    Gazete mürekkebi bırakabileceğinden önerilmez.</p>
+                </div>
+            </div>
+
+            <div class="mat-card">
+                <span class="mat-icon">🛡️</span>
+                <div>
+                    <h3>Köşe Koruyucuları</h3>
+                    <p>Mobilya köşeleri için vazgeçilmezdir. Streçle birlikte kullanılır.
+                    Özellikle lake mobilyalarda ve yüksek parlak yüzeylerde çizilme riskini
+                    sıfıra indirir.</p>
+                </div>
+            </div>
+
+            <div class="mat-card">
+                <span class="mat-icon">🔵</span>
+                <div>
+                    <h3>Streç Film</h3>
+                    <p>Mobilya, çekmece ve raf sistemlerini sarmak için kullanılır. Kapıların
+                    açılmasını engeller, yüzeyleri toz ve çizikten korur. Aynı zamanda
+                    battaniyeleri mobilyaya sabitlemek için de kullanılır.</p>
+                </div>
+            </div>
+
+            <div class="mat-card">
+                <span class="mat-icon">🛏️</span>
+                <div>
+                    <h3>Taşıma Battaniyeleri</h3>
+                    <p>Büyük mobilyalar — kanepe, yatak, dolap — için en iyi koruma battaniyedir.
+                    Yüzeyi tamamen kapsar, hem darbelere hem çiziklere karşı korur. Profesyonel
+                    nakliyat firmamız kendi battaniyelerini sağlar.</p>
+                </div>
+            </div>
+
+            <h2>Kırılgan Eşyalar Nasıl Paketlenir?</h2>
+            <p>
+                Porselen, cam ve seramik eşyalar en fazla dikkat gerektiren kategoridedir.
+                Doğru paketleme adımları:
+            </p>
+            <ol>
+                <li>Her parçayı ayrı ayrı kraft kağıtla sarın.</li>
+                <li>Üzerine balonlu naylon katmanı ekleyin ve bantla sabitileyin.</li>
+                <li>Kutunun tabanına 5 cm kalınlığında köpük veya balonlu naylon katmanı koyun.</li>
+                <li>Ağır parçaları alta, hafif parçaları üste yerleştirin.</li>
+                <li>Parçaların aralarına kağıt veya köpük doldurun — hiçbir şey oynamasın.</li>
+                <li>Kutu kapağını kapatın ve "KIRILGAN — DİK TAŞI" etiketi yapıştırın.</li>
+            </ol>
+            <div class="warn-box">
+                ⚠️ <strong>Yaygın Hata:</strong> Bardakları tabakların üzerine koymak.
+                Ağır eşyalar her zaman en alta yerleştirilmeli, hafif ve kırılgan eşyalar
+                üstte olmalıdır.
+            </div>
+
+            <h2>Elektronik Eşyalar Nasıl Paketlenir?</h2>
+            <p>
+                Bilgisayar, TV, ses sistemi ve beyaz eşyalar için paketleme kritik öneme sahiptir.
+            </p>
+            <ul>
+                <li><strong>Televizyon:</strong> Orijinal kutusuna koyun. Yoksa ekranı koruyucu
+                film ile kaplayın, köşelere köpük koruyucu takın ve battaniyeyle sarın. Dik taşıyın.</li>
+                <li><strong>Bilgisayar kasası:</strong> Güç kablosunu çıkarın, balonlu naylon ile
+                sarın. Taşıma sırasında sabit disk kafesinin sallanmaması için köpükle destekleyin.</li>
+                <li><strong>Laptop:</strong> Şarj aleti ve aksesuarlarla birlikte aynı çantaya koyun.
+                Kutuya yerleştirirken üzerine ağır eşya koymayın.</li>
+                <li><strong>Beyaz eşya:</strong> Buzdolabı ve çamaşır makinesi taşımadan 24 saat
+                önce kapatılmalıdır. İçindeki suyun tamamen çıkması sağlanmalıdır.</li>
+            </ul>
+            <div class="good-box">
+                ✅ <strong>Uzman İpucu:</strong> Tüm kabloları bantlı torbalara koyun ve her
+                torbaya hangi cihaza ait olduğunu yazın. Kurulum sırasında çok zaman kazandırır.
+            </div>
+
+            <h2>Mobilyalar Nasıl Paketlenir?</h2>
+            <p>Büyük mobilyalar için paketleme süreci şöyle işler:</p>
+            <ul>
+                <li><strong>Kanepe ve koltuklar:</strong> Streç filmle tamamen sarılır. Lake veya
+                deri yüzeylerde önce pamuklu battaniye, üzerine streç sarılır.</li>
+                <li><strong>Dolap ve raflar:</strong> Kapılar bantla sabitlenir, çekmeceler
+                boşaltılır veya streçle kapatılır. Cam kapaklar sökülerek ayrı taşınır.</li>
+                <li><strong>Yatak:</strong> Özel yatak torbası veya büyük naylon poşetle kaplanır.
+                Baza ve yatak ayrı ayrı sarılır.</li>
+                <li><strong>Ahşap mobilyalar:</strong> Köşe ve kenarlara köşe koruyucu takılır,
+                ardından battaniye ile sarılır.</li>
+            </ul>
+
+            <h2>Kutu Paketleme İpuçları</h2>
+            <ul>
+                <li>Kutulara sadece benzer ağırlıktaki eşyaları koyun. Çok ağır kutular taşımayı zorlaştırır.</li>
+                <li>Her kutunun üzerine içindekiler ve götürüleceği oda yazın: "MUTFAK – TENCERELER"</li>
+                <li>Kutu tabanını en az 2 kat bantla güçlendirin — taban açılması en yaygın hasardır.</li>
+                <li>Kutunun içinde boşluk bırakmayın; boşlukları kağıt veya köpük ile doldurun.</li>
+                <li>Değerli evrakları (pasaport, tapu, sigorta poliçesi) asla nakliyat kutusuna koymayın; yanınızda taşıyın.</li>
+            </ul>
+
+            <h2>Profesyonel Paketleme mi, Kendiniz mi?</h2>
+            <p>
+                Paketlemeyi kendiniz yapmanız maliyet tasarrufu sağlasa da zaman ve fiziksel güç
+                gerektirir. Profesyonel paketleme hizmetinin avantajları:
+            </p>
+            <ul>
+                <li>Deneyimli ekip, kırılgan eşyaları doğru teknikle paketler.</li>
+                <li>Sigorta kapsamı — hasar durumunda sorumluluk nakliyat firmasındadır.</li>
+                <li>Zaman kazancı — 3 odalı bir evin paketlemesi profesyonellere 4-5 saattir, kendinize 2-3 gün olabilir.</li>
+                <li>Doğru malzeme kullanımı — paketleme maliyeti nakliyat ücretine dahil edilir.</li>
+            </ul>
+            <p>
+                Hadımköy Ankara Nakliyat olarak <a href="/home/evden_eve_nakliyat">evden eve nakliyat</a>
+                hizmetimizde profesyonel paketleme dahil seçeneği sunuyoruz. Eşyalarınızın hasarsız
+                taşınması için sigorta ve yazılı sözleşme güvencemiz mevcuttur.
+            </p>
+
+            <div class="cta-box">
+                <h3>Profesyonel Paketleme Dahil Nakliyat</h3>
+                <p>Ücretsiz keşif sonrası yazılı fiyat teklifi.</p>
+                <a href="tel:+905344300360">📞 0534 430 03 60</a>
+                <a href="https://wa.me/905344300360">💬 WhatsApp</a>
+            </div>
+        </div>
+    </div>
+</div>

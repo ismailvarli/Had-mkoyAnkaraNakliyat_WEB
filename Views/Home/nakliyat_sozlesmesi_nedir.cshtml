@@ -1,0 +1,208 @@
+@{
+    ViewData["Title"] = "Nakliyat Sözleşmesi Nedir? Sözleşmede Olması Gereken 8 Madde";
+    ViewData["Description"] = "Nakliyat sözleşmesi neden önemlidir, neleri kapsamalıdır? Taşınmadan önce imzalamanız gereken nakliyat sözleşmesinde dikkat etmeniz gereken 8 kritik madde.";
+}
+@{
+    var faqJson = @"{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        { ""@type"": ""Question"", ""name"": ""Nakliyat sözleşmesi zorunlu mu?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Yasal zorunluluk olmasa da profesyonel nakliyat firmalarının tamamı sözleşme düzenler. Sözleşmesiz firmalarla çalışmak hukuki güvenceden yoksun kalmak anlamına gelir; taşıma günü fiyat artışına ya da hasar tazminine itiraz edemezsiniz."" } },
+        { ""@type"": ""Question"", ""name"": ""Nakliyat sözleşmesinde fiyat değişebilir mi?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Yazılı sözleşmede belirtilen fiyat sabit olmalıdır. Sözleşme olmadan yapılan anlaşmalarda firmalar taşıma günü fiyat artışı yapabilmektedir. Sözleşmede 'ek ücret alınmayacağına dair' madde mutlaka yer almalıdır."" } },
+        { ""@type"": ""Question"", ""name"": ""Nakliyat sözleşmesinde sigorta nasıl belirtilmeli?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Sözleşmede nakliyat sigortasının kapsamı, poliçe numarası veya sigorta şirketi adı, hasar başvuru süresi ve tazminat prosedürü açıkça yazılmalıdır. Sadece 'sigortalıdır' ifadesi yeterli değildir."" } },
+        { ""@type"": ""Question"", ""name"": ""Nakliyat sözleşmesini kim hazırlar?"", ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Sözleşmeyi nakliyat firması hazırlar ve her iki tarafça imzalanır. İki nüsha düzenlenmeli; bir nüsha müşteride, bir nüsha firmada kalmalıdır. Dijital imzalı e-sözleşmeler de geçerlidir."" } }
+      ]
+    }";
+}
+<script type="application/ld+json">@Html.Raw(faqJson)</script>
+
+<style>
+    .page-wrap { max-width:1200px;margin:0 auto;padding:24px;display:grid;gap:24px;grid-template-columns:280px 1fr }
+    @@media(max-width:992px){ .page-wrap{ grid-template-columns:1fr } }
+    .side{ background:#0f172a;border-radius:14px;padding:18px }
+    .side h3{ color:#fff;font-size:18px;margin:0 0 12px;font-weight:800 }
+    .svc-list{ display:flex;flex-direction:column;gap:8px }
+    .svc-item{ display:flex;align-items:center;justify-content:space-between;background:#172036;color:#e2e8f0;padding:9px 12px;border-radius:10px;text-decoration:none;border:1px solid #23314f;font-size:13px }
+    .svc-item:hover{ background:#1f2a44 }
+    .svc-item .arrow{ background:#f97316;color:#fff;border-radius:8px;padding:3px 7px;font-weight:700;flex-shrink:0;margin-left:8px }
+    .content h1{ font-size:28px;font-weight:900;margin-bottom:12px;color:#0f172a }
+    .blog-meta{ font-size:14px;color:#64748b;margin-bottom:14px }
+    .blog-body p{ color:#334155;line-height:1.7;margin-bottom:16px }
+    .blog-body h2{ margin:28px 0 10px;color:#0f172a;font-size:22px;border-left:4px solid #f97316;padding-left:12px }
+    .blog-body h3{ margin:16px 0 8px;color:#1e293b;font-size:18px }
+    .blog-body ul,.blog-body ol{ margin:0 0 16px 20px }
+    .blog-body li{ margin-bottom:8px;color:#334155;line-height:1.6 }
+    .note{ background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;color:#334155;margin:14px 0 18px }
+    .warn-box{ background:#fef3c7;border-left:4px solid #f59e0b;padding:14px 16px;border-radius:0 10px 10px 0;margin:14px 0 18px;color:#92400e }
+    .good-box{ background:#ecfdf5;border-left:4px solid #10b981;padding:14px 16px;border-radius:0 10px 10px 0;margin:14px 0 18px;color:#065f46 }
+    .madde-card{ background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:14px;box-shadow:0 2px 6px rgba(0,0,0,.04) }
+    .madde-no{ display:inline-block;background:#f97316;color:#fff;border-radius:8px;padding:2px 10px;font-weight:800;font-size:13px;margin-bottom:8px }
+    .cta-box{ background:#f97316;color:#fff;padding:24px;border-radius:12px;margin-top:32px;text-align:center }
+    .cta-box h3{ margin:0 0 8px;font-size:20px }
+    .cta-box p{ margin:0 0 14px;opacity:.9 }
+    .cta-box a{ display:inline-block;padding:11px 20px;background:#fff;color:#f97316;font-weight:700;border-radius:8px;text-decoration:none;margin:4px }
+</style>
+
+<div class="page-wrap">
+    <aside class="side">
+        <h3>Blog Yazılarımız</h3>
+        <nav class="svc-list">
+            <a class="svc-item" href="/Home/ofis_tasima_rehberi_2026"><span>Ofis Taşıma Rehberi 2026</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/esya_paketleme_teknikleri"><span>Eşya Paketleme Teknikleri</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/nakliyat_sozlesmesi_nedir"><span>Nakliyat Sözleşmesi Nedir?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/ankaraya_tasinmak_rehberi"><span>Ankara'ya Taşınmak Rehberi</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/tasinma_maliyetleri_nasil_dusurulur"><span>Taşınma Maliyeti Nasıl Düşer?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/nakliyat_firmasi_nasil_secilir_7_kritik_soru"><span>Nakliyat Firması Nasıl Seçilir?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/tasinirken_yapilan_10_hata"><span>Taşınırken Yapılan 10 Hata</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/nakliyat_dolandiriciligi"><span>Nakliyat Dolandırıcılığı</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/blog"><span>Tüm Blog Yazıları →</span><span class="arrow">☰</span></a>
+        </nav>
+    </aside>
+
+    <div class="content">
+        <h1>Nakliyat Sözleşmesi Nedir? Sözleşmede Olması Gereken 8 Madde</h1>
+        <p class="blog-meta">📅 Mart 2026 &nbsp;|&nbsp; ⏱ 6 dk okuma &nbsp;|&nbsp; 🏷 Hukuki Güvence</p>
+
+        <div class="blog-body">
+            <p>
+                <strong>Nakliyat sözleşmesi</strong>, taşınma sürecinin en kritik belgesidir.
+                Binlerce lira değerindeki eşyalarınızı bir firmaya teslim etmeden önce
+                imzalanmış bir sözleşmeniz olmaması, tüm riskleri üstlenmeniz anlamına gelir.
+                Peki nakliyat sözleşmesi neleri kapsamalıdır? Hangi maddeler mutlaka yer almalıdır?
+                Bu yazıda profesyonel bir nakliyat sözleşmesinde dikkat etmeniz gereken
+                8 kritik maddeyi ele alıyoruz.
+            </p>
+
+            <div class="warn-box">
+                ⚠️ <strong>Dikkat:</strong> "Sözleşme imzalamıyoruz ama güvenilir firmayız"
+                diyen firmalardan uzak durun. Profesyonel nakliyat firmalarının tamamı
+                yazılı sözleşme düzenler. Sözleşmesiz nakliyat ciddi hukuki riskler taşır.
+            </div>
+
+            <h2>Nakliyat Sözleşmesinde Bulunması Gereken 8 Madde</h2>
+
+            <div class="madde-card">
+                <span class="madde-no">Madde 1</span>
+                <h3>Tarafların Bilgileri</h3>
+                <p>Sözleşmede nakliyat firmasının ticaret unvanı, vergi numarası ve adresi
+                ile müşterinin adı, soyadı ve iletişim bilgileri açıkça yer almalıdır.
+                Sadece "firma adı" yazan sözleşmeler hukuki açıdan zayıftır.</p>
+            </div>
+
+            <div class="madde-card">
+                <span class="madde-no">Madde 2</span>
+                <h3>Taşıma Adresleri ve Tarihi</h3>
+                <p>Yükleme adresi, teslim adresi ve taşıma tarihi (saat aralığı dahil)
+                net biçimde yazılmalıdır. "Yakında" veya "bu hafta" gibi muğlak ifadeler
+                sözleşmede yer almamalıdır.</p>
+            </div>
+
+            <div class="madde-card">
+                <span class="madde-no">Madde 3</span>
+                <h3>Taşınacak Eşyaların Listesi</h3>
+                <p>Taşınacak temel eşya kalemleri — büyük mobilyalar, beyaz eşyalar,
+                elektronikler ve özel eşyalar — listelenmelidir. Bu liste, hasar
+                tazminatı sürecinde belirleyici belgedir.</p>
+            </div>
+
+            <div class="madde-card">
+                <span class="madde-no">Madde 4</span>
+                <h3>Toplam Fiyat ve Ödeme Koşulları</h3>
+                <p>Sözleşmede <strong>toplam tutar</strong>, avans miktarı ve kalan ödemenin
+                ne zaman yapılacağı açıkça belirtilmelidir. "Ek ücret alınmayacaktır"
+                ifadesi mutlaka yer almalıdır. Bu madde olmadan taşıma günü
+                sürpriz faturalar gelebilir.</p>
+            </div>
+
+            <div class="madde-card">
+                <span class="madde-no">Madde 5</span>
+                <h3>Sigorta Kapsamı</h3>
+                <p>Nakliyat sigortasının kapsamı, sigortalı limit tutarı ve hasar
+                durumunda başvuru süreci sözleşmede yer almalıdır. "Sigortalı taşıma
+                yapılmaktadır" gibi genel ifadeler yeterli değildir; <a href="/home/sigortali_nakliyat_esyalarinizi_guvence_altina_alin">nakliyat sigortası</a>
+                detaylarına dikkat edin.</p>
+            </div>
+
+            <div class="madde-card">
+                <span class="madde-no">Madde 6</span>
+                <h3>Hizmet Kapsamı</h3>
+                <p>Paketleme dahil mi? Demontaj-montaj yapılıyor mu? Asansör ücreti
+                var mı? Katlar arası taşıma dahil mi? Tüm bu detaylar sözleşmede
+                net biçimde belirtilmelidir. Belirsiz kalan her madde ileride anlaşmazlık
+                konusu olabilir.</p>
+            </div>
+
+            <div class="madde-card">
+                <span class="madde-no">Madde 7</span>
+                <h3>Hasar ve İtiraz Prosedürü</h3>
+                <p>Eşyalarda hasar tespit edilmesi durumunda ne kadar sürede bildirim
+                yapılması gerektiği, tazminat hesaplama yöntemi ve itiraz süreci
+                sözleşmede yer almalıdır. Teslimattan sonraki 48-72 saat kritik süre
+                olduğundan bu madde özellikle önemlidir.</p>
+            </div>
+
+            <div class="madde-card">
+                <span class="madde-no">Madde 8</span>
+                <h3>İptal ve Değişiklik Koşulları</h3>
+                <p>Taşıma tarihinin değişmesi veya iptal edilmesi durumunda nasıl
+                bir yol izleneceği, avansın iade edilip edilmeyeceği sözleşmede
+                açıklanmalıdır. Özellikle son dakika iptallerinde bu madde belirleyicidir.</p>
+            </div>
+
+            <h2>Nakliyat Sözleşmesi İmzalanırken Dikkat Edilecekler</h2>
+            <ul>
+                <li>Sözleşmeyi imzalamadan önce tüm maddeleri dikkatlice okuyun.</li>
+                <li>Boş bırakılan kutular varsa doldurun veya "uygulanmaz" yazılmasını isteyin.</li>
+                <li>İki nüsha imzalanmalı; bir nüsha sizde kalmalıdır.</li>
+                <li>Sözleşme tarihi ve imza eksikse geçerliliği tartışılır — bunlara dikkat edin.</li>
+                <li>Dijital ortamda gönderilen sözleşmeler, WhatsApp veya e-posta yoluyla iletilen
+                belgeler de delil olarak kullanılabilir — saklamayı ihmal etmeyin.</li>
+            </ul>
+
+            <div class="good-box">
+                ✅ <strong>Hadımköy Ankara Nakliyat Güvencesi:</strong> Tüm taşımalarımızda
+                yukarıdaki 8 maddeyi kapsayan yazılı sözleşme düzenliyoruz. Fiyat
+                netleştikten sonra sözleşmesiz hiçbir iş başlatmıyoruz.
+            </div>
+
+            <h2>Sözleşmesiz Nakliyat: Riskler Nelerdir?</h2>
+            <p>
+                Türkiye'de nakliyat sektöründeki şikayetlerin büyük çoğunluğu
+                sözleşmesiz yapılan taşımalardan kaynaklanmaktadır:
+            </p>
+            <ul>
+                <li><strong>Taşıma günü fiyat artışı:</strong> "Bu kadar eşya vardı bilmiyorduk,
+                ek ücret gerekiyor" bahanesiyle son dakika zam yapılabilir.</li>
+                <li><strong>Hasar tazminatı alamamak:</strong> Sözleşme olmadan eşya hasarını
+                ispat etmek son derece güçtür.</li>
+                <li><strong>Eşya rehin tutma:</strong> Bazı firmalar ek ödeme talep ederek
+                eşyaları yeni adrese teslim etmeyi reddedebilir.</li>
+                <li><strong>Hukuki yol kapalı:</strong> Yazılı sözleşme olmadan mahkemede
+                hak aramanız çok daha zor olur.</li>
+            </ul>
+            <p>
+                Bu risklerden korunmak için <a href="/home/nakliyat_dolandiriciligi">nakliyat dolandırıcılığı</a>
+                hakkındaki yazımızı da okumanızı öneririz.
+            </p>
+
+            <h2>Teslim Tutanağı: Sözleşmeden Sonraki Kritik Belge</h2>
+            <p>
+                Taşıma tamamlandığında eşyaların eksiksiz ve hasarsız teslim edildiğini
+                belgeleyen <strong>teslim tutanağı</strong> imzalanmalıdır. Bu tutanak:
+            </p>
+            <ul>
+                <li>Teslim tarihini ve saatini içermelidir.</li>
+                <li>Varsa tespit edilen hasarlar not edilmelidir.</li>
+                <li>Her iki tarafça imzalanmalıdır.</li>
+                <li>Tutanak imzalamadan ödeme yapılmamalıdır.</li>
+            </ul>
+
+            <div class="cta-box">
+                <h3>Yazılı Sözleşme Güvencesiyle Taşının</h3>
+                <p>Ücretsiz keşif → yazılı teklif → imzalı sözleşme → güvenli taşıma.</p>
+                <a href="tel:+905344300360">📞 0534 430 03 60</a>
+                <a href="https://wa.me/905344300360">💬 WhatsApp</a>
+            </div>
+        </div>
+    </div>
+</div>
