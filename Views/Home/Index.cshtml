@@ -1,8 +1,7 @@
-﻿@{
+@{
     ViewData["Title"] = "Hadımköy Ankara Nakliyat | İstanbul Ankara Arası Profesyonel Taşımacılık";
-    ViewData["Description"] = "İstanbul ve Ankara arasında evden eve, ofis, çeyiz, fuar, ambar ve parsiyel taşımacılıkta 7/24 hizmet. Ücretsiz ekspertiz ve sürprizsiz fiyat Hadımköy Ankara Nakliyat’ta!";
+    ViewData["Description"] = "İstanbul ve Ankara arasında evden eve, ofis, çeyiz, fuar, ambar ve parsiyel taşımacılıkta 7/24 hizmet. Ücretsiz ekspertiz ve sürprizsiz fiyat Hadımköy Ankara Nakliyat'ta!";
 
-    // --- SEO: DİNAMİK JSON-LD ŞEMALARI (Visual Studio Dostu) ---
     var homeSchema = @"{
       ""@context"": ""https://schema.org"",
       ""@type"": ""WebSite"",
@@ -24,291 +23,702 @@
       ""description"": ""İstanbul ve Ankara merkezli, 81 ile sigortalı, asansörlü ve kurumsal evden eve nakliyat, ofis taşıma ve parsiyel yük taşımacılığı.""
     }";
 }
-
-@* JSON-LD Çıktıları *@
 <script type="application/ld+json">@Html.Raw(homeSchema)</script>
 <script type="application/ld+json">@Html.Raw(homeServiceSchema)</script>
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@@type": "Question",
+      "name": "istanbul-Ankara Arası Nakliyat Ne Kadar Sücrer?",
+      "acceptedAnswer": {
+        "@@type": "Answer",
+        "text": "istanbul'dan Ankara'ya mesafe yaklaşık 450 km'dir. Standart koşullarda taşıma sücresi 5-7 saattir. Hadımkü6y Ankara Nakliyat olarak haftanın 6 gücnüc düczenli sefer düczenliyor, eşyalarınızı gücnüc gücnücne teslim ediyoruz."
+      }
+    },
+    {
+      "@@type": "Question",
+      "name": "Evden Eve Nakliyatta Hangi Hizmetler Dahil?",
+      "acceptedAnswer": {
+        "@@type": "Answer",
+        "text": "Evden eve nakliyat hizmetimizde eşya paketleme, asansörlü taşımama, marangoz demontaj/montaj ve güzel ambalaj dahildir. Ayrıca sigortalı taşıma sebebiyle  eviniz güvence altındadır."
+      }
+    },
+    {
+      "@@type": "Question",
+      "name": "Parsiyel Nakliyat Ne Zaman Tercih Edilmeli?",
+      "acceptedAnswer": {
+        "@@type": "Answer",
+        "text": "Parsiyel nakliyat, 1-2 oda eşyası ya da birkaç koli gibi az hacimli taşımalar için idealdir. Tam araç kiralamak yerine paylaşımlı yückle çok daha uygun maliyetli taşıma imkanı sunar."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "LocalBusiness",
+  "name": "Hadımkü6y Ankara Nakliyat",
+  "url": "https://www.hadimkoyankaranakliyat.com/",
+  "telephone": "+905344300360",
+  "aggregateRating": {
+    "@@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "bestRating": "5",
+    "worstRating": "1",
+    "reviewCount": "200"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "BreadcrumbList",
+  "itemListElement": [{ "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.hadimkoyankaranakliyat.com/" }]
+}
+</script>
 
 <style>
-    /* --- HIZ VE GÖRÜNÜM İÇİN OPTİMİZE EDİLMİŞ CSS --- */
+/* ===== INTRO (ABOUT) ===== */
+.han-intro {
+    padding: 80px 0;
+    background: #fff;
+}
+.han-intro__badge {
+    display: inline-block;
+    background: #fff4ec;
+    color: #ff7300;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 18px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    border: 1px solid #ffd5b0;
+    letter-spacing: .4px;
+}
+.han-intro__heading {
+    font-size: 38px;
+    font-weight: 900;
+    color: #1a1a2e;
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+.han-intro__heading span { color: #ff7300; }
+.han-intro__desc {
+    font-size: 16px;
+    color: #475569;
+    line-height: 1.75;
+    margin-bottom: 32px;
+}
+.han-intro__features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 36px;
+}
+.han-intro__feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+.han-intro__feature-icon {
+    width: 30px;
+    height: 30px;
+    background: #ff7300;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 15px;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+.han-intro__feature strong {
+    display: block;
+    color: #1a1a2e;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+.han-intro__feature p { font-size: 13px; color: #64748b; margin: 0; }
+.han-intro__cta {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+.han-intro__phone-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+}
+.han-intro__phone-btn .ph-icon {
+    width: 50px;
+    height: 50px;
+    background: #fff4ec;
+    border: 2px solid #ff7300;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff7300;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+.han-intro__phone-btn small { display: block; font-size: 12px; color: #64748b; }
+.han-intro__phone-btn strong { display: block; font-size: 17px; font-weight: 800; color: #1a1a2e; }
+.han-intro__img-area {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,.15);
+}
+.han-intro__img-area img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    display: block;
+}
+.han-intro__stats-bar {
+    display: flex;
+    background: #1a1a2e;
+    padding: 22px 24px;
+    justify-content: space-around;
+    align-items: center;
+}
+.han-intro__stat { text-align: center; }
+.han-intro__stat strong { display: block; font-size: 30px; font-weight: 900; color: #ff7300; line-height: 1; }
+.han-intro__stat span { font-size: 12px; color: #94a3b8; margin-top: 4px; display: block; }
+.han-intro__stat-div { width: 1px; height: 40px; background: #334155; }
+@@media (max-width: 991px) {
+    .han-intro__heading { font-size: 26px; }
+    .han-intro__features { grid-template-columns: 1fr; }
+    .han-intro__img-area { margin-top: 40px; }
+    .han-intro__img-area img { height: 260px; }
+}
 
-    /* 1. ABOUT BÖLÜMÜ (Tır ve Kamyonet) */
-    .about-one__img {
-        position: relative;
-        display: block !important;
-        margin-top: 20px;
-    }
+/* ===== KAYAN İLÇE KARTLARI ===== */
+.han-scroll-section {
+    padding: 60px 0;
+    background: #f8f9fa;
+    overflow: hidden;
+}
+.han-scroll-section__header {
+    text-align: center;
+    margin-bottom: 36px;
+}
+.han-scroll-section__header h2 { font-size: 28px; font-weight: 800; color: #1a1a2e; margin-bottom: 8px; }
+.han-scroll-section__header p { color: #6c757d; font-size: 15px; }
+.han-scroll-row { overflow: hidden; margin-bottom: 14px; }
+.han-scroll-track {
+    display: flex;
+    gap: 14px;
+    width: max-content;
+    animation: han-ltr 50s linear infinite;
+}
+.han-scroll-track.reverse { animation: han-rtl 50s linear infinite; }
+.han-scroll-track:hover, .han-scroll-track.reverse:hover { animation-play-state: paused; }
+@@keyframes han-ltr { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@@keyframes han-rtl { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 
-    /* Temanın kutu zorlamalarını iptal ediyoruz */
-    .about-one__img1,
-    .about-one__img2-inner,
-    .about-one__img2 {
-        position: relative !important;
-        display: block !important;
-        background: transparent !important; /* Arka plan şeffaf */
-        border: none !important; /* Kenarlık yok */
-        box-shadow: none !important; /* Gölge yok */
-        border-radius: 0 !important; /* Yuvarlama yok */
-        overflow: visible !important; /* Resim taşabilir */
-        aspect-ratio: auto !important; /* Oran zorlaması yok */
-        height: auto !important;
-        padding: 0 !important;
-    }
+/* İlçe Kartı — servis kartı stilinde */
+.han-ilce-card {
+    display: block;
+    width: 185px;
+    flex-shrink: 0;
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0,0,0,.08);
+    text-decoration: none;
+    color: inherit;
+    transition: transform .25s, box-shadow .25s;
+    white-space: normal;
+}
+.han-ilce-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(255,115,0,.22);
+    text-decoration: none;
+    color: inherit;
+}
+.han-ilce-card__top {
+    height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: rgba(255,255,255,.9);
+}
+/* 6 farklı gradient */
+.han-scroll-track .han-ilce-card:nth-child(6n+1) .han-ilce-card__top { background: linear-gradient(135deg, #ff7300 0%, #1a1a2e 100%); }
+.han-scroll-track .han-ilce-card:nth-child(6n+2) .han-ilce-card__top { background: linear-gradient(135deg, #1a1a2e 0%, #ff7300 100%); }
+.han-scroll-track .han-ilce-card:nth-child(6n+3) .han-ilce-card__top { background: linear-gradient(135deg, #e85d00 0%, #0f172a 100%); }
+.han-scroll-track .han-ilce-card:nth-child(6n+4) .han-ilce-card__top { background: linear-gradient(135deg, #0f172a 0%, #e85d00 100%); }
+.han-scroll-track .han-ilce-card:nth-child(6n+5) .han-ilce-card__top { background: linear-gradient(135deg, #cc5500 0%, #1e2d4f 100%); }
+.han-scroll-track .han-ilce-card:nth-child(6n+6) .han-ilce-card__top { background: linear-gradient(135deg, #1e2d4f 0%, #cc5500 100%); }
+.han-ilce-card__body { padding: 12px 14px 14px; }
+.han-ilce-card__name {
+    display: block;
+    font-size: 14px;
+    font-weight: 800;
+    color: #1a1a2e;
+    margin-bottom: 4px;
+}
+.han-ilce-card__sub {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #64748b;
+    font-weight: 500;
+}
+.han-ilce-card__sub .han-arr { color: #ff7300; font-size: 15px; font-weight: 700; }
 
-        /* Gizli tema süslerini (beyaz kutuları) yok et */
-        .about-one__img1::before, .about-one__img1::after,
-        .about-one__img2::before, .about-one__img2::after,
-        .about-one__img2-inner::before, .about-one__img2-inner::after,
-        .about-one__img::before, .about-one__img::after {
-            display: none !important;
-            content: none !important;
-            background: none !important;
-        }
+/* ===== İLETİŞİM KARTI (SSS sağ kısım) ===== */
+.han-contact-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,.1);
+    border: 1px solid #f0f0f0;
+    margin-top: 10px;
+}
+.han-contact-card__top {
+    background: linear-gradient(135deg, #ff7300 0%, #e85d00 100%);
+    padding: 22px 26px;
+    color: #fff;
+}
+.han-contact-card__top h3 { font-size: 19px; font-weight: 800; margin: 0 0 4px; }
+.han-contact-card__top p { font-size: 13px; margin: 0; opacity: .9; }
+.han-contact-card__body { padding: 24px 26px; }
+.han-contact-card__phone-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: inherit;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f0f0f0;
+}
+.han-contact-card__phone-link .cc-icon {
+    width: 50px; height: 50px;
+    background: #fff4ec;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #ff7300; font-size: 22px;
+    flex-shrink: 0;
+    transition: background .2s;
+}
+.han-contact-card__phone-link:hover .cc-icon { background: #ff7300; color: #fff; }
+.han-contact-card__phone-link small { display: block; font-size: 12px; color: #64748b; margin-bottom: 2px; }
+.han-contact-card__phone-link strong { display: block; font-size: 20px; font-weight: 800; color: #1a1a2e; }
+.han-contact-card__wa {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #25d366;
+    color: #fff;
+    text-decoration: none;
+    padding: 13px 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 20px;
+    transition: background .2s;
+}
+.han-contact-card__wa:hover { background: #1da851; color: #fff; text-decoration: none; }
+.han-contact-card__wa svg { flex-shrink: 0; }
+.han-contact-card__hours {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.6;
+}
+.han-contact-card__hours strong { display: block; color: #1a1a2e; font-size: 14px; margin-bottom: 4px; }
+.han-contact-card__teklif {
+    display: block;
+    text-align: center;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #f0f0f0;
+    font-size: 13px;
+    color: #ff7300;
+    font-weight: 700;
+    text-decoration: none;
+}
+.han-contact-card__teklif:hover { text-decoration: underline; color: #e85d00; }
 
-        /* Resimlerin doğal hali */
-        .about-one__img1 img,
-        .about-one__img2-inner img {
-            width: auto !important;
-            max-width: 100% !important;
-            height: auto !important;
-            display: block !important;
-            object-fit: contain !important;
-            background: transparent !important;
-        }
+/* ===== CTA BÖLÜMÜ ===== */
+.han-cta-section {
+    background: #1a1a2e;
+    padding: 64px 0;
+    position: relative;
+    overflow: hidden;
+}
+.han-cta-section::before {
+    content: '';
+    position: absolute;
+    right: -120px; top: -120px;
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    background: rgba(255,115,0,.08);
+    pointer-events: none;
+}
+.han-cta-section::after {
+    content: '';
+    position: absolute;
+    left: -80px; bottom: -100px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(255,115,0,.05);
+    pointer-events: none;
+}
+.han-cta__content { position: relative; z-index: 1; }
+.han-cta__content h2 {
+    font-size: 34px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.3;
+    margin-bottom: 14px;
+}
+.han-cta__content h2 strong { color: #ff7300; }
+.han-cta__content h2 span { color: #ff7300; }
+.han-cta__content p { color: #94a3b8; font-size: 16px; margin-bottom: 32px; line-height: 1.7; }
+.han-cta__btns { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+.han-cta__btn-phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,.08);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 10px;
+    padding: 13px 24px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    transition: background .2s;
+}
+.han-cta__btn-phone:hover { background: rgba(255,255,255,.16); color: #fff; text-decoration: none; }
+.han-cta__stats {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+}
+.han-cta__stat-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 12px;
+    padding: 16px 20px;
+}
+.han-cta__stat-item strong {
+    display: block;
+    font-size: 28px;
+    font-weight: 900;
+    color: #ff7300;
+    line-height: 1;
+}
+.han-cta__stat-item span {
+    font-size: 13px;
+    color: #94a3b8;
+    display: block;
+    margin-top: 3px;
+}
+.han-cta__stat-icon {
+    width: 44px; height: 44px;
+    background: rgba(255,115,0,.15);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    color: #ff7300;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+@@media (max-width: 991px) {
+    .han-cta__content h2 { font-size: 24px; }
+    .han-cta-section { padding: 44px 0; }
+    .han-cta__stats { flex-direction: row; flex-wrap: wrap; margin-top: 32px; }
+    .han-cta__stat-item { flex: 1; min-width: 140px; }
+}
 
-    /* Küçük Kamyon Konumu */
-    .about-one__img2 {
-        position: absolute !important;
-        bottom: -30px !important;
-        right: -20px !important;
-        z-index: 99 !important;
-        width: 60% !important;
-    }
+/* ===== KAYAN BLOG KARTLARI ===== */
+.han-blog-scroll-section {
+    padding: 60px 0;
+    background: #1a1a2e;
+    overflow: hidden;
+}
+.han-blog-scroll-section__header { text-align: center; margin-bottom: 36px; }
+.han-blog-scroll-section__header h2 { font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+.han-blog-scroll-section__header p { color: #94a3b8; font-size: 15px; }
+.han-blog-scroll-section__header a { color: #ff7300; font-weight: 700; text-decoration: none; }
+.han-blog-track {
+    display: flex;
+    gap: 16px;
+    width: max-content;
+    animation: han-ltr 65s linear infinite;
+}
+.han-blog-track:hover { animation-play-state: paused; }
+.han-blog-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 22px 24px;
+    width: 280px;
+    flex-shrink: 0;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 4px 14px rgba(0,0,0,.12);
+    transition: transform .2s, box-shadow .2s;
+}
+.han-blog-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(255,115,0,.25); text-decoration: none; color: inherit; }
+.han-blog-card__cat {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    color: #ff7300;
+    background: #fff4ec;
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    width: fit-content;
+}
+.han-blog-card__title { font-size: 15px; font-weight: 700; color: #1a1a2e; line-height: 1.4; margin: 0; }
+.han-blog-card__link { font-size: 13px; font-weight: 700; color: #ff7300; margin-top: auto; }
 
-    /* 2. FAQ BÖLÜMÜ (Forklift) */
-    .faq-one__img,
-    .faq-one__img-box {
-        background: transparent !important;
-        border: none !important;
-        box-shadow: none !important;
-        overflow: visible !important;
-    }
+/* ===== YORUM BÖLÜMÜ ===== */
+.han-reviews-section {
+    padding: 60px 0;
+    background: #fff;
+    overflow: hidden;
+}
+.han-reviews-section__header { text-align: center; margin-bottom: 36px; }
+.han-reviews-section__header h2 { font-size: 28px; font-weight: 800; color: #1a1a2e; margin-bottom: 8px; }
+.han-reviews-section__header p { color: #6c757d; font-size: 15px; }
+.han-reviews-section__header a { color: #ff7300; font-weight: 700; text-decoration: none; }
+.han-review-track {
+    display: flex;
+    gap: 16px;
+    width: max-content;
+    animation: han-ltr 55s linear infinite;
+    margin-bottom: 14px;
+}
+.han-review-track.reverse { animation: han-rtl 55s linear infinite; }
+.han-review-track:hover, .han-review-track.reverse:hover { animation-play-state: paused; }
+.han-review-card {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 16px;
+    padding: 22px 24px;
+    width: 300px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 14px rgba(0,0,0,.07);
+    transition: box-shadow .2s, transform .2s;
+}
+.han-review-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.13); transform: translateY(-3px); }
+.han-review-card__stars { color: #fbbf24; font-size: 16px; margin-bottom: 12px; letter-spacing: 2px; }
+.han-review-card__text { font-size: 14px; color: #374151; line-height: 1.65; margin-bottom: 16px; }
+.han-review-card__author { display: flex; align-items: center; gap: 10px; }
+.han-review-card__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ff7300;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.han-review-card__info strong { display: block; font-size: 13px; font-weight: 700; color: #1a1a2e; }
+.han-review-card__info span { font-size: 12px; color: #9ca3af; }
 
-        /* Forklift arkası temizliği */
-        .faq-one__img::before, .faq-one__img::after,
-        .faq-one__img-box::before, .faq-one__img-box::after {
-            display: none !important;
-        }
+/* ===== HERO H1 TURUNCU ===== */
+.banner-one__content-left h1 { color: #ff7300 !important; }
+.banner-one__content-left h1 span { color: #ff7300 !important; }
 
-        .faq-one__img img {
-            background: transparent !important;
-            mix-blend-mode: normal !important;
-        }
-
-    /* Döner yazı rozeti */
-    .about-one__circle-text {
-        position: absolute;
-        left: 0;
-        bottom: 20px;
-        z-index: 100;
-        pointer-events: none;
-    }
-
-    /* MOBİL AYARLARI */
-    @@media (max-width: 991.98px) {
-        .about-one__img {
-            margin-top: 30px !important;
-            margin-bottom: 30px !important;
-            text-align: center !important;
-            display: block !important; /* Mobilde gizlenmesin */
-        }
-        /* Mobilde Tır ortada dursun */
-        .about-one__img1 {
-            display: inline-block !important;
-            width: 100% !important;
-        }
-
-            .about-one__img1 img {
-                max-height: 300px !important;
-            }
-        /* Mobilde kalabalık yapan diğer unsurları gizle */
-        .about-one__img2,
-        .about-one .shape1,
-        .about-one .shape2,
-        .about-one .shape3,
-        .about-one__circle-text {
-            display: none !important;
-        }
-    }
+/* ===== GÜVEN BANTI ===== */
+.han-trust-band {
+    background: #fff;
+    border-top: 3px solid #ff7300;
+    border-bottom: 1px solid #e9ecef;
+    padding: 16px 0;
+}
+.han-trust-band__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 6px 24px;
+}
+.han-trust-band__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a2e;
+    white-space: nowrap;
+}
+.han-trust-band__item .tb-icon {
+    width: 26px; height: 26px;
+    background: #ff7300;
+    color: #fff;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+@@media (max-width: 575px) {
+    .han-trust-band__item { font-size: 13px; }
+    .han-trust-band__items { gap: 8px 16px; }
+}
 </style>
 
+<!-- HERO -->
 <section class="banner-one">
-    <div class="banner-one__pattern"
-         style="background-image: url(/assets/images/pattern/banner-v1-pattern.png);"></div>
+    <div class="banner-one__pattern" style="background-image: url(/assets/images/pattern/banner-v1-pattern.png);"></div>
     <div class="banner-one__pattern2"><img src="~/assets/images/gallery/team-v2-pattern-1020x400.png" alt="hadımköy ankara nakliyat deseni"></div>
-
     <div class="banner-one__img1"></div>
-
     <div class="banner-one__img5">
-        <img class="float-bob-y"
-             src="~/assets/images/banner/banner-v1-img5.png"
-             alt="hadımköy ankara parça yük nakliye firması aracı"
-             fetchpriority="high">
+        <img src="~/assets/images/banner/banner-v1-img5.png" alt="hadımköy ankara parça yük nakliye firması aracı" fetchpriority="high">
     </div>
-
-    <div class="shape1 rotate-me"><img src="~/assets/images/shapes/banner-v1-shape1.png" alt="hadımköy ankara evden eve nakliyat şekli"></div>
     <div class="container">
         <div class="banner-one__content">
-            <div class="banner-one__content-left wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                <h2>
-                    Hadımköy Ankara <br>
-                    <span>Nakliyat</span>
-                </h2>
-                <p>Türkiyenin En İyi <br> Nakliyat Firması </p>
+            <div class="banner-one__content-left">
+                <h1>Hadımköy Ankara <br><span>Nakliyat</span></h1>
+                <p>Türkiye'nin En Güvenilir <br> Nakliyat Firması</p>
             </div>
-
-            <div class="banner-one__content-right wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+            <div class="banner-one__content-right">
                 <div class="banner-one__content-right-text">
-                    <p>
-                        Türkiye'nin 81 ilinde Şehirlerarası ve <br>
-                        Evden Eve Nakliyat hizmeti
-                    </p>
+                    <p>Türkiye'nin 81 ilinde Şehirlerarası ve <br> Evden Eve Nakliyat hizmeti</p>
                 </div>
-
-                <div class="banner-one__content-right-btn">
+                <div class="banner-one__content-right-btn" style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;">
                     <a class="thm-btn" href="/Home/hakkimizda">
-                        Hakkımızda
-                        <i class="icon-right-arrow21"></i>
-                        <span class="hover-btn hover-bx"></span>
-                        <span class="hover-btn hover-bx2"></span>
-                        <span class="hover-btn hover-bx3"></span>
-                        <span class="hover-btn hover-bx4"></span>
+                        Hakkımızda <i class="icon-right-arrow21"></i>
+                        <span class="hover-btn hover-bx"></span><span class="hover-btn hover-bx2"></span>
+                        <span class="hover-btn hover-bx3"></span><span class="hover-btn hover-bx4"></span>
+                    </a>
+                    <a href="tel:+905344300360" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:#fff;font-weight:700;font-size:15px;text-decoration:none;padding:13px 22px;border-radius:6px;transition:background .2s;" onmouseover="this.style.background='rgba(255,255,255,.22)'" onmouseout="this.style.background='rgba(255,255,255,.12)'">
+                        <span class="icon-phone2"></span> 0534 430 03 60
                     </a>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<section class="about-one">
+
+<!-- GÜVEN BANTI -->
+<section class="han-trust-band">
     <div class="container">
-        <div class="row">
-            <div class="col-xl-7">
-                <div class="about-one__content">
-                    <div class="sec-title tg-heading-subheading animation-style2">
-                        <div class="sec-title__tagline">
-                            <div class="line"></div>
-                            <div class="text tg-element-title">
-                                <h4>Firmamız</h4>
-                            </div>
-                            <div class="icon">
-                                <span class="icon-plane2 float-bob-x3"></span>
-                            </div>
-                        </div>
-                        <h2 class="sec-title__title tg-element-title">
-                            Profesyonel Çalışmamız İle <br>
-                            <span>
-                                Kaliteli Hizmet
-                            </span>
-                        </h2>
-                    </div>
+        <div class="han-trust-band__items">
+            <div class="han-trust-band__item"><span class="tb-icon">&#10003;</span> Sigortalı Taşıma</div>
+            <div class="han-trust-band__item"><span class="tb-icon">&#10003;</span> Ücretsiz Ekspertiz</div>
+            <div class="han-trust-band__item"><span class="tb-icon">&#10003;</span> 7/24 Müşteri Desteği</div>
+            <div class="han-trust-band__item"><span class="tb-icon">&#10003;</span> Sürprizsiz Fiyat Garantisi</div>
+            <div class="han-trust-band__item"><span class="tb-icon">&#10003;</span> 11 Yıllık Deneyim</div>
+        </div>
+    </div>
+</section>
 
-                    <div class="about-one__content-text1">
-                        <p>
-                            Hadımköy Ankara Nakliyat, İstanbul, Ankara ve çevresinde uzun yıllardır kaliteli hizmet sunan, müşteri memnuniyetini ön planda tutan, güvenilir ve profesyonel bir nakliyat firmasıdır.
-                            <a href="/Home/evden_eve_nakliyat">Evden eve taşımacılık</a>,
-                            <a href="/Home/ofis_tasimaciligi">ofis taşımacılığı</a>,
-                            <a href="/Home/parsiyel_nakliyat">parça eşya taşıma</a> gibi birçok alanda deneyimli kadrosu ve modern araç filosuyla, eşyalarınızı titizlikle ve zamanında taşıyarak sorunsuz bir taşınma süreci yaşamanızı sağlar.
-                            Uygun fiyat politikası, <a href="/Home/sigortali_nakliyat_esyalarinizi_guvence_altina_alin">sigortalı taşıma</a> imkânı ve güler yüzlü hizmet anlayışıyla Hadımköy Ankara Nakliyat, nakliye ihtiyaçlarınızda daima yanınızda.
-                        </p>
-                    </div>
-
-                    <div class="about-one__content-text2">
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-6 col-md-6">
-                                <div class="about-one__content-text2-single">
-                                    <div class="about-one__content-text2-single-top">
-                                        <div class="icon">
-                                            <span class="icon-worldwide-shipping-1"></span>
-                                        </div>
-                                        <div class="title-box">
-                                            <h3>Şehirlerarası Hizmet</h3>
-                                        </div>
-                                    </div>
-                                    <p>Türkiye’nin 81 iline titiz ve profesyonel hizmetlerle.</p>
-                                </div>
-                            </div>
-
-                            <div class="col-xl-6 col-lg-6 col-md-6">
-                                <div class="about-one__content-text2-single">
-                                    <div class="about-one__content-text2-single-top">
-                                        <div class="icon">
-                                            <span class="icon-24-hours-service"></span>
-                                        </div>
-                                        <div class="title-box">
-                                            <h3>7/24 Online Destek</h3>
-                                        </div>
-                                    </div>
-                                    <p>Firmamız müşterilerine daima 7/24 ve her an ulaşılabilir hizmet vermekte.</p>
-                                </div>
-                            </div>
+<!-- INTRO / FIRMAMIZ -->
+<section class="han-intro">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <div class="han-intro__badge">2014'ten Bu Yana Hizmetinizdeyiz</div>
+                <h2 class="han-intro__heading">
+                    İstanbul'dan Ankara'ya<br>
+                    <span>Güvenli ve Hızlı Nakliyat</span>
+                </h2>
+                <p class="han-intro__desc">
+                    Hadımköy Ankara Nakliyat olarak İstanbul'un her ilçesinden Ankara'nın tüm semtlerine
+                    profesyonel taşımacılık hizmeti sunuyoruz. Deneyimli ekibimiz, modern araç filosumuz
+                    ve sigortalı taşıma güvencesiyle 11 yıldır kesintisiz hizmet veriyoruz.
+                    <a href="/Home/evden_eve_nakliyat">Evden eve taşımacılık</a>,
+                    <a href="/Home/ofis_tasimaciligi">ofis taşımacılığı</a> ve
+                    <a href="/Home/parsiyel_nakliyat">parça eşya taşıma</a> alanlarında
+                    sürprizsiz fiyat garantisiyle yanınızdayız.
+                </p>
+                <div class="han-intro__features">
+                    <div class="han-intro__feature">
+                        <span class="han-intro__feature-icon">&#10003;</span>
+                        <div>
+                            <strong>Ücretsiz Ekspertiz</strong>
+                            <p>Taşıma öncesi ücretsiz keşif ve net fiyat teklifi</p>
                         </div>
                     </div>
-
-                    <div class="about-one__content-bottom">
-                        <div class="btn-box">
-                            <a class="thm-btn" href="/Home/iletisim">
-                                Bize Ulaşın
-                                <i class="icon-right-arrow21"></i>
-                                <span class="hover-btn hover-bx"></span>
-                                <span class="hover-btn hover-bx2"></span>
-                                <span class="hover-btn hover-bx3"></span>
-                                <span class="hover-btn hover-bx4"></span>
-                            </a>
+                    <div class="han-intro__feature">
+                        <span class="han-intro__feature-icon">&#10003;</span>
+                        <div>
+                            <strong>Sigortalı Taşıma</strong>
+                            <p>Eşyalarınız kapsamlı sigorta güvencesi altında</p>
                         </div>
-                        <div class="contact-box">
-                            <div class="icon">
-                                <span class="icon-phone2"></span>
-                            </div>
-                            <div class="text-box">
-                                <p>Bizleri Arayın</p>
-                                <h4><a href="tel:+905344300360">+90 534 430 03 60</a></h4>
-                            </div>
+                    </div>
+                    <div class="han-intro__feature">
+                        <span class="han-intro__feature-icon">&#10003;</span>
+                        <div>
+                            <strong>7/24 Destek</strong>
+                            <p>Her an ulaşabileceğiniz müşteri hizmetleri</p>
+                        </div>
+                    </div>
+                    <div class="han-intro__feature">
+                        <span class="han-intro__feature-icon">&#10003;</span>
+                        <div>
+                            <strong>81 İle Hizmet</strong>
+                            <p>Türkiye'nin her iline düzenli seferler</p>
                         </div>
                     </div>
                 </div>
+                <div class="han-intro__cta">
+                    <a class="thm-btn" href="/Home/iletisim">
+                        Ücretsiz Teklif Al <i class="icon-right-arrow21"></i>
+                        <span class="hover-btn hover-bx"></span><span class="hover-btn hover-bx2"></span>
+                        <span class="hover-btn hover-bx3"></span><span class="hover-btn hover-bx4"></span>
+                    </a>
+                    <a class="han-intro__phone-btn" href="tel:+905344300360">
+                        <span class="ph-icon"><span class="icon-phone2"></span></span>
+                        <div>
+                            <small>Hemen Arayın</small>
+                            <strong>0534 430 03 60</strong>
+                        </div>
+                    </a>
+                </div>
             </div>
-            <div class="col-xl-5">
-                <div class="about-one__img">
-                    <div class="shape1 float-bob-y">
-                        <img src="~/assets/images/shapes/about-v1-shape1.png" loading="lazy" alt="nakliyat dekoratif şekil">
-                    </div>
-                    <div class="shape2 float-bob-y">
-                        <img src="~/assets/images/shapes/about-v1-shape2.png" loading="lazy" alt="nakliyat tasarım şekli">
-                    </div>
-
-                    <div class="about-one__img1 reveal">
-                        <img src="~/assets/images/gallery/tir_gorseli_395x300_HAN.png" loading="lazy" alt="Hadımköy Ankara şehirlerarası nakliyat tır görseli">
-                    </div>
-
-                    <div class="about-one__img2">
-                        <div class="about-one__img2-inner reveal">
-                            <img src="~/assets/images/gallery/nakliyat_260x330_HAN.png" loading="lazy" alt="Hadımköy Ankara kamyonet nakliyat firması">
+            <div class="col-lg-6">
+                <div class="han-intro__img-area">
+                    <img src="~/assets/images/gallery/hadimkoy_ankara_416x478.png"
+                         loading="lazy"
+                         alt="Hadımköy Ankara Nakliyat profesyonel taşımacılık ekibi">
+                    <div class="han-intro__stats-bar">
+                        <div class="han-intro__stat">
+                            <strong>11+</strong>
+                            <span>Yıl Deneyim</span>
                         </div>
-
-                        <div class="about-one__circle-text">
-                            <div class="about-one__round-text-box">
-                                <div class="inner">
-                                    <div class="about-one__curved-circle rotate-me">
-                                        2014 Yılından Bu Zamana Dek Hizmetinizde
-                                    </div>
-                                </div>
-                                <div class="overlay-icon-box">
-                                    <a href="/iletisim"><i class="icon-location1"></i></a>
-                                </div>
-                            </div>
+                        <div class="han-intro__stat-div"></div>
+                        <div class="han-intro__stat">
+                            <strong>2000+</strong>
+                            <span>Mutlu Müşteri</span>
                         </div>
-                        <div class="shape3 float-bob-y">
-                            <img src="~/assets/images/shapes/about-v1-shape3.png" loading="lazy" alt="lojistik nakliyat sembolü">
+                        <div class="han-intro__stat-div"></div>
+                        <div class="han-intro__stat">
+                            <strong>81</strong>
+                            <span>İle Hizmet</span>
                         </div>
                     </div>
                 </div>
@@ -316,134 +726,104 @@
         </div>
     </div>
 </section>
+
+<!-- HİZMETLERİMİZ -->
 <section class="service-one">
-    <div class="service-one__pattern"
-         style="background-image: url(assets/images/pattern/service-v1-pattern.jpg);"></div>
+    <div class="service-one__pattern" style="background-image: url(assets/images/pattern/service-v1-pattern.jpg);"></div>
     <div class="container">
-        <div class="sec-title center text-center tg-heading-subheading animation-style2">
+        <div class="sec-title center text-center">
             <div class="sec-title__tagline">
                 <div class="line"></div>
-                <div class="text tg-element-title">
-                    <h4>hizmetlerimiz</h4>
-                </div>
-                <div class="icon">
-                    <span class="icon-plane2 float-bob-x3"></span>
-                </div>
+                <div class="text"><h4>Hizmetlerimiz</h4></div>
+                <div class="icon"><span class="icon-plane2"></span></div>
             </div>
-            <h2 class="sec-title__title tg-element-title">
-                Sigortalı ve güvenli
-                <br> Nakliyat hizmetleri <span>Sağlayın</span>
-            </h2>
+            <h2 class="sec-title__title">Sigortalı ve Güvenli <br> Nakliyat Hizmetleri <span>Sağlıyoruz</span></h2>
         </div>
-
         <div class="row">
             <div class="service-one__carousel owl-carousel owl-theme owl-dot-style1">
                 <div class="service-one__single">
                     <div class="service-one__single-inner">
-                        <div class="service-one__single-img" style="background: transparent !important;">
-                            <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_395x300.png" loading="lazy" alt="ofis ve büro taşımacılığı" style="background: transparent !important; width: 100%;">
-                        </div>
+                        <div class="service-one__single-img"><img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_395x300.png" loading="lazy" alt="hadımköy ankara nakliyat" style="width:100%;"></div>
                         <div class="service-one__single-content">
-                            <h2><a href="/Home/hadimkoy_ankara_nakliyat">Hadimköy Ankara Nakliyat</a></h2>
-                            <p><strong>Hadımköy nakliyat</strong> hizmetlerimiz ile bölgenizde güvenilir, hızlı ve uygun fiyatlı taşıma çözümleri sunuyoruz...</p>
+                            <h2><a href="/Home/hadimkoy_ankara_nakliyat">Hadımköy Ankara Nakliyat</a></h2>
+                            <p>Hadımköy bölgesinden Ankara'ya güvenilir, sigortalı ve uygun fiyatlı taşıma. Haftanın 6 günü düzenli sefer.</p>
                             <div class="btn-box"><a href="/Home/hadimkoy_ankara_nakliyat">Devamını oku <span class="icon-right-arrow21"></span></a></div>
                         </div>
                     </div>
                     <div class="icon"><span class="icon-shipment"></span></div>
                 </div>
-
                 <div class="service-one__single">
                     <div class="service-one__single-inner">
-                        <div class="service-one__single-img" style="background: transparent !important;">
-                            <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_395x300.png" loading="lazy" alt="istanbul ankara nakliyat" style="background: transparent !important; width: 100%;">
-                        </div>
+                        <div class="service-one__single-img"><img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_395x300.png" loading="lazy" alt="istanbul ankara nakliyat" style="width:100%;"></div>
                         <div class="service-one__single-content">
                             <h2><a href="/istanbul-ankara-nakliyat">İstanbul Ankara Nakliyat</a></h2>
-                            <p>İstanbul Ankara Nakliyat hizmetlerimiz, Şehirlerarası taşınmalarınızda profesyonel ve planlı destek sağlar...</p>
-                            <div class="btn-box"><a href="/istanbul-ankara-nakliyat">Devamını oku<span class="icon-right-arrow21"></span></a></div>
+                            <p>İstanbul'un her ilçesinden Ankara'nın her semtine profesyonel şehirlerarası taşıma. Sigortalı, asansörlü, zamanında.</p>
+                            <div class="btn-box"><a href="/istanbul-ankara-nakliyat">Devamını oku <span class="icon-right-arrow21"></span></a></div>
                         </div>
                     </div>
                     <div class="icon"><span class="icon-shipment"></span></div>
                 </div>
-
                 <div class="service-one__single">
                     <div class="service-one__single-inner">
-                        <div class="service-one__single-img" style="background: transparent !important;">
-                            <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_395x300.png" loading="lazy" alt="istanbul ankara şehirlerarası nakliyat" style="background: transparent !important; width: 100%;">
-                        </div>
+                        <div class="service-one__single-img"><img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_395x300.png" loading="lazy" alt="evden eve nakliyat" style="width:100%;"></div>
                         <div class="service-one__single-content">
-                            <h2><a href="/Home/istanbul_ankara_sehirlerarasi_nakliyat"><strong>İstanbul Ankara Şehirlerarası Nakliyat</strong></a></h2>
-                            <p>İstanbul Ankara Şehirlerarası nakliyat hizmetlerimiz ile Türkiye geneli evden eve taşımalarda güvenilir çözümler sunuyoruz...</p>
-                            <div class="btn-box"><a href="/Home/istanbul_ankara_sehirlerarasi_nakliyat">Devamını oku <span class="icon-right-arrow21"></span></a></div>
+                            <h2><a href="/Home/evden_eve_nakliyat">Evden Eve Nakliyat</a></h2>
+                            <p>Paketlemeden yeni evde kuruluma kadar tüm süreç bizden. Marangoz demontaj, asansörlü taşıma ve ambalaj dahil.</p>
+                            <div class="btn-box"><a href="/Home/evden_eve_nakliyat">Devamını oku <span class="icon-right-arrow21"></span></a></div>
+                        </div>
+                    </div>
+                    <div class="icon"><span class="icon-box"></span></div>
+                </div>
+                <div class="service-one__single">
+                    <div class="service-one__single-inner">
+                        <div class="service-one__single-img"><img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_395x300.png" loading="lazy" alt="ofis taşımacılığı" style="width:100%;"></div>
+                        <div class="service-one__single-content">
+                            <h2><a href="/Home/ofis_tasimaciligi">Ofis Taşımacılığı</a></h2>
+                            <p>İş yeri ve ofis eşyalarınızı mesai saatleri dışında, hasarsız ve hızlı şekilde yeni adresinize taşıyoruz.</p>
+                            <div class="btn-box"><a href="/Home/ofis_tasimaciligi">Devamını oku <span class="icon-right-arrow21"></span></a></div>
                         </div>
                     </div>
                     <div class="icon"><span class="icon-shipment"></span></div>
                 </div>
-
                 <div class="service-one__single">
                     <div class="service-one__single-inner">
-                        <div class="service-one__single-img" style="background: transparent !important;">
-                            <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_395x300.png" loading="lazy" alt="istanbul ankara evden eve nakliyat" style="background: transparent !important; width: 100%;">
-                        </div>
+                        <div class="service-one__single-img"><img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_395x300.png" loading="lazy" alt="parsiyel nakliyat" style="width:100%;"></div>
                         <div class="service-one__single-content">
-                            <h2><a href="/Home/istanbul_ankara_evden_eve_nakliyat">İstanbul Ankara Evden Eve Nakliyat</a></h2>
-                            <p>İstanbul Ankara <strong>Evden eve taşıma</strong> hizmetimiz, eşyalarınızı eski evinizden yenisine özenle ve güvenle taşır...</p>
-                            <div class="btn-box"><a href="/Home/istanbul_ankara_evden_eve_nakliyat">Devamını oku <span class="icon-right-arrow21"></span></a></div>
+                            <h2><a href="/Home/parsiyel_nakliyat">Parsiyel Nakliyat</a></h2>
+                            <p>Az eşya için tam araç kiralamanıza gerek yok. Paylaşımlı yükle çok daha uygun maliyetli taşıma imkânı.</p>
+                            <div class="btn-box"><a href="/Home/parsiyel_nakliyat">Devamını oku <span class="icon-right-arrow21"></span></a></div>
                         </div>
                     </div>
                     <div class="icon"><span class="icon-shipment"></span></div>
                 </div>
-
                 <div class="service-one__single">
                     <div class="service-one__single-inner">
-                        <div class="service-one__single-img" style="background: transparent !important;">
-                            <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_395x300.png" loading="lazy" alt="istanbul ankara çeyiz nakliyat" style="background: transparent !important; width: 100%;">
-                        </div>
+                        <div class="service-one__single-img"><img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_395x300.png" loading="lazy" alt="çeyiz nakliyat" style="width:100%;"></div>
                         <div class="service-one__single-content">
-                            <h2><a href="/Home/istanbul_ankara_ceyiz_nakliyat">İstanbul Ankara Çeyiz Nakliyat</a></h2>
-                            <p>İstanbul'dan Ankara'ya  <strong>çeyiz taşıma</strong> hizmetimizle eşyalarınızı güvenle, zamanında ve hasarsız ulaştırıyoruz...</p>
+                            <h2><a href="/Home/istanbul_ankara_ceyiz_nakliyat">Çeyiz Nakliyat</a></h2>
+                            <p>İstanbul'dan Ankara'ya çeyiz eşyalarınızı özel ambalajla, hasarsız ve zamanında ulaştırıyoruz.</p>
                             <div class="btn-box"><a href="/Home/istanbul_ankara_ceyiz_nakliyat">Devamını oku <span class="icon-right-arrow21"></span></a></div>
                         </div>
                     </div>
                     <div class="icon"><span class="icon-shipment"></span></div>
                 </div>
-
                 <div class="service-one__single">
                     <div class="service-one__single-inner">
-                        <div class="service-one__single-img" style="background: transparent !important;">
-                            <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_395x300.png" loading="lazy" alt="istanbul ankara parsiyel nakliyat" style="background: transparent !important; width: 100%;">
-                        </div>
+                        <div class="service-one__single-img"><img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_395x300.png" loading="lazy" alt="fuar nakliyat" style="width:100%;"></div>
                         <div class="service-one__single-content">
-                            <h2><a href="/Home/istanbul_ankara_parsiyel_nakliyat">İstanbul Ankara Parsiyel Nakliyat</a></h2>
-                            <p>Parsiyel nakliyeçözümlerimiz, düzenli sevkiyatlarla hızlı ve uygun maliyetli taşımayı mümkün kılar...</p>
-                            <div class="btn-box"><a href="/Home/istanbul_ankara_parsiyel_nakliyat">Devamını oku <span class="icon-right-arrow21"></span></a></div>
-                        </div>
-                    </div>
-                    <div class="icon"><span class="icon-shipment"></span></div>
-                </div>
-
-                <div class="service-one__single">
-                    <div class="service-one__single-inner">
-                        <div class="service-one__single-img" style="background: transparent !important;">
-                            <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_395x300.png" loading="lazy" alt="istanbul ankara fuar nakliyat" style="background: transparent !important; width: 100%;">
-                        </div>
-                        <div class="service-one__single-content">
-                            <h2><a href="/Home/istanbul_ankara_fuar_nakliyat">İstanbul Ankara Fuar Nakliyat</a></h2>
-                            <p>İstanbul Ankara Fuar nakliyat hizmetimiz, stant ve sergi malzemelerinizi fuar alanına zamanında ve güvenle ulaştırır...</p>
+                            <h2><a href="/Home/istanbul_ankara_fuar_nakliyat">Fuar Nakliyat</a></h2>
+                            <p>Stant, sergi ve fuar malzemelerinizi belirlenen saatte fuar alanına eksiksiz ve güvenle ulaştırıyoruz.</p>
                             <div class="btn-box"><a href="/Home/istanbul_ankara_fuar_nakliyat">Devamını oku <span class="icon-right-arrow21"></span></a></div>
                         </div>
                     </div>
                     <div class="icon"><span class="icon-shipment"></span></div>
                 </div>
-
                 <div class="service-one__single">
                     <div class="service-one__single-inner">
-                        <div class="service-one__single-img" style="background: transparent !important;">
-                            <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_395x300.png" loading="lazy" alt="istanbul ankara kamyonet nakliyat" style="background: transparent !important; width: 100%;">
-                        </div>
+                        <div class="service-one__single-img"><img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_395x300.png" loading="lazy" alt="kamyonet nakliyat" style="width:100%;"></div>
                         <div class="service-one__single-content">
-                            <h2><a href="/Home/istanbul_ankara_kamyonet_nakliyat">İstanbul Ankara Kamyonet Nakliyat</a></h2>
-                            <p>İstanbul Ankara <strong>Kamyonet nakliyat</strong> hizmetimiz, az eşya taşımalarında hızlı ve ekonomik çözüm sunar...</p>
+                            <h2><a href="/Home/istanbul_ankara_kamyonet_nakliyat">Kamyonet Nakliyat</a></h2>
+                            <p>Az hacimli taşımalarda hızlı ve ekonomik kamyonet çözümleri. Aynı gün teslimat imkânıyla hizmetinizdeyiz.</p>
                             <div class="btn-box"><a href="/Home/istanbul_ankara_kamyonet_nakliyat">Devamını oku <span class="icon-right-arrow21"></span></a></div>
                         </div>
                     </div>
@@ -453,314 +833,51 @@
         </div>
     </div>
 </section>
-<section class="project-one">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-5 col-lg-5 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                <div class="project-one__title">
-                    <div class="sec-title tg-heading-subheading animation-style2">
-                        <div class="sec-title__tagline">
-                            <div class="line"></div>
-                            <div class="text tg-element-title">
-                                <h4>Şehirlerarası hizmetlerimiz</h4>
-                            </div>
-                            <div class="icon">
-                                <span class="icon-plane2 float-bob-x3"></span>
-                            </div>
-                        </div>
-                        <h2 class="sec-title__title tg-element-title">
-                            İstanbul'dan Diğer İllere<br>
-                            <strong>Şehirlerarası Nakliyat</strong> <span>hizmetlerimiz</span>
-                        </h2>
-                    </div>
 
-                    <div class="btn-box">
-                        <a class="thm-btn" loading="lazy" href="/Home/sehirlerarasi_hizmetlerimiz">
-                            Bütün projeleri gör
-                            <i class="icon-right-arrow21"></i>
-                            <span class="hover-btn hover-bx"></span>
-                            <span class="hover-btn hover-bx2"></span>
-                            <span class="hover-btn hover-bx3"></span>
-                            <span class="hover-btn hover-bx4"></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-7 col-lg-7 wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-                <div class="project-one__single">
-                    <div class="project-one__single-img">
-                        <div class="inner">
-                            <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_758x325.png" loading="lazy" alt="istanbul izmir nakliyat">
-                            <div class="project-one__overlay-content">
-                                <div class="text-box">
-                                    <p>Şehirlerarası Nakliyat</p>
-                                    <h2><a href="/Home/istanbul_izmir_nakliyat">İstanbul İzmir Nakliyat </a></h2>
-                                </div>
-                                <div class="icon">
-                                    <a href="/Home/istanbul_izmir_nakliyat"><span class="icon-right-arrow21"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                <div class="project-one__single">
-                    <div class="project-one__single-img">
-                        <div class="inner">
-                            <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_420x325.png" loading="lazy" alt="istanbul bursa nakliyat">
-                            <div class="project-one__overlay-content">
-                                <div class="text-box">
-                                    <p>Şehirlerarası Nakliyat</p>
-                                    <h2><a href="/Home/istanbul_bursa_nakliyat">İstanbul Bursa Nakliyat</a></h2>
-                                </div>
-                                <div class="icon">
-                                    <a href="/Home/istanbul_bursa_nakliyat"><span class="icon-right-arrow21"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-                <div class="project-one__single">
-                    <div class="project-one__single-img">
-                        <div class="inner">
-                            <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_420x325.png" loading="lazy" alt="istanbul eskisehir nakliyat">
-                            <div class="project-one__overlay-content">
-                                <div class="text-box">
-                                    <p>Şehirlerarası Nakliyat</p>
-                                    <h2><a href="/Home/istanbul_eskisehir_nakliyat">İstanbul Eskişehir Nakliyat</a></h2>
-                                </div>
-                                <div class="icon">
-                                    <a href="/Home/istanbul_eskisehir_nakliyat"><span class="icon-right-arrow21"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                <div class="project-one__single">
-                    <div class="project-one__single-img">
-                        <div class="inner">
-                            <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_420x325.png" loading="lazy" alt="istanbul antalya nakliyat">
-                            <div class="project-one__overlay-content">
-                                <div class="text-box">
-                                    <p>Şehirlerarası Nakliyat</p>
-                                    <h2><a href="/Home/istanbul_antalya_nakliyat">İstanbul Antalya Nakliyat</a></h2>
-                                </div>
-                                <div class="icon">
-                                    <a href="/Home/istanbul_antalya_nakliyat"><span class="icon-right-arrow21"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="faq-one">
-    <div class="shape1 float-bob-x"><img src="~/assets/images/shapes/faq-v1-shape1.png" loading="lazy" alt="Nakliyat firması sıkça sorular sorular"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-6">
-                <div class="faq-one__content">
-                    <div class="faq-one__content-faq">
-                        <div class="sec-title tg-heading-subheading animation-style2">
-                            <div class="sec-title__tagline">
-                                <div class="line"></div>
-                                <div class="text tg-element-title">
-                                    <h4>Sıkça Sorular Sorular</h4>
-                                </div>
-                                <div class="icon">
-                                    <span class="icon-plane2 float-bob-x3"></span>
-                                </div>
-                            </div>
-                            <h2 class="sec-title__title tg-element-title">
-                                İşlerimizi yürütürken <br>
-                                SSS <span>Nelerdir?</span>
-                            </h2>
-                        </div>
-
-                        <div class="accrodion-grp faq-one-accrodion" data-grp-name="faq-one-accrodion-1">
-                            <div class="accrodion">
-                                <div class="accrodion-title">
-                                    <h4>Hadımköy Ankara Nakliyat İstanbul-Ankara arası şehirlerarası nakliyat hizmetini nasıl gerçekleştiriyor?</h4>
-                                </div>
-                                <div class="accrodion-content">
-                                    <div class="inner">
-                                        <p>
-                                            Hadımköy Ankara Nakliyat, <a href="/istanbul-ankara-nakliyat">İstanbul ile Ankara arasındaki şehirlerarası nakliyat</a> hizmetini planlı, güvenli ve hızlı bir şekilde gerçekleştirmektedir.
-                                            Ücretsiz ekspertiz, <a href="/Home/sigortali_nakliyat_esyalarinizi_guvence_altina_alin">sigortalı taşıma</a> ve deneyimli ekiple İstanbul Hadımköy'den Ankara'ya haftanın 6 günü sefer düzenlenmektedir.
-                                            <a href="/Home/fiyat_al">Teklif almak için tıklayın.</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accrodion active">
-                                <div class="accrodion-title">
-                                    <h4>Evden eve nakliyatta Hadımköy Ankara Nakliyat nasıl bir hizmet sunuyor?</h4>
-                                </div>
-                                <div class="accrodion-content">
-                                    <div class="inner">
-                                        <p>
-                                            Hadımköy Ankara Nakliyat <a href="/Home/evden_eve_nakliyat">evden eve nakliyat</a> hizmetinde eşyalarınızın paketlenmesinden yeni evinizdeki kuruluma kadar tüm süreci profesyonelce yönetir.
-                                            <a href="/Home/asansorlu_nakliyatin_istanbul_ankara_tasimalarinda_sagladigi_kolayliklar">Asansörlü taşımacılık</a>, marangoz demontaj/montaj ve özel ambalaj dahildir.
-                                            <a href="/Home/istanbul_ankara_evden_eve_nakliyat">İstanbul Ankara evden eve nakliyat</a> sayfamızı inceleyin.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-6">
-                <div class="faq-one__img" style="background: transparent !important; box-shadow: none !important; border: none !important; margin-top: 50px;">
-                    <div class="faq-one__img-box" style="background: transparent !important; box-shadow: none !important; border: none !important;">
-                        <img src="~/assets/images/gallery/HAN_SSS.png"
-                             loading="lazy"
-                             alt="hadımköy ankara nakliyat firma hizmet videosu"
-                             style="background: transparent !important; box-shadow: none !important; mix-blend-mode: normal !important; display: block; width: 100%; height: auto; object-fit: contain;">
-
-                        <div class="faq-one__video-link">
-                            <a href="https://www.youtube.com/watch?v=aOnntWnHHfE" class="video-popup">
-                                <div class="faq-one__video-icon">
-                                    <span class="icon-video"></span>
-                                    <i class="ripple"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="sliding-text-one">
-        <div class="sliding-text-one__wrap">
-            <ul class="sliding-text__list list-unstyled marquee_mode">
-                <li>
-                    <h2 data-hover="Evden eve Nakliyat" class="sliding-text__title">
-                        Evden eve Nakliyat
-                        <img src="~/assets/images/icon/sliding-text-icon-1.png" loading="lazy">
-                    </h2>
-                </li>
-                <li>
-                    <h2 data-hover="Şehirlerarası Nakliyat" class="sliding-text__title">
-                        Şehirlerarası Nakliyat
-                        <img src="~/assets/images/icon/sliding-text-icon-1.png" loading="lazy">
-                    </h2>
-                </li>
-                <li>
-                    <h2 data-hover="Fuar taşımacılığı" class="sliding-text__title">
-                        Fuar taşımacılığı
-                        <img src="~/assets/images/icon/sliding-text-icon-1.png" loading="lazy">
-                    </h2>
-                </li>
-                <li>
-                    <h2 data-hover="Ambar Nakliyat" class="sliding-text__title">
-                        Ambar Nakliyat
-                        <img src="~/assets/images/icon/sliding-text-icon-1.png" loading="lazy">
-                    </h2>
-                </li>
-                <li>
-                    <h2 data-hover="Ofis Taşımacılığı" class="sliding-text__title">
-                        Ofis Taşımacılığı
-                        <img src="~/assets/images/icon/sliding-text-icon-1.png" loading="lazy">
-                    </h2>
-                </li>
-            </ul>
-        </div>
-    </div>
-</section>
-<section class="cta-one">
-    <div class="container">
-        <div class="cta-one__inner">
-            <div class="cta-one__img wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-                <img src="~/assets/images/gallery/hadimkoy_ankara_416x478.png" loading="lazy" alt="Hadımköy Ankara Nakliyat profesyonel taşımacılık ekibi ve araçları">
-            </div>
-            <div class="cta-one__pattern"><img src="~/assets/images/pattern/cta-v1-pattern.png" loading="lazy" alt=""></div>
-            <div class="shape1 float-bob-x"><img src="~/assets/images/shapes/cta-v1-shape1.png" loading="lazy" alt=""></div>
-            <div class="shape2"><img src="~/assets/images/shapes/cta-v1-shape2.png" loading="lazy" alt=""></div>
-            <div class="shape3"><img src="~/assets/images/shapes/cta-v1-shape3.png" loading="lazy" alt=""></div>
-            <div class="cta-one__content">
-                <h2>Türkiyenin en iyi <br> <strong>nakliyat firması</strong> olarak <span>tanındık!</span></h2>
-                <p>
-                    Müşteri memnuniyetine dayalı  hizmetten yararlanabilmek için <br>
-                    Bizlerle iletişime geçin.
-                </p>
-                <div class="btn-box">
-                    <a class="thm-btn" href="/Home/iletisim">
-                        İletişime Geç
-                        <i class="icon-right-arrow21"></i>
-                        <span class="hover-btn hover-bx"></span>
-                        <span class="hover-btn hover-bx2"></span>
-                        <span class="hover-btn hover-bx3"></span>
-                        <span class="hover-btn hover-bx4"></span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<!-- İSTATİSTİKLER -->
 <section class="counter-one">
     <div class="container">
         <div class="row">
-            <div class="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+            <div class="col-xl-4 col-lg-4">
                 <div class="counter-one__single">
                     <div class="counter-one__single-inner">
-                        <div class="icon">
-                            <span class="icon-box"></span>
-                        </div>
+                        <div class="icon"><span class="icon-box"></span></div>
                         <div class="content-box">
                             <div class="count-text-box count-box">
                                 <h3 class="count-text" data-stop="50" data-speed="1500">00</h3>
                                 <span class="plus">+</span>
                             </div>
-                            <div class="text-box">
-                                <p>Dağıtım Eleman Sayısı</p>
-                            </div>
+                            <div class="text-box"><p>Uzman Taşıma Ekibi</p></div>
                         </div>
                     </div>
                     <div class="shape1"></div>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-4 wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+            <div class="col-xl-4 col-lg-4">
                 <div class="counter-one__single">
                     <div class="counter-one__single-inner">
-                        <div class="icon">
-                            <span class="icon-location"></span>
-                        </div>
+                        <div class="icon"><span class="icon-location"></span></div>
                         <div class="content-box">
                             <div class="count-text-box count-box">
                                 <h3 class="count-text" data-stop="566" data-speed="1500">00</h3>
                                 <span class="plus">+</span>
                             </div>
-                            <div class="text-box">
-                                <p>İlçeye Erişim</p>
-                            </div>
+                            <div class="text-box"><p>İlçeye Erişim</p></div>
                         </div>
                     </div>
                     <div class="shape1"></div>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+            <div class="col-xl-4 col-lg-4">
                 <div class="counter-one__single">
                     <div class="counter-one__single-inner">
-                        <div class="icon">
-                            <span class="icon-customer-loyalty"></span>
-                        </div>
+                        <div class="icon"><span class="icon-customer-loyalty"></span></div>
                         <div class="content-box">
                             <div class="count-text-box count-box">
                                 <h3 class="count-text" data-stop="11" data-speed="1500">00</h3>
                                 <span class="plus">+</span>
                             </div>
-                            <div class="text-box">
-                                <p>Yıllık Deneyim</p>
-                            </div>
+                            <div class="text-box"><p>Yıllık Deneyim</p></div>
                         </div>
                     </div>
                     <div class="shape1"></div>
@@ -770,7 +887,231 @@
     </div>
 </section>
 
-<!-- Google Yorum CTA Bandı -->
+<!-- KAYAN İLÇE KARTLARI -->
+<section class="han-scroll-section">
+    <div class="container">
+        <div class="han-scroll-section__header">
+            <h2>Hizmet Verdiğimiz İstanbul İlçeleri</h2>
+            <p>İstanbul'un tüm ilçelerinden Ankara'ya profesyonel nakliyat hizmeti</p>
+        </div>
+    </div>
+    <!-- Sıra 1: soldan sağa -->
+    <div class="han-scroll-row">
+        <div class="han-scroll-track">
+            <a class="han-ilce-card" href="/adalar-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Adalar</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/arnavutkoy-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Arnavutköy</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/atasehir-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Ataşehir</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/avcilar-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Avcılar</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/bagcilar-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Bağcılar</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/bahcelievler-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Bahçelievler</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/bakirkoy-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Bakırköy</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/basaksehir-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Başakşehir</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/bayrampasa-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Bayrampaşa</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/besiktas-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Beşiktaş</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/beykoz-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Beykoz</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/beylikduzu-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Beylikdüzü</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/beyoglu-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Beyoğlu</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/buyukcekmece-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Büyükçekmece</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/catalca-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Çatalca</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/cekmekoy-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Çekmeköy</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/esenler-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Esenler</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/esenyurt-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Esenyurt</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/eyupsultan-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Eyüpsultan</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/fatih-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Fatih</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <!-- kopya: görsel için, Google tarafından yok sayılır -->
+            <span aria-hidden="true"><a class="han-ilce-card" href="/adalar-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Adalar</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/arnavutkoy-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Arnavutköy</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/atasehir-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Ataşehir</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/avcilar-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Avcılar</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/bagcilar-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Bağcılar</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/bahcelievler-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Bahçelievler</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/bakirkoy-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Bakırköy</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/basaksehir-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Başakşehir</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/bayrampasa-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Bayrampaşa</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/besiktas-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Beşiktaş</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/beykoz-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Beykoz</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/beylikduzu-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Beylikdüzü</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/beyoglu-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Beyoğlu</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/buyukcekmece-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Büyükçekmece</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/catalca-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Çatalca</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/cekmekoy-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Çekmeköy</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/esenler-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Esenler</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/esenyurt-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Esenyurt</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/eyupsultan-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Eyüpsultan</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/fatih-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Fatih</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+        </div>
+    </div>
+    <!-- Sıra 2: sağdan sola -->
+    <div class="han-scroll-row">
+        <div class="han-scroll-track reverse">
+            <a class="han-ilce-card" href="/gaziosmanpasa-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Gaziosmanpaşa</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/gungoren-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Güngören</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/kadikoy-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Kadıköy</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/kagithane-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Kağıthane</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/kartal-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Kartal</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/kucukcekmece-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Küçükçekmece</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/maltepe-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Maltepe</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/pendik-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Pendik</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/sancaktepe-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Sancaktepe</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/sariyer-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Sarıyer</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/silivri-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Silivri</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/sultanbeyli-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Sultanbeyli</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/sultangazi-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Sultangazi</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/sile-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Şile</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/sisli-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Şişli</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/tuzla-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Tuzla</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/umraniye-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Ümraniye</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/uskudar-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Üsküdar</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <a class="han-ilce-card" href="/zeytinburnu-nakliyat"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Zeytinburnu</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a>
+            <!-- kopya: görsel için, Google tarafından yok sayılır -->
+            <span aria-hidden="true"><a class="han-ilce-card" href="/gaziosmanpasa-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Gaziosmanpaşa</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/gungoren-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Güngören</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/kadikoy-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Kadıköy</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/kagithane-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Kağıthane</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/kartal-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Kartal</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/kucukcekmece-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Küçükçekmece</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/maltepe-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Maltepe</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/pendik-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Pendik</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/sancaktepe-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Sancaktepe</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/sariyer-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Sarıyer</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/silivri-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Silivri</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/sultanbeyli-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Sultanbeyli</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/sultangazi-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Sultangazi</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/sile-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Şile</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/sisli-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Şişli</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/tuzla-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Tuzla</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/umraniye-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Ümraniye</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/uskudar-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Üsküdar</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+            <span aria-hidden="true"><a class="han-ilce-card" href="/zeytinburnu-nakliyat" tabindex="-1"><div class="han-ilce-card__top"><span class="icon-location1"></span></div><div class="han-ilce-card__body"><strong class="han-ilce-card__name">Zeytinburnu</strong><span class="han-ilce-card__sub"><span>Ankara Nakliyat</span><span class="han-arr">›</span></span></div></a></span>
+        </div>
+    </div>
+</section>
+
+<!-- SSS -->
+<section class="faq-one">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="faq-one__content">
+                    <div class="faq-one__content-faq">
+                        <div class="sec-title">
+                            <div class="sec-title__tagline">
+                                <div class="line"></div>
+                                <div class="text"><h4>Sıkça Sorulan Sorular</h4></div>
+                                <div class="icon"><span class="icon-plane2"></span></div>
+                            </div>
+                            <h2 class="sec-title__title">Merak Ettiğiniz <br> Soruların <span>Cevapları</span></h2>
+                        </div>
+                        <div class="accrodion-grp faq-one-accrodion" data-grp-name="faq-one-accrodion-1">
+                            <div class="accrodion">
+                                <div class="accrodion-title">
+                                    <h4>İstanbul-Ankara arası nakliyat ne kadar sürer?</h4>
+                                </div>
+                                <div class="accrodion-content">
+                                    <div class="inner">
+                                        <p>İstanbul'dan Ankara'ya mesafe yaklaşık 450 km'dir. Standart koşullarda taşıma süresi 5-7 saattir. Hadımköy Ankara Nakliyat olarak haftanın 6 günü düzenli sefer düzenliyor, eşyalarınızı günü gününe teslim ediyoruz. <a href="/Home/fiyat_al">Teklif almak için tıklayın.</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accrodion active">
+                                <div class="accrodion-title">
+                                    <h4>Evden eve nakliyatta hangi hizmetler dahil?</h4>
+                                </div>
+                                <div class="accrodion-content">
+                                    <div class="inner">
+                                        <p><a href="/Home/evden_eve_nakliyat">Evden eve nakliyat</a> hizmetimizde eşya paketleme, <a href="/Home/asansorlu_nakliyatin_istanbul_ankara_tasimalarinda_sagladigi_kolayliklar">asansörlü taşıma</a>, marangoz demontaj/montaj ve özel ambalaj dahildir. Ayrıca <a href="/Home/sigortali_nakliyat_esyalarinizi_guvence_altina_alin">sigortalı taşıma</a> seçeneğiyle eşyalarınız güvence altındadır.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accrodion">
+                                <div class="accrodion-title">
+                                    <h4>Parsiyel nakliyat ne zaman tercih edilmeli?</h4>
+                                </div>
+                                <div class="accrodion-content">
+                                    <div class="inner">
+                                        <p><a href="/Home/parsiyel_nakliyat">Parsiyel nakliyat</a>, 1-2 oda eşyası ya da birkaç koli gibi az hacimli taşımalar için idealdir. Tam araç kiralamak yerine paylaşımlı yükle çok daha uygun maliyetli taşıma imkânı sunar. <a href="/parca-esya-tasima">Parça eşya taşıma</a> sayfamızı inceleyin.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="han-contact-card">
+                    <div class="han-contact-card__top">
+                        <h3>Hemen Teklif Alın</h3>
+                        <p>Uzmanlarımız 7/24 yanınızda &mdash; ücretsiz ekspertiz</p>
+                    </div>
+                    <div class="han-contact-card__body">
+                        <a class="han-contact-card__phone-link" href="tel:+905344300360">
+                            <span class="cc-icon"><span class="icon-phone2"></span></span>
+                            <div>
+                                <small>Hemen Arayın &mdash; 7/24</small>
+                                <strong>0534 430 03 60</strong>
+                            </div>
+                        </a>
+                        <a class="han-contact-card__wa" href="https://wa.me/905344300360" target="_blank" rel="noopener">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.849L.057 23.5l5.797-1.519A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.374l-.359-.213-3.44.902.917-3.348-.234-.374A9.818 9.818 0 1112 21.818z"/></svg>
+                            WhatsApp ile Yazın
+                        </a>
+                        <div class="han-contact-card__hours">
+                            <strong>Çalışma Saatlerimiz</strong>
+                            Pazartesi &ndash; Cumartesi: 08:00 &ndash; 20:00<br>
+                            Pazar: Randevuyla Hizmet<br>
+                            <em style="color:#ff7300;">Acil taşıma için 7/24 arayabilirsiniz.</em>
+                        </div>
+                        <a class="han-contact-card__teklif" href="/Home/fiyat_al">
+                            veya online teklif formu doldurun &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="han-cta-section">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-8">
+                <div class="han-cta__content">
+                    <h2>Güvenilir <strong>nakliyat firması</strong> arıyorsanız <span>doğru yerdesiniz!</span></h2>
+                    <p>Ücretsiz ekspertiz, sigortalı taşıma ve sürprizsiz fiyat garantisiyle 11 yıldır hizmetinizdeyiz. Hemen teklif alın, planınızı yapın.</p>
+                    <div class="han-cta__btns">
+                        <a class="thm-btn" href="/Home/iletisim">
+                            İletişime Geç <i class="icon-right-arrow21"></i>
+                            <span class="hover-btn hover-bx"></span><span class="hover-btn hover-bx2"></span>
+                            <span class="hover-btn hover-bx3"></span><span class="hover-btn hover-bx4"></span>
+                        </a>
+                        <a class="han-cta__btn-phone" href="tel:+905344300360">
+                            <span class="icon-phone2"></span> 0534 430 03 60
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="han-cta__stats">
+                    <div class="han-cta__stat-item">
+                        <div class="han-cta__stat-icon"><span class="icon-customer-loyalty"></span></div>
+                        <div><strong>11+</strong><span>Yıllık Deneyim</span></div>
+                    </div>
+                    <div class="han-cta__stat-item">
+                        <div class="han-cta__stat-icon"><span class="icon-box"></span></div>
+                        <div><strong>2000+</strong><span>Mutlu Müşteri</span></div>
+                    </div>
+                    <div class="han-cta__stat-item">
+                        <div class="han-cta__stat-icon"><span class="icon-worldwide-shipping-1"></span></div>
+                        <div><strong>81</strong><span>İle Hizmet</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GOOGLE YORUM BANDI -->
 <section style="background:#f8f9fa;padding:32px 0;border-top:1px solid #e9ecef;border-bottom:1px solid #e9ecef;">
     <div class="container">
         <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;">
@@ -784,13 +1125,11 @@
             </div>
             <div style="display:flex;gap:12px;flex-wrap:wrap;">
                 <a href="https://share.google/yEAV7ntdMNwinXxKF" target="_blank" rel="noopener"
-                   style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:#3c4043;border:2px solid #dadce0;border-radius:8px;padding:12px 20px;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 2px 6px rgba(0,0,0,.1);transition:box-shadow .2s;"
-                   onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,.18)'" onmouseout="this.style.boxShadow='0 2px 6px rgba(0,0,0,.1)'">
+                   style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:#3c4043;border:2px solid #dadce0;border-radius:8px;padding:12px 20px;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 2px 6px rgba(0,0,0,.1);">
                     <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
                     Google'da Bizi İnceleyin
                 </a>
-                <a href="/Home/musteriyorumlari"
-                   style="display:inline-flex;align-items:center;gap:8px;background:#ff7300;color:#fff;border:2px solid #ff7300;border-radius:8px;padding:12px 20px;font-size:15px;font-weight:700;text-decoration:none;">
+                <a href="/Home/musteriyorumlari" style="display:inline-flex;align-items:center;gap:8px;background:#ff7300;color:#fff;border:2px solid #ff7300;border-radius:8px;padding:12px 20px;font-size:15px;font-weight:700;text-decoration:none;">
                     Tüm Yorumları Gör
                 </a>
             </div>
@@ -798,49 +1137,217 @@
     </div>
 </section>
 
+<!-- KAYAN BLOG KARTLARI -->
+<section class="han-blog-scroll-section">
+    <div class="container">
+        <div class="han-blog-scroll-section__header">
+            <h2>Nakliyat Rehberleri</h2>
+            <p>Taşınmadan önce bilmeniz gerekenler &mdash; <a href="/Home/blog">Tüm yazıları gör &rarr;</a></p>
+        </div>
+    </div>
+    <div style="overflow:hidden;">
+        <div class="han-blog-track">
+            <a class="han-blog-card" href="/istanbul-ankara-nakliyat-fiyatlari-2026-guncel-rehber"><span class="han-blog-card__cat">Fiyat Rehberi</span><p class="han-blog-card__title">İstanbul Ankara Nakliyat Fiyatları 2026 – Güncel Rehber</p><span class="han-blog-card__link">Oku &rarr;</span></a>
+            <a class="han-blog-card" href="/Home/nakliyat_firmasi_nasil_secilir_7_kritik_soru"><span class="han-blog-card__cat">Firma Seçimi</span><p class="han-blog-card__title">Nakliyat Firması Nasıl Seçilir? 7 Kritik Soru</p><span class="han-blog-card__link">Oku &rarr;</span></a>
+            <a class="han-blog-card" href="/Home/tasinirken_yapilan_10_hata"><span class="han-blog-card__cat">Taşınma Rehberi</span><p class="han-blog-card__title">Taşınırken Yapılan 10 Hata ve Nasıl Önlenir</p><span class="han-blog-card__link">Oku &rarr;</span></a>
+            <a class="han-blog-card" href="/Home/parca_esya_mi_tam_arac_mi"><span class="han-blog-card__cat">Karşılaştırma</span><p class="han-blog-card__title">Parça Eşya mı, Tam Araç mı? Hangisi Ne Zaman Mantıklı?</p><span class="han-blog-card__link">Oku &rarr;</span></a>
+            <a class="han-blog-card" href="/Home/nakliyat_dolandiriciligi"><span class="han-blog-card__cat">Uyarı</span><p class="han-blog-card__title">Nakliyat Dolandırıcılığına Dikkat: Bu 6 Tuzağa Düşmeyin</p><span class="han-blog-card__link">Oku &rarr;</span></a>
+            <a class="han-blog-card" href="/Home/tasinma_gunu_kontrol_listesi"><span class="han-blog-card__cat">Check-list</span><p class="han-blog-card__title">Taşınma Günü Kontrol Listesi: Hiçbir Şeyi Unutmayın</p><span class="han-blog-card__link">Oku &rarr;</span></a>
+            <a class="han-blog-card" href="/Home/evden_eve_nakliyat_oncesi_hazirlik_rehberi"><span class="han-blog-card__cat">Hazırlık</span><p class="han-blog-card__title">Evden Eve Nakliyat Öncesi Hazırlık Rehberi</p><span class="han-blog-card__link">Oku &rarr;</span></a>
+            <a class="han-blog-card" href="/Home/ofis_tasima_rehberi_2026"><span class="han-blog-card__cat">Ofis Taşıma</span><p class="han-blog-card__title">Ofis Taşıma Rehberi 2026: Sıfır Hata ile Taşının</p><span class="han-blog-card__link">Oku &rarr;</span></a>
+            <a class="han-blog-card" href="/Home/esya_paketleme_teknikleri"><span class="han-blog-card__cat">Paketleme</span><p class="han-blog-card__title">Eşya Paketleme Teknikleri: Kırılmasın, Ezilmesin</p><span class="han-blog-card__link">Oku &rarr;</span></a>
+            <a class="han-blog-card" href="/Home/ankaraya_tasinmak_rehberi"><span class="han-blog-card__cat">Ankara Rehberi</span><p class="han-blog-card__title">Ankara'ya Taşınmak: Bilmeniz Gereken Her Şey</p><span class="han-blog-card__link">Oku &rarr;</span></a>
+            <a class="han-blog-card" href="/Home/tasinma_maliyetleri_nasil_dusurulur"><span class="han-blog-card__cat">Tasarruf</span><p class="han-blog-card__title">Taşınma Maliyetleri Nasıl Düşürülür? 8 Pratik İpucu</p><span class="han-blog-card__link">Oku &rarr;</span></a>
+            <!-- kopya: görsel için, Google tarafından yok sayılır -->
+            <span aria-hidden="true"><a class="han-blog-card" href="/istanbul-ankara-nakliyat-fiyatlari-2026-guncel-rehber" tabindex="-1"><span class="han-blog-card__cat">Fiyat Rehberi</span><p class="han-blog-card__title">İstanbul Ankara Nakliyat Fiyatları 2026 – Güncel Rehber</p><span class="han-blog-card__link">Oku &rarr;</span></a></span>
+            <span aria-hidden="true"><a class="han-blog-card" href="/Home/nakliyat_firmasi_nasil_secilir_7_kritik_soru" tabindex="-1"><span class="han-blog-card__cat">Firma Seçimi</span><p class="han-blog-card__title">Nakliyat Firması Nasıl Seçilir? 7 Kritik Soru</p><span class="han-blog-card__link">Oku &rarr;</span></a></span>
+            <span aria-hidden="true"><a class="han-blog-card" href="/Home/tasinirken_yapilan_10_hata" tabindex="-1"><span class="han-blog-card__cat">Taşınma Rehberi</span><p class="han-blog-card__title">Taşınırken Yapılan 10 Hata ve Nasıl Önlenir</p><span class="han-blog-card__link">Oku &rarr;</span></a></span>
+            <span aria-hidden="true"><a class="han-blog-card" href="/Home/parca_esya_mi_tam_arac_mi" tabindex="-1"><span class="han-blog-card__cat">Karşılaştırma</span><p class="han-blog-card__title">Parça Eşya mı, Tam Araç mı? Hangisi Ne Zaman Mantıklı?</p><span class="han-blog-card__link">Oku &rarr;</span></a></span>
+            <span aria-hidden="true"><a class="han-blog-card" href="/Home/nakliyat_dolandiriciligi" tabindex="-1"><span class="han-blog-card__cat">Uyarı</span><p class="han-blog-card__title">Nakliyat Dolandırıcılığına Dikkat: Bu 6 Tuzağa Düşmeyin</p><span class="han-blog-card__link">Oku &rarr;</span></a></span>
+            <span aria-hidden="true"><a class="han-blog-card" href="/Home/tasinma_gunu_kontrol_listesi" tabindex="-1"><span class="han-blog-card__cat">Check-list</span><p class="han-blog-card__title">Taşınma Günü Kontrol Listesi: Hiçbir Şeyi Unutmayın</p><span class="han-blog-card__link">Oku &rarr;</span></a></span>
+            <span aria-hidden="true"><a class="han-blog-card" href="/Home/evden_eve_nakliyat_oncesi_hazirlik_rehberi" tabindex="-1"><span class="han-blog-card__cat">Hazırlık</span><p class="han-blog-card__title">Evden Eve Nakliyat Öncesi Hazırlık Rehberi</p><span class="han-blog-card__link">Oku &rarr;</span></a></span>
+            <span aria-hidden="true"><a class="han-blog-card" href="/Home/ofis_tasima_rehberi_2026" tabindex="-1"><span class="han-blog-card__cat">Ofis Taşıma</span><p class="han-blog-card__title">Ofis Taşıma Rehberi 2026: Sıfır Hata ile Taşının</p><span class="han-blog-card__link">Oku &rarr;</span></a></span>
+            <span aria-hidden="true"><a class="han-blog-card" href="/Home/esya_paketleme_teknikleri" tabindex="-1"><span class="han-blog-card__cat">Paketleme</span><p class="han-blog-card__title">Eşya Paketleme Teknikleri: Kırılmasın, Ezilmesin</p><span class="han-blog-card__link">Oku &rarr;</span></a></span>
+            <span aria-hidden="true"><a class="han-blog-card" href="/Home/ankaraya_tasinmak_rehberi" tabindex="-1"><span class="han-blog-card__cat">Ankara Rehberi</span><p class="han-blog-card__title">Ankara'ya Taşınmak: Bilmeniz Gereken Her Şey</p><span class="han-blog-card__link">Oku &rarr;</span></a></span>
+            <span aria-hidden="true"><a class="han-blog-card" href="/Home/tasinma_maliyetleri_nasil_dusurulur" tabindex="-1"><span class="han-blog-card__cat">Tasarruf</span><p class="han-blog-card__title">Taşınma Maliyetleri Nasıl Düşürülür? 8 Pratik İpucu</p><span class="han-blog-card__link">Oku &rarr;</span></a></span>
+        </div>
+    </div>
+</section>
+
+<!-- MÜŞTERİ YORUMLARI -->
+<section class="han-reviews-section">
+    <div class="container">
+        <div class="han-reviews-section__header">
+            <h2>Müşterilerimiz Ne Diyor?</h2>
+            <p>Google'daki 200+ yorumdan seçmeler &mdash; <a href="/Home/musteriyorumlari">Tümünü gör &rarr;</a></p>
+        </div>
+    </div>
+    <!-- Sıra 1: soldan sağa -->
+    <div style="overflow:hidden;margin-bottom:14px;">
+        <div class="han-review-track">
+            <div class="han-review-card">
+                <div class="han-review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="han-review-card__text">"Kadıköy'den Ankara Çankaya'ya taşındım. Zamanında geldiler, tek bir eşya bile zarar görmedi. Fiyat teklifinde söylediklerinin dışına çıkmadılar. Kesinlikle tavsiye ediyorum."</p>
+                <div class="han-review-card__author">
+                    <div class="han-review-card__avatar">A</div>
+                    <div class="han-review-card__info">
+                        <strong>Ayşe K.</strong>
+                        <span>Kadıköy &bull; Google Yorumu</span>
+                    </div>
+                </div>
+            </div>
+            <div class="han-review-card">
+                <div class="han-review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="han-review-card__text">"Çok profesyonel bir ekip. Asansörlü taşıma için önceden gelip incelediler, her eşyayı özenle paketlediler. Hiç bekletmediler, tam saatinde geldiler."</p>
+                <div class="han-review-card__author">
+                    <div class="han-review-card__avatar">M</div>
+                    <div class="han-review-card__info">
+                        <strong>Mehmet A.</strong>
+                        <span>Şişli &bull; Google Yorumu</span>
+                    </div>
+                </div>
+            </div>
+            <div class="han-review-card">
+                <div class="han-review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="han-review-card__text">"Parsiyel nakliyat için tercih ettim. Çok uygun fiyata ve hızlı şekilde eşyalarım Ankara'ya ulaştı. Firmayı çok samimi ve dürüst buldum, teşekkürler."</p>
+                <div class="han-review-card__author">
+                    <div class="han-review-card__avatar">F</div>
+                    <div class="han-review-card__info">
+                        <strong>Fatma D.</strong>
+                        <span>Beylikdüzü &bull; Google Yorumu</span>
+                    </div>
+                </div>
+            </div>
+            <div class="han-review-card">
+                <div class="han-review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="han-review-card__text">"Ofis taşıması için tercih ettim. İş saatleri bitmeden taşımayı tamamladılar, hiçbir ekipman hasar görmedi. Ekip son derece deneyimliydi."</p>
+                <div class="han-review-card__author">
+                    <div class="han-review-card__avatar">H</div>
+                    <div class="han-review-card__info">
+                        <strong>Hasan T.</strong>
+                        <span>Esenyurt &bull; Google Yorumu</span>
+                    </div>
+                </div>
+            </div>
+            <!-- kopya -->
+            <div class="han-review-card">
+                <div class="han-review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="han-review-card__text">"Kadıköy'den Ankara Çankaya'ya taşındım. Zamanında geldiler, tek bir eşya bile zarar görmedi. Fiyat teklifinde söylediklerinin dışına çıkmadılar. Kesinlikle tavsiye ediyorum."</p>
+                <div class="han-review-card__author">
+                    <div class="han-review-card__avatar">A</div>
+                    <div class="han-review-card__info"><strong>Ayşe K.</strong><span>Kadıköy &bull; Google Yorumu</span></div>
+                </div>
+            </div>
+            <div class="han-review-card">
+                <div class="han-review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="han-review-card__text">"Çok profesyonel bir ekip. Asansörlü taşıma için önceden gelip incelediler, her eşyayı özenle paketlediler. Hiç bekletmediler, tam saatinde geldiler."</p>
+                <div class="han-review-card__author">
+                    <div class="han-review-card__avatar">M</div>
+                    <div class="han-review-card__info"><strong>Mehmet A.</strong><span>Şişli &bull; Google Yorumu</span></div>
+                </div>
+            </div>
+            <div class="han-review-card">
+                <div class="han-review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="han-review-card__text">"Parsiyel nakliyat için tercih ettim. Çok uygun fiyata ve hızlı şekilde eşyalarım Ankara'ya ulaştı. Firmayı çok samimi ve dürüst buldum, teşekkürler."</p>
+                <div class="han-review-card__author">
+                    <div class="han-review-card__avatar">F</div>
+                    <div class="han-review-card__info"><strong>Fatma D.</strong><span>Beylikdüzü &bull; Google Yorumu</span></div>
+                </div>
+            </div>
+            <div class="han-review-card">
+                <div class="han-review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="han-review-card__text">"Ofis taşıması için tercih ettim. İş saatleri bitmeden taşımayı tamamladılar, hiçbir ekipman hasar görmedi. Ekip son derece deneyimliydi."</p>
+                <div class="han-review-card__author">
+                    <div class="han-review-card__avatar">H</div>
+                    <div class="han-review-card__info"><strong>Hasan T.</strong><span>Esenyurt &bull; Google Yorumu</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sıra 2: sağdan sola -->
+    <div style="overflow:hidden;">
+        <div class="han-review-track reverse">
+            <div class="han-review-card">
+                <div class="han-review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="han-review-card__text">"Kırılacak eşyalarımı çok özenle paketlediler, özel köpükle sardılar. Ankara'ya hiçbir hasar olmadan ulaştı. Fiyatları da rakiplerine göre çok uygundu."</p>
+                <div class="han-review-card__author">
+                    <div class="han-review-card__avatar">S</div>
+                    <div class="han-review-card__info"><strong>Seda M.</strong><span>Bakırköy &bull; Google Yorumu</span></div>
+                </div>
+            </div>
+            <div class="han-review-card">
+                <div class="han-review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="han-review-card__text">"Çeyiz eşyalarımızı hasarsız ve tam zamanında teslim ettiler. Ekip çok nazik ve yardımseverdi, düğün telaşımızda büyük bir yük aldılar üstümüzden."</p>
+                <div class="han-review-card__author">
+                    <div class="han-review-card__avatar">B</div>
+                    <div class="han-review-card__info"><strong>Büşra K.</strong><span>Üsküdar &bull; Google Yorumu</span></div>
+                </div>
+            </div>
+            <div class="han-review-card">
+                <div class="han-review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="han-review-card__text">"İki kez tercih ettim, her seferinde memnun kaldım. Hem hızlı hem uygun fiyatlı. Sigortalı taşıma seçeneği ayrıca çok güven verici."</p>
+                <div class="han-review-card__author">
+                    <div class="han-review-card__avatar">Z</div>
+                    <div class="han-review-card__info"><strong>Zeynep Ö.</strong><span>Maltepe &bull; Google Yorumu</span></div>
+                </div>
+            </div>
+            <div class="han-review-card">
+                <div class="han-review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="han-review-card__text">"Beşiktaş'tan Ankara Keçiören'e taşındım. Ekip çok düzenli çalıştı, tüm eşyalar etiketlenip yerleştirildi. Yeni evde kurulum desteği de sağladılar."</p>
+                <div class="han-review-card__author">
+                    <div class="han-review-card__avatar">E</div>
+                    <div class="han-review-card__info"><strong>Emre Y.</strong><span>Beşiktaş &bull; Google Yorumu</span></div>
+                </div>
+            </div>
+            <!-- kopya -->
+            <div class="han-review-card">
+                <div class="han-review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="han-review-card__text">"Kırılacak eşyalarımı çok özenle paketlediler, özel köpükle sardılar. Ankara'ya hiçbir hasar olmadan ulaştı. Fiyatları da rakiplerine göre çok uygundu."</p>
+                <div class="han-review-card__author">
+                    <div class="han-review-card__avatar">S</div>
+                    <div class="han-review-card__info"><strong>Seda M.</strong><span>Bakırköy &bull; Google Yorumu</span></div>
+                </div>
+            </div>
+            <div class="han-review-card">
+                <div class="han-review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="han-review-card__text">"Çeyiz eşyalarımızı hasarsız ve tam zamanında teslim ettiler. Ekip çok nazik ve yardımseverdi, düğün telaşımızda büyük bir yük aldılar üstümüzden."</p>
+                <div class="han-review-card__author">
+                    <div class="han-review-card__avatar">B</div>
+                    <div class="han-review-card__info"><strong>Büşra K.</strong><span>Üsküdar &bull; Google Yorumu</span></div>
+                </div>
+            </div>
+            <div class="han-review-card">
+                <div class="han-review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="han-review-card__text">"İki kez tercih ettim, her seferinde memnun kaldım. Hem hızlı hem uygun fiyatlı. Sigortalı taşıma seçeneği ayrıca çok güven verici."</p>
+                <div class="han-review-card__author">
+                    <div class="han-review-card__avatar">Z</div>
+                    <div class="han-review-card__info"><strong>Zeynep Ö.</strong><span>Maltepe &bull; Google Yorumu</span></div>
+                </div>
+            </div>
+            <div class="han-review-card">
+                <div class="han-review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="han-review-card__text">"Beşiktaş'tan Ankara Keçiören'e taşındım. Ekip çok düzenli çalıştı, tüm eşyalar etiketlenip yerleştirildi. Yeni evde kurulum desteği de sağladılar."</p>
+                <div class="han-review-card__author">
+                    <div class="han-review-card__avatar">E</div>
+                    <div class="han-review-card__info"><strong>Emre Y.</strong><span>Beşiktaş &bull; Google Yorumu</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOTOĞRAF CAROUSEL -->
 <section class="brand-one">
     <div class="container">
         <div class="brand-one__carousel owl-carousel owl-theme">
-            <div class="brand-one__single">
-                <div class="brand-one__single-inner">
-                    <img src="~/assets/images/gallery/han_alt_görsel2.png" loading="lazy" alt="Hadımköy Ankara Nakliyat araç filosu">
-                </div>
-            </div>
-            <div class="brand-one__single">
-                <div class="brand-one__single-inner">
-                    <img src="~/assets/images/gallery/han_alt_görsel3.png" loading="lazy" alt="Hadımköy Ankara evden eve nakliyat hizmeti">
-                </div>
-            </div>
-            <div class="brand-one__single">
-                <div class="brand-one__single-inner">
-                    <img src="~/assets/images/gallery/8.png" loading="lazy" alt="Hadımköy Ankara şehirlerarası nakliyat">
-                </div>
-            </div>
-            <div class="brand-one__single">
-                <div class="brand-one__single-inner">
-                    <img src="~/assets/images/gallery/han_alt_görsel4.png" loading="lazy" alt="Hadımköy Ankara ofis taşımacılığı">
-                </div>
-            </div>
-            <div class="brand-one__single">
-                <div class="brand-one__single-inner">
-                    <img src="~/assets/images/gallery/han_alt_görsel5.png" loading="lazy" alt="Hadımköy Ankara fuar taşımacılığı">
-                </div>
-            </div>
-            <div class="brand-one__single">
-                <div class="brand-one__single-inner">
-                    <img src="~/assets/images/gallery/han_alt_görsel6.png" loading="lazy" alt="İstanbul Ankara nakliyat firması">
-                </div>
-            </div>
-            <div class="brand-one__single">
-                <div class="brand-one__single-inner">
-                    <img src="~/assets/images/gallery/han_alt_görsel7.png" loading="lazy" alt="İstanbul Ankara evden eve nakliyat firması">
-                </div>
-            </div>
-            <div class="brand-one__single">
-                <div class="brand-one__single-inner">
-                    <img src="~/assets/images/gallery/han_alt_görsel8.png" loading="lazy" alt="Hadımköy Ankara şehirlerarası nakliyat firması">
-                </div>
-            </div>
+            <div class="brand-one__single"><div class="brand-one__single-inner"><img src="~/assets/images/gallery/han_alt_görsel2.png" loading="lazy" alt="Hadımköy Ankara Nakliyat araç filosu"></div></div>
+            <div class="brand-one__single"><div class="brand-one__single-inner"><img src="~/assets/images/gallery/han_alt_görsel3.png" loading="lazy" alt="Hadımköy Ankara evden eve nakliyat hizmeti"></div></div>
+            <div class="brand-one__single"><div class="brand-one__single-inner"><img src="~/assets/images/gallery/8.png" loading="lazy" alt="Hadımköy Ankara şehirlerarası nakliyat"></div></div>
+            <div class="brand-one__single"><div class="brand-one__single-inner"><img src="~/assets/images/gallery/han_alt_görsel4.png" loading="lazy" alt="Hadımköy Ankara ofis taşımacılığı"></div></div>
+            <div class="brand-one__single"><div class="brand-one__single-inner"><img src="~/assets/images/gallery/han_alt_görsel5.png" loading="lazy" alt="Hadımköy Ankara fuar taşımacılığı"></div></div>
+            <div class="brand-one__single"><div class="brand-one__single-inner"><img src="~/assets/images/gallery/han_alt_görsel6.png" loading="lazy" alt="İstanbul Ankara nakliyat firması"></div></div>
+            <div class="brand-one__single"><div class="brand-one__single-inner"><img src="~/assets/images/gallery/han_alt_görsel7.png" loading="lazy" alt="İstanbul Ankara evden eve nakliyat firması"></div></div>
+            <div class="brand-one__single"><div class="brand-one__single-inner"><img src="~/assets/images/gallery/han_alt_görsel8.png" loading="lazy" alt="Hadımköy Ankara şehirlerarası nakliyat firması"></div></div>
         </div>
     </div>
 </section>

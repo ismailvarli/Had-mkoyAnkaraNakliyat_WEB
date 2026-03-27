@@ -1,0 +1,129 @@
+@{
+    ViewData["Title"] = "Buzdolabı ve Çamaşır Makinesi Taşıma Rehberi | Beyaz Eşya Nakliyat";
+    ViewData["Description"] = "Beyaz eşya taşıma rehberi: buzdolabı, çamaşır makinesi, bulaşık makinesi hazırlığı ve nakliyat ipuçları. Hadımköy Ankara Nakliyat: +905344300360.";
+}
+
+<style>
+    .page-wrap { max-width: 1200px; margin: 0 auto; padding: 24px; display: grid; gap: 24px; grid-template-columns: 280px 1fr }
+    @@media (max-width:992px) { .page-wrap { grid-template-columns: 1fr } }
+    .side { background: #0f172a; border-radius: 14px; padding: 18px }
+    .side h3 { color: #fff; font-size: 18px; margin: 0 0 12px; font-weight: 800 }
+    .svc-list { display: flex; flex-direction: column; gap: 10px }
+    .svc-item { display: flex; align-items: center; justify-content: space-between; background: #172036; color: #e2e8f0; padding: 10px 12px; border-radius: 10px; text-decoration: none; border: 1px solid #23314f }
+    .svc-item:hover { background: #1f2a44 }
+    .svc-item .arrow { background: #f97316; color: #fff; border-radius: 8px; padding: 4px 8px; font-weight: 700 }
+    .content h1 { font-size: 32px; font-weight: 900; margin: 0 0 12px; color: #0f172a }
+    .blog-meta { font-size: 14px; color: #64748b; margin-bottom: 16px }
+    .blog-thumb { border-radius: 14px; overflow: hidden; margin-bottom: 20px }
+    .blog-thumb img { width: 100%; height: auto; object-fit: cover }
+    .blog-text p { margin-bottom: 16px; color: #334155; line-height: 1.75 }
+    .blog-text h2 { margin: 20px 0 10px; color: #0f172a; font-size: 22px }
+    .blog-text h3 { margin: 16px 0 8px; color: #0f172a; font-size: 18px }
+    .blog-text ul { margin: 0 0 16px 18px }
+    .blog-text li { margin-bottom: 8px }
+    .cta-box { background: #f97316; color: #fff; padding: 18px; border-radius: 12px; margin-top: 28px; text-align: center }
+    .cta-box a { display: inline-block; padding: 10px 18px; background: #fff; color: #f97316; font-weight: 700; border-radius: 8px; text-decoration: none; margin-top: 10px }
+    .related-posts { margin-top: 32px; padding-top: 24px; border-top: 1px solid #e2e8f0 }
+    .related-posts h3 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #0f172a }
+    .related-list { display: flex; flex-direction: column; gap: 8px }
+    .related-list a { color: #1676be; text-decoration: none; font-weight: 600 }
+    .related-list a:hover { text-decoration: underline }
+</style>
+
+<div class="page-wrap">
+    <aside class="side">
+        <h3>Blog Yazılarımız</h3>
+        <nav class="svc-list">
+            <a class="svc-item" href="/istanbul-ankara-nakliyat-fiyatlari-2026-guncel-rehber"><span>İstanbul Ankara 2026 Fiyatları</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/parsiyel_nakliyat_nedir_istanbul_ankara_arasinda__avantajlari"><span>Parsiyel Nakliyat Nedir?</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/evden_eve_nakliyat_oncesi_hazirlik_rehberi"><span>Nakliyat Hazırlık Rehberi</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/piyano_tasima_rehberi"><span>Piyano Taşıma Rehberi</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/beyaz_esya_tasima_rehberi"><span>Beyaz Eşya Taşıma</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/elektronik_esya_tasima"><span>Elektronik Eşya Taşıma</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/ankara_istanbul_tasima_rehberi"><span>Ankara'dan İstanbul'a Taşınma</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/nakliyat_sigortasi_nasil_alinir"><span>Nakliyat Sigortası Rehberi</span><span class="arrow">→</span></a>
+        </nav>
+    </aside>
+
+    <main class="content">
+        <h1>Buzdolabı ve Çamaşır Makinesi Taşıma Rehberi</h1>
+        <div class="blog-meta">Beyaz Eşya • Taşıma Rehberi • Pratik İpuçları</div>
+
+        <div class="blog-thumb">
+            <img src="~/assets/images/gallery/blog-gorsel.png"
+                 width="1200" height="675" loading="lazy"
+                 alt="Beyaz eşya taşıma buzdolabı çamaşır makinesi rehberi">
+        </div>
+
+        <div class="blog-text">
+            <p>
+                Beyaz eşya taşıma, ev nakliyatının en kritik ve en sık hata yapılan aşamalarından biridir. Buzdolabı, çamaşır makinesi, bulaşık makinesi ve fırın gibi büyük beyaz eşyalar hem ağır hem de içindeki mekanizmalar nedeniyle hassastır. Yanlış taşıma; kompresör arızası, kapı menteşesi kırılması ya da iç yüzey çizilmesi gibi ciddi hasarlara yol açabilir.
+            </p>
+
+            <h2>Buzdolabı Taşımadan Önce Yapılması Gerekenler</h2>
+            <p>
+                Buzdolabı taşımanın en önemli kuralı: taşımadan en az <strong>24 saat önce</strong> fişi çekilmeli ve içindekiler tamamen boşaltılmalıdır. Bu süre, kompresördeki gazın stabilize olması için zorunludur. Taşımadan hemen sonra fişe takılan buzdolabı kompresör arızasıyla karşılaşabilir.
+            </p>
+            <ul>
+                <li>Fişi 24 saat önce çekin, buz varsa eritin.</li>
+                <li>İçindeki yiyecekleri soğutucu çantaya veya başka bir yere taşıyın.</li>
+                <li>Rafları ve çekmeceleri çıkarın; ayrı ayrı bantlayın.</li>
+                <li>Kapıyı bant veya ip ile sabitleyin — serbest bırakmayın.</li>
+                <li>Varış noktasında en az 4-6 saat bekleyin, sonra fişe takın.</li>
+            </ul>
+
+            <h2>Buzdolabını Dik mi, Yatık mı Taşımalı?</h2>
+            <p>
+                Mümkün olduğunca <strong>dik tutarak</strong> taşımak en sağlıklı yoldur. Kompresör yağının ve soğutucu gazın doğru konumda kalması için buzdolabı ideal olarak dikey pozisyonda taşınmalıdır. Zorunlu hallerde yatık taşınıyorsa varış noktasında en az 6-8 saat dik bırakıldıktan sonra çalıştırılmalıdır.
+            </p>
+
+            <h2>Çamaşır Makinesi Taşıma Hazırlığı</h2>
+            <p>
+                Çamaşır makinesi taşımanın en büyük riski iç davulun hasar görmesidir. Bunu önlemek için:
+            </p>
+            <ul>
+                <li><strong>Nakliye vidaları:</strong> Makinenin arkasında bulunan nakliye vidalarını (transport bolts) takın. Bu vidalar davulun yerinde kalmasını sağlar. Makinenizin orijinal kutusunu sakladıysanız içinde bulunabilir; yoksa teknik servisten temin edin.</li>
+                <li><strong>Su boşaltma:</strong> Hortumda kalan suyu tamamen boşaltın. Kapağı açık bırakarak kurumaya izin verin.</li>
+                <li><strong>Hortumları sabitleyin:</strong> Giriş ve boşaltma hortumlarını makinenin arkasına bantlayın.</li>
+                <li><strong>Taşıma:</strong> Makineyi mümkün olduğunca dik taşıyın. Eğimde yatırılırsa davul kasası hasar görebilir.</li>
+            </ul>
+
+            <h2>Bulaşık Makinesi ve Fırın Taşıma</h2>
+            <h3>Bulaşık Makinesi</h3>
+            <ul>
+                <li>Sepetleri çıkarın ve ayrı taşıyın.</li>
+                <li>İçindeki suyu tamamen boşaltın.</li>
+                <li>Kapağı bantlayın veya ip ile sabitleyin.</li>
+            </ul>
+            <h3>Ankastre Fırın</h3>
+            <ul>
+                <li>Fırın raflarını çıkarın, ayrı paketleyin.</li>
+                <li>Cam kapağı streç film ve köpükle koruyun.</li>
+                <li>Dikine taşımaya özen gösterin.</li>
+            </ul>
+
+            <h2>Profesyonel Beyaz Eşya Taşıma Hizmeti</h2>
+            <p>
+                Büyük beyaz eşyaların taşınmasında deneyimli bir nakliyat firması tercih etmek hem zamanınızı hem de eşyanızı korur. <strong>Hadımköy Ankara Nakliyat</strong> olarak İstanbul–Ankara hattında beyaz eşya taşımacılığı konusunda deneyimliyiz. Özel ambalaj malzemeleri ve eğitimli ekibimizle eşyalarınızı güvenle taşıyoruz.
+            </p>
+            <p>
+                Beyaz eşyalarınız taşıma süresince sigortalıdır. Hasar durumunda sigorta poliçesi devreye girer.
+            </p>
+
+            <div class="cta-box">
+                <strong>Beyaz Eşyalarınız Güvende Olsun</strong>
+                <p>Teklif almak için hemen arayın: <a href="tel:+905344300360">+90 534 430 03 60</a></p>
+                <a href="https://wa.me/905344300360" target="_blank" rel="noopener">WhatsApp ile Yazın</a>
+            </div>
+
+            <div class="related-posts">
+                <h3>İlgili Yazılar</h3>
+                <nav class="related-list">
+                    <a href="/Home/elektronik_esya_tasima">TV ve Elektronik Eşya Taşıma Rehberi</a>
+                    <a href="/Home/esya_paketleme_teknikleri">Eşya Paketleme Teknikleri: Tam Rehber</a>
+                    <a href="/Home/evden_eve_nakliyat_oncesi_hazirlik_rehberi">Evden Eve Nakliyat Öncesi Hazırlık Rehberi</a>
+                </nav>
+            </div>
+        </div>
+    </main>
+</div>

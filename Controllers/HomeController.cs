@@ -666,6 +666,41 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
         {
             return View();
         }
+
+        [Route("istanbul-ankara-nakliye")]
+        public IActionResult istanbul_ankara_nakliye()
+        {
+            return View();
+        }
+
+        [Route("ankara-istanbul-nakliyat")]
+        public IActionResult ankara_istanbul_nakliyat()
+        {
+            return View();
+        }
+
+        [Route("asansorlu-nakliyat")]
+        public IActionResult asansorlu_nakliyat()
+        {
+            return View();
+        }
+
+        [Route("sigortali-nakliyat")]
+        public IActionResult sigortali_nakliyat()
+        {
+            return View();
+        }
+
+        public IActionResult piyano_tasima_rehberi() { return View(); }
+        public IActionResult beyaz_esya_tasima_rehberi() { return View(); }
+        public IActionResult ankara_istanbul_tasima_rehberi() { return View(); }
+        public IActionResult elektronik_esya_tasima() { return View(); }
+        public IActionResult antika_esya_tasima() { return View(); }
+        public IActionResult tasima_mevsimi_secimi() { return View(); }
+        public IActionResult nakliyat_sigortasi_nasil_alinir() { return View(); }
+        public IActionResult cocuklu_ailelere_tasima_rehberi() { return View(); }
+        public IActionResult home_office_tasima() { return View(); }
+        public IActionResult kira_biterken_tasima_planlama() { return View(); }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> fiyat_al(TeklifFormModel model)
