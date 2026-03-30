@@ -12,7 +12,14 @@
       ""name"": ""Ankara'dan İstanbul'a Güvenli Nakliye"",
       ""provider"": { ""@type"": ""LocalBusiness"", ""name"": ""Hadımköy Ankara Nakliyat"" },
       ""areaServed"": { ""@type"": ""City"", ""name"": ""İstanbul"" },
-      ""description"": ""Ankara ve diğer illerden İstanbul'un her iki yakasına (Anadolu ve Avrupa) kurumsal, sigortalı ve asansörlü taşımacılık hizmetleri.""
+      ""description"": ""Ankara ve diğer illerden İstanbul'un her iki yakasına (Anadolu ve Avrupa) kurumsal, sigortalı ve asansörlü taşımacılık hizmetleri."",
+      ""aggregateRating"": {
+        ""@type"": ""AggregateRating"",
+        ""ratingValue"": ""4.9"",
+        ""bestRating"": ""5"",
+        ""worstRating"": ""1"",
+        ""reviewCount"": ""200""
+      }
     }";
 
     var istanbulFaq = @"{
@@ -36,6 +43,17 @@
 @* HTML Çıktısı *@
 <script type="application/ld+json">@Html.Raw(istanbulService)</script>
 <script type="application/ld+json">@Html.Raw(istanbulFaq)</script>
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.hadimkoyankaranakliyat.com/" },
+    { "@@type": "ListItem", "position": 2, "name": "İstanbul Nakliyat", "item": "https://www.hadimkoyankaranakliyat.com/istanbul-nakliyat" }
+  ]
+}
+</script>
+
 <style>
     .istanbul-nakliyat .page-wrap {
         max-width: 1200px;
@@ -274,7 +292,7 @@
 
         <main class="in-content">
             <h1>İstanbul Nakliyat | Profesyonel ve Güvenilir Taşımacılık</h1>
-            <div class="blog-meta">📅 Güncellenme: 2025 • 🧭 Hazırlık &amp; Planlama • 🛡 Sigortalı Taşıma İpuçları</div>
+            <div class="blog-meta">📅 Güncellenme: 2025 • 🧭 Hazırlık & Planlama • 🛡 Sigortalı Taşıma İpuçları</div>
 
             <div class="blog-thumb">
                 <img src="@Url.Content("~/assets/images/gallery/istanbul_nakliyat.jpg")"

@@ -16,7 +16,14 @@
       ""name"": ""{0} Nakliyat - İstanbul Ankara Arası Güvenli Taşıma"",
       ""provider"": {{ ""@type"": ""LocalBusiness"", ""name"": ""Hadımköy Ankara Nakliyat"" }},
       ""areaServed"": {{ ""@type"": ""City"", ""name"": ""{0}, İstanbul"" }},
-      ""description"": ""{0} bölgesinden Ankara'ya sigortalı, asansörlü ve marangozlu evden eve nakliyat hizmeti. Eşyalarınız profesyonel ekiplerle taşınır.""
+      ""description"": ""{0} bölgesinden Ankara'ya sigortalı, asansörlü ve marangozlu evden eve nakliyat hizmeti. Eşyalarınız profesyonel ekiplerle taşınır."",
+      ""aggregateRating"": {{
+        ""@@type"": ""AggregateRating"",
+        ""ratingValue"": ""4.9"",
+        ""bestRating"": ""5"",
+        ""worstRating"": ""1"",
+        ""reviewCount"": ""200""
+      }}
     }}", ilce);
 
     var ilceFaqJson = string.Format(@"{{
@@ -25,23 +32,23 @@
       ""mainEntity"": [
         {{
           ""@type"": ""Question"",
-          ""name"": ""{0}'dan Ankara'ya taşınma kaç gücn sücrer?"",
-          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""Komple ev taşımalarında aynı gücn yückleme, ertesi gücn teslim prensibini uyguluyoruz. {0} ile Ankara arası 450-500 km olup araç ortalama 5-7 saatte varış adresine ulaşır. Parsiyel gü6nderilerde en yakın sefere gü6re 1-3 iş gücnüc içinde teslim yapılır."" }}
+          ""name"": ""{0}'dan Ankara'ya taşınma kaç gün sürer?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""Komple ev taşımalarında aynı gün yükleme, ertesi gün teslim prensibini uyguluyoruz. {0} ile Ankara arası 450-500 km olup araç ortalama 5-7 saatte varış adresine ulaşır. Parsiyel gönderilerde en yakın sefere göre 1-3 iş günü içinde teslim yapılır."" }}
         }},
         {{
           ""@type"": ""Question"",
           ""name"": ""{0} nakliyat fiyatları 2026'da ne kadar?"",
-          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""1+1 daire için 8.000-14.000 TL, 2+1 daire için 12.000-20.000 TL, 3+1 daire için 18.000-28.000 TL aralı\u011fında başlamaktadır. Kesin fiyat; kat sayısı, asansü6r durumu ve paketleme kapsamına gü6re üccretsiz keşif sonrasında yazılı olarak netlesir."" }}
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""1+1 daire için 8.000-14.000 TL, 2+1 daire için 12.000-20.000 TL, 3+1 daire için 18.000-28.000 TL aralığında başlamaktadır. Kesin fiyat; kat sayısı, asansör durumu ve paketleme kapsamına göre ücretsiz keşif sonrasında yazılı olarak netleşir."" }}
         }},
         {{
           ""@type"": ""Question"",
           ""name"": ""Eşyalarım sigortalı taşınır mı?"",
-          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""Evet. Tücm taşımalarda nakliyat sigortası standarttır. Hasar durumunda sigorta şirketi devreye girer; tazminat hakkınız yazılı sü6zleşmeyle gücvence altına alınır. Sigortasız taşıma yapmıyoruz."" }}
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""Evet. Tüm taşımalarda nakliyat sigortası standarttır. Hasar durumunda sigorta şirketi devreye girer; tazminat hakkınız yazılı sözleşmeyle güvence altına alınır. Sigortasız taşıma yapmıyoruz."" }}
         }},
         {{
           ""@type"": ""Question"",
-          ""name"": ""{0} nakliyat için ne kadar ü6nceden rezervasyon yapmalıyım?"",
-          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""Yo\u011fun dü6nemlerde (ay başı-sonu, bayram haftaları) en az 1 hafta ü6nceden, normal dü6nemlerde 2-3 gücn ü6nce haber vermeniz yeterlidir. Acil taşımalarda aynı gücn hizmet verebildi\u011fimiz de olmaktadır."" }}
+          ""name"": ""{0} nakliyat için ne kadar önceden rezervasyon yapmalıyım?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""Yoğun dönemlerde (ay başı-sonu, bayram haftaları) en az 1 hafta önceden, normal dönemlerde 2-3 gün önce haber vermeniz yeterlidir. Acil taşımalarda aynı gün hizmet verebildiğimiz de olmaktadır."" }}
         }}
 ]
     }}", ilce);
@@ -50,6 +57,17 @@
 @* HTML Çıktısı *@
 <script type="application/ld+json">@Html.Raw(ilceServiceJson)</script>
 <script type="application/ld+json">@Html.Raw(ilceFaqJson)</script>
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.hadimkoyankaranakliyat.com/" },
+    { "@@type": "ListItem", "position": 2, "name": "Beykoz Nakliyat", "item": "https://www.hadimkoyankaranakliyat.com/beykoz-nakliyat" }
+  ]
+}
+</script>
+
 <style>
     :root {
         --primary-color: #d35400; /* Kurumsal Turuncu */
@@ -485,249 +503,249 @@
         
                 <!-- SEO KEYWORD BOLUMU - GUCLENDIRILMIS ICERIK -->
 
-        <h2>Beykoz Nakliye Hizmetleri: Ev, Ofis ve Ticari Ta&#351;&#305;mac&#305;l&#305;k</h2>
+        <h2>Beykoz Nakliye Hizmetleri: Ev, Ofis ve Ticari Taşımacılık</h2>
         <p>
-            <strong>Beykoz nakliye hizmetleri</strong> denildi&#287;inde akla ilk gelen; e&#351;yalar&#305;n&#305;z&#305;
-            g&#252;venli, h&#305;zl&#305; ve &#351;effaf bir s&#252;re&#231;te yeni adresinize ula&#351;t&#305;rmakt&#305;r.
-            Had&#305;mk&#246;y Ankara Nakliyat olarak <strong>Beykoz nakliye firmas&#305;</strong> s&#305;fat&#305;yla
-            sundu&#287;umuz hizmetler &#351;unlard&#305;r:
+            <strong>Beykoz nakliye hizmetleri</strong> denildiğinde akla ilk gelen; eşyalarınızı
+            güvenli, hızlı ve şeffaf bir süreçte yeni adresinize ulaştırmaktır.
+            Hadımköy Ankara Nakliyat olarak <strong>Beykoz nakliye firması</strong> sıfatıyla
+            sunduğumuz hizmetler şunlardır:
         </p>
         <ul>
             <li>
-                <strong>Evden Eve Beykoz Nakliye:</strong> Oda oda paketleme, mobilya demontaj&#305; ve montaj&#305;,
-                asans&#246;rl&#252; ta&#351;&#305;ma ve sigortal&#305; teslim. K&#305;r&#305;labilir e&#351;yalar i&#231;in haval&#305; naylon ve
-                kraft ka&#287;&#305;t ambalaj kullan&#305;l&#305;r.
+                <strong>Evden Eve Beykoz Nakliye:</strong> Oda oda paketleme, mobilya demontajı ve montajı,
+                asansörlü taşıma ve sigortalı teslim. Kırılabilir eşyalar için havalı naylon ve
+                kraft kağıt ambalaj kullanılır.
             </li>
             <li>
-                <strong>Ofis Nakliye Beykoz:</strong> &#304;&#351; s&#252;reklili&#287;ini koruyarak planlanan ofis ta&#351;&#305;mas&#305;.
-                Ar&#351;ivleme, BT ekipman&#305; paketleme ve mobilya montaj&#305; dahil.
+                <strong>Ofis Nakliye Beykoz:</strong> iş sürekliliğini koruyarak planlanan ofis taşıması.
+                Arşivleme, BT ekipmanı paketleme ve mobilya montajı dahil.
             </li>
             <li>
-                <strong>Parsiyel Nakliye:</strong> Az hacimli g&#246;nderilerde payla&#351;&#305;ml&#305; sefer.
-                Yaln&#305;zca kaplad&#305;&#287;&#305;n&#305;z alan i&#231;in &#246;deme yapars&#305;n&#305;z.
+                <strong>Parsiyel Nakliye:</strong> Az hacimli gönderilerde paylaşımlı sefer.
+                Yalnızca kapladığınız alan için ödeme yaparsınız.
             </li>
             <li>
-                <strong>Ambar ve Ticari Nakliye:</strong> Palet, koli ve ticari mal sevkiyatlar&#305;nda
-                d&#252;zenli Ankara seferleri.
+                <strong>Ambar ve Ticari Nakliye:</strong> Palet, koli ve ticari mal sevkiyatlarında
+                düzenli Ankara seferleri.
             </li>
         </ul>
         <p>
-            T&#252;m <strong>Beykoz nakliye</strong> hizmetlerimizde yaz&#305;l&#305; s&#246;zle&#351;me d&#252;zenlenir,
-            e&#351;yalar nakliyat sigortas&#305; kapsam&#305;na al&#305;n&#305;r ve ek &#252;cret &#231;&#305;kar&#305;lmaz.
-            Fiyat teklifimiz kesindir; g&#252;n&#252;nde s&#252;rpriz yoktur.
+            Tüm <strong>Beykoz nakliye</strong> hizmetlerimizde yazılı sözleşme düzenlenir,
+            eşyalar nakliyat sigortası kapsamına alınır ve ek ücret çıkarılmaz.
+            Fiyat teklifimiz kesindir; gününde sürpriz yoktur.
         </p>
 
-        <h2>Beykoz Ankara Nakliyat: G&#252;zerg&#226;h, Sefer S&#305;kl&#305;&#287;&#305; ve Teslimat</h2>
+        <h2>Beykoz Ankara Nakliyat: Güzergah, Sefer Sıklığı ve Teslimat</h2>
         <p>
-            <strong>Beykoz Ankara nakliyat</strong> hizmetimizde ara&#231;lar&#305;m&#305;z &#304;stanbul Had&#305;mk&#246;y
-            merkez garaj&#305;m&#305;zdan hareketle haftada 6 g&#252;n d&#252;zenli sefer d&#252;zenler.
-            <strong>Beykoz'dan Ankara'ya</strong> komple ev ta&#351;&#305;malar&#305;nda ayn&#305; g&#252;n y&#252;kleme,
-            ertesi g&#252;n teslim prensibini uyguluyoruz. Parsiyel g&#246;nderilerde en yak&#305;n
-            sefer g&#252;n&#252;ne g&#246;re planlama yap&#305;l&#305;r.
+            <strong>Beykoz Ankara nakliyat</strong> hizmetimizde araçlarımız istanbul Hadımköy
+            merkez garajımızdan hareketle haftada 6 gün düzenli sefer düzenler.
+            <strong>Beykoz'dan Ankara'ya</strong> komple ev taşımalarında aynı gün yükleme,
+            ertesi gün teslim prensibini uyguluyoruz. Parsiyel gönderilerde en yakın
+            sefer gününe göre planlama yapılır.
         </p>
         <p>
-            <strong>Beykoz'dan Ankara'ya mesafe</strong> yakla&#351;&#305;k 450&#8211;500 km'dir;
-            ortalama ula&#351;&#305;m s&#252;resi 5&#8211;7 saattir.
-            Ara&#231;lar&#305;m&#305;z kapal&#305; kasa olup y&#252;k ba&#287;lama ekipmanlar&#305;yla donat&#305;lm&#305;&#351;t&#305;r;
-            yol titrenimi e&#351;yalara zarar vermez.
-            Ta&#351;&#305;ma boyunca m&#252;&#351;teri bilgilendirilir, tahmini var&#305;&#351; saati payla&#351;&#305;l&#305;r.
+            <strong>Beykoz'dan Ankara'ya mesafe</strong> yaklaşık 450–500 km'dir;
+            ortalama ulaşım süresi 5–7 saattir.
+            Araçlarımız kapalı kasa olup yük bağlama ekipmanlarıyla donatılmıştır;
+            yol titrenimi eşyalara zarar vermez.
+            Taşıma boyunca müşteri bilgilendirilir, tahmini varış saati paylaşılır.
         </p>
         <p>
-            Beykoz'dan Ankara'ya nakliyat fiyat&#305; &#246;&#287;renmek i&#231;in bizi aray&#305;n ya da
-            WhatsApp'tan yaz&#305;n; <strong>&#252;cretsiz ke&#351;if</strong> sonras&#305;
-            net fiyat 24 saat i&#231;inde elinizde olur.
+            Beykoz'dan Ankara'ya nakliyat fiyatı öğrenmek için bizi arayın ya da
+            WhatsApp'tan yazın; <strong>ücretsiz keşif</strong> sonrası
+            net fiyat 24 saat içinde elinizde olur.
         </p>
 
-        <h2>Beykoz Evden Eve Nakliyat: Ad&#305;m Ad&#305;m S&#252;re&#231;</h2>
+        <h2>Beykoz Evden Eve Nakliyat: Adım Adım Süreç</h2>
         <p>
-            <strong>Beykoz evden eve nakliyat</strong> hizmetimizde s&#252;recin her
-            ad&#305;m&#305;n&#305; sizin ad&#305;n&#305;za planl&#305;yoruz:
+            <strong>Beykoz evden eve nakliyat</strong> hizmetimizde sürecin her
+            adımını sizin adınıza planlıyoruz:
         </p>
         <ol>
             <li>
-                <strong>&#220;cretsiz Ke&#351;if ve Ekspertiz:</strong> E&#351;ya listesi &#231;&#305;kar&#305;l&#305;r,
-                kat ve asans&#246;r durumu, ula&#351;&#305;m ko&#351;ullar&#305; yerinde de&#287;erlendirilir.
-                Size &#351;effaf ve net bir teklif sunulur.
+                <strong>ücretsiz Keşif ve Ekspertiz:</strong> Eşya listesi çıkarılır,
+                kat ve asansör durumu, ulaşım koşulları yerinde değerlendirilir.
+                Size şeffaf ve net bir teklif sunulur.
             </li>
             <li>
-                <strong>Yaz&#305;l&#305; S&#246;zle&#351;me:</strong> Fiyat, tarih, sigorta kapsam&#305; ve
-                ta&#351;&#305;ma kalemleri s&#246;zle&#351;meye girer. S&#252;rpriz masraf yok.
+                <strong>Yazılı Sözleşme:</strong> Fiyat, tarih, sigorta kapsamı ve
+                taşıma kalemleri sözleşmeye girer. Sürpriz masraf yok.
             </li>
             <li>
-                <strong>Profesyonel Paketleme:</strong> K&#305;r&#305;labilir e&#351;yalar, mobilyalar ve
-                elektronikler malzemeye g&#246;re paketlenir; bubble-wrap, kraft ka&#287;&#305;t ve
-                battaniye koruyucu kullan&#305;l&#305;r.
+                <strong>Profesyonel Paketleme:</strong> Kırılabilir eşyalar, mobilyalar ve
+                elektronikler malzemeye göre paketlenir; bubble-wrap, kraft kağıt ve
+                battaniye koruyucu kullanılır.
             </li>
             <li>
-                <strong>Y&#252;kleme ve Ula&#351;&#305;m:</strong> Ara&#231; i&#231;i e&#351;ya sabitleme ile
-                yol boyunca hasar riski en aza indirilir. Ta&#351;&#305;ma s&#252;recinde
-                m&#252;&#351;teri bilgilendirilir.
+                <strong>Yükleme ve Ulaşım:</strong> Araç içi eşya sabitleme ile
+                yol boyunca hasar riski en aza indirilir. Taşıma sürecinde
+                müşteri bilgilendirilir.
             </li>
             <li>
-                <strong>Teslim ve Yerle&#351;im:</strong> Var&#305;&#351; adresinde oda bazl&#305; bo&#351;altma,
-                montaj ve yerle&#351;im tamamlan&#305;r. &#304;mzal&#305; teslim tutana&#287;&#305; d&#252;zenlenir.
+                <strong>Teslim ve Yerleşim:</strong> Varış adresinde oda bazlı boşaltma,
+                montaj ve yerleşim tamamlanır. imzalı teslim tutanağı düzenlenir.
             </li>
         </ol>
         <p>
-            <strong>Beykoz evden eve nakliye</strong> hizmetimiz 7/24 ula&#351;&#305;labilir destek hatt&#305;yla
-            desteklenir. Ta&#351;&#305;nma g&#252;n&#252; olu&#351;abilecek her aksakl&#305;kta ekibimiz an&#305;nda m&#252;dahale eder.
+            <strong>Beykoz evden eve nakliye</strong> hizmetimiz 7/24 ulaşılabilir destek hattıyla
+            desteklenir. Taşınma günü oluşabilecek her aksaklıkta ekibimiz anında müdahale eder.
         </p>
 
-        <h2>Beykoz Nakliyat Firmas&#305; Se&#231;erken Sorman&#305;z Gereken 5 Soru</h2>
+        <h2>Beykoz Nakliyat Firması Seçerken Sormanız Gereken 5 Soru</h2>
         <p>
-            Beykoz'nda <strong>nakliyat firmas&#305;</strong> ara&#351;t&#305;r&#305;yorsan&#305;z yaln&#305;zca fiyat
-            kar&#351;&#305;la&#351;t&#305;rmas&#305; yapmak yetmez. Su sorular&#305; sormay&#305; unutmay&#305;n:
+            Beykoz'nda <strong>nakliyat firması</strong> araştırıyorsanız yalnızca fiyat
+            karşılaştırması yapmak yetmez. Su soruları sormayı unutmayın:
         </p>
         <ol>
             <li>
-                <strong>Nakliyat sigortas&#305; var m&#305;?</strong> Sigortas&#305;z ta&#351;&#305;malarda
-                e&#351;ya hasar&#305; durumunda tazminat alamazs&#305;n&#305;z.
+                <strong>Nakliyat sigortası var mı?</strong> Sigortasız taşımalarda
+                eşya hasarı durumunda tazminat alamazsınız.
             </li>
             <li>
-                <strong>Yaz&#305;l&#305; s&#246;zle&#351;me yap&#305;l&#305;yor mu?</strong> S&#246;zle&#351;mesiz teklifler,
-                ta&#351;&#305;ma g&#252;n&#252;nde fiyat art&#305;&#351;&#305;na zemin haz&#305;rlar.
+                <strong>Yazılı sözleşme yapılıyor mu?</strong> Sözleşmesiz teklifler,
+                taşıma gününde fiyat artışına zemin hazırlar.
             </li>
             <li>
-                <strong>Referans g&#246;sterebiliyor mu?</strong> Google yorumlar&#305; ve ger&#231;ek m&#252;&#351;teri
-                deneyimleri g&#252;venilirli&#287;in en do&#287;ru g&#246;stergesidir.
+                <strong>Referans gösterebiliyor mu?</strong> Google yorumları ve gerçek müşteri
+                deneyimleri güvenilirliğin en doğru göstergesidir.
             </li>
             <li>
-                <strong>Ara&#231; filosu kendi m&#252;lk&#252;nde mi?</strong> Kiral&#305;k ara&#231;la &#231;al&#305;&#351;an
+                <strong>Araç filosu kendi mülkünde mi?</strong> Kiralık araçla çalışan
                 firmalar operasyon kalitesini kontrol edemez.
             </li>
             <li>
-                <strong>Teslimattan sonra ula&#351;&#305;labilir mi?</strong> Ta&#351;&#305;ma sonras&#305;
-                sorunlara m&#252;dahale eden firmalar tercih edilmelidir.
+                <strong>Teslimattan sonra ulaşılabilir mi?</strong> Taşıma sonrası
+                sorunlara müdahale eden firmalar tercih edilmelidir.
             </li>
         </ol>
         <p>
-            <strong>Had&#305;mk&#246;y Ankara Nakliyat</strong> olarak bu 5 kriterin tamam&#305;n&#305;
-            kar&#351;&#305;l&#305;yoruz. Beykoz nakliyat, Beykoz nakliye ve Beykoz Ankara nakliyat
+            <strong>Hadımköy Ankara Nakliyat</strong> olarak bu 5 kriterin tamamını
+            karşılıyoruz. Beykoz nakliyat, Beykoz nakliye ve Beykoz Ankara nakliyat
             hizmetlerimiz icin hemen arayin: <a href="tel:+905344300360"><strong>+90 534 430 03 60</strong></a>
         </p>
 
-<h2>Beykoz Ankara Nakliyat Fiyatlar&#305; 2026</h2>
+<h2>Beykoz Ankara Nakliyat Fiyatları 2026</h2>
         <p>
-            <strong>Beykoz'dan Ankara'ya nakliyat fiyatlar&#305;</strong>; ta&#351;&#305;nacak e&#351;yan&#305;n hacmine, kat ve asans&#246;r durumuna, paketleme kapsam&#305;na ve se&#231;ilen hizmet tipine g&#246;re belirlenir.
-            A&#351;a&#287;&#305;daki fiyat aral&#305;klar&#305; 2026 y&#305;l&#305; ortalama de&#287;erleri olup kesin fiyat &#252;cretsiz ke&#351;if sonras&#305;nda yaz&#305;l&#305; teklifle netlesir.
+            <strong>Beykoz'dan Ankara'ya nakliyat fiyatları</strong>; taşınacak eşyanın hacmine, kat ve asansör durumuna, paketleme kapsamına ve seçilen hizmet tipine göre belirlenir.
+            Aşağıdaki fiyat aralıkları 2026 yılı ortalama değerleri olup kesin fiyat ücretsiz keşif sonrasında yazılı teklifle netleşir.
         </p>
         <table class="info-table">
             <tr>
                 <th>Ev Tipi</th>
-                <th>Fiyat Aral&#305;&#287;&#305;</th>
-                <th>S&#252;re</th>
+                <th>Fiyat Aralığı</th>
+                <th>Süre</th>
             </tr>
             <tr>
                 <td>1+1 Daire</td>
-                <td>&#8378;8.000 &#8211; &#8378;14.000</td>
-                <td>1 G&#252;n</td>
+                <td>₺8.000 – ₺14.000</td>
+                <td>1 Gün</td>
             </tr>
             <tr>
                 <td>2+1 Daire</td>
-                <td>&#8378;12.000 &#8211; &#8378;20.000</td>
-                <td>1 G&#252;n</td>
+                <td>₺12.000 – ₺20.000</td>
+                <td>1 Gün</td>
             </tr>
             <tr>
                 <td>3+1 Daire</td>
-                <td>&#8378;18.000 &#8211; &#8378;28.000</td>
-                <td>1&#8211;2 G&#252;n</td>
+                <td>₺18.000 – ₺28.000</td>
+                <td>1–2 Gün</td>
             </tr>
             <tr>
-                <td>Villa / B&#252;y&#252;k Konut</td>
-                <td>&#8378;30.000+</td>
-                <td>2 G&#252;n</td>
+                <td>Villa / Büyük Konut</td>
+                <td>₺30.000+</td>
+                <td>2 Gün</td>
             </tr>
             <tr>
-                <td>Parsiyel / Par&#231;a E&#351;ya</td>
-                <td>&#8378;1.500 &#8211; &#8378;5.000</td>
-                <td>Ayn&#305; Hafta</td>
+                <td>Parsiyel / Parça Eşya</td>
+                <td>₺1.500 – ₺5.000</td>
+                <td>Aynı Hafta</td>
             </tr>
         </table>
         <p>
-            Fiyat&#305; etkileyen ba&#351;l&#305;ca unsurlar: <strong>kat say&#305;s&#305;</strong> (asans&#246;r var/yok),
-            <strong>mesafe ve ula&#351;&#305;m ko&#351;ullar&#305;</strong>, paketleme kapsam&#305; ve sigorta bedeli.
-            T&#252;m kalemler s&#246;zle&#351;mede yazar; ek &#252;cret &#231;&#305;kmaz.
-            <a href="/Home/nakliyat_hizmet_fiyati">Detayl&#305; fiyat bilgisi i&#231;in t&#305;klay&#305;n &rsaquo;</a>
+            Fiyatı etkileyen başlıca unsurlar: <strong>kat sayısı</strong> (asansör var/yok),
+            <strong>mesafe ve ulaşım koşulları</strong>, paketleme kapsamı ve sigorta bedeli.
+            Tüm kalemler sözleşmede yazar; ek ücret çıkmaz.
+            <a href="/Home/nakliyat_hizmet_fiyati">Detaylı fiyat bilgisi için tıklayın &rsaquo;</a>
         </p>
         <!-- FAQ BOLUMU -->
-        <h2>Beykoz Nakliyat S&#305;k&#231;a Sorulan Sorular</h2>
+        <h2>Beykoz Nakliyat Sıkça Sorulan Sorular</h2>
         <div class="han-faq-list">
             <div class="han-faq-item">
-                <h3>Beykoz'dan Ankara'ya ta&#351;&#305;nma ka&#231; g&#252;n s&#252;rer?</h3>
+                <h3>Beykoz'dan Ankara'ya taşınma kaç gün sürer?</h3>
                 <p>
-                    Komple ev ta&#351;&#305;malar&#305;nda <strong>ayn&#305; g&#252;n y&#252;kleme, ertesi g&#252;n teslim</strong>
-                    prensibini uyguluyoruz. Beykoz ile Ankara aras&#305; mesafe 450&#8211;500 km olup
-                    ara&#231; 5&#8211;7 saatte var&#305;&#351; adresine ula&#351;&#305;r. Parsiyel g&#246;nderilerde en yak&#305;n
-                    haftal&#305;k sefere g&#246;re 1&#8211;3 i&#351; g&#252;n&#252; i&#231;inde teslim yap&#305;l&#305;r.
+                    Komple ev taşımalarında <strong>aynı gün yükleme, ertesi gün teslim</strong>
+                    prensibini uyguluyoruz. Beykoz ile Ankara arası mesafe 450–500 km olup
+                    araç 5–7 saatte varış adresine ulaşır. Parsiyel gönderilerde en yakın
+                    haftalık sefere göre 1–3 iş günü içinde teslim yapılır.
                 </p>
             </div>
             <div class="han-faq-item">
-                <h3>Beykoz nakliyat fiyatlar&#305; 2026'da ne kadar?</h3>
+                <h3>Beykoz nakliyat fiyatları 2026'da ne kadar?</h3>
                 <p>
-                    1+1 daire i&#231;in &#8378;8.000&#8211;14.000, 2+1 daire i&#231;in &#8378;12.000&#8211;20.000,
-                    3+1 daire i&#231;in &#8378;18.000&#8211;28.000 aral&#305;&#287;&#305;nda ba&#351;lamaktad&#305;r.
-                    Kesin fiyat; kat say&#305;s&#305;, asans&#246;r durumu, paketleme kapsam&#305; ve sigorta
-                    bedeline g&#246;re <strong>&#252;cretsiz ke&#351;if</strong> sonras&#305;nda yaz&#305;l&#305; olarak netlesir.
+                    1+1 daire için ₺8.000–14.000, 2+1 daire için ₺12.000–20.000,
+                    3+1 daire için ₺18.000–28.000 aralığında başlamaktadır.
+                    Kesin fiyat; kat sayısı, asansör durumu, paketleme kapsamı ve sigorta
+                    bedeline göre <strong>ücretsiz keşif</strong> sonrasında yazılı olarak netleşir.
                 </p>
             </div>
             <div class="han-faq-item">
-                <h3>E&#351;yalar&#305;m sigortal&#305; ta&#351;&#305;n&#305;r m&#305;?</h3>
+                <h3>Eşyalarım sigortalı taşınır mı?</h3>
                 <p>
-                    Evet. T&#252;m ta&#351;&#305;malarda <strong>nakliyat sigortas&#305; standartt&#305;r</strong>. Hasar
-                    durumunda sigorta &#351;irketi devreye girer; tazminat hakk&#305;n&#305;z yaz&#305;l&#305;
-                    s&#246;zle&#351;meyle g&#252;vence alt&#305;na al&#305;n&#305;r. Sigortas&#305;z ta&#351;&#305;ma yapm&#305;yoruz.
+                    Evet. Tüm taşımalarda <strong>nakliyat sigortası standarttır</strong>. Hasar
+                    durumunda sigorta şirketi devreye girer; tazminat hakkınız yazılı
+                    sözleşmeyle güvence altına alınır. Sigortasız taşıma yapmıyoruz.
                 </p>
             </div>
             <div class="han-faq-item">
-                <h3>Beykoz nakliyat i&#231;in ne kadar &#246;nceden rezervasyon yapmal&#305;y&#305;m?</h3>
+                <h3>Beykoz nakliyat için ne kadar önceden rezervasyon yapmalıyım?</h3>
                 <p>
-                    Yo&#287;un d&#246;nemlerde (ay ba&#351;&#305; ve sonu, bayram haftalar&#305;) en az
-                    <strong>1 hafta &#246;nceden</strong> haber vermeniz &#246;nerilir. Normal d&#246;nemlerde
-                    2&#8211;3 g&#252;n &#246;nce yeterlidir. Acil ta&#351;&#305;malarda ayn&#305; g&#252;n hizmet
-                    verebildi&#287;imiz de olmaktad&#305;r; ekibimizle g&#246;r&#252;&#351;ebilirsiniz.
+                    Yoğun dönemlerde (ay başı ve sonu, bayram haftaları) en az
+                    <strong>1 hafta önceden</strong> haber vermeniz önerilir. Normal dönemlerde
+                    2–3 gün önce yeterlidir. Acil taşımalarda aynı gün hizmet
+                    verebildiğimiz de olmaktadır; ekibimizle görüşebilirsiniz.
                 </p>
             </div>
         </div>
 
         <!-- GUVEN VE YORUM BOLUMU -->
-        <h2>Neden Had&#305;mk&#246;y Ankara Nakliyat?</h2>
+        <h2>Neden Hadımköy Ankara Nakliyat?</h2>
         <p>
-            <strong>Beykoz nakliyat</strong> tercihinizi yaparken bizi farkl&#305; k&#305;lan
-            d&#246;rt temel unsuru a&#351;a&#287;&#305;da bulabilirsiniz:
+            <strong>Beykoz nakliyat</strong> tercihinizi yaparken bizi farklı kılan
+            dört temel unsuru aşağıda bulabilirsiniz:
         </p>
         <ul class="han-trust-list">
             <li>
-                <strong>10+ Y&#305;l Deneyim:</strong> 2014'ten bu yana aral&#305;ks&#305;z
-                &#304;stanbul&#8211;Ankara hatt&#305;nda nakliyat hizmeti sunuyoruz.
-                SektÃ¶rdeki deneyimimiz her ta&#351;&#305;mada fark yaratmaktad&#305;r.
+                <strong>10+ Yıl Deneyim:</strong> 2014'ten bu yana aralıksız
+                istanbul–Ankara hattında nakliyat hizmeti sunuyoruz.
+                SektÃ¶rdeki deneyimimiz her taşımada fark yaratmaktadır.
             </li>
             <li>
-                <strong>5.000+ Ba&#351;ar&#305;l&#305; Ta&#351;&#305;ma:</strong> Her ta&#351;&#305;mada
-                ayn&#305; &#246;zen ve titizli&#287;i g&#246;steriyor, m&#252;&#351;teri memnuniyetini
-                &#246;ncelik olarak g&#246;r&#252;yoruz.
+                <strong>5.000+ Başarılı Taşıma:</strong> Her taşımada
+                aynı özen ve titizliği gösteriyor, müşteri memnuniyetini
+                öncelik olarak görüyoruz.
             </li>
             <li>
-                <strong>Yaz&#305;l&#305; S&#246;zle&#351;me Garantisi:</strong> Anla&#351;&#305;lan fiyat
-                d&#305;&#351;&#305;nda hi&#231;bir ek &#252;cret talep etmiyoruz. Ta&#351;&#305;ma g&#252;n&#252;
-                surpriz &#231;&#305;kmaz.
+                <strong>Yazılı Sözleşme Garantisi:</strong> Anlaşılan fiyat
+                dışında hiçbir ek ücret talep etmiyoruz. Taşıma günü
+                surpriz çıkmaz.
             </li>
             <li>
-                <strong>7/24 Ula&#351;&#305;labilirlik:</strong> Ta&#351;&#305;nma g&#252;n&#252; ve
-                teslimat sonras&#305;nda ekibimize ula&#351;abilirsiniz. Sorun
-                &#231;&#305;karsa an&#305;nda m&#252;dahale ediyoruz.
+                <strong>7/24 Ulaşılabilirlik:</strong> Taşınma günü ve
+                teslimat sonrasında ekibimize ulaşabilirsiniz. Sorun
+                çıkarsa anında müdahale ediyoruz.
             </li>
         </ul>
         <div class="han-reviews-mini">
             <blockquote class="han-review">
-                <p>&#8220;Beykoz'dan Ankara'ya ta&#351;&#305;nd&#305;k. E&#351;yalar&#305;m&#305;z&#305; titizlikle paketlediler,
-                hi&#231;bir hasar olmad&#305;. Fiyat teklifin d&#305;&#351;&#305;na &#231;&#305;kmad&#305;lar; kesinlikle tavsiye ederim.&#8221;</p>
-                <cite>&#8212; Beykoz M&#252;&#351;terisi, Google Yorumu</cite>
+                <p>&#8220;Beykoz'dan Ankara'ya taşındık. Eşyalarımızı titizlikle paketlediler,
+                hiçbir hasar olmadı. Fiyat teklifin dışına çıkmadılar; kesinlikle tavsiye ederim.&#8221;</p>
+                <cite>— Beykoz Müşterisi, Google Yorumu</cite>
             </blockquote>
             <blockquote class="han-review">
-                <p>&#8220;3+1 dairemi Had&#305;mk&#246;y Ankara Nakliyat ile ta&#351;&#305;d&#305;m. Paketleme &#231;ok
-                d&#252;zenliydi, Ankara'ya hasar&#305;z ula&#351;t&#305;. Fiyat ve hizmet dengesinde
-                bu b&#246;lgede en iyisi diyebilirim.&#8221;</p>
-                <cite>&#8212; Beykoz M&#252;&#351;terisi, Google Yorumu</cite>
+                <p>&#8220;3+1 dairemi Hadımköy Ankara Nakliyat ile taşıdım. Paketleme çok
+                düzenliydi, Ankara'ya hasarız ulaştı. Fiyat ve hizmet dengesinde
+                bu bölgede en iyisi diyebilirim.&#8221;</p>
+                <cite>— Beykoz Müşterisi, Google Yorumu</cite>
             </blockquote>
         </div>
 
@@ -760,7 +778,7 @@
                 </a>
                                 <a href="/parca-esya-tasima" class="han-scard">
                     <span class="han-scard-icon">&#128230;</span>
-                    <span class="han-scard-text">Par&#231;a E&#351;ya Ta&#351;&#305;ma</span>
+                    <span class="han-scard-text">Parça Eşya Taşıma</span>
                 </a><a href="/Home/parsiyel_nakliyat" class="han-scard">
                     <span class="han-scard-icon">&#128230;</span>
                     <span class="han-scard-text">Parsiyel Nakliyat</span>
@@ -782,12 +800,12 @@
         <div class="han-services-grid">
             <h3 class="han-services-title">
                 <span class="han-services-icon">&#128664;</span>
-                Yak&#305;n &#304;l&#231;elerde de Hizmet Veriyoruz
+                Yakın ilçelerde de Hizmet Veriyoruz
             </h3>
             <div class="han-services-cards">
                 <a href="/Home/sariyer_nakliyat" class="han-scard">
                     <span class="han-scard-icon">&#128205;</span>
-                    <span class="han-scard-text">Sar&#305;yer Nakliyat</span>
+                    <span class="han-scard-text">Sarıyer Nakliyat</span>
                 </a>
                 <a href="/Home/sile_nakliyat" class="han-scard">
                     <span class="han-scard-icon">&#128205;</span>
@@ -795,15 +813,15 @@
                 </a>
                 <a href="/Home/uskudar_nakliyat" class="han-scard">
                     <span class="han-scard-icon">&#128205;</span>
-                    <span class="han-scard-text">&#220;sk&#252;dar Nakliyat</span>
+                    <span class="han-scard-text">üsküdar Nakliyat</span>
                 </a>
                 <a href="/Home/cekmekoy_nakliyat" class="han-scard">
                     <span class="han-scard-icon">&#128205;</span>
-                    <span class="han-scard-text">&#199;ekmek&#246;y Nakliyat</span>
+                    <span class="han-scard-text">&#199;ekmeköy Nakliyat</span>
                 </a>
                 <a href="/Home/umraniye_nakliyat" class="han-scard">
                     <span class="han-scard-icon">&#128205;</span>
-                    <span class="han-scard-text">&#220;mraniye Nakliyat</span>
+                    <span class="han-scard-text">ümraniye Nakliyat</span>
                 </a>
             </div>
         </div>

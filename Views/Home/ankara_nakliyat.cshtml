@@ -11,7 +11,14 @@
       ""name"": ""İstanbul'dan Ankara'ya Profesyonel Taşıma"",
       ""provider"": { ""@type"": ""LocalBusiness"", ""name"": ""Hadımköy Ankara Nakliyat"" },
       ""areaServed"": { ""@type"": ""City"", ""name"": ""Ankara"" },
-      ""description"": ""İstanbul'dan Ankara'nın tüm ilçelerine (Çankaya, Keçiören, Yenimahalle vb.) günlük seferlerle sigortalı ve asansörlü evden eve nakliyat.""
+      ""description"": ""İstanbul'dan Ankara'nın tüm ilçelerine (Çankaya, Keçiören, Yenimahalle vb.) günlük seferlerle sigortalı ve asansörlü evden eve nakliyat."",
+      ""aggregateRating"": {
+        ""@type"": ""AggregateRating"",
+        ""ratingValue"": ""4.9"",
+        ""bestRating"": ""5"",
+        ""worstRating"": ""1"",
+        ""reviewCount"": ""200""
+      }
     }";
 
     var ankaraFaq = @"{
@@ -35,6 +42,18 @@
 @* HTML Çıktısı *@
 <script type="application/ld+json">@Html.Raw(ankaraService)</script>
 <script type="application/ld+json">@Html.Raw(ankaraFaq)</script>
+
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.hadimkoyankaranakliyat.com/" },
+    { "@@type": "ListItem", "position": 2, "name": "Ankara Nakliyat - Günlük Seferler & Sigortalı Taşıma 2025", "item": "https://www.hadimkoyankaranakliyat.com/ankara-nakliyat" }
+  ]
+}
+</script>
+
 <div class="container my-5">
     <div class="row align-items-center mb-5">
         <div class="col-lg-7">
@@ -75,7 +94,7 @@
         </div>
     </div>
     <p>
-        İstanbul ve Ankara arasındaki yoğun göç ve ticaret trafiğinde, Hadımköy Ankara Nakliyat olarak güvenilir bir köprü vazifesi görüyoruz. Sektördeki en büyük sorun olan 'araç bekleme' ve 'gecikme' stresini, her gün düzenlediğimiz karşılıklı seferlerimizle tamamen ortadan kaldırıyoruz. Eşyalarınız ister 3+1 komple ev eşyası olsun, ister sadece bir koltuk takımı; geniş araç filomuzdaki parsiyel ve tam araç seçenekleriyle size en uygun çözümü üretiyoruz. Özellikle Ankara'dan İstanbul'a veya tersi istikamette sunduğumuz 'Dönüş Aracı' avantajımız sayesinde, piyasa koşullarının %30 altında fiyatlarla kaliteli hizmet almanızı sağlıyoruz. Çankaya, Keçiören, Yenimahalle gibi metropol ilçeler başta olmak üzere Ankara'nın tüm noktalarına kapıdan kapıya teslimat yaparken, eşyalarınızı Axa/Allianz sigorta güvencesiyle tam koruma altına alıyoruz. 2025 model kapalı kasa araçlarımız ve uzman kadromuzla, şehirlerarası nakliyat sürecini endişe olmaktan çıkarıp keyifli bir taşınma deneyimine dönüştürüyoruz.
+        İstanbul ve Ankara arasındaki yoğun göç ve ticaret trafiğinde, Hadımköy Ankara Nakliyat olarak güvenilir bir köprü vazifesi görüyoruz. Sektördeki en büyük sorun olan 'araç bekleme' ve 'gecikme' stresini, her gün düzenlediğimiz karşılıklı seferlerimizle tamamen ortadan kaldırıyoruz. Eşyalarınız ister 3+1 komple ev eşyası olsun, ister sadece bir koltuk takımı geniş araç filomuzdaki parsiyel ve tam araç seçenekleriyle size en uygun çözümü üretiyoruz. Özellikle Ankara'dan İstanbul'a veya tersi istikamette sunduğumuz 'Dönüş Aracı' avantajımız sayesinde, piyasa koşullarının %30 altında fiyatlarla kaliteli hizmet almanızı sağlıyoruz. Çankaya, Keçiören, Yenimahalle gibi metropol ilçeler başta olmak üzere Ankara'nın tüm noktalarına kapıdan kapıya teslimat yaparken, eşyalarınızı Axa/Allianz sigorta güvencesiyle tam koruma altına alıyoruz. 2025 model kapalı kasa araçlarımız ve uzman kadromuzla, şehirlerarası nakliyat sürecini endişe olmaktan çıkarıp keyifli bir taşınma deneyimine dönüştürüyoruz.
     </p>
 
     <div class="row py-5">

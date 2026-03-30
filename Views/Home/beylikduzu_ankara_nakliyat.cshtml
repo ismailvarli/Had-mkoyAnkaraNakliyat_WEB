@@ -14,7 +14,14 @@
       ""name"": ""{0} Ankara Nakliyat - Hızlı ve Sigortalı Taşıma"",
       ""provider"": {{ ""@type"": ""LocalBusiness"", ""name"": ""Hadımköy Ankara Nakliyat"" }},
       ""areaServed"": [ {{ ""@type"": ""City"", ""name"": ""{0}"" }}, {{ ""@type"": ""City"", ""name"": ""Ankara"" }} ],
-      ""description"": ""İstanbul {0} ilçesinden Ankara'nın tüm bölgelerine haftalık düzenli seferlerle, asansörlü ve sigortalı evden eve nakliyat hizmeti.""
+      ""description"": ""İstanbul {0} ilçesinden Ankara'nın tüm bölgelerine haftalık düzenli seferlerle, asansörlü ve sigortalı evden eve nakliyat hizmeti."",
+      ""aggregateRating"": {{
+        ""@@type"": ""AggregateRating"",
+        ""ratingValue"": ""4.9"",
+        ""bestRating"": ""5"",
+        ""worstRating"": ""1"",
+        ""reviewCount"": ""200""
+      }}
     }}", ilce);
 
     var ilceAnkaraFaq = string.Format(@"{{
@@ -38,6 +45,17 @@
 @* HTML Çıktısı *@
 <script type="application/ld+json">@Html.Raw(ilceAnkaraService)</script>
 <script type="application/ld+json">@Html.Raw(ilceAnkaraFaq)</script>
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.hadimkoyankaranakliyat.com/" },
+    { "@@type": "ListItem", "position": 2, "name": "Beylikdüzü Ankara Nakliyat", "item": "https://www.hadimkoyankaranakliyat.com/Home/beylikduzu_ankara_nakliyat" }
+  ]
+}
+</script>
+
 <style>
     .team-details__top-content-text p {
         margin-bottom: 18px;

@@ -1,4 +1,4 @@
-@{
+﻿@{
     ViewData["Title"] = "Parça Eşya Taşıma | Az Eşya Taşıma Hizmetleri";
     ViewData["Description"] = "Az eşya taşıma, tek parça eşya taşıma ve şehirler arası parça eşya taşımacılığı. Tam araç kiralamadan, yalnızca eşyanızın kapladığı alan kadar ücret ödeyin.";
 }
@@ -30,9 +30,14 @@
         {
           ""@type"": ""Question"",
           ""name"": ""Eşyalarım sigortalı mı taşınıyor?"",
-          ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Evet, tüm parça eşya taşıma hizmetlerimizde eşyalarınız taşıma sigortası kapsamındadır. Hasar durumunda yasal güvenceniz mevcuttur."" }
-        }
-      ]
+          ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Evet, tüm parça eşya taşıma hizmetlerimizde eşyalarınız taşıma sigortası kapsamındadır. Hasar durumunda yasal güvenceniz mevcuttur."",
+      ""aggregateRating"": {
+        ""@type"": ""AggregateRating"",
+        ""ratingValue"": ""4.9"",
+        ""bestRating"": ""5"",
+        ""worstRating"": ""1"",
+        ""reviewCount"": ""200""
+      }
     }";
 
     var serviceJson = @"{
@@ -47,6 +52,17 @@
 }
 <script type="application/ld+json">@Html.Raw(faqJson)</script>
 <script type="application/ld+json">@Html.Raw(serviceJson)</script>
+
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.hadimkoyankaranakliyat.com/" },
+    { "@@type": "ListItem", "position": 2, "name": "Parça Eşya Taşıma", "item": "https://www.hadimkoyankaranakliyat.com/parca-esya-tasima" }
+  ]
+}
+</script>
 
 <style>
     .parca-hero {
@@ -292,7 +308,7 @@
             </a>
             <a href="/Home/istanbul_ankara_parsiyel_nakliyat" class="han-scard">
                 <span class="han-scard-icon">&#128506;</span>
-                <span class="han-scard-text">&#304;stanbul Ankara Parsiyel</span>
+                <span class="han-scard-text">istanbul Ankara Parsiyel</span>
             </a>
             <a href="/istanbul-ankara-parca-esya-tasima" class="han-scard">
                 <span class="han-scard-icon">&#128506;</span>

@@ -15,7 +15,7 @@
         {
           ""@type"": ""Question"",
           ""name"": ""İstanbul Ankara arası parça eşya taşıma ne kadar?"",
-          ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""İstanbul-Ankara arası parça eşya taşıma fiyatı; tek beyaz eşya için 1.500-2.500 TL, koltuk takımı için 2.000-3.500 TL, birkaç koli için 500-1.500 TL aralığında başlamaktadır."" }
+          ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""İstanbul-Ankara arası parça eşya taşıma fiyatı tek beyaz eşya için 1.500-2.500 TL, koltuk takımı için 2.000-3.500 TL, birkaç koli için 500-1.500 TL aralığında başlamaktadır."" }
         },
         {
           ""@type"": ""Question"",
@@ -36,6 +36,17 @@
     }";
 }
 <script type="application/ld+json">@Html.Raw(faqJson)</script>
+
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.hadimkoyankaranakliyat.com/" },
+    { "@@type": "ListItem", "position": 2, "name": "Şehirler Arası Parça Eşya Taşıma Fiyatları 2026", "item": "https://www.hadimkoyankaranakliyat.com/sehirlerarasi-parca-esya-tasima-fiyatlari" }
+  ]
+}
+</script>
 
 <style>
     .fiyat-hero {
@@ -267,7 +278,7 @@
         <div class="faq-item">
             <details>
                 <summary>İstanbul Ankara arası parça eşya taşıma ne kadar?</summary>
-                <p>İstanbul-Ankara arası parça eşya taşıma fiyatı; tek beyaz eşya için 1.500-2.500 TL, koltuk takımı için 2.000-3.500 TL, birkaç koli için 500-1.500 TL aralığında başlamaktadır.</p>
+                <p>İstanbul-Ankara arası parça eşya taşıma fiyatı tek beyaz eşya için 1.500-2.500 TL, koltuk takımı için 2.000-3.500 TL, birkaç koli için 500-1.500 TL aralığında başlamaktadır.</p>
             </details>
         </div>
         <div class="faq-item">
@@ -313,7 +324,7 @@
             </a>
             <a href="/Home/istanbul_ankara_parsiyel_nakliyat" class="han-scard">
                 <span class="han-scard-icon">&#128506;</span>
-                <span class="han-scard-text">&#304;stanbul Ankara Parsiyel</span>
+                <span class="han-scard-text">istanbul Ankara Parsiyel</span>
             </a>
             <a href="/istanbul-ankara-nakliyat" class="han-scard">
                 <span class="han-scard-icon">&#128652;</span>

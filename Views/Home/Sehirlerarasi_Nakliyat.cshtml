@@ -11,7 +11,14 @@
       ""name"": ""81 İle Şehirlerarası Ev Taşıma"",
       ""provider"": { ""@type"": ""LocalBusiness"", ""name"": ""Hadımköy Ankara Nakliyat"" },
       ""areaServed"": ""Türkiye"",
-      ""description"": ""İstanbul ve Ankara merkezli olmak üzere Türkiye'nin tüm şehirlerine sigortalı ve hızlı şehirlerarası nakliyat çözümleri.""
+      ""description"": ""İstanbul ve Ankara merkezli olmak üzere Türkiye'nin tüm şehirlerine sigortalı ve hızlı şehirlerarası nakliyat çözümleri."",
+      ""aggregateRating"": {
+        ""@type"": ""AggregateRating"",
+        ""ratingValue"": ""4.9"",
+        ""bestRating"": ""5"",
+        ""worstRating"": ""1"",
+        ""reviewCount"": ""200""
+      }
     }";
 
     var faqJson = @"{
@@ -25,6 +32,17 @@
 }
 <script type="application/ld+json">@Html.Raw(serviceJson)</script>
 <script type="application/ld+json">@Html.Raw(faqJson)</script>
+
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.hadimkoyankaranakliyat.com/" },
+    { "@@type": "ListItem", "position": 2, "name": "Şehirlerarası Nakliyat", "item": "https://www.hadimkoyankaranakliyat.com/Home/sehirlerarasi_nakliyat" }
+  ]
+}
+</script>
 
 <style>
     .team-details__top-content-text p {

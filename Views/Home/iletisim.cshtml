@@ -5,6 +5,17 @@
 @await Html.PartialAsync("_StatusMessage")
 
 
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.hadimkoyankaranakliyat.com/" },
+    { "@@type": "ListItem", "position": 2, "name": "İletişim", "item": "https://www.hadimkoyankaranakliyat.com/Home/iletisim" }
+  ]
+}
+</script>
+
 <style>
     .animated-alert {
         padding: 15px 20px;

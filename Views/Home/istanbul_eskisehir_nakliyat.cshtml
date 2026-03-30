@@ -15,7 +15,14 @@
       ""name"": ""İstanbul {0} Nakliyat - Şehirlerarası Güvenli Hat"",
       ""provider"": {{ ""@type"": ""LocalBusiness"", ""name"": ""Hadımköy Ankara Nakliyat"" }},
       ""areaServed"": [ {{ ""@type"": ""City"", ""name"": ""İstanbul"" }}, {{ ""@type"": ""City"", ""name"": ""{0}"" }} ],
-      ""description"": ""İstanbul'dan {0} iline ve {0}'den İstanbul'a karşılıklı seferlerle komple ve parsiyel ev eşyası taşımacılığı.""
+      ""description"": ""İstanbul'dan {0} iline ve {0}'den İstanbul'a karşılıklı seferlerle komple ve parsiyel ev eşyası taşımacılığı."",
+      ""aggregateRating"": {{
+        ""@@type"": ""AggregateRating"",
+        ""ratingValue"": ""4.9"",
+        ""bestRating"": ""5"",
+        ""worstRating"": ""1"",
+        ""reviewCount"": ""200""
+      }}
     }}", hedefSehir);
 
     var sehirlerarasiFaq = string.Format(@"{{
@@ -39,6 +46,18 @@
 @* HTML Çıktısı *@
 <script type="application/ld+json">@Html.Raw(sehirlerarasiService)</script>
 <script type="application/ld+json">@Html.Raw(sehirlerarasiFaq)</script>
+
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.hadimkoyankaranakliyat.com/" },
+    { "@@type": "ListItem", "position": 2, "name": "İstanbul Eskişehir Nakliyat", "item": "https://www.hadimkoyankaranakliyat.com/Home/istanbul_eskisehir_nakliyat" }
+  ]
+}
+</script>
+
 
 <!--Start Page Header-->
 <section class="page-header">
@@ -164,7 +183,7 @@
                     <div class="service-details__content-text6">
                         <h6>İstanbul Eskişehir Nakliyat Fiyatları</h6>
                         <p>
-                            Nakliyat fiyatları; taşınacak eşya miktarı, taşınma mesafesi, kat durumu, asansörlü taşıma gerekliliği ve ek hizmetlere göre belirlenir. Biz şeffaf fiyat politikası uygulayarak, müşterilerimize <strong>sürpriz maliyetler çıkarmadan</strong> hizmet veriyoruz. İstanbul’dan Eskişehir’e nakliyat için en uygun fiyat teklifini almak isteyen müşterilerimiz, ücretsiz ekspertiz hizmetimizden yararlanabilir.
+                            Nakliyat fiyatları taşınacak eşya miktarı, taşınma mesafesi, kat durumu, asansörlü taşıma gerekliliği ve ek hizmetlere göre belirlenir. Biz şeffaf fiyat politikası uygulayarak, müşterilerimize <strong>sürpriz maliyetler çıkarmadan</strong> hizmet veriyoruz. İstanbul’dan Eskişehir’e nakliyat için en uygun fiyat teklifini almak isteyen müşterilerimiz, ücretsiz ekspertiz hizmetimizden yararlanabilir.
                         </p>
                     </div>
                     <div class="service-details__faq">

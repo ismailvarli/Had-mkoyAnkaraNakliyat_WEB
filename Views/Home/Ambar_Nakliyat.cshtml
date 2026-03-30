@@ -12,7 +12,14 @@
       ""name"": ""İstanbul Ankara Ambar Nakliyat Çözümleri"",
       ""provider"": { ""@type"": ""LocalBusiness"", ""name"": ""Hadımköy Ankara Nakliyat"" },
       ""areaServed"": [""İstanbul"", ""Ankara""],
-      ""description"": ""Ekonomik ve güvenli ambar taşımacılığı. Parça yükleriniz İstanbul ve Ankara ambarlarımızda toplanarak sigortalı şekilde sevk edilir.""
+      ""description"": ""Ekonomik ve güvenli ambar taşımacılığı. Parça yükleriniz İstanbul ve Ankara ambarlarımızda toplanarak sigortalı şekilde sevk edilir."",
+      ""aggregateRating"": {
+        ""@type"": ""AggregateRating"",
+        ""ratingValue"": ""4.9"",
+        ""bestRating"": ""5"",
+        ""worstRating"": ""1"",
+        ""reviewCount"": ""200""
+      }
     }";
 
     var ambarFaq = @"{
@@ -26,6 +33,17 @@
 }
 <script type="application/ld+json">@Html.Raw(ambarService)</script>
 <script type="application/ld+json">@Html.Raw(ambarFaq)</script>
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.hadimkoyankaranakliyat.com/" },
+    { "@@type": "ListItem", "position": 2, "name": "Ambar Nakliyat", "item": "https://www.hadimkoyankaranakliyat.com/Home/ambar_nakliyat" }
+  ]
+}
+</script>
+
 <style>
     .team-details__top-content-text p {
         margin-bottom: 18px;

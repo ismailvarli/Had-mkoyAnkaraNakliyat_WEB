@@ -1,4 +1,4 @@
-@{
+﻿@{
     ViewData["Title"] = "İstanbul Ankara Parça Eşya Taşıma | Şehirler Arası Az Eşya";
     ViewData["Description"] = "İstanbul'dan Ankara'ya parça eşya taşıma hizmetleri. Tek parça eşya, az eşya ve şehirler arası küçük çaplı taşımalarda uzman ekip, sigortalı taşıma.";
 }
@@ -30,9 +30,14 @@
         {
           ""@type"": ""Question"",
           ""name"": ""Kapıdan kapıya servis var mı?"",
-          ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Evet. İstanbul'daki adresinizden alıp Ankara'daki adresinize teslim ediyoruz. Kat farkı ve asansörsüz taşıma için önceden bilgi almanızı öneririz."" }
-        }
-      ]
+          ""acceptedAnswer"": { ""@type"": ""Answer"", ""text"": ""Evet. İstanbul'daki adresinizden alıp Ankara'daki adresinize teslim ediyoruz. Kat farkı ve asansörsüz taşıma için önceden bilgi almanızı öneririz."",
+      ""aggregateRating"": {
+        ""@type"": ""AggregateRating"",
+        ""ratingValue"": ""4.9"",
+        ""bestRating"": ""5"",
+        ""worstRating"": ""1"",
+        ""reviewCount"": ""200""
+      }
     }";
 
     var serviceJson = @"{
@@ -47,6 +52,17 @@
 }
 <script type="application/ld+json">@Html.Raw(faqJson)</script>
 <script type="application/ld+json">@Html.Raw(serviceJson)</script>
+
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.hadimkoyankaranakliyat.com/" },
+    { "@@type": "ListItem", "position": 2, "name": "İstanbul Ankara Parça Eşya Taşıma", "item": "https://www.hadimkoyankaranakliyat.com/istanbul-ankara-parca-esya-tasima" }
+  ]
+}
+</script>
 
 <style>
     .ista-hero {
