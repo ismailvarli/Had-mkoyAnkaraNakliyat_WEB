@@ -1,0 +1,221 @@
+@{
+    ViewData["Title"] = "Mamak İstanbul Nakliyat | Doğu Ankara'nın Dinamik İlçesi Mamak'tan İstanbul'a Profesyonel Nakliyat";
+    ViewData["Description"] = "Mamak'tan İstanbul'a güvenilir nakliyat! Üreğil, Hüseyingazi ve tüm Mamak mahallelerinden asansörlü, sigortalı ev taşıma. Uygun fiyat için hemen arayın.";
+}
+@{
+    var ilce = "Mamak";
+
+    var ilceIstanbulService = string.Format(@"{{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""Service"",
+      ""serviceType"": ""Şehir İçi Nakliyat"",
+      ""name"": ""{0} İstanbul Nakliyat - Profesyonel Ev Taşıma"",
+      ""provider"": {{ ""@type"": ""LocalBusiness"", ""name"": ""Hadımköy Ankara Nakliyat"" }},
+      ""areaServed"": {{ ""@type"": ""City"", ""name"": ""{0}, Ankara"" }},
+      ""description"": ""{0} İstanbul nakliyat hizmeti ile {0} ilçesinden İstanbul'un tüm semtlerine asansörlü, sigortalı ve marangozlu evden eve nakliye."",
+      ""aggregateRating"": {{
+        ""@type"": ""AggregateRating"",
+        ""ratingValue"": ""4.9"",
+        ""bestRating"": ""5"",
+        ""worstRating"": ""1"",
+        ""reviewCount"": ""9""
+      }}
+    }}", ilce);
+
+    var ilceIstanbulFaq = string.Format(@"{{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        {{
+          ""@type"": ""Question"",
+          ""name"": ""{0} İstanbul nakliyat fiyatları neye göre belirleniyor?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""{0} çıkışlı taşımalarda fiyatlar; eşya miktarınıza (1+1, 2+1), gidilecek mesafeye ve kat durumuna göre ücretsiz ekspertiz sonucu belirlenir."" }}
+        }},
+        {{
+          ""@type"": ""Question"",
+          ""name"": ""{0} ilçesinde asansörlü araç kullanıyor musunuz?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""Evet, {0} bölgesindeki dar sokaklar ve yüksek girişler için uygun mobil asansörlerimizle eşyalarınızı hasarsız taşıyoruz."" }}
+        }},
+        {{
+          ""@type"": ""Question"",
+          ""name"": ""{0} ilçesinden İstanbul'a taşıma kaç günde tamamlanır?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""{0} - İstanbul arası komple taşımalarda aynı gün yükleme ertesi gün teslim prensibini uyguluyoruz. Parsiyel gönderilerde 1-3 iş günü içinde teslim yapılır."" }}
+        }}
+      ]
+    }}", ilce);
+}
+
+@* HTML Çıktısı *@
+<script type="application/ld+json">@Html.Raw(ilceIstanbulService)</script>
+<script type="application/ld+json">@Html.Raw(ilceIstanbulFaq)</script>
+
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.hadimkoyankaranakliyat.com/" },
+    { "@@type": "ListItem", "position": 2, "name": "Mamak İstanbul Nakliyat", "item": "https://www.hadimkoyankaranakliyat.com/Home/mamak_istanbul_nakliyat" }
+  ]
+}
+</script>
+
+<!--Start Page Header-->
+<section class="page-header">
+    <div class="page-header__bg" style="background-image: url(/assets/images/gallery/hadimkoy_hakkimizda.png)">
+    </div>
+    <div class="container">
+        <div class="page-header__inner">
+            <h1 style="color: white; font-weight: bold;">Mamak İstanbul Nakliyat</h1>
+            <ul class="thm-breadcrumb">
+                <li><a href="/Home/Index">Ana Sayfa</a></li>
+                <li><span class="icon-right-arrow21"></span></li>
+                <li>Mamak İstanbul Nakliyat</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--End Page Header-->
+
+<!--Start Service Details-->
+<section class="service-details">
+    <div class="container">
+        <div class="row">
+            <!--Start Service Details Sidebar-->
+            <div class="col-xl-4">
+                <div class="service-details__sidebar">
+                    <div class="service-details__sidebar-single">
+                        <div class="title-box">
+                            <h2>Hizmetlerimiz</h2>
+                        </div>
+                        <div class="service-details__sidebar-single-service">
+                            <ul class="clearfix">
+                                <li><a href="/Home/ikitelli_ankara_nakliyat">İkitelli Ankara Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/catalca_ankara_nakliyat">Çatalca Ankara Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/beylikduzu_ankara_nakliyat">Beylikdüzü Ankara Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/zeytinburnu_ankara_nakliyat">Zeytinburnu Ankara Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/bayrampasa_ankara_nakliyat">Bayrampaşa Ankara Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/ostim_istanbul_nakliyat">Ostim İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/yenimahalle_istanbul_nakliyat">Yenimahalle İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/kazan_istanbul_nakliyat">Kazan İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/sincan_istanbul_nakliyat">Sincan İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/temelli_istanbul_nakliyat">Temelli İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/cankaya_istanbul_nakliyat">Çankaya İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/kecioren_istanbul_nakliyat">Keçiören İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a class="active" href="/Home/mamak_istanbul_nakliyat">Mamak İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/etimesgut_istanbul_nakliyat">Etimesgut İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/altidag_istanbul_nakliyat">Altındağ İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="service-details__sidebar-contact text-center">
+                        <div class="service-details__sidebar-contact-img">
+                            <div class="inner">
+                                <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_284x285.png" loading="lazy" alt="mamak istanbul nakliyat fiyatları">
+                            </div>
+                        </div>
+                        <div class="service-details__sidebar-contact-content">
+                            <div class="icon"><span class="icon-phone"></span></div>
+                            <h2><a href="tel:+905344300360">+90 534 430 03 60</a></h2>
+                            <h3>Bizlerle İletişime Geçin <br> Hizmetimizden Yararlanın</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End Service Details Sidebar-->
+
+            <!--Start Service Details Content-->
+            <div class="col-xl-8">
+                <div class="service-details__content">
+                    <div class="service-details__content-img1">
+                        <div class="inner">
+                            <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_İstanbul_Ankara.png" loading="lazy" alt="mamak istanbul nakliyat">
+                        </div>
+                    </div>
+
+                    <div class="service-details__content-text1">
+                        <h2>Mamak İstanbul Nakliyat</h2>
+                        <p>
+                            <strong>Mamak İstanbul Nakliyat</strong> hizmetimiz, Ankara'nın doğusunda yer alan ve şehrin önemli sanayi bölgelerini barındıran Mamak ilçesinden İstanbul'a taşınmak isteyen müşterilere özel olarak sunulmaktadır. Mamak; Üreğil, Hüseyingazi, Önder, Tuzluçayır ve Kutludüğün gibi çok sayıda köklü mahalleyi bünyesinde taşımakta olup ilçede orta ve küçük ölçekli konutlar yoğun biçimde yer almaktadır. Hadımköy Ankara Nakliyat olarak bu bölgeyi çok iyi tanıyan ekibimizle, Mamak'taki her mahallede sorunsuz nakliyat operasyonu gerçekleştiriyoruz.
+                        </p>
+                        <p>
+                            Mamak'ın bazı mahallelerinde sanayi tesisleri ve küçük atölyelerle iç içe geçmiş konut alanları bulunmaktadır. Bu yapı, taşınma operasyonlarında esnek araç seçimi ve dikkatli güzergah planlaması gerektirmektedir. Ayrıca Mamak'ta küçük konutların yoğunluğu, parsiyel nakliyat talebini öne çıkarmaktadır. Ekibimiz hem küçük daire taşımalarında hem de işyeri ve depo taşımacılığında deneyimli kadrosuyla fark yaratmaktadır.
+                        </p>
+                        <p>
+                            <strong>Mamak'tan İstanbul'a nakliyat</strong> sürecinde eşyalarınızın büyüklüğü ne olursa olsun, her türlü ihtiyaca yönelik çözüm sunuyoruz. Küçük bir öğrenci dairesinden büyük bir aile konutuna, ofis eşyasından ticari yüke kadar tüm taşınma süreçlerini en ince ayrıntısına kadar planlıyor ve uyguluyoruz. Mamak'taki dar sokaklarda ve sınırlı park alanlarına sahip bölgelerde yükleme operasyonunu hızlı ve verimli biçimde tamamlamak için tüm araç ve ekipman altyapımız hazırdır.
+                        </p>
+                        <p>
+                            Mamak'ta faaliyet gösteren küçük esnaf, dükkan sahipleri ve sanayi çalışanları için de işyeri taşıma hizmeti sunuyoruz. Tezgah, makine, raf sistemi ve depo içeriği gibi ticari yüklerin güvenli ambalajlanması, taşınması ve İstanbul'daki yeni adreste yerleştirilmesi konularında uzman ekibimiz her adımda yanınızdadır. Mamak'taki taşınma ihtiyacınız için tek bir telefon yeterlidir.
+                        </p>
+                    </div>
+
+                    <div class="service-details__content-text2">
+                        <h3>Bizleri neden tercih etmelisiniz?</h3>
+                        <p>
+                            Hadımköy Ankara Nakliyat olarak <strong>Mamak'tan İstanbul'a taşımacılık</strong> hizmetlerinde müşterilerimize sunduğumuz başlıca avantajlar şunlardır:
+                        </p>
+                        <p>
+                            <b>Mamak'ın Yapısına Özel Lojistik Çözümler:</b> Sanayi ve konut alanlarının iç içe geçtiği Mamak'ta taşınma operasyonları özel planlama gerektirmektedir. Ekibimiz, yükleme yapılacak noktaya en uygun araç boyutunu ve saatini önceden belirleyerek operasyonu gecikme olmadan yürütür. Dar geçişli mahalle sokaklarında manevra kapasitesi yüksek araçlarımızla hizmet sunuyoruz.
+                        </p>
+                        <p>
+                            <b>Bütçe Dostu Nakliyat Seçenekleri:</b> Mamak'ta özellikle küçük ve orta büyüklükte konutlardan yapılan taşınmalarda parsiyel nakliyat en ekonomik çözümü sunar. Aynı güzergahta birden fazla müşterinin eşyasını taşıyarak maliyet avantajı yaratıyor ve bu avantajı fiyatlarımıza yansıtıyoruz. Hem bütçenizi korur hem de eşyalarınız güvende olur.
+                        </p>
+                        <p>
+                            <b>Sigortalı ve Belgelenmiş Taşıma:</b> Mamak'tan İstanbul'a tüm taşımalarımızda zorunlu taşımacılık sigortası uygulanmaktadır. Eşyalarınıza olabilecek her türlü hasar için tazminat güvencesi sunan sözleşmemiz, size huzurlu bir taşınma deneyimi yaşatır. Teslim tutanağı ve hasar tespit formuyla tüm süreç belgelendirilir.
+                        </p>
+                        <p>
+                            <b>Hızlı ve Esnek Planlama:</b> Mamak'taki taşınmalarınız için kısa süre öncesinden randevu alabilir, acil taşıma taleplerinizde 24 saat içinde hareket edecek ekip görevlendirilmesi talep edebilirsiniz. Hafta sonu ve resmi tatil günlerinde de hizmet verdiğimiz için taşınma tarihinizi kendinize en uygun güne göre belirleyebilirsiniz.
+                        </p>
+                        <p>
+                            <b>Deneyimli ve Güler Yüzlü Ekip:</b> Mamak ve çevresinde yıllarca hizmet veren personelimizdeki nakliyeciler, bu ilçeyi avucunun içi gibi bilmektedir. Eşyalarınıza öz malları gibi özen göstererek paketleyen, taşıyan ve yerleştiren ekibimizin güler yüzlü tutumu, zorlu bir süreç olan taşınmayı keyifli bir deneyime dönüştürmektedir.
+                        </p>
+                    </div>
+
+                    <div class="service-details__content-img2">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                <div class="single-img">
+                                    <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_Taşımacılık_390x225.png" loading="lazy" alt="mamaktan istanbula sehirlerarasi nakliyat">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                <div class="single-img">
+                                    <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_Stairs_390x225.png" loading="lazy" alt="mamaktan istanbula uygun fiyatli nakliyat">
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>Taşınma süreci nasıl işler?</h4>
+                        <p>
+                            Mamak'tan İstanbul'a nakliyat sürecimiz titiz bir planlama ve profesyonel uygulama ile şekillenir:
+                        </p>
+                        <p>
+                            <b>Ekspertiz ve Fiyat Teklifi:</b> Müşteri temsilcimiz telefonla ya da yerinde Mamak'taki adresinizi inceleyerek eşya miktarını, bina koşullarını ve özel gereksinimleri değerlendirir. Bu değerlendirme sonucunda kesin ve sözleşmeye bağlı bir fiyat teklifi sunulur.
+                        </p>
+                        <p>
+                            <b>Paketleme ve Hazırlık Aşaması:</b> Anlaşılan gün ekibimiz Mamak'taki adresinize gelir. Kırılgan eşyalar balonlu naylon ve özel köpük malzemeleri ile güvence altına alınır. Mobilyalar demonte edilir ve her parça etiketlenerek kutulanır.
+                        </p>
+                        <p>
+                            <b>Yükleme ve Yol:</b> Eşyalar sistematik biçimde araca yerleştirilir ve sabitleme kayışlarıyla güvence altına alınır. Mamak'tan İstanbul'a uzanan güzergahta deneyimli sürücülerimiz güvenli sürüş standartlarını korur.
+                        </p>
+                        <p>
+                            <b>İstanbul'da Teslimat ve Kurulum:</b> Yeni adresinizde eşyalar indirilerek dairenize taşınır, mobilyalar monte edilir ve koliler istenilen odalara yerleştirilir. İşlem tamamlandıktan sonra tutanak imzalanır.
+                        </p>
+
+                        <h5>Fiyatlandırma nasıl yapılır?</h5>
+                        <p>
+                            Mamak - İstanbul nakliyat ücretleri belirlenirken; taşınacak konutun büyüklüğü ve eşya hacmi, bulunulan kat ve asansör imkanı, İstanbul'daki teslimat adresinin ilçesi ve katı, ek hizmet talepleri (özel ambalaj, depolama) ile parsiyel veya özel araç tercihi değerlendirmeye alınır. Ücretsiz ekspertiz randevusu almak ve Mamak'tan İstanbul'a en uygun fiyatlı teklife ulaşmak için hemen arayın!
+                        </p>
+                    </div>
+
+                    <div class="service-details__content-img3">
+                        <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_835x335.png" loading="lazy" alt="mamaktan istanbula kamyon nakliyat">
+                    </div>
+                </div>
+            </div>
+            <!--End Service Details Content-->
+        </div>
+    </div>
+</section>
+<!--End Service Details-->

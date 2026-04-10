@@ -1,0 +1,221 @@
+@{
+    ViewData["Title"] = "Çankaya İstanbul Nakliyat | Ankara'nın Prestijli İlçesinden İstanbul'a Güvenli Taşıma";
+    ViewData["Description"] = "Çankaya'dan İstanbul'a taşınıyor musunuz? Asansörlü, sigortalı, marangozlu profesyonel nakliyat. Bakanlıklar, Kızılay, Balgat, Bilkent ve tüm Çankaya mahallelerinden hizmet.";
+}
+@{
+    var ilce = "Çankaya";
+
+    var ilceIstanbulService = string.Format(@"{{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""Service"",
+      ""serviceType"": ""Şehir İçi Nakliyat"",
+      ""name"": ""{0} İstanbul Nakliyat - Profesyonel Ev Taşıma"",
+      ""provider"": {{ ""@type"": ""LocalBusiness"", ""name"": ""Hadımköy Ankara Nakliyat"" }},
+      ""areaServed"": {{ ""@type"": ""City"", ""name"": ""{0}, Ankara"" }},
+      ""description"": ""{0} İstanbul nakliyat hizmeti ile {0} ilçesinden İstanbul'un tüm semtlerine asansörlü, sigortalı ve marangozlu evden eve nakliye."",
+      ""aggregateRating"": {{
+        ""@type"": ""AggregateRating"",
+        ""ratingValue"": ""4.9"",
+        ""bestRating"": ""5"",
+        ""worstRating"": ""1"",
+        ""reviewCount"": ""9""
+      }}
+    }}", ilce);
+
+    var ilceIstanbulFaq = string.Format(@"{{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        {{
+          ""@type"": ""Question"",
+          ""name"": ""{0} İstanbul nakliyat fiyatları neye göre belirleniyor?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""{0} çıkışlı taşımalarda fiyatlar; eşya miktarınıza (1+1, 2+1), gidilecek mesafeye ve kat durumuna göre ücretsiz ekspertiz sonucu belirlenir."" }}
+        }},
+        {{
+          ""@type"": ""Question"",
+          ""name"": ""{0} ilçesinde asansörlü araç kullanıyor musunuz?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""Evet, {0} bölgesindeki dar sokaklar ve yüksek girişler için uygun mobil asansörlerimizle eşyalarınızı hasarsız taşıyoruz."" }}
+        }},
+        {{
+          ""@type"": ""Question"",
+          ""name"": ""{0} ilçesinden İstanbul'a taşıma kaç günde tamamlanır?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""{0} - İstanbul arası komple taşımalarda aynı gün yükleme ertesi gün teslim prensibini uyguluyoruz. Parsiyel gönderilerde 1-3 iş günü içinde teslim yapılır."" }}
+        }}
+      ]
+    }}", ilce);
+}
+
+@* HTML Çıktısı *@
+<script type="application/ld+json">@Html.Raw(ilceIstanbulService)</script>
+<script type="application/ld+json">@Html.Raw(ilceIstanbulFaq)</script>
+
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.hadimkoyankaranakliyat.com/" },
+    { "@@type": "ListItem", "position": 2, "name": "Çankaya İstanbul Nakliyat", "item": "https://www.hadimkoyankaranakliyat.com/Home/cankaya_istanbul_nakliyat" }
+  ]
+}
+</script>
+
+<!--Start Page Header-->
+<section class="page-header">
+    <div class="page-header__bg" style="background-image: url(/assets/images/gallery/hadimkoy_hakkimizda.png)">
+    </div>
+    <div class="container">
+        <div class="page-header__inner">
+            <h1 style="color: white; font-weight: bold;">Çankaya İstanbul Nakliyat</h1>
+            <ul class="thm-breadcrumb">
+                <li><a href="/Home/Index">Ana Sayfa</a></li>
+                <li><span class="icon-right-arrow21"></span></li>
+                <li>Çankaya İstanbul Nakliyat</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--End Page Header-->
+
+<!--Start Service Details-->
+<section class="service-details">
+    <div class="container">
+        <div class="row">
+            <!--Start Service Details Sidebar-->
+            <div class="col-xl-4">
+                <div class="service-details__sidebar">
+                    <div class="service-details__sidebar-single">
+                        <div class="title-box">
+                            <h2>Hizmetlerimiz</h2>
+                        </div>
+                        <div class="service-details__sidebar-single-service">
+                            <ul class="clearfix">
+                                <li><a href="/Home/ikitelli_ankara_nakliyat">İkitelli Ankara Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/catalca_ankara_nakliyat">Çatalca Ankara Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/beylikduzu_ankara_nakliyat">Beylikdüzü Ankara Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/zeytinburnu_ankara_nakliyat">Zeytinburnu Ankara Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/bayrampasa_ankara_nakliyat">Bayrampaşa Ankara Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/ostim_istanbul_nakliyat">Ostim İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/yenimahalle_istanbul_nakliyat">Yenimahalle İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/kazan_istanbul_nakliyat">Kazan İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/sincan_istanbul_nakliyat">Sincan İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/temelli_istanbul_nakliyat">Temelli İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a class="active" href="/Home/cankaya_istanbul_nakliyat">Çankaya İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/kecioren_istanbul_nakliyat">Keçiören İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/mamak_istanbul_nakliyat">Mamak İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/etimesgut_istanbul_nakliyat">Etimesgut İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/altidag_istanbul_nakliyat">Altındağ İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="service-details__sidebar-contact text-center">
+                        <div class="service-details__sidebar-contact-img">
+                            <div class="inner">
+                                <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_284x285.png" loading="lazy" alt="çankaya istanbul nakliyat fiyatları">
+                            </div>
+                        </div>
+                        <div class="service-details__sidebar-contact-content">
+                            <div class="icon"><span class="icon-phone"></span></div>
+                            <h2><a href="tel:+905344300360">+90 534 430 03 60</a></h2>
+                            <h3>Bizlerle İletişime Geçin <br> Hizmetimizden Yararlanın</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End Service Details Sidebar-->
+
+            <!--Start Service Details Content-->
+            <div class="col-xl-8">
+                <div class="service-details__content">
+                    <div class="service-details__content-img1">
+                        <div class="inner">
+                            <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_İstanbul_Ankara.png" loading="lazy" alt="çankaya istanbul nakliyat">
+                        </div>
+                    </div>
+
+                    <div class="service-details__content-text1">
+                        <h2>Çankaya İstanbul Nakliyat</h2>
+                        <p>
+                            <strong>Çankaya İstanbul Nakliyat</strong> hizmetimiz, Ankara'nın en prestijli ve merkezi ilçesi Çankaya'dan İstanbul'a taşınmayı planlayan bireysel ve kurumsal müşterilere profesyonel, hızlı ve güvenilir çözümler sunmaktadır. Bakanlıklar bölgesi, Kızılay, Balgat, Bilkent ve Çukurambar gibi Ankara'nın gözde mahallelerini bünyesinde barındıran Çankaya, şehrin kültürel ve idari merkezi konumundadır. Bu ilçede yaşayan aileler, bürokratlar ve iş insanları için İstanbul'a taşınma süreci hassas bir planlama gerektirmektedir. Hadımköy Ankara Nakliyat olarak bu ihtiyacı çok iyi biliyor ve ona göre çözüm üretiyoruz.
+                        </p>
+                        <p>
+                            Çankaya'nın büyük bölümünde modern apartmanlar ve rezidans yapılar bulunmaktadır. Geniş asansörlü binalar, geniş otopark alanları ve düzenli sokak yapısı, taşıma sürecini kolaylaştıran unsurlardır. Bununla birlikte, Çankaya'nın bazı eski mahallelerinde dar sokaklar ve çok katlı binalarda araç park sorunu yaşanabilmektedir. Deneyimli ekibimiz, bu bölgelerdeki taşınmalarda mobil asansör sistemlerimiz ve özel araçlarımızla bina girişlerini sorunsuz şekilde çözümlemektedir.
+                        </p>
+                        <p>
+                            <strong>Çankaya'dan İstanbul'a nakliyat</strong> sürecinde eşyalarınız uzman personelimiz tarafından özenle paketlenir, demonte edilmesi gereken mobilyalar sökülür, sigortalı olarak araca yüklenir ve İstanbul'daki belirlenen adresinize güvenle teslim edilir. Taşınma sonrasında ekibimiz, eşya ve mobilyalarınızı yeni evinizde yeniden monte ederek sizi hazır bir ortama kavuşturur. Tüm bu süreçte tek bir telefon yeterlidir; geri kalanını biz hallederiz.
+                        </p>
+                        <p>
+                            Çankaya'da özellikle diplomatik konut bölgelerine ve kurumsal ofis yapılarına da hizmet vermekteyiz. Büyükelçilik bölgelerindeki taşınmalar, özel güvenlikli site geçişleri ve devlet kurumlarına ait lojmanlardan yapılan taşımalarda tecrübemiz ve protokol bilgimiz ile fark yaratıyoruz. İş yerinden işyerine taşımacılıkta da evrak, bilgisayar ekipmanları ve ofis mobilyalarının montajını aynı gün tamamlayarak iş sürekliliğinizi koruyoruz.
+                        </p>
+                    </div>
+
+                    <div class="service-details__content-text2">
+                        <h3>Bizleri neden tercih etmelisiniz?</h3>
+                        <p>
+                            Hadımköy Ankara Nakliyat olarak <strong>Çankaya'dan İstanbul'a taşımacılık</strong> konusunda müşterilerimize aşağıdaki avantajları sunuyoruz:
+                        </p>
+                        <p>
+                            <b>Prestijli Bölgelerde Uzman Deneyim:</b> Çankaya'nın Bakanlıklar, Kızılay, Balgat ve Bilkent gibi gözde mahallelerinde yüzlerce başarılı taşıma gerçekleştirdik. Bu bölgelerdeki bina türlerini, trafik koşullarını ve olası lojistik güçlükleri çok iyi bilen ekibimiz, her adımda sorunsuz bir süreç yönetir. Yüksek katlı rezidanslardan müstakil villalara kadar her türlü konut yapısında deneyimliyiz.
+                        </p>
+                        <p>
+                            <b>Tam Sigorta Güvencesi:</b> Çankaya'daki değerli eşyalarınız, antikalarınız veya sanat eserleriniz için ek sigorta seçeneği sunuyoruz. Standart nakliyat sigortamız kapsamında tüm eşyalarınız taşıma süresince güvence altındadır. Hasar durumunda anında çözüm ve tazminat sürecini hızla yönetiyoruz. Müşterilerimiz, eşyalarının güvende olduğunu bilerek huzurlu bir taşınma deneyimi yaşıyor.
+                        </p>
+                        <p>
+                            <b>Modern Asansörlü Taşıma Sistemleri:</b> Çankaya'nın yüksek katlı apartman ve rezidanslarında, bina içi asansörünün yetersiz kaldığı durumlarda dış cephe mobil asansörlerimizi devreye alıyoruz. Bu sayede büyük mobilyalar, beyaz eşyalar ve hassas ekipmanlar binadan en az riskle çıkarılıp araca yerleştiriliyor. İstanbul'daki yeni adresinizde de aynı hassasiyetle teslimat yapılmaktadır.
+                        </p>
+                        <p>
+                            <b>Çankaya - İstanbul Özel Güzergah Planlaması:</b> İstanbul'a yapılan uzun mesafe taşımacılıkta güzergah seçimi kritik önem taşımaktadır. Ekibimiz, Ankara çıkışından İstanbul girişine kadar en hızlı ve güvenli rotayı planlayarak seyahat süresini minimize eder. Yoğun trafik saatlerinden kaçınmak için erken saatlerde yola çıkma seçeneğimiz de mevcuttur. Bu sayede eşyalarınız mümkün olan en kısa sürede İstanbul'a ulaşmaktadır.
+                        </p>
+                        <p>
+                            <b>Şeffaf ve Rekabetçi Fiyatlandırma:</b> Çankaya'dan İstanbul'a nakliyat ücretimiz, ücretsiz ekspertiz sonrası kesin olarak belirlenir ve sözleşmeye bağlanır. Taşınma tamamlandığında sürpriz ek ücret talep etmiyoruz. Parsiyel nakliyat seçeneğimiz sayesinde az eşyalı taşınmalar için ekonomik çözümler sunuyor, büyük taşınmalarda ise özel araç tahsisi ile tam güvence sağlıyoruz. Her bütçeye uygun paket seçeneklerimiz mevcuttur.
+                        </p>
+                    </div>
+
+                    <div class="service-details__content-img2">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                <div class="single-img">
+                                    <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_Taşımacılık_390x225.png" loading="lazy" alt="çankayadan istanbula sehirlerarasi nakliyat">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                <div class="single-img">
+                                    <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_Stairs_390x225.png" loading="lazy" alt="çankayadan istanbula uygun fiyatli nakliyat">
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>Taşınma süreci nasıl işler?</h4>
+                        <p>
+                            Çankaya'dan İstanbul'a nakliyat sürecimiz planlı adımlarla ilerler:
+                        </p>
+                        <p>
+                            <b>Ücretsiz Ekspertiz ve Planlama:</b> Müşteri temsilcimiz sizi arayarak taşınma detaylarını öğrenir; ardından Çankaya'daki adresinize gelerek eşyaların hacmini, bina koşullarını ve özel gereksinimleri yerinde değerlendirir. Bu değerlendirme sonrası size net bir fiyat teklifi sunulur.
+                        </p>
+                        <p>
+                            <b>Profesyonel Paketleme ve Demontaj:</b> Anlaşılan tarihte ekibimiz belirlenen saatte kapınızda olur. Mobilyalar demonte edilir, kırılgan eşyalar balonlu naylon ve özel koruyucu malzemelerle paketlenir. Elektronik cihazlar, tablo ve ayna gibi hassas parçalar için ayrı ambalajlama yapılır.
+                        </p>
+                        <p>
+                            <b>Güvenli Yükleme ve Şehirlerarası Taşıma:</b> Paketlenmiş eşyalar sistematik biçimde araca yerleştirilerek sabitlenir. Çankaya'dan İstanbul'a uzanan yolculuk boyunca sürücülerimiz güvenli sürüş ilkelerine uyar, eşyaların zarar görmemesi için gerekli önlemleri alır.
+                        </p>
+                        <p>
+                            <b>İstanbul'da Teslimat ve Montaj:</b> İstanbul'daki yeni adresinize varıldığında eşyalar indirilerek içeri taşınır. Sökülen mobilyalar yeniden monte edilir, koliler ilgili odalara yerleştirilir. Son kontrol yapılarak teslim tutanağı imzalanır ve taşınma tamamlanır.
+                        </p>
+
+                        <h5>Fiyatlandırma nasıl yapılır?</h5>
+                        <p>
+                            Çankaya - İstanbul nakliyat fiyatlarımız; eşya miktarı ve konut büyüklüğü (1+1, 2+1, 3+1 vb.), taşınılacak adresin İstanbul'daki konumu ve mesafesi, kat durumu ve mobil asansör ihtiyacı, ek paketleme veya depolama talebi ile parsiyel ya da komple araç tercihi gibi kriterlere göre belirlenmektedir. Tüm bu faktörleri yerinde ekspertiz ile değerlendirip size en uygun ve kesin fiyatı sunuyoruz. Çankaya'dan İstanbul'a güvenli ve konforlu bir taşınma için hemen arayın, teklifinizi alın!
+                        </p>
+                    </div>
+
+                    <div class="service-details__content-img3">
+                        <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_835x335.png" loading="lazy" alt="çankayadan istanbula kamyon nakliyat">
+                    </div>
+                </div>
+            </div>
+            <!--End Service Details Content-->
+        </div>
+    </div>
+</section>
+<!--End Service Details-->

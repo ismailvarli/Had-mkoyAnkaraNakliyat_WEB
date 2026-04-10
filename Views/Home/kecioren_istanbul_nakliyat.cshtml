@@ -1,0 +1,221 @@
+@{
+    ViewData["Title"] = "Keçiören İstanbul Nakliyat | Yüksek Nüfuslu Keçiören'den İstanbul'a Hızlı ve Sigortalı Nakliyat";
+    ViewData["Description"] = "Keçiören'den İstanbul'a taşınıyor musunuz? Dar sokaklarda asansörlü taşıma, sigortalı nakliyat ve uygun fiyat garantisi. Keçiören evden eve nakliyat için hemen arayın!";
+}
+@{
+    var ilce = "Keçiören";
+
+    var ilceIstanbulService = string.Format(@"{{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""Service"",
+      ""serviceType"": ""Şehir İçi Nakliyat"",
+      ""name"": ""{0} İstanbul Nakliyat - Profesyonel Ev Taşıma"",
+      ""provider"": {{ ""@type"": ""LocalBusiness"", ""name"": ""Hadımköy Ankara Nakliyat"" }},
+      ""areaServed"": {{ ""@type"": ""City"", ""name"": ""{0}, Ankara"" }},
+      ""description"": ""{0} İstanbul nakliyat hizmeti ile {0} ilçesinden İstanbul'un tüm semtlerine asansörlü, sigortalı ve marangozlu evden eve nakliye."",
+      ""aggregateRating"": {{
+        ""@type"": ""AggregateRating"",
+        ""ratingValue"": ""4.9"",
+        ""bestRating"": ""5"",
+        ""worstRating"": ""1"",
+        ""reviewCount"": ""9""
+      }}
+    }}", ilce);
+
+    var ilceIstanbulFaq = string.Format(@"{{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        {{
+          ""@type"": ""Question"",
+          ""name"": ""{0} İstanbul nakliyat fiyatları neye göre belirleniyor?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""{0} çıkışlı taşımalarda fiyatlar; eşya miktarınıza (1+1, 2+1), gidilecek mesafeye ve kat durumuna göre ücretsiz ekspertiz sonucu belirlenir."" }}
+        }},
+        {{
+          ""@type"": ""Question"",
+          ""name"": ""{0} ilçesinde asansörlü araç kullanıyor musunuz?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""Evet, {0} bölgesindeki dar sokaklar ve yüksek girişler için uygun mobil asansörlerimizle eşyalarınızı hasarsız taşıyoruz."" }}
+        }},
+        {{
+          ""@type"": ""Question"",
+          ""name"": ""{0} ilçesinden İstanbul'a taşıma kaç günde tamamlanır?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""{0} - İstanbul arası komple taşımalarda aynı gün yükleme ertesi gün teslim prensibini uyguluyoruz. Parsiyel gönderilerde 1-3 iş günü içinde teslim yapılır."" }}
+        }}
+      ]
+    }}", ilce);
+}
+
+@* HTML Çıktısı *@
+<script type="application/ld+json">@Html.Raw(ilceIstanbulService)</script>
+<script type="application/ld+json">@Html.Raw(ilceIstanbulFaq)</script>
+
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.hadimkoyankaranakliyat.com/" },
+    { "@@type": "ListItem", "position": 2, "name": "Keçiören İstanbul Nakliyat", "item": "https://www.hadimkoyankaranakliyat.com/Home/kecioren_istanbul_nakliyat" }
+  ]
+}
+</script>
+
+<!--Start Page Header-->
+<section class="page-header">
+    <div class="page-header__bg" style="background-image: url(/assets/images/gallery/hadimkoy_hakkimizda.png)">
+    </div>
+    <div class="container">
+        <div class="page-header__inner">
+            <h1 style="color: white; font-weight: bold;">Keçiören İstanbul Nakliyat</h1>
+            <ul class="thm-breadcrumb">
+                <li><a href="/Home/Index">Ana Sayfa</a></li>
+                <li><span class="icon-right-arrow21"></span></li>
+                <li>Keçiören İstanbul Nakliyat</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--End Page Header-->
+
+<!--Start Service Details-->
+<section class="service-details">
+    <div class="container">
+        <div class="row">
+            <!--Start Service Details Sidebar-->
+            <div class="col-xl-4">
+                <div class="service-details__sidebar">
+                    <div class="service-details__sidebar-single">
+                        <div class="title-box">
+                            <h2>Hizmetlerimiz</h2>
+                        </div>
+                        <div class="service-details__sidebar-single-service">
+                            <ul class="clearfix">
+                                <li><a href="/Home/ikitelli_ankara_nakliyat">İkitelli Ankara Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/catalca_ankara_nakliyat">Çatalca Ankara Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/beylikduzu_ankara_nakliyat">Beylikdüzü Ankara Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/zeytinburnu_ankara_nakliyat">Zeytinburnu Ankara Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/bayrampasa_ankara_nakliyat">Bayrampaşa Ankara Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/ostim_istanbul_nakliyat">Ostim İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/yenimahalle_istanbul_nakliyat">Yenimahalle İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/kazan_istanbul_nakliyat">Kazan İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/sincan_istanbul_nakliyat">Sincan İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/temelli_istanbul_nakliyat">Temelli İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/cankaya_istanbul_nakliyat">Çankaya İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a class="active" href="/Home/kecioren_istanbul_nakliyat">Keçiören İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/mamak_istanbul_nakliyat">Mamak İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/etimesgut_istanbul_nakliyat">Etimesgut İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/altidag_istanbul_nakliyat">Altındağ İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="service-details__sidebar-contact text-center">
+                        <div class="service-details__sidebar-contact-img">
+                            <div class="inner">
+                                <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_284x285.png" loading="lazy" alt="keçiören istanbul nakliyat fiyatları">
+                            </div>
+                        </div>
+                        <div class="service-details__sidebar-contact-content">
+                            <div class="icon"><span class="icon-phone"></span></div>
+                            <h2><a href="tel:+905344300360">+90 534 430 03 60</a></h2>
+                            <h3>Bizlerle İletişime Geçin <br> Hizmetimizden Yararlanın</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End Service Details Sidebar-->
+
+            <!--Start Service Details Content-->
+            <div class="col-xl-8">
+                <div class="service-details__content">
+                    <div class="service-details__content-img1">
+                        <div class="inner">
+                            <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_İstanbul_Ankara.png" loading="lazy" alt="keçiören istanbul nakliyat">
+                        </div>
+                    </div>
+
+                    <div class="service-details__content-text1">
+                        <h2>Keçiören İstanbul Nakliyat</h2>
+                        <p>
+                            <strong>Keçiören İstanbul Nakliyat</strong> hizmetimiz, Ankara'nın en kalabalık ilçesi olan Keçiören'den İstanbul'a taşınmak isteyen müşterilerimize özel olarak tasarlanmış kapsamlı bir nakliyat çözümüdür. Keçiören, nüfus yoğunluğu yüksek, geniş bir alana yayılmış, apartman blokları ve ticari alanların iç içe geçtiği dinamik bir ilçedir. Bu yapı, taşınma operasyonlarını özel bir uzmanlık gerektiren süreçlere dönüştürmektedir. Hadımköy Ankara Nakliyat olarak Keçiören'in tüm mahallelerinde sağladığımız deneyimle, sizin için en sorunsuz taşınma deneyimini sunmaya hazırız.
+                        </p>
+                        <p>
+                            Keçiören'de özellikle eski mahallelerde çok katlı ve asansörsüz bina sayısı oldukça fazladır. Dar sokaklar, yoğun otopark sorunu ve sık aralıklarla yerleşik apartmanlar, büyük nakliyat araçlarının manevra yapmasını güçleştirebilmektedir. Ekibimiz bu bölgeyi çok iyi tanımakta; hangi sokaklarda küçük araç kullanılması gerektiğini, hangi noktalarda mobil asansörün devreye alınacağını ve en verimli yükleme noktalarını önceden belirleyerek operasyonu planlamaktadır. Pursaklar sınırına yakın mahallelerde de aynı özenden taviz vermeksizin hizmet sunuyoruz.
+                        </p>
+                        <p>
+                            <strong>Keçiören'den İstanbul'a nakliyat</strong> sürecinde eşyalarınız profesyonel ambalaj malzemeleri kullanılarak paketlenir, hassas parçalar özel koruma altına alınır ve sigortalı araçlarımızla İstanbul'a sevk edilir. Keçiören'de yaygın olan küçük ve orta boy daireler için parsiyel nakliyat seçeneğimiz özellikle tercih edilmektedir. Bu seçenekte araç başkalarıyla paylaşılarak maliyet düşürülmekte, ancak eşyaların güvenliği ve zamanında teslim prensibi hiçbir şekilde ödün verilmeden korunmaktadır.
+                        </p>
+                        <p>
+                            Keçiören'deki esnaf ve küçük işletmeler için ofis ve dükkan taşımacılığı da yapıyoruz. Depo içeriği, raf sistemleri, kasa ve büro malzemeleri ile elektronik cihazların söküm, ambalajlama ve yeniden kurulum süreçlerini deneyimli personelinizle koordineli biçimde yürütüyoruz. Böylece işinize ara vermeden taşınma sürecini tamamlayabilirsiniz.
+                        </p>
+                    </div>
+
+                    <div class="service-details__content-text2">
+                        <h3>Bizleri neden tercih etmelisiniz?</h3>
+                        <p>
+                            Hadımköy Ankara Nakliyat olarak <strong>Keçiören'den İstanbul'a taşımacılık</strong> konusunda size sunduğumuz avantajlar şunlardır:
+                        </p>
+                        <p>
+                            <b>Keçiören'e Özel Lojistik Bilgi:</b> Ankara'nın en kalabalık ilçesinde yıllar içinde edindiğimiz deneyim, Keçiören'in sokak yapısını, apartman tiplerini ve otopark koşullarını bize derinlemesine tanıtmıştır. Dar girişli binalarda dış asansör kullanımı, yoğun mahallelerde küçük araç tercihi ve sabah erken saatlerde yükleme gibi akıllı çözümlerimizle taşıma sürecini en kısa süreye indiriyoruz.
+                        </p>
+                        <p>
+                            <b>Uygun Fiyatlı Parsiyel Nakliyat:</b> Keçiören'deki küçük dairelerden yapılan taşınmalar için parsiyel nakliyat seçeneği büyük maliyet avantajı sağlamaktadır. Aynı güzergahta birden fazla müşterinin eşyasını taşıyarak araca doluluk oranını artırıyor, bu tasarrufu doğrudan müşterilerimize fiyat avantajı olarak yansıtıyoruz. Az eşyalı taşınmalarda da birim maliyet makul seviyelerde kalır.
+                        </p>
+                        <p>
+                            <b>Asansörsüz Binalara Tam Çözüm:</b> Keçiören'de asansörsüz ve çok katlı bina sayısı yüksektir. Bu tür binalarda eşyaların taşınması hem zahmetli hem de hasar riskini artıran bir süreçtir. Mobil dış asansörlerimiz sayesinde 5-6. kata kadar eşyaları pencere veya balkon seviyesinde güvenle indiriyor, kırılma veya çizilme riskini en aza indiriyoruz.
+                        </p>
+                        <p>
+                            <b>Hızlı ve Zamanında Teslimat:</b> Keçiören - İstanbul güzergahında düzenli sefer planımız mevcuttur. Eşyalarınız yüklendikten sonra bekletilmeden yola çıkar ve İstanbul'daki adresinize söz verdiğimiz tarih ve saatte teslim edilir. Gecikme yaşanması durumunda müşterilerimizi anında bilgilendiriyor ve telafi çözümleri üretiyoruz.
+                        </p>
+                        <p>
+                            <b>Tam Kapsamlı Hizmet Paketi:</b> Keçiören'den İstanbul'a taşınma sürecinde paketleme malzemeleri, mobilya demontaj ve montajı, bina içi ve dışı taşıma, şehirlerarası nakliye, İstanbul'da yerleştirme ve sigorta hizmetlerinin tamamını tek çatı altında sunuyoruz. Farklı firmalarla muhatap olmak yerine tüm süreci tek bir profesyonel ekiple yönetebilirsiniz.
+                        </p>
+                    </div>
+
+                    <div class="service-details__content-img2">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                <div class="single-img">
+                                    <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_Taşımacılık_390x225.png" loading="lazy" alt="keçiörenden istanbula sehirlerarasi nakliyat">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                <div class="single-img">
+                                    <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_Stairs_390x225.png" loading="lazy" alt="keçiörenden istanbula uygun fiyatli nakliyat">
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>Taşınma süreci nasıl işler?</h4>
+                        <p>
+                            Keçiören'den İstanbul'a nakliyat sürecimiz şu adımlarla yürütülür:
+                        </p>
+                        <p>
+                            <b>Ücretsiz Keşif ve Teklif:</b> Müşteri temsilcimiz sizi arar, taşınma bilgilerini alır ve Keçiören'deki adresinize gelerek ücretsiz ekspertiz yapar. Bina tipi, kat durumu, asansör varlığı ve eşya hacmine göre en uygun araç ve ekip planlaması yapılır.
+                        </p>
+                        <p>
+                            <b>Paketleme ve Hazırlık:</b> Belirlenen tarih ve saatte ekibimiz kapınızda hazır olur. Kırılgan eşyalar özel ambalajlarla korunur, mobilyalar demonte edilerek taşınmaya hazır hale getirilir. Keçiören'in asansörsüz binalarında dış asansör kurulumu gerektiren durumlarda ekibimiz gerekli ekipmanı önceden hazırlar.
+                        </p>
+                        <p>
+                            <b>Yükleme ve Şehirlerarası Sevkiyat:</b> Eşyalar araca düzenli ve sağlam biçimde yerleştirilir. Keçiören'den İstanbul'a uzanan yolculuk boyunca sürücülerimiz trafik ve güvenlik kurallarına eksiksiz uyar. Eşyalar, araç içi sabitleme sistemleriyle güvence altına alınarak taşınır.
+                        </p>
+                        <p>
+                            <b>Teslim ve Montaj:</b> İstanbul'daki yeni adresinizde ekibimiz eşyaları indirip içeri taşır, mobilyaları monte eder ve kolileri yerleştirir. Teslimat tutanağı imzalanarak taşınma resmi olarak tamamlanır.
+                        </p>
+
+                        <h5>Fiyatlandırma nasıl yapılır?</h5>
+                        <p>
+                            Keçiören - İstanbul nakliyat fiyatlarımız; taşınacak eşyaların hacmi ve ağırlığı, dairenin kat bilgisi ve asansör durumu, İstanbul'daki teslimat noktasının konumu, ek hizmet talepleri (paketleme, depolama, montaj) ve parsiyel ya da komple araç seçimi dikkate alınarak ücretsiz ekspertiz sonrasında netleştirilir. Sözleşmeye bağlanan sabit fiyatımızla taşınma sürecinde sürpriz ücretle karşılaşmazsınız. Keçiören'den İstanbul'a güvenle taşınmak için hemen bizi arayın!
+                        </p>
+                    </div>
+
+                    <div class="service-details__content-img3">
+                        <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_835x335.png" loading="lazy" alt="keçiörenden istanbula kamyon nakliyat">
+                    </div>
+                </div>
+            </div>
+            <!--End Service Details Content-->
+        </div>
+    </div>
+</section>
+<!--End Service Details-->

@@ -1,0 +1,421 @@
+@{
+    ViewData["Title"] = "Nakliyat Fiyat Teklifini Nasıl Değerlendirirsiniz? | Hadımköy Ankara Nakliyat";
+    ViewData["Description"] = "Nakliyat fiyat tekliflerini doğru karşılaştırın. Gizli maliyetler, sigorta klozu, yazılı teklif farkı ve 3 firma karşılaştırma rehberi bu yazıda.";
+}
+
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.hadimkoyankaranakliyat.com/" },
+    { "@@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.hadimkoyankaranakliyat.com/Home/blog" },
+    { "@@type": "ListItem", "position": 3, "name": "Nakliyat Fiyat Teklifini Nasıl Değerlendirirsiniz?", "item": "https://www.hadimkoyankaranakliyat.com/Home/nakliyat_fiyat_teklifi_nasil_degerlendirilir" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "Article",
+  "headline": "Nakliyat Fiyat Teklifini Nasıl Değerlendirirsiniz?",
+  "datePublished": "2026-04-04",
+  "dateModified": "2026-04-04",
+  "author": { "@@type": "Organization", "name": "Hadımköy Ankara Nakliyat" },
+  "publisher": { "@@type": "Organization", "name": "Hadımköy Ankara Nakliyat", "logo": { "@@type": "ImageObject", "url": "https://www.hadimkoyankaranakliyat.com/assets/images/gallery/HadımköyAnkaraNakliyat_LOGO.png" } }
+}
+</script>
+
+<style>
+    .page-wrap { max-width: 1200px; margin: 0 auto; padding: 24px; display: grid; gap: 24px; grid-template-columns: 280px 1fr }
+    @@media (max-width:992px) { .page-wrap { grid-template-columns: 1fr } }
+    .side { background: #0f172a; border-radius: 14px; padding: 18px }
+    .side h3 { color: #fff; font-size: 18px; margin: 0 0 12px; font-weight: 800 }
+    .svc-list { display: flex; flex-direction: column; gap: 8px }
+    .svc-item { display: flex; align-items: center; justify-content: space-between; background: #172036; color: #e2e8f0; padding: 9px 12px; border-radius: 10px; text-decoration: none; border: 1px solid #23314f; font-size: 13px }
+    .svc-item:hover { background: #1f2a44 }
+    .svc-item .arrow { background: #f97316; color: #fff; border-radius: 8px; padding: 3px 7px; font-weight: 700; flex-shrink: 0; margin-left: 8px }
+    .content h1 { font-size: 28px; font-weight: 900; margin-bottom: 12px; color: #0f172a }
+    .blog-meta { font-size: 14px; color: #64748b; margin-bottom: 14px }
+    .blog-thumb { border-radius: 14px; overflow: hidden; margin-bottom: 20px }
+    .blog-thumb img { width: 100%; height: auto; object-fit: cover }
+    .blog-body p { color: #334155; line-height: 1.75; margin-bottom: 16px }
+    .blog-body h2 { margin: 28px 0 10px; color: #0f172a; font-size: 22px; border-left: 4px solid #f97316; padding-left: 12px }
+    .blog-body h3 { margin: 16px 0 8px; color: #1e293b; font-size: 18px }
+    .blog-body ul, .blog-body ol { margin: 0 0 16px 20px }
+    .blog-body li { margin-bottom: 8px; color: #334155; line-height: 1.6 }
+    .note-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px 16px; color: #334155; margin: 14px 0 18px }
+    .warn-box { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 14px 16px; border-radius: 0 10px 10px 0; margin: 14px 0 18px; color: #92400e }
+    .good-box { background: #ecfdf5; border-left: 4px solid #10b981; padding: 14px 16px; border-radius: 0 10px 10px 0; margin: 14px 0 18px; color: #065f46 }
+    .include-table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 14px }
+    .include-table th { background: #0f172a; color: #fff; padding: 10px 14px; text-align: left }
+    .include-table td { padding: 10px 14px; border-bottom: 1px solid #e2e8f0; color: #334155 }
+    .include-table tr:nth-child(even) td { background: #f8fafc }
+    .badge-yes { background: #d1fae5; color: #065f46; padding: 2px 8px; border-radius: 20px; font-size: 12px; font-weight: 700 }
+    .badge-no { background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 20px; font-size: 12px; font-weight: 700 }
+    .badge-maybe { background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 20px; font-size: 12px; font-weight: 700 }
+    .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0 24px }
+    @@media (max-width: 600px) { .compare-grid { grid-template-columns: 1fr } }
+    .compare-card { border-radius: 12px; padding: 16px 18px }
+    .compare-card.bad { background: #fef2f2; border: 1px solid #fecaca }
+    .compare-card.good { background: #f0fdf4; border: 1px solid #bbf7d0 }
+    .compare-card h3 { margin: 0 0 10px; font-size: 16px }
+    .compare-card.bad h3 { color: #991b1b }
+    .compare-card.good h3 { color: #065f46 }
+    .compare-card ul { margin: 0 0 0 16px; padding: 0 }
+    .compare-card li { font-size: 14px; margin-bottom: 6px }
+    .cta-box { background: #f97316; color: #fff; padding: 24px; border-radius: 12px; margin-top: 32px; text-align: center }
+    .cta-box h3 { margin: 0 0 8px; font-size: 20px }
+    .cta-box p { margin: 0 0 14px; opacity: .9 }
+    .cta-box a { display: inline-block; padding: 11px 20px; background: #fff; color: #f97316; font-weight: 700; border-radius: 8px; text-decoration: none; margin: 4px }
+    .related-posts { margin-top: 32px; padding-top: 24px; border-top: 1px solid #e2e8f0 }
+    .related-posts h3 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #0f172a }
+    .related-list { display: flex; flex-direction: column; gap: 8px }
+    .related-list a { color: #1676be; text-decoration: none; font-weight: 600 }
+    .related-list a:hover { text-decoration: underline }
+</style>
+
+<div class="page-wrap">
+    <aside class="side">
+        <h3>Blog Yazılarımız</h3>
+        <nav class="svc-list">
+            <a class="svc-item" href="/Home/evden_eve_nakliyat_oncesi_hazirlik_rehberi"><span>Nakliyat Hazırlık Rehberi</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/nakliyat_firmasi_nasil_secilir_7_kritik_soru"><span>Nakliyat Firması Seçimi</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/tasinirken_yapilan_10_hata"><span>Taşınırken Yapılan 10 Hata</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/esya_paketleme_teknikleri"><span>Eşya Paketleme Teknikleri</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/nakliyat_dolandiriciligi"><span>Nakliyat Dolandırıcılığı</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/tasima_sonrasi_yeni_eve_alisma"><span>Yeni Eve Alışma Rehberi</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/boya_badana_sonrasi_tasinma"><span>Boya Badana Sonrası Taşınma</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/nakliyat_fiyat_teklifi_nasil_degerlendirilir"><span>Fiyat Teklifi Değerlendirme</span><span class="arrow">→</span></a>
+            <a class="svc-item" href="/Home/blog"><span>Tüm Blog Yazıları</span><span class="arrow">☰</span></a>
+        </nav>
+    </aside>
+
+    <main class="content">
+        <h1>Nakliyat Fiyat Teklifini Nasıl Değerlendirirsiniz?</h1>
+        <p class="blog-meta">Nisan 2026 &nbsp;|&nbsp; 8 dk okuma &nbsp;|&nbsp; Nakliyat Rehberi</p>
+
+        <div class="blog-thumb">
+            <img src="~/assets/images/gallery/istanbulankaranakliyat.png" alt="Nakliyat fiyat teklifi değerlendirme rehberi" width="800" height="400" loading="lazy">
+        </div>
+
+        <div class="blog-body">
+            <p>
+                Nakliyat fiyat teklifleri arasında bazen 2 kat hatta 3 kat fark olabilir. Bu durum
+                çoğu kişiyi "en ucuz hangisi?" sorusuna yöneltir. Oysa nakliyat sektöründe
+                en ucuz teklif çoğunlukla en pahalı sonucu doğurur; ya taşıma günü ek ücretler
+                çıkar ya da eşyalar hasar görür.
+            </p>
+            <p>
+                İstanbul-Ankara güzergahında yaptığımız yüzlerce taşıma sürecinde müşterilerimizden
+                öğrendiklerimizi derledik. Bu rehber, bir nakliyat teklifini doğru okumanıza ve
+                bilinçli karar vermenize yardımcı olacak.
+            </p>
+
+            <h2>Fiyat Teklifinde Nelere Bakmalısınız?</h2>
+            <p>
+                Bir nakliyat fiyat teklifi aldığınızda yalnızca sonuç rakamına bakmak yanıltıcı
+                olabilir. Teklifin içeriğini satır satır incelemeniz gerekir. Dikkat etmeniz
+                gereken temel unsurlar:
+            </p>
+            <ul>
+                <li><strong>Teklif kapsamı:</strong> Hangi hizmetlerin dahil olduğu net olarak
+                yazılı mı? Yükleme, boşaltma, ambalajlama, monte-demontaj ayrı ayrı belirtilmiş mi?</li>
+                <li><strong>Araç tipi ve kapasitesi:</strong> Teklif verilen araç eşyalarınız için
+                yeterli kapasitede mi? Kamyon boyutu, kat sayısına ve eşya hacmine uygun mu?</li>
+                <li><strong>Ekip sayısı:</strong> Kaç kişilik ekip gönderilecek? 2 kişilik ekip
+                ile 4 kişilik ekip arasında hem süre hem emniyet açısından büyük fark vardır.</li>
+                <li><strong>Sigorta durumu:</strong> Taşınan eşyalar sigortalı mı? Sigortanın
+                kapsamı ve limiti nedir?</li>
+                <li><strong>Ek ücret politikası:</strong> Asansör ücreti, kat ücreti, uzak
+                mesafe ek fiyatı, bekleme süresi gibi kalemler teklife dahil mi?</li>
+                <li><strong>Ödeme zamanı:</strong> Ödeme taşıma öncesi mi, sonrası mı? Avans
+                talep ediliyor mu?</li>
+            </ul>
+            <div class="note-box">
+                Kural olarak: Üç firmadan teklif alın, yalnızca fiyatı değil yukarıdaki kriterleri
+                tek tek karşılaştırın. En düşük fiyatlı teklif genellikle en az içerik sunandır.
+            </div>
+
+            <h2>Çok Düşük Teklifler: Gizli Tehlikeler</h2>
+            <p>
+                İstanbul-Ankara arası ortalama nakliyat fiyatı 2026 yılında eşya hacmine ve
+                hizmet kapsamına göre belirli bir aralıkta seyretmektedir. Bu aralığın
+                belirgin biçimde altındaki teklifler şüpheyle karşılanmalıdır.
+            </p>
+            <h3>Düşük Tekliflerin Arkasındaki Nedenler:</h3>
+            <ul>
+                <li><strong>Taşıma günü ek ücret talepleri:</strong> Teklif düşük verilir,
+                asıl kazanç "beklenmedik" ekstra kalemlerden sağlanır. "Asansör ücreti ayrı,
+                ambalaj malzemesi ayrı, kat başına ek ücret var" gibi itirazlar kapıda çıkar.</li>
+                <li><strong>Sigortasız taşıma:</strong> Sigorta maliyeti fiyatı artırır;
+                düşük teklifli firmalar çoğunlukla sigortasız çalışır ya da kağıt üzerinde
+                düşük limitli sigorta gösterir.</li>
+                <li><strong>Deneyimsiz ekip:</strong> Daha az ücret alan ekipler, paketleme
+                ve taşıma tekniklerine hâkim olmayabilir; bu durum hasar riskini artırır.</li>
+                <li><strong>Kapasite yanıltması:</strong> Eşyaların hepsinin tek araçla
+                taşınacağı vaat edilir, taşıma günü araç küçük gelir ve ikinci sefer
+                talebiyle ek ücret istenir.</li>
+                <li><strong>Nakliyat dolandırıcılığı:</strong> Ön ödeme alınır, taşıma
+                günü ekip gelmez ya da eşyalar "rehin" tutularak fazladan para talep edilir.</li>
+            </ul>
+            <div class="warn-box">
+                Gerçek bir örnek: "5.000 TL'ye teklif verdiler, güvendim" diyen bir müşterimiz,
+                taşıma günü kapıda 12.000 TL ödedi. Sözlü teklif bağlayıcı değildir.
+                Her zaman yazılı teklif ve sözleşme talep edin.
+            </div>
+
+            <h2>Yazılı Teklif vs. Sözlü Teklif</h2>
+            <p>
+                Nakliyat sektöründe müşterilerin en sık yaptığı hata, telefon ya da WhatsApp
+                üzerinden alınan sözlü teklife güvenmektir. Sözlü teklifin hukuki bağlayıcılığı
+                yoktur ve ispat yükü her zaman müşterinin aleyhine çalışır.
+            </p>
+            <div class="compare-grid">
+                <div class="compare-card bad">
+                    <h3>Sözlü Teklif — Riskler</h3>
+                    <ul>
+                        <li>Taşıma günü fiyat artışına itiraz edemezsiniz</li>
+                        <li>Kapsam anlaşmazlıklarında kanıtınız yoktur</li>
+                        <li>Hasar durumunda sorumluluk belirsiz kalır</li>
+                        <li>Ek hizmetler için fazladan ücret talep edilebilir</li>
+                        <li>İptal veya erteleme koşulları tartışmalıdır</li>
+                    </ul>
+                </div>
+                <div class="compare-card good">
+                    <h3>Yazılı Teklif ve Sözleşme — Avantajlar</h3>
+                    <ul>
+                        <li>Fiyat güvence altındadır, artırılamaz</li>
+                        <li>Kapsam ve ek hizmetler net olarak tanımlıdır</li>
+                        <li>Hasar halinde yasal zemin oluşur</li>
+                        <li>İptal ve erteleme koşulları bellidir</li>
+                        <li>Sigorta şartları kayıt altındadır</li>
+                    </ul>
+                </div>
+            </div>
+            <p>
+                Taşınma tarihinden en az 1 hafta önce yazılı teklif ve sözleşme imzalamış
+                olmak, her iki taraf için de güven ve netlik sağlar.
+            </p>
+
+            <h2>Teklife Dahil Olan ve Olmayan Hizmetler</h2>
+            <p>
+                Nakliyat teklifleri standart bir içerik sunmaz; firma ve paket türüne göre
+                büyük farklılıklar gösterir. Aşağıdaki tablo, sektördeki yaygın uygulamayı
+                ve Hadımköy Ankara Nakliyat'ın hizmet kapsamını karşılaştırmalı olarak
+                göstermektedir.
+            </p>
+
+            <table class="include-table">
+                <thead>
+                    <tr>
+                        <th>Hizmet Kalemi</th>
+                        <th>Standart Firmalar</th>
+                        <th>Hadımköy Ankara Nakliyat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Yükleme ve boşaltma</td>
+                        <td><span class="badge-yes">Dahil</span></td>
+                        <td><span class="badge-yes">Dahil</span></td>
+                    </tr>
+                    <tr>
+                        <td>Ambalajlama malzemeleri</td>
+                        <td><span class="badge-maybe">Ek ücret</span></td>
+                        <td><span class="badge-yes">Dahil</span></td>
+                    </tr>
+                    <tr>
+                        <td>Eşya sigortası</td>
+                        <td><span class="badge-no">Genellikle yok</span></td>
+                        <td><span class="badge-yes">Dahil</span></td>
+                    </tr>
+                    <tr>
+                        <td>Asansörlü taşıma (varsa)</td>
+                        <td><span class="badge-maybe">Ek ücret</span></td>
+                        <td><span class="badge-yes">Dahil</span></td>
+                    </tr>
+                    <tr>
+                        <td>Mobilya monte-demontaj</td>
+                        <td><span class="badge-maybe">Ek ücret</span></td>
+                        <td><span class="badge-yes">Dahil</span></td>
+                    </tr>
+                    <tr>
+                        <td>Beyaz eşya bağlantıları</td>
+                        <td><span class="badge-no">Dahil değil</span></td>
+                        <td><span class="badge-maybe">Talep üzerine</span></td>
+                    </tr>
+                    <tr>
+                        <td>Marangoz hizmeti</td>
+                        <td><span class="badge-no">Dahil değil</span></td>
+                        <td><span class="badge-yes">Dahil</span></td>
+                    </tr>
+                    <tr>
+                        <td>Yazılı sözleşme</td>
+                        <td><span class="badge-maybe">İstenirse</span></td>
+                        <td><span class="badge-yes">Standart</span></td>
+                    </tr>
+                    <tr>
+                        <td>Ücretsiz keşif</td>
+                        <td><span class="badge-maybe">Her zaman değil</span></td>
+                        <td><span class="badge-yes">Standart</span></td>
+                    </tr>
+                    <tr>
+                        <td>Çift katlı villa / geniş daire ek ücret</td>
+                        <td><span class="badge-no">Genellikle var</span></td>
+                        <td><span class="badge-yes">Keşifte belirlenir</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Sigorta Klozu Nerede?</h2>
+            <p>
+                Nakliyat sözleşmesinde sigorta maddesi, hukuki açıdan en kritik bölümdür.
+                Sözleşmeyi imzalamadan önce şu soruları mutlaka sorun:
+            </p>
+            <ul>
+                <li><strong>Hangi sigorta şirketi?</strong> Firmanın çalıştığı sigorta şirketinin
+                adını öğrenin. Bilinmeyen veya adı belirsiz "dahili sigorta" ifadelerine
+                dikkat edin.</li>
+                <li><strong>Sigorta limiti nedir?</strong> Toplam eşya değerinizin ne kadarı
+                karşılanıyor? "Araç başına 50.000 TL limit" gibi ifadeler gerçek eşya
+                değerini karşılamayabilir.</li>
+                <li><strong>Hangi hasarlar kapsam dışı?</strong> "Ambalajlanmamış eşyalar
+                sigorta kapsamı dışındadır" gibi maddeler sonradan sorun yaratır.</li>
+                <li><strong>Hasar ihbarı süresi nedir?</strong> Taşındıktan sonra hasar
+                tespiti için belirlenen süreyi aşarsanız sigorta talebiniz reddedilebilir.</li>
+                <li><strong>Sigorta poliçesini görebilir miyim?</strong> Ciddi firmalar
+                poliçeyi paylaşmaktan çekinmez.</li>
+            </ul>
+            <div class="good-box">
+                Hadımköy Ankara Nakliyat, tüm İstanbul-Ankara taşımalarında eşya sigortasını
+                standartta sunar. Taşıma öncesi düzenlenen sigorta poliçesi müşteriye iletilir;
+                hasar ihbarı için 48 saat süre tanınır.
+            </div>
+
+            <h2>Referans ve Google Yorumları</h2>
+            <p>
+                Fiyat karşılaştırması yaparken firmanın geçmiş hizmet kalitesini araştırmak
+                en az fiyat kadar önemlidir. Güvenilir kaynaklar:
+            </p>
+            <ul>
+                <li><strong>Google İşletme Profili yorumları:</strong> Gerçek müşteri deneyimlerini
+                yansıtır. Yorum sayısına dikkat edin; az yorum gerçek bir firma olmayabilir.
+                Hem olumlu hem olumsuz yorumları okuyun, firmanın yanıtlarına bakın.</li>
+                <li><strong>Çevrenizden referans:</strong> Yakın zamanda İstanbul-Ankara arası
+                taşınan bir tanıdığınız varsa deneyimini sorun; kişisel referans en güvenilir
+                kaynaktır.</li>
+                <li><strong>Firma web sitesi:</strong> Profesyonel ve güncel bir web sitesi,
+                kurumsal bir yapıya işaret eder. Adres, telefon ve hizmet bilgileri net
+                belirtilmeli.</li>
+                <li><strong>Hizmet süresi:</strong> Kaç yıldır faaliyette? Yeni kurulan
+                firmalar hakkında yeterli bilgi olmayabilir.</li>
+                <li><strong>Ticaret Sicil Gazetesi:</strong> Firmanın tüzel kişiliği var mı?
+                Vergi numarası ve kayıtlı adres tutarlı mı? Ciddi bir taşıma için bu
+                araştırmayı yapmanız önerilir.</li>
+            </ul>
+            <div class="warn-box">
+                Sahte yorum tuzağı: Bazı firmalar kısa sürede çok sayıda yıldızlı yorum
+                satın alır. Yorum tarihlerine dikkat edin; aynı hafta içinde 20-30 yorum
+                geldiyse şüpheyle yaklaşın. Yorumların içerik kalitesi ve özgünlüğü
+                önemli bir göstergedir.
+            </div>
+
+            <h2>İlk Keşif Olmadan Verilen Teklifler</h2>
+            <p>
+                Nakliyat sektöründe gerçek bir fiyat teklifi ancak eşyaların hacmi ve taşıma
+                koşulları görüldükten sonra verilebilir. Fiziki veya video görüşmeli keşif
+                yapmadan verilen teklifler genellikle ya çok düşük (tuzak) ya da çok yüksek
+                (belirsizlik payı) olur.
+            </p>
+            <p>
+                Doğru bir keşif sürecinde firma temsilcisi şunları değerlendirir:
+            </p>
+            <ul>
+                <li>Eşya hacmi ve ağırlığı (kaç araçlık yük?)</li>
+                <li>Mevcut evin kat, asansör ve giriş durumu</li>
+                <li>Gidilecek adresin kat, asansör ve giriş durumu</li>
+                <li>Özel dikkat gerektiren eşyalar (piyano, antika, büyük cam panel vb.)</li>
+                <li>Taşınma tarihi ve saati (hafta sonu, sabah saati gibi etkenler fiyatı
+                etkileyebilir)</li>
+                <li>Güzergah özellikleri (dar sokak, yüksek yapı, şehir merkezi gibi)</li>
+            </ul>
+            <p>
+                Keşif yapılmadan verilen teklife güvenmek yerine, mutlaka yerinde ya da
+                video görüşmeli keşif talep edin.
+            </p>
+
+            <h2>3 Firmayı Karşılaştırırken Dikkat Edin</h2>
+            <p>
+                Üç farklı firmadan teklif almak sektörün standart önerisidir. Ancak teklifleri
+                karşılaştırırken yalnızca son fiyata odaklanmak yanıltıcıdır. Aşağıdaki
+                karşılaştırma çerçevesini kullanın:
+            </p>
+            <ol>
+                <li><strong>Kapsam eşitleme:</strong> Her üç teklifte de aynı hizmet kalemlerini
+                (ambalaj, sigorta, asansör vb.) dahil edip etmediğini kontrol edin.
+                Farklı kapsamlardaki teklifleri direkt karşılaştıramazsınız.</li>
+                <li><strong>Gizli ücret sorusu:</strong> Her firmaya "bu teklife dahil olmayan
+                ama ek ücret çıkabilecek kalemler neler?" diye doğrudan sorun ve yanıtları
+                yazılı alın.</li>
+                <li><strong>Sigorta karşılaştırması:</strong> Her firmanın sigorta limiti ve
+                kapsamı farklı olabilir. Sigortasız ve sigortalı teklifleri aynı kefeye
+                koymayın.</li>
+                <li><strong>Keşif kalitesi:</strong> Keşif yapan temsilcinin tutumu, bilgisi
+                ve yanıtlarının netliği de firmanın hizmet kalitesini yansıtır.</li>
+                <li><strong>İletişim hızı:</strong> Teklif talebine hızlı, net ve profesyonel
+                cevap veren firma genellikle iş süreçlerini de daha iyi yönetir.</li>
+                <li><strong>Sözleşme şartları:</strong> İptal politikası, taşıma tarihi
+                değişikliği ve hasar sorumluluğu maddelerini karşılaştırın.</li>
+            </ol>
+
+            <h2>Hadımköy Ankara Nakliyat ile Teklif Nasıl Alınır?</h2>
+            <p>
+                İstanbul'dan Ankara'ya ya da Ankara'dan İstanbul'a taşınmayı planlıyorsanız,
+                Hadımköy Ankara Nakliyat olarak size şeffaf, kapsamlı ve güvenceli bir teklif
+                süreci sunuyoruz.
+            </p>
+            <h3>Teklif Sürecimiz:</h3>
+            <ol>
+                <li><strong>İlk iletişim:</strong> Telefon veya WhatsApp ile bize ulaşın.
+                Taşıma tarihinizi, adreslerinizi ve eşya miktarınız hakkında genel bilgi verin.</li>
+                <li><strong>Ücretsiz keşif:</strong> İstanbul veya Ankara'daki adresinize
+                keşif ekibimiz gelir. Alternatif olarak video görüşme ile uzaktan keşif de
+                yapabiliriz.</li>
+                <li><strong>Yazılı teklif:</strong> Keşif sonrası tüm hizmet kalemlerini,
+                sigorta bilgisini ve net fiyatı içeren yazılı teklif e-posta ile iletilir.</li>
+                <li><strong>Sözleşme imzalanması:</strong> Teklifi onaylamanız halinde resmi
+                nakliyat sözleşmesi düzenlenir; her iki taraf imzalar.</li>
+                <li><strong>Taşıma günü:</strong> Belirlenen tarih ve saatte deneyimli
+                ekibimiz kapınızda olur. Tüm eşyalar sigortalı olarak taşınır.</li>
+            </ol>
+            <p>
+                Fiyatımız keşif öncesinde genel bir aralık olarak, keşif sonrasında ise
+                kesin rakam olarak sunulur. Taşıma günü sürpriz ek ücret talep etmiyoruz.
+                Bu taahhüdümüzü sözleşmeye yazıyoruz.
+            </p>
+            <p>
+                İstanbul-Ankara güzergahında 7/24 hizmet veriyoruz. Nakliyat fiyat teklifi
+                almak veya sorularınızı iletmek için aşağıdan bize ulaşabilirsiniz.
+            </p>
+
+            <div class="cta-box">
+                <h3>Ücretsiz Keşif ve Yazılı Teklif Alın</h3>
+                <p>Sigortalı, asansörlü, marangozlu profesyonel nakliyat hizmeti. Sürpriz ek ücret yok.</p>
+                <a href="tel:+905344300360">0534 430 03 60</a>
+                <a href="https://wa.me/905344300360">WhatsApp</a>
+            </div>
+
+            <div class="related-posts">
+                <h3>İlgili Yazılar</h3>
+                <div class="related-list">
+                    <a href="/Home/nakliyat_firmasi_nasil_secilir_7_kritik_soru">Nakliyat Firması Nasıl Seçilir? 7 Kritik Soru →</a>
+                    <a href="/Home/nakliyat_dolandiriciligi">Nakliyat Dolandırıcılığı: Nasıl Korunursunuz? →</a>
+                    <a href="/Home/evden_eve_nakliyat_oncesi_hazirlik_rehberi">Evden Eve Nakliyat Öncesi Hazırlık Rehberi →</a>
+                    <a href="/Home/tasinirken_yapilan_10_hata">Taşınırken Yapılan 10 Hata →</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

@@ -1,0 +1,736 @@
+@{
+    ViewData["Title"] = "Nakliyat Fiyat Hesaplama 2026 | Ücretsiz Online Hesaplayıcı | Hadımköy Ankara Nakliyat";
+    ViewData["Description"] = "İstanbul-Ankara nakliyat fiyatını online hesaplayın. Ev tipi, kat, asansör durumunu girin, anında yaklaşık fiyat alın. Ücretsiz.";
+}
+
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "Service",
+  "serviceType": "Evden Eve Nakliyat Fiyat Hesaplama",
+  "name": "İstanbul Ankara Nakliyat Fiyat Hesaplayıcı",
+  "provider": {
+    "@@type": "LocalBusiness",
+    "name": "Hadımköy Ankara Nakliyat",
+    "telephone": "+905344300360",
+    "url": "https://www.hadimkoyankaranakliyat.com"
+  },
+  "areaServed": [
+    { "@@type": "City", "name": "İstanbul" },
+    { "@@type": "City", "name": "Ankara" }
+  ],
+  "description": "İstanbul ve Ankara arasında evden eve nakliyat fiyatını online olarak anında hesaplayın. Ev tipi, kat ve asansör bilgilerini girerek tahmini fiyat aralığı öğrenin.",
+  "offers": {
+    "@@type": "Offer",
+    "priceCurrency": "TRY",
+    "priceSpecification": {
+      "@@type": "PriceSpecification",
+      "minPrice": "3000",
+      "maxPrice": "50000",
+      "priceCurrency": "TRY"
+    }
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.hadimkoyankaranakliyat.com/" },
+    { "@@type": "ListItem", "position": 2, "name": "Nakliyat Fiyat Hesaplama", "item": "https://www.hadimkoyankaranakliyat.com/nakliyat-fiyat-hesaplama" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@@type": "Question",
+      "name": "Nakliyat fiyat hesaplayıcı nasıl çalışır?",
+      "acceptedAnswer": {
+        "@@type": "Answer",
+        "text": "Formda nereden ve nereye taşınacağınızı, ev tipinizi, kat bilgisini ve asansör durumunu seçiyorsunuz. Ek hizmet olarak profesyonel paketleme veya demontaj/montaj ekleyebilirsiniz. Tüm bu bilgilere göre sistem anında tahmini fiyat aralığını hesaplayıp ekranda gösteriyor."
+      }
+    },
+    {
+      "@@type": "Question",
+      "name": "Hesaplayıcıdaki fiyatlar gerçek mi?",
+      "acceptedAnswer": {
+        "@@type": "Answer",
+        "text": "Hesaplayıcı, gerçek taşıma maliyetlerimize dayanan tahmini aralıklar sunar. Asansör erişimi, yürüme mesafesi, özel eşyalar (piyano, kasa vb.) ve güncel yakıt maliyetleri gibi faktörler nihai fiyatı etkileyebilir. Bu nedenle hesaplayıcıyı bir ön fikir edinme aracı olarak kullanın ve kesin fiyat için ücretsiz keşif randevusu alın."
+      }
+    },
+    {
+      "@@type": "Question",
+      "name": "Kesin nakliyat fiyatını nasıl öğrenebilirim?",
+      "acceptedAnswer": {
+        "@@type": "Answer",
+        "text": "Kesin fiyat almak için bizi +90 534 430 03 60 numaralı telefondan arayabilir ya da WhatsApp üzerinden ulaşabilirsiniz. Uzmanlarımız eşyanızın miktarına ve taşınma koşullarına göre detaylı bir teklif hazırlar. Dilediğinizde ücretsiz yerinde keşif de düzenleyebiliyoruz."
+      }
+    },
+    {
+      "@@type": "Question",
+      "name": "Ücretsiz keşif nedir, nasıl yapılır?",
+      "acceptedAnswer": {
+        "@@type": "Answer",
+        "text": "Ücretsiz keşif; nakliyat uzmanımızın taşınacağınız adrese gelerek eşya miktarını, kat ve asansör durumunu, özel koşulları yerinde değerlendirmesidir. Bu sayede sürpriz fiyatlar olmaz, taşıma günü her şey planlandığı gibi ilerler. Keşif için bizi arayın, uygun bir gün ve saat belirleyelim."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  .hesaplayici-page {
+    background: #f8fafc;
+    min-height: 80vh;
+  }
+  .calc-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 2rem;
+  }
+  .calc-title-badge {
+    display: inline-block;
+    background: #fff3e8;
+    color: #f97316;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.03em;
+  }
+  .form-label {
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 6px;
+  }
+  .form-select, .form-control {
+    border-radius: 10px;
+    border: 1.5px solid #e2e8f0;
+    padding: 0.55rem 0.9rem;
+  }
+  .form-select:focus, .form-control:focus {
+    border-color: #f97316;
+    box-shadow: 0 0 0 3px rgba(249,115,22,0.12);
+  }
+  .radio-group, .check-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 4px;
+  }
+  .radio-btn-label {
+    cursor: pointer;
+    padding: 8px 18px;
+    border-radius: 24px;
+    border: 1.5px solid #e2e8f0;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #475569;
+    background: #f8fafc;
+    transition: all 0.18s;
+    user-select: none;
+  }
+  .radio-btn-label:hover {
+    border-color: #f97316;
+    color: #f97316;
+  }
+  input[type="radio"]:checked + .radio-btn-label,
+  input[type="checkbox"]:checked + .radio-btn-label {
+    background: #f97316;
+    border-color: #f97316;
+    color: #fff;
+  }
+  input[type="radio"].btn-radio,
+  input[type="checkbox"].btn-check-custom {
+    display: none;
+  }
+  .btn-hesapla {
+    background: #f97316;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 0.75rem 2.2rem;
+    font-size: 1.08rem;
+    font-weight: 700;
+    width: 100%;
+    cursor: pointer;
+    transition: background 0.18s, transform 0.1s;
+    margin-top: 0.5rem;
+  }
+  .btn-hesapla:hover {
+    background: #ea6a0a;
+    transform: translateY(-1px);
+  }
+  .result-panel {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(249,115,22,0.13);
+    border: 2px solid #f97316;
+    padding: 2rem;
+    display: none;
+    animation: fadeInUp 0.35s ease;
+  }
+  .result-panel.visible {
+    display: block;
+  }
+  @@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .price-range {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #f97316;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+  .price-label {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .result-warning {
+    background: #fff7ed;
+    border-left: 4px solid #f97316;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.88rem;
+    color: #7c3a0a;
+    margin: 1rem 0;
+  }
+  .btn-kesif {
+    display: block;
+    background: #f97316;
+    color: #fff !important;
+    border-radius: 10px;
+    padding: 13px 20px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: background 0.18s;
+  }
+  .btn-kesif:hover { background: #ea6a0a; }
+  .btn-whatsapp {
+    display: block;
+    background: #25d366;
+    color: #fff !important;
+    border-radius: 10px;
+    padding: 13px 20px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.18s;
+  }
+  .btn-whatsapp:hover { background: #1ebe5d; }
+  .fiyat-tablo table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  }
+  .fiyat-tablo thead th {
+    background: #f97316;
+    color: #fff;
+    padding: 12px 16px;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+  .fiyat-tablo tbody tr:nth-child(even) td {
+    background: #fff7ed;
+  }
+  .fiyat-tablo tbody td {
+    padding: 11px 16px;
+    background: #fff;
+    color: #334155;
+    font-size: 0.93rem;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .fiyat-tablo tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .faq-item {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    margin-bottom: 14px;
+    overflow: hidden;
+  }
+  .faq-question {
+    padding: 16px 20px;
+    font-weight: 700;
+    color: #1e293b;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+  }
+  .faq-question:hover { color: #f97316; }
+  .faq-question .faq-icon {
+    font-size: 1.3rem;
+    color: #f97316;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+    margin-left: 10px;
+  }
+  .faq-question.open .faq-icon { transform: rotate(45deg); }
+  .faq-answer {
+    display: none;
+    padding: 0 20px 16px;
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+  .faq-answer.open { display: block; }
+  .section-title {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 0.4rem;
+  }
+  .section-subtitle {
+    color: #64748b;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  @@media (max-width: 768px) {
+    .calc-card { padding: 1.25rem; }
+    .price-range { font-size: 1.5rem; }
+    .result-panel { padding: 1.25rem; }
+  }
+</style>
+
+<div class="hesaplayici-page py-5">
+  <div class="container">
+
+    <!-- Başlık -->
+    <div class="text-center mb-5">
+      <span class="calc-title-badge">Ücretsiz Online Araç</span>
+      <h1 class="section-title">Nakliyat Fiyat Hesaplama 2026</h1>
+      <p class="section-subtitle">
+        Birkaç bilgi girin, anında tahmini nakliyat fiyat aralığınızı öğrenin.
+        İstanbul-Ankara arası ve şehir içi taşımalar için geçerlidir.
+      </p>
+    </div>
+
+    <!-- Hesaplayıcı + Sonuç -->
+    <div class="row g-4 mb-5">
+
+      <!-- Form -->
+      <div class="col-lg-6">
+        <div class="calc-card h-100">
+          <h2 class="fs-5 fw-bold text-dark mb-4" style="border-bottom:2px solid #f97316;padding-bottom:10px;">
+            Bilgilerinizi Girin
+          </h2>
+          <form id="calcForm" autocomplete="off">
+
+            <!-- Nereden -->
+            <div class="mb-3">
+              <label class="form-label" for="nereden">Nereden? (İstanbul İlçesi)</label>
+              <select class="form-select" id="nereden">
+                <option value="">İlçe seçin...</option>
+                <option value="kadikoy">Kadıköy</option>
+                <option value="besiktas">Beşiktaş</option>
+                <option value="sisli">Şişli</option>
+                <option value="fatih">Fatih</option>
+                <option value="uskudar">Üsküdar</option>
+                <option value="umraniye">Ümraniye</option>
+                <option value="maltepe">Maltepe</option>
+                <option value="pendik">Pendik</option>
+                <option value="kartal">Kartal</option>
+                <option value="bagcilar">Bağcılar</option>
+                <option value="esenyurt">Esenyurt</option>
+                <option value="beylikduzu">Beylikdüzü</option>
+                <option value="kucukcekmece">Küçükçekmece</option>
+                <option value="buyukcekmece">Büyükçekmece</option>
+                <option value="basaksehir">Başakşehir</option>
+                <option value="diger">Diğer İlçe</option>
+              </select>
+            </div>
+
+            <!-- Nereye -->
+            <div class="mb-3">
+              <label class="form-label" for="nereye">Nereye?</label>
+              <select class="form-select" id="nereye">
+                <option value="">Hedef seçin...</option>
+                <optgroup label="Ankara İlçeleri">
+                  <option value="istanbul-ankara">Çankaya</option>
+                  <option value="istanbul-ankara">Keçiören</option>
+                  <option value="istanbul-ankara">Yenimahalle</option>
+                  <option value="istanbul-ankara">Mamak</option>
+                  <option value="istanbul-ankara">Etimesgut</option>
+                  <option value="istanbul-ankara">Altındağ</option>
+                  <option value="istanbul-ankara">Sincan</option>
+                  <option value="istanbul-ankara">Pursaklar</option>
+                  <option value="istanbul-ankara">Diğer Ankara İlçesi</option>
+                </optgroup>
+                <optgroup label="İstanbul İçi">
+                  <option value="istanbul-ici">İstanbul İçi Taşıma</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <!-- Ev Tipi -->
+            <div class="mb-3">
+              <label class="form-label">Ev Tipi</label>
+              <div class="radio-group" id="evTipiGroup">
+                <input type="radio" class="btn-radio" name="evTipi" id="et1" value="1+1">
+                <label class="radio-btn-label" for="et1">1+1</label>
+
+                <input type="radio" class="btn-radio" name="evTipi" id="et2" value="2+1">
+                <label class="radio-btn-label" for="et2">2+1</label>
+
+                <input type="radio" class="btn-radio" name="evTipi" id="et3" value="3+1">
+                <label class="radio-btn-label" for="et3">3+1</label>
+
+                <input type="radio" class="btn-radio" name="evTipi" id="et4" value="4+1">
+                <label class="radio-btn-label" for="et4">4+1</label>
+
+                <input type="radio" class="btn-radio" name="evTipi" id="et5" value="Villa">
+                <label class="radio-btn-label" for="et5">Villa / Büyük Ev</label>
+
+                <input type="radio" class="btn-radio" name="evTipi" id="et6" value="Parsiyel">
+                <label class="radio-btn-label" for="et6">Parsiyel / Parça Eşya</label>
+              </div>
+            </div>
+
+            <!-- Kat -->
+            <div class="mb-3">
+              <label class="form-label" for="kat">Kat</label>
+              <select class="form-select" id="kat">
+                <option value="zemin">Zemin Kat</option>
+                <option value="1-3" selected>1 – 3. Kat</option>
+                <option value="4-6">4 – 6. Kat</option>
+                <option value="7+">7. Kat ve Üzeri</option>
+              </select>
+            </div>
+
+            <!-- Asansör -->
+            <div class="mb-3">
+              <label class="form-label">Asansör</label>
+              <div class="radio-group">
+                <input type="radio" class="btn-radio" name="asansor" id="as1" value="var" checked>
+                <label class="radio-btn-label" for="as1">Var</label>
+
+                <input type="radio" class="btn-radio" name="asansor" id="as2" value="yok">
+                <label class="radio-btn-label" for="as2">Yok</label>
+              </div>
+            </div>
+
+            <!-- Ek Hizmetler -->
+            <div class="mb-4">
+              <label class="form-label">Ek Hizmetler</label>
+              <div class="check-group">
+                <input type="checkbox" class="btn-check-custom" id="paketleme">
+                <label class="radio-btn-label" for="paketleme">Profesyonel Paketleme (+%15)</label>
+
+                <input type="checkbox" class="btn-check-custom" id="marangoz">
+                <label class="radio-btn-label" for="marangoz">Demontaj / Montaj (+500 TL)</label>
+              </div>
+            </div>
+
+            <button type="button" class="btn-hesapla" onclick="hesapla()">
+              Fiyatı Hesapla
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Sonuç Paneli -->
+      <div class="col-lg-6 d-flex flex-column">
+        <!-- Boş durum -->
+        <div id="emptyState" class="calc-card text-center d-flex flex-column align-items-center justify-content-center h-100" style="min-height:320px;">
+          <div style="font-size:3.5rem;margin-bottom:1rem;">🧮</div>
+          <p class="fw-semibold text-secondary fs-5">Formu doldurun ve "Fiyatı Hesapla" butonuna tıklayın.</p>
+          <p class="text-secondary" style="font-size:0.9rem;">Tahmini fiyat aralığı burada görünecek.</p>
+        </div>
+
+        <!-- Sonuç -->
+        <div id="resultPanel" class="result-panel flex-grow-1">
+          <p class="price-label">Tahmini Fiyat Aralığı</p>
+          <div class="price-range" id="priceDisplay">₺0 – ₺0</div>
+          <div id="detayBilgi" class="mt-2 text-secondary" style="font-size:0.88rem;"></div>
+          <div class="result-warning mt-3">
+            Bu tahmini bir aralıktır. Kesin fiyat, ücretsiz keşif sonrası netleşir. Piyano, kasa veya çok katlı taşıma gibi özel durumlar ek maliyet getirebilir.
+          </div>
+          <div class="mt-3">
+            <a href="tel:+905344300360" class="btn-kesif">
+              📞 Ücretsiz Keşif İste → +90 534 430 03 60
+            </a>
+            <a href="https://wa.me/905344300360" target="_blank" rel="noopener" class="btn-whatsapp">
+              💬 WhatsApp ile Teklif Al
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Açıklayıcı Metin -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <div class="calc-card">
+          <h2 class="fs-5 fw-bold mb-3" style="color:#1e293b;">Nakliyat Fiyatlarını Etkileyen Faktörler</h2>
+          <p>
+            Evden eve nakliyat fiyatları; taşınılan mesafe, eşya miktarı, kat sayısı, asansör varlığı ve ekstra hizmet tercihleri gibi pek çok değişkene bağlıdır.
+            İstanbul-Ankara arası şehirlerarası taşımalarda mesafe faktörü öne çıkarken, İstanbul içi taşımalarda kat ve asansör koşulları belirleyici olmaktadır.
+          </p>
+          <p>
+            <strong>Ev tipi</strong> fiyatı doğrudan belirleyen en önemli unsurdur. 1+1 daire ile 4+1 daire arasındaki fiyat farkı hem araç kapasitesi hem de işçilik süresiyle doğrudan ilişkilidir.
+            <strong>Parsiyel (parça eşya) taşımalarda</strong> ise yalnızca koltuk, beyaz eşya veya birkaç koli gibi az miktarda eşya taşındığından fiyat çok daha düşük tutulmaktadır.
+          </p>
+          <p>
+            <strong>Asansör durumu</strong> fiyatı ciddi ölçüde etkiler. Asansör yoksa yüksek katlarda el ile taşıma zorunlu hale gelir; bu da işçilik maliyetini artırır.
+            4. kattan itibaren her kat için ek ücret uygulanması sektörde yaygın bir standarttır.
+          </p>
+          <p>
+            <strong>Profesyonel paketleme</strong> hizmeti, mobilyalarınızın ve ev eşyalarınızın patpat naylonu, streç film ve karton koli ile korunmasını kapsar.
+            Bu hizmet özellikle cam, ayna ve değerli eşya taşımalarında büyük önem taşır ve eşyaların hasar görmesini önler.
+          </p>
+          <p>
+            <strong>Demontaj ve montaj</strong> hizmeti; karyola, gardırop, şifonyer, büyük masa gibi parçalı mobilyaların söküm ve yeniden kurulumunu içerir.
+            Marangozluk ekibi bu işlemi hem kalkış adresinizde hem de varış adresinizde gerçekleştirir.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fiyat Tablosu -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <h2 class="section-title text-center">2026 Nakliyat Fiyat Tablosu</h2>
+        <p class="section-subtitle text-center">Güncel nakliyat fiyat aralıklarını aşağıdan inceleyebilirsiniz.</p>
+        <div class="fiyat-tablo">
+          <table>
+            <thead>
+              <tr>
+                <th>Ev Tipi</th>
+                <th>İstanbul → Ankara</th>
+                <th>İstanbul İçi</th>
+                <th>Parsiyel</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1+1 Daire</strong></td>
+                <td>₺8.000 – ₺14.000</td>
+                <td>₺3.000 – ₺6.000</td>
+                <td>₺1.500 – ₺4.000</td>
+              </tr>
+              <tr>
+                <td><strong>2+1 Daire</strong></td>
+                <td>₺12.000 – ₺20.000</td>
+                <td>₺4.500 – ₺8.000</td>
+                <td>–</td>
+              </tr>
+              <tr>
+                <td><strong>3+1 Daire</strong></td>
+                <td>₺18.000 – ₺28.000</td>
+                <td>₺7.000 – ₺12.000</td>
+                <td>–</td>
+              </tr>
+              <tr>
+                <td><strong>4+1 Daire</strong></td>
+                <td>₺25.000 – ₺38.000</td>
+                <td>₺9.000 – ₺15.000</td>
+                <td>–</td>
+              </tr>
+              <tr>
+                <td><strong>Villa / Büyük Ev</strong></td>
+                <td>₺35.000 – ₺55.000</td>
+                <td>₺14.000 – ₺22.000</td>
+                <td>–</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-secondary mt-3" style="font-size:0.88rem;text-align:center;">
+          * Belirtilen fiyatlar tahminidir. Asansörsüz kat, özel eşya ve paketleme talepleri fiyatı değiştirebilir.
+        </p>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <h2 class="section-title text-center">Sık Sorulan Sorular</h2>
+        <p class="section-subtitle text-center">Nakliyat fiyat hesaplayıcısı hakkında merak edilenler</p>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              Nakliyat fiyat hesaplayıcı nasıl çalışır?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Formda nereden ve nereye taşınacağınızı, ev tipinizi, kat bilgisini ve asansör durumunu seçiyorsunuz. Ek hizmet olarak profesyonel paketleme veya demontaj/montaj ekleyebilirsiniz. Tüm bu bilgilere göre sistem anında tahmini fiyat aralığını hesaplayıp ekranda gösteriyor. Hesaplama tamamen tarayıcınızda yapılır, herhangi bir kişisel bilgi gerekmez.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              Bu fiyatlar gerçek mi, güvenebilir miyim?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Hesaplayıcı, gerçek taşıma maliyetlerimize dayanan tahmini aralıklar sunar. Asansör erişimi, yürüme mesafesi, özel eşyalar (piyano, kasa, büyük akvaryum vb.) ve dönemsel yakıt maliyetleri gibi faktörler nihai fiyatı etkileyebilir. Bu nedenle hesaplayıcıyı ön fikir edinme aracı olarak kullanmanızı, kesin fiyat için bizi aramanızı öneririz.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              Kesin nakliyat fiyatını nasıl öğrenebilirim?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Kesin fiyat almak için <strong>+90 534 430 03 60</strong> numaralı telefonumuzdan bizi arayabilir ya da WhatsApp üzerinden mesaj gönderebilirsiniz. Uzmanlarımız eşyanızın miktarına ve taşınma koşullarına göre detaylı bir teklif hazırlar. Dilediğinizde ücretsiz yerinde keşif de düzenleyebiliyoruz.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              Ücretsiz keşif nedir, nasıl yapılır?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Ücretsiz keşif; nakliyat uzmanımızın taşınacağınız adrese gelerek eşya miktarını, kat ve asansör durumunu, özel koşulları yerinde değerlendirmesidir. Bu sayede taşıma günü sürpriz fiyatlarla karşılaşmazsınız ve her şey planlandığı gibi ilerler. Keşif için bizi arayın, uygun bir gün ve saat belirleyelim — tamamen ücretsiz.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Son CTA -->
+    <div class="row">
+      <div class="col-12 text-center">
+        <div class="calc-card py-4">
+          <h3 class="fw-bold mb-2" style="color:#1e293b;">Hazır mısınız? Hemen Teklif Alın</h3>
+          <p class="text-secondary mb-3">Uzman ekibimiz size en uygun nakliyat çözümünü sunmak için bekliyor.</p>
+          <div class="d-flex flex-wrap gap-3 justify-content-center">
+            <a href="tel:+905344300360" class="btn-kesif" style="width:auto;display:inline-block;padding:12px 28px;">
+              📞 +90 534 430 03 60
+            </a>
+            <a href="https://wa.me/905344300360" target="_blank" rel="noopener" class="btn-whatsapp" style="width:auto;display:inline-block;padding:12px 28px;">
+              💬 WhatsApp ile Yaz
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // Baz fiyatlar (TL)
+  var BASE = {
+    "1+1": 9000,
+    "2+1": 15000,
+    "3+1": 22000,
+    "4+1": 30000,
+    "Villa": 40000,
+    "Parsiyel": 3000
+  };
+
+  // Rota çarpanı
+  var ROUTE = {
+    "istanbul-ankara": 1.0,
+    "istanbul-ici": 0.35
+  };
+
+  // Kat ek ücreti (asansör yoksa)
+  function katEk(kat, asansor) {
+    if (asansor === "var") return 0;
+    var ekler = { "zemin": 0, "1-3": 500, "4-6": 1200, "7+": 2000 };
+    return ekler[kat] || 0;
+  }
+
+  function formatTL(sayi) {
+    return "₺" + sayi.toLocaleString("tr-TR");
+  }
+
+  function hesapla() {
+    var nereden = document.getElementById("nereden").value;
+    var nereye  = document.getElementById("nereye").value;
+    var evTipiEl = document.querySelector('input[name="evTipi"]:checked');
+    var kat     = document.getElementById("kat").value;
+    var asansorEl = document.querySelector('input[name="asansor"]:checked');
+    var paketleme = document.getElementById("paketleme").checked;
+    var marangoz  = document.getElementById("marangoz").checked;
+
+    // Validasyon
+    if (!nereden) {
+      alert("Lütfen 'Nereden?' ilçesini seçin.");
+      return;
+    }
+    if (!nereye) {
+      alert("Lütfen 'Nereye?' hedefini seçin.");
+      return;
+    }
+    if (!evTipiEl) {
+      alert("Lütfen ev tipini seçin.");
+      return;
+    }
+
+    var evTipi = evTipiEl.value;
+    var asansor = asansorEl ? asansorEl.value : "var";
+
+    var base = BASE[evTipi];
+    var rota = (nereye === "istanbul-ici") ? ROUTE["istanbul-ici"] : ROUTE["istanbul-ankara"];
+    base = Math.round(base * rota);
+    base += katEk(kat, asansor);
+    if (paketleme) base = Math.round(base * 1.15);
+    if (marangoz) base += 500;
+
+    var min = Math.round(base * 0.9 / 100) * 100;
+    var max = Math.round(base * 1.2 / 100) * 100;
+
+    // Detay metni
+    var detaylar = [];
+    if (rota === ROUTE["istanbul-ici"]) detaylar.push("Şehir içi taşıma");
+    else detaylar.push("İstanbul → Ankara güzergahı");
+    if (asansor === "yok" && katEk(kat, "yok") > 0) detaylar.push("Asansörsüz kat eki dahil");
+    if (paketleme) detaylar.push("Profesyonel paketleme dahil");
+    if (marangoz) detaylar.push("Demontaj/montaj dahil");
+
+    document.getElementById("priceDisplay").textContent = formatTL(min) + " – " + formatTL(max);
+    document.getElementById("detayBilgi").textContent = detaylar.join(" · ");
+
+    var emptyState = document.getElementById("emptyState");
+    var resultPanel = document.getElementById("resultPanel");
+    emptyState.style.display = "none";
+    resultPanel.classList.add("visible");
+  }
+
+  function toggleFaq(btn) {
+    var answer = btn.nextElementSibling;
+    var isOpen = answer.classList.contains("open");
+    // Tümünü kapat
+    document.querySelectorAll(".faq-answer.open").forEach(function(a) { a.classList.remove("open"); });
+    document.querySelectorAll(".faq-question.open").forEach(function(b) { b.classList.remove("open"); });
+    // Tıklananı aç (eğer kapalıysa)
+    if (!isOpen) {
+      answer.classList.add("open");
+      btn.classList.add("open");
+    }
+  }
+</script>

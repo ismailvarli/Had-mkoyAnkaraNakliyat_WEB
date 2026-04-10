@@ -1,0 +1,221 @@
+@{
+    ViewData["Title"] = "Etimesgut İstanbul Nakliyat | Yeni Yerleşim Bölgesi Etimesgut'tan İstanbul'a Kapsamlı Nakliyat";
+    ViewData["Description"] = "Etimesgut'tan İstanbul'a profesyonel nakliyat! TOKİ, site ve modern konutlardan sigortalı, asansörlü ev taşıma. Etimesgut evden eve nakliyat için hemen arayın.";
+}
+@{
+    var ilce = "Etimesgut";
+
+    var ilceIstanbulService = string.Format(@"{{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""Service"",
+      ""serviceType"": ""Şehir İçi Nakliyat"",
+      ""name"": ""{0} İstanbul Nakliyat - Profesyonel Ev Taşıma"",
+      ""provider"": {{ ""@type"": ""LocalBusiness"", ""name"": ""Hadımköy Ankara Nakliyat"" }},
+      ""areaServed"": {{ ""@type"": ""City"", ""name"": ""{0}, Ankara"" }},
+      ""description"": ""{0} İstanbul nakliyat hizmeti ile {0} ilçesinden İstanbul'un tüm semtlerine asansörlü, sigortalı ve marangozlu evden eve nakliye."",
+      ""aggregateRating"": {{
+        ""@type"": ""AggregateRating"",
+        ""ratingValue"": ""4.9"",
+        ""bestRating"": ""5"",
+        ""worstRating"": ""1"",
+        ""reviewCount"": ""9""
+      }}
+    }}", ilce);
+
+    var ilceIstanbulFaq = string.Format(@"{{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        {{
+          ""@type"": ""Question"",
+          ""name"": ""{0} İstanbul nakliyat fiyatları neye göre belirleniyor?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""{0} çıkışlı taşımalarda fiyatlar; eşya miktarınıza (1+1, 2+1), gidilecek mesafeye ve kat durumuna göre ücretsiz ekspertiz sonucu belirlenir."" }}
+        }},
+        {{
+          ""@type"": ""Question"",
+          ""name"": ""{0} ilçesinde asansörlü araç kullanıyor musunuz?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""Evet, {0} bölgesindeki dar sokaklar ve yüksek girişler için uygun mobil asansörlerimizle eşyalarınızı hasarsız taşıyoruz."" }}
+        }},
+        {{
+          ""@type"": ""Question"",
+          ""name"": ""{0} ilçesinden İstanbul'a taşıma kaç günde tamamlanır?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""{0} - İstanbul arası komple taşımalarda aynı gün yükleme ertesi gün teslim prensibini uyguluyoruz. Parsiyel gönderilerde 1-3 iş günü içinde teslim yapılır."" }}
+        }}
+      ]
+    }}", ilce);
+}
+
+@* HTML Çıktısı *@
+<script type="application/ld+json">@Html.Raw(ilceIstanbulService)</script>
+<script type="application/ld+json">@Html.Raw(ilceIstanbulFaq)</script>
+
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.hadimkoyankaranakliyat.com/" },
+    { "@@type": "ListItem", "position": 2, "name": "Etimesgut İstanbul Nakliyat", "item": "https://www.hadimkoyankaranakliyat.com/Home/etimesgut_istanbul_nakliyat" }
+  ]
+}
+</script>
+
+<!--Start Page Header-->
+<section class="page-header">
+    <div class="page-header__bg" style="background-image: url(/assets/images/gallery/hadimkoy_hakkimizda.png)">
+    </div>
+    <div class="container">
+        <div class="page-header__inner">
+            <h1 style="color: white; font-weight: bold;">Etimesgut İstanbul Nakliyat</h1>
+            <ul class="thm-breadcrumb">
+                <li><a href="/Home/Index">Ana Sayfa</a></li>
+                <li><span class="icon-right-arrow21"></span></li>
+                <li>Etimesgut İstanbul Nakliyat</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--End Page Header-->
+
+<!--Start Service Details-->
+<section class="service-details">
+    <div class="container">
+        <div class="row">
+            <!--Start Service Details Sidebar-->
+            <div class="col-xl-4">
+                <div class="service-details__sidebar">
+                    <div class="service-details__sidebar-single">
+                        <div class="title-box">
+                            <h2>Hizmetlerimiz</h2>
+                        </div>
+                        <div class="service-details__sidebar-single-service">
+                            <ul class="clearfix">
+                                <li><a href="/Home/ikitelli_ankara_nakliyat">İkitelli Ankara Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/catalca_ankara_nakliyat">Çatalca Ankara Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/beylikduzu_ankara_nakliyat">Beylikdüzü Ankara Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/zeytinburnu_ankara_nakliyat">Zeytinburnu Ankara Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/bayrampasa_ankara_nakliyat">Bayrampaşa Ankara Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/ostim_istanbul_nakliyat">Ostim İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/yenimahalle_istanbul_nakliyat">Yenimahalle İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/kazan_istanbul_nakliyat">Kazan İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/sincan_istanbul_nakliyat">Sincan İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/temelli_istanbul_nakliyat">Temelli İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/cankaya_istanbul_nakliyat">Çankaya İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/kecioren_istanbul_nakliyat">Keçiören İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/mamak_istanbul_nakliyat">Mamak İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a class="active" href="/Home/etimesgut_istanbul_nakliyat">Etimesgut İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/altidag_istanbul_nakliyat">Altındağ İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="service-details__sidebar-contact text-center">
+                        <div class="service-details__sidebar-contact-img">
+                            <div class="inner">
+                                <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_284x285.png" loading="lazy" alt="etimesgut istanbul nakliyat fiyatları">
+                            </div>
+                        </div>
+                        <div class="service-details__sidebar-contact-content">
+                            <div class="icon"><span class="icon-phone"></span></div>
+                            <h2><a href="tel:+905344300360">+90 534 430 03 60</a></h2>
+                            <h3>Bizlerle İletişime Geçin <br> Hizmetimizden Yararlanın</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End Service Details Sidebar-->
+
+            <!--Start Service Details Content-->
+            <div class="col-xl-8">
+                <div class="service-details__content">
+                    <div class="service-details__content-img1">
+                        <div class="inner">
+                            <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_İstanbul_Ankara.png" loading="lazy" alt="etimesgut istanbul nakliyat">
+                        </div>
+                    </div>
+
+                    <div class="service-details__content-text1">
+                        <h2>Etimesgut İstanbul Nakliyat</h2>
+                        <p>
+                            <strong>Etimesgut İstanbul Nakliyat</strong> hizmetimiz, Ankara'nın hızla büyüyen ve modern konut projeleriyle gelişen Etimesgut ilçesinden İstanbul'a taşınmak isteyen müşterilere kapsamlı ve profesyonel bir çözüm sunmaktadır. Etimesgut, son yıllarda Ankara'nın en çok tercih edilen yerleşim bölgelerinden biri haline gelmiş; TOKİ projeleri, askeri konut alanları ve özel müteahhit site yapıları ile birlikte büyük bir nüfus artışı yaşanmaktadır. Bu gelişim, ilçede yoğun bir taşınma trafiği de beraberinde getirmektedir.
+                        </p>
+                        <p>
+                            Etimesgut'un kentsel dokusu büyük ölçüde modern apartman ve ayrı bloklardan oluşan site yapılarından oluşmaktadır. Geniş yollar, planlı otopark alanları ve yeni binalardaki güçlü asansör sistemleri, nakliyat operasyonlarını görece kolaylaştıran unsurlardandır. Bununla birlikte, büyük blok yapılarında site giriş kapıları ve güvenlik noktaları aşılması gereken aşamalar oluşturabilmektedir. Hadımköy Ankara Nakliyat ekibi, Etimesgut'taki site yönetim kurallarına hâkim olup gerekli izinleri önceden alarak operasyonu sorunsuz yönetmektedir.
+                        </p>
+                        <p>
+                            <strong>Etimesgut'tan İstanbul'a nakliyat</strong> sürecinde eşyalarınız uzman personelimiz tarafından özenle paketlenir, büyük mobilyalar demonte edilerek koruyucu ambalajlarla sarılır ve sigortalı araçlarımızla İstanbul'daki yeni adresinize teslim edilir. Etimesgut'ta özellikle askeri lojman bölgelerinden yapılan taşınmalarda gerekli koordinasyonu sağlamak için önceden plan yapıyor, güvenlik geçiş prosedürlerine uygun şekilde operasyonu yürütüyoruz.
+                        </p>
+                        <p>
+                            Etimesgut'un geniş TOKİ projelerinde kat sayısı yüksek binalarda dahi asansörlü çözümlerimizle eşyalarınızı güvenle indirip araçlara yerleştiriyoruz. İstanbul'daki yeni adresinizde de aynı titizliği sürdürerek eşyaları belirttiğiniz odalara yerleştirir ve mobilyaları yeniden monte ediyoruz. Etimesgut'tan İstanbul'a taşınma sürecini mümkün olan en kısa sürede ve sıfır hasarla tamamlamak için tüm ekipman ve kadromuz hazırdır.
+                        </p>
+                    </div>
+
+                    <div class="service-details__content-text2">
+                        <h3>Bizleri neden tercih etmelisiniz?</h3>
+                        <p>
+                            Hadımköy Ankara Nakliyat olarak <strong>Etimesgut'tan İstanbul'a taşımacılık</strong> hizmetlerinde sunduğumuz temel avantajlar şunlardır:
+                        </p>
+                        <p>
+                            <b>Modern Site ve TOKİ Yapılarında Deneyim:</b> Etimesgut'un büyük ölçekli site ve TOKİ konutlarından yapılan taşınmalarda bina yönetimi ile koordinasyon, uygun saatlerde araç girişinin planlanması ve güvenlik geçiş prosedürlerine uyum büyük önem taşır. Deneyimli ekibimiz tüm bu aşamaları önceden organize ederek operasyonu aksamadan yürütür.
+                        </p>
+                        <p>
+                            <b>Geniş Araç Filosu ile Kapasiteli Taşıma:</b> Etimesgut'taki konutlar genellikle orta ve büyük büyüklüktedir. Geniş 3+1 veya 4+1 dairelerden yapılan taşınmalarda büyük tonajlı araçlarımız devreye girerek tüm eşyaların tek seferde taşınmasını sağlar. Bu yaklaşım hem zaman hem de maliyet açısından büyük avantaj sunar.
+                        </p>
+                        <p>
+                            <b>Askeri Konut Bölgelerine Özel Çözümler:</b> Etimesgut'ta önemli bir yer tutan askeri konut ve lojman bölgelerinden yapılan taşınmalarda gerekli izin ve belgeler önceden temin edilir. Güvenlik kontrollü bölgelerdeki taşınma operasyonlarında protokole uygun hareket eden ekibimiz, bu tür taşınmalarda sorunsuz bir deneyim sunar.
+                        </p>
+                        <p>
+                            <b>Zamanında ve Güvenilir Teslimat:</b> Etimesgut - İstanbul güzergahında düzenli sefer planımız mevcuttur. Eşyalarınız belirlenen tarih ve saatte yola çıkar, İstanbul'a söz verilen zaman diliminde teslim edilir. Olası trafik durumlarında sürücülerimiz alternatif güzergahlarla zamanı telafi eder.
+                        </p>
+                        <p>
+                            <b>Komple Hizmet Anlayışı:</b> Etimesgut'tan İstanbul'a taşınmanızda paketleme malzemeleri temini, mobilya demontaj ve montajı, şehirlerarası nakliye, İstanbul'da yerleştirme ve sigorta hizmetlerinin tamamı tek çatı altında sunulmaktadır. Her şeyi biz organize ederken siz sadece yeni evinizin keyfini çıkarmaya odaklanırsınız.
+                        </p>
+                    </div>
+
+                    <div class="service-details__content-img2">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                <div class="single-img">
+                                    <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_Taşımacılık_390x225.png" loading="lazy" alt="etimesguttan istanbula sehirlerarasi nakliyat">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                <div class="single-img">
+                                    <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_Stairs_390x225.png" loading="lazy" alt="etimesguttan istanbula uygun fiyatli nakliyat">
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>Taşınma süreci nasıl işler?</h4>
+                        <p>
+                            Etimesgut'tan İstanbul'a nakliyat sürecimiz adım adım şu şekilde ilerler:
+                        </p>
+                        <p>
+                            <b>Ücretsiz Ekspertiz ve Planlama:</b> Müşteri temsilcimiz sizi arayarak taşınma detaylarını öğrenir. Etimesgut'taki sitenizde ya da konutunuzda yerinde inceleme yaparak eşya hacmi, bina tipi, site güvenlik gereksinimleri ve kat bilgisi değerlendirilir. Tüm bu bilgiler çerçevesinde size özel fiyat teklifi hazırlanır.
+                        </p>
+                        <p>
+                            <b>Profesyonel Paketleme:</b> Anlaşılan gün ekibimiz kapınıza gelir. Mobilyalar sökülerek koruyucu ambalajlarla sarılır, kırılgan eşyalar özel köpük ve balonlu naylon ile korunur. Her koli etiketlenerek hangi odaya ait olduğu işaretlenir.
+                        </p>
+                        <p>
+                            <b>Yükleme ve İstanbul Seferi:</b> Eşyalar aracın içine düzenli biçimde yerleştirilir ve sabitleme aparatlarıyla güvence altına alınır. Güvenli sürüş standartlarını koruyan sürücülerimiz, Etimesgut'tan İstanbul'a uzanan yolda eşyalarınızı titizlikle taşır.
+                        </p>
+                        <p>
+                            <b>Teslim ve Montaj:</b> İstanbul'daki adresinize varıldığında eşyalar dairenize taşınır, montaj gerektiren mobilyalar kurulur ve koliler istenilen odalara yerleştirilir. Teslim tutanağı imzalanarak nakliyat resmi olarak tamamlanır.
+                        </p>
+
+                        <h5>Fiyatlandırma nasıl yapılır?</h5>
+                        <p>
+                            Etimesgut - İstanbul nakliyat fiyatları; konutun büyüklüğü ve eşya hacmi, sitenin araç girişine uygunluğu, İstanbul'daki teslimat noktasının konumu ve kat bilgisi, özel paketleme veya depolama talepleri ile parsiyel ya da komple araç tercihi dikkate alınarak ücretsiz ekspertiz sonrasında belirlenir. Etimesgut'tan İstanbul'a güvenli bir taşınma için hemen bizi arayın, size özel fiyat teklifinizi alın!
+                        </p>
+                    </div>
+
+                    <div class="service-details__content-img3">
+                        <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_835x335.png" loading="lazy" alt="etimesguttan istanbula kamyon nakliyat">
+                    </div>
+                </div>
+            </div>
+            <!--End Service Details Content-->
+        </div>
+    </div>
+</section>
+<!--End Service Details-->

@@ -1,0 +1,221 @@
+@{
+    ViewData["Title"] = "Altındağ İstanbul Nakliyat | Tarihi Ankara'nın Kalbinden İstanbul'a Güvenilir Nakliyat";
+    ViewData["Description"] = "Altındağ'dan İstanbul'a profesyonel nakliyat! Ulus, Hacı Bayram ve dar tarihi sokaklardan özel ekipmanla asansörlü, sigortalı ev taşıma. Hemen teklif alın!";
+}
+@{
+    var ilce = "Altındağ";
+
+    var ilceIstanbulService = string.Format(@"{{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""Service"",
+      ""serviceType"": ""Şehir İçi Nakliyat"",
+      ""name"": ""{0} İstanbul Nakliyat - Profesyonel Ev Taşıma"",
+      ""provider"": {{ ""@type"": ""LocalBusiness"", ""name"": ""Hadımköy Ankara Nakliyat"" }},
+      ""areaServed"": {{ ""@type"": ""City"", ""name"": ""{0}, Ankara"" }},
+      ""description"": ""{0} İstanbul nakliyat hizmeti ile {0} ilçesinden İstanbul'un tüm semtlerine asansörlü, sigortalı ve marangozlu evden eve nakliye."",
+      ""aggregateRating"": {{
+        ""@type"": ""AggregateRating"",
+        ""ratingValue"": ""4.9"",
+        ""bestRating"": ""5"",
+        ""worstRating"": ""1"",
+        ""reviewCount"": ""9""
+      }}
+    }}", ilce);
+
+    var ilceIstanbulFaq = string.Format(@"{{
+      ""@context"": ""https://schema.org"",
+      ""@type"": ""FAQPage"",
+      ""mainEntity"": [
+        {{
+          ""@type"": ""Question"",
+          ""name"": ""{0} İstanbul nakliyat fiyatları neye göre belirleniyor?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""{0} çıkışlı taşımalarda fiyatlar; eşya miktarınıza (1+1, 2+1), gidilecek mesafeye ve kat durumuna göre ücretsiz ekspertiz sonucu belirlenir."" }}
+        }},
+        {{
+          ""@type"": ""Question"",
+          ""name"": ""{0} ilçesinde asansörlü araç kullanıyor musunuz?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""Evet, {0} bölgesindeki dar sokaklar ve yüksek girişler için uygun mobil asansörlerimizle eşyalarınızı hasarsız taşıyoruz."" }}
+        }},
+        {{
+          ""@type"": ""Question"",
+          ""name"": ""{0} ilçesinden İstanbul'a taşıma kaç günde tamamlanır?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""{0} - İstanbul arası komple taşımalarda aynı gün yükleme ertesi gün teslim prensibini uyguluyoruz. Parsiyel gönderilerde 1-3 iş günü içinde teslim yapılır."" }}
+        }}
+      ]
+    }}", ilce);
+}
+
+@* HTML Çıktısı *@
+<script type="application/ld+json">@Html.Raw(ilceIstanbulService)</script>
+<script type="application/ld+json">@Html.Raw(ilceIstanbulFaq)</script>
+
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.hadimkoyankaranakliyat.com/" },
+    { "@@type": "ListItem", "position": 2, "name": "Altındağ İstanbul Nakliyat", "item": "https://www.hadimkoyankaranakliyat.com/Home/altidag_istanbul_nakliyat" }
+  ]
+}
+</script>
+
+<!--Start Page Header-->
+<section class="page-header">
+    <div class="page-header__bg" style="background-image: url(/assets/images/gallery/hadimkoy_hakkimizda.png)">
+    </div>
+    <div class="container">
+        <div class="page-header__inner">
+            <h1 style="color: white; font-weight: bold;">Altındağ İstanbul Nakliyat</h1>
+            <ul class="thm-breadcrumb">
+                <li><a href="/Home/Index">Ana Sayfa</a></li>
+                <li><span class="icon-right-arrow21"></span></li>
+                <li>Altındağ İstanbul Nakliyat</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--End Page Header-->
+
+<!--Start Service Details-->
+<section class="service-details">
+    <div class="container">
+        <div class="row">
+            <!--Start Service Details Sidebar-->
+            <div class="col-xl-4">
+                <div class="service-details__sidebar">
+                    <div class="service-details__sidebar-single">
+                        <div class="title-box">
+                            <h2>Hizmetlerimiz</h2>
+                        </div>
+                        <div class="service-details__sidebar-single-service">
+                            <ul class="clearfix">
+                                <li><a href="/Home/ikitelli_ankara_nakliyat">İkitelli Ankara Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/catalca_ankara_nakliyat">Çatalca Ankara Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/beylikduzu_ankara_nakliyat">Beylikdüzü Ankara Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/zeytinburnu_ankara_nakliyat">Zeytinburnu Ankara Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/bayrampasa_ankara_nakliyat">Bayrampaşa Ankara Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/ostim_istanbul_nakliyat">Ostim İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/yenimahalle_istanbul_nakliyat">Yenimahalle İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/kazan_istanbul_nakliyat">Kazan İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/sincan_istanbul_nakliyat">Sincan İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/temelli_istanbul_nakliyat">Temelli İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/cankaya_istanbul_nakliyat">Çankaya İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/kecioren_istanbul_nakliyat">Keçiören İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/mamak_istanbul_nakliyat">Mamak İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a href="/Home/etimesgut_istanbul_nakliyat">Etimesgut İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                                <li><a class="active" href="/Home/altidag_istanbul_nakliyat">Altındağ İstanbul Nakliyat <span class="icon-right-arrow21"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="service-details__sidebar-contact text-center">
+                        <div class="service-details__sidebar-contact-img">
+                            <div class="inner">
+                                <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_284x285.png" loading="lazy" alt="altındağ istanbul nakliyat fiyatları">
+                            </div>
+                        </div>
+                        <div class="service-details__sidebar-contact-content">
+                            <div class="icon"><span class="icon-phone"></span></div>
+                            <h2><a href="tel:+905344300360">+90 534 430 03 60</a></h2>
+                            <h3>Bizlerle İletişime Geçin <br> Hizmetimizden Yararlanın</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End Service Details Sidebar-->
+
+            <!--Start Service Details Content-->
+            <div class="col-xl-8">
+                <div class="service-details__content">
+                    <div class="service-details__content-img1">
+                        <div class="inner">
+                            <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_İstanbul_Ankara.png" loading="lazy" alt="altındağ istanbul nakliyat">
+                        </div>
+                    </div>
+
+                    <div class="service-details__content-text1">
+                        <h2>Altındağ İstanbul Nakliyat</h2>
+                        <p>
+                            <strong>Altındağ İstanbul Nakliyat</strong> hizmetimiz, Ankara'nın köklü tarihi ilçesi Altındağ'dan İstanbul'a taşınmak isteyen müşterilerimize özel deneyim ve ekipmanla sunulmaktadır. Ulus Meydanı, Hacı Bayram Camii çevresi, Atpazarı ve Çinçin gibi köklü mahalleleri barındıran Altındağ, Ankara'nın en eski yerleşim alanlarından biridir. Tarihi dokusuyla öne çıkan bu ilçede nakliyat işlemleri, özel bilgi ve donanım gerektiren lojistik bir süreçtir.
+                        </p>
+                        <p>
+                            Altındağ'ın bir bölümünde, özellikle tarihi çekirdeğe yakın mahallelerde, çok dar sokaklar ve büyük araçların giremeyeceği geçitler mevcuttur. Gecekondu dönüşüm projeleriyle yenilenmekte olan bu bölgelerde eski yapı stoğu ile yeni inşaatlar iç içedir. Eski binaların büyük çoğunluğunda asansör bulunmamakta, merdivenler dardır. Hadımköy Ankara Nakliyat ekibi, bu koşullara yıllarca çalışarak adapte olmuş; manevra kabiliyeti yüksek küçük araçlar, merdiven koruyucu ekipmanlar ve mobil dış asansör sistemleri ile Altındağ'ın en dar sokağına kadar hizmet sunmaktadır.
+                        </p>
+                        <p>
+                            <strong>Altındağ'dan İstanbul'a nakliyat</strong> sürecinde konutunuzun yapısına bakılmaksızın eşyalarınız güvenle paketlenir ve İstanbul'a taşınır. Küçük dairelerden büyük işyerlerine, antika eşyalardan ticari depo içeriklerine kadar her taşıma ihtiyacında uzman ekibimiz yanınızdadır. Tarihi dokusunu yansıtan eşya ve mobilyalarınızın taşınmasında özenle seçilmiş ambalaj malzemeleri kullanılarak olası hasar riskleri en aza indirilmektedir.
+                        </p>
+                        <p>
+                            Altındağ'daki esnaf ve küçük işletmeler için dükkan ve atölye taşımacılığı da sunuyoruz. Tezgah, raf, makine ve ticari malların güvenli ambalajlanması, taşınması ve yeni adreste kurulumu konularında deneyimli kadromuzla hizmetinizdeyiz. Altındağ'dan İstanbul'a her türlü taşınma ihtiyacı için tek bir telefon yeterlidir; geri kalanını biz hallederiz.
+                        </p>
+                    </div>
+
+                    <div class="service-details__content-text2">
+                        <h3>Bizleri neden tercih etmelisiniz?</h3>
+                        <p>
+                            Hadımköy Ankara Nakliyat olarak <strong>Altındağ'dan İstanbul'a taşımacılık</strong> hizmetlerinde sunduğumuz temel avantajlar şunlardır:
+                        </p>
+                        <p>
+                            <b>Tarihi Sokak Yapısında Uzman Lojistik:</b> Altındağ'ın tarihi mahallelerinde standart büyük araçların hareket etmesi çoğu zaman mümkün değildir. Ekibimiz, bu bölgedeki sokak yapısını derinlemesine tanımakta ve dar geçitler için özel boyutlu araçlar ile ek taşıma ekipmanı kullanmaktadır. Eşyalarınız önce bina çıkışında toplanır, ardından yola çıkabilecek araca aktarılarak İstanbul'a güvenle sevk edilir.
+                        </p>
+                        <p>
+                            <b>Asansörsüz ve Eski Binalara Tam Çözüm:</b> Altındağ'daki çok sayıda eski bina asansörsüz ve dar merdivenlidir. Bu tür binalarda büyük ve ağır mobilyaların taşınması büyük ustalık ister. Mobil dış asansörlerimiz ve özel taşıma tekniklerimizle eşyalarınızı en yüksek kattan bile hasarsız biçimde indiriyor, araç yükleme noktasına güvenle ulaştırıyoruz.
+                        </p>
+                        <p>
+                            <b>Antika ve Hassas Eşyalara Özel Koruma:</b> Altındağ'ın köklü ailelerinde sıklıkla rastlanan antika mobilyalar, tarihi objeler ve kırılgan eşyalar için özel ambalajlama hizmeti sunuyoruz. Köpük profiller, özel balonlu naylon ve ahşap sandık gibi ek koruma malzemeleri kullanarak bu değerli parçaların İstanbul'a sağlam ulaşmasını güvence altına alıyoruz.
+                        </p>
+                        <p>
+                            <b>Sigortalı ve Belgelenmiş Taşıma Güvencesi:</b> Altındağ'dan İstanbul'a tüm nakliye operasyonlarımızda zorunlu nakliyat sigortası uygulanmaktadır. Taşıma öncesinde eşyaların durumu kayıt altına alınır ve teslim sırasında kontrol edilir. Herhangi bir hasar durumunda tazminat süreci hızlı ve şeffaf biçimde yönetilir.
+                        </p>
+                        <p>
+                            <b>Uygun Fiyat ve Parsiyel Nakliyat Seçeneği:</b> Altındağ'daki küçük konutlar ve işyerleri için parsiyel nakliyat seçeneği ekonomik bir çözüm sunmaktadır. Az eşyalı taşınmalarda aynı güzergahı paylaşan diğer müşterilerle birlikte hareket ederek maliyet avantajından yararlanabilirsiniz. Sözleşmeye bağlanan sabit fiyatımızla taşınma sonunda sürpriz ücretle karşılaşmazsınız.
+                        </p>
+                    </div>
+
+                    <div class="service-details__content-img2">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                <div class="single-img">
+                                    <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_Taşımacılık_390x225.png" loading="lazy" alt="altındağdan istanbula sehirlerarasi nakliyat">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                <div class="single-img">
+                                    <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_Stairs_390x225.png" loading="lazy" alt="altındağdan istanbula uygun fiyatli nakliyat">
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>Taşınma süreci nasıl işler?</h4>
+                        <p>
+                            Altındağ'dan İstanbul'a nakliyat sürecimiz sistematik adımlarla ilerler:
+                        </p>
+                        <p>
+                            <b>Keşif ve Güzergah Planlaması:</b> Müşteri temsilcimiz Altındağ'daki adresinize gelerek bina yapısını, sokak koşullarını ve eşya hacmini inceler. Dar sokak durumunda hangi boyuttaki araç ile hangi saatte operasyon yapılacağı bu aşamada belirlenir. Size kesin ve sözleşmeye bağlı fiyat teklifi sunulur.
+                        </p>
+                        <p>
+                            <b>Özenli Paketleme ve Demontaj:</b> Belirlenen gün ekibimiz kapınızda hazır olur. Hassas ve antika eşyalar için özel ambalaj malzemeleri kullanılır, mobilyalar titizlikle demonte edilir. Kırılgan parçalar çift katmanlı koruma ile güvence altına alınır.
+                        </p>
+                        <p>
+                            <b>Yükleme ve Şehirlerarası Sevkiyat:</b> Eşyalar araca düzenli biçimde yerleştirilerek sabitleme aparatlarıyla güvence altına alınır. Altındağ'dan İstanbul'a uzanan güzergahta deneyimli sürücülerimiz güvenli sürüş standartlarını koruyarak eşyaları hasarsız taşır.
+                        </p>
+                        <p>
+                            <b>İstanbul'da Teslimat ve Montaj:</b> Yeni adresinizde eşyalar taşınır, mobilyalar monte edilir ve her koli ilgili odaya yerleştirilir. İşlem tamamlandıktan sonra teslim tutanağı imzalanır ve taşınma resmi olarak sonuçlandırılır.
+                        </p>
+
+                        <h5>Fiyatlandırma nasıl yapılır?</h5>
+                        <p>
+                            Altındağ - İstanbul nakliyat fiyatları; konutun büyüklüğü ve eşya hacmi, binanın kat durumu ve asansör bilgisi, Altındağ'daki sokak yapısı ve araç erişim koşulları, özel ambalaj veya ek ekipman gereksinimleri, İstanbul'daki teslimat noktasının konumu ile parsiyel ya da komple araç tercihi dikkate alınarak ücretsiz ekspertiz sonrasında kesinleştirilir. Altındağ'dan İstanbul'a güvenle ve uygun fiyatla taşınmak için hemen bizi arayın, teklifinizi alın!
+                        </p>
+                    </div>
+
+                    <div class="service-details__content-img3">
+                        <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_835x335.png" loading="lazy" alt="altındağdan istanbula kamyon nakliyat">
+                    </div>
+                </div>
+            </div>
+            <!--End Service Details Content-->
+        </div>
+    </div>
+</section>
+<!--End Service Details-->

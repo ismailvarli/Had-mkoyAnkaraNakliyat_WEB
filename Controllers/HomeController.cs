@@ -238,6 +238,26 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
         {
             return View();
         }
+        public IActionResult cankaya_istanbul_nakliyat()
+        {
+            return View();
+        }
+        public IActionResult kecioren_istanbul_nakliyat()
+        {
+            return View();
+        }
+        public IActionResult mamak_istanbul_nakliyat()
+        {
+            return View();
+        }
+        public IActionResult etimesgut_istanbul_nakliyat()
+        {
+            return View();
+        }
+        public IActionResult altidag_istanbul_nakliyat()
+        {
+            return View();
+        }
         //Hizmet Türlerinin bulunduğu sayfalar BAŞLANGIÇ//
         public IActionResult hizmet_turleri()
         {
@@ -701,6 +721,12 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
         public IActionResult cocuklu_ailelere_tasima_rehberi() { return View(); }
         public IActionResult home_office_tasima() { return View(); }
         public IActionResult kira_biterken_tasima_planlama() { return View(); }
+        public IActionResult tasima_sonrasi_yeni_eve_alisma() { return View(); }
+        public IActionResult boya_badana_sonrasi_tasinma() { return View(); }
+        public IActionResult nakliyat_fiyat_teklifi_nasil_degerlendirilir() { return View(); }
+
+        [Route("nakliyat-fiyat-hesaplama")]
+        public IActionResult nakliyat_fiyat_hesaplama() { return View(); }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> fiyat_al(TeklifFormModel model)
