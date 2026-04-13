@@ -1,55 +1,48 @@
-@{
-    ViewData["Title"] = "Temelli Ýstanbul Nakliyat | Uygun Fiyat, Güvenli Taþýma";
-    ViewData["Description"] = "Temelli’den Ýstanbul’a taþýnma veya yük nakliyesi için hesaplý, hýzlý ve güvenli çözüm. Eþyalarýnýz yeni adresine tam vaktinde ulaþsýn!";
+ï»¿@{
+    ViewData["Title"] = "Temelli ï¿½stanbul Nakliyat | Uygun Fiyat, Gï¿½venli Taï¿½ï¿½ma";
+    ViewData["Description"] = "Temelliï¿½den ï¿½stanbulï¿½a taï¿½ï¿½nma veya yï¿½k nakliyesi iï¿½in hesaplï¿½, hï¿½zlï¿½ ve gï¿½venli ï¿½ï¿½zï¿½m. Eï¿½yalarï¿½nï¿½z yeni adresine tam vaktinde ulaï¿½sï¿½n!";
     
 }
 @{
-    // Sadece burayý deðiþtirmen yeterli! (Örn: "Adalar", "Beþiktaþ", "Kadýköy")
+    // Sadece burayï¿½ deï¿½iï¿½tirmen yeterli! (ï¿½rn: "Adalar", "Beï¿½iktaï¿½", "Kadï¿½kï¿½y")
     var ilce = "Temelli";
 
-    // 1. Service Þemasý: O ilçeye özel yerel hizmet vurgusu
+    // 1. Service ï¿½emasï¿½: O ilï¿½eye ï¿½zel yerel hizmet vurgusu
     var ilceIstanbulService = string.Format(@"{{
       ""@context"": ""https://schema.org"",
       ""@type"": ""Service"",
-      ""serviceType"": ""Þehir Ýçi Nakliyat"",
-      ""name"": ""{0} Ýstanbul Nakliyat - Profesyonel Ev Taþýma"",
-      ""provider"": {{ ""@type"": ""LocalBusiness"", ""name"": ""Hadýmköy Ankara Nakliyat"" }},
-      ""areaServed"": {{ ""@type"": ""City"", ""name"": ""{0}, Ýstanbul"" }},
-      ""description"": ""{0} Ýstanbul nakliyat hizmeti ile {0} ilçesinden Ýstanbul'un tüm semtlerine asansörlü, sigortalý ve marangozlu evden eve nakliye."",
-      ""aggregateRating"": {{
-        ""@type"": ""AggregateRating"",
-        ""ratingValue"": ""4.9"",
-        ""bestRating"": ""5"",
-        ""worstRating"": ""1"",
-        ""reviewCount"": ""9""
-      }}
+      ""serviceType"": ""ï¿½ehir ï¿½ï¿½i Nakliyat"",
+      ""name"": ""{0} ï¿½stanbul Nakliyat - Profesyonel Ev Taï¿½ï¿½ma"",
+      ""provider"": {{ ""@type"": ""LocalBusiness"", ""name"": ""Hadï¿½mkï¿½y Ankara Nakliyat"" }},
+      ""areaServed"": {{ ""@type"": ""City"", ""name"": ""{0}, ï¿½stanbul"" }},
+      ""description"": ""{0} ï¿½stanbul nakliyat hizmeti ile {0} ilï¿½esinden ï¿½stanbul'un tï¿½m semtlerine asansï¿½rlï¿½, sigortalï¿½ ve marangozlu evden eve nakliye.""
     }}", ilce);
 
-    // 2. FAQ Þemasý: Ýlçe içi ve Ýstanbul geneli sorular
+    // 2. FAQ ï¿½emasï¿½: ï¿½lï¿½e iï¿½i ve ï¿½stanbul geneli sorular
     var ilceIstanbulFaq = string.Format(@"{{
       ""@context"": ""https://schema.org"",
       ""@type"": ""FAQPage"",
       ""mainEntity"": [
         {{
           ""@type"": ""Question"",
-          ""name"": ""{0} Ýstanbul nakliyat fiyatlarý neye göre belirleniyor?"",
-          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""{0} çýkýþlý taþýmalarda fiyatlar; eþya miktarýnýza (1+1, 2+1), gidilecek mesafeye ve kat durumuna göre ücretsiz ekspertiz sonucu belirlenir."" }}
+          ""name"": ""{0} ï¿½stanbul nakliyat fiyatlarï¿½ neye gï¿½re belirleniyor?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""{0} ï¿½ï¿½kï¿½ï¿½lï¿½ taï¿½ï¿½malarda fiyatlar; eï¿½ya miktarï¿½nï¿½za (1+1, 2+1), gidilecek mesafeye ve kat durumuna gï¿½re ï¿½cretsiz ekspertiz sonucu belirlenir."" }}
         }},
         {{
           ""@type"": ""Question"",
-          ""name"": ""{0} ilçesinde asansörlü araç kullanýyor musunuz?"",
-          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""Evet, {0} bölgesindeki dar sokaklar ve yüksek giriþler için uygun mobil asansörlerimizle eþyalarýnýzý hasarsýz taþýyoruz."" }}
+          ""name"": ""{0} ilï¿½esinde asansï¿½rlï¿½ araï¿½ kullanï¿½yor musunuz?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""Evet, {0} bï¿½lgesindeki dar sokaklar ve yï¿½ksek giriï¿½ler iï¿½in uygun mobil asansï¿½rlerimizle eï¿½yalarï¿½nï¿½zï¿½ hasarsï¿½z taï¿½ï¿½yoruz."" }}
         }},
         {{
           ""@type"": ""Question"",
-          ""name"": ""{0} içinden Ýstanbul'un diðer yakasýna taþýma var mý?"",
-          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""Elbette. {0} ilçesinden Avrupa veya Anadolu yakasýndaki tüm ilçelere günlük sevkiyatýmýz mevcuttur."" }}
+          ""name"": ""{0} iï¿½inden ï¿½stanbul'un diï¿½er yakasï¿½na taï¿½ï¿½ma var mï¿½?"",
+          ""acceptedAnswer"": {{ ""@type"": ""Answer"", ""text"": ""Elbette. {0} ilï¿½esinden Avrupa veya Anadolu yakasï¿½ndaki tï¿½m ilï¿½elere gï¿½nlï¿½k sevkiyatï¿½mï¿½z mevcuttur."" }}
         }}
       ]
     }}", ilce);
 }
 
-@* HTML Çýktýsý *@
+@* HTML ï¿½ï¿½ktï¿½sï¿½ *@
 <script type="application/ld+json">@Html.Raw(ilceIstanbulService)</script>
 <script type="application/ld+json">@Html.Raw(ilceIstanbulFaq)</script>
 
@@ -59,7 +52,7 @@
   "@@type": "BreadcrumbList",
   "itemListElement": [
     { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.hadimkoyankaranakliyat.com/" },
-    { "@@type": "ListItem", "position": 2, "name": "Temelli Ýstanbul Nakliyat", "item": "https://www.hadimkoyankaranakliyat.com/Home/temelli_istanbul_nakliyat" }
+    { "@@type": "ListItem", "position": 2, "name": "Temelli ï¿½stanbul Nakliyat", "item": "https://www.hadimkoyankaranakliyat.com/Home/temelli_istanbul_nakliyat" }
   ]
 }
 </script>
@@ -70,11 +63,11 @@
     </div>
     <div class="container">
         <div class="page-header__inner">
-            <h1 style="color: white; font-weight: bold;">Temelli Ýstanbul Nakliyat</h1>
+            <h1 style="color: white; font-weight: bold;">Temelli ï¿½stanbul Nakliyat</h1>
             <ul class="thm-breadcrumb">
                 <li><a href="/Home/Index">Ana Sayfa</a></li>
                 <li><span class="icon-right-arrow21"></span></li>
-                <li>Temelli Ýstanbul Nakliyat</li>
+                <li>Temelli ï¿½stanbul Nakliyat</li>
             </ul>
         </div>
     </div>
@@ -95,19 +88,19 @@
                             <ul class="clearfix">
                                 <li>
                                     <a href="/Home/ikitelli_ankara_nakliyat">
-                                        Ýkitelli Ankara Nakliyat <span class="icon-right-arrow21"></span>
+                                        ï¿½kitelli Ankara Nakliyat <span class="icon-right-arrow21"></span>
                                     </a>
                                 </li>
 
                                 <li>
                                     <a href="/Home/catalca_ankara_nakliyat">
-                                        Çatalca Ankara Nakliyat <span class="icon-right-arrow21"></span>
+                                        ï¿½atalca Ankara Nakliyat <span class="icon-right-arrow21"></span>
                                     </a>
                                 </li>
 
                                 <li>
                                     <a href="/Home/beylikduzu_ankara_nakliyat">
-                                        Beylidüzü Ankara  Nakliyat <span class="icon-right-arrow21"></span>
+                                        Beylidï¿½zï¿½ Ankara  Nakliyat <span class="icon-right-arrow21"></span>
                                     </a>
                                 </li>
 
@@ -119,33 +112,33 @@
 
                                 <li>
                                     <a href="/Home/bayrampasa_ankara_nakliyat">
-                                        Bayrampaþa Ankara Nakliyat <span class="icon-right-arrow21"></span>
+                                        Bayrampaï¿½a Ankara Nakliyat <span class="icon-right-arrow21"></span>
                                     </a>
                                 </li>
 
                                 <li>
                                     <a href="/Home/ostim_istanbul_nakliyat">
-                                        Ostim Ýstanbul Nakliyat <span class="icon-right-arrow21"></span>
+                                        Ostim ï¿½stanbul Nakliyat <span class="icon-right-arrow21"></span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="/Home/yenimahalle_istanbul_nakliyat">
-                                        Yenimahalle Ýstanbul Nakliyat <span class="icon-right-arrow21"></span>
+                                        Yenimahalle ï¿½stanbul Nakliyat <span class="icon-right-arrow21"></span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="/Home/kazan_istanbul_nakliyat">
-                                        Kazan Ýstanbul Nakliyat <span class="icon-right-arrow21"></span>
+                                        Kazan ï¿½stanbul Nakliyat <span class="icon-right-arrow21"></span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="/Home/sincan_istanbul_nakliyat">
-                                        Sincan Ýstanbul Nakliyat <span class="icon-right-arrow21"></span>
+                                        Sincan ï¿½stanbul Nakliyat <span class="icon-right-arrow21"></span>
                                     </a>
                                 </li>
                                 <li>
                                     <a class="active"  href="/Home/temelli_istanbul_nakliyat">
-                                        Temelli Ýstanbul Nakliyat <span class="icon-right-arrow21"></span>
+                                        Temelli ï¿½stanbul Nakliyat <span class="icon-right-arrow21"></span>
                                     </a>
                                 </li>
                             </ul>
@@ -155,7 +148,7 @@
                     <div class="service-details__sidebar-contact text-center">
                         <div class="service-details__sidebar-contact-img">
                             <div class="inner">
-                                <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_284x285.png" loading="lazy" alt="temelli istanbul nakliyat fiyatlarý">
+                                <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_284x285.png" loading="lazy" alt="temelli istanbul nakliyat fiyatlarï¿½">
                             </div>
                         </div>
 
@@ -165,8 +158,8 @@
                             </div>
                             <h2><a href="tel:+905344300360">+90 534 430 03 60</a></h2>
                             <h3>
-                                Bizlerle Ýletiþime Geçin <br>
-                                Hizmetimizden Yararlanýn
+                                Bizlerle ï¿½letiï¿½ime Geï¿½in <br>
+                                Hizmetimizden Yararlanï¿½n
                             </h3>
                         </div>
                     </div>
@@ -178,17 +171,17 @@
                 <div class="service-details__content">
                     <div class="service-details__content-img1">
                         <div class="inner">
-                            <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_Ýstanbul_Ankara.png" loading="lazy" alt="temelli istanbul nakliyat">
+                            <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_ï¿½stanbul_Ankara.png" loading="lazy" alt="temelli istanbul nakliyat">
                         </div>
                     </div>
 
                     <div class="service-details__content-text1">
-                        <h2><strong>Temelli Ýstanbul Nakliyat</strong></h2>
+                        <h2><strong>Temelli ï¿½stanbul Nakliyat</strong></h2>
                         <p>
-                            <strong>Temelli Ýstanbul Nakliyat</strong> hizmetimiz, Ankara’nýn Sincan ilçesine baðlý Temelli bölgesinden Ýstanbul’a gerçekleþecek taþýnmalarýnýzý kolaylaþtýrýr. Hadýmköy Ankara Nakliyat güvencesiyle, Temelli’deki ev eþyalarýnýzý  veya ofis malzemelerinizi bulunduðu noktadan alýp Ýstanbul’daki yeni adresinize güvenle taþýyoruz. Ankara-Ýstanbul karayolu güzergahýnda bulunan Temelli, konum avantajý sayesinde nakliye operasyonlarýmýzda hýzlý bir çýkýþ noktasýdýr. Deneyimli þoförlerimiz ve modern araçlarýmýz, uzun yol boyunca eþyalarýnýzýn güvenliðini saðlar ve belirlenen teslim süresine riayet eder. Evden eve nakliyatta eþyalarýnýzý özenle ambalajlayýp mobilyalarýnýzý dikkatlice demonte ve monte ediyor, ofis taþýmacýlýðýnda ise iþ cihazlarýnýzýn düzenini yeni yerinde süratle kuruyoruz. Ayrýca, taþýnma süreci boyunca eþyalarýnýz sigorta güvencesi altýnda olup her türlü riske karþý korunmaktadýr. Günlük nakliye seferlerimiz ile Temelli’den çýkan eþyalarýnýz vakit kaybetmeden Ýstanbul’a ulaþtýrýlýr. <strong>Temelli’den Ýstanbul’a þehirlerarasý nakliyat</strong> hizmetlerimizde kaliteyi ekonomik fiyatlarla sunarak bu zorlu taþýnma sürecini sizin için zahmetsiz hale getiriyoruz.
+                            <strong>Temelli ï¿½stanbul Nakliyat</strong> hizmetimiz, Ankaraï¿½nï¿½n Sincan ilï¿½esine baï¿½lï¿½ Temelli bï¿½lgesinden ï¿½stanbulï¿½a gerï¿½ekleï¿½ecek taï¿½ï¿½nmalarï¿½nï¿½zï¿½ kolaylaï¿½tï¿½rï¿½r. Hadï¿½mkï¿½y Ankara Nakliyat gï¿½vencesiyle, Temelliï¿½deki ev eï¿½yalarï¿½nï¿½zï¿½  veya ofis malzemelerinizi bulunduï¿½u noktadan alï¿½p ï¿½stanbulï¿½daki yeni adresinize gï¿½venle taï¿½ï¿½yoruz. Ankara-ï¿½stanbul karayolu gï¿½zergahï¿½nda bulunan Temelli, konum avantajï¿½ sayesinde nakliye operasyonlarï¿½mï¿½zda hï¿½zlï¿½ bir ï¿½ï¿½kï¿½ï¿½ noktasï¿½dï¿½r. Deneyimli ï¿½ofï¿½rlerimiz ve modern araï¿½larï¿½mï¿½z, uzun yol boyunca eï¿½yalarï¿½nï¿½zï¿½n gï¿½venliï¿½ini saï¿½lar ve belirlenen teslim sï¿½resine riayet eder. Evden eve nakliyatta eï¿½yalarï¿½nï¿½zï¿½ ï¿½zenle ambalajlayï¿½p mobilyalarï¿½nï¿½zï¿½ dikkatlice demonte ve monte ediyor, ofis taï¿½ï¿½macï¿½lï¿½ï¿½ï¿½nda ise iï¿½ cihazlarï¿½nï¿½zï¿½n dï¿½zenini yeni yerinde sï¿½ratle kuruyoruz. Ayrï¿½ca, taï¿½ï¿½nma sï¿½reci boyunca eï¿½yalarï¿½nï¿½z sigorta gï¿½vencesi altï¿½nda olup her tï¿½rlï¿½ riske karï¿½ï¿½ korunmaktadï¿½r. Gï¿½nlï¿½k nakliye seferlerimiz ile Temelliï¿½den ï¿½ï¿½kan eï¿½yalarï¿½nï¿½z vakit kaybetmeden ï¿½stanbulï¿½a ulaï¿½tï¿½rï¿½lï¿½r. <strong>Temelliï¿½den ï¿½stanbulï¿½a ï¿½ehirlerarasï¿½ nakliyat</strong> hizmetlerimizde kaliteyi ekonomik fiyatlarla sunarak bu zorlu taï¿½ï¿½nma sï¿½recini sizin iï¿½in zahmetsiz hale getiriyoruz.
                         </p>
                         <p>
-                            Temelli’den Ýstanbul’a taþýnacaklar için Hadýmköy Ankara Nakliyat fark yaratýyor! Bölgeye özel taþýma güzergahlarýmýz, sigortalý ve ekonomik hizmet anlayýþýmýz ile her ihtiyaca uygun çözümler sunuyoruz. Eþyalarýnýz ister az ister çok olsun, hepsi ayný özenle paketlenip, modern araçlarla hýzlýca taþýnýr. Temelli’den Ýstanbul’a kolay ve sorunsuz taþýnma deneyimi için doðru adrestesiniz.
+                            Temelliï¿½den ï¿½stanbulï¿½a taï¿½ï¿½nacaklar iï¿½in Hadï¿½mkï¿½y Ankara Nakliyat fark yaratï¿½yor! Bï¿½lgeye ï¿½zel taï¿½ï¿½ma gï¿½zergahlarï¿½mï¿½z, sigortalï¿½ ve ekonomik hizmet anlayï¿½ï¿½ï¿½mï¿½z ile her ihtiyaca uygun ï¿½ï¿½zï¿½mler sunuyoruz. Eï¿½yalarï¿½nï¿½z ister az ister ï¿½ok olsun, hepsi aynï¿½ ï¿½zenle paketlenip, modern araï¿½larla hï¿½zlï¿½ca taï¿½ï¿½nï¿½r. Temelliï¿½den ï¿½stanbulï¿½a kolay ve sorunsuz taï¿½ï¿½nma deneyimi iï¿½in doï¿½ru adrestesiniz.
                         </p>
                     </div>
 
@@ -197,27 +190,27 @@
                             Bizleri neden tercih etmelisiniz?
                         </h3>
                         <p>
-                            Hadýmköy Ankara Nakliyat olarak, Ankara'nýn Temelli bölgesinden Ýstanbul'a uzanan nakliyat ihtiyaçlarýnýz için güvenilir ve etkili çözümler sunuyoruz. Ýþte bizi öne çýkaran bazý özellikler:
+                            Hadï¿½mkï¿½y Ankara Nakliyat olarak, Ankara'nï¿½n Temelli bï¿½lgesinden ï¿½stanbul'a uzanan nakliyat ihtiyaï¿½larï¿½nï¿½z iï¿½in gï¿½venilir ve etkili ï¿½ï¿½zï¿½mler sunuyoruz. ï¿½ï¿½te bizi ï¿½ne ï¿½ï¿½karan bazï¿½ ï¿½zellikler:
 
                         </p>
                         <p>
-                            <b>Endüstriyel taþýmacýlýk deneyimi</b>: Temelli bölgesi, Baþkent OSB gibi sanayi alanlarýna ev sahipliði yapmaktadýr. Aðýr makineler, endüstriyel ekipmanlar ve ham madde sevkiyatlarý konusunda uzmanlaþmýþ ekibimiz bulunuyor. Elbette ki evden eve nakliyat ve ofis taþýmacýlýðý gibi bireysel taþýmalarda da ayný profesyonellikle hizmet veriyor, her tür þehirlerarasý nakliyat talebini karþýlayabiliyoruz.
+                            <b>Endï¿½striyel taï¿½ï¿½macï¿½lï¿½k deneyimi</b>: Temelli bï¿½lgesi, Baï¿½kent OSB gibi sanayi alanlarï¿½na ev sahipliï¿½i yapmaktadï¿½r. Aï¿½ï¿½r makineler, endï¿½striyel ekipmanlar ve ham madde sevkiyatlarï¿½ konusunda uzmanlaï¿½mï¿½ï¿½ ekibimiz bulunuyor. Elbette ki evden eve nakliyat ve ofis taï¿½ï¿½macï¿½lï¿½ï¿½ï¿½ gibi bireysel taï¿½ï¿½malarda da aynï¿½ profesyonellikle hizmet veriyor, her tï¿½r ï¿½ehirlerarasï¿½ nakliyat talebini karï¿½ï¿½layabiliyoruz.
 
                         </p>
                         <p>
-                            <b>Emniyetli ve sigortalý hizmet</b>: Taþýma iþlemlerimizin tamamý sigorta güvencesi altýndadýr. Nakliyatsüreci boyunca eþyalarýnýzýn güvenliði için gerekli tüm tedbirleri alýyoruz; paketleme aþamasýndan araç içi yerleþtirme ve sabitlemeye kadar her adýmý titizlikle gerçekleþtiriyoruz. Bu sayede þehirlerarasý nakliyat yolculuðu sürecinde eþyalarýnýzýn zarar görmemesini garantiliyoruz.
+                            <b>Emniyetli ve sigortalï¿½ hizmet</b>: Taï¿½ï¿½ma iï¿½lemlerimizin tamamï¿½ sigorta gï¿½vencesi altï¿½ndadï¿½r. Nakliyatsï¿½reci boyunca eï¿½yalarï¿½nï¿½zï¿½n gï¿½venliï¿½i iï¿½in gerekli tï¿½m tedbirleri alï¿½yoruz; paketleme aï¿½amasï¿½ndan araï¿½ iï¿½i yerleï¿½tirme ve sabitlemeye kadar her adï¿½mï¿½ titizlikle gerï¿½ekleï¿½tiriyoruz. Bu sayede ï¿½ehirlerarasï¿½ nakliyat yolculuï¿½u sï¿½recinde eï¿½yalarï¿½nï¿½zï¿½n zarar gï¿½rmemesini garantiliyoruz.
 
                         </p>
                         <p>
-                            <b>Hizmet çeþidimiz geniþ</b>: Temelli – Ýstanbul arasý taþýmalarda ister bir fabrika hattýnýn sökülüp taþýnmasý, ister bir evin eþyalarýnýn nakliyesi olsun, her tür ihtiyacý karþýlayacak altyapýya sahibiz. Evden eve nakliyat, ofis taþýmacýlýðý, fuar taþýmacýlýðý, parsiyel nakliyat ve ambar taþýmacýlýðý hizmetlerimiz sayesinde tek bir koliden aðýr tonajlý yüklere kadar tüm gönderilerinizi özenle taþýyoruz.
+                            <b>Hizmet ï¿½eï¿½idimiz geniï¿½</b>: Temelli ï¿½ ï¿½stanbul arasï¿½ taï¿½ï¿½malarda ister bir fabrika hattï¿½nï¿½n sï¿½kï¿½lï¿½p taï¿½ï¿½nmasï¿½, ister bir evin eï¿½yalarï¿½nï¿½n nakliyesi olsun, her tï¿½r ihtiyacï¿½ karï¿½ï¿½layacak altyapï¿½ya sahibiz. Evden eve nakliyat, ofis taï¿½ï¿½macï¿½lï¿½ï¿½ï¿½, fuar taï¿½ï¿½macï¿½lï¿½ï¿½ï¿½, parsiyel nakliyat ve ambar taï¿½ï¿½macï¿½lï¿½ï¿½ï¿½ hizmetlerimiz sayesinde tek bir koliden aï¿½ï¿½r tonajlï¿½ yï¿½klere kadar tï¿½m gï¿½nderilerinizi ï¿½zenle taï¿½ï¿½yoruz.
 
                         </p>
                         <p>
-                            <b>Ambar Taþýmacýlýðý</b> : Firmamýzýn çeþitli boyut ve kapasitede nakliye araçlarýndan oluþan geniþ bir filosu vardýr. Temelli'den Ýstanbul'a günlük olarak düzenlediðimiz ambar seferleriyle gönderileriniz en kýsa sürede yola çýkmakta, bekleme yaþanmamaktadýr. Acil çýkmasý gereken yükleriniz için de hýzlý çözümler üretebiliyoruz.
+                            <b>Ambar Taï¿½ï¿½macï¿½lï¿½ï¿½ï¿½</b> : Firmamï¿½zï¿½n ï¿½eï¿½itli boyut ve kapasitede nakliye araï¿½larï¿½ndan oluï¿½an geniï¿½ bir filosu vardï¿½r. Temelli'den ï¿½stanbul'a gï¿½nlï¿½k olarak dï¿½zenlediï¿½imiz ambar seferleriyle gï¿½nderileriniz en kï¿½sa sï¿½rede yola ï¿½ï¿½kmakta, bekleme yaï¿½anmamaktadï¿½r. Acil ï¿½ï¿½kmasï¿½ gereken yï¿½kleriniz iï¿½in de hï¿½zlï¿½ ï¿½ï¿½zï¿½mler ï¿½retebiliyoruz.
 
                         </p>
                         <p>
-                            <strong>Ekonomik fiyat, þeffaf süreç</strong>: Hadýmköy Ankara Nakliya olarak kaliteli hizmeti ekonomik fiyatlarla sunmayý ilke edindik. Önceden yaptýðýmýz ücretsiz ekspertiz sayesinde size en uygun teklifi iletiyoruz ve bu teklifi sözleþme ile sabitleyerek sonradan ekstra ödemeler çýkarmýyoruz.Parsiyel taþýma gibi seçeneklerimizle daha <strong>Temelliden istanbula uygun maliyetli nakliye</strong> imkâný sunarken, hizmet kalitemizden ödün vermiyoruz.
+                            <strong>Ekonomik fiyat, ï¿½effaf sï¿½reï¿½</strong>: Hadï¿½mkï¿½y Ankara Nakliya olarak kaliteli hizmeti ekonomik fiyatlarla sunmayï¿½ ilke edindik. ï¿½nceden yaptï¿½ï¿½ï¿½mï¿½z ï¿½cretsiz ekspertiz sayesinde size en uygun teklifi iletiyoruz ve bu teklifi sï¿½zleï¿½me ile sabitleyerek sonradan ekstra ï¿½demeler ï¿½ï¿½karmï¿½yoruz.Parsiyel taï¿½ï¿½ma gibi seï¿½eneklerimizle daha <strong>Temelliden istanbula uygun maliyetli nakliye</strong> imkï¿½nï¿½ sunarken, hizmet kalitemizden ï¿½dï¿½n vermiyoruz.
 
                         </p>
                         
@@ -227,7 +220,7 @@
                         <div class="row">
                             <div class="col-xl-6 col-lg-6 col-md-6">
                                 <div class="single-img">
-                                    <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_Taþýmacýlýk_390x225.png" loading="lazy" alt="temelliden istanbula sehirlerarasi ve evden eve nakliyat">
+                                    <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_Taï¿½ï¿½macï¿½lï¿½k_390x225.png" loading="lazy" alt="temelliden istanbula sehirlerarasi ve evden eve nakliyat">
                                 </div>
                             </div>
 
@@ -237,57 +230,57 @@
                                 </div>
                             </div>
                         </div>
-                        <h4>Taþýnma süreci nasýl iþler?</h4>
+                        <h4>Taï¿½ï¿½nma sï¿½reci nasï¿½l iï¿½ler?</h4>
                         <p>
-                            <strong>Temelli'den Ýstanbul'a nakliye</strong> sürecimizde þu adýmlar izlenir:
+                            <strong>Temelli'den ï¿½stanbul'a nakliye</strong> sï¿½recimizde ï¿½u adï¿½mlar izlenir:
 
                         </p>
                         <p>
-                            <b>Keþif ve planlama</b>: Nakliye talebinizi aldýktan sonra, müþteri temsilcimiz taþýma detaylarýnýzý (eþya türü, hacmi, taþýnma tarihi vb.) netleþtirir. Ardýndan Temelli'deki adresinize uzman ekibimizi göndererek ücretsiz ekspertiz gerçekleþtiririz. Bu keþif sonucunda gereken araç tipi, çalýþan sayýsý ve ambalaj malzemeleri planlanýr.
+                            <b>Keï¿½if ve planlama</b>: Nakliye talebinizi aldï¿½ktan sonra, mï¿½ï¿½teri temsilcimiz taï¿½ï¿½ma detaylarï¿½nï¿½zï¿½ (eï¿½ya tï¿½rï¿½, hacmi, taï¿½ï¿½nma tarihi vb.) netleï¿½tirir. Ardï¿½ndan Temelli'deki adresinize uzman ekibimizi gï¿½ndererek ï¿½cretsiz ekspertiz gerï¿½ekleï¿½tiririz. Bu keï¿½if sonucunda gereken araï¿½ tipi, ï¿½alï¿½ï¿½an sayï¿½sï¿½ ve ambalaj malzemeleri planlanï¿½r.
 
                         </p>
                         <p>
-                            <strong>Profesyonel sýký paketleme</strong> : Taþýnma günü, ekiplerimiz eþyalarýnýzý niteliðine göre uygun yöntemlerle paketler. Ýster endüstriyel makineler olsun ister evinizin kýrýlabilir eþyalarý, her biri için doðru ambalajlama yöntemini kullanýyoruz. Mobilyalarýnýz dikkatlice sökülür, elektronikler koruyucu malzemelerle sarýlýr ve tüm eþyalar nakliye için hazýrlanýr.
+                            <strong>Profesyonel sï¿½kï¿½ paketleme</strong> : Taï¿½ï¿½nma gï¿½nï¿½, ekiplerimiz eï¿½yalarï¿½nï¿½zï¿½ niteliï¿½ine gï¿½re uygun yï¿½ntemlerle paketler. ï¿½ster endï¿½striyel makineler olsun ister evinizin kï¿½rï¿½labilir eï¿½yalarï¿½, her biri iï¿½in doï¿½ru ambalajlama yï¿½ntemini kullanï¿½yoruz. Mobilyalarï¿½nï¿½z dikkatlice sï¿½kï¿½lï¿½r, elektronikler koruyucu malzemelerle sarï¿½lï¿½r ve tï¿½m eï¿½yalar nakliye iï¿½in hazï¿½rlanï¿½r.
 
                         </p>
                         <p>
-                            <b>Yükleme ve nakliyat</b>: Paketlenen eþyalarýnýzýn aracýmýza yüklenmesi aþamasýnda yükleme vinci veya asansör gibi ekipmanlar gerekiyorsa kullanýyoruz. Eþyalar araç içinde sabitlenir ve son kontroller yapýlarak Ýstanbul yolculuðuna baþlanýr. Tecrübeli þoförlerimiz, Temelli-Ýstanbul arasý güzergâhta güvenli ve zamanlama planýna uygun þekilde seyreder; bu süreçte eþyalarýnýz hasarsýz ve planlanan zamanda varýþ noktasýna ulaþtýrýlýr.
+                            <b>Yï¿½kleme ve nakliyat</b>: Paketlenen eï¿½yalarï¿½nï¿½zï¿½n aracï¿½mï¿½za yï¿½klenmesi aï¿½amasï¿½nda yï¿½kleme vinci veya asansï¿½r gibi ekipmanlar gerekiyorsa kullanï¿½yoruz. Eï¿½yalar araï¿½ iï¿½inde sabitlenir ve son kontroller yapï¿½larak ï¿½stanbul yolculuï¿½una baï¿½lanï¿½r. Tecrï¿½beli ï¿½ofï¿½rlerimiz, Temelli-ï¿½stanbul arasï¿½ gï¿½zergï¿½hta gï¿½venli ve zamanlama planï¿½na uygun ï¿½ekilde seyreder; bu sï¿½reï¿½te eï¿½yalarï¿½nï¿½z hasarsï¿½z ve planlanan zamanda varï¿½ï¿½ noktasï¿½na ulaï¿½tï¿½rï¿½lï¿½r.
 
                         </p>
                         <p>
-                            <b>Teslimat ve kurulum</b>: Ýstanbul'daki yeni adrese varýlýnca, eþyalarýnýz dikkatlice indirilmeye ve içeri taþýnmaya baþlanýr. Mobilyalar yerlerinde tekrar kurularak kullanýma hazýr hale getirilir; makineler veya ofis ekipmanlarý taþýnmýþlarsa, uygun yerlerine yerleþtirilip kontrol edilir. Tüm eþyalar teslim edildikten ve kontrolleri yapýldýktan sonra taþýnma süreci tamamlanýr.
+                            <b>Teslimat ve kurulum</b>: ï¿½stanbul'daki yeni adrese varï¿½lï¿½nca, eï¿½yalarï¿½nï¿½z dikkatlice indirilmeye ve iï¿½eri taï¿½ï¿½nmaya baï¿½lanï¿½r. Mobilyalar yerlerinde tekrar kurularak kullanï¿½ma hazï¿½r hale getirilir; makineler veya ofis ekipmanlarï¿½ taï¿½ï¿½nmï¿½ï¿½larsa, uygun yerlerine yerleï¿½tirilip kontrol edilir. Tï¿½m eï¿½yalar teslim edildikten ve kontrolleri yapï¿½ldï¿½ktan sonra taï¿½ï¿½nma sï¿½reci tamamlanï¿½r.
 
                         </p>
                         <p>
 
                         </p>
                         <h5>
-                            Fiyatlandýrma nasýl yapýlýr?
+                            Fiyatlandï¿½rma nasï¿½l yapï¿½lï¿½r?
 
                         </h5>
                         <p>
-                            <b>Yük miktarý ve cinsi</b> : Taþýnacak yükün hacmi ve türü fiyatýn temelini oluþturur. Örneðin, sadece ev eþyalarýndan oluþan bir <strong>nakliyat</strong> ile aðýr makinelerin veya paletli yüklerin olduðu bir nakliyatýn maliyeti farklýdýr. Bu nedenle eþya cins ve miktarýný detaylýca analiz ediyoruz.
+                            <b>Yï¿½k miktarï¿½ ve cinsi</b> : Taï¿½ï¿½nacak yï¿½kï¿½n hacmi ve tï¿½rï¿½ fiyatï¿½n temelini oluï¿½turur. ï¿½rneï¿½in, sadece ev eï¿½yalarï¿½ndan oluï¿½an bir <strong>nakliyat</strong> ile aï¿½ï¿½r makinelerin veya paletli yï¿½klerin olduï¿½u bir nakliyatï¿½n maliyeti farklï¿½dï¿½r. Bu nedenle eï¿½ya cins ve miktarï¿½nï¿½ detaylï¿½ca analiz ediyoruz.
 
                         </p>
                         <p>
-                            <b>Mesafe</b>: Temelli'den Ýstanbul'a olan mesafe (kilometre olarak) ve yol üzerindeki geçiþ ücretleri (köprü, otoyol vb.) fiyat hesaplamasýnda önemli bir rol oynar. Güzergâh planlarken en uygun yolu tercih ederek maliyetleri düþürmeye çalýþýyoruz.
+                            <b>Mesafe</b>: Temelli'den ï¿½stanbul'a olan mesafe (kilometre olarak) ve yol ï¿½zerindeki geï¿½iï¿½ ï¿½cretleri (kï¿½prï¿½, otoyol vb.) fiyat hesaplamasï¿½nda ï¿½nemli bir rol oynar. Gï¿½zergï¿½h planlarken en uygun yolu tercih ederek maliyetleri dï¿½ï¿½ï¿½rmeye ï¿½alï¿½ï¿½ï¿½yoruz.
 
                         </p>
                         <p>
-                            <b>Hizmet kapsamý</b>: Nakliye kapsamýnda talep ettiðiniz ek hizmetler fiyata etki eder. Örneðin, paketleme malzemelerini bizim temin etmemiz, montaj/demontaj iþlemleri, vinç veya asansör kullanýmý ihtiyacý gibi faktörler ücret teklifine dahil edilir.
+                            <b>Hizmet kapsamï¿½</b>: Nakliye kapsamï¿½nda talep ettiï¿½iniz ek hizmetler fiyata etki eder. ï¿½rneï¿½in, paketleme malzemelerini bizim temin etmemiz, montaj/demontaj iï¿½lemleri, vinï¿½ veya asansï¿½r kullanï¿½mï¿½ ihtiyacï¿½ gibi faktï¿½rler ï¿½cret teklifine dahil edilir.
 
                         </p>
                         <p>
-                            <b>Parsiyel veya tam yük</b>: Taþýnmanýzýn parsiyel nakliyat (diðer gönderilerle paylaþýmlý) olarak mý, yoksa size özel bir araç tahsis edilerek mi yapýlacaðý da fiyatý etkiler. Parsiyel taþýmalarda maliyet paylaþýldýðý için daha uygun bir fiyat çýkarken, münhasýr araç taleplerinde biraz daha yüksek bir bedel söz konusu olabilir.
+                            <b>Parsiyel veya tam yï¿½k</b>: Taï¿½ï¿½nmanï¿½zï¿½n parsiyel nakliyat (diï¿½er gï¿½nderilerle paylaï¿½ï¿½mlï¿½) olarak mï¿½, yoksa size ï¿½zel bir araï¿½ tahsis edilerek mi yapï¿½lacaï¿½ï¿½ da fiyatï¿½ etkiler. Parsiyel taï¿½ï¿½malarda maliyet paylaï¿½ï¿½ldï¿½ï¿½ï¿½ iï¿½in daha uygun bir fiyat ï¿½ï¿½karken, mï¿½nhasï¿½r araï¿½ taleplerinde biraz daha yï¿½ksek bir bedel sï¿½z konusu olabilir.
 
                         </p>
                         <p>
-                            Her iþin özelliðine göre belirlediðimiz bu kriterler, önceden yaptýðýmýz ekspertiz sonrasý sizlere net bir fiyat teklifi olarak sunulur. Verdiðimiz fiyat teklifi sözleþme ile sabitlendiðinden, taþýnma iþlemi sonrasý beklenmedik masraflarla karþýlaþmazsýnýz. Temelli bölgesinden Ýstanbul'a ister ev eþyasý ister sanayi yükü taþýtýn, Hadýmköy Ankara Nakliyat olarak her zaman yanýnýzdayýz. Hemen bizimle iletiþime geçin ve size özel fiyat teklifinizi öðrenin!
+                            Her iï¿½in ï¿½zelliï¿½ine gï¿½re belirlediï¿½imiz bu kriterler, ï¿½nceden yaptï¿½ï¿½ï¿½mï¿½z ekspertiz sonrasï¿½ sizlere net bir fiyat teklifi olarak sunulur. Verdiï¿½imiz fiyat teklifi sï¿½zleï¿½me ile sabitlendiï¿½inden, taï¿½ï¿½nma iï¿½lemi sonrasï¿½ beklenmedik masraflarla karï¿½ï¿½laï¿½mazsï¿½nï¿½z. Temelli bï¿½lgesinden ï¿½stanbul'a ister ev eï¿½yasï¿½ ister sanayi yï¿½kï¿½ taï¿½ï¿½tï¿½n, Hadï¿½mkï¿½y Ankara Nakliyat olarak her zaman yanï¿½nï¿½zdayï¿½z. Hemen bizimle iletiï¿½ime geï¿½in ve size ï¿½zel fiyat teklifinizi ï¿½ï¿½renin!
                         </p>
                     </div>
 
                     <div class="service-details__content-img3">
-                        <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_835x335.png" loading="lazy" alt="Temelli Ýstanbul týrv e kamyonet nakliyat firmasý">
+                        <img src="~/assets/images/gallery/Hadimkoy_Ankara_Nakliyat_835x335.png" loading="lazy" alt="Temelli ï¿½stanbul tï¿½rv e kamyonet nakliyat firmasï¿½">
                     </div>
                 </div>
             </div>
