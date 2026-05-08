@@ -40,7 +40,25 @@ namespace HadımkoyAnkaraNakliyat_WEB
             app.UseResponseCompression();
 
             // -----------------------------------------------------------------
-            // 1. ADIM: URL Normalizasyonu (Büyük harf -> Küçük harf çevirici)
+            // 1. ADIM: www Yönlendirmesi (hadimkoyankaranakliyat.com → www.hadimkoyankaranakliyat.com)
+            // Google non-www ve www'yu farklı site olarak görür; canonical karışıklığını önler.
+            // -----------------------------------------------------------------
+            app.Use(async (ctx, next) =>
+            {
+                var host = ctx.Request.Host.Host ?? "";
+                if (host.Length > 0 && !host.StartsWith("www.", StringComparison.OrdinalIgnoreCase)
+                    && !host.Equals("localhost", StringComparison.OrdinalIgnoreCase)
+                    && !host.StartsWith("127.") && !host.StartsWith("::1"))
+                {
+                    var newUrl = $"https://www.{ctx.Request.Host.Value}{ctx.Request.Path}{ctx.Request.QueryString}";
+                    ctx.Response.Redirect(newUrl, permanent: true);
+                    return;
+                }
+                await next();
+            });
+
+            // -----------------------------------------------------------------
+            // 2. ADIM: URL Normalizasyonu (Büyük harf -> Küçük harf çevirici)
             // Bu kod Google'ın sevdiği temiz URL yapısını sağlar.
             // -----------------------------------------------------------------
             app.Use(async (ctx, next) =>
@@ -62,9 +80,8 @@ namespace HadımkoyAnkaraNakliyat_WEB
                 var normalized = SlugifyPath(original);
 
                 // Eğer URL değişmişse yönlendir (301 Redirect)
-                // OrdinalIgnoreCase: sadece Türkçe karakter farkı varsa redirect at,
-                // /Home/ -> /home/ gibi sadece büyük/küçük harf farkı olunca atma.
-                if (!string.Equals(original, normalized, StringComparison.OrdinalIgnoreCase))
+                // Ordinal (büyük/küçük harf duyarlı): /Home/Index → /home/index redirect atar.
+                if (!string.Equals(original, normalized, StringComparison.Ordinal))
                 {
                     var q = ctx.Request.QueryString.HasValue ? ctx.Request.QueryString.Value : "";
                     ctx.Response.Redirect(normalized + q, permanent: true);
@@ -75,7 +92,7 @@ namespace HadımkoyAnkaraNakliyat_WEB
             });
 
             // -----------------------------------------------------------------
-            // 2. ADIM: WebP Middleware
+            // 3. ADIM: WebP Middleware
             // Tarayıcı WebP destekliyorsa PNG/JPG yerine otomatik WebP servis eder.
             // .cshtml dosyalarına dokunmaya gerek yok.
             // -----------------------------------------------------------------
@@ -105,7 +122,7 @@ namespace HadımkoyAnkaraNakliyat_WEB
             });
 
             // -----------------------------------------------------------------
-            // 3. ADIM: Statik Dosyalar (CSS, Resimler çalışsın diye ŞART)
+            // 4. ADIM: Statik Dosyalar (CSS, Resimler çalışsın diye ŞART)
             // -----------------------------------------------------------------
             // Statik dosyalar (resim, css, js) için Gelişmiş Cache Ayarı
             app.UseStaticFiles(new StaticFileOptions
@@ -119,22 +136,90 @@ namespace HadımkoyAnkaraNakliyat_WEB
             });
 
             // -----------------------------------------------------------------
-            // 4. ADIM: URL Yönlendirmeleri
+            // 5. ADIM: URL Yönlendirmeleri
             // -----------------------------------------------------------------
             app.Use(async (context, next) =>
             {
                 var path = context.Request.Path.Value;
 
                 // YÖNLENDİRME SÖZLÜĞÜ: Eski URL -> Yeni URL
-                // Buraya tüm eski URL'leri ve yeni karşılıklarını ekleyin.
                 var redirects = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
     {
-        // 1. ANA HİZMETLER
+        // Index canonical fix
+        {"/home/index", "/"},
+        {"/home/", "/"},
+
+        // Ana hizmetler (eski /home/ → clean slug)
         {"/home/istanbul_ankara_nakliyat", "/istanbul-ankara-nakliyat"},
-        {"/home/zeytinburnu_nakliyat", "/zeytinburnu-nakliyat"},
         {"/home/istanbul_nakliyat", "/istanbul-nakliyat"},
-        {"/home/esenyurt_nakliyat", "/esenyurt-nakliyat"},
         {"/home/ankara_nakliyat", "/ankara-nakliyat"},
+        {"/home/zeytinburnu_nakliyat", "/zeytinburnu-nakliyat"},
+        {"/home/esenyurt_nakliyat", "/esenyurt-nakliyat"},
+        {"/home/istanbul_ankara_nakliyat_fiyatlari_2026_guncel_rehber", "/istanbul-ankara-nakliyat-fiyatlari-2026-guncel-rehber"},
+
+        // 39 İlçe sayfaları (hepsi [Route] ile tanımlı, /home/xxx 404 veriyordu)
+        {"/home/adalar_nakliyat", "/adalar-nakliyat"},
+        {"/home/arnavutkoy_nakliyat", "/arnavutkoy-nakliyat"},
+        {"/home/atasehir_nakliyat", "/atasehir-nakliyat"},
+        {"/home/avcilar_nakliyat", "/avcilar-nakliyat"},
+        {"/home/bagcilar_nakliyat", "/bagcilar-nakliyat"},
+        {"/home/bahcelievler_nakliyat", "/bahcelievler-nakliyat"},
+        {"/home/bakirkoy_nakliyat", "/bakirkoy-nakliyat"},
+        {"/home/basaksehir_nakliyat", "/basaksehir-nakliyat"},
+        {"/home/bayrampasa_nakliyat", "/bayrampasa-nakliyat"},
+        {"/home/besiktas_nakliyat", "/besiktas-nakliyat"},
+        {"/home/beykoz_nakliyat", "/beykoz-nakliyat"},
+        {"/home/beylikduzu_nakliyat", "/beylikduzu-nakliyat"},
+        {"/home/beyoglu_nakliyat", "/beyoglu-nakliyat"},
+        {"/home/buyukcekmece_nakliyat", "/buyukcekmece-nakliyat"},
+        {"/home/catalca_nakliyat", "/catalca-nakliyat"},
+        {"/home/cekmekoy_nakliyat", "/cekmekoy-nakliyat"},
+        {"/home/esenler_nakliyat", "/esenler-nakliyat"},
+        {"/home/eyupsultan_nakliyat", "/eyupsultan-nakliyat"},
+        {"/home/fatih_nakliyat", "/fatih-nakliyat"},
+        {"/home/gaziosmanpasa_nakliyat", "/gaziosmanpasa-nakliyat"},
+        {"/home/gungoren_nakliyat", "/gungoren-nakliyat"},
+        {"/home/kadikoy_nakliyat", "/kadikoy-nakliyat"},
+        {"/home/kagithane_nakliyat", "/kagithane-nakliyat"},
+        {"/home/kartal_nakliyat", "/kartal-nakliyat"},
+        {"/home/kucukcekmece_nakliyat", "/kucukcekmece-nakliyat"},
+        {"/home/maltepe_nakliyat", "/maltepe-nakliyat"},
+        {"/home/pendik_nakliyat", "/pendik-nakliyat"},
+        {"/home/sancaktepe_nakliyat", "/sancaktepe-nakliyat"},
+        {"/home/sariyer_nakliyat", "/sariyer-nakliyat"},
+        {"/home/silivri_nakliyat", "/silivri-nakliyat"},
+        {"/home/sultanbeyli_nakliyat", "/sultanbeyli-nakliyat"},
+        {"/home/sultangazi_nakliyat", "/sultangazi-nakliyat"},
+        {"/home/sile_nakliyat", "/sile-nakliyat"},
+        {"/home/sisli_nakliyat", "/sisli-nakliyat"},
+        {"/home/tuzla_nakliyat", "/tuzla-nakliyat"},
+        {"/home/umraniye_nakliyat", "/umraniye-nakliyat"},
+        {"/home/uskudar_nakliyat", "/uskudar-nakliyat"},
+
+        // Parça eşya ve özel sayfalar
+        {"/home/parca_esya_tasima", "/parca-esya-tasima"},
+        {"/home/istanbul_ankara_parca_esya_tasima", "/istanbul-ankara-parca-esya-tasima"},
+        {"/home/sehirlerarasi_parca_esya_tasima_fiyatlari", "/sehirlerarasi-parca-esya-tasima-fiyatlari"},
+        {"/home/istanbul_ankara_nakliye", "/istanbul-ankara-nakliye"},
+        {"/home/ankara_istanbul_nakliyat", "/ankara-istanbul-nakliyat"},
+        {"/home/asansorlu_nakliyat", "/asansorlu-nakliyat"},
+        {"/home/sigortali_nakliyat", "/sigortali-nakliyat"},
+        {"/home/nakliyat_fiyat_hesaplama", "/nakliyat-fiyat-hesaplama"},
+
+        // İlçe fiyat blog sayfaları
+        {"/home/kadikoy_evden_eve_nakliyat_fiyatlari", "/kadikoy-evden-eve-nakliyat-fiyatlari"},
+        {"/home/besiktas_evden_eve_nakliyat_fiyatlari", "/besiktas-evden-eve-nakliyat-fiyatlari"},
+        {"/home/uskudar_evden_eve_nakliyat_fiyatlari", "/uskudar-evden-eve-nakliyat-fiyatlari"},
+        {"/home/sisli_evden_eve_nakliyat_fiyatlari", "/sisli-evden-eve-nakliyat-fiyatlari"},
+        {"/home/bakirkoy_evden_eve_nakliyat_fiyatlari", "/bakirkoy-evden-eve-nakliyat-fiyatlari"},
+        {"/home/maltepe_evden_eve_nakliyat_fiyatlari", "/maltepe-evden-eve-nakliyat-fiyatlari"},
+        {"/home/umraniye_evden_eve_nakliyat_fiyatlari", "/umraniye-evden-eve-nakliyat-fiyatlari"},
+        {"/home/beylikduzu_evden_eve_nakliyat_fiyatlari", "/beylikduzu-evden-eve-nakliyat-fiyatlari"},
+        {"/home/pendik_evden_eve_nakliyat_fiyatlari", "/pendik-evden-eve-nakliyat-fiyatlari"},
+        {"/home/fatih_evden_eve_nakliyat_fiyatlari", "/fatih-evden-eve-nakliyat-fiyatlari"},
+
+        // Eşya depolama
+        {"/home/esya_depolama", "/esya-depolama"},
     };
 
                 if (redirects.TryGetValue(path, out var newUrl))
@@ -150,7 +235,7 @@ namespace HadımkoyAnkaraNakliyat_WEB
             app.UseAuthorization();
 
             // -----------------------------------------------------------------
-            // 5. ADIM: robots.txt
+            // 6. ADIM: robots.txt
             // -----------------------------------------------------------------
             app.MapGet("/robots.txt", () => Results.Text(
 @"User-agent: *
@@ -158,7 +243,7 @@ Allow: /
 Sitemap: https://www.hadimkoyankaranakliyat.com/sitemap.xml", "text/plain"));
 
             // -----------------------------------------------------------------
-            // 6. ADIM: SITEMAP (Google için Harita)
+            // 7. ADIM: SITEMAP (Google için Harita)
             // DİKKAT: Buradaki linklerin hepsi KÜÇÜK HARFLİ olmalı.
             // -----------------------------------------------------------------
             app.MapGet("/sitemap.xml", (HttpContext http) =>
@@ -201,6 +286,20 @@ Sitemap: https://www.hadimkoyankaranakliyat.com/sitemap.xml", "text/plain"));
         $"{host}/home/ankaraya_tasinmak_rehberi",
         $"{host}/home/tasinma_maliyetleri_nasil_dusurulur",
 
+        // İlçe bazlı fiyat blog sayfaları
+        $"{host}/kadikoy-evden-eve-nakliyat-fiyatlari",
+        $"{host}/besiktas-evden-eve-nakliyat-fiyatlari",
+        $"{host}/uskudar-evden-eve-nakliyat-fiyatlari",
+        $"{host}/sisli-evden-eve-nakliyat-fiyatlari",
+        $"{host}/bakirkoy-evden-eve-nakliyat-fiyatlari",
+        $"{host}/maltepe-evden-eve-nakliyat-fiyatlari",
+        $"{host}/umraniye-evden-eve-nakliyat-fiyatlari",
+        $"{host}/beylikduzu-evden-eve-nakliyat-fiyatlari",
+        $"{host}/pendik-evden-eve-nakliyat-fiyatlari",
+        $"{host}/fatih-evden-eve-nakliyat-fiyatlari",
+
+        // Eşya Depolama
+        $"{host}/esya-depolama",
 
         // Hizmetler (URL'ler middleware ile uyumlu, küçük harfli)        
         $"{host}/home/evden_eve_nakliyat",
@@ -285,7 +384,7 @@ Sitemap: https://www.hadimkoyankaranakliyat.com/sitemap.xml", "text/plain"));
                 var sb = new StringBuilder();
                 sb.AppendLine(@"<?xml version=""1.0"" encoding=""UTF-8""?>");
                 sb.AppendLine(@"<urlset xmlns=""http://www.sitemaps.org/schemas/sitemap/0.9"">");
-                var lastmod = "2026-03-06";
+                var lastmod = "2026-05-08";
                 foreach (var u in urls)
                 {
                     // Ana sayfa: 1.0, ilce sayfalari: 0.9, diger: 0.8

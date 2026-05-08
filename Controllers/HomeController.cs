@@ -699,6 +699,9 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
             return View();
         }
 
+        [Route("esya-depolama")]
+        public IActionResult esya_depolama() { return View(); }
+
         [Route("asansorlu-nakliyat")]
         public IActionResult asansorlu_nakliyat()
         {
@@ -724,6 +727,39 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
         public IActionResult tasima_sonrasi_yeni_eve_alisma() { return View(); }
         public IActionResult boya_badana_sonrasi_tasinma() { return View(); }
         public IActionResult nakliyat_fiyat_teklifi_nasil_degerlendirilir() { return View(); }
+
+        // ==========================================
+        // İLÇE BAZLI FIYAT BLOG SAYFALARI
+        // ==========================================
+        [Route("kadikoy-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult kadikoy_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("besiktas-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult besiktas_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("uskudar-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult uskudar_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("sisli-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult sisli_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("bakirkoy-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult bakirkoy_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("maltepe-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult maltepe_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("umraniye-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult umraniye_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("beylikduzu-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult beylikduzu_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("pendik-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult pendik_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("fatih-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult fatih_evden_eve_nakliyat_fiyatlari() { return View(); }
 
         [Route("nakliyat-fiyat-hesaplama")]
         public IActionResult nakliyat_fiyat_hesaplama() { return View(); }
