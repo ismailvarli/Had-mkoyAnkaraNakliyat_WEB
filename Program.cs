@@ -40,6 +40,18 @@ namespace HadımkoyAnkaraNakliyat_WEB
             app.UseResponseCompression();
 
             // -----------------------------------------------------------------
+            // GÜVENLİK BAŞLIKLARI
+            // -----------------------------------------------------------------
+            app.Use(async (ctx, next) =>
+            {
+                ctx.Response.Headers["X-Content-Type-Options"] = "nosniff";
+                ctx.Response.Headers["X-Frame-Options"]        = "SAMEORIGIN";
+                ctx.Response.Headers["Referrer-Policy"]        = "strict-origin-when-cross-origin";
+                ctx.Response.Headers["Permissions-Policy"]     = "camera=(), microphone=(), geolocation=()";
+                await next();
+            });
+
+            // -----------------------------------------------------------------
             // 1. ADIM: www Yönlendirmesi (hadimkoyankaranakliyat.com → www.hadimkoyankaranakliyat.com)
             // Google non-www ve www'yu farklı site olarak görür; canonical karışıklığını önler.
             // -----------------------------------------------------------------
