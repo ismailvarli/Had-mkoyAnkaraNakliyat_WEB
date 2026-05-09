@@ -38,12 +38,12 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){ dataLayer.push(arguments); }
 
-        // 2) Consent varsayılanı (çerez banner'ın yoksa böyle kalsın)
-        //   Banner kullanırsan buton onayında:
-        //   gtag('consent','update',{ ad_storage:'granted', analytics_storage:'granted' });
+        // 2) Consent varsayılanı — Consent Mode v2 (4 sinyal)
         gtag('consent', 'default', {
-          'ad_storage': 'granted',
-          'analytics_storage': 'granted'
+          'ad_storage':          'granted',
+          'analytics_storage':   'granted',
+          'ad_user_data':        'granted',
+          'ad_personalization':  'granted'
         });
 
         // 3) Başlatma
