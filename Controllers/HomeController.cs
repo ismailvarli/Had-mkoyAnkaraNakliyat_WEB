@@ -763,6 +763,99 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
 
         [Route("nakliyat-fiyat-hesaplama")]
         public IActionResult nakliyat_fiyat_hesaplama() { return View(); }
+
+        // ==========================================
+        // İLÇE BAZLI FIYAT BLOG SAYFALARI (29 İLÇE)
+        // ==========================================
+        [Route("adalar-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult adalar_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("arnavutkoy-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult arnavutkoy_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("atasehir-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult atasehir_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("avcilar-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult avcilar_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("bagcilar-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult bagcilar_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("bahcelievler-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult bahcelievler_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("basaksehir-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult basaksehir_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("bayrampasa-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult bayrampasa_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("beykoz-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult beykoz_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("beyoglu-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult beyoglu_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("buyukcekmece-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult buyukcekmece_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("catalca-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult catalca_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("cekmekoy-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult cekmekoy_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("esenler-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult esenler_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("esenyurt-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult esenyurt_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("eyupsultan-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult eyupsultan_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("gaziosmanpasa-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult gaziosmanpasa_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("gungoren-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult gungoren_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("kagithane-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult kagithane_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("kartal-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult kartal_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("kucukcekmece-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult kucukcekmece_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("sancaktepe-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult sancaktepe_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("sariyer-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult sariyer_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("silivri-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult silivri_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("sultanbeyli-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult sultanbeyli_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("sultangazi-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult sultangazi_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("sile-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult sile_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("tuzla-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult tuzla_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("zeytinburnu-evden-eve-nakliyat-fiyatlari")]
+        public IActionResult zeytinburnu_evden_eve_nakliyat_fiyatlari() { return View(); }
+
+        [Route("kentsel-donusum-nakliyat")]
+        public IActionResult kentsel_donusum_nakliyat() { return View(); }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> fiyat_al(TeklifFormModel model)
