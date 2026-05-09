@@ -160,6 +160,7 @@ namespace HadımkoyAnkaraNakliyat_WEB
         // Index canonical fix
         {"/home/index", "/"},
         {"/home/", "/"},
+        {"/home/privacy", "/kvkk"},
 
         // Ana hizmetler (eski /home/ → clean slug)
         {"/home/istanbul_ankara_nakliyat", "/istanbul-ankara-nakliyat"},
@@ -300,6 +301,7 @@ Sitemap: https://www.hadimkoyankaranakliyat.com/sitemap.xml", "text/plain"));
                 {
         $"{host}/",
         $"{host}/home/hakkimizda",
+        $"{host}/kvkk",
         $"{host}/home/iletisim",
         $"{host}/home/fiyat_al",
         $"{host}/home/hizmetlerimiz",

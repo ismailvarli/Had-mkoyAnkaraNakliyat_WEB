@@ -18,6 +18,12 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
         {
             return View();
         }
+
+        [Route("kvkk")]
+        public IActionResult Privacy()
+        {
+            return View();
+        }
         [HttpGet]   
         public IActionResult hakkimizda()
         {
