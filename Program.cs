@@ -458,7 +458,7 @@ Sitemap: https://www.hadimkoyankaranakliyat.com/sitemap.xml", "text/plain"));
                 var sb = new StringBuilder();
                 sb.AppendLine(@"<?xml version=""1.0"" encoding=""UTF-8""?>");
                 sb.AppendLine(@"<urlset xmlns=""http://www.sitemaps.org/schemas/sitemap/0.9"">");
-                var lastmod = "2026-05-08";
+                var lastmod = "2026-05-10";
                 foreach (var u in urls)
                 {
                     // Ana sayfa: 1.0, ilce sayfalari: 0.9, diger: 0.8
