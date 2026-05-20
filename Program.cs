@@ -265,6 +265,9 @@ namespace HadımkoyAnkaraNakliyat_WEB
         {"/home/tuzla_evden_eve_nakliyat_fiyatlari", "/tuzla-evden-eve-nakliyat-fiyatlari"},
         {"/home/zeytinburnu_evden_eve_nakliyat_fiyatlari", "/zeytinburnu-evden-eve-nakliyat-fiyatlari"},
         {"/home/kentsel_donusum_nakliyat", "/kentsel-donusum-nakliyat"},
+
+        // Eski 2025 blog → 2026 güncel versiyona yönlendirme
+        {"/home/istanbul_ankara_nakliyat_fiyatlari_2025_guncel_rehber", "/istanbul-ankara-nakliyat-fiyatlari-2026-guncel-rehber"},
     };
 
                 if (redirects.TryGetValue(path, out var newUrl))
@@ -315,7 +318,6 @@ Sitemap: https://www.hadimkoyankaranakliyat.com/sitemap.xml", "text/plain"));
         $"{host}/sehirlerarasi-parca-esya-tasima-fiyatlari",
 
         //blog
-        $"{host}/home/istanbul_ankara_nakliyat_fiyatlari_2025_guncel_rehber",
         $"{host}/istanbul-ankara-nakliyat-fiyatlari-2026-guncel-rehber",
         $"{host}/home/parsiyel_nakliyat_nedir_istanbul_ankara_arasinda__avantajlari",
         $"{host}/home/evden_eve_nakliyat_oncesi_hazirlik_rehberi",
@@ -460,7 +462,7 @@ Sitemap: https://www.hadimkoyankaranakliyat.com/sitemap.xml", "text/plain"));
                 var sb = new StringBuilder();
                 sb.AppendLine(@"<?xml version=""1.0"" encoding=""UTF-8""?>");
                 sb.AppendLine(@"<urlset xmlns=""http://www.sitemaps.org/schemas/sitemap/0.9"">");
-                var lastmod = "2026-05-10";
+                var lastmod = DateTime.UtcNow.ToString("yyyy-MM-dd");
                 foreach (var u in urls)
                 {
                     // Ana sayfa: 1.0, ilce sayfalari: 0.9, diger: 0.8
