@@ -92,6 +92,7 @@ namespace HadımkoyAnkaraNakliyat_WEB.Controllers
         {
             return View();
         }
+        [Route("parsiyel-nakliyat-nedir-istanbul-ankara-arasinda-avantajlari")]
         public IActionResult parsiyel_nakliyat_nedir_istanbul_ankara_arasinda__avantajlari()
         {
             return View();

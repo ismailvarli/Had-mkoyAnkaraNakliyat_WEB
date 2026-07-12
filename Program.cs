@@ -233,6 +233,8 @@ namespace HadımkoyAnkaraNakliyat_WEB
 
         // Eşya depolama
         {"/home/esya_depolama", "/esya-depolama"},
+        // Çift alt çizgi bug fix
+        {"/home/parsiyel_nakliyat_nedir_istanbul_ankara_arasinda__avantajlari", "/parsiyel-nakliyat-nedir-istanbul-ankara-arasinda-avantajlari"},
 
         // İlçe fiyat blog sayfaları (29 ilçe)
         {"/home/adalar_evden_eve_nakliyat_fiyatlari", "/adalar-evden-eve-nakliyat-fiyatlari"},
@@ -319,7 +321,7 @@ Sitemap: https://www.hadimkoyankaranakliyat.com/sitemap.xml", "text/plain"));
 
         //blog
         $"{host}/istanbul-ankara-nakliyat-fiyatlari-2026-guncel-rehber",
-        $"{host}/home/parsiyel_nakliyat_nedir_istanbul_ankara_arasinda__avantajlari",
+        $"{host}/parsiyel-nakliyat-nedir-istanbul-ankara-arasinda-avantajlari",
         $"{host}/home/evden_eve_nakliyat_oncesi_hazirlik_rehberi",
         $"{host}/home/asansorlu_nakliyatin_istanbul_ankara_tasimalarinda_sagladigi_kolayliklar",
         $"{host}/home/sigortali_nakliyat_esyalarinizi_guvence_altina_alin",
@@ -333,6 +335,20 @@ Sitemap: https://www.hadimkoyankaranakliyat.com/sitemap.xml", "text/plain"));
         $"{host}/home/nakliyat_sozlesmesi_nedir",
         $"{host}/home/ankaraya_tasinmak_rehberi",
         $"{host}/home/tasinma_maliyetleri_nasil_dusurulur",
+        $"{host}/home/piyano_tasima_rehberi",
+        $"{host}/home/beyaz_esya_tasima_rehberi",
+        $"{host}/home/ankara_istanbul_tasima_rehberi",
+        $"{host}/home/elektronik_esya_tasima",
+        $"{host}/home/antika_esya_tasima",
+        $"{host}/home/tasima_mevsimi_secimi",
+        $"{host}/home/nakliyat_sigortasi_nasil_alinir",
+        $"{host}/home/cocuklu_ailelere_tasima_rehberi",
+        $"{host}/home/home_office_tasima",
+        $"{host}/home/kira_biterken_tasima_planlama",
+        $"{host}/home/tasima_sonrasi_yeni_eve_alisma",
+        $"{host}/home/boya_badana_sonrasi_tasinma",
+        $"{host}/home/nakliyat_fiyat_teklifi_nasil_degerlendirilir",
+        $"{host}/nakliyat-fiyat-hesaplama",
 
         // İlçe bazlı fiyat blog sayfaları (39 ilçe tam liste)
         $"{host}/kadikoy-evden-eve-nakliyat-fiyatlari",
@@ -412,6 +428,11 @@ Sitemap: https://www.hadimkoyankaranakliyat.com/sitemap.xml", "text/plain"));
           $"{host}/home/kazan_istanbul_nakliyat",
           $"{host}/home/temelli_istanbul_nakliyat",
           $"{host}/home/gebze_ankara_nakliyat",
+          $"{host}/home/cankaya_istanbul_nakliyat",
+          $"{host}/home/kecioren_istanbul_nakliyat",
+          $"{host}/home/mamak_istanbul_nakliyat",
+          $"{host}/home/etimesgut_istanbul_nakliyat",
+          $"{host}/home/altidag_istanbul_nakliyat",
         //şehir bazlı taşımacılık
         $"{host}/home/sehir_bazli_tasimacilik",
         $"{host}/ankara-nakliyat",
@@ -462,7 +483,7 @@ Sitemap: https://www.hadimkoyankaranakliyat.com/sitemap.xml", "text/plain"));
                 var sb = new StringBuilder();
                 sb.AppendLine(@"<?xml version=""1.0"" encoding=""UTF-8""?>");
                 sb.AppendLine(@"<urlset xmlns=""http://www.sitemaps.org/schemas/sitemap/0.9"">");
-                var lastmod = DateTime.UtcNow.ToString("yyyy-MM-dd");
+                var lastmod = "2026-07-12";
                 foreach (var u in urls)
                 {
                     // Ana sayfa: 1.0, ilce sayfalari: 0.9, diger: 0.8
